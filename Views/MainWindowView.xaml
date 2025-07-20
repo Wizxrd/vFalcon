@@ -1,0 +1,57 @@
+﻿<adonisControls:AdonisWindow 
+    x:Class="vFalcon.MainWindowView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:vFalcon"
+    mc:Ignorable="d"
+    xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+    xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+    xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+    Icon="pack://application:,,,/Resources/Images/vFalcon.png"
+    Title="vFalcon"
+    MinWidth="150" Width="1280" MinHeight="150" Height="720"
+    WindowStartupLocation="CenterScreen"
+    FontFamily="Consolas" FontSize="12"
+    Foreground="{StaticResource WhiteText}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+    <Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border 
+                Grid.Row="1"
+                Background="Black">
+                <Grid>
+                    <skia:SKElement
+                        x:Name="RadarCanvas"
+                        xmlns:skia="clr-namespace:SkiaSharp.Views.WPF;assembly=SkiaSharp.Views.WPF">
+                    </skia:SKElement>
+                    <Border
+                        Background="Black"
+                        BorderBrush="#797979"
+                        BorderThickness="1"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Margin="30,15,0,0">
+                        <TextBlock
+                        x:Name="ZuluTextBlock"
+                        Text="{Binding ZuluTime}"
+                        Margin="2"
+                        FontFamily="Consolas" FontSize="16"
+                        Width="Auto"
+                        Foreground="#c2c2c2"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right">
+                        </TextBlock>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</adonisControls:AdonisWindow>

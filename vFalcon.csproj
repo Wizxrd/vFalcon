@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources\Images\vFalcon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Images\Copy.png" />
+    <None Remove="Resources\Images\Delete.png" />
+    <None Remove="Resources\Images\Export.png" />
+    <None Remove="Resources\Images\QuestionBlue.png" />
+    <None Remove="Resources\Images\Rename.png" />
+    <None Remove="Resources\Images\vFalcon.ico" />
+    <None Remove="Resources\Images\vFalcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Images\vFalcon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AdonisUI" Version="1.17.1" />
+    <PackageReference Include="AdonisUI.ClassicTheme" Version="1.17.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="SkiaSharp" Version="3.119.0" />
+    <PackageReference Include="SkiaSharp.Views.WPF" Version="3.119.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\Copy.png" />
+    <Resource Include="Resources\Images\Delete.png" />
+    <Resource Include="Resources\Images\Export.png" />
+    <Resource Include="Resources\Images\QuestionBlue.png" />
+    <Resource Include="Resources\Images\Rename.png" />
+    <Resource Include="Resources\Images\vFalcon.ico" />
+    <Resource Include="Resources\Images\vFalcon.png" />
+  </ItemGroup>
+
+</Project>
