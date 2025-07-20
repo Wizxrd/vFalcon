@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("vFalcon")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fee56666f615dfa02a802b2ae56e28cbe849d17f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e824c711c71cfa5f4d096bfce757f1f0c9b520d6")]
 [assembly: System.Reflection.AssemblyProductAttribute("vFalcon")]
 [assembly: System.Reflection.AssemblyTitleAttribute("vFalcon")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
