@@ -12,6 +12,7 @@
                 <ResourceDictionary Source="pack://application:,,,/AdonisUI.ClassicTheme;component/Resources.xaml"/>
                 <ResourceDictionary Source="/Resources/Dictionaries/Colors.xaml"/>
                 <ResourceDictionary Source="/Resources/Dictionaries/Controls.xaml"/>
+                <ResourceDictionary Source="/Resources/Dictionaries/Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

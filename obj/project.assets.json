@@ -40,6 +40,18 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "GeoJSON.Net/1.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "lib/net8.0/GeoJSON.Net.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GeoJSON.Net.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/3.0.0": {
         "type": "package",
         "compile": {
@@ -70,6 +82,22 @@
             "rid": "win"
           }
         }
+      },
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.135": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       },
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
@@ -265,6 +293,22 @@
         "lib/netcoreapp3.1/AdonisUI.ClassicTheme.xml"
       ]
     },
+    "GeoJSON.Net/1.4.1": {
+      "sha512": "jGl6JvyQV4hS3JsZ7FXTmB1tXE1kadXl2iD8H9OIqe1a5q7OfskDh0Cy2+YrEZ13eI4DJ8xTbDJXz2tldKyM8g==",
+      "type": "package",
+      "path": "geojson.net/1.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "geojson.net.1.4.1.nupkg.sha512",
+        "geojson.net.nuspec",
+        "lib/net462/GeoJSON.Net.dll",
+        "lib/net6.0/GeoJSON.Net.dll",
+        "lib/net8.0/GeoJSON.Net.dll",
+        "lib/netstandard2.0/GeoJSON.Net.dll",
+        "lib/netstandard2.1/GeoJSON.Net.dll"
+      ]
+    },
     "Microsoft.NETCore.Platforms/3.0.0": {
       "sha512": "TsETIgVJb/AKoYfSP+iCxkuly5d3inZjTdx/ItZLk2CxY85v8083OBS3uai84kK3/baLnS5/b5XGs6zR7SuuHQ==",
       "type": "package",
@@ -309,6 +353,28 @@
         "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.135": {
+      "sha512": "r8qBEXmQfORso2+MVHnt8PSH4761zJ0SIxgQTSEDVLU97EN2FZdG6/ZCYUPhQy+OrPKgnpYBCAs3PS6Bs7wRsg==",
+      "type": "package",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.135",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/Design/Microsoft.Xaml.Behaviors.Design.dll",
+        "lib/net462/Design/Microsoft.Xaml.Behaviors.DesignTools.dll",
+        "lib/net462/Microsoft.Xaml.Behaviors.dll",
+        "lib/net462/Microsoft.Xaml.Behaviors.pdb",
+        "lib/net462/Microsoft.Xaml.Behaviors.xml",
+        "lib/net6.0-windows7.0/Design/Microsoft.Xaml.Behaviors.DesignTools.dll",
+        "lib/net6.0-windows7.0/Microsoft.Xaml.Behaviors.dll",
+        "lib/net6.0-windows7.0/Microsoft.Xaml.Behaviors.pdb",
+        "lib/net6.0-windows7.0/Microsoft.Xaml.Behaviors.xml",
+        "microsoft.xaml.behaviors.wpf.1.1.135.nupkg.sha512",
+        "microsoft.xaml.behaviors.wpf.nuspec",
+        "tools/Install.ps1"
       ]
     },
     "Newtonsoft.Json/13.0.3": {
@@ -565,6 +631,8 @@
     "net8.0-windows7.0": [
       "AdonisUI >= 1.17.1",
       "AdonisUI.ClassicTheme >= 1.17.1",
+      "GeoJSON.Net >= 1.4.1",
+      "Microsoft.Xaml.Behaviors.Wpf >= 1.1.135",
       "Newtonsoft.Json >= 13.0.3",
       "SkiaSharp >= 3.119.0",
       "SkiaSharp.Views.WPF >= 3.119.0"
@@ -621,6 +689,14 @@
           "AdonisUI.ClassicTheme": {
             "target": "Package",
             "version": "[1.17.1, )"
+          },
+          "GeoJSON.Net": {
+            "target": "Package",
+            "version": "[1.4.1, )"
+          },
+          "Microsoft.Xaml.Behaviors.Wpf": {
+            "target": "Package",
+            "version": "[1.1.135, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",

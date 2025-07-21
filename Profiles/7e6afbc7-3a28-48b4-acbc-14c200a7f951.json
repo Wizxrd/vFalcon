@@ -1,0 +1,16 @@
+{
+  "Artcc": "Cleveland ARTCC - ZOB",
+  "Name": "ZOB",
+  "ArtccId": "ZOB",
+  "SectorName": "",
+  "SectorFreq": "",
+  "AppchBright": "50",
+  "LowsBright": "75",
+  "HighsBright": "100",
+  "BndryBright": "100",
+  "BndryEnabled": true,
+  "AppchCntlEnabled": false,
+  "LowsEnabled": false,
+  "HighsEnabled": false,
+  "CursorSize": "1"
+}

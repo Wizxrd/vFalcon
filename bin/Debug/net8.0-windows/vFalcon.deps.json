@@ -10,6 +10,8 @@
         "dependencies": {
           "AdonisUI": "1.17.1",
           "AdonisUI.ClassicTheme": "1.17.1",
+          "GeoJSON.Net": "1.4.1",
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.135",
           "Newtonsoft.Json": "13.0.3",
           "SkiaSharp": "3.119.0",
           "SkiaSharp.Views.WPF": "3.119.0"
@@ -40,10 +42,29 @@
           }
         }
       },
+      "GeoJSON.Net/1.4.1": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/net8.0/GeoJSON.Net.dll": {
+            "assemblyVersion": "1.4.0.0",
+            "fileVersion": "1.4.0.0"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/3.0.0": {},
       "Microsoft.Win32.SystemEvents/4.6.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.0.0"
+        }
+      },
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.135": {
+        "runtime": {
+          "lib/net6.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.135.29210"
+          }
         }
       },
       "Newtonsoft.Json/13.0.3": {
@@ -166,6 +187,13 @@
       "path": "adonisui.classictheme/1.17.1",
       "hashPath": "adonisui.classictheme.1.17.1.nupkg.sha512"
     },
+    "GeoJSON.Net/1.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jGl6JvyQV4hS3JsZ7FXTmB1tXE1kadXl2iD8H9OIqe1a5q7OfskDh0Cy2+YrEZ13eI4DJ8xTbDJXz2tldKyM8g==",
+      "path": "geojson.net/1.4.1",
+      "hashPath": "geojson.net.1.4.1.nupkg.sha512"
+    },
     "Microsoft.NETCore.Platforms/3.0.0": {
       "type": "package",
       "serviceable": true,
@@ -179,6 +207,13 @@
       "sha512": "sha512-Edg+pFW5C8WJb680Za2kTV8TqUi6Ahl/WldRVoOVJ23UQLpDHFspa+umgFjkWZw24ETsU99Cg+ErZz683M4chg==",
       "path": "microsoft.win32.systemevents/4.6.0",
       "hashPath": "microsoft.win32.systemevents.4.6.0.nupkg.sha512"
+    },
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.135": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-r8qBEXmQfORso2+MVHnt8PSH4761zJ0SIxgQTSEDVLU97EN2FZdG6/ZCYUPhQy+OrPKgnpYBCAs3PS6Bs7wRsg==",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.135",
+      "hashPath": "microsoft.xaml.behaviors.wpf.1.1.135.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.3": {
       "type": "package",

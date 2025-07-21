@@ -10,11 +10,11 @@
                 <Setter Property="Opacity" Value="1.0"/>
                 <Setter Property="Effect">
                     <Setter.Value>
-                        <DropShadowEffect 
-                        Color="White"
-                        BlurRadius="2"
-                        Opacity="0.2"
-                        ShadowDepth="0"/>
+                        <DropShadowEffect
+                            Color="White"
+                            BlurRadius="2"
+                            Opacity="0.2"
+                            ShadowDepth="0"/>
                     </Setter.Value>
                 </Setter>
             </DataTrigger>
@@ -23,32 +23,30 @@
     <Style x:Key="ProfileToggleButton" TargetType="ToggleButton">
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="FontWeight" Value="Light"/>
-        <Setter Property="Foreground" Value="{StaticResource WhiteText}"/>
+        <Setter Property="Foreground" Value="{StaticResource White}"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="Background" Value="#2a2b34"/>
+        <Setter Property="Background" Value="{StaticResource ToggleButtonBackground}"/>
         <Setter Property="Height" Value="30"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToggleButton">
                     <Border
-                    x:Name="Border"
-                    Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="1">
+                        x:Name="Border"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1">
                         <ContentPresenter
-                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                        RecognizesAccessKey="True"/>
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            RecognizesAccessKey="True"/>
                     </Border>
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource ButtonBackground}"/>
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource ButtonBackground}"/>
                         </Trigger>
-
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="Border" Property="Background" Value="#2a2b34"/>
-                            <Setter TargetName="Border" Property="BorderBrush" Value="#5c5f74"/>
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource ButtonBorderChecked}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="Border" Property="Background" Value="Transparent"/>
@@ -59,7 +57,7 @@
         </Setter>
     </Style>
     <Style x:Key="RenameButtonControl" TargetType="ContentControl">
-        <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource White}"/>
         <Setter Property="FontWeight" Value="Light"/>
         <Setter Property="FontSize" Value="12"/>
         <Style.Triggers>
@@ -73,18 +71,17 @@
                                 Tag="{Binding Text, RelativeSource={RelativeSource Self}}"
                                 Background="#141420"
                                 BorderBrush="Transparent"
-                                adonisExtensions:CursorSpotlightExtension.BackgroundBrush="#141420"
+                                adonisExtensions:CursorSpotlightExtension.BackgroundBrush="{StaticResource RenameTextBoxBackground}"
                                 adonisExtensions:CursorSpotlightExtension.BorderBrush="Transparent"
-                                Foreground="{DynamicResource TextColor}"
+                                Foreground="{StaticResource White}"
                                 BorderThickness="1"
                                 VerticalAlignment="Center"
-                                Margin="1,0,5,0"
-                                Style="{DynamicResource TextBoxStyle}">
+                                Margin="1,0,5,0">
                                 <TextBox.InputBindings>
                                     <KeyBinding
-                                    Key="Enter"
-                                    Command="{Binding DataContext.StopRenamingCommand, RelativeSource={RelativeSource AncestorType=Window}}"
-                                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=TextBox}}"/>
+                                        Key="Enter"
+                                        Command="{Binding DataContext.StopRenamingCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=TextBox}}"/>
                                 </TextBox.InputBindings>
                             </TextBox>
                         </DataTemplate>

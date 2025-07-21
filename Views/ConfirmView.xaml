@@ -11,11 +11,14 @@
     mc:Ignorable="d"
     Icon="pack://application:,,,/Resources/Images/QuestionBlue.png"
     Title="Confirm"
-    Width="350" Height="150"
+    Width="350" MinHeight="150" Height="150"
     SizeToContent="Height" ResizeMode="NoResize"
     WindowStartupLocation="CenterOwner"
     BorderBrush="{StaticResource BorderBrush}" BorderThickness="1"
     FontFamily="Consolas" FontSize="12">
+    <adonisControls:AdonisWindow.InputBindings>
+        <KeyBinding Key="Enter" Command="{Binding CancelCommand}"/>
+    </adonisControls:AdonisWindow.InputBindings>
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>

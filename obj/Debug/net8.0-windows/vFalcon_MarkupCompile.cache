@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\vFalcon\App.xaml
-61407925216
+12-152996538
 1-241069421
-20-205494287
-2071759536124
-Resources\Dictionaries\Colors.xaml;Resources\Dictionaries\Controls.xaml;Views\ConfirmView.xaml;Views\LoadProfileView.xaml;Views\MainWindowView.xaml;Views\NewProfileView.xaml;
+43-645085304
+209839355067
+Resources\Dictionaries\Colors.xaml;Resources\Dictionaries\Controls.xaml;Resources\Dictionaries\Styles.xaml;Views\ConfirmView.xaml;Views\CursorToolbarView.xaml;Views\LoadProfileView.xaml;Views\MainWindowView.xaml;Views\MasterToolbarView.xaml;Views\NewProfileView.xaml;Views\ProfileToolbarView.xaml;Views\RadarView.xaml;Views\SaveProfileAsView.xaml;
 
 False
 

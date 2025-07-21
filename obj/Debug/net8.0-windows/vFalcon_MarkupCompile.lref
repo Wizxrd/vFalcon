@@ -1,7 +1,12 @@
 ﻿
 FD:\vFalcon\App.xaml;;
 FD:\vFalcon\Views\ConfirmView.xaml;;
+FD:\vFalcon\Views\CursorToolbarView.xaml;;
 FD:\vFalcon\Views\LoadProfileView.xaml;;
 FD:\vFalcon\Views\MainWindowView.xaml;;
+FD:\vFalcon\Views\MasterToolbarView.xaml;;
 FD:\vFalcon\Views\NewProfileView.xaml;;
+FD:\vFalcon\Views\ProfileToolbarView.xaml;;
+FD:\vFalcon\Views\RadarView.xaml;;
+FD:\vFalcon\Views\SaveProfileAsView.xaml;;
 

@@ -6,15 +6,30 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:vFalcon"
     mc:Ignorable="d"
+    xmlns:views="clr-namespace:vFalcon.Views"
     xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
     xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
     xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
     Icon="pack://application:,,,/Resources/Images/vFalcon.png"
-    Title="vFalcon"
+    Title="{Binding ProfileName}"
     MinWidth="150" Width="1280" MinHeight="150" Height="720"
     WindowStartupLocation="CenterScreen"
-    FontFamily="Consolas" FontSize="12"
-    Foreground="{StaticResource WhiteText}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+    FontFamily="Consolas" FontSize="12" 
+    Foreground="{StaticResource White}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+    <adonisControls:AdonisWindow.InputBindings>
+        <KeyBinding 
+            Key="P" 
+            Modifiers="Ctrl+Shift"
+            Command="{Binding SwitchProfileCommand}"/>
+        <KeyBinding 
+            Key="S" 
+            Modifiers="Ctrl"
+            Command="{Binding SaveProfileCommand}"/>
+        <KeyBinding 
+            Key="S" 
+            Modifiers="Ctrl+Shift"
+            Command="{Binding SaveProfileAsCommand}"/>
+    </adonisControls:AdonisWindow.InputBindings>
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
@@ -24,14 +39,12 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            <ContentControl x:Name="ToolbarRegion" Grid.Row="0"/>
             <Border 
                 Grid.Row="1"
                 Background="Black">
                 <Grid>
-                    <skia:SKElement
-                        x:Name="RadarCanvas"
-                        xmlns:skia="clr-namespace:SkiaSharp.Views.WPF;assembly=SkiaSharp.Views.WPF">
-                    </skia:SKElement>
+                    <views:RadarView/>
                     <Border
                         Background="Black"
                         BorderBrush="#797979"
@@ -40,16 +53,25 @@
                         HorizontalAlignment="Left"
                         Margin="30,15,0,0">
                         <TextBlock
-                        x:Name="ZuluTextBlock"
-                        Text="{Binding ZuluTime}"
-                        Margin="2"
-                        FontFamily="Consolas" FontSize="16"
-                        Width="Auto"
-                        Foreground="#c2c2c2"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Right">
+                            x:Name="ZuluTextBlock"
+                            Text="{Binding ZuluTime}"
+                            Margin="2"
+                            FontFamily="Consolas" FontSize="16"
+                            Width="Auto" MinWidth="65"
+                            Foreground="#c2c2c2"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Right">
                         </TextBlock>
                     </Border>
+                    <Button
+                        x:Name="ToolbarButton"
+                        Content="TOOLBAR"
+                        HorizontalAlignment="Left"
+                        Margin="30,0,0,0"
+                        Background="{StaticResource MenuClosedButtonBackground}"
+                        Style="{StaticResource ToolbarButton}"
+                        Click="ToolbarButtonClick">
+                    </Button>
                 </Grid>
             </Border>
         </Grid>

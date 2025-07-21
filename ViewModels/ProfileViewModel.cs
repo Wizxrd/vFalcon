@@ -8,6 +8,8 @@ namespace vFalcon.ViewModels
 
         private string _originalName;
         private bool _isSelected;
+        public string OriginalName => _originalName;
+        private bool _isRenaming;
 
         public ProfileViewModel(Profile model)
         {
@@ -38,15 +40,6 @@ namespace vFalcon.ViewModels
             }
         }
 
-        public void BeginRename()
-        {
-            _originalName = Name;
-            IsRenaming = true;
-        }
-
-        public string OriginalName => _originalName;
-
-        private bool _isRenaming;
         public bool IsRenaming
         {
             get => _isRenaming;
@@ -55,6 +48,12 @@ namespace vFalcon.ViewModels
                 _isRenaming = value;
                 OnPropertyChanged();
             }
+        }
+
+        public void BeginRename()
+        {
+            _originalName = Name;
+            IsRenaming = true;
         }
     }
 }

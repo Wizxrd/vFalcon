@@ -14,7 +14,10 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterOwner"
         FontFamily="Consolas" FontSize="12"
-        Foreground="{StaticResource WhiteText}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+        Foreground="{StaticResource White}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+    <adonisControls:AdonisWindow.InputBindings>
+        <KeyBinding Key="Enter" Command="{Binding CreateCommand}"/>
+    </adonisControls:AdonisWindow.InputBindings>
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>

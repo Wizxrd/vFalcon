@@ -15,7 +15,7 @@
     SizeToContent="Width" ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     FontFamily="Consolas" FontSize="12"
-    Foreground="{StaticResource WhiteText}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+    Foreground="{StaticResource White}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
