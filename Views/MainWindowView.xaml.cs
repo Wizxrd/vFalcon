@@ -4,6 +4,7 @@ using vFalcon.Models;
 using System.Windows.Input;
 using System.Windows;
 using vFalcon.Views;
+using vFalcon.Helpers;
 
 namespace vFalcon
 {
@@ -13,8 +14,9 @@ namespace vFalcon
     public partial class MainWindowView : AdonisWindow
     {
         private MasterToolbarView _masterToolbarView;
-        private CursorToolbarView _cursorToolbarView;
         private ProfileToolbarView _profileToolbarView;
+        private CursorToolbarView _cursorToolbarView;
+        private MapsToolbarView _mapsToolbarView;
 
         public MainWindowView(Profile profile)
         {
@@ -59,17 +61,22 @@ namespace vFalcon
         private void InitializeToolbar(MainWindowViewModel viewModel)
         {
             _masterToolbarView = new MasterToolbarView();
-            _cursorToolbarView = new CursorToolbarView();
             _profileToolbarView = new ProfileToolbarView();
+            _cursorToolbarView = new CursorToolbarView();
+            _mapsToolbarView = new MapsToolbarView();
+
             _cursorToolbarView.DataContext = viewModel;
+            _mapsToolbarView.DataContext = viewModel;
 
             ToolbarRegion.Content = _masterToolbarView;
 
-            _masterToolbarView.CursorButtonClicked += () => ToolbarRegion.Content = _cursorToolbarView;
             _masterToolbarView.ProfileButtonClicked += () => ToolbarRegion.Content = _profileToolbarView;
+            _masterToolbarView.CursorButtonClicked += () => ToolbarRegion.Content = _cursorToolbarView;
+            _masterToolbarView.MapsButtonClicked += () => ToolbarRegion.Content = _mapsToolbarView;
 
-            _cursorToolbarView.CursorBackButtonClicked += () => ToolbarRegion.Content = _masterToolbarView;
             _profileToolbarView.ProfileBackButtonClicked += () => ToolbarRegion.Content = _masterToolbarView;
+            _cursorToolbarView.CursorBackButtonClicked += () => ToolbarRegion.Content = _masterToolbarView;
+            _mapsToolbarView.MapsBackButtonClicked += () => ToolbarRegion.Content = _masterToolbarView;
 
         }
         
@@ -81,6 +88,13 @@ namespace vFalcon
                 if (e.PropertyName == nameof(viewModel.CursorSize))
                 {
                     UpdateCursor(viewModel.CursorSize);
+                }
+                else if (e.PropertyName == nameof(viewModel.IsCursorVisible))
+                {
+                    Cursor = viewModel.IsCursorVisible
+                        ? new Cursor(Application.GetResourceStream(
+                            new Uri($"pack://application:,,,/Resources/Cursors/Eram{viewModel.CursorSize}.cur")).Stream)
+                        : Cursors.None;
                 }
             };
         }

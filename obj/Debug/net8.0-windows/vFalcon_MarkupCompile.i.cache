@@ -8,13 +8,13 @@ D:\vFalcon\obj\Debug\net8.0-windows\
 vFalcon
 none
 false
-TRACE;DEBUG;NET;NET8_0;NETCOREAPP
+TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 D:\vFalcon\App.xaml
-12-152996538
+13-1597113035
 1-241069421
-451304526627
-209839355067
-Resources\Dictionaries\Colors.xaml;Resources\Dictionaries\Controls.xaml;Resources\Dictionaries\Styles.xaml;Views\ConfirmView.xaml;Views\CursorToolbarView.xaml;Views\LoadProfileView.xaml;Views\MainWindowView.xaml;Views\MasterToolbarView.xaml;Views\NewProfileView.xaml;Views\ProfileToolbarView.xaml;Views\RadarView.xaml;Views\SaveProfileAsView.xaml;
+48-1519813121
+209682296366
+Resources\Dictionaries\Colors.xaml;Resources\Dictionaries\Controls.xaml;Resources\Dictionaries\Styles.xaml;Views\ConfirmView.xaml;Views\CursorToolbarView.xaml;Views\LoadProfileView.xaml;Views\MainWindowView.xaml;Views\MapsToolbarView.xaml;Views\MasterToolbarView.xaml;Views\NewProfileView.xaml;Views\ProfileToolbarView.xaml;Views\RadarView.xaml;Views\SaveProfileAsView.xaml;
 
-False
+True
 

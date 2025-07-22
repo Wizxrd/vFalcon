@@ -23,6 +23,7 @@ namespace vFalcon.Views
     {
         public event Action? CursorButtonClicked;
         public event Action? ProfileButtonClicked;
+        public event Action? MapsButtonClicked;
         public MasterToolbarView()
         {
             InitializeComponent();
@@ -36,6 +37,11 @@ namespace vFalcon.Views
         private void CursorButtonClick(object sender, RoutedEventArgs e)
         {
             CursorButtonClicked?.Invoke();
+        }
+
+        private void MapsButtonClick(object sender, RoutedEventArgs e)
+        {
+            MapsButtonClicked?.Invoke();
         }
     }
 }

@@ -36,7 +36,6 @@ D:\vFalcon\obj\Debug\net8.0-windows\vFalcon.GeneratedMSBuildEditorConfig.editorc
 D:\vFalcon\obj\Debug\net8.0-windows\vFalcon.AssemblyInfoInputs.cache
 D:\vFalcon\obj\Debug\net8.0-windows\vFalcon.AssemblyInfo.cs
 D:\vFalcon\obj\Debug\net8.0-windows\vFalcon.csproj.CoreCompileInputs.cache
-D:\vFalcon\obj\Debug\net8.0-windows\vFalcon.csproj.CopyComplete
 D:\vFalcon\obj\Debug\net8.0-windows\vFalcon.dll
 D:\vFalcon\obj\Debug\net8.0-windows\refint\vFalcon.dll
 D:\vFalcon\obj\Debug\net8.0-windows\vFalcon.pdb
@@ -57,3 +56,6 @@ D:\vFalcon\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 D:\vFalcon\obj\Debug\net8.0-windows\Views\RadarView.baml
 D:\vFalcon\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
 D:\vFalcon\bin\Debug\net8.0-windows\GeoJSON.Net.dll
+D:\vFalcon\obj\Debug\net8.0-windows\vFalcon.csproj.Up2Date
+D:\vFalcon\obj\Debug\net8.0-windows\Views\MapsToolbarView.g.cs
+D:\vFalcon\obj\Debug\net8.0-windows\Views\MapsToolbarView.baml

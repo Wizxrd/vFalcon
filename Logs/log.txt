@@ -1,9 +1,1 @@
-7/21/2025 1:00:48 | DEBUG | ProfileService.Delete | Deleted profile: "ZOB v2"
-7/21/2025 1:00:49 | DEBUG | ProfileService.Delete | Deleted profile: "ZOB"
-7/21/2025 1:01:22 | DEBUG | ProfileService.New | Created Profile: "zob"
-7/21/2025 1:01:30 | DEBUG | ProfileService.Delete | Deleted profile: "zob"
-7/21/2025 1:01:44 | DEBUG | ProfileService.New | Created Profile: "ZOB"
-7/21/2025 1:01:53 | DEBUG | ProfileService.Save | Saved profile: "ZOB"
-7/21/2025 1:02:03 | DEBUG | E | 05371c27-a9f8-461b-bc0a-771d23763419
-7/21/2025 1:02:03 | DEBUG | ProfileService.SaveAs | Saved profile as: "ZOB CUR 5"
-7/21/2025 1:02:09 | DEBUG | ProfileService.Save | Saved profile: "ZOB CUR 5"
+7/22/2025 3:05:43 | DEBUG | VideoMap.Load | Loaded: "BOUNDARY.geojson"

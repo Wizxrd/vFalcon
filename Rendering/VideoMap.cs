@@ -16,6 +16,14 @@ namespace vFalcon.Rendering
         private readonly Dictionary<string, SKColor> fileColors = new();
         public List<string> ActiveMaps { get; } = new();
 
+        private readonly SKPaint dashPaint = new SKPaint
+        {
+            Style = SKPaintStyle.Stroke,
+            StrokeWidth = 1,
+            IsAntialias = true,
+            PathEffect = SKPathEffect.CreateDash(new float[] { 10, 20 }, 0)
+        };
+
         public static void CenterAtCoordinates(int width, int height, double scale, ref SKPoint panOffset, double lat, double lon)
         {
             var screenPoint = ScreenMap.CoordinateToScreen(width, height, scale, panOffset, lat, lon);
@@ -65,6 +73,7 @@ namespace vFalcon.Rendering
                 loadedMaps[fileName] = fileLines;
                 fileColors[fileName] = SKColor.Parse(color);
                 ActiveMaps.Add(fileName);
+                Logger.Debug("VideoMap.Load", $"Loaded: \"{fileName}\"");
             }
             catch (Exception ex)
             {
@@ -78,6 +87,7 @@ namespace vFalcon.Rendering
             if (loadedMaps.Remove(fileName))
             {
                 ActiveMaps.Remove(fileName);
+                Logger.Debug("VideoMap.Load", $"Unloaded: \"{fileName}\"");
             }
         }
 
@@ -87,30 +97,23 @@ namespace vFalcon.Rendering
             {
                 foreach (var (fileName, fileLines) in loadedMaps)
                 {
-                    var color = fileColors.TryGetValue(fileName, out var val) ? val : SKColors.Gray;
+                    dashPaint.Color = fileColors.TryGetValue(fileName, out var val) ? val : SKColors.Gray;
 
-                    using var paint = new SKPaint
+                    foreach (var line in fileLines)
                     {
-                        Style = SKPaintStyle.Stroke,
-                        Color = color,
-                        StrokeWidth = 1,
-                        IsAntialias = true
-                        //PathEffect = SKPathEffect.CreateDash(new float[] { 10, 20 }, 0)
-                    };
-
-                    foreach (var lineString in fileLines)
-                    {
-                        if (lineString.Count < 2) continue;
+                        if (line.Count < 2) continue;
 
                         using var path = new SKPath();
-                        path.MoveTo(ScreenMap.CoordinateToScreen(clientSize.Width, clientSize.Height, scale, panOffset, lineString[0].Latitude, lineString[0].Longitude));
+                        var first = ScreenMap.CoordinateToScreen(clientSize.Width, clientSize.Height, scale, panOffset, line[0].Latitude, line[0].Longitude);
+                        path.MoveTo(first);
 
-                        foreach (var coord in lineString.Skip(1))
+                        for (int i = 1; i < line.Count; i++)
                         {
-                            var pt = ScreenMap.CoordinateToScreen(clientSize.Width, clientSize.Height, scale, panOffset, coord.Latitude, coord.Longitude);
+                            var pt = ScreenMap.CoordinateToScreen(clientSize.Width, clientSize.Height, scale, panOffset, line[i].Latitude, line[i].Longitude);
                             path.LineTo(pt);
                         }
-                        canvas.DrawPath(path, paint);
+
+                        canvas.DrawPath(path, dashPaint);
                     }
                 }
             }

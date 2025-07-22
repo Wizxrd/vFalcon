@@ -8,6 +8,7 @@ using System.Windows.Threading;
 using vFalcon.Models;
 using vFalcon.Services.Interfaces;
 using vFalcon.Services;
+using vFalcon.Helpers;
 using System.Drawing.Text;
 
 namespace vFalcon.ViewModels
@@ -18,20 +19,30 @@ namespace vFalcon.ViewModels
 
         private string _zuluTime;
         private DispatcherTimer zuluTimer = new DispatcherTimer();
+        private Dictionary<string, Func<bool>> mapEnabledGetters;
+        private Dictionary<string, Action<bool>> mapEnabledSetters;
 
         private string _cursorSize;
         private string _profileName;
+        private bool _isCursorVisible = true;
+        private bool _isBndryEnabled;
+        private bool _isAppchEnabled;
+        private bool _isLowsEnabled;
+        private bool _isHighsEnabled;
 
         public event Action? RequestSwitchProfile;
         public event Action? RequestSaveProfile;
         public Func<string, Task<bool>> RequestConfirmation;
         public event Action? RequestSaveProfileAs;
 
-        public ICommand DecreaseCursorSizeCommand { get; }
-        public ICommand IncreaseCursorSizeCommand { get; }
+        public RadarViewModel RadarViewModel { get; }
+
         public ICommand SwitchProfileCommand { get; }
         public ICommand SaveProfileCommand { get; }
         public ICommand SaveProfileAsCommand { get; }
+        public ICommand DecreaseCursorSizeCommand { get; }
+        public ICommand IncreaseCursorSizeCommand { get; }
+        public ICommand ToggleVideoMapCommand { get; }
 
         public Profile profile { get; set; }
 
@@ -49,15 +60,24 @@ namespace vFalcon.ViewModels
         }
         public string CursorSize
         {
-            get => _cursorSize;
+            get => profile.CursorSize;
             set
             {
-                if (_cursorSize != value)
+                if (profile.CursorSize != value)
                 {
-                    _cursorSize = value;
                     profile.CursorSize = value;
                     OnPropertyChanged();
                 }
+            }
+        }
+
+        public bool IsCursorVisible
+        {
+            get => _isCursorVisible;
+            set
+            {
+                _isCursorVisible = value;
+                OnPropertyChanged();
             }
         }
 
@@ -74,25 +94,113 @@ namespace vFalcon.ViewModels
             }
         }
 
+        public bool IsBndryEnabled
+        {
+            get => profile.BndryEnabled;
+            set
+            {
+                profile.BndryEnabled = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        public bool IsAppchEnabled
+        {
+            get => profile.AppchCntlEnabled;
+            set
+            {
+                profile.AppchCntlEnabled = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsLowsEnabled
+        {
+            get => profile.LowsEnabled;
+            set
+            {
+                profile.LowsEnabled = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsHighsEnabled
+        {
+            get => profile.HighsEnabled;
+            set
+            {
+                profile.HighsEnabled = value;
+                OnPropertyChanged();
+            }
+        }
 
         public MainWindowViewModel(Profile profile)
         {
             StartZuluTimer();
 
             this.profile = profile;
-            SetProfileName();
-            CursorSize = profile.CursorSize ?? "2"; // default
+            RadarViewModel = new RadarViewModel();
+            RadarViewModel.SetCursorVisibility = visible => IsCursorVisible = visible;
 
-            DecreaseCursorSizeCommand = new RelayCommand(DecreaseCursorSize);
-            IncreaseCursorSizeCommand = new RelayCommand(IncreaseCursorSize);
+            SetProfileName();
+            InitializeMapDictionaries();
+            InitializeProfile();
+
             SwitchProfileCommand = new RelayCommand(OnSwitchProfile);
             SaveProfileCommand = new RelayCommand(OnSaveProfile);
             SaveProfileAsCommand = new RelayCommand(OnSaveProfileAs);
+
+            DecreaseCursorSizeCommand = new RelayCommand(DecreaseCursorSize);
+            IncreaseCursorSizeCommand = new RelayCommand(IncreaseCursorSize);
+
+            ToggleVideoMapCommand = new RelayCommand(param => ToggleVideoMap(param?.ToString()));
         }
 
         public void SetProfileName()
         {
             ProfileName = $"vFalcon : {profile.Name}";
+        }
+
+        private void InitializeMapDictionaries()
+        {
+            mapEnabledGetters = new()
+            {
+                ["BOUNDARY"] = () => IsBndryEnabled,
+                ["APPROACH_CONTROL"] = () => IsAppchEnabled,
+                ["LOW_SECTORS"] = () => IsLowsEnabled,
+                ["HIGH_SECTORS"] = () => IsHighsEnabled
+            };
+
+            mapEnabledSetters = new()
+            {
+                ["BOUNDARY"] = val => profile.BndryEnabled = val,
+                ["APPROACH_CONTROL"] = val => profile.AppchCntlEnabled = val,
+                ["LOW_SECTORS"] = val => profile.LowsEnabled = val,
+                ["HIGH_SECTORS"] = val => profile.HighsEnabled = val
+            };
+        }
+
+        private void InitializeProfile()
+        {
+            CursorSize = profile.CursorSize ?? "2"; // default
+            IsBndryEnabled = profile.BndryEnabled;
+            IsAppchEnabled = profile.AppchCntlEnabled;
+            IsLowsEnabled = profile.LowsEnabled;
+            IsHighsEnabled = profile.HighsEnabled;
+            var mapsToLoad = new (string Key, bool Enabled)[]
+            {
+                    ("BOUNDARY", IsBndryEnabled),
+                    ("APPROACH_CONTROL", IsAppchEnabled),
+                    ("LOW_SECTORS", IsLowsEnabled),
+                    ("HIGH_SECTORS", IsHighsEnabled)
+            };
+
+            foreach (var (key, enabled) in mapsToLoad)
+            {
+                if (enabled)
+                    ToggleVideoMap(key);
+            }
         }
 
         private void StartZuluTimer()
@@ -155,6 +263,22 @@ namespace vFalcon.ViewModels
         {
             RequestSaveProfileAs?.Invoke();
             SetProfileName();
+        }
+
+        private void ToggleVideoMap(string? mapKey)
+        {
+            if (string.IsNullOrEmpty(mapKey) || !mapEnabledGetters.ContainsKey(mapKey)) return;
+
+            bool isEnabled = mapEnabledGetters[mapKey]();
+
+            var file = Loader.LoadFile($"VideoMaps/{profile.ArtccId}", $"{mapKey}.geojson");
+            if (isEnabled)
+                RadarViewModel.LoadVideoMap(file, "#00FF00");
+            else
+                RadarViewModel.UnloadVideoMap(file);
+
+            mapEnabledSetters[mapKey](isEnabled);
+            RadarViewModel.InvalidateCanvas?.Invoke();
         }
     }
 }

@@ -21,6 +21,7 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="2"/>
                 <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="2"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
@@ -39,6 +40,28 @@
                     Background="{StaticResource MenuClosedButtonBackground}"
                     Style="{StaticResource ToolbarButton}"
                     Click="CursorButtonClick"/>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <Button
+                    x:Name="MapsButton"
+                    Content="MAPS"
+                    Background="{StaticResource MenuClosedButtonBackground}"
+                    Style="{StaticResource ToolbarButton}"
+                    Click="MapsButtonClick"/>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="4" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <Button
+                    x:Name="RangeButton"
+                    Background="{StaticResource Black}"
+                    Style="{StaticResource ToolbarButton}">
+                    <TextBlock TextWrapping="Wrap" TextAlignment="Center">
+                        <Run Text="RANGE"/>
+                        <LineBreak/>
+                        <Run Text="100"/>
+                    </TextBlock>
+                </Button>
             </StackPanel>
         </Grid>
     </Border>

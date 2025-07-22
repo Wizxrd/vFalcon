@@ -12,7 +12,7 @@
     xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
     Icon="pack://application:,,,/Resources/Images/vFalcon.png"
     Title="{Binding ProfileName}"
-    MinWidth="150" Width="1280" MinHeight="150" Height="720"
+    MinWidth="300" Width="1280" MinHeight="300" Height="720"
     WindowStartupLocation="CenterScreen"
     FontFamily="Consolas" FontSize="12" 
     Foreground="{StaticResource White}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
@@ -36,22 +36,19 @@
     <Border>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <ContentControl x:Name="ToolbarRegion" Grid.Row="0"/>
-            <Border 
-                Grid.Row="1"
-                Background="Black">
+            <Border Grid.Row="0" Background="Black">
                 <Grid>
-                    <views:RadarView/>
+                    <views:RadarView DataContext="{Binding RadarViewModel}"/>
+                    <ContentControl x:Name="ToolbarRegion" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
                     <Border
                         Background="Black"
                         BorderBrush="#797979"
                         BorderThickness="1"
                         VerticalAlignment="Top"
                         HorizontalAlignment="Left"
-                        Margin="30,15,0,0">
+                        Margin="30,100,0,0">
                         <TextBlock
                             x:Name="ZuluTextBlock"
                             Text="{Binding ZuluTime}"
@@ -63,15 +60,15 @@
                             HorizontalAlignment="Right">
                         </TextBlock>
                     </Border>
-                    <Button
-                        x:Name="ToolbarButton"
-                        Content="TOOLBAR"
-                        HorizontalAlignment="Left"
-                        Margin="30,0,0,0"
-                        Background="{StaticResource MenuClosedButtonBackground}"
-                        Style="{StaticResource ToolbarButton}"
-                        Click="ToolbarButtonClick">
-                    </Button>
+                    <StackPanel Margin="30,0,0,0" Orientation="Horizontal">
+                        <Button Style="{StaticResource TearoffButton}"/>
+                        <Button
+                            x:Name="CursorButton"
+                            Content="TOOLBAR"
+                            Background="{StaticResource MenuClosedButtonBackground}"
+                            Style="{StaticResource ToolbarButton}"
+                            Click="ToolbarButtonClick"/>
+                    </StackPanel>
                 </Grid>
             </Border>
         </Grid>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using vFalcon.Helpers;
 using vFalcon.ViewModels;
 
 namespace vFalcon.Views
@@ -24,7 +25,20 @@ namespace vFalcon.Views
         public RadarView()
         {
             InitializeComponent();
-            DataContext = new RadarViewModel();
+            Loaded += RadarViewLoaded;
+        }
+
+        private void RadarViewLoaded(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is RadarViewModel radarVM)
+            {
+                radarVM.InvalidateCanvas = () => RadarCanvas.InvalidateVisual();
+
+                if (Application.Current.MainWindow?.DataContext is MainWindowViewModel mainVM)
+                {
+                    radarVM.SetCursorVisibility = visible => mainVM.IsCursorVisible = visible;
+                }
+            }
         }
     }
 }
