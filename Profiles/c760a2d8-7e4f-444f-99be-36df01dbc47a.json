@@ -11,6 +11,6 @@
   "BndryEnabled": true,
   "AppchCntlEnabled": false,
   "LowsEnabled": false,
-  "HighsEnabled": false,
-  "CursorSize": "2"
+  "HighsEnabled": true,
+  "CursorSize": "1"
 }

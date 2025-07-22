@@ -85,7 +85,7 @@ namespace vFalcon.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/vFalcon;V1.0.0.0;component/views/mastertoolbarview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/vFalcon;component/views/mastertoolbarview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\MasterToolbarView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -21,6 +21,9 @@ namespace vFalcon.ViewModels
 
         public Action? InvalidateCanvas;
         public Action<bool>? SetCursorVisibility { get; set; }
+        public Action? CaptureMouse { get; set; }
+        public Action? ReleaseMouse { get; set; }
+        public bool ZoomOnMouse { get; set; } = false;
 
         public ICommand PaintSurfaceCommand { get; }
         public ICommand MouseDownCommand { get; }
@@ -59,6 +62,7 @@ namespace vFalcon.ViewModels
             if (parameter is SKMouseEventArgs e && e.Button == "Right")
             {
                 SetCursorVisibility?.Invoke(false); // hide
+                CaptureMouse?.Invoke();
                 _lastMousePosition = e.Location;
                 InvalidateCanvas?.Invoke();
             }
@@ -83,6 +87,7 @@ namespace vFalcon.ViewModels
             if (parameter is SKMouseEventArgs e && e.Button == "Right")
             {
                 SetCursorVisibility?.Invoke(true); // hide
+                ReleaseMouse?.Invoke();
                 _lastMousePosition = null;
                 InvalidateCanvas?.Invoke();
             }
@@ -93,19 +98,18 @@ namespace vFalcon.ViewModels
             if (parameter is SKMouseWheelEventArgs e)
             {
                 float zoomFactor = e.Delta > 0 ? 1.1f : 0.9f;
-
-                var mouse = e.Location;
+                SKPoint referencePoint = ZoomOnMouse ? e.Location : new SKPoint(_state.Width / 2f, _state.Height / 2f);
 
                 var before = new SKPoint(
-                    (mouse.X - _state.PanOffset.X - _state.Width / 2f) / (float)_state.Scale,
-                    (mouse.Y - _state.PanOffset.Y - _state.Height / 2f) / (float)_state.Scale
+                    (referencePoint.X - _state.PanOffset.X - _state.Width / 2f) / (float)_state.Scale,
+                    (referencePoint.Y - _state.PanOffset.Y - _state.Height / 2f) / (float)_state.Scale
                 );
 
                 _state.Scale *= zoomFactor;
 
                 var after = new SKPoint(
-                    (mouse.X - _state.PanOffset.X - _state.Width / 2f) / (float)_state.Scale,
-                    (mouse.Y - _state.PanOffset.Y - _state.Height / 2f) / (float)_state.Scale
+                    (referencePoint.X - _state.PanOffset.X - _state.Width / 2f) / (float)_state.Scale,
+                    (referencePoint.Y - _state.PanOffset.Y - _state.Height / 2f) / (float)_state.Scale
                 );
 
                 var diff = after - before;
@@ -114,8 +118,9 @@ namespace vFalcon.ViewModels
                     _state.PanOffset.X + diff.X * (float)_state.Scale,
                     _state.PanOffset.Y + diff.Y * (float)_state.Scale
                 );
+
+                InvalidateCanvas?.Invoke();
             }
-            InvalidateCanvas?.Invoke();
         }
 
         private void OnPaintSurface(object parameter)

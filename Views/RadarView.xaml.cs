@@ -32,6 +32,8 @@ namespace vFalcon.Views
         {
             if (DataContext is RadarViewModel radarVM)
             {
+                radarVM.CaptureMouse = () => RadarCanvas.CaptureMouse();
+                radarVM.ReleaseMouse = () => RadarCanvas.ReleaseMouseCapture();
                 radarVM.InvalidateCanvas = () => RadarCanvas.InvalidateVisual();
 
                 if (Application.Current.MainWindow?.DataContext is MainWindowViewModel mainVM)

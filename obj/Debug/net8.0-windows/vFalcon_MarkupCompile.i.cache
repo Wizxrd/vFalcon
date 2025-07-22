@@ -1,5 +1,5 @@
 ﻿vFalcon
-1.0.0.0
+0.0.3.0
 
 winexe
 C#
@@ -16,5 +16,5 @@ D:\vFalcon\App.xaml
 209682296366
 Resources\Dictionaries\Colors.xaml;Resources\Dictionaries\Controls.xaml;Resources\Dictionaries\Styles.xaml;Views\ConfirmView.xaml;Views\CursorToolbarView.xaml;Views\LoadProfileView.xaml;Views\MainWindowView.xaml;Views\MapsToolbarView.xaml;Views\MasterToolbarView.xaml;Views\NewProfileView.xaml;Views\ProfileToolbarView.xaml;Views\RadarView.xaml;Views\SaveProfileAsView.xaml;
 
-True
+False
 
