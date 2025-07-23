@@ -1,0 +1,277 @@
+{
+  "id": "ZOB",
+  "type": "Artcc",
+  "name": "Cleveland ARTCC",
+  "positions": [
+    {
+      "name": "Bellaire 66",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_66_CTR",
+      "frequency": 125425000
+    },
+    {
+      "name": "Detroit 28",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_28_CTR",
+      "frequency": 135725000
+    },
+    {
+      "name": "Geneseo 37",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_37_CTR",
+      "frequency": 128025000
+    },
+    {
+      "name": "Indian Head 53",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_53_CTR",
+      "frequency": 124400000
+    },
+    {
+      "name": "Pandora 02",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_02_CTR",
+      "frequency": 128625000
+    },
+    {
+      "name": "Ravenna 48",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_48_CTR",
+      "frequency": 119875000
+    },
+    {
+      "name": "Warren 77",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_77_CTR",
+      "frequency": 134125000
+    },
+    {
+      "name": "Allegheny 68",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_68_CTR",
+      "frequency": 133075000
+    },
+    {
+      "name": "Bluffton 47",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_47_CTR",
+      "frequency": 119325000
+    },
+    {
+      "name": "Bradford 73",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_73_CTR",
+      "frequency": 124325000
+    },
+    {
+      "name": "Brecksville 57",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_57_CTR",
+      "frequency": 125875000
+    },
+    {
+      "name": "Briggs 06",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_06_CTR",
+      "frequency": 120600000
+    },
+    {
+      "name": "Buffalo 33",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_33_CTR",
+      "frequency": 125200000
+    },
+    {
+      "name": "Carleton 08",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_08_CTR",
+      "frequency": 127900000
+    },
+    {
+      "name": "Clarion 50",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_50_CTR",
+      "frequency": 126725000
+    },
+    {
+      "name": "Clarksburg 69",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_69_CTR",
+      "frequency": 135175000
+    },
+    {
+      "name": "Dansville 36",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_36_CTR",
+      "frequency": 118625000
+    },
+    {
+      "name": "Dresden 20",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_20_CTR",
+      "frequency": 132250000
+    },
+    {
+      "name": "Dunkirk 70",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_70_CTR",
+      "frequency": 127075000
+    },
+    {
+      "name": "Flint 16",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_16_CTR",
+      "frequency": 127700000
+    },
+    {
+      "name": "Franklin 59",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_59_CTR",
+      "frequency": 119725000
+    },
+    {
+      "name": "Gamble 19",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_19_CTR",
+      "frequency": 126525000
+    },
+    {
+      "name": "Geauga 45",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_45_CTR",
+      "frequency": 120325000
+    },
+    {
+      "name": "Hudson 27",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_27_CTR",
+      "frequency": 134775000
+    },
+    {
+      "name": "Imperial 67",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_67_CTR",
+      "frequency": 132125000
+    },
+    {
+      "name": "Jackson 14",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_14_CTR",
+      "frequency": 120450000
+    },
+    {
+      "name": "Jamestown 79",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_79_CTR",
+      "frequency": 132925000
+    },
+    {
+      "name": "Keystone 64",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_64_CTR",
+      "frequency": 134475000
+    },
+    {
+      "name": "Lake 26",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_26_CTR",
+      "frequency": 120075000
+    },
+    {
+      "name": "Lansing 12",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_12_CTR",
+      "frequency": 126750000
+    },
+    {
+      "name": "Litchfield 15",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_15_CTR",
+      "frequency": 134650000
+    },
+    {
+      "name": "Lorain 49",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_49_CTR",
+      "frequency": 133375000
+    },
+    {
+      "name": "Mansfield 04",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_04_CTR",
+      "frequency": 134900000
+    },
+    {
+      "name": "Marblehead 46",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_46_CTR",
+      "frequency": 135375000
+    },
+    {
+      "name": "Marion 03",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_03_CTR",
+      "frequency": 135100000
+    },
+    {
+      "name": "Morgantown 55",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_55_CTR",
+      "frequency": 126950000
+    },
+    {
+      "name": "Niagara 38",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_38_CTR",
+      "frequency": 120625000
+    },
+    {
+      "name": "Palmer 58",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_58_CTR",
+      "frequency": 121075000
+    },
+    {
+      "name": "Peck 18",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_18_CTR",
+      "frequency": 133875000
+    },
+    {
+      "name": "Rochester 31",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_31_CTR",
+      "frequency": 127475000
+    },
+    {
+      "name": "Sandusky 07",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_07_CTR",
+      "frequency": 127675000
+    },
+    {
+      "name": "Steuben 39",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_39_CTR",
+      "frequency": 119375000
+    },
+    {
+      "name": "Wayne 29",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_29_CTR",
+      "frequency": 133525000
+    },
+    {
+      "name": "Windsor 21",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_21_CTR",
+      "frequency": 132450000
+    },
+    {
+      "name": "Youngstown 75",
+      "radioName": "Cleveland Center",
+      "callsign": "CLE_75_CTR",
+      "frequency": 120775000
+    }
+  ]
+}

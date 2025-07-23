@@ -64,7 +64,7 @@ namespace vFalcon.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/vFalcon;component/views/saveprofileasview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/vFalcon;V0.0.4.0;component/views/saveprofileasview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\SaveProfileAsView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

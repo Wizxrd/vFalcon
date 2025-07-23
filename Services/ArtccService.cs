@@ -1,7 +1,9 @@
-﻿using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
-using System.IO;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
+using System.IO;
+using vFalcon.Helpers;
+using vFalcon.Models;
 using vFalcon.Services.Interfaces;
 
 namespace vFalcon.Services
@@ -37,6 +39,28 @@ namespace vFalcon.Services
                 "Seattle ARTCC - ZSE",
                 "Washington ARTCC - ZDC"
             };
+        }
+
+        public IEnumerable<string> GetArtccSectors(string artccId)
+        {
+            var sectors = new List<string>();
+            string json = File.ReadAllText(Loader.LoadFile($"ARTCCs/{artccId}", $"{artccId}.json"));
+            var root = JObject.Parse(json);
+            var positions = root["positions"] as JArray;
+
+            if (positions == null)
+                return Enumerable.Empty<string>();
+
+            foreach (var position in positions)
+            {
+                string name = position["name"]?.ToString() ?? "Unknown";
+                long frequencyHz = position["frequency"]?.ToObject<long>() ?? 0;
+                double frequencyMHz = frequencyHz / 1_000_000.0;
+
+                string display = $"{name} - {frequencyMHz:F3}";
+                sectors.Add(display);
+            }
+            return sectors;
         }
 
         public void BuildArtccFile(string inputPath, string outputPath)

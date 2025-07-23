@@ -6,5 +6,6 @@ namespace vFalcon.Services.Interfaces
     {
         IEnumerable<string> GetArtccs();
         void BuildArtccFile(string inputPath, string outputPath);
+        IEnumerable<string> GetArtccSectors(string artccId);
     }
 }

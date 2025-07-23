@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 D:\vFalcon\App.xaml
-13-1597113035
+141636573621
 1-241069421
-46825542244
+54-1282979289
 209682296366
-Resources\Dictionaries\Colors.xaml;Resources\Dictionaries\Controls.xaml;Resources\Dictionaries\Styles.xaml;Views\ConfirmView.xaml;Views\CursorToolbarView.xaml;Views\LoadProfileView.xaml;Views\MainWindowView.xaml;Views\MapsToolbarView.xaml;Views\MasterToolbarView.xaml;Views\NewProfileView.xaml;Views\ProfileToolbarView.xaml;Views\RadarView.xaml;Views\SaveProfileAsView.xaml;
+Resources\Dictionaries\Colors.xaml;Resources\Dictionaries\Controls.xaml;Resources\Dictionaries\Styles.xaml;Views\ActivateSectorView.xaml;Views\ConfirmView.xaml;Views\CursorToolbarView.xaml;Views\EramView.xaml;Views\LoadProfileView.xaml;Views\MapsToolbarView.xaml;Views\MasterToolbarView.xaml;Views\NewProfileView.xaml;Views\ProfileToolbarView.xaml;Views\RadarView.xaml;Views\SaveProfileAsView.xaml;
 
 False
 

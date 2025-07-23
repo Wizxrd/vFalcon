@@ -22,8 +22,10 @@
                 <ColumnDefinition Width="2"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="2"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+            <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
                 <Button
                     x:Name="ProfileButton"
@@ -31,15 +33,6 @@
                     Background="{StaticResource MenuClosedButtonBackground}"
                     Style="{StaticResource ToolbarButton}"
                     Click="ProfileButtonClick"/>
-            </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <Button
-                    x:Name="CursorButton"
-                    Content="CURSOR"
-                    Background="{StaticResource MenuClosedButtonBackground}"
-                    Style="{StaticResource ToolbarButton}"
-                    Click="CursorButtonClick"/>
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
@@ -62,6 +55,24 @@
                         <Run Text="100"/>
                     </TextBlock>
                 </Button>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                    x:Name="ActivateButton"
+                    Content="{Binding ActivateButtonLabel}"
+                    Style="{StaticResource ToolbarToggleButton}"
+                    Command="{Binding ToggleSectorCommand}"
+                    CommandParameter="{Binding ElementName=ActivateButton}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <Button
+                    x:Name="CursorButton"
+                    Content="CURSOR"
+                    Background="{StaticResource MenuClosedButtonBackground}"
+                    Style="{StaticResource ToolbarButton}"
+                    Click="CursorButtonClick"/>
             </StackPanel>
         </Grid>
     </Border>

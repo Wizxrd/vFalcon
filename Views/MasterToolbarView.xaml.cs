@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -21,8 +22,9 @@ namespace vFalcon.Views
     /// </summary>
     public partial class MasterToolbarView : UserControl
     {
-        public event Action? CursorButtonClicked;
         public event Action? ProfileButtonClicked;
+        public event Action<ToggleButton>? ActivateButtonClicked;
+        public event Action? CursorButtonClicked;
         public event Action? MapsButtonClicked;
         public MasterToolbarView()
         {
@@ -32,6 +34,14 @@ namespace vFalcon.Views
         private void ProfileButtonClick(object sender, RoutedEventArgs e)
         {
             ProfileButtonClicked?.Invoke();
+        }
+
+        private void ActivateButtonClick(object sender, RoutedEventArgs e)
+        {
+            if (sender is ToggleButton button)
+            {
+                ActivateButtonClicked?.Invoke(button);
+            }
         }
 
         private void CursorButtonClick(object sender, RoutedEventArgs e)

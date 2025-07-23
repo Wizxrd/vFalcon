@@ -1,11 +1,118 @@
-7/22/2025 3:46:53 | DEBUG | VideoMap.Load | Loaded: "BOUNDARY.geojson"
-7/22/2025 3:46:53 | DEBUG | VideoMap.Load | Loaded: "APPROACH_CONTROL.geojson"
-7/22/2025 3:46:53 | DEBUG | VideoMap.Load | Loaded: "LOW_SECTORS.geojson"
-7/22/2025 3:46:53 | DEBUG | VideoMap.Load | Loaded: "HIGH_SECTORS.geojson"
-7/22/2025 3:46:56 | DEBUG | VideoMap.Load | Unloaded: "APPROACH_CONTROL.geojson"
-7/22/2025 3:46:56 | DEBUG | VideoMap.Load | Unloaded: "BOUNDARY.geojson"
-7/22/2025 3:46:56 | DEBUG | VideoMap.Load | Unloaded: "LOW_SECTORS.geojson"
-7/22/2025 3:46:57 | DEBUG | VideoMap.Load | Unloaded: "HIGH_SECTORS.geojson"
-7/22/2025 3:46:58 | DEBUG | VideoMap.Load | Loaded: "HIGH_SECTORS.geojson"
-7/22/2025 3:46:58 | DEBUG | VideoMap.Load | Loaded: "BOUNDARY.geojson"
-7/22/2025 3:47:04 | DEBUG | ProfileService.Save | Saved profile: "ZOB"
+7/22/2025 23:43:15 | DEBUG | ProfileService.Delete | Deleted profile: "ZAU"
+7/22/2025 23:43:18 | DEBUG | ProfileService.Delete | Deleted profile: "ZOB"
+7/22/2025 23:43:19 | DEBUG | ProfileService.Delete | Deleted profile: "ZOB"
+7/22/2025 23:43:20 | DEBUG | ProfileService.Delete | Deleted profile: "zbw"
+7/22/2025 23:43:27 | DEBUG | ProfileService.New | Created Profile: "ZOB"
+7/22/2025 23:43:28 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:43:28 | DEBUG | VideoMap.Load | Loaded: "BOUNDARY.geojson"
+7/22/2025 23:43:34 | DEBUG | ProfileService.New | Created Profile: "ZAB"
+7/22/2025 23:43:34 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:43:34 | DEBUG | VideoMap.Load | Loaded: "BOUNDARY.geojson"
+7/22/2025 23:43:44 | DEBUG | ProfileService.New | Created Profile: "ZBW"
+7/22/2025 23:43:44 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:43:44 | DEBUG | VideoMap.Load | Loaded: "BOUNDARY.geojson"
+7/22/2025 23:43:58 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:44:04 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:44:14 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:44:28 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:44:34 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:44:44 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:44:58 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:45:04 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:45:09 | DEBUG | ProfileService.Rename | Copied profile: "ZBW" as: "ZBW - Copy"
+7/22/2025 23:45:14 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:45:18 | DEBUG | ProfileService.Delete | Deleted profile: "ZBW - Copy"
+7/22/2025 23:45:28 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:45:34 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:45:36 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:45:36 | DEBUG | VideoMap.Load | Loaded: "BOUNDARY.geojson"
+7/22/2025 23:45:44 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:45:58 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:46:04 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:46:06 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:46:15 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:46:28 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:46:34 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:46:36 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:46:44 | DEBUG | VideoMap.Load | Unloaded: "BOUNDARY.geojson"
+7/22/2025 23:46:44 | DEBUG | VideoMap.Load | Loaded: "HIGH_SECTORS.geojson"
+7/22/2025 23:46:45 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:46:58 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:47:04 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:47:06 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:47:15 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:47:28 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:47:34 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:47:36 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:47:45 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:47:58 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:48:04 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:48:06 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:48:15 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:48:28 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:48:35 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:48:36 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:48:45 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:48:58 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:49:05 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:49:06 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:49:15 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:49:28 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:49:35 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:49:36 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:49:45 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:49:58 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:50:05 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:50:06 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:50:15 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:50:28 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:50:31 | DEBUG | ProfileService.New | Created Profile: "ZAU"
+7/22/2025 23:50:31 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:50:31 | DEBUG | VideoMap.Load | Loaded: "BOUNDARY.geojson"
+7/22/2025 23:50:35 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:50:36 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:50:37 | DEBUG | VideoMap.Load | Loaded: "HIGH_SECTORS.geojson"
+7/22/2025 23:50:37 | DEBUG | VideoMap.Load | Unloaded: "BOUNDARY.geojson"
+7/22/2025 23:50:38 | DEBUG | VideoMap.Load | Loaded: "APPROACH_CONTROL.geojson"
+7/22/2025 23:50:44 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:50:46 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:50:58 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:51:01 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:51:05 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:51:06 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:51:16 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:51:28 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:51:31 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:51:35 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:51:36 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:51:46 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:51:58 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:52:01 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:52:05 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:52:06 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:52:16 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:52:28 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:52:31 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:52:35 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:52:37 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:52:46 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:52:58 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:53:01 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:53:06 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:53:07 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:53:16 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:53:28 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:53:31 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:53:36 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:53:37 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:53:46 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:53:58 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:54:01 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:54:06 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:54:07 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:54:16 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:54:29 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:54:31 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:54:36 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:54:37 | DEBUG | RefreshAsync | Refreshing
+7/22/2025 23:54:46 | DEBUG | RefreshAsync | Refreshing

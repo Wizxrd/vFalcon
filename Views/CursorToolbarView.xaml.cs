@@ -33,7 +33,7 @@ namespace vFalcon.Views
 
         private void SizeButtonPreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (DataContext is MainWindowViewModel vm)
+            if (DataContext is EramViewModel vm)
             {
                 if (e.ChangedButton == MouseButton.Left)
                     vm.DecreaseCursorSizeCommand.Execute(null);

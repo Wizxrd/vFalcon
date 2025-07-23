@@ -1,0 +1,307 @@
+{
+  "id": "ZTL",
+  "type": "Artcc",
+  "name": "Atlanta ARTCC",
+  "positions": [
+    {
+      "name": "03 Gadsden High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 128725000
+    },
+    {
+      "name": "10 LaGrange High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 125575000
+    },
+    {
+      "name": "20 Dublin High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 126425000
+    },
+    {
+      "name": "32 Spartanburg High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 125625000
+    },
+    {
+      "name": "37 Crossville High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 126675000
+    },
+    {
+      "name": "43 Pulaski High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 132975000
+    },
+    {
+      "name": "49 Logen Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 121350000
+    },
+    {
+      "name": "50 Lanier High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 124375000
+    },
+    {
+      "name": "ZTL GUARD Combined",
+      "radioName": "Atlanta Guard",
+      "callsign": "ATL_G_CTR",
+      "frequency": 121500000
+    },
+    {
+      "name": "TMAC",
+      "radioName": "Atlanta Center",
+      "callsign": "ZTL_TMU",
+      "frequency": 125550000
+    },
+    {
+      "name": "TMEC",
+      "radioName": "Atlanta Center ",
+      "callsign": "ZTL_TMU",
+      "frequency": 125550000
+    },
+    {
+      "name": "01 Rome Ultra Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 124500000
+    },
+    {
+      "name": "02 Gunter Ultra High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 126825000
+    },
+    {
+      "name": "04 West Departure Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 134950000
+    },
+    {
+      "name": "05 Dalas Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 132050000
+    },
+    {
+      "name": "06 Rocket High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 133175000
+    },
+    {
+      "name": "08 Martin Lake Ultra High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 125875000
+    },
+    {
+      "name": "09 Tiroe Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 120450000
+    },
+    {
+      "name": "11 Monroeville High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 128025000
+    },
+    {
+      "name": "12 Birmingham Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 127300000
+    },
+    {
+      "name": "13 Montgomery Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 120550000
+    },
+    {
+      "name": "14 Maxwell Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 132250000
+    },
+    {
+      "name": "15 Baden Ultra-High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 126775000
+    },
+    {
+      "name": "16 East Departure Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 134200000
+    },
+    {
+      "name": "18 Commerce Ultra Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 134800000
+    },
+    {
+      "name": "19 Sinca Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 123950000
+    },
+    {
+      "name": "21 South Departure Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 134500000
+    },
+    {
+      "name": "22 Macon High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 119375000
+    },
+    {
+      "name": "23 Clark Hill Ultra High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 124325000
+    },
+    {
+      "name": "24 Augusta Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 128100000
+    },
+    {
+      "name": "27 Hampton Ultra High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 125825000
+    },
+    {
+      "name": "28 High Rock Ultra High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 125025000
+    },
+    {
+      "name": "29 Leeon Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 128800000
+    },
+    {
+      "name": "30 Locas Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 133150000
+    },
+    {
+      "name": "31 Unarm Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 135350000
+    },
+    {
+      "name": "33 Charlotte High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 124425000
+    },
+    {
+      "name": "34 Georgia High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 120425000
+    },
+    {
+      "name": "36 Allatoona Ultra High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 124875000
+    },
+    {
+      "name": "38 North Departure Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 133100000
+    },
+    {
+      "name": "39 Burne High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 125925000
+    },
+    {
+      "name": "40 Blue Ridge Ultra-High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 134075000
+    },
+    {
+      "name": "41 Hinch Mountain Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 133600000
+    },
+    {
+      "name": "42 Salem High",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 120725000
+    },
+    {
+      "name": "44 Shine Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 132625000
+    },
+    {
+      "name": "45 Bristol Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 127850000
+    },
+    {
+      "name": "47 Moped Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 134550000
+    },
+    {
+      "name": "48 Wilkes Ultra Low",
+      "radioName": "Atlanta Center",
+      "callsign": "ATL_CTR",
+      "frequency": 125150000
+    },
+    {
+      "name": "ZTL HKY Clearance",
+      "radioName": "ZTL HKY Clearance",
+      "callsign": "ATL_FD_CTR",
+      "frequency": 124250000
+    },
+    {
+      "name": "ZTL/A80 Line",
+      "radioName": "Shoutline",
+      "callsign": "ATL_L_CTR",
+      "frequency": 133305000
+    },
+    {
+      "name": "ZTL/ZJX Line",
+      "radioName": "ZTL",
+      "callsign": "ATL_L_CTR",
+      "frequency": 133300000
+    }
+  ]
+}

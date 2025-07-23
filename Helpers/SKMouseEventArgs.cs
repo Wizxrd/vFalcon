@@ -13,17 +13,4 @@ namespace vFalcon.Helpers
             Location = location;
         }
     }
-
-
-    public class SKMouseWheelEventArgs
-    {
-        public int Delta { get; }
-        public SKPoint Location { get; }
-
-        public SKMouseWheelEventArgs(int delta, SKPoint location)
-        {
-            Delta = delta;
-            Location = location;
-        }
-    }
 }

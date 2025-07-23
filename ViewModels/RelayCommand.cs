@@ -5,18 +5,12 @@ namespace vFalcon.ViewModels
 {
     public class RelayCommand : ICommand
     {
-        private readonly Action<object> execute;
-        private readonly Func<object, bool> canExecute;
+        private readonly Action<object?> execute;
+        private readonly Func<object?, bool> canExecute;
 
-        private event EventHandler? _canExecuteChanged;
+        public event EventHandler? CanExecuteChanged;
 
-        public event EventHandler? CanExecuteChanged
-        {
-            add => _canExecuteChanged += value;
-            remove => _canExecuteChanged -= value;
-        }
-
-        public RelayCommand(Action<object> execute, Func<object, bool>? canExecute = null)
+        public RelayCommand(Action<object?> execute, Func<object?, bool>? canExecute = null)
         {
             this.execute = execute;
             this.canExecute = canExecute ?? (_ => true);
@@ -30,7 +24,30 @@ namespace vFalcon.ViewModels
 
         public bool CanExecute(object? parameter) => canExecute(parameter);
         public void Execute(object? parameter) => execute(parameter);
+        public void RaiseCanExecuteChanged() => CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+    }
 
-        public void RaiseCanExecuteChanged() => _canExecuteChanged?.Invoke(this, EventArgs.Empty);
+    public class RelayCommand<T> : ICommand
+    {
+        private readonly Action<T> execute;
+        private readonly Predicate<T>? canExecute;
+
+        public RelayCommand(Action<T> execute, Predicate<T>? canExecute = null)
+        {
+            this.execute = execute;
+            this.canExecute = canExecute;
+        }
+
+        public bool CanExecute(object? parameter) =>
+            parameter is T t && (canExecute?.Invoke(t) ?? true);
+
+        public void Execute(object? parameter)
+        {
+            if (parameter is T t)
+                execute(t);
+        }
+
+        public event EventHandler? CanExecuteChanged;
+        public void RaiseCanExecuteChanged() => CanExecuteChanged?.Invoke(this, EventArgs.Empty);
     }
 }

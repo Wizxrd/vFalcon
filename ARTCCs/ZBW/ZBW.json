@@ -1,0 +1,193 @@
+{
+  "id": "ZBW",
+  "type": "Artcc",
+  "name": "Boston ARTCC",
+  "positions": [
+    {
+      "name": "Concord 37",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 134700000
+    },
+    {
+      "name": "Albany 22",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 121350000
+    },
+    {
+      "name": "Athens 38",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 135325000
+    },
+    {
+      "name": "Augusta 02",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 134950000
+    },
+    {
+      "name": "BOSOX 47",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 133425000
+    },
+    {
+      "name": "Boston 46",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 126225000
+    },
+    {
+      "name": "Cambridge 39",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 128325000
+    },
+    {
+      "name": "CANAN 21",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 132650000
+    },
+    {
+      "name": "Cape 18",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 128750000
+    },
+    {
+      "name": "Chester 07",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 127650000
+    },
+    {
+      "name": "Clipper 32",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 135800000
+    },
+    {
+      "name": "Danbury 19",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 134000000
+    },
+    {
+      "name": "Delancey 24",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 127375000
+    },
+    {
+      "name": "Gardner 36",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 123750000
+    },
+    {
+      "name": "Hampton 31",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 124525000
+    },
+    {
+      "name": "Hancock 23",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 133250000
+    },
+    {
+      "name": "Kingston 20",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 125575000
+    },
+    {
+      "name": "Millinocket 01",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 128050000
+    },
+    {
+      "name": "Montpelier 52",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 135700000
+    },
+    {
+      "name": "Nantucket 17",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 133450000
+    },
+    {
+      "name": "PARSO 16",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 128200000
+    },
+    {
+      "name": "Pawling 06",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 128100000
+    },
+    {
+      "name": "Plattsburgh 53",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 118825000
+    },
+    {
+      "name": "Poker Center",
+      "radioName": "Boston Poker Center",
+      "callsign": "BOS_PK_CTR",
+      "frequency": 122400000
+    },
+    {
+      "name": "Providence 34",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 124850000
+    },
+    {
+      "name": "Rockdale 10",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 124125000
+    },
+    {
+      "name": "Southie 49",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 132300000
+    },
+    {
+      "name": "Stewart 05",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 134300000
+    },
+    {
+      "name": "SURRY 15",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 124250000
+    },
+    {
+      "name": "Utica 09",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 123875000
+    },
+    {
+      "name": "Watertown 08",
+      "radioName": "Boston Center",
+      "callsign": "BOS_CTR",
+      "frequency": 135250000
+    }
+  ]
+}

@@ -12,8 +12,8 @@ namespace vFalcon.Views
         {
             InitializeComponent();
             var viewModel = new NewProfileViewModel();
-            viewModel.Close += () => this.Close();
             DataContext = viewModel;
+            viewModel.Close += () => this.Close();
         }
     }
 }

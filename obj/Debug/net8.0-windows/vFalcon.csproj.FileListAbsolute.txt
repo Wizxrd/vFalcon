@@ -3,7 +3,6 @@ D:\vFalcon\obj\Debug\net8.0-windows\Resources\Dictionaries\Colors.baml
 D:\vFalcon\obj\Debug\net8.0-windows\Resources\Dictionaries\Controls.baml
 D:\vFalcon\obj\Debug\net8.0-windows\Views\ConfirmView.g.cs
 D:\vFalcon\obj\Debug\net8.0-windows\Views\LoadProfileView.g.cs
-D:\vFalcon\obj\Debug\net8.0-windows\Views\MainWindowView.g.cs
 D:\vFalcon\obj\Debug\net8.0-windows\Views\NewProfileView.g.cs
 D:\vFalcon\obj\Debug\net8.0-windows\App.g.cs
 D:\vFalcon\obj\Debug\net8.0-windows\vFalcon_Content.g.cs
@@ -29,7 +28,6 @@ D:\vFalcon\bin\Debug\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
 D:\vFalcon\obj\Debug\net8.0-windows\App.baml
 D:\vFalcon\obj\Debug\net8.0-windows\Views\ConfirmView.baml
 D:\vFalcon\obj\Debug\net8.0-windows\Views\LoadProfileView.baml
-D:\vFalcon\obj\Debug\net8.0-windows\Views\MainWindowView.baml
 D:\vFalcon\obj\Debug\net8.0-windows\Views\NewProfileView.baml
 D:\vFalcon\obj\Debug\net8.0-windows\vFalcon.g.resources
 D:\vFalcon\obj\Debug\net8.0-windows\vFalcon.GeneratedMSBuildEditorConfig.editorconfig
@@ -59,3 +57,7 @@ D:\vFalcon\bin\Debug\net8.0-windows\GeoJSON.Net.dll
 D:\vFalcon\obj\Debug\net8.0-windows\vFalcon.csproj.Up2Date
 D:\vFalcon\obj\Debug\net8.0-windows\Views\MapsToolbarView.g.cs
 D:\vFalcon\obj\Debug\net8.0-windows\Views\MapsToolbarView.baml
+D:\vFalcon\obj\Debug\net8.0-windows\Views\EramView.g.cs
+D:\vFalcon\obj\Debug\net8.0-windows\Views\EramView.baml
+D:\vFalcon\obj\Debug\net8.0-windows\Views\ActivateSectorView.g.cs
+D:\vFalcon\obj\Debug\net8.0-windows\Views\ActivateSectorView.baml

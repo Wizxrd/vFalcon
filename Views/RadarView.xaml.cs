@@ -36,7 +36,7 @@ namespace vFalcon.Views
                 radarVM.ReleaseMouse = () => RadarCanvas.ReleaseMouseCapture();
                 radarVM.InvalidateCanvas = () => RadarCanvas.InvalidateVisual();
 
-                if (Application.Current.MainWindow?.DataContext is MainWindowViewModel mainVM)
+                if (Application.Current.MainWindow?.DataContext is EramViewModel mainVM)
                 {
                     radarVM.SetCursorVisibility = visible => mainVM.IsCursorVisible = visible;
                 }
