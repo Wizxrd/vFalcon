@@ -1,0 +1,301 @@
+{
+  "Id": "289d8180-e624-4a7e-a1d5-99a30afffaa7",
+  "Version": 1,
+  "Name": "ZOB DEFAULT",
+  "LastUsedAt": "2025-07-24T03:21:59.7029263Z",
+  "ArtccId": "ZOB",
+  "LastUsedEnvironment": null,
+  "LastUsedPositionId": null,
+  "NetowrkRating": "",
+  "Role": "Observer",
+  "ControllerInfo": "",
+  "DisplayWindowSettings": [
+    {
+      "Id": "99654c97-fb09-4e32-8a38-ef07da446331",
+      "WindowSettings": {
+        "IsVisible": true,
+        "Bounds": "0,0,1300,900",
+        "ScaleFactor": 1.0,
+        "IsMaximized": false,
+        "ShowTitleBar": true
+      },
+      "CoverTaskBarWhenMaximized": false,
+      "DisplaySettings": [
+        {
+          "$type": "Vatsim.Nas.Crc.Ui.Displays.Eram.Settings.EramDisplaySettings, CRC",
+          "Center": null,
+          "TopDownModeEnabled": false,
+          "GroundTargetLeaderLength": 1,
+          "GroundTargetLeaderDirection": "NE",
+          "Range": 300.0,
+          "Bookmarks": [],
+          "RaiseMasterToolbar": false,
+          "Bcgs": {
+            "Background": 26,
+            "Cursor": 100,
+            "Text": 90,
+            "PairedTarget": 92,
+            "UnpairedTarget": 92,
+            "PairedHistory": 16,
+            "UnpairedHistory": 16,
+            "Ldb": 60,
+            "Weather": 50,
+            "Nexrad": 50,
+            "SystemBrightness": 90,
+            "Button": 80,
+            "Border": 56,
+            "Toolbar": 40,
+            "ToolbarBorder": 50,
+            "ActiveBorderBorder": 56,
+            "Fdb": 90,
+            "SatComm": 90,
+            "OnFreq": 90,
+            "Fence": 90,
+            "DbFel": 80,
+            "Outage": 80,
+            "NonAdsb": 90,
+            "MapGroup1": 12,
+            "MapGroup2": 12,
+            "MapGroup3": 12,
+            "MapGroup4": 12,
+            "MapGroup5": 12,
+            "MapGroup6": 12,
+            "MapGroup7": 12,
+            "MapGroup8": 12,
+            "MapGroup9": 12,
+            "MapGroup10": 12,
+            "MapGroup11": 12,
+            "MapGroup12": 12,
+            "MapGroup13": 12,
+            "MapGroup14": 12,
+            "MapGroup15": 12,
+            "MapGroup16": 12,
+            "MapGroup17": 12,
+            "MapGroup18": 12,
+            "MapGroup19": 12,
+            "MapGroup20": 12,
+            "MapGroup21": 12,
+            "MapGroup22": 12,
+            "MapGroup23": 12,
+            "MapGroup24": 12,
+            "MapGroup25": 12,
+            "MapGroup26": 12,
+            "MapGroup27": 12,
+            "MapGroup28": 12,
+            "MapGroup29": 12,
+            "MapGroup30": 12,
+            "MapGroup31": 12,
+            "MapGroup32": 12,
+            "MapGroup33": 12,
+            "MapGroup34": 12,
+            "MapGroup35": 12,
+            "MapGroup36": 12,
+            "MapGroup37": 12,
+            "MapGroup38": 12,
+            "MapGroup39": 12,
+            "MapGroup40": 12
+          },
+          "BcgModifiers": {
+            "Sldb": 5,
+            "Portal": 0,
+            "Line4": 0,
+            "Dwell": 20
+          },
+          "FontSizes": {
+            "Fdb": 1,
+            "Toolbar": 1,
+            "Rdb": 1,
+            "Ldb": 1,
+            "Outage": 1,
+            "Line4": 0,
+            "Portal": 0
+          },
+          "CursorSize": 1,
+          "DeclutterLevel": 0,
+          "NexradLevels": 3,
+          "TimeViewSettings": {
+            "Location": {
+              "Location": "20, 110",
+              "Anchor": "TopLeft"
+            },
+            "ShowBorder": true,
+            "Brightness": 80,
+            "FontSize": 2,
+            "IsOpaque": false
+          },
+          "McaViewSettings": {
+            "Location": {
+              "Location": "0, 1",
+              "Anchor": "BottomLeft"
+            },
+            "PreviewAreaLines": 2,
+            "Width": 30,
+            "FontSize": 2,
+            "Brightness": 80
+          },
+          "ResponseAreaViewSettings": {
+            "Location": {
+              "Location": "395, 1",
+              "Anchor": "BottomLeft"
+            },
+            "Width": 25,
+            "FontSize": 2,
+            "Brightness": 80
+          },
+          "AltimeterSettingsViewSettings": {
+            "ShowTearoffs": true,
+            "Lines": 5,
+            "Columns": 1,
+            "FontSize": 2,
+            "Brightness": 80,
+            "ManuallySort": false,
+            "Location": {
+              "Location": "20, 110",
+              "Anchor": "TopLeft"
+            },
+            "IsOpaque": false,
+            "ShowBorder": true,
+            "IsVisible": false
+          },
+          "BeaconCodeViewSettings": {
+            "Lines": 11,
+            "Columns": 5,
+            "FontSize": 2,
+            "Brightness": 80,
+            "ManuallySort": false,
+            "Location": {
+              "Location": "20, 110",
+              "Anchor": "TopLeft"
+            },
+            "IsOpaque": false,
+            "ShowBorder": true,
+            "IsVisible": false
+          },
+          "WeatherStationReportViewSettings": {
+            "ShowTearoffs": true,
+            "Lines": 5,
+            "FontSize": 2,
+            "Brightness": 80,
+            "Location": {
+              "Location": "20, 110",
+              "Anchor": "TopLeft"
+            },
+            "IsOpaque": false,
+            "ShowBorder": true,
+            "IsVisible": false
+          },
+          "CrrViewSettings": {
+            "Lines": 5,
+            "FontSize": 2,
+            "Brightness": 80,
+            "ViewList": true,
+            "SelectedColor": "White",
+            "ColorBrightness": {
+              "White": 90,
+              "Coral": 90,
+              "Green": 90,
+              "Yellow": 90
+            },
+            "Location": {
+              "Location": "20, 110",
+              "Anchor": "TopLeft"
+            },
+            "IsOpaque": false,
+            "ShowBorder": true,
+            "IsVisible": false
+          },
+          "ChecklistViewSettings": {
+            "Lines": 21,
+            "FontSize": 2,
+            "HighlightBrightness": 40,
+            "Brightness": 76,
+            "Location": {
+              "Location": "20, 110",
+              "Anchor": "TopLeft"
+            },
+            "IsOpaque": false,
+            "ShowBorder": true,
+            "IsVisible": false
+          },
+          "OpaqueGroupDisplayPrecedences": [],
+          "SemiTransparentGroupDisplayPrecedences": [],
+          "ShowCrrFix": false,
+          "RequestedAltimeters": [],
+          "RequestedWeatherReports": [],
+          "AltitudeLimitsTargets": {
+            "Low": 0,
+            "High": 999,
+            "IsValid": true
+          },
+          "AltitudeLimitsLdbs": {
+            "Low": 0,
+            "High": 999,
+            "IsValid": true
+          },
+          "VisibleMarkers": [],
+          "VisibleCenterlines": [],
+          "Tearoffs": [],
+          "MasterToolbarVisible": true,
+          "ActiveGeoMap": null,
+          "MapFilters": "None",
+          "RadarFilters": "None",
+          "DbFieldFilters": "Destination, AircraftData, SatComm, StaRdb, DelayRdb",
+          "HistoryCount": 5,
+          "LeaderLength": 1,
+          "RdbOffset": "D180",
+          "Id": "3c09b60b-a973-4d19-b424-ac8fa8ebc25e",
+          "FacilityId": "ZOB",
+          "InvertNumericKeypad": null,
+          "DisableMousePanZoom": false
+        }
+      ],
+      "SelectedDisplayId": "3c09b60b-a973-4d19-b424-ac8fa8ebc25e",
+      "Bookmarks": [],
+      "UseGlobalBookmarks": true
+    }
+  ],
+  "ControllerListSettings": {
+    "Type": "ControllerList",
+    "WindowSettings": {
+      "IsVisible": true,
+      "Bounds": "40,350,238,400",
+      "ScaleFactor": 1.0,
+      "IsMaximized": false,
+      "ShowTitleBar": true
+    }
+  },
+  "FlightPlanEditorSettings": {
+    "Type": "FlightPlanEditor",
+    "WindowSettings": {
+      "IsVisible": false,
+      "Bounds": "356,588,600,157",
+      "ScaleFactor": 1.0,
+      "IsMaximized": false,
+      "ShowTitleBar": true
+    }
+  },
+  "MessagesAreaSettings": {
+    "Type": "MessagesArea",
+    "WindowSettings": {
+      "IsVisible": true,
+      "Bounds": "40,65,642,256",
+      "ScaleFactor": 1.0,
+      "IsMaximized": false,
+      "ShowTitleBar": true
+    }
+  },
+  "VoiceSwitchSettings": {
+    "Type": "VoiceSwitch",
+    "WindowSettings": {
+      "IsVisible": true,
+      "Bounds": "336,350,275,182",
+      "ScaleFactor": 1.0,
+      "IsMaximized": false,
+      "ShowTitleBar": true
+    }
+  },
+  "Bookmarks": [],
+  "SelectedBeaconCodes": [],
+  "InvertNumericKeypad": null,
+  "SecondaryVoiceSwitchPositionIds": []
+}

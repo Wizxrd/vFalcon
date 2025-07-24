@@ -1,37 +1,29 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.IO;
-using System.Runtime.ConstrainedExecution;
+﻿using Newtonsoft.Json.Linq;
 
 namespace vFalcon.Models
 {
     public class Profile
     {
+        public string Id { get; set; } = string.Empty;
+        public int Version { get; set; }
         public string Name { get; set; } = string.Empty;
-        public string Artcc { get; set; } = string.Empty;
+        public string LastUsedAt { get; set; } = string.Empty;
         public string ArtccId { get; set; } = string.Empty;
-        public string LastSectorName { get; set; } = string.Empty;
-        public string LastSectorFreq { get; set; } = string.Empty;
+        public string LastUsedEnvironment { get; set; } = string.Empty;
+        public string LastUsedPositionId { get; set; } = string.Empty;
+        public string NetowrkRating { get; set; } = string.Empty;
+        public string Role { get; set; } = string.Empty;
+        public string ControllerInfo { get; set; } = string.Empty;
 
-        public string AppchBright { get; set; } = "50";
-        public string LowsBright { get; set; } = "75";
-        public string HighsBright { get; set; } = "100";
-        public string BndryBright { get; set; } = "100";
+        public JArray DisplayWindowSettings { get; set; } = new JArray();
+        public JObject ControllerListSettings { get; set; } = new JObject();
+        public JObject FlightPlanEditorSettings { get; set; } = new JObject();
+        public JObject MessagesAreaSettings { get; set; } = new JObject();
+        public JObject VoiceSwitchSettings { get; set; } = new JObject();
 
-        public bool BndryEnabled { get; set; } = true;
-        public bool AppchCntlEnabled { get; set; } = false;
-        public bool LowsEnabled { get; set; } = false;
-        public bool HighsEnabled { get; set; } = false;
-
-        public string CursorSize { get; set; } = "2";
-
-        public int WindowWidth { get; set; } = 1080;
-        public int WindowHeight { get; set; } = 720;
-        public int WindowTop { get; set; } = 50;
-        public int WindowLeft { get; set; } = 50;
-        public bool IsMaximized { get; set; } = false;
-
-        public double MapCenterLat { get; set; }
-        public double MapCenterLon { get; set; }
+        public JArray Bookmarks { get; set; } = new JArray();
+        public JArray SelectedBeaconCodes { get; set; } = new JArray();
+        public bool? InvertNumericKeypad { get; set; } = null;
+        public JArray SecondaryVoiceSwitchPositionIds { get; set; } = new JArray();
     }
 }

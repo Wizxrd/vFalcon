@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:vFalcon"
              xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
              xmlns:SystemWindows="clr-namespace:System.Windows;assembly=PresentationFramework"
-             StartupUri="Views/LoadProfileView.xaml">
+             StartupUri="Views/LoadingView.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

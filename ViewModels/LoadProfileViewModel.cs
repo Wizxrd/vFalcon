@@ -1,38 +1,37 @@
-﻿using System.Collections.ObjectModel;
-using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Input;
+using System.Xml.Linq;
+using vFalcon.Commands;
+using vFalcon.Helpers;
 using vFalcon.Models;
-using vFalcon.Views;
-using vFalcon.Services;
 using vFalcon.Services.Interfaces;
+using vFalcon.Services.Service;
 
 namespace vFalcon.ViewModels
 {
     public class LoadProfileViewModel : ViewModelBase
     {
-        private readonly IProfileService profileService = new ProfileService();
-
-        private DateTime lastClickTime = DateTime.MinValue;
-        private readonly TimeSpan doubleClickTimeSpan = TimeSpan.FromMilliseconds(250);
+        private IProfileService profileService = new ProfileService();
+        private bool _isSelected;
+        public ProfileViewModel? LastSelectedProfileVM { get; set; }
 
         private string _searchQuery;
         private Profile _selectedProfile;
         private int _selectedIndex = -1;
-        public ProfileViewModel? LastSelectedProfileVM { get; set; }
-
-        public event Action RequestOpenMainWindow;
-        public event Func<Task<NewProfileResult>> RequestNewProfileWindow;
-        public event Func<string, Task<bool>> RequestConfirmation;
-        public event Action Close;
 
         public ObservableCollection<ProfileViewModel> Profiles { get; } = new();
         public ObservableCollection<ProfileViewModel> FilteredProfiles { get; } = new();
-        public ICommand NewProfileCommand { get; }
-        public ICommand ImportProfileCommand { get; }
+        public Profile? LastSelectedProfile { get; set; }
+
+        public event Func<string, Task<bool>> RequestConfirmation;
+
         public ICommand SelectProfileCommand { get; }
-        
         public ICommand RenameProfileCommand { get; }
         public ICommand StopRenamingCommand { get; }
         public ICommand CopyProfileCommand { get; }
@@ -84,37 +83,21 @@ namespace vFalcon.ViewModels
 
         public LoadProfileViewModel()
         {
-            NewProfileCommand = new RelayCommand(OnNewProfile);
-            ImportProfileCommand = new RelayCommand(OnImportProfile);
+            LoadProfiles();
             SelectProfileCommand = new RelayCommand(OnProfileSelected);
-
             RenameProfileCommand = new RelayCommand(OnRenameProfile);
+            StopRenamingCommand = new RelayCommand(OnStopRenaming);
             StopRenamingCommand = new RelayCommand(OnStopRenaming);
             CopyProfileCommand = new RelayCommand(OnCopyProfile);
             ExportProfileCommand = new RelayCommand(OnExportProfile);
             DeleteProfileCommand = new RelayCommand(OnDeleteProfile);
-
-            LoadProfiles();
         }
 
-        private void LoadProfiles()
+        private void OnProfileSelected(object obj)
         {
-            Profiles.Clear();
-            FilteredProfiles.Clear();
-            LastSelectedProfileVM = null;
-
-            var loadedProfiles = profileService.LoadProfiles();
-            foreach (var profile in loadedProfiles)
+            if (obj is ProfileViewModel selected)
             {
-                var viewModel = new ProfileViewModel(profile);
-                Profiles.Add(viewModel);
-            }
-            FilterProfiles();
-            if (FilteredProfiles.Count > 0)
-            {
-                var first = FilteredProfiles[0];
-                HandleProfileSelection(first, userInitiated: false);
-                SelectedIndex = 0;
+                HandleProfileSelection(selected, userInitiated: true);
             }
         }
 
@@ -188,11 +171,23 @@ namespace vFalcon.ViewModels
             }
         }
 
-        private void OnProfileSelected(object obj)
+        private void LoadProfiles()
         {
-            if (obj is ProfileViewModel selected)
+            Profiles.Clear();
+            FilteredProfiles.Clear();
+            LastSelectedProfileVM = null;
+            var loadedProfiles = profileService.LoadProfiles();
+            foreach (var profile in loadedProfiles)
             {
-                HandleProfileSelection(selected, userInitiated: true);
+                var viewModel = new ProfileViewModel(profile);
+                Profiles.Add(viewModel);
+            }
+            FilterProfiles();
+            if (FilteredProfiles.Count > 0)
+            {
+                var first = FilteredProfiles[0];
+                HandleProfileSelection(first, userInitiated: false);
+                SelectedIndex = 0;
             }
         }
 
@@ -207,13 +202,6 @@ namespace vFalcon.ViewModels
                 SelectedProfile = selected.Model;
                 LastSelectedProfileVM = selected;
             }
-
-            if (userInitiated && (now - lastClickTime) <= doubleClickTimeSpan)
-            {
-                RequestOpenMainWindow?.Invoke();
-            }
-
-            lastClickTime = now;
         }
 
         private void FilterProfiles()
@@ -226,39 +214,6 @@ namespace vFalcon.ViewModels
                 if (string.IsNullOrWhiteSpace(query) || profile.Name.ToLower().Contains(query))
                 {
                     FilteredProfiles.Add(profile);
-                }
-            }
-        }
-
-        private async void OnNewProfile()
-        {
-            if (RequestNewProfileWindow != null)
-            {
-                NewProfileResult result = await RequestNewProfileWindow.Invoke();
-                if (result.WasCreated)
-                {
-                    LoadProfiles();
-                    SelectedProfile = Profiles.FirstOrDefault(p => p.Name == result.Name)?.Model;
-                    RequestOpenMainWindow?.Invoke();
-                }
-            }
-        }
-
-        private async void OnImportProfile()
-        {
-            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog
-            {
-                Title = "Import Profile",
-                Filter = "JSON File (*.json)|*.json",
-                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-            };
-            if (openFileDialog.ShowDialog() == true)
-            {
-                string file = openFileDialog.FileName;
-                if (file.Contains(".json"))
-                {
-                    await profileService.Import(file);
-                    LoadProfiles();
                 }
             }
         }

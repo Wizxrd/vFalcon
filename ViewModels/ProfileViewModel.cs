@@ -6,7 +6,7 @@ namespace vFalcon.ViewModels
     {
         public Profile Model { get; }
 
-        private string _originalName;
+        private string _originalName = string.Empty;
         private bool _isSelected;
         public string OriginalName => _originalName;
         private bool _isRenaming;

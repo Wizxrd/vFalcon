@@ -3,68 +3,80 @@
   "WorkspaceRootPath": "D:\\vFalcon\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|d:\\vfalcon\\vfalcon.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|solutionrelative:vfalcon.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\vfalcon.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:vfalcon.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|d:\\vfalcon\\views\\eramview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|solutionrelative:views\\eramview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\viewmodels\\radarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:viewmodels\\radarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|d:\\vfalcon\\datafeed\\vatsimdatafeed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|solutionrelative:datafeed\\vatsimdatafeed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\loadprofileview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\loadprofileview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|d:\\vfalcon\\viewmodels\\radarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|solutionrelative:viewmodels\\radarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\loadprofileview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\loadprofileview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|d:\\vfalcon\\views\\radarview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|solutionrelative:views\\radarview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\viewmodels\\loadprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:viewmodels\\loadprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|d:\\vfalcon\\views\\radarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|solutionrelative:views\\radarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\loadingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\loadingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|d:\\vfalcon\\views\\eramview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|solutionrelative:views\\eramview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\eramview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\eramview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|d:\\vfalcon\\viewmodels\\eramviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|solutionrelative:viewmodels\\eramviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\loadingview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\loadingview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|d:\\vfalcon\\behaviors\\skelementpaintbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|solutionrelative:behaviors\\skelementpaintbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\services\\interfaces\\iprofileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:services\\interfaces\\iprofileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|d:\\vfalcon\\behaviors\\skelementmousebehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|solutionrelative:behaviors\\skelementmousebehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\services\\service\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:services\\service\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|d:\\vfalcon\\models\\mapstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|solutionrelative:models\\mapstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\radarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\radarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|d:\\vfalcon\\models\\newprofileresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|solutionrelative:models\\newprofileresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\radarview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\radarview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|d:\\vfalcon\\models\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|solutionrelative:models\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\eramview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\eramview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|d:\\vfalcon\\models\\pilot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|solutionrelative:models\\pilot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|d:\\vfalcon\\models\\coordinate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|solutionrelative:models\\coordinate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|d:\\vfalcon\\tsconfig1.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{82C71FA0-DCE7-4E58-8AA6-CF267A75A517}|vFalcon.csproj|solutionrelative:tsconfig1.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\models\\artcc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:models\\artcc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\resources\\dictionaries\\controls.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:resources\\dictionaries\\controls.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\viewmodels\\confirmviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:viewmodels\\confirmviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -73,9 +85,48 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 292,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 43,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoadProfileView.xaml",
+              "DocumentMoniker": "D:\\vFalcon\\Views\\LoadProfileView.xaml",
+              "RelativeDocumentMoniker": "Views\\LoadProfileView.xaml",
+              "ToolTip": "D:\\vFalcon\\Views\\LoadProfileView.xaml",
+              "RelativeToolTip": "Views\\LoadProfileView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-24T01:23:47.38Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoadProfileView.xaml.cs",
+              "DocumentMoniker": "D:\\vFalcon\\Views\\LoadProfileView.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\LoadProfileView.xaml.cs",
+              "ToolTip": "D:\\vFalcon\\Views\\LoadProfileView.xaml.cs",
+              "RelativeToolTip": "Views\\LoadProfileView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T01:03:15.796Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoadProfileViewModel.cs",
+              "DocumentMoniker": "D:\\vFalcon\\ViewModels\\LoadProfileViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\LoadProfileViewModel.cs",
+              "ToolTip": "D:\\vFalcon\\ViewModels\\LoadProfileViewModel.cs",
+              "RelativeToolTip": "ViewModels\\LoadProfileViewModel.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAiwHQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T01:09:05.294Z",
+              "IsPinned": true
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -85,91 +136,19 @@
               "ToolTip": "D:\\vFalcon\\vFalcon.csproj",
               "RelativeToolTip": "vFalcon.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-23T09:35:05.762Z",
+              "WhenOpened": "2025-07-24T04:16:41.088Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "VatsimDataFeed.cs",
-              "DocumentMoniker": "D:\\vFalcon\\DataFeed\\VatsimDataFeed.cs",
-              "RelativeDocumentMoniker": "DataFeed\\VatsimDataFeed.cs",
-              "ToolTip": "D:\\vFalcon\\DataFeed\\VatsimDataFeed.cs",
-              "RelativeToolTip": "DataFeed\\VatsimDataFeed.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T03:55:03.164Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RadarView.xaml.cs",
-              "DocumentMoniker": "D:\\vFalcon\\Views\\RadarView.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\RadarView.xaml.cs",
-              "ToolTip": "D:\\vFalcon\\Views\\RadarView.xaml.cs",
-              "RelativeToolTip": "Views\\RadarView.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T03:40:02.539Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "RadarView.xaml",
-              "DocumentMoniker": "D:\\vFalcon\\Views\\RadarView.xaml",
-              "RelativeDocumentMoniker": "Views\\RadarView.xaml",
-              "ToolTip": "D:\\vFalcon\\Views\\RadarView.xaml",
-              "RelativeToolTip": "Views\\RadarView.xaml",
+              "Title": "LoadingView.xaml",
+              "DocumentMoniker": "D:\\vFalcon\\Views\\LoadingView.xaml",
+              "RelativeDocumentMoniker": "Views\\LoadingView.xaml",
+              "ToolTip": "D:\\vFalcon\\Views\\LoadingView.xaml",
+              "RelativeToolTip": "Views\\LoadingView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-23T03:40:00.558Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RadarViewModel.cs",
-              "DocumentMoniker": "D:\\vFalcon\\ViewModels\\RadarViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\RadarViewModel.cs",
-              "ToolTip": "D:\\vFalcon\\ViewModels\\RadarViewModel.cs",
-              "RelativeToolTip": "ViewModels\\RadarViewModel.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAA7wFMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T03:39:57.245Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "EramViewModel.cs",
-              "DocumentMoniker": "D:\\vFalcon\\ViewModels\\EramViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\EramViewModel.cs",
-              "ToolTip": "D:\\vFalcon\\ViewModels\\EramViewModel.cs",
-              "RelativeToolTip": "ViewModels\\EramViewModel.cs",
-              "ViewState": "AgIAAKEAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T03:39:33.778Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "SKElementPaintBehavior.cs",
-              "DocumentMoniker": "D:\\vFalcon\\Behaviors\\SKElementPaintBehavior.cs",
-              "RelativeDocumentMoniker": "Behaviors\\SKElementPaintBehavior.cs",
-              "ToolTip": "D:\\vFalcon\\Behaviors\\SKElementPaintBehavior.cs",
-              "RelativeToolTip": "Behaviors\\SKElementPaintBehavior.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T03:39:12.998Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "SKElementMouseBehavior.cs",
-              "DocumentMoniker": "D:\\vFalcon\\Behaviors\\SKElementMouseBehavior.cs",
-              "RelativeDocumentMoniker": "Behaviors\\SKElementMouseBehavior.cs",
-              "ToolTip": "D:\\vFalcon\\Behaviors\\SKElementMouseBehavior.cs",
-              "RelativeToolTip": "Behaviors\\SKElementMouseBehavior.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T03:39:01.374Z"
+              "WhenOpened": "2025-07-24T04:09:49.577Z"
             },
             {
               "$type": "Document",
@@ -179,93 +158,164 @@
               "RelativeDocumentMoniker": "Views\\EramView.xaml.cs",
               "ToolTip": "D:\\vFalcon\\Views\\EramView.xaml.cs",
               "RelativeToolTip": "Views\\EramView.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFgAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T03:36:15.038Z"
+              "WhenOpened": "2025-07-24T04:03:28.443Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 12,
               "Title": "EramView.xaml",
               "DocumentMoniker": "D:\\vFalcon\\Views\\EramView.xaml",
               "RelativeDocumentMoniker": "Views\\EramView.xaml",
               "ToolTip": "D:\\vFalcon\\Views\\EramView.xaml",
               "RelativeToolTip": "Views\\EramView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-23T03:36:13.081Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T04:02:34.313Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Profile.cs",
-              "DocumentMoniker": "D:\\vFalcon\\Models\\Profile.cs",
-              "RelativeDocumentMoniker": "Models\\Profile.cs",
-              "ToolTip": "D:\\vFalcon\\Models\\Profile.cs",
-              "RelativeToolTip": "Models\\Profile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "LoadingView.xaml.cs",
+              "DocumentMoniker": "D:\\vFalcon\\Views\\LoadingView.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\LoadingView.xaml.cs",
+              "ToolTip": "D:\\vFalcon\\Views\\LoadingView.xaml.cs",
+              "RelativeToolTip": "Views\\LoadingView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T03:35:44.411Z"
+              "WhenOpened": "2025-07-24T04:01:00.203Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "PIlot.cs",
-              "DocumentMoniker": "D:\\vFalcon\\Models\\PIlot.cs",
-              "RelativeDocumentMoniker": "Models\\PIlot.cs",
-              "ToolTip": "D:\\vFalcon\\Models\\PIlot.cs",
-              "RelativeToolTip": "Models\\PIlot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T03:35:43.661Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Coordinate.cs",
-              "DocumentMoniker": "D:\\vFalcon\\Models\\Coordinate.cs",
-              "RelativeDocumentMoniker": "Models\\Coordinate.cs",
-              "ToolTip": "D:\\vFalcon\\Models\\Coordinate.cs",
-              "RelativeToolTip": "Models\\Coordinate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T03:35:42.888Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "MapState.cs",
-              "DocumentMoniker": "D:\\vFalcon\\Models\\MapState.cs",
-              "RelativeDocumentMoniker": "Models\\MapState.cs",
-              "ToolTip": "D:\\vFalcon\\Models\\MapState.cs",
-              "RelativeToolTip": "Models\\MapState.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T03:35:42.088Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "NewProfileResult.cs",
-              "DocumentMoniker": "D:\\vFalcon\\Models\\NewProfileResult.cs",
-              "RelativeDocumentMoniker": "Models\\NewProfileResult.cs",
-              "ToolTip": "D:\\vFalcon\\Models\\NewProfileResult.cs",
-              "RelativeToolTip": "Models\\NewProfileResult.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T03:35:40.582Z"
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\vFalcon\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "D:\\vFalcon\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-24T03:31:47.06Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "tsconfig1.json",
-              "DocumentMoniker": "D:\\vFalcon\\tsconfig1.json",
-              "RelativeDocumentMoniker": "tsconfig1.json",
-              "ToolTip": "D:\\vFalcon\\tsconfig1.json",
-              "RelativeToolTip": "tsconfig1.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJk0AABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-23T02:03:15.528Z"
+              "Title": "Artcc.cs",
+              "DocumentMoniker": "D:\\vFalcon\\Models\\Artcc.cs",
+              "RelativeDocumentMoniker": "Models\\Artcc.cs",
+              "ToolTip": "D:\\vFalcon\\Models\\Artcc.cs",
+              "RelativeToolTip": "Models\\Artcc.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T03:26:41.796Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "D:\\vFalcon\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App.xaml.cs",
+              "ToolTip": "D:\\vFalcon\\App.xaml.cs",
+              "RelativeToolTip": "App.xaml.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T03:23:34.355Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProfileService.cs",
+              "DocumentMoniker": "D:\\vFalcon\\Services\\Service\\ProfileService.cs",
+              "RelativeDocumentMoniker": "Services\\Service\\ProfileService.cs",
+              "ToolTip": "D:\\vFalcon\\Services\\Service\\ProfileService.cs",
+              "RelativeToolTip": "Services\\Service\\ProfileService.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAiwA8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T02:46:06.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RadarView.xaml.cs",
+              "DocumentMoniker": "D:\\vFalcon\\Views\\RadarView.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\RadarView.xaml.cs",
+              "ToolTip": "D:\\vFalcon\\Views\\RadarView.xaml.cs",
+              "RelativeToolTip": "Views\\RadarView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T04:05:14.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IProfileService.cs",
+              "DocumentMoniker": "D:\\vFalcon\\Services\\Interfaces\\IProfileService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IProfileService.cs",
+              "ToolTip": "D:\\vFalcon\\Services\\Interfaces\\IProfileService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IProfileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T02:45:58.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RadarViewModel.cs",
+              "DocumentMoniker": "D:\\vFalcon\\ViewModels\\RadarViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\RadarViewModel.cs",
+              "ToolTip": "D:\\vFalcon\\ViewModels\\RadarViewModel.cs",
+              "RelativeToolTip": "ViewModels\\RadarViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T04:03:57.281Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RadarView.xaml",
+              "DocumentMoniker": "D:\\vFalcon\\Views\\RadarView.xaml",
+              "RelativeDocumentMoniker": "Views\\RadarView.xaml",
+              "ToolTip": "D:\\vFalcon\\Views\\RadarView.xaml",
+              "RelativeToolTip": "Views\\RadarView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-24T04:05:12.214Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ConfirmViewModel.cs",
+              "DocumentMoniker": "D:\\vFalcon\\ViewModels\\ConfirmViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\ConfirmViewModel.cs",
+              "ToolTip": "D:\\vFalcon\\ViewModels\\ConfirmViewModel.cs",
+              "RelativeToolTip": "ViewModels\\ConfirmViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T03:06:07.441Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ProfileViewModel.cs",
+              "DocumentMoniker": "D:\\vFalcon\\ViewModels\\ProfileViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\ProfileViewModel.cs",
+              "ToolTip": "D:\\vFalcon\\ViewModels\\ProfileViewModel.cs",
+              "RelativeToolTip": "ViewModels\\ProfileViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T02:55:52.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Controls.xaml",
+              "DocumentMoniker": "D:\\vFalcon\\Resources\\Dictionaries\\Controls.xaml",
+              "RelativeDocumentMoniker": "Resources\\Dictionaries\\Controls.xaml",
+              "ToolTip": "D:\\vFalcon\\Resources\\Dictionaries\\Controls.xaml",
+              "RelativeToolTip": "Resources\\Dictionaries\\Controls.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-24T02:49:08.582Z",
+              "EditorCaption": ""
             }
           ]
         }

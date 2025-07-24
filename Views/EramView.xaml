@@ -14,10 +14,7 @@
     Title="{Binding ProfileName}"
     MinWidth="300" Width="1280" MinHeight="300" Height="720"
     FontFamily="Consolas" FontSize="12" 
-    Foreground="{StaticResource White}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1"
-    SizeChanged="EramWindowSizeChanged"
-    LocationChanged="EramWindowLocationChanged"
-    StateChanged="EramWindowStateChanged">
+    Foreground="{StaticResource White}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
     <adonisControls:AdonisWindow.InputBindings>
         <KeyBinding 
             Key="P" 
@@ -42,7 +39,6 @@
             </Grid.RowDefinitions>
             <Border Grid.Row="0" Background="Black">
                 <Grid>
-                    <views:RadarView DataContext="{Binding RadarViewModel}"/>
                     <ContentControl x:Name="ToolbarRegion" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
                     <Border
                         Background="Black"
@@ -68,8 +64,7 @@
                             x:Name="CursorButton"
                             Content="TOOLBAR"
                             Background="{StaticResource MenuClosedButtonBackground}"
-                            Style="{StaticResource ToolbarButton}"
-                            Click="ToolbarButtonClick"/>
+                            Style="{StaticResource ToolbarButton}"/>
                     </StackPanel>
                 </Grid>
             </Border>

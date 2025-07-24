@@ -1,7 +1,9 @@
-﻿using System.Configuration;
-using System.Data;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.IO;
 using System.Windows;
 using vFalcon.Helpers;
+using vFalcon.Models;
 
 namespace vFalcon
 {
@@ -10,9 +12,13 @@ namespace vFalcon
     /// </summary>
     public partial class App : Application
     {
+        string version = "0.0.1";
+
         public App()
         {
-            Logger.Wipe();
+            Logger.DebugMode = true;
+            Logger.LogLevelThreshold = LogLevel.Trace;
+            Logger.Info("App", $"Launching vFalcon v{version}");
         }
     }
 }

@@ -25,22 +25,6 @@ namespace vFalcon.Views
         public RadarView()
         {
             InitializeComponent();
-            Loaded += RadarViewLoaded;
-        }
-
-        private void RadarViewLoaded(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is RadarViewModel radarVM)
-            {
-                radarVM.CaptureMouse = () => RadarCanvas.CaptureMouse();
-                radarVM.ReleaseMouse = () => RadarCanvas.ReleaseMouseCapture();
-                radarVM.InvalidateCanvas = () => RadarCanvas.InvalidateVisual();
-
-                if (Application.Current.MainWindow?.DataContext is EramViewModel mainVM)
-                {
-                    radarVM.SetCursorVisibility = visible => mainVM.IsCursorVisible = visible;
-                }
-            }
         }
     }
 }
