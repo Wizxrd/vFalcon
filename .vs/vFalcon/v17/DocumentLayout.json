@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\vFalcon\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\loadprofileview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\loadprofileview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\logs\\debug.log||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:logs\\debug.log||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
@@ -83,10 +87,6 @@
       "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:resources\\dictionaries\\controls.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\loadprofileview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\loadprofileview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -118,11 +118,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 60,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 0,
               "Title": "LoadProfileView.xaml",
               "DocumentMoniker": "D:\\vFalcon\\Views\\LoadProfileView.xaml",
               "RelativeDocumentMoniker": "Views\\LoadProfileView.xaml",
@@ -130,11 +130,12 @@
               "RelativeToolTip": "Views\\LoadProfileView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-07-24T01:23:47.38Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "LoadProfileView.xaml.cs",
               "DocumentMoniker": "D:\\vFalcon\\Views\\LoadProfileView.xaml.cs",
               "RelativeDocumentMoniker": "Views\\LoadProfileView.xaml.cs",
@@ -147,7 +148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "LoadProfileViewModel.cs",
               "DocumentMoniker": "D:\\vFalcon\\ViewModels\\LoadProfileViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\LoadProfileViewModel.cs",
@@ -156,12 +157,11 @@
               "ViewState": "AgIAALEAAAAAAAAAAAA2wNIAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-24T01:09:05.294Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "debug.log",
               "DocumentMoniker": "D:\\vFalcon\\Logs\\debug.log",
               "RelativeDocumentMoniker": "Logs\\debug.log",
@@ -174,7 +174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "README.md",
               "DocumentMoniker": "D:\\vFalcon\\README.md",
               "RelativeDocumentMoniker": "README.md",
@@ -186,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "vFalcon",
               "DocumentMoniker": "D:\\vFalcon\\vFalcon.csproj",
               "RelativeDocumentMoniker": "vFalcon.csproj",
@@ -197,7 +197,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": ".gitignore",
               "DocumentMoniker": "D:\\vFalcon\\.gitignore",
               "RelativeDocumentMoniker": ".gitignore",
@@ -209,7 +209,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "EramViewModel.cs",
               "DocumentMoniker": "D:\\vFalcon\\ViewModels\\EramViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\EramViewModel.cs",
@@ -221,7 +221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "EramView.xaml.cs",
               "DocumentMoniker": "D:\\vFalcon\\Views\\EramView.xaml.cs",
               "RelativeDocumentMoniker": "Views\\EramView.xaml.cs",
@@ -233,7 +233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "MasterToolbarView.xaml",
               "DocumentMoniker": "D:\\vFalcon\\Views\\MasterToolbarView.xaml",
               "RelativeDocumentMoniker": "Views\\MasterToolbarView.xaml",
@@ -244,7 +244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ToolbarView.xaml",
               "DocumentMoniker": "D:\\vFalcon\\Views\\ToolbarView.xaml",
               "RelativeDocumentMoniker": "Views\\ToolbarView.xaml",
@@ -255,7 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "LoadingView.xaml",
               "DocumentMoniker": "D:\\vFalcon\\Views\\LoadingView.xaml",
               "RelativeDocumentMoniker": "Views\\LoadingView.xaml",
@@ -266,7 +266,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "LoadingView.xaml.cs",
               "DocumentMoniker": "D:\\vFalcon\\Views\\LoadingView.xaml.cs",
               "RelativeDocumentMoniker": "Views\\LoadingView.xaml.cs",
@@ -278,18 +278,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "App.xaml",
               "DocumentMoniker": "D:\\vFalcon\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
               "ToolTip": "D:\\vFalcon\\App.xaml",
               "RelativeToolTip": "App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-24T03:31:47.06Z"
+              "WhenOpened": "2025-07-24T03:31:47.06Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "D:\\vFalcon\\App.xaml.cs",
               "RelativeDocumentMoniker": "App.xaml.cs",
@@ -301,7 +302,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "EramView.xaml",
               "DocumentMoniker": "D:\\vFalcon\\Views\\EramView.xaml",
               "RelativeDocumentMoniker": "Views\\EramView.xaml",
@@ -312,7 +313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Artcc.cs",
               "DocumentMoniker": "D:\\vFalcon\\Models\\Artcc.cs",
               "RelativeDocumentMoniker": "Models\\Artcc.cs",
@@ -348,7 +349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "IProfileService.cs",
               "DocumentMoniker": "D:\\vFalcon\\Services\\Interfaces\\IProfileService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IProfileService.cs",
@@ -407,14 +408,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Controls.xaml",
               "DocumentMoniker": "D:\\vFalcon\\Resources\\Dictionaries\\Controls.xaml",
               "RelativeDocumentMoniker": "Resources\\Dictionaries\\Controls.xaml",
               "ToolTip": "D:\\vFalcon\\Resources\\Dictionaries\\Controls.xaml",
               "RelativeToolTip": "Resources\\Dictionaries\\Controls.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-24T02:49:08.582Z"
+              "WhenOpened": "2025-07-24T02:49:08.582Z",
+              "EditorCaption": ""
             }
           ]
         },
@@ -424,18 +426,19 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Styles.xaml",
               "DocumentMoniker": "D:\\vFalcon\\Resources\\Dictionaries\\Styles.xaml",
               "RelativeDocumentMoniker": "Resources\\Dictionaries\\Styles.xaml",
               "ToolTip": "D:\\vFalcon\\Resources\\Dictionaries\\Styles.xaml",
               "RelativeToolTip": "Resources\\Dictionaries\\Styles.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-25T01:06:38.564Z"
+              "WhenOpened": "2025-07-25T01:06:38.564Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Colors.xaml",
               "DocumentMoniker": "D:\\vFalcon\\Resources\\Dictionaries\\Colors.xaml",
               "RelativeDocumentMoniker": "Resources\\Dictionaries\\Colors.xaml",
