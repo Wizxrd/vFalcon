@@ -7,7 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Resources\Images\vFalcon.ico</ApplicationIcon>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,8 +16,7 @@
     <None Remove="Resources\Cursors\Eram3.cur" />
     <None Remove="Resources\Cursors\Eram4.cur" />
     <None Remove="Resources\Cursors\Eram5.cur" />
-    <None Remove="Resources\Fonts\ERAMv200.ttf" />
-    <None Remove="Resources\Fonts\ERAMv300.ttf" />
+    <None Remove="Resources\Fonts\ERAM.ttf" />
     <None Remove="Resources\Images\Copy.png" />
     <None Remove="Resources\Images\Delete.png" />
     <None Remove="Resources\Images\Export.png" />
@@ -57,8 +56,7 @@
     <Resource Include="Resources\Cursors\Eram3.cur" />
     <Resource Include="Resources\Cursors\Eram4.cur" />
     <Resource Include="Resources\Cursors\Eram5.cur" />
-    <Resource Include="Resources\Fonts\ERAMv200.ttf" />
-    <Resource Include="Resources\Fonts\ERAMv300.ttf" />
+    <Resource Include="Resources\Fonts\ERAM.ttf" />
     <Resource Include="Resources\Images\Copy.png" />
     <Resource Include="Resources\Images\Delete.png" />
     <Resource Include="Resources\Images\Export.png" />

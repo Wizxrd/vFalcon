@@ -1,5 +1,5 @@
 ﻿vFalcon
-0.0.1.0
+0.0.2.0
 
 winexe
 C#
@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 D:\vFalcon\App.xaml
-8-1562135015
+101972038380
 1-241069421
-23736563551
+281134907740
 209682296366
-Resources\Dictionaries\Colors.xaml;Resources\Dictionaries\Controls.xaml;Resources\Dictionaries\Styles.xaml;Views\ConfirmView.xaml;Views\EramView.xaml;Views\LoadingView.xaml;Views\LoadProfileView.xaml;Views\RadarView.xaml;
+Resources\Dictionaries\Colors.xaml;Resources\Dictionaries\Controls.xaml;Resources\Dictionaries\Styles.xaml;Views\ConfirmView.xaml;Views\EramView.xaml;Views\LoadingView.xaml;Views\LoadProfileView.xaml;Views\MasterToolbarView.xaml;Views\RadarView.xaml;Views\ToolbarView.xaml;
 
 False
 

@@ -49,3 +49,7 @@ D:\vFalcon\obj\Debug\net8.0-windows\vFalcon.genruntimeconfig.cache
 D:\vFalcon\obj\Debug\net8.0-windows\ref\vFalcon.dll
 D:\vFalcon\obj\Debug\net8.0-windows\vFalcon_Content.g.cs
 D:\vFalcon\obj\Debug\net8.0-windows\vFalcon.sourcelink.json
+D:\vFalcon\obj\Debug\net8.0-windows\Views\MasterToolbarView.g.cs
+D:\vFalcon\obj\Debug\net8.0-windows\Views\ToolbarView.g.cs
+D:\vFalcon\obj\Debug\net8.0-windows\Views\MasterToolbarView.baml
+D:\vFalcon\obj\Debug\net8.0-windows\Views\ToolbarView.baml

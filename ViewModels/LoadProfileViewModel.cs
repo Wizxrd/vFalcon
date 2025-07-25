@@ -18,17 +18,21 @@ namespace vFalcon.ViewModels
     public class LoadProfileViewModel : ViewModelBase
     {
         private IProfileService profileService = new ProfileService();
-        private bool _isSelected;
-        public ProfileViewModel? LastSelectedProfileVM { get; set; }
+        private DateTime lastClickTime = DateTime.MinValue;
+        private readonly TimeSpan doubleClickTimeSpan = TimeSpan.FromMilliseconds(250);
 
         private string _searchQuery;
         private Profile _selectedProfile;
         private int _selectedIndex = -1;
 
+        public ProfileViewModel? LastSelectedProfileVM { get; set; }
+
         public ObservableCollection<ProfileViewModel> Profiles { get; } = new();
         public ObservableCollection<ProfileViewModel> FilteredProfiles { get; } = new();
         public Profile? LastSelectedProfile { get; set; }
 
+
+        public event Action OpenEramWindow;
         public event Func<string, Task<bool>> RequestConfirmation;
 
         public ICommand SelectProfileCommand { get; }
@@ -202,6 +206,12 @@ namespace vFalcon.ViewModels
                 SelectedProfile = selected.Model;
                 LastSelectedProfileVM = selected;
             }
+            if (userInitiated && (now - lastClickTime) <= doubleClickTimeSpan)
+            {
+                OpenEramWindow?.Invoke();
+            }
+
+            lastClickTime = now;
         }
 
         private void FilterProfiles()

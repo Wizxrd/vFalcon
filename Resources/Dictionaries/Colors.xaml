@@ -20,4 +20,5 @@
     <SolidColorBrush x:Key="IncDecButtonBackground" Color="#007500"/>
     <SolidColorBrush x:Key="DeactivatedToggleButtonBackground" Color="#000000"/>
     <SolidColorBrush x:Key="ActivatedToggleButtonBackground" Color="#616161"/>
+    <SolidColorBrush x:Key="DeleteTearoffBackground" Color="#007575"/>
 </ResourceDictionary>

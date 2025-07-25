@@ -37,35 +37,68 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Border Grid.Row="0" Background="Black">
+            <Border Grid.Row="0" Background="#000000">
                 <Grid>
+                    <views:RadarView x:Name="RadarVW" DataContext="{Binding RadarViewModel}"/>
                     <ContentControl x:Name="ToolbarRegion" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
-                    <Border
-                        Background="Black"
-                        BorderBrush="#797979"
-                        BorderThickness="1"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Margin="30,100,0,0">
-                        <TextBlock
-                            x:Name="ZuluTextBlock"
-                            Text="{Binding ZuluTime}"
-                            Margin="2"
-                            FontFamily="Consolas" FontSize="16"
-                            Width="Auto" MinWidth="65"
-                            Foreground="#c2c2c2"
-                            VerticalAlignment="Center"
-                            HorizontalAlignment="Right">
-                        </TextBlock>
-                    </Border>
-                    <StackPanel Margin="30,0,0,0" Orientation="Horizontal">
-                        <Button Style="{StaticResource TearoffButton}"/>
-                        <Button
-                            x:Name="CursorButton"
-                            Content="TOOLBAR"
-                            Background="{StaticResource MenuClosedButtonBackground}"
-                            Style="{StaticResource ToolbarButton}"/>
-                    </StackPanel>
+                    <Canvas>
+                        <StackPanel x:Name="ZuluPanel"
+                            Canvas.Left="25"
+                            Canvas.Top="100">
+                            <Button
+                                x:Name="ZuluButton"
+                                Background="Black"
+                                BorderBrush="#999999"
+                                adonisExtensions:CursorSpotlightExtension.BackgroundBrush="Black"
+                                adonisExtensions:CursorSpotlightExtension.BorderBrush="White"
+                                adonisExtensions:RippleExtension.BackgroundBrush="Black"
+                                adonisExtensions:RippleExtension.BorderBrush="White"
+                                BorderThickness="1"
+                                Width="105"
+                                Height="25"
+                                Tag="{x:Reference ZuluPanel}"
+                                HorizontalContentAlignment="Stretch"
+                                VerticalContentAlignment="Stretch"
+                                Click="GenericTearoff_Click">
+                                <TextBlock
+                                    x:Name="ZuluTextBlock"
+                                    Text="9999  99"
+                                    Margin="0,0,0,0"
+                                    FontFamily="/vFalcon;component/Resources/Fonts/#ERAM"
+                                    FontSize="12"
+                                    Foreground="White"
+                                    VerticalAlignment="Bottom"
+                                    HorizontalAlignment="Stretch"/>
+                            </Button>
+                        </StackPanel>
+
+                        <StackPanel 
+                            x:Name="ToolbarPanel"
+                            Orientation="Horizontal"
+                            Canvas.Left="25"
+                            Canvas.Top="300">
+                            <Button 
+                                x:Name="MasterToolbarTearoffButton"
+                                Click="GenericTearoff_Click"
+                                Tag="{x:Reference ToolbarPanel}"
+                                Style="{StaticResource TearoffButton}" />
+                            <Button 
+                                x:Name="MasterToolbarButton"
+                                Content="TOOLBAR"
+                                Background="{StaticResource MenuClosedButtonBackground}"
+                                Style="{StaticResource ToolbarButton}" />
+                        </StackPanel>
+
+                        <Border x:Name="ToolbarPlaceholder"
+                            Visibility="Collapsed"
+                            BorderBrush="White"
+                            BorderThickness="1"
+                            Background="Transparent"
+                            Width="0"
+                            Height="0"
+                            Canvas.Left="0"
+                            Canvas.Top="0" />
+                    </Canvas>
                 </Grid>
             </Border>
         </Grid>

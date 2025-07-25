@@ -3,40 +3,92 @@
   "WorkspaceRootPath": "D:\\vFalcon\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\vfalcon.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:vfalcon.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\viewmodels\\radarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:viewmodels\\radarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\.gitignore||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:.gitignore||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\loadprofileview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\loadprofileview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\mastertoolbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\mastertoolbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\loadprofileview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\loadprofileview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\resources\\dictionaries\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:resources\\dictionaries\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\viewmodels\\loadprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:viewmodels\\loadprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\loadingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\loadingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\resources\\dictionaries\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:resources\\dictionaries\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\eramview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\eramview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\viewmodels\\eramviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:viewmodels\\eramviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\viewmodels\\loadprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:viewmodels\\loadprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\eramview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\eramview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\toolbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\toolbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\loadingview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\loadingview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\loadingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\loadingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\loadprofileview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\loadprofileview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\services\\interfaces\\iprofileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:services\\interfaces\\iprofileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\models\\artcc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:models\\artcc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\resources\\dictionaries\\controls.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:resources\\dictionaries\\controls.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\loadprofileview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\loadprofileview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\viewmodels\\radarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:viewmodels\\radarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\services\\service\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,30 +103,6 @@
       "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\radarview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\eramview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\eramview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\models\\artcc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:models\\artcc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\resources\\dictionaries\\controls.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:resources\\dictionaries\\controls.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\viewmodels\\confirmviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:viewmodels\\confirmviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -85,12 +113,12 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 43,
+          "DockedWidth": 60,
           "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 19,
               "Title": "LoadProfileView.xaml",
               "DocumentMoniker": "D:\\vFalcon\\Views\\LoadProfileView.xaml",
               "RelativeDocumentMoniker": "Views\\LoadProfileView.xaml",
@@ -103,91 +131,148 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 14,
               "Title": "LoadProfileView.xaml.cs",
               "DocumentMoniker": "D:\\vFalcon\\Views\\LoadProfileView.xaml.cs",
               "RelativeDocumentMoniker": "Views\\LoadProfileView.xaml.cs",
               "ToolTip": "D:\\vFalcon\\Views\\LoadProfileView.xaml.cs",
               "RelativeToolTip": "Views\\LoadProfileView.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-24T01:03:15.796Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "LoadProfileViewModel.cs",
               "DocumentMoniker": "D:\\vFalcon\\ViewModels\\LoadProfileViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\LoadProfileViewModel.cs",
               "ToolTip": "D:\\vFalcon\\ViewModels\\LoadProfileViewModel.cs",
               "RelativeToolTip": "ViewModels\\LoadProfileViewModel.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAiwHQAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAKwAAAAAAAAAAAAwwNIAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-24T01:09:05.294Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "README.md",
+              "DocumentMoniker": "D:\\vFalcon\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "D:\\vFalcon\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-07-25T04:14:53.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "vFalcon",
               "DocumentMoniker": "D:\\vFalcon\\vFalcon.csproj",
               "RelativeDocumentMoniker": "vFalcon.csproj",
               "ToolTip": "D:\\vFalcon\\vFalcon.csproj",
               "RelativeToolTip": "vFalcon.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-24T04:16:41.088Z",
+              "WhenOpened": "2025-07-25T04:14:31.451Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
+              "Title": ".gitignore",
+              "DocumentMoniker": "D:\\vFalcon\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "D:\\vFalcon\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-07-25T04:13:47.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EramViewModel.cs",
+              "DocumentMoniker": "D:\\vFalcon\\ViewModels\\EramViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\EramViewModel.cs",
+              "ToolTip": "D:\\vFalcon\\ViewModels\\EramViewModel.cs",
+              "RelativeToolTip": "ViewModels\\EramViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T02:14:17.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EramView.xaml.cs",
+              "DocumentMoniker": "D:\\vFalcon\\Views\\EramView.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\EramView.xaml.cs",
+              "ToolTip": "D:\\vFalcon\\Views\\EramView.xaml.cs",
+              "RelativeToolTip": "Views\\EramView.xaml.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAADwvx8AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T04:03:28.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MasterToolbarView.xaml",
+              "DocumentMoniker": "D:\\vFalcon\\Views\\MasterToolbarView.xaml",
+              "RelativeDocumentMoniker": "Views\\MasterToolbarView.xaml",
+              "ToolTip": "D:\\vFalcon\\Views\\MasterToolbarView.xaml",
+              "RelativeToolTip": "Views\\MasterToolbarView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-25T03:16:15.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ToolbarView.xaml",
+              "DocumentMoniker": "D:\\vFalcon\\Views\\ToolbarView.xaml",
+              "RelativeDocumentMoniker": "Views\\ToolbarView.xaml",
+              "ToolTip": "D:\\vFalcon\\Views\\ToolbarView.xaml",
+              "RelativeToolTip": "Views\\ToolbarView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-25T03:04:56.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "LoadingView.xaml",
               "DocumentMoniker": "D:\\vFalcon\\Views\\LoadingView.xaml",
               "RelativeDocumentMoniker": "Views\\LoadingView.xaml",
               "ToolTip": "D:\\vFalcon\\Views\\LoadingView.xaml",
               "RelativeToolTip": "Views\\LoadingView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-24T04:09:49.577Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "EramView.xaml.cs",
-              "DocumentMoniker": "D:\\vFalcon\\Views\\EramView.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\EramView.xaml.cs",
-              "ToolTip": "D:\\vFalcon\\Views\\EramView.xaml.cs",
-              "RelativeToolTip": "Views\\EramView.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T04:03:28.443Z"
+              "WhenOpened": "2025-07-24T04:09:49.577Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "EramView.xaml",
-              "DocumentMoniker": "D:\\vFalcon\\Views\\EramView.xaml",
-              "RelativeDocumentMoniker": "Views\\EramView.xaml",
-              "ToolTip": "D:\\vFalcon\\Views\\EramView.xaml",
-              "RelativeToolTip": "Views\\EramView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-24T04:02:34.313Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "LoadingView.xaml.cs",
               "DocumentMoniker": "D:\\vFalcon\\Views\\LoadingView.xaml.cs",
               "RelativeDocumentMoniker": "Views\\LoadingView.xaml.cs",
               "ToolTip": "D:\\vFalcon\\Views\\LoadingView.xaml.cs",
               "RelativeToolTip": "Views\\LoadingView.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAqwHQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T04:01:00.203Z"
+              "WhenOpened": "2025-07-24T04:01:00.203Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "App.xaml",
               "DocumentMoniker": "D:\\vFalcon\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
@@ -199,7 +284,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 1,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "D:\\vFalcon\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App.xaml.cs",
+              "ToolTip": "D:\\vFalcon\\App.xaml.cs",
+              "RelativeToolTip": "App.xaml.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T03:23:34.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "EramView.xaml",
+              "DocumentMoniker": "D:\\vFalcon\\Views\\EramView.xaml",
+              "RelativeDocumentMoniker": "Views\\EramView.xaml",
+              "ToolTip": "D:\\vFalcon\\Views\\EramView.xaml",
+              "RelativeToolTip": "Views\\EramView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-24T04:02:34.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "Artcc.cs",
               "DocumentMoniker": "D:\\vFalcon\\Models\\Artcc.cs",
               "RelativeDocumentMoniker": "Models\\Artcc.cs",
@@ -207,23 +317,12 @@
               "RelativeToolTip": "Models\\Artcc.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T03:26:41.796Z"
+              "WhenOpened": "2025-07-24T03:26:41.796Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "D:\\vFalcon\\App.xaml.cs",
-              "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "D:\\vFalcon\\App.xaml.cs",
-              "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T03:23:34.355Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 22,
               "Title": "ProfileService.cs",
               "DocumentMoniker": "D:\\vFalcon\\Services\\Service\\ProfileService.cs",
               "RelativeDocumentMoniker": "Services\\Service\\ProfileService.cs",
@@ -235,7 +334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 24,
               "Title": "RadarView.xaml.cs",
               "DocumentMoniker": "D:\\vFalcon\\Views\\RadarView.xaml.cs",
               "RelativeDocumentMoniker": "Views\\RadarView.xaml.cs",
@@ -247,7 +346,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 15,
               "Title": "IProfileService.cs",
               "DocumentMoniker": "D:\\vFalcon\\Services\\Interfaces\\IProfileService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IProfileService.cs",
@@ -255,11 +354,12 @@
               "RelativeToolTip": "Services\\Interfaces\\IProfileService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T02:45:58.91Z"
+              "WhenOpened": "2025-07-24T02:45:58.91Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 21,
               "Title": "RadarViewModel.cs",
               "DocumentMoniker": "D:\\vFalcon\\ViewModels\\RadarViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\RadarViewModel.cs",
@@ -272,18 +372,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 23,
               "Title": "RadarView.xaml",
               "DocumentMoniker": "D:\\vFalcon\\Views\\RadarView.xaml",
               "RelativeDocumentMoniker": "Views\\RadarView.xaml",
               "ToolTip": "D:\\vFalcon\\Views\\RadarView.xaml",
               "RelativeToolTip": "Views\\RadarView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-24T04:05:12.214Z"
+              "WhenOpened": "2025-07-24T04:05:12.214Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 25,
               "Title": "ConfirmViewModel.cs",
               "DocumentMoniker": "D:\\vFalcon\\ViewModels\\ConfirmViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\ConfirmViewModel.cs",
@@ -295,19 +396,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "ProfileViewModel.cs",
               "DocumentMoniker": "D:\\vFalcon\\ViewModels\\ProfileViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\ProfileViewModel.cs",
               "ToolTip": "D:\\vFalcon\\ViewModels\\ProfileViewModel.cs",
               "RelativeToolTip": "ViewModels\\ProfileViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T02:55:52.85Z"
+              "WhenOpened": "2025-07-24T02:55:52.85Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "Controls.xaml",
               "DocumentMoniker": "D:\\vFalcon\\Resources\\Dictionaries\\Controls.xaml",
               "RelativeDocumentMoniker": "Resources\\Dictionaries\\Controls.xaml",
@@ -315,6 +417,36 @@
               "RelativeToolTip": "Resources\\Dictionaries\\Controls.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-07-24T02:49:08.582Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 26,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Styles.xaml",
+              "DocumentMoniker": "D:\\vFalcon\\Resources\\Dictionaries\\Styles.xaml",
+              "RelativeDocumentMoniker": "Resources\\Dictionaries\\Styles.xaml",
+              "ToolTip": "D:\\vFalcon\\Resources\\Dictionaries\\Styles.xaml",
+              "RelativeToolTip": "Resources\\Dictionaries\\Styles.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-25T01:06:38.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Colors.xaml",
+              "DocumentMoniker": "D:\\vFalcon\\Resources\\Dictionaries\\Colors.xaml",
+              "RelativeDocumentMoniker": "Resources\\Dictionaries\\Colors.xaml",
+              "ToolTip": "D:\\vFalcon\\Resources\\Dictionaries\\Colors.xaml",
+              "RelativeToolTip": "Resources\\Dictionaries\\Colors.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-25T03:22:58.76Z",
               "EditorCaption": ""
             }
           ]

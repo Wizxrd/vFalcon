@@ -1,6 +1,6 @@
 {
   "id": "ZAU",
-  "lastUpdatedAt": "2025-07-16T22:46:32.632Z",
+  "lastUpdatedAt": "2025-07-24T13:50:01.541Z",
   "facility": {
     "id": "ZAU",
     "type": "Artcc",
@@ -16859,7 +16859,7 @@
         "ASDE"
       ],
       "sourceFileName": "ORD ASDEX 2506.geojson",
-      "lastUpdatedAt": "2025-06-27T00:26:38.469Z",
+      "lastUpdatedAt": "2025-07-24T13:42:43.472Z",
       "starsBrightnessCategory": "A",
       "starsAlwaysVisible": false,
       "tdmOnly": false
@@ -18335,7 +18335,7 @@
         "TDM"
       ],
       "sourceFileName": "AP DIAG LABELS.geojson",
-      "lastUpdatedAt": "2025-07-06T17:35:45.757Z",
+      "lastUpdatedAt": "2025-07-24T13:50:00.292Z",
       "starsBrightnessCategory": "A",
       "starsAlwaysVisible": false,
       "tdmOnly": true
@@ -18518,7 +18518,7 @@
         "TDM"
       ],
       "sourceFileName": "AIRPORT DIAGRAMS.geojson",
-      "lastUpdatedAt": "2025-07-06T17:22:53.2Z",
+      "lastUpdatedAt": "2025-07-24T13:47:04.138Z",
       "starsBrightnessCategory": "A",
       "starsAlwaysVisible": false,
       "tdmOnly": true

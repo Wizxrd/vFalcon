@@ -55,16 +55,16 @@ namespace vFalcon.Views
                         var existing = JsonConvert.DeserializeObject<JObject>(existingJson);
                         string existingTimestamp = existing?["lastUpdatedAt"]?.ToString() ?? "";
 
-                        if (DateTime.TryParse(existingTimestamp, out var existingTime) &&
-                            DateTime.TryParse(newTimestamp, out var incomingTime) &&
-                            incomingTime <= existingTime)
+                        if (DateTime.TryParse(existingTimestamp, out var existingTime) && DateTime.TryParse(newTimestamp, out var incomingTime) && incomingTime <= existingTime)
                         {
-                            Logger.Info("LoadingView.ImportArtccs", $"Skipping up to date ARTCC: \"{id}\"");
+                            TextBlockLoading.Text = $"Skipped ARTCC: \"{id}\"";
+                            Logger.Info("LoadingView.ImportArtccs", $"Skipped up to date ARTCC: \"{id}\"");
                             continue;
                         }
                     }
 
                     await File.WriteAllTextAsync(destinationPath, incoming.ToString(Formatting.Indented));
+                    TextBlockLoading.Text = $"Imported ARTCC: \"{id}\"";
                     Logger.Info("LoadingView.ImportArtccs", $"Imported ARTCC: \"{id}\"");
                 }
             }
@@ -89,14 +89,30 @@ namespace vFalcon.Views
 
                     var jobj = JObject.Parse(json);
                     var displaySettings = jobj["DisplayWindowSettings"]?.FirstOrDefault()?["DisplaySettings"] as JArray;
+                    if (displaySettings == null || !displaySettings.Any(s => s["$type"]?.ToString().Contains("Eram") == true))
+                        continue;
 
-                    if (displaySettings == null) continue;
-                    if (!displaySettings.Any(s => s["$type"]?.ToString().Contains("Eram") == true)) continue;
-
-                    string filename = $"{profile.Name}.json";
+                    string filename = $"{profile.Id}.json";
                     string destinationPath = Loader.LoadFile("Profiles", filename);
 
+                    var incomingLastUsedAtStr = jobj["LastUsedAt"]?.ToString() ?? "";
+
+                    if (File.Exists(destinationPath))
+                    {
+                        var existingJson = await File.ReadAllTextAsync(destinationPath);
+                        var existing = JsonConvert.DeserializeObject<JObject>(existingJson);
+                        var existingLastUsedAtStr = existing?["LastUsedAt"]?.ToString() ?? "";
+
+                        if (DateTime.TryParse(existingLastUsedAtStr, out var existingTime) && DateTime.TryParse(incomingLastUsedAtStr, out var incomingTime) && incomingTime <= existingTime)
+                        {
+                            TextBlockLoading.Text = $"Skipped profile: \"{profile.Name}\"";
+                            Logger.Info("LoadingView.ImportEramProfiles", $"Skipped up to date profile: \"{profile.Name}\"");
+                            continue;
+                        }
+                    }
+
                     await File.WriteAllTextAsync(destinationPath, JsonConvert.SerializeObject(profile, Formatting.Indented));
+                    TextBlockLoading.Text = $"Imported profile: \"{profile.Name}\"";
                     Logger.Info("LoadingView.ImportEramProfiles", $"Imported ERAM Profile: \"{profile.Name}\"");
                 }
             }

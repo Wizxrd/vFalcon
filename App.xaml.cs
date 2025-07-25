@@ -12,7 +12,7 @@ namespace vFalcon
     /// </summary>
     public partial class App : Application
     {
-        string version = "0.0.1";
+        string version = "0.0.2";
 
         public App()
         {
