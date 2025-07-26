@@ -57,7 +57,7 @@ namespace vFalcon.Helpers
                 .OrderBy(f => f.CreationTimeUtc)
                 .ToList();
 
-            while (logFiles.Count >= 10)
+            while (logFiles.Count>= 10)
             {
                 try
                 {
@@ -78,7 +78,7 @@ namespace vFalcon.Helpers
 
         private static void Write(LogLevel level, string function, string message)
         {
-            if (level > LogLevelThreshold)
+            if (level> LogLevelThreshold)
                 return;
 
             try

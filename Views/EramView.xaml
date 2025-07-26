@@ -11,94 +11,57 @@
     xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
     xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
     Icon="pack://application:,,,/Resources/Images/vFalcon.png"
-    Title="{Binding ProfileName}"
+    Title="vFalcon"
     MinWidth="300" Width="1280" MinHeight="300" Height="720"
     FontFamily="Consolas" FontSize="12" 
     Foreground="{StaticResource White}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
-    <adonisControls:AdonisWindow.InputBindings>
-        <KeyBinding 
-            Key="P" 
-            Modifiers="Ctrl+Shift"
-            Command="{Binding SwitchProfileCommand}"/>
-        <KeyBinding 
-            Key="S" 
-            Modifiers="Ctrl"
-            Command="{Binding SaveProfileCommand}"/>
-        <KeyBinding 
-            Key="S" 
-            Modifiers="Ctrl+Shift"
-            Command="{Binding SaveProfileAsCommand}"/>
-    </adonisControls:AdonisWindow.InputBindings>
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
-    <Border>
-        <Grid>
+    <Border ClipToBounds="False">
+        <Grid ClipToBounds="False">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Border Grid.Row="0" Background="#000000">
+            <Border ClipToBounds="False" Grid.Row="0" Background="#000000">
                 <Grid>
                     <views:RadarView x:Name="RadarVW" DataContext="{Binding RadarViewModel}"/>
-                    <ContentControl x:Name="ToolbarRegion" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
-                    <Canvas>
-                        <StackPanel x:Name="ZuluPanel"
-                            Canvas.Left="25"
-                            Canvas.Top="100">
+                    <ContentControl
+                        x:Name="ToolbarRegion"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Top"
+                        Content="{Binding MasterToolbarContent}"/>
+                    <Canvas x:Name="ToolCanvas">
+                        <StackPanel x:Name="ZuluPanel" Margin="25,50,0,0"
+                                    Canvas.Top="{Binding ZuluPanelTop}"
+                                    Canvas.Left="{Binding ZuluPanelLeft}"
+                                    Canvas.Bottom="{Binding ZuluPanelBottom}"
+                                    Canvas.Right="{Binding ZuluPanelRight}">
                             <Button
                                 x:Name="ZuluButton"
                                 Background="Black"
-                                BorderBrush="#999999"
+                                BorderBrush="White"
+                                Foreground="White"
                                 adonisExtensions:CursorSpotlightExtension.BackgroundBrush="Black"
                                 adonisExtensions:CursorSpotlightExtension.BorderBrush="White"
                                 adonisExtensions:RippleExtension.BackgroundBrush="Black"
                                 adonisExtensions:RippleExtension.BorderBrush="White"
                                 BorderThickness="1"
-                                Width="105"
-                                Height="25"
                                 Tag="{x:Reference ZuluPanel}"
-                                HorizontalContentAlignment="Stretch"
-                                VerticalContentAlignment="Stretch"
-                                Click="GenericTearoff_Click">
-                                <TextBlock
-                                    x:Name="ZuluTextBlock"
-                                    Text="9999  99"
-                                    Margin="0,0,0,0"
-                                    FontFamily="/vFalcon;component/Resources/Fonts/#ERAM"
-                                    FontSize="12"
-                                    Foreground="White"
-                                    VerticalAlignment="Bottom"
-                                    HorizontalAlignment="Stretch"/>
+                                FontFamily="/vFalcon;component/Resources/Fonts/#ERAM" FontSize="14"
+                                Width="90"
+                                Height="26"
+                                VerticalContentAlignment="Top"
+                                Content="1234 56">
                             </Button>
                         </StackPanel>
-
-                        <StackPanel 
-                            x:Name="ToolbarPanel"
-                            Orientation="Horizontal"
-                            Canvas.Left="25"
-                            Canvas.Top="300">
-                            <Button 
-                                x:Name="MasterToolbarTearoffButton"
-                                Click="GenericTearoff_Click"
-                                Tag="{x:Reference ToolbarPanel}"
-                                Style="{StaticResource TearoffButton}" />
-                            <Button 
-                                x:Name="MasterToolbarButton"
-                                Content="TOOLBAR"
-                                Background="{StaticResource MenuClosedButtonBackground}"
-                                Style="{StaticResource ToolbarButton}" />
-                        </StackPanel>
-
-                        <Border x:Name="ToolbarPlaceholder"
-                            Visibility="Collapsed"
-                            BorderBrush="White"
-                            BorderThickness="1"
-                            Background="Transparent"
-                            Width="0"
-                            Height="0"
-                            Canvas.Left="0"
-                            Canvas.Top="0" />
                     </Canvas>
+                    <ContentControl
+                        x:Name="ToolbarControl"
+                        Margin="{Binding ToolbarMargin}"
+                        HorizontalAlignment="{Binding HorizontalAlignment}"
+                        VerticalAlignment="{Binding VerticalAlignment}"
+                        Content="{Binding ToolbarContent}"/>
                 </Grid>
             </Border>
         </Grid>

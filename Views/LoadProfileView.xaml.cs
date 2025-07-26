@@ -36,14 +36,14 @@ namespace vFalcon.Views
                         }
                         break;
                     case Key.Up:
-                        if (vm.FilteredProfiles.Count > 0)
+                        if (vm.FilteredProfiles.Count> 0)
                         {
                             vm.SelectedIndex = Math.Max(0, vm.SelectedIndex - 1);
                             e.Handled = true;
                         }
                         break;
                     case Key.Down:
-                        if (vm.FilteredProfiles.Count > 0)
+                        if (vm.FilteredProfiles.Count> 0)
                         {
                             vm.SelectedIndex = Math.Min(vm.FilteredProfiles.Count - 1, vm.SelectedIndex + 1);
                             e.Handled = true;

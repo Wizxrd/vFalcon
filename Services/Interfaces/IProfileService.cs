@@ -6,7 +6,7 @@ namespace vFalcon.Services.Interfaces
 {
     public interface IProfileService
     {
-        public List<Profile>? LoadProfiles();
+        public Task<List<Profile>> LoadProfiles();
         public Task Rename(string oldName, string newName);
         public Task Copy(Profile profile);
         public void Export(Profile profile);

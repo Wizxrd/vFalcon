@@ -13,32 +13,30 @@ namespace vFalcon.Services.Service
 {
     public class ProfileService : IProfileService
     {
-        public List<Profile>? LoadProfiles()
+        public async Task<List<Profile>> LoadProfiles()
         {
-            var list = new List<Profile>();
-            string folder = Loader.LoadFolder("Profiles");
-            if (!Directory.Exists(folder))
+            List<Profile> list = new List<Profile>();
+            try
             {
-                Directory.CreateDirectory(folder);
-            }
+                string crcPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CRC", "Profiles");
+                var files = Directory.GetFiles(crcPath, "*.json");
 
-            var files = Directory.GetFiles(folder, "*.json");
-            foreach (var file in files)
-            {
-                try
+                foreach (var file in files)
                 {
-                    var json = File.ReadAllText(file);
+                    var json = await File.ReadAllTextAsync(file);
                     var profile = JsonConvert.DeserializeObject<Profile>(json);
+                    if (profile == null) continue;
 
-                    if (profile != null)
-                    {
-                        list.Add(profile);
-                    }
+                    var jobj = JObject.Parse(json);
+                    var displaySettings = jobj["DisplayWindowSettings"]?.FirstOrDefault()?["DisplaySettings"] as JArray;
+                    if (displaySettings == null || !displaySettings.Any(s => s["$type"]?.ToString().Contains("Eram") == true)) continue;
+                    list.Add(profile);
+                    Logger.Info("ProfileService.LoadProfiles", $"Loaded ERAM Profile: \"{profile.Name}\"");
                 }
-                catch (Exception ex)
-                {
-                    Logger.Error("ProfileService.LoadProfiles", ex.ToString());
-                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Error("ProfileService.LoadProfiles", ex.ToString());
             }
             return list;
         }
@@ -58,7 +56,7 @@ namespace vFalcon.Services.Service
                         profile["Name"] = newName;
                         string serialized = JsonConvert.SerializeObject(profile, Formatting.Indented);
                         await Task.Run(() => File.WriteAllText(file, serialized));
-                        Logger.Debug("ProfileService.Rename", $"Renamed \"{oldName}\" to \"{newName}\"");
+                        Logger.Info("ProfileService.Rename", $"Renamed \"{oldName}\" to \"{newName}\"");
                         break;
                     }
                 }
@@ -79,7 +77,7 @@ namespace vFalcon.Services.Service
                 string crcPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CRC", "Profiles");
                 string serialized = JsonConvert.SerializeObject(profile, Formatting.Indented);
                 await Task.Run(() => File.WriteAllText(Loader.LoadFile(crcPath, $"{UniqueHash.Generate()}.json"), serialized));
-                Logger.Debug("ProfileService.Rename", $"Copied profile: \"{profile.Name}\" as: \"{copy}\"");
+                Logger.Info("ProfileService.Rename", $"Copied profile: \"{profile.Name}\" as: \"{copy}\"");
             }
             catch (Exception ex)
             {
@@ -102,7 +100,7 @@ namespace vFalcon.Services.Service
                 {
                     string serialized = JsonConvert.SerializeObject(profile, Formatting.Indented);
                     File.WriteAllText(dialog.FileName, serialized);
-                    Logger.Debug("ProfileService.Export", $"Exported profile: \"{profile.Name}\" to: \"{dialog.FileName}\"");
+                    Logger.Info("ProfileService.Export", $"Exported profile: \"{profile.Name}\" to: \"{dialog.FileName}\"");
                 }
             }
             catch (Exception ex)
@@ -114,7 +112,7 @@ namespace vFalcon.Services.Service
         public async Task Delete(Profile profile)
         {
             string crcPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CRC", "Profiles");
-            string[] files = Directory.GetFiles(Loader.LoadFolder(crcPath), "*.json");
+            string[] files = Directory.GetFiles(crcPath, "*.json");
             foreach (string file in files)
             {
                 try
@@ -124,7 +122,7 @@ namespace vFalcon.Services.Service
                     if ((string?)jObj["Name"] == profile.Name)
                     {
                         await Task.Run(() => File.Delete(file));
-                        Logger.Debug("ProfileService.Delete", $"Deleted profile: \"{profile.Name}\"");
+                        Logger.Info("ProfileService.Delete", $"Deleted profile: \"{profile.Name}\"");
                         return;
                     }
                 }

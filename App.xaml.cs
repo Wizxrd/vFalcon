@@ -12,13 +12,33 @@ namespace vFalcon
     /// </summary>
     public partial class App : Application
     {
-        string version = "0.0.2";
+        private string version = "0.0.2";
+        private static Mutex mutex;
+        const string appName = "vFalcon";
+        bool createdNew;
 
         public App()
         {
+            mutex = new Mutex(true, appName, out createdNew);
             Logger.DebugMode = true;
             Logger.LogLevelThreshold = LogLevel.Trace;
             Logger.Info("App", $"Launching vFalcon v{version}");
+        }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            if (!createdNew)
+            {
+                Shutdown();
+                return;
+            }
+            base.OnStartup(e);
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            mutex?.ReleaseMutex();
+            base.OnExit(e);
         }
     }
 }

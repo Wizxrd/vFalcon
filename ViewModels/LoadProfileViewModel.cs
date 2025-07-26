@@ -76,7 +76,7 @@ namespace vFalcon.ViewModels
                     _selectedIndex = value;
                     OnPropertyChanged();
 
-                    if (_selectedIndex >= 0 && _selectedIndex < FilteredProfiles.Count)
+                    if (_selectedIndex>= 0 && _selectedIndex < FilteredProfiles.Count)
                     {
                         var selected = FilteredProfiles[_selectedIndex];
                         HandleProfileSelection(selected, userInitiated: false); // prevent double click logic
@@ -175,19 +175,20 @@ namespace vFalcon.ViewModels
             }
         }
 
-        private void LoadProfiles()
+        private async void LoadProfiles()
         {
             Profiles.Clear();
             FilteredProfiles.Clear();
             LastSelectedProfileVM = null;
-            var loadedProfiles = profileService.LoadProfiles();
+            List<Profile> loadedProfiles = await profileService.LoadProfiles();
+            if (loadedProfiles.Count() == 0) return;
             foreach (var profile in loadedProfiles)
             {
                 var viewModel = new ProfileViewModel(profile);
                 Profiles.Add(viewModel);
             }
             FilterProfiles();
-            if (FilteredProfiles.Count > 0)
+            if (FilteredProfiles.Count> 0)
             {
                 var first = FilteredProfiles[0];
                 HandleProfileSelection(first, userInitiated: false);

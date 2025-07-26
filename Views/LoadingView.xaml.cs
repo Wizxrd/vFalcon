@@ -21,10 +21,12 @@ namespace vFalcon.Views
 
         public async void InitializeImports()
         {
+            Logger.Info("LoadingView.InitializeImports", "Initializing imports");
             TextBlockLoading.Text = "Importing Artccs";
             await ImportArtccs();
             TextBlockLoading.Text = "Importing Profiles";
             await ImportEramProfiles();
+            Logger.Info("LoadingView.InitializeImports", "Initialization completed");
             LoadProfileView loadProfileView = new LoadProfileView();
             this.Close();
             loadProfileView.ShowDialog();
@@ -58,14 +60,14 @@ namespace vFalcon.Views
                         if (DateTime.TryParse(existingTimestamp, out var existingTime) && DateTime.TryParse(newTimestamp, out var incomingTime) && incomingTime <= existingTime)
                         {
                             TextBlockLoading.Text = $"Skipped ARTCC: \"{id}\"";
-                            Logger.Info("LoadingView.ImportArtccs", $"Skipped up to date ARTCC: \"{id}\"");
+                            Logger.Debug("LoadingView.ImportArtccs", $"Skipped up to date ARTCC: \"{id}\"");
                             continue;
                         }
                     }
 
                     await File.WriteAllTextAsync(destinationPath, incoming.ToString(Formatting.Indented));
                     TextBlockLoading.Text = $"Imported ARTCC: \"{id}\"";
-                    Logger.Info("LoadingView.ImportArtccs", $"Imported ARTCC: \"{id}\"");
+                    Logger.Debug("LoadingView.ImportArtccs", $"Imported ARTCC: \"{id}\"");
                 }
             }
             catch (Exception ex)
@@ -89,14 +91,12 @@ namespace vFalcon.Views
 
                     var jobj = JObject.Parse(json);
                     var displaySettings = jobj["DisplayWindowSettings"]?.FirstOrDefault()?["DisplaySettings"] as JArray;
-                    if (displaySettings == null || !displaySettings.Any(s => s["$type"]?.ToString().Contains("Eram") == true))
-                        continue;
+                    if (displaySettings == null || !displaySettings.Any(s => s["$type"]?.ToString().Contains("Eram") == true)) continue;
 
                     string filename = $"{profile.Id}.json";
                     string destinationPath = Loader.LoadFile("Profiles", filename);
 
-                    var incomingLastUsedAtStr = jobj["LastUsedAt"]?.ToString() ?? "";
-
+                    /*var incomingLastUsedAtStr = jobj["LastUsedAt"]?.ToString() ?? "";
                     if (File.Exists(destinationPath))
                     {
                         var existingJson = await File.ReadAllTextAsync(destinationPath);
@@ -106,14 +106,14 @@ namespace vFalcon.Views
                         if (DateTime.TryParse(existingLastUsedAtStr, out var existingTime) && DateTime.TryParse(incomingLastUsedAtStr, out var incomingTime) && incomingTime <= existingTime)
                         {
                             TextBlockLoading.Text = $"Skipped profile: \"{profile.Name}\"";
-                            Logger.Info("LoadingView.ImportEramProfiles", $"Skipped up to date profile: \"{profile.Name}\"");
+                            Logger.Debug("LoadingView.ImportEramProfiles", $"Skipped up to date profile: \"{profile.Name}\"");
                             continue;
                         }
-                    }
+                    }*/
 
                     await File.WriteAllTextAsync(destinationPath, JsonConvert.SerializeObject(profile, Formatting.Indented));
                     TextBlockLoading.Text = $"Imported profile: \"{profile.Name}\"";
-                    Logger.Info("LoadingView.ImportEramProfiles", $"Imported ERAM Profile: \"{profile.Name}\"");
+                    Logger.Debug("LoadingView.ImportEramProfiles", $"Imported ERAM Profile: \"{profile.Name}\"");
                 }
             }
             catch (Exception ex)

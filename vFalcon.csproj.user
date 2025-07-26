@@ -5,10 +5,13 @@
     <Compile Update="Views\LoadingView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\MapsToolbarView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\MasterToolbarView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\ToolbarView.xaml.cs">
+    <Compile Update="Views\ToolbarControlView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

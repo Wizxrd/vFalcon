@@ -35,41 +35,38 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
-                <Button
-                   Background="{StaticResource MenuClosedButtonBackground}"
+                <ToggleButton
                    Style="{StaticResource ToolbarButton}">
                     <TextBlock TextAlignment="Center">
                         <Run Text="DRAW"/>
                     </TextBlock>
-                </Button>
+                </ToggleButton>
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
-                <Button
-                   Background="{StaticResource MenuClosedButtonBackground}"
+                <ToggleButton
                    Style="{StaticResource ToolbarButton}">
                     <TextBlock TextAlignment="Center">
                         <Run Text="ATC"/>
                         <LineBreak/>
                         <Run Text="TOOLS"/>
                     </TextBlock>
-                </Button>
+                </ToggleButton>
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="4" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
-                <Button
-                   Background="{StaticResource MenuClosedButtonBackground}"
+                <ToggleButton
                    Style="{StaticResource ToolbarButton}">
                     <TextBlock TextAlignment="Center">
                         <Run Text="AB"/>
                         <LineBreak/>
                         <Run Text="SETTING"/>
                     </TextBlock>
-                </Button>
+                </ToggleButton>
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="6" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
-                <Button
+                <ToggleButton
                    Background="Black"
                    Style="{StaticResource ToolbarButton}">
                     <TextBlock TextAlignment="Center">
@@ -77,53 +74,49 @@
                         <LineBreak/>
                         <Run Text="300"/>
                     </TextBlock>
-                </Button>
+                </ToggleButton>
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="8" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
-                <Button
-                   Background="{StaticResource MenuClosedButtonBackground}"
+                <ToggleButton
                    Style="{StaticResource ToolbarButton}">
                     <TextBlock TextAlignment="Center">
                         <Run Text="CURSOR"/>
                     </TextBlock>
-                </Button>
+                </ToggleButton>
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="10" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
-                <Button
-                   Background="{StaticResource MenuClosedButtonBackground}"
+                <ToggleButton
                    Style="{StaticResource ToolbarButton}">
                     <TextBlock TextAlignment="Center">
                        <Run Text="BRIGHT"/>
                     </TextBlock>
-                </Button>
+                </ToggleButton>
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="12" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
-                <Button
-                   Background="{StaticResource MenuClosedButtonBackground}"
+                <ToggleButton
                    Style="{StaticResource ToolbarButton}">
                     <TextBlock TextAlignment="Center">
                         <Run Text="FONT"/>
                     </TextBlock>
-                </Button>
+                </ToggleButton>
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="14" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
-                <Button
-                   Background="{StaticResource MenuClosedButtonBackground}"
+                <ToggleButton
                    Style="{StaticResource ToolbarButton}">
                     <TextBlock TextAlignment="Center">
                         <Run Text="DB"/>
                         <LineBreak/>
                         <Run Text="FIELDS"/>
                     </TextBlock>
-                </Button>
+                </ToggleButton>
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="16" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
-                <Button
+                <ToggleButton
                    Background="{StaticResource IncDecButtonBackground}"
                    Style="{StaticResource ToolbarButton}">
                     <TextBlock TextAlignment="Center">
@@ -131,51 +124,47 @@
                         <LineBreak/>
                         <Run Text="0"/>
                     </TextBlock>
-                </Button>
+                </ToggleButton>
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
-                <Button
-                   Background="{StaticResource MenuClosedButtonBackground}"
+                <ToggleButton
                    Style="{StaticResource ToolbarButton}">
                     <TextBlock TextAlignment="Center">
                         <Run Text="VIEWS"/>
                     </TextBlock>
-                </Button>
+                </ToggleButton>
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
-                <Button
-                   Background="{StaticResource MenuClosedButtonBackground}"
+                <ToggleButton
                    Style="{StaticResource ToolbarButton}">
                     <TextBlock TextAlignment="Center">
                         <Run Text="CHECK"/>
                         <LineBreak/>
                         <Run Text="LISTS"/>
                     </TextBlock>
-                </Button>
+                </ToggleButton>
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.Column="4" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
-                <Button
-                   Background="{StaticResource MenuClosedButtonBackground}"
+                <ToggleButton
                    Style="{StaticResource ToolbarButton}">
                     <TextBlock TextAlignment="Center">
                         <Run Text="COMMAND"/>
                         <LineBreak/>
                         <Run Text="MENUS"/>
                     </TextBlock>
-                </Button>
+                </ToggleButton>
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.Column="6" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
-                <Button
-                   Background="{StaticResource MenuClosedButtonBackground}"
+                <ToggleButton
                    Style="{StaticResource ToolbarButton}">
                     <TextBlock TextAlignment="Center">
                         <Run Text="MAPS"/>
                     </TextBlock>
-                </Button>
+                </ToggleButton>
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.Column="8" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
@@ -191,29 +180,27 @@
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.Column="10" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
-                <Button
-                   Background="{StaticResource MenuClosedButtonBackground}"
+                <ToggleButton
                    Style="{StaticResource ToolbarButton}">
                     <TextBlock TextAlignment="Center">
                         <Run Text="RADAR"/>
                         <LineBreak/>
                         <Run Text="FILTER"/>
                     </TextBlock>
-                </Button>
+                </ToggleButton>
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.Column="12" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
-                <Button
-                   Background="{StaticResource MenuClosedButtonBackground}"
+                <ToggleButton
                    Style="{StaticResource ToolbarButton}">
                     <TextBlock TextAlignment="Center">
                         <Run Text="PREFSET"/>
                     </TextBlock>
-                </Button>
+                </ToggleButton>
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.Column="14" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
-                <Button
+                <ToggleButton
                    Background="{StaticResource DeleteTearoffBackground}"
                    Style="{StaticResource ToolbarButton}">
                     <TextBlock TextAlignment="Center">
@@ -221,7 +208,7 @@
                         <LineBreak/>
                         <Run Text="TEAROFF"/>
                     </TextBlock>
-                </Button>
+                </ToggleButton>
             </StackPanel>
         </Grid>
     </Border>

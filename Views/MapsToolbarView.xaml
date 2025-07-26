@@ -1,0 +1,319 @@
+﻿<UserControl x:Class="vFalcon.Views.MapsToolbarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:vFalcon.Views"
+             mc:Ignorable="d"
+             Width="Auto" Height="Auto">
+    <Border Padding="2">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="2"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="96"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="96"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="96"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="2" Grid.Column="8" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <Button
+                    x:Name="MapsBackButton"
+                    Content="MAPS"
+                    Background="{StaticResource MenuOpenButtonBackground}"
+                    Style="{StaticResource ToolbarButton}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="10" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                    x:Name="MapButtonFilter1"
+                    Background="{StaticResource DeactivatedToggleButtonBackground}"
+                    Style="{StaticResource ToolbarToggleButton}">
+                    <TextBlock TextAlignment="Center">
+                        <Run Text="{Binding Filter1line1}"/>
+                        <LineBreak/>
+                        <Run Text="{Binding Filter1Line2}"/>
+                    </TextBlock>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="12" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                    x:Name="MapButtonFilter2"
+                    Background="{StaticResource DeactivatedToggleButtonBackground}"
+                    Style="{StaticResource ToolbarToggleButton}">
+                    <TextBlock TextAlignment="Center">
+                        <Run Text="{Binding Filter2line1}"/>
+                        <LineBreak/>
+                        <Run Text="{Binding Filter2Line2}"/>
+                    </TextBlock>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="14" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                    x:Name="MapButtonFilter3"
+                    Background="{StaticResource DeactivatedToggleButtonBackground}"
+                    Style="{StaticResource ToolbarToggleButton}">
+                    <TextBlock TextAlignment="Center">
+                        <Run Text="{Binding Filter3line1}"/>
+                        <LineBreak/>
+                        <Run Text="{Binding Filter3Line2}"/>
+                    </TextBlock>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="16" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                    x:Name="MapButtonFilter4"
+                    Background="{StaticResource DeactivatedToggleButtonBackground}"
+                    Style="{StaticResource ToolbarToggleButton}">
+                    <TextBlock TextAlignment="Center">
+                        <Run Text="{Binding Filter4line1}"/>
+                        <LineBreak/>
+                        <Run Text="{Binding Filter4Line2}"/>
+                    </TextBlock>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="18" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                x:Name="MapButtonFilter5"
+                Background="{StaticResource DeactivatedToggleButtonBackground}"
+                Style="{StaticResource ToolbarToggleButton}">
+                    <TextBlock TextAlignment="Center">
+                    <Run Text="{Binding Filter5line1}"/>
+                    <LineBreak/>
+                    <Run Text="{Binding Filter5Line2}"/>
+                    </TextBlock>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="20" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                x:Name="MapButtonFilter6"
+                Background="{StaticResource DeactivatedToggleButtonBackground}"
+                Style="{StaticResource ToolbarToggleButton}">
+                    <TextBlock TextAlignment="Center">
+                    <Run Text="{Binding Filter6line1}"/>
+                    <LineBreak/>
+                    <Run Text="{Binding Filter6Line2}"/>
+                    </TextBlock>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="22" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                x:Name="MapButtonFilter7"
+                Background="{StaticResource DeactivatedToggleButtonBackground}"
+                Style="{StaticResource ToolbarToggleButton}">
+                    <TextBlock TextAlignment="Center">
+                    <Run Text="{Binding Filter7line1}"/>
+                    <LineBreak/>
+                    <Run Text="{Binding Filter7Line2}"/>
+                    </TextBlock>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="24" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                x:Name="MapButtonFilter8"
+                Background="{StaticResource DeactivatedToggleButtonBackground}"
+                Style="{StaticResource ToolbarToggleButton}">
+                    <TextBlock TextAlignment="Center">
+                    <Run Text="{Binding Filter8line1}"/>
+                    <LineBreak/>
+                    <Run Text="{Binding Filter8Line2}"/>
+                    </TextBlock>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="26" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                x:Name="MapButtonFilter9"
+                Background="{StaticResource DeactivatedToggleButtonBackground}"
+                Style="{StaticResource ToolbarToggleButton}">
+                    <TextBlock TextAlignment="Center">
+                    <Run Text="{Binding Filter9line1}"/>
+                    <LineBreak/>
+                    <Run Text="{Binding Filter9Line2}"/>
+                    </TextBlock>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="28" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                x:Name="MapButtonFilter10"
+                Background="{StaticResource DeactivatedToggleButtonBackground}"
+                Style="{StaticResource ToolbarToggleButton}">
+                    <TextBlock TextAlignment="Center">
+                    <Run Text="{Binding Filter10line1}"/>
+                    <LineBreak/>
+                    <Run Text="{Binding Filter10Line2}"/>
+                    </TextBlock>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="10" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                x:Name="MapButtonFilter11"
+                Background="{StaticResource DeactivatedToggleButtonBackground}"
+                Style="{StaticResource ToolbarToggleButton}">
+                    <TextBlock TextAlignment="Center">
+                    <Run Text="{Binding Filter11line1}"/>
+                    <LineBreak/>
+                    <Run Text="{Binding Filter11Line2}"/>
+                    </TextBlock>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="12" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                x:Name="MapButtonFilter12"
+                Background="{StaticResource DeactivatedToggleButtonBackground}"
+                Style="{StaticResource ToolbarToggleButton}">
+                    <TextBlock TextAlignment="Center">
+                    <Run Text="{Binding Filter12line1}"/>
+                    <LineBreak/>
+                    <Run Text="{Binding Filter12Line2}"/>
+                    </TextBlock>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="14" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                x:Name="MapButtonFilter13"
+                Background="{StaticResource DeactivatedToggleButtonBackground}"
+                Style="{StaticResource ToolbarToggleButton}">
+                    <TextBlock TextAlignment="Center">
+                    <Run Text="{Binding Filter13line1}"/>
+                    <LineBreak/>
+                    <Run Text="{Binding Filter13Line2}"/>
+                    </TextBlock>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="16" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                x:Name="MapButtonFilter14"
+                Background="{StaticResource DeactivatedToggleButtonBackground}"
+                Style="{StaticResource ToolbarToggleButton}">
+                    <TextBlock TextAlignment="Center">
+                    <Run Text="{Binding Filter14line1}"/>
+                    <LineBreak/>
+                    <Run Text="{Binding Filter14Line2}"/>
+                    </TextBlock>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="18" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                x:Name="MapButtonFilter15"
+                Background="{StaticResource DeactivatedToggleButtonBackground}"
+                Style="{StaticResource ToolbarToggleButton}">
+                    <TextBlock TextAlignment="Center">
+                    <Run Text="{Binding Filter15line1}"/>
+                    <LineBreak/>
+                    <Run Text="{Binding Filter15Line2}"/>
+                    </TextBlock>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="20" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                x:Name="MapButtonFilter16"
+                Background="{StaticResource DeactivatedToggleButtonBackground}"
+                Style="{StaticResource ToolbarToggleButton}">
+                    <TextBlock TextAlignment="Center">
+                    <Run Text="{Binding Filter16line1}"/>
+                    <LineBreak/>
+                    <Run Text="{Binding Filter16Line2}"/>
+                    </TextBlock>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="22" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                x:Name="MapButtonFilter17"
+                Background="{StaticResource DeactivatedToggleButtonBackground}"
+                Style="{StaticResource ToolbarToggleButton}">
+                    <TextBlock TextAlignment="Center">
+                    <Run Text="{Binding Filter17line1}"/>
+                    <LineBreak/>
+                    <Run Text="{Binding Filter17Line2}"/>
+                    </TextBlock>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="24" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                x:Name="MapButtonFilter18"
+                Background="{StaticResource DeactivatedToggleButtonBackground}"
+                Style="{StaticResource ToolbarToggleButton}">
+                    <TextBlock TextAlignment="Center">
+                    <Run Text="{Binding Filter18line1}"/>
+                    <LineBreak/>
+                    <Run Text="{Binding Filter18Line2}"/>
+                    </TextBlock>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="26" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                x:Name="MapButtonFilter19"
+                Background="{StaticResource DeactivatedToggleButtonBackground}"
+                Style="{StaticResource ToolbarToggleButton}">
+                    <TextBlock TextAlignment="Center">
+                    <Run Text="{Binding Filter19line1}"/>
+                    <LineBreak/>
+                    <Run Text="{Binding Filter19Line2}"/>
+                    </TextBlock>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="28" Orientation="Horizontal">
+                <Button Style="{StaticResource TearoffButton}"/>
+                <ToggleButton
+                x:Name="MapButtonFilter20"
+                Background="{StaticResource DeactivatedToggleButtonBackground}"
+                Style="{StaticResource ToolbarToggleButton}">
+                    <TextBlock TextAlignment="Center">
+                    <Run Text="{Binding Filter20line1}"/>
+                    <LineBreak/>
+                    <Run Text="{Binding Filter20Line2}"/>
+                    </TextBlock>
+                </ToggleButton>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>
