@@ -72,6 +72,15 @@ namespace vFalcon.ViewModels
             }
         }
 
+        public void OnToolbarButtonMeasured(double buttonWidth)
+        {
+            if (!double.IsNaN(ToolbarControlRight))
+            {
+                ToolbarControlRight = buttonWidth;
+                Logger.Debug("OnToolbarButtonMeasured", $"buttonWidth={buttonWidth}");
+            }
+        }
+
         public ICommand ToolbarControlCommand { get; }
         public ICommand MasterToolbarCommand { get; }
         public string CursorSize
@@ -252,7 +261,7 @@ namespace vFalcon.ViewModels
                             ToolbarControlTop = parts[1];
                             break;
                         case "TopRight":
-                            ToolbarControlRight = parts[0]+96;
+                            ToolbarControlRight += parts[0];
                             ToolbarControlTop = parts[1];
                             ToolbarControlLeft = double.NaN;
                             break;
@@ -262,7 +271,7 @@ namespace vFalcon.ViewModels
                             ToolbarControlTop = double.NaN;
                             break;
                         case "BottomRight":
-                            ToolbarControlRight = parts[0]+96;
+                            ToolbarControlRight += parts[0];
                             ToolbarControlBottom = parts[1];
                             ToolbarControlTop = ToolbarControlLeft = double.NaN;
                             break;

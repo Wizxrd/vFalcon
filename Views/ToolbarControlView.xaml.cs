@@ -22,12 +22,38 @@ namespace vFalcon.Views
     /// </summary>
     public partial class ToolbarControlView : UserControl
     {
+
+        private EramViewModel _eramViewModel;
+
         public ToolbarControlView(EramViewModel eramViewModel)
         {
             InitializeComponent();
+            _eramViewModel = eramViewModel;
+            
             DataContext = new ToolbarControlViewModel(eramViewModel);
             var uri = new Uri($"pack://application:,,,/Resources/Cursors/Eram{eramViewModel.CursorSize}.cur");
             this.Cursor = new Cursor(Application.GetResourceStream(uri).Stream);
+
+            Loaded += ToolbarControlView_Loaded;
+            Logger.Debug("ToolbarControlView_int", "Constructing the ToolbarControlView");
+
+        }
+
+        private void ToolbarControlView_Loaded(object sender, RoutedEventArgs e)
+        {
+            Logger.Debug("ToolbarControlView_Loaded", "Called");
+
+            ToolbarButton.Dispatcher.BeginInvoke(new Action(() =>
+            {
+                var width = ToolbarButton.ActualWidth;
+
+                Logger.Debug("ToolbarControlView_Loaded", $"Invoked - width={width}");
+
+                Logger.Debug("ToolbarControlView_Loaded", $"Invoked - width={width}");
+
+
+                _eramViewModel.OnToolbarButtonMeasured( width );
+            }), System.Windows.Threading.DispatcherPriority.Loaded);
         }
     }
 }
