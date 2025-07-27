@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "D:\\vFalcon\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\viewmodels\\eramviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:viewmodels\\eramviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\toolbarcontrolview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\toolbarcontrolview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\mastertoolbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\mastertoolbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\toolbarcontrolview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\toolbarcontrolview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\mapstoolbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\mapstoolbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\viewmodels\\viewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:viewmodels\\viewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\viewmodels\\eramviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:viewmodels\\eramviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\eramview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -23,10 +43,6 @@
       "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:resources\\dictionaries\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\mastertoolbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\mastertoolbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\eramview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
       "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\eramview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
@@ -37,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\viewmodels\\toolbarcontrolviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:viewmodels\\toolbarcontrolviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|d:\\vfalcon\\views\\toolbarcontrolview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{22DD59F0-6D70-48B4-963A-3B1F8F058609}|vFalcon.csproj|solutionrelative:views\\toolbarcontrolview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,11 +62,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 44,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "EramView.xaml",
               "DocumentMoniker": "D:\\vFalcon\\Views\\EramView.xaml",
               "RelativeDocumentMoniker": "Views\\EramView.xaml",
@@ -62,8 +74,7 @@
               "RelativeToolTip": "Views\\EramView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-07-26T03:23:06.047Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -80,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "MasterToolbarView.xaml",
               "DocumentMoniker": "D:\\vFalcon\\Views\\MasterToolbarView.xaml",
               "RelativeDocumentMoniker": "Views\\MasterToolbarView.xaml",
@@ -93,7 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 3,
               "Title": "ToolbarControlView.xaml.cs",
               "DocumentMoniker": "D:\\vFalcon\\Views\\ToolbarControlView.xaml.cs",
               "RelativeDocumentMoniker": "Views\\ToolbarControlView.xaml.cs",
@@ -107,7 +118,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "D:\\vFalcon\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "D:\\vFalcon\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAECAAAAAAAAAAAkwEsCAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-07-27T00:58:11.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MapsToolbarView.xaml",
+              "DocumentMoniker": "D:\\vFalcon\\Views\\MapsToolbarView.xaml",
+              "RelativeDocumentMoniker": "Views\\MapsToolbarView.xaml",
+              "ToolTip": "D:\\vFalcon\\Views\\MapsToolbarView.xaml",
+              "RelativeToolTip": "Views\\MapsToolbarView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-26T23:36:45.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Controls.xaml",
               "DocumentMoniker": "D:\\vFalcon\\Resources\\Dictionaries\\Controls.xaml",
               "RelativeDocumentMoniker": "Resources\\Dictionaries\\Controls.xaml",
@@ -119,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "Styles.xaml",
               "DocumentMoniker": "D:\\vFalcon\\Resources\\Dictionaries\\Styles.xaml",
               "RelativeDocumentMoniker": "Resources\\Dictionaries\\Styles.xaml",
@@ -137,7 +173,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "EramView.xaml.cs",
               "DocumentMoniker": "D:\\vFalcon\\Views\\EramView.xaml.cs",
               "RelativeDocumentMoniker": "Views\\EramView.xaml.cs",
@@ -146,25 +182,37 @@
               "ViewState": "AgIAABgAAAAAAAAAAAAAABgAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-26T01:21:29.38Z",
-              "IsPinned": true,
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ViewModelBase.cs",
+              "DocumentMoniker": "D:\\vFalcon\\ViewModels\\ViewModelBase.cs",
+              "RelativeDocumentMoniker": "ViewModels\\ViewModelBase.cs",
+              "ToolTip": "D:\\vFalcon\\ViewModels\\ViewModelBase.cs",
+              "RelativeToolTip": "ViewModels\\ViewModelBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T00:23:27.994Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "EramViewModel.cs",
               "DocumentMoniker": "D:\\vFalcon\\ViewModels\\EramViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\EramViewModel.cs",
               "ToolTip": "D:\\vFalcon\\ViewModels\\EramViewModel.cs",
               "RelativeToolTip": "ViewModels\\EramViewModel.cs",
-              "ViewState": "AgIAAKoAAAAAAAAAAAAQwNgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAUwKEAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-26T03:27:48.438Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "Colors.xaml",
               "DocumentMoniker": "D:\\vFalcon\\Resources\\Dictionaries\\Colors.xaml",
               "RelativeDocumentMoniker": "Resources\\Dictionaries\\Colors.xaml",
@@ -176,7 +224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "ToolbarControlViewModel.cs",
               "DocumentMoniker": "D:\\vFalcon\\ViewModels\\ToolbarControlViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\ToolbarControlViewModel.cs",
@@ -184,8 +232,7 @@
               "RelativeToolTip": "ViewModels\\ToolbarControlViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T04:43:02.345Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-26T04:43:02.345Z"
             }
           ]
         }

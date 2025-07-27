@@ -48,7 +48,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="2" Grid.Column="8" Orientation="Horizontal">
                 <Button Style="{StaticResource TearoffButton}"/>
-                <Button
+                <ToggleButton
                     x:Name="MapsBackButton"
                     Content="MAPS"
                     Background="{StaticResource MenuOpenButtonBackground}"
