@@ -24,7 +24,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Border ClipToBounds="False" Grid.Row="0" Background="#000000">
-                <Grid>
+                <Grid ClipToBounds="False">
                     <views:RadarView x:Name="RadarVW" DataContext="{Binding RadarViewModel}"/>
                     <ContentControl
                         x:Name="ToolbarRegion"
@@ -56,12 +56,13 @@
                             </Button>
                         </StackPanel>
                     </Canvas>
-                    <ContentControl
-                        x:Name="ToolbarControl"
-                        Margin="{Binding ToolbarMargin}"
-                        HorizontalAlignment="{Binding HorizontalAlignment}"
-                        VerticalAlignment="{Binding VerticalAlignment}"
-                        Content="{Binding ToolbarContent}"/>
+                    <Canvas ClipToBounds="False">
+                        <ContentControl
+                            x:Name="ToolbarControl"
+                            Canvas.Top="100"
+                            Canvas.Right="1"
+                            Content="{Binding ToolbarContent}"/>
+                    </Canvas>
                 </Grid>
             </Border>
         </Grid>

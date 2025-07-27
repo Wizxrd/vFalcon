@@ -125,16 +125,20 @@ namespace vFalcon.ViewModels
             ToolbarContent = new ToolbarControlView(this);
             //ToolbarControlCommand = new RelayCommand(ToggleToolbarControl);
             MasterToolbarCommand = new RelayCommand(OnMasterToolbar);
+            IsMasterToolbarOpen = !IsMasterToolbarOpen;
+            OnMasterToolbar();
         }
 
         public void OnMasterToolbar()
         {
-            if (IsMasterToolbarOpen)
+            if (!IsMasterToolbarOpen)
             {
+                IsMasterToolbarOpen = !IsMasterToolbarOpen;
                 MasterToolbarContent = new MasterToolbarView();
             }
             else
             {
+                IsMasterToolbarOpen = !IsMasterToolbarOpen;
                 MasterToolbarContent = null;
             }
         }
@@ -212,7 +216,6 @@ namespace vFalcon.ViewModels
                             ToolbarHorizontalAlignment = HorizontalAlignment.Right;
                             ToolbarVerticalAlignment = VerticalAlignment.Top;
                             ToolbarMargin = new Thickness(0, parts[1], parts[0], 0);
-                            Logger.Debug("EramViewModel.LoadTearoffs", "TopRight");
                             break;
 
                         case "BottomLeft":

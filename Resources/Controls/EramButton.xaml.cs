@@ -34,6 +34,7 @@ namespace vFalcon.Resources.Controls
         public static readonly DependencyProperty ButtonStyleProperty = DependencyProperty.Register(nameof(EramButtonStyle), typeof(Style), typeof(EramButton), new PropertyMetadata(null));
 
         public static readonly DependencyProperty CommandProperty = DependencyProperty.Register(nameof(Command), typeof(ICommand), typeof(EramButton), new PropertyMetadata(null));
+        public static readonly DependencyProperty IsCheckedProperty = DependencyProperty.Register(nameof(IsChecked), typeof(bool), typeof(EramButton), new PropertyMetadata(false));
 
         public string Line1Text
         {
@@ -59,5 +60,10 @@ namespace vFalcon.Resources.Controls
             set => SetValue(CommandProperty, value);
         }
 
+        public bool IsChecked
+        {
+            get => (bool)GetValue(IsCheckedProperty);
+            set => SetValue(IsCheckedProperty, value);
+        }
     }
 }

@@ -12,7 +12,8 @@
         <Button Style="{StaticResource TearoffButton}"/>
         <ToggleButton 
             Style="{Binding EramButtonStyle, RelativeSource={RelativeSource AncestorType=UserControl}}" 
-            Command="{Binding Command, RelativeSource={RelativeSource AncestorType=UserControl}}">
+            Command="{Binding Command, RelativeSource={RelativeSource AncestorType=UserControl}}"
+            IsChecked="{Binding IsChecked, RelativeSource={RelativeSource AncestorType=UserControl}}">
             <TextBlock TextAlignment="Center">
             <Run Text="{Binding Line1Text, RelativeSource={RelativeSource AncestorType=UserControl}}" />
             <LineBreak/>
