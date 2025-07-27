@@ -639,23 +639,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nicks\\.nuget\\packages\\": {},
+    "C:\\Users\\Nikolas\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "0.0.2",
     "restore": {
-      "projectUniqueName": "D:\\vFalcon\\vFalcon.csproj",
+      "projectUniqueName": "D:\\GitHub Repositories\\Other\\vFalcon\\vFalcon.csproj",
       "projectName": "vFalcon",
-      "projectPath": "D:\\vFalcon\\vFalcon.csproj",
-      "packagesPath": "C:\\Users\\nicks\\.nuget\\packages\\",
-      "outputPath": "D:\\vFalcon\\obj\\",
+      "projectPath": "D:\\GitHub Repositories\\Other\\vFalcon\\vFalcon.csproj",
+      "packagesPath": "C:\\Users\\Nikolas\\.nuget\\packages\\",
+      "outputPath": "D:\\GitHub Repositories\\Other\\vFalcon\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\nicks\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nikolas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -664,6 +664,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

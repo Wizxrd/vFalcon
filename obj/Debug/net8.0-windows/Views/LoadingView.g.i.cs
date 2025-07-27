@@ -72,7 +72,7 @@ namespace vFalcon.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/vFalcon;component/views/loadingview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/vFalcon;V0.0.2.0;component/views/loadingview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\LoadingView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
