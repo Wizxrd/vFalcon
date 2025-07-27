@@ -76,26 +76,26 @@ namespace vFalcon.ViewModels
             set { zuluPanelBottom = value; OnPropertyChanged(); }
         }
 
-private Thickness _toolbarMargin;
-public Thickness ToolbarMargin
-{
-    get => _toolbarMargin;
-    set { _toolbarMargin = value; OnPropertyChanged(); }
-}
+        private Thickness _toolbarMargin;
+        public Thickness ToolbarMargin
+        {
+            get => _toolbarMargin;
+            set { _toolbarMargin = value; OnPropertyChanged(); }
+        }
 
-private HorizontalAlignment _toolbarHorizontalAlignment;
-public HorizontalAlignment ToolbarHorizontalAlignment
-{
-    get => _toolbarHorizontalAlignment;
-    set { _toolbarHorizontalAlignment = value; OnPropertyChanged(); }
-}
+        private HorizontalAlignment _toolbarHorizontalAlignment;
+        public HorizontalAlignment ToolbarHorizontalAlignment
+        {
+            get => _toolbarHorizontalAlignment;
+            set { _toolbarHorizontalAlignment = value; OnPropertyChanged(); }
+        }
 
-private VerticalAlignment _toolbarVerticalAlignment;
-public VerticalAlignment ToolbarVerticalAlignment
-{
-    get => _toolbarVerticalAlignment;
-    set { _toolbarVerticalAlignment = value; OnPropertyChanged(); }
-}
+        private VerticalAlignment _toolbarVerticalAlignment;
+        public VerticalAlignment ToolbarVerticalAlignment
+        {
+            get => _toolbarVerticalAlignment;
+            set { _toolbarVerticalAlignment = value; OnPropertyChanged(); }
+        }
 
         public bool IsMasterToolbarOpen
         {
