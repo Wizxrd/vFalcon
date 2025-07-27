@@ -55,12 +55,12 @@
                                 Content="1234 56">
                             </Button>
                         </StackPanel>
-                    </Canvas>
-                    <Canvas ClipToBounds="False">
                         <ContentControl
                             x:Name="ToolbarControl"
-                            Canvas.Top="100"
-                            Canvas.Right="1"
+                            Canvas.Top="{Binding ToolbarControlTop}"
+                            Canvas.Left="{Binding ToolbarControlLeft}"
+                            Canvas.Right="{Binding ToolbarControlRight}"
+                            Canvas.Bottom="{Binding ToolbarControlBottom}"
                             Content="{Binding ToolbarContent}"/>
                     </Canvas>
                 </Grid>

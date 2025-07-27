@@ -24,12 +24,53 @@ namespace vFalcon.ViewModels
         private double zuluPanelTop = double.NaN;
         private double zuluPanelRight = double.NaN;
         private double zuluPanelBottom = double.NaN;
-        private double toolbarPanelLeft;
-        private double toolbarPanelTop = double.NaN;
-        private double toolbarPanelRight = double.NaN;
-        private double toolbarPanelBottom = double.NaN;
+
+        private double toolbarControlLeft;
+        private double toolbarControlTop;
+        private double toolbarControlRight;
+        private double toolbarControlBottom;
 
         private object _masterToolbarContent;
+
+        public double ToolbarControlLeft
+        {
+            get => toolbarControlLeft;
+            set
+            {
+                toolbarControlLeft = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public double ToolbarControlRight
+        {
+            get => toolbarControlRight;
+            set
+            {
+                toolbarControlRight = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public double ToolbarControlTop
+        {
+            get => toolbarControlTop;
+            set
+            {
+                toolbarControlTop = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public double ToolbarControlBottom
+        {
+            get => toolbarControlBottom;
+            set
+            {
+                toolbarControlBottom = value;
+                OnPropertyChanged();
+            }
+        }
 
         public ICommand ToolbarControlCommand { get; }
         public ICommand MasterToolbarCommand { get; }
@@ -207,27 +248,23 @@ namespace vFalcon.ViewModels
                     switch (anchor)
                     {
                         case "TopLeft":
-                            ToolbarHorizontalAlignment = HorizontalAlignment.Left;
-                            ToolbarVerticalAlignment = VerticalAlignment.Top;
-                            ToolbarMargin = new Thickness(parts[0], parts[1], 0, 0);
+                            ToolbarControlLeft = parts[0];
+                            ToolbarControlTop = parts[1];
                             break;
-
                         case "TopRight":
-                            ToolbarHorizontalAlignment = HorizontalAlignment.Right;
-                            ToolbarVerticalAlignment = VerticalAlignment.Top;
-                            ToolbarMargin = new Thickness(0, parts[1], parts[0], 0);
+                            ToolbarControlRight = parts[0]+96;
+                            ToolbarControlTop = parts[1];
+                            ToolbarControlLeft = double.NaN;
                             break;
-
                         case "BottomLeft":
-                            ToolbarHorizontalAlignment = HorizontalAlignment.Left;
-                            ToolbarVerticalAlignment = VerticalAlignment.Bottom;
-                            ToolbarMargin = new Thickness(parts[0], 0, 0, parts[1]);
+                            ToolbarControlLeft = parts[0];
+                            ToolbarControlBottom = parts[1];
+                            ToolbarControlTop = double.NaN;
                             break;
-
                         case "BottomRight":
-                            ToolbarHorizontalAlignment = HorizontalAlignment.Right;
-                            ToolbarVerticalAlignment = VerticalAlignment.Bottom;
-                            ToolbarMargin = new Thickness(0, 0, parts[0], parts[1]);
+                            ToolbarControlRight = parts[0]+96;
+                            ToolbarControlBottom = parts[1];
+                            ToolbarControlTop = ToolbarControlLeft = double.NaN;
                             break;
                     }
                     return;

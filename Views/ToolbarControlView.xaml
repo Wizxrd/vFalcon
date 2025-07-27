@@ -7,35 +7,31 @@
              xmlns:controls="clr-namespace:vFalcon.Resources.Controls"
              mc:Ignorable="d"
              Width="Auto" Height="Auto">
-    <StackPanel Orientation="Horizontal">
-        <!-- Left Column -->
-        <StackPanel>
-            <controls:EramButton
-                Line1Text="TOOLBAR"
-                EramButtonStyle="{StaticResource ToolbarButton}"
-                Command="{Binding ToolbarControlCommand}"/>
-        </StackPanel>
 
-        <!-- Right Column using Grid for alignment -->
-        <Grid Visibility="{Binding ToolbarControlGrid}">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+    <Canvas>
+        <controls:EramButton
+            x:Name="ToolbarButton"
+            Line1Text="TOOLBAR"
+            EramButtonStyle="{StaticResource ToolbarButton}"
+            Command="{Binding ToolbarControlCommand}"/>
+
+
+        <StackPanel
+            Visibility="{Binding ToolbarControlGrid}"
+            Canvas.Left="96"
+            Canvas.Top="0">
 
             <controls:EramButton
-                Grid.Row="0"
                 Line1Text="MASTER"
                 Line2Text="TOOLBAR"
                 EramButtonStyle="{StaticResource ToolbarToggleButton}"
                 Command="{Binding MasterToolbarCommand}"
-                IsChecked="{Binding IsMasterToolbarOpen}"/>
+                IsChecked="{Binding IsMasterToolbarOpen}" />
 
             <controls:EramButton
-                Grid.Row="1"
                 Line1Text="MASTER"
                 Line2Text="RAISE"
                 EramButtonStyle="{StaticResource ToolbarToggleButton}" />
-        </Grid>
-    </StackPanel>
+        </StackPanel>
+    </Canvas>
 </UserControl>
