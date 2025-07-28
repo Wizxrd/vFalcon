@@ -9,29 +9,97 @@
              Width="Auto" Height="Auto">
 
     <Canvas>
-        <controls:EramButton
-            x:Name="ToolbarButton"
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <controls:EramButton
+            x:Name="MenuButton"
+            Grid.Column="0"
+            VerticalAlignment="Top"
             Line1Text="TOOLBAR"
-            EramButtonStyle="{StaticResource ToolbarButton}"
+            EramButtonStyle="{StaticResource MenuButton}"
             Command="{Binding ToolbarControlCommand}"/>
 
-
-        <StackPanel
-            Visibility="{Binding ToolbarControlGrid}"
-            Canvas.Left="96"
-            Canvas.Top="0">
-
-            <controls:EramButton
-                Line1Text="MASTER"
-                Line2Text="TOOLBAR"
-                EramButtonStyle="{StaticResource ToolbarToggleButton}"
-                Command="{Binding MasterToolbarCommand}"
-                IsChecked="{Binding IsMasterToolbarOpen}" />
-
-            <controls:EramButton
-                Line1Text="MASTER"
-                Line2Text="RAISE"
-                EramButtonStyle="{StaticResource ToolbarToggleButton}" />
-        </StackPanel>
+            <Border Grid.Column="1" Background="{StaticResource MasterToolbarBackground}" BorderBrush="#896800" BorderThickness="2" Visibility="{Binding ToolbarControlGrid}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="2"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <controls:EramButton
+                        Grid.Row="0" Grid.Column="0"
+                        Line1Text="MASTER"
+                        Line2Text="TOOLBAR"
+                        EramButtonStyle="{StaticResource ToggleButton}"
+                        Command="{Binding MasterToolbarCommand}"
+                        IsChecked="{Binding IsMasterToolbarOpen}"/>
+                    <controls:EramButton
+                        Grid.Row="0" Grid.Column="2"
+                        Line1Text="MCA"
+                        Line2Text="TOOLBAR"
+                        EramButtonStyle="{StaticResource StaticToggleButton}"/>
+                    <controls:EramButton
+                        Grid.Row="0" Grid.Column="4"
+                        Line1Text="HORIZ"
+                        Line2Text="TOOLBAR"
+                        EramButtonStyle="{StaticResource StaticToggleButton}"/>
+                    <controls:EramButton
+                        Grid.Row="0" Grid.Column="6"
+                        Line1Text="LEFT"
+                        Line2Text="TOOLBAR"
+                        EramButtonStyle="{StaticResource StaticToggleButton}"/>
+                    <controls:EramButton
+                        Grid.Row="0" Grid.Column="8"
+                        Line1Text="RIGHT"
+                        Line2Text="TOOLBAR"
+                        EramButtonStyle="{StaticResource StaticToggleButton}"/>
+                    <controls:EramButton
+                        Grid.Row="2" Grid.Column="0"
+                        Line1Text="MASTER"
+                        Line2Text="{Binding MasterRaiseLower}"
+                        EramButtonStyle="{StaticResource ToggleButton}"
+                        Command="{Binding SwapZOrderCommand}"
+                        IsChecked="{Binding IsRaiseMasterToolbar}"/>
+                    <controls:EramButton
+                        Grid.Row="2" Grid.Column="2"
+                        Line1Text="MCA"
+                        Line2Text="RAISE"
+                        EramButtonStyle="{StaticResource StaticToggleButton}"/>
+                    <controls:EramButton
+                        Grid.Row="2" Grid.Column="4"
+                        Line1Text="HORIZ"
+                        Line2Text="RAISE"
+                        EramButtonStyle="{StaticResource StaticToggleButton}"/>
+                    <controls:EramButton
+                        Grid.Row="2" Grid.Column="6"
+                        Line1Text="LEFT"
+                        Line2Text="RAISE"
+                        EramButtonStyle="{StaticResource StaticToggleButton}"/>
+                    <controls:EramButton
+                        Grid.Row="2" Grid.Column="8"
+                        Line1Text="RIGHT"
+                        Line2Text="RAISE"
+                        EramButtonStyle="{StaticResource StaticToggleButton}"/>
+                </Grid>
+            </Border>
+        </Grid>
     </Canvas>
 </UserControl>

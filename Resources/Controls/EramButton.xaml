@@ -6,18 +6,19 @@
              xmlns:local="clr-namespace:vFalcon.Resources.Controls"
              mc:Ignorable="d" 
              d:Height="Auto" d:Width="Auto">
-    <StackPanel Grid.Row="{Binding (Grid.Row), RelativeSource={RelativeSource AncestorType=UserControl}}" 
-                Grid.Column="{Binding (Grid.Column), RelativeSource={RelativeSource AncestorType=UserControl}}" 
-                Orientation="Horizontal">
+    <StackPanel
+        Grid.Row="{Binding (Grid.Row), RelativeSource={RelativeSource AncestorType=UserControl}}" 
+        Grid.Column="{Binding (Grid.Column), RelativeSource={RelativeSource AncestorType=UserControl}}" 
+        Orientation="Horizontal">
         <Button Style="{StaticResource TearoffButton}"/>
         <ToggleButton 
             Style="{Binding EramButtonStyle, RelativeSource={RelativeSource AncestorType=UserControl}}" 
             Command="{Binding Command, RelativeSource={RelativeSource AncestorType=UserControl}}"
             IsChecked="{Binding IsChecked, RelativeSource={RelativeSource AncestorType=UserControl}}">
             <TextBlock TextAlignment="Center">
-            <Run Text="{Binding Line1Text, RelativeSource={RelativeSource AncestorType=UserControl}}" />
-            <LineBreak/>
-            <Run Text="{Binding Line2Text, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                <Run Text="{Binding Line1Text, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                <LineBreak/>
+                <Run Text="{Binding Line2Text, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
             </TextBlock>
         </ToggleButton>
     </StackPanel>

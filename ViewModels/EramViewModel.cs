@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 using vFalcon.Commands;
 using vFalcon.Helpers;
 using vFalcon.Models;
@@ -18,12 +19,14 @@ namespace vFalcon.ViewModels
 {
     public class EramViewModel : ViewModelBase
     {
+        // Fields
+        private Artcc artcc;
         private Profile profile;
 
-        private double zuluPanelLeft;
-        private double zuluPanelTop = double.NaN;
-        private double zuluPanelRight = double.NaN;
-        private double zuluPanelBottom = double.NaN;
+        private double timeBorderLeft;
+        private double timeBorderTop = double.NaN;
+        private double timeBorderRight = double.NaN;
+        private double timeBorderBottom = double.NaN;
 
         private double toolbarControlLeft;
         private double toolbarControlTop;
@@ -31,64 +34,79 @@ namespace vFalcon.ViewModels
         private double toolbarControlBottom;
 
         private object _masterToolbarContent;
+        private ToolbarControlView _toolbarContent;
 
-        public double ToolbarControlLeft
-        {
-            get => toolbarControlLeft;
-            set
-            {
-                toolbarControlLeft = value;
-                OnPropertyChanged();
-            }
-        }
+        private int _toolbarRegionZIndex = 1;
+        private int _canvasZIndex = 2;
+        private string masterRaiseLower;
 
-        public double ToolbarControlRight
-        {
-            get => toolbarControlRight;
-            set
-            {
-                toolbarControlRight = value;
-                OnPropertyChanged();
-            }
-        }
+        private Brush background;
+        private int backgroundValue;
+        private int brightnessValue;
 
-        public double ToolbarControlTop
-        {
-            get => toolbarControlTop;
-            set
-            {
-                toolbarControlTop = value;
-                OnPropertyChanged();
-            }
-        }
+        private bool cursorToolbarOpen = false;
+        private bool brightnessToolbarOpen = false;
 
-        public double ToolbarControlBottom
-        {
-            get => toolbarControlBottom;
-            set
-            {
-                toolbarControlBottom = value;
-                OnPropertyChanged();
-            }
-        }
+        //Default margins
+        private Thickness timeMargin = new Thickness(20, 110, 0, 0);
+        private Thickness toolbarControlMargin = new Thickness(90, 71, 0, 0);
 
-        public void OnToolbarButtonMeasured(double buttonWidth)
-        {
-            if (!double.IsNaN(ToolbarControlRight))
-            {
-                ToolbarControlRight = buttonWidth;
-                Logger.Debug("OnToolbarButtonMeasured", $"buttonWidth={buttonWidth}");
-            }
-        }
-
+        // Commands
         public ICommand ToolbarControlCommand { get; }
         public ICommand MasterToolbarCommand { get; }
-        public string CursorSize
+        public ICommand SwapZOrderCommand { get; }
+        
+        //Master Toolbar
+        public ICommand CursorCommand { get; }
+        public ICommand BrightnessCommand { get; }
+
+        // Properties
+        // Toolbar Control Location
+        public double ToolbarControlLeft { get => toolbarControlLeft; set { toolbarControlLeft = value; OnPropertyChanged(); } }
+        public double ToolbarControlRight { get => toolbarControlRight; set { toolbarControlRight = value; OnPropertyChanged(); } }
+        public double ToolbarControlTop { get => toolbarControlTop; set { toolbarControlTop = value; OnPropertyChanged(); } }
+        public double ToolbarControlBottom { get => toolbarControlBottom; set { toolbarControlBottom = value; OnPropertyChanged(); } }
+
+        // Time Location
+        public double TimeBorderLeft { get => timeBorderLeft; set { timeBorderLeft = value; OnPropertyChanged(); } }
+        public double TimeBorderTop { get => timeBorderTop; set { timeBorderTop = value; OnPropertyChanged(); } }
+        public double TimeBorderRight { get => timeBorderRight; set { timeBorderRight = value; OnPropertyChanged(); } }
+        public double TimeBorderBottom { get => timeBorderBottom; set { timeBorderBottom = value; OnPropertyChanged(); } }
+
+        // Master Toolbar Conent and Toolbar Control Content
+        public object MasterToolbarContent { get => _masterToolbarContent; set { _masterToolbarContent = value; OnPropertyChanged(); } }
+        public ToolbarControlView ToolbarControlContent { get => _toolbarContent; set { _toolbarContent = value; OnPropertyChanged(); } }
+
+        // Default Margins
+        public Thickness TimeMargin { get => timeMargin; set { timeMargin = value; OnPropertyChanged(); } }
+        public Thickness ToolbarControlMargin { get => toolbarControlMargin; set { toolbarControlMargin = value; OnPropertyChanged(); } }
+
+
+        // Toolbar Control Menu
+        public int ToolbarRegionZIndex { get => _toolbarRegionZIndex; set { _toolbarRegionZIndex = value; OnPropertyChanged(); } }
+        public int CanvasZIndex { get => _canvasZIndex; set { _canvasZIndex = value; OnPropertyChanged(); } }
+
+        public string MasterRaiseLower { get => masterRaiseLower; set { masterRaiseLower = value; OnPropertyChanged(); } }
+
+        public bool IsMasterToolbarOpen
         {
-            get => (string)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["CursorSize"];
+            get => (bool)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["MasterToolbarVisible"];
+            set { profile.DisplayWindowSettings[0]["DisplaySettings"][0]["MasterToolbarVisible"] = value; OnPropertyChanged(); }
+        }
+
+        public bool IsRaiseMasterToolbar
+        {
+            get => (bool)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["RaiseMasterToolbar"];
+            set { profile.DisplayWindowSettings[0]["DisplaySettings"][0]["RaiseMasterToolbar"] = value; OnPropertyChanged(); }
+        }
+
+        // Cursor Toolbar Menu
+        public int CursorSize
+        {
+            get => (int)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["CursorSize"];
             set
             {
-                if ((string)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["CursorSize"] != value)
+                if ((int)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["CursorSize"] != value)
                 {
                     profile.DisplayWindowSettings[0]["DisplaySettings"][0]["CursorSize"] = value;
                     OnPropertyChanged();
@@ -96,87 +114,96 @@ namespace vFalcon.ViewModels
             }
         }
 
-        public object MasterToolbarContent
+        // Brightness Toolbar Menu
+        public Brush Background
         {
-            get => _masterToolbarContent;
-            set { _masterToolbarContent = value; OnPropertyChanged(); }
-        }
-
-        public double ZuluPanelLeft
-        {
-            get => zuluPanelLeft;
-            set { zuluPanelLeft = value; OnPropertyChanged(); }
-        }
-
-        public double ZuluPanelTop
-        {
-            get => zuluPanelTop;
-            set { zuluPanelTop = value; OnPropertyChanged(); }
-        }
-
-        public double ZuluPanelRight
-        {
-            get => zuluPanelRight;
-            set { zuluPanelRight = value; OnPropertyChanged(); }
-        }
-
-        public double ZuluPanelBottom
-        {
-            get => zuluPanelBottom;
-            set { zuluPanelBottom = value; OnPropertyChanged(); }
-        }
-
-        private Thickness _toolbarMargin;
-        public Thickness ToolbarMargin
-        {
-            get => _toolbarMargin;
-            set { _toolbarMargin = value; OnPropertyChanged(); }
-        }
-
-        private HorizontalAlignment _toolbarHorizontalAlignment;
-        public HorizontalAlignment ToolbarHorizontalAlignment
-        {
-            get => _toolbarHorizontalAlignment;
-            set { _toolbarHorizontalAlignment = value; OnPropertyChanged(); }
-        }
-
-        private VerticalAlignment _toolbarVerticalAlignment;
-        public VerticalAlignment ToolbarVerticalAlignment
-        {
-            get => _toolbarVerticalAlignment;
-            set { _toolbarVerticalAlignment = value; OnPropertyChanged(); }
-        }
-
-        public bool IsMasterToolbarOpen
-        {
-            get => (bool)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["MasterToolbarVisible"];
+            get => background;
             set
             {
-                profile.DisplayWindowSettings[0]["DisplaySettings"][0]["MasterToolbarVisible"] = value;
+                if (background != value)
+                {
+                    background = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        public int BackgroundValue
+        {
+            get => backgroundValue;
+            set
+            {
+                backgroundValue = value;
                 OnPropertyChanged();
             }
         }
 
-        private ToolbarControlView _toolbarContent;
-        public ToolbarControlView ToolbarContent
+        public int BrightnessValue
         {
-            get => _toolbarContent;
+            get => brightnessValue;
             set
             {
-                _toolbarContent = value;
+                brightnessValue = value;
                 OnPropertyChanged();
             }
         }
 
-        public EramViewModel(Profile profile)
+        // Maps Toolbar Menu
+
+        public string ActiveGeoMap
         {
+            get => (string)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["Bcgs"]["ACtiveGeoMap"];
+            set
+            {
+                profile.DisplayWindowSettings[0]["DisplaySettings"][0]["Bcgs"]["ACtiveGeoMap"] = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public void UpdateBackground()
+        {
+            double brightnessFactor = 0.65 + 0.35 * (BrightnessValue / 100.0); // min factor of 0.65, max factor of 1 (0.65+0.35)
+            double baseBlue = ((BackgroundValue / 60.0) * 127) * brightnessFactor;
+            byte blue = (byte)Math.Max(Math.Min(baseBlue, 255), 0);
+            Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, blue));
+        }
+
+        // Constructor
+        public EramViewModel(Artcc artcc, Profile profile)
+        {
+            this.artcc = artcc;
             this.profile = profile;
             LoadProfileSettings();
-            ToolbarContent = new ToolbarControlView(this);
-            //ToolbarControlCommand = new RelayCommand(ToggleToolbarControl);
+            ActiveGeoMap = (string)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["Bcgs"]["ActiveGeoMap"] ?? (string)artcc.facility["eramConfiguration"]["geoMaps"][0]["name"]; //FIXME the geomap uises labnelLine1 and labelLine2 and not just "name" to set the map button name
+            BackgroundValue = (int)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["Bcgs"]["Background"];
+            BrightnessValue = (int)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["Bcgs"]["SystemBrightness"];
+            UpdateBackground();
+
+            ToolbarControlContent = new ToolbarControlView(this);
+            MasterRaiseLower = IsRaiseMasterToolbar ? "LOWER" : "RAISE";
+
             MasterToolbarCommand = new RelayCommand(OnMasterToolbar);
+            SwapZOrderCommand = new RelayCommand(SwapZOrder);
+            CursorCommand = new RelayCommand(OnCursorCommand);
+            BrightnessCommand = new RelayCommand(OnBrightnessCommand);
+
             IsMasterToolbarOpen = !IsMasterToolbarOpen;
             OnMasterToolbar();
+
+            if (IsRaiseMasterToolbar)
+                SetZOrderRaised();
+            else
+                SetZOrderLowered();
+
+        }
+
+        // Public Methods
+        public void OnMenuButtonMeasured(double buttonWidth, double buttonHeight)
+        {
+            if (!double.IsNaN(ToolbarControlRight))
+            {
+                ToolbarControlRight += buttonWidth;
+                ToolbarControlBottom += buttonHeight;
+            }
         }
 
         public void OnMasterToolbar()
@@ -184,7 +211,7 @@ namespace vFalcon.ViewModels
             if (!IsMasterToolbarOpen)
             {
                 IsMasterToolbarOpen = !IsMasterToolbarOpen;
-                MasterToolbarContent = new MasterToolbarView();
+                MasterToolbarContent = new MasterToolbarView(this);
             }
             else
             {
@@ -192,11 +219,67 @@ namespace vFalcon.ViewModels
                 MasterToolbarContent = null;
             }
         }
+        public void SwapZOrder()
+        {
+            if (IsRaiseMasterToolbar)
+                SetZOrderLowered();
+            else
+                SetZOrderRaised();
+
+            OnPropertyChanged(nameof(IsRaiseMasterToolbar));
+        }
+
+        public void OnCursorCommand()
+        {
+            if (!cursorToolbarOpen)
+            {
+                MasterToolbarContent = new CursorToolbarView(this);
+                cursorToolbarOpen = true;
+            }
+            else
+            {
+                MasterToolbarContent = new MasterToolbarView(this);
+                cursorToolbarOpen = false;
+            }
+        }
+
+        public void OnBrightnessCommand()
+        {
+            if (!brightnessToolbarOpen)
+            {
+                MasterToolbarContent = new BrightnessToolbarView(this);
+                brightnessToolbarOpen = true;
+            }
+            else
+            {
+                MasterToolbarContent = new MasterToolbarView(this);
+                brightnessToolbarOpen = false;
+            }
+        }
+
+        // Private Methods
+        private void SetZOrderRaised()
+        {
+            ToolbarRegionZIndex = 2;
+            CanvasZIndex = 1;
+            IsRaiseMasterToolbar = true;
+            MasterRaiseLower = "LOWER";
+            OnPropertyChanged(nameof(MasterRaiseLower));
+        }
+
+        private void SetZOrderLowered()
+        {
+            CanvasZIndex = 2;
+            ToolbarRegionZIndex = 1;
+            IsRaiseMasterToolbar = false;
+            MasterRaiseLower = "RAISE";
+            OnPropertyChanged(nameof(MasterRaiseLower));
+        }
 
         private void LoadProfileSettings()
         {
             LoadTimeSettings();
-            LoadTearoffs();
+            LoadToolbarControlMenu();
         }
 
         private void LoadTimeSettings()
@@ -210,34 +293,36 @@ namespace vFalcon.ViewModels
                 .ToArray();
 
             string anchor = (string)timeViewSettings["Location"]["Anchor"];
+            if (parts[0] == TimeMargin.Left && parts[1] == TimeMargin.Top && anchor == "TopLeft") return;
 
-            ZuluPanelRight = ZuluPanelBottom = double.NaN; // clear unused
+            TimeMargin = new Thickness(0);
+            TimeBorderRight = TimeBorderBottom = double.NaN;
 
             switch (anchor)
             {
                 case "TopLeft":
-                    ZuluPanelLeft = parts[0];
-                    ZuluPanelTop = parts[1];
+                    TimeBorderLeft = parts[0];
+                    TimeBorderTop = parts[1];
                     break;
                 case "TopRight":
-                    ZuluPanelRight = parts[0];
-                    ZuluPanelTop = parts[1];
-                    ZuluPanelLeft = double.NaN;
+                    TimeBorderRight = parts[0];
+                    TimeBorderTop = parts[1];
+                    TimeBorderLeft = double.NaN;
                     break;
                 case "BottomLeft":
-                    ZuluPanelLeft = parts[0];
-                    ZuluPanelBottom = parts[1];
-                    ZuluPanelTop = double.NaN;
+                    TimeBorderLeft = parts[0];
+                    TimeBorderBottom += parts[1];
+                    TimeBorderTop = double.NaN;
                     break;
                 case "BottomRight":
-                    ZuluPanelRight = parts[0];
-                    ZuluPanelBottom = parts[1];
-                    ZuluPanelTop = ZuluPanelLeft = double.NaN;
+                    TimeBorderRight = parts[0];
+                    TimeBorderBottom += parts[1];
+                    TimeBorderTop = TimeBorderLeft = double.NaN;
                     break;
             }
         }
 
-        private void LoadTearoffs()
+        private void LoadToolbarControlMenu()
         {
             JObject displaySettings = (JObject)profile.DisplayWindowSettings[0]["DisplaySettings"][0];
             JArray tearoffs = (JArray)displaySettings["Tearoffs"];
@@ -253,7 +338,9 @@ namespace vFalcon.ViewModels
                         .ToArray();
 
                     string anchor = (string)tearoff["Location"]["Anchor"];
+                    if (parts[0] == ToolbarControlMargin.Left && parts[1] == ToolbarControlMargin.Top && anchor == "TopLeft") return;
 
+                    ToolbarControlMargin = new Thickness(0);
                     switch (anchor)
                     {
                         case "TopLeft":

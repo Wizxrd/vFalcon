@@ -17,7 +17,9 @@ namespace vFalcon.ViewModels
 {
     public class LoadProfileViewModel : ViewModelBase
     {
+        // Fields
         private IProfileService profileService = new ProfileService();
+        private IArtccService artccService = new ArtccService();
         private DateTime lastClickTime = DateTime.MinValue;
         private readonly TimeSpan doubleClickTimeSpan = TimeSpan.FromMilliseconds(250);
 
@@ -25,22 +27,14 @@ namespace vFalcon.ViewModels
         private Profile _selectedProfile;
         private int _selectedIndex = -1;
 
-        public ProfileViewModel? LastSelectedProfileVM { get; set; }
-
+        // Collections
         public ObservableCollection<ProfileViewModel> Profiles { get; } = new();
         public ObservableCollection<ProfileViewModel> FilteredProfiles { get; } = new();
+
+        // Properties
+        public ProfileViewModel? LastSelectedProfileVM { get; set; }
         public Profile? LastSelectedProfile { get; set; }
-
-
-        public event Action OpenEramWindow;
-        public event Func<string, Task<bool>> RequestConfirmation;
-
-        public ICommand SelectProfileCommand { get; }
-        public ICommand RenameProfileCommand { get; }
-        public ICommand StopRenamingCommand { get; }
-        public ICommand CopyProfileCommand { get; }
-        public ICommand ExportProfileCommand { get; }
-        public ICommand DeleteProfileCommand { get; }
+        public Artcc SelectedProfileArtcc { get; set; }
 
         public Profile SelectedProfile
         {
@@ -76,27 +70,40 @@ namespace vFalcon.ViewModels
                     _selectedIndex = value;
                     OnPropertyChanged();
 
-                    if (_selectedIndex>= 0 && _selectedIndex < FilteredProfiles.Count)
+                    if (_selectedIndex >= 0 && _selectedIndex < FilteredProfiles.Count)
                     {
                         var selected = FilteredProfiles[_selectedIndex];
-                        HandleProfileSelection(selected, userInitiated: false); // prevent double click logic
+                        HandleProfileSelection(selected, userInitiated: false);
                     }
                 }
             }
         }
 
+        // Events
+        public event Action OpenEramWindow;
+        public event Func<string, Task<bool>> RequestConfirmation;
+
+        // Commands
+        public ICommand SelectProfileCommand { get; }
+        public ICommand RenameProfileCommand { get; }
+        public ICommand StopRenamingCommand { get; }
+        public ICommand CopyProfileCommand { get; }
+        public ICommand ExportProfileCommand { get; }
+        public ICommand DeleteProfileCommand { get; }
+
+        // Constructor
         public LoadProfileViewModel()
         {
             LoadProfiles();
             SelectProfileCommand = new RelayCommand(OnProfileSelected);
             RenameProfileCommand = new RelayCommand(OnRenameProfile);
             StopRenamingCommand = new RelayCommand(OnStopRenaming);
-            StopRenamingCommand = new RelayCommand(OnStopRenaming);
             CopyProfileCommand = new RelayCommand(OnCopyProfile);
             ExportProfileCommand = new RelayCommand(OnExportProfile);
             DeleteProfileCommand = new RelayCommand(OnDeleteProfile);
         }
 
+        // Methods - Command Handlers
         private void OnProfileSelected(object obj)
         {
             if (obj is ProfileViewModel selected)
@@ -175,20 +182,24 @@ namespace vFalcon.ViewModels
             }
         }
 
+        // Methods
         private async void LoadProfiles()
         {
             Profiles.Clear();
             FilteredProfiles.Clear();
             LastSelectedProfileVM = null;
+
             List<Profile> loadedProfiles = await profileService.LoadProfiles();
             if (loadedProfiles.Count() == 0) return;
+
             foreach (var profile in loadedProfiles)
             {
-                var viewModel = new ProfileViewModel(profile);
-                Profiles.Add(viewModel);
+                Profiles.Add(new ProfileViewModel(profile));
             }
+
             FilterProfiles();
-            if (FilteredProfiles.Count> 0)
+
+            if (FilteredProfiles.Count > 0)
             {
                 var first = FilteredProfiles[0];
                 HandleProfileSelection(first, userInitiated: false);
@@ -196,7 +207,7 @@ namespace vFalcon.ViewModels
             }
         }
 
-        public void HandleProfileSelection(ProfileViewModel selected, bool userInitiated)
+        public async void HandleProfileSelection(ProfileViewModel selected, bool userInitiated)
         {
             DateTime now = DateTime.Now;
 
@@ -206,7 +217,9 @@ namespace vFalcon.ViewModels
                 selected.IsSelected = true;
                 SelectedProfile = selected.Model;
                 LastSelectedProfileVM = selected;
+                SelectedProfileArtcc = await artccService.LoadArtcc(SelectedProfile.ArtccId);
             }
+
             if (userInitiated && (now - lastClickTime) <= doubleClickTimeSpan)
             {
                 OpenEramWindow?.Invoke();

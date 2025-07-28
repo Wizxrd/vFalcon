@@ -1,8 +1,43 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Style x:Key="ToolbarButton" TargetType="ToggleButton">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <GridLength x:Key="GridButtonWidth">96</GridLength>
+    <Style x:Key="MenuButton" TargetType="ToggleButton">
         <Setter Property="Width" Value="83"/>
-        <Setter Property="Height" Value="33"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="FontFamily" Value="/vFalcon;component/Resources/Fonts/#ERAM"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Background" Value="{StaticResource MenuClosedButtonBackground}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource MasterToolbarBorder}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border 
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    TextBlock.TextAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="{StaticResource MenuOpenButtonBackground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="MenuButtonClosed" TargetType="ToggleButton">
+        <Setter Property="Width" Value="83"/>
+        <Setter Property="Height" Value="32"/>
         <Setter Property="FontFamily" Value="/vFalcon;component/Resources/Fonts/#ERAM"/>
         <Setter Property="FontSize" Value="13"/>
         <Setter Property="Background" Value="{StaticResource MenuClosedButtonBackground}"/>
@@ -17,32 +52,58 @@
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}">
                         <ContentPresenter 
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Top"
-                            TextBlock.TextAlignment="Center"/>
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    TextBlock.TextAlignment="Center"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="BorderBrush" Value="White"/>
-                        </Trigger>
-                        <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Background" Value="{StaticResource MenuOpenButtonBackground}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="ToolbarToggleButton" TargetType="ToggleButton">
+    <Style x:Key="MenuButtonOpen" TargetType="ToggleButton">
         <Setter Property="Width" Value="83"/>
-        <Setter Property="Height" Value="33"/>
+        <Setter Property="Height" Value="32"/>
         <Setter Property="FontFamily" Value="/vFalcon;component/Resources/Fonts/#ERAM"/>
         <Setter Property="FontSize" Value="13"/>
-        <Setter Property="Background" Value="{StaticResource DeactivatedToggleButtonBackground}"/>
+        <Setter Property="Background" Value="{StaticResource MenuOpenButtonBackground}"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderBrush" Value="{StaticResource MasterToolbarBorder}"/>
-        <Setter Property="Background" Value="{StaticResource DeactivatedToggleButtonBackground}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border 
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                TextBlock.TextAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="White"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ToggleButton" TargetType="ToggleButton">
+        <Setter Property="Width" Value="83"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="FontFamily" Value="/vFalcon;component/Resources/Fonts/#ERAM"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Background" Value="Black"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource MasterToolbarBorder}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToggleButton">
@@ -67,10 +128,40 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style x:Key="StaticToggleButton" TargetType="ToggleButton">
+        <Setter Property="Width" Value="83"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="FontFamily" Value="/vFalcon;component/Resources/Fonts/#ERAM"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Background" Value="Black"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource MasterToolbarBorder}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border 
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    TextBlock.TextAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="White"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
     <Style x:Key="TearoffButton" TargetType="Button">
         <Setter Property="Width" Value="13"/>
-        <Setter Property="Height" Value="33"/>
-        <Setter Property="Background" Value="{StaticResource TearoffButtonDisabledBackground}"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="Background" Value="{StaticResource TearoffButtonBackground}"/>
         <Setter Property="Foreground" Value="{StaticResource White}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderBrush" Value="{StaticResource MasterToolbarBorder}"/>
@@ -81,6 +172,96 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}">
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="White"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="DeleteButton" TargetType="ToggleButton">
+        <Setter Property="Width" Value="83"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="FontFamily" Value="/vFalcon;component/Resources/Fonts/#ERAM"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Background" Value="{StaticResource DeleteTearoffBackground}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource MasterToolbarBorder}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border 
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                TextBlock.TextAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="White"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="IncDecToggleButton" TargetType="ToggleButton">
+        <Setter Property="Width" Value="83"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="FontFamily" Value="/vFalcon;component/Resources/Fonts/#ERAM"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Background" Value="{StaticResource IncDecButtonBackground}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource MasterToolbarBorder}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border 
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                TextBlock.TextAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="White"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="IncDecButton" TargetType="Button">
+        <Setter Property="Width" Value="83"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="FontFamily" Value="/vFalcon;component/Resources/Fonts/#ERAM"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Background" Value="{StaticResource IncDecButtonBackground}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource MasterToolbarBorder}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+        Background="{TemplateBinding Background}"
+        BorderBrush="{TemplateBinding BorderBrush}"
+        BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter 
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            TextBlock.TextAlignment="Center"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">

@@ -16,8 +16,7 @@
     <SolidColorBrush x:Key="MasterToolbarBorder" Color="#797979"/>
     <SolidColorBrush x:Key="MenuClosedButtonBackground" Color="#00006a"/>
     <SolidColorBrush x:Key="MenuOpenButtonBackground" Color="#6e504d"/>
-    <SolidColorBrush x:Key="TearoffButtonDisabledBackground" Color="#7f7f50"/>
-    <SolidColorBrush x:Key="TearoffButtonEnabledBackground" Color="#636363"/>
+    <SolidColorBrush x:Key="TearoffButtonBackground" Color="#7f7f50"/>
     <SolidColorBrush x:Key="IncDecButtonBackground" Color="#006600"/>
     <SolidColorBrush x:Key="DeactivatedToggleButtonBackground" Color="#000000"/>
     <SolidColorBrush x:Key="ActivatedToggleButtonBackground" Color="#636363"/>

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="vFalcon.Views.MapsToolbarView"
+﻿<UserControl x:Class="vFalcon.Views.CursorToolbarView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,9 +6,12 @@
              xmlns:local="clr-namespace:vFalcon.Views"
              xmlns:controls="clr-namespace:vFalcon.Resources.Controls"
              mc:Ignorable="d" 
-             Width="Auto" Height="Auto">
+             Width="Auto" Height="72">
     <Border Background="{StaticResource MasterToolbarBackground}" BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="2">
         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
                 <ColumnDefinition Width="2"/>
@@ -21,49 +24,39 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
+
             <controls:EramButton
                 Grid.Column="8"
                 VerticalAlignment="Top"
-                Line1Text="{Binding ActiveGeoMap}"
+                Line1Text="CURSOR"
                 EramButtonStyle="{StaticResource MenuButtonOpen}"
-                Command="{Binding MapsBackCommand}"/>
-            <Border Grid.Column="12" BorderBrush="#896800" BorderThickness="2">
+                Command="{Binding CursorBackCommand}"/>
+
+            <Border Grid.Column="10" Height="36" BorderBrush="#896800" BorderThickness="2">
                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="2"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="2"/>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="2"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
-                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <controls:EramButton
-                        Grid.Row="0" Grid.Column="0"
-                        Line1Text="MIA"
-                        EramButtonStyle="{StaticResource ToggleButton}"/>
-                    <controls:EramButton
-                        Grid.Row="2" Grid.Column="0"
-                        Line1Text="HIGH"
-                        Line2Text="SCTRS"
-                        EramButtonStyle="{StaticResource ToggleButton}"/>
+                    <controls:NoTearoffButton
+                        Grid.Column="0"
+                        NoTearoffLine1Text="SPEED"
+                        NoTearoffLine2Text="1"
+                        NoTearoffStyle="{StaticResource IncDecButton}"/>
+                    <controls:NoTearoffButton
+                        Grid.Column="2"
+                        NoTearoffLine1Text="SIZE"
+                        NoTearoffLine2Text="{Binding CursorSize}"
+                        NoTearoffStyle="{StaticResource IncDecButton}"
+                        PreviewMouseDown="CursorSizeButtonMouseDown"/>
+                    <controls:NoTearoffButton
+                        Grid.Column="4"
+                        NoTearoffLine1Text="VOLUME"
+                        NoTearoffLine2Text="5"
+                        NoTearoffStyle="{StaticResource IncDecButton}"/>
                 </Grid>
             </Border>
         </Grid>

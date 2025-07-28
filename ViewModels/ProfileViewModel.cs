@@ -4,18 +4,14 @@ namespace vFalcon.ViewModels
 {
     public class ProfileViewModel : ViewModelBase
     {
-        public Profile Model { get; }
-
+        // Fields
         private string _originalName = string.Empty;
         private bool _isSelected;
-        public string OriginalName => _originalName;
         private bool _isRenaming;
 
-        public ProfileViewModel(Profile model)
-        {
-            Model = model;
-            IsRenaming = false;
-        }
+        // Properties
+        public Profile Model { get; }
+        public string OriginalName => _originalName;
 
         public bool IsSelected
         {
@@ -50,6 +46,14 @@ namespace vFalcon.ViewModels
             }
         }
 
+        // Constructor
+        public ProfileViewModel(Profile model)
+        {
+            Model = model;
+            IsRenaming = false;
+        }
+
+        // Methods
         public void BeginRename()
         {
             _originalName = Name;

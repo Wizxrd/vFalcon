@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using vFalcon.ViewModels;
 
 namespace vFalcon.Views
 {
@@ -20,9 +21,10 @@ namespace vFalcon.Views
     /// </summary>
     public partial class MasterToolbarView : UserControl
     {
-        public MasterToolbarView()
+        public MasterToolbarView(EramViewModel eramViewModel)
         {
             InitializeComponent();
+            DataContext = new MasterToolbarViewModel(eramViewModel);
         }
     }
 }

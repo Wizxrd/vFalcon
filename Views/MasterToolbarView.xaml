@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:vFalcon.Views"
+             xmlns:controls="clr-namespace:vFalcon.Resources.Controls"
              mc:Ignorable="d" 
              Width="Auto" Height="Auto">
     <Border Background="{StaticResource MasterToolbarBackground}" BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="2">
@@ -33,183 +34,104 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="2"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <ToggleButton
-                   Style="{StaticResource ToolbarButton}">
-                    <TextBlock TextAlignment="Center">
-                        <Run Text="DRAW"/>
-                    </TextBlock>
-                </ToggleButton>
-            </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <ToggleButton
-                   Style="{StaticResource ToolbarButton}">
-                    <TextBlock TextAlignment="Center">
-                        <Run Text="ATC"/>
-                        <LineBreak/>
-                        <Run Text="TOOLS"/>
-                    </TextBlock>
-                </ToggleButton>
-            </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="4" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <ToggleButton
-                   Style="{StaticResource ToolbarButton}">
-                    <TextBlock TextAlignment="Center">
-                        <Run Text="AB"/>
-                        <LineBreak/>
-                        <Run Text="SETTING"/>
-                    </TextBlock>
-                </ToggleButton>
-            </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="6" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <ToggleButton
-                   Background="Black"
-                   Style="{StaticResource ToolbarButton}">
-                    <TextBlock TextAlignment="Center">
-                        <Run Text="RANGE"/>
-                        <LineBreak/>
-                        <Run Text="300"/>
-                    </TextBlock>
-                </ToggleButton>
-            </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="8" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <ToggleButton
-                   Style="{StaticResource ToolbarButton}">
-                    <TextBlock TextAlignment="Center">
-                        <Run Text="CURSOR"/>
-                    </TextBlock>
-                </ToggleButton>
-            </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="10" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <ToggleButton
-                   Style="{StaticResource ToolbarButton}">
-                    <TextBlock TextAlignment="Center">
-                       <Run Text="BRIGHT"/>
-                    </TextBlock>
-                </ToggleButton>
-            </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="12" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <ToggleButton
-                   Style="{StaticResource ToolbarButton}">
-                    <TextBlock TextAlignment="Center">
-                        <Run Text="FONT"/>
-                    </TextBlock>
-                </ToggleButton>
-            </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="14" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <ToggleButton
-                   Style="{StaticResource ToolbarButton}">
-                    <TextBlock TextAlignment="Center">
-                        <Run Text="DB"/>
-                        <LineBreak/>
-                        <Run Text="FIELDS"/>
-                    </TextBlock>
-                </ToggleButton>
-            </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="16" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <ToggleButton
-                   Background="{StaticResource IncDecButtonBackground}"
-                   Style="{StaticResource ToolbarButton}">
-                    <TextBlock TextAlignment="Center">
-                        <Run Text="VECTOR"/>
-                        <LineBreak/>
-                        <Run Text="0"/>
-                    </TextBlock>
-                </ToggleButton>
-            </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <ToggleButton
-                   Style="{StaticResource ToolbarButton}">
-                    <TextBlock TextAlignment="Center">
-                        <Run Text="VIEWS"/>
-                    </TextBlock>
-                </ToggleButton>
-            </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <ToggleButton
-                   Style="{StaticResource ToolbarButton}">
-                    <TextBlock TextAlignment="Center">
-                        <Run Text="CHECK"/>
-                        <LineBreak/>
-                        <Run Text="LISTS"/>
-                    </TextBlock>
-                </ToggleButton>
-            </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="4" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <ToggleButton
-                   Style="{StaticResource ToolbarButton}">
-                    <TextBlock TextAlignment="Center">
-                        <Run Text="COMMAND"/>
-                        <LineBreak/>
-                        <Run Text="MENUS"/>
-                    </TextBlock>
-                </ToggleButton>
-            </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="6" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <ToggleButton
-                   Style="{StaticResource ToolbarButton}">
-                    <TextBlock TextAlignment="Center">
-                        <Run Text="MAPS"/>
-                    </TextBlock>
-                </ToggleButton>
-            </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="8" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <ToggleButton
-                   Background="Black"
-                   Style="{StaticResource ToolbarToggleButton}">
-                    <TextBlock TextAlignment="Center">
-                        <Run Text="ALT LIM"/>
-                        <LineBreak/>
-                        <Run Text="000B999"/>
-                    </TextBlock>
-                </ToggleButton>
-            </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="10" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <ToggleButton
-                   Style="{StaticResource ToolbarButton}">
-                    <TextBlock TextAlignment="Center">
-                        <Run Text="RADAR"/>
-                        <LineBreak/>
-                        <Run Text="FILTER"/>
-                    </TextBlock>
-                </ToggleButton>
-            </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="12" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <ToggleButton
-                   Style="{StaticResource ToolbarButton}">
-                    <TextBlock TextAlignment="Center">
-                        <Run Text="PREFSET"/>
-                    </TextBlock>
-                </ToggleButton>
-            </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="14" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <ToggleButton
-                   Background="{StaticResource DeleteTearoffBackground}"
-                   Style="{StaticResource ToolbarButton}">
-                    <TextBlock TextAlignment="Center">
-                        <Run Text="DELETE"/>
-                        <LineBreak/>
-                        <Run Text="TEAROFF"/>
-                    </TextBlock>
-                </ToggleButton>
-            </StackPanel>
+            <controls:EramButton
+                x:Name="DrawButton"
+                Grid.Row="0" Grid.Column="0"
+                Line1Text="DRAW"
+                EramButtonStyle="{StaticResource MenuButtonClosed}">
+            </controls:EramButton>
+            <controls:EramButton
+                Grid.Row="0" Grid.Column="2"
+                Line1Text="ATC"
+                Line2Text="TOOLS"
+                EramButtonStyle="{StaticResource MenuButtonClosed}">
+            </controls:EramButton>
+            <controls:EramButton
+                Grid.Row="0" Grid.Column="4"
+                Line1Text="AB"
+                Line2Text="SETTING"
+                EramButtonStyle="{StaticResource MenuButtonClosed}">
+            </controls:EramButton>
+            <controls:EramButton
+                Grid.Row="0" Grid.Column="6"
+                Line1Text="RANGE"
+                Line2Text="300"
+                EramButtonStyle="{StaticResource StaticToggleButton}">
+            </controls:EramButton>
+            <controls:EramButton
+                Grid.Row="0" Grid.Column="8"
+                Line1Text="CURSOR"
+                EramButtonStyle="{StaticResource MenuButtonClosed}"
+                Command="{Binding CursorCommand}">
+            </controls:EramButton>
+            <controls:EramButton
+                Grid.Row="0" Grid.Column="10"
+                Line1Text="BRIGHT"
+                EramButtonStyle="{StaticResource MenuButtonClosed}"
+                Command="{Binding BrightnessCommand}">
+            </controls:EramButton>
+            <controls:EramButton
+                Grid.Row="0" Grid.Column="12"
+                Line1Text="FONT"
+                EramButtonStyle="{StaticResource MenuButtonClosed}">
+            </controls:EramButton>
+            <controls:EramButton
+                Grid.Row="0" Grid.Column="14"
+                Line1Text="DB"
+                Line2Text="FIELDS"
+                EramButtonStyle="{StaticResource MenuButtonClosed}">
+            </controls:EramButton>
+            <controls:EramButton
+                Grid.Row="0" Grid.Column="16"
+                Line1Text="VECTOR"
+                Line2Text="0"
+                EramButtonStyle="{StaticResource IncDecToggleButton}">
+            </controls:EramButton>
+            <controls:EramButton
+                Grid.Row="2" Grid.Column="0"
+                Line1Text="VIEWS"
+                EramButtonStyle="{StaticResource MenuButtonClosed}">
+            </controls:EramButton>
+            <controls:EramButton
+                Grid.Row="2" Grid.Column="2"
+                Line1Text="CHECK"
+                Line2Text="LISTS"
+                EramButtonStyle="{StaticResource MenuButtonClosed}">
+            </controls:EramButton>
+            <controls:EramButton
+                Grid.Row="2" Grid.Column="4"
+                Line1Text="COMMAND"
+                Line2Text="MENUS"
+                EramButtonStyle="{StaticResource MenuButtonClosed}">
+            </controls:EramButton>
+            <controls:EramButton
+                Grid.Row="2" Grid.Column="6"
+                Line1Text="{Binding ActiveGeoMap}"
+                EramButtonStyle="{StaticResource MenuButtonClosed}">
+            </controls:EramButton>
+            <controls:EramButton
+                Grid.Row="2" Grid.Column="8"
+                Line1Text="ALT LIM"
+                Line2Text="000B999"
+                EramButtonStyle="{StaticResource StaticToggleButton}">
+            </controls:EramButton>
+            <controls:EramButton
+                Grid.Row="2" Grid.Column="10"
+                Line1Text="RADAR"
+                Line2Text="FILTER"
+                EramButtonStyle="{StaticResource MenuButtonClosed}">
+            </controls:EramButton>
+            <controls:EramButton
+                Grid.Row="2" Grid.Column="12"
+                Line1Text="PREFSET"
+                EramButtonStyle="{StaticResource MenuButtonClosed}">
+            </controls:EramButton>
+            <controls:EramButton
+                Grid.Row="2" Grid.Column="14"
+                Line1Text="DELETE"
+                Line2Text="TEAROFF"
+                EramButtonStyle="{StaticResource DeleteButton}">
+            </controls:EramButton>
         </Grid>
     </Border>
 </UserControl>

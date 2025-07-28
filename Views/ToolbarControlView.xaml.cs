@@ -31,28 +31,16 @@ namespace vFalcon.Views
             _eramViewModel = eramViewModel;
             
             DataContext = new ToolbarControlViewModel(eramViewModel);
-            var uri = new Uri($"pack://application:,,,/Resources/Cursors/Eram{eramViewModel.CursorSize}.cur");
-            this.Cursor = new Cursor(Application.GetResourceStream(uri).Stream);
-
             Loaded += ToolbarControlView_Loaded;
-            Logger.Debug("ToolbarControlView_int", "Constructing the ToolbarControlView");
-
         }
 
         private void ToolbarControlView_Loaded(object sender, RoutedEventArgs e)
         {
-            Logger.Debug("ToolbarControlView_Loaded", "Called");
-
-            ToolbarButton.Dispatcher.BeginInvoke(new Action(() =>
+            MenuButton.Dispatcher.BeginInvoke(new Action(() =>
             {
-                var width = ToolbarButton.ActualWidth;
-
-                Logger.Debug("ToolbarControlView_Loaded", $"Invoked - width={width}");
-
-                Logger.Debug("ToolbarControlView_Loaded", $"Invoked - width={width}");
-
-
-                _eramViewModel.OnToolbarButtonMeasured( width );
+                var width = MenuButton.ActualWidth;
+                var height = MenuButton.ActualHeight;
+                _eramViewModel.OnMenuButtonMeasured( width, height );
             }), System.Windows.Threading.DispatcherPriority.Loaded);
         }
     }

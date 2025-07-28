@@ -18,50 +18,45 @@
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
-    <Border ClipToBounds="False">
-        <Grid ClipToBounds="False">
+    <Border>
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Border ClipToBounds="False" Grid.Row="0" Background="#000000">
-                <Grid ClipToBounds="False">
-                    <views:RadarView x:Name="RadarVW" DataContext="{Binding RadarViewModel}"/>
+            <Border x:Name="TestingBorder" Grid.Row="0" Background="{Binding Background}">
+                <Grid>
+                    <views:RadarView x:Name="RadarVW" Background="{Binding Background, ElementName=TestingBorder}" DataContext="{Binding RadarViewModel}"/>
                     <ContentControl
                         x:Name="ToolbarRegion"
                         HorizontalAlignment="Stretch"
                         VerticalAlignment="Top"
-                        Content="{Binding MasterToolbarContent}"/>
-                    <Canvas x:Name="ToolCanvas">
-                        <StackPanel x:Name="ZuluPanel" Margin="25,50,0,0"
-                                    Canvas.Top="{Binding ZuluPanelTop}"
-                                    Canvas.Left="{Binding ZuluPanelLeft}"
-                                    Canvas.Bottom="{Binding ZuluPanelBottom}"
-                                    Canvas.Right="{Binding ZuluPanelRight}">
-                            <Button
-                                x:Name="ZuluButton"
-                                Background="Black"
-                                BorderBrush="White"
-                                Foreground="White"
-                                adonisExtensions:CursorSpotlightExtension.BackgroundBrush="Black"
-                                adonisExtensions:CursorSpotlightExtension.BorderBrush="White"
-                                adonisExtensions:RippleExtension.BackgroundBrush="Black"
-                                adonisExtensions:RippleExtension.BorderBrush="White"
-                                BorderThickness="1"
-                                Tag="{x:Reference ZuluPanel}"
-                                FontFamily="/vFalcon;component/Resources/Fonts/#ERAM" FontSize="14"
-                                Width="90"
-                                Height="26"
-                                VerticalContentAlignment="Top"
-                                Content="1234 56">
-                            </Button>
-                        </StackPanel>
+                        Content="{Binding MasterToolbarContent}"
+                        Panel.ZIndex="{Binding ToolbarRegionZIndex}"/>
+                    <Canvas Panel.ZIndex="{Binding CanvasZIndex}">
+                        <Border
+                               x:Name="TimeBorder" Margin="{Binding ZuluMargin}"
+                               Background="{Binding Background, ElementName=TestingBorder}" BorderBrush="White" BorderThickness="1"
+                               Width="90" Height="26"
+                               Canvas.Top="{Binding TimeBorderTop}"
+                               Canvas.Left="{Binding TimeBorderLeft}"
+                               Canvas.Bottom="{Binding TimeBorderBottom}"
+                               Canvas.Right="{Binding TimeBorderRight}">
+                            <TextBlock
+                                   Foreground="White"
+                                   Text="1234 56"
+                                   FontFamily="/vFalcon;component/Resources/Fonts/#ERAM" FontSize="14"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center">
+                            </TextBlock>
+                        </Border>
                         <ContentControl
+                            Margin="{Binding ToolbarControlMargin}"
                             x:Name="ToolbarControl"
                             Canvas.Top="{Binding ToolbarControlTop}"
                             Canvas.Left="{Binding ToolbarControlLeft}"
                             Canvas.Right="{Binding ToolbarControlRight}"
                             Canvas.Bottom="{Binding ToolbarControlBottom}"
-                            Content="{Binding ToolbarContent}"/>
+                            Content="{Binding ToolbarControlContent}"/>
                     </Canvas>
                 </Grid>
             </Border>

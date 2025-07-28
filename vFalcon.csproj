@@ -7,7 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Resources\Images\vFalcon.ico</ApplicationIcon>
-    <Version>0.0.2</Version>
+    <Version>0.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -45,6 +45,7 @@
     <PackageReference Include="AdonisUI.ClassicTheme" Version="1.17.1" />
     <PackageReference Include="GeoJSON.Net" Version="1.4.1" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+    <PackageReference Include="NAudio" Version="2.2.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="SkiaSharp" Version="3.119.0" />
     <PackageReference Include="SkiaSharp.Views.WPF" Version="3.119.0" />

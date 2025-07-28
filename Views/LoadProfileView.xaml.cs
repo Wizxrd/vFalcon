@@ -68,7 +68,7 @@ namespace vFalcon.Views
         {
             if (DataContext is LoadProfileViewModel vm)
             {
-                var mainWindow = new EramView(vm.SelectedProfile);
+                var mainWindow = new EramView(vm.SelectedProfileArtcc, vm.SelectedProfile);
                 this.Close();
                 mainWindow.ShowDialog();
             }

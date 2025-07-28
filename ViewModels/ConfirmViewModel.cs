@@ -5,13 +5,17 @@ namespace vFalcon.ViewModels
 {
     public class ConfirmViewModel : ViewModelBase
     {
-        public string Message { get; set; }
+        // Events
+        public event Action<bool>? DialogResultSet;
 
+        // Commands
         public ICommand ConfirmCommand { get; }
         public ICommand CancelCommand { get; }
 
-        public event Action<bool>? DialogResultSet;
+        // Properties
+        public string Message { get; set; }
 
+        // Constructor
         public ConfirmViewModel(string message)
         {
             Message = message;
@@ -20,6 +24,7 @@ namespace vFalcon.ViewModels
             CancelCommand = new RelayCommand(OnCancel);
         }
 
+        // Methods
         private void OnConfirm()
         {
             DialogResultSet?.Invoke(true);
