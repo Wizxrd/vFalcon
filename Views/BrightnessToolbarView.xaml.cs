@@ -34,7 +34,7 @@ namespace vFalcon.Views
             {
                 if (e.LeftButton == MouseButtonState.Pressed)
                 {
-                    if (brightnessViewModel.BackgroundValue > 0)
+                    if (brightnessViewModel.BackgroundValue> 0)
                     {
                         brightnessViewModel.BackgroundValue -= 2;
                         return;
@@ -57,7 +57,7 @@ namespace vFalcon.Views
             {
                 if (e.LeftButton == MouseButtonState.Pressed)
                 {
-                    if (brightnessViewModel.BrightnessValue > 0)
+                    if (brightnessViewModel.BrightnessValue> 0)
                     {
                         brightnessViewModel.BrightnessValue -= 2;
                         return;

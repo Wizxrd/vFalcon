@@ -70,7 +70,7 @@ namespace vFalcon.ViewModels
                     _selectedIndex = value;
                     OnPropertyChanged();
 
-                    if (_selectedIndex >= 0 && _selectedIndex < FilteredProfiles.Count)
+                    if (_selectedIndex>= 0 && _selectedIndex < FilteredProfiles.Count)
                     {
                         var selected = FilteredProfiles[_selectedIndex];
                         HandleProfileSelection(selected, userInitiated: false);
@@ -199,7 +199,7 @@ namespace vFalcon.ViewModels
 
             FilterProfiles();
 
-            if (FilteredProfiles.Count > 0)
+            if (FilteredProfiles.Count> 0)
             {
                 var first = FilteredProfiles[0];
                 HandleProfileSelection(first, userInitiated: false);

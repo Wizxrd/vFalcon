@@ -34,7 +34,7 @@ namespace vFalcon.Views
             {
                 if (e.LeftButton == MouseButtonState.Pressed)
                 {
-                    if (cursorViewModel.CursorSize > 1)
+                    if (cursorViewModel.CursorSize> 1)
                     {
                         --cursorViewModel.CursorSize;
                         return;

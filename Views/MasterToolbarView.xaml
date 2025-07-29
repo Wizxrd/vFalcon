@@ -6,33 +6,33 @@
              xmlns:local="clr-namespace:vFalcon.Views"
              xmlns:controls="clr-namespace:vFalcon.Resources.Controls"
              mc:Ignorable="d" 
-             Width="Auto" Height="Auto">
-    <Border Background="{StaticResource MasterToolbarBackground}" BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="2">
+             Width="Auto" Height="75">
+    <Border Background="{StaticResource MasterToolbarBackground}" BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="3,3,0,0">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="2"/>
+                <RowDefinition Height="3"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="3"/>
             </Grid.ColumnDefinitions>
             <controls:EramButton
                 x:Name="DrawButton"
@@ -106,7 +106,9 @@
             </controls:EramButton>
             <controls:EramButton
                 Grid.Row="2" Grid.Column="6"
-                Line1Text="{Binding ActiveGeoMap}"
+                Line1Text="{Binding LabelLine1}"
+                Line2Text="{Binding LabelLine2}"
+                Command="{Binding MapsCommand}"
                 EramButtonStyle="{StaticResource MenuButtonClosed}">
             </controls:EramButton>
             <controls:EramButton

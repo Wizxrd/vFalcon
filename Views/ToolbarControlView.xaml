@@ -30,18 +30,18 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="2"/>
+                        <RowDefinition Height="3"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <controls:EramButton

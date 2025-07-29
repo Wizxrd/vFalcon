@@ -6,29 +6,30 @@
              xmlns:local="clr-namespace:vFalcon.Views"
              xmlns:controls="clr-namespace:vFalcon.Resources.Controls"
              mc:Ignorable="d" 
-             Width="Auto">
-    <Border Background="{StaticResource MasterToolbarBackground}" BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="2">
+             Width="Auto" Height="75">
+    <Border Background="{StaticResource MasterToolbarBackground}" BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="3,1,0,0">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
             <controls:EramButton
                 Grid.Column="10"
+                Margin="10,2,0,0"
                 VerticalAlignment="Top"
                 Line1Text="BRIGHT"
                 EramButtonStyle="{StaticResource MenuButtonOpen}"
@@ -38,38 +39,38 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="2"/>
+                        <RowDefinition Height="3"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <controls:EramButton
@@ -139,14 +140,14 @@
                         NoTearoffStyle="{StaticResource IncDecButton}"/>
                     <!-- row break -->
                     <controls:NoTearoffButton
-                        Margin="13,0,0,0"
+                        Margin="15,0,0,0"
                         Grid.Row="2" Grid.Column="0"
                         NoTearoffLine1Text="BCKLGHT"
                         NoTearoffLine2Text="{Binding BrightnessValue}"
                         NoTearoffStyle="{StaticResource IncDecButton}"
                         PreviewMouseDown="BacklightButtonMouseDown"/>
                     <controls:NoTearoffButton
-                        Margin="13,0,0,0"
+                        Margin="15,0,0,0"
                         Grid.Row="2" Grid.Column="2"
                         NoTearoffLine1Text="BUTTON"
                         NoTearoffLine2Text="100"

@@ -6,27 +6,28 @@
              xmlns:local="clr-namespace:vFalcon.Views"
              xmlns:controls="clr-namespace:vFalcon.Resources.Controls"
              mc:Ignorable="d" 
-             Width="Auto" Height="72">
-    <Border Background="{StaticResource MasterToolbarBackground}" BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="2">
+             Width="Auto" Height="75">
+    <Border Background="{StaticResource MasterToolbarBackground}" BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="3,1,0,0">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
             <controls:EramButton
                 Grid.Column="8"
+                Margin="8,2,0,0"
                 VerticalAlignment="Top"
                 Line1Text="CURSOR"
                 EramButtonStyle="{StaticResource MenuButtonOpen}"
@@ -36,9 +37,9 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <controls:NoTearoffButton

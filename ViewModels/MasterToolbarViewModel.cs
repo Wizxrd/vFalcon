@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using vFalcon.Commands;
 using vFalcon.Helpers;
 
 namespace vFalcon.ViewModels
@@ -11,12 +13,26 @@ namespace vFalcon.ViewModels
     {
         private EramViewModel eramViewModel;
 
-        public string ActiveGeoMap
+        public ICommand BrightnessCommand { get; }
+        public ICommand CursorCommand { get; }
+        public ICommand MapsCommand { get; }
+
+        public string LabelLine1
         {
-            get => eramViewModel.ActiveGeoMap;
+            get => eramViewModel.MapsLabelLine1;
             set
             {
-                eramViewModel.ActiveGeoMap = value;
+                eramViewModel.MapsLabelLine1 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string LabelLine2
+        {
+            get => eramViewModel.MapsLabelLine2;
+            set
+            {
+                eramViewModel.MapsLabelLine2 = value;
                 OnPropertyChanged();
             }
         }
@@ -24,7 +40,11 @@ namespace vFalcon.ViewModels
         public MasterToolbarViewModel(EramViewModel eramViewModel)
         {
             this.eramViewModel = eramViewModel;
-            ActiveGeoMap = eramViewModel.ActiveGeoMap;
+            BrightnessCommand = new RelayCommand(() => eramViewModel.OnBrightnessCommand());
+            CursorCommand = new RelayCommand(() => eramViewModel.OnCursorCommand());
+            MapsCommand = new RelayCommand(() => eramViewModel.OnMapsCommand());
+            LabelLine1 = eramViewModel.MapsLabelLine1;
+            LabelLine2 = eramViewModel.MapsLabelLine2;
         }
     }
 }

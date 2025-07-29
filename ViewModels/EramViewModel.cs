@@ -22,6 +22,10 @@ namespace vFalcon.ViewModels
         // Fields
         private Artcc artcc;
         private Profile profile;
+        private MasterToolbarView masterToolbarView;
+        private CursorToolbarView cursorToolbarView;
+        private BrightnessToolbarView brightnessToolbarView;
+        private MapsToolbarView mapsToolbarView;
 
         private double timeBorderLeft;
         private double timeBorderTop = double.NaN;
@@ -46,19 +50,26 @@ namespace vFalcon.ViewModels
 
         private bool cursorToolbarOpen = false;
         private bool brightnessToolbarOpen = false;
+        private bool mapsToolbarOpen = false;
+
+        private string mapsLabelLine1;
+        private string mapsLabelLine2;
+
 
         //Default margins
         private Thickness timeMargin = new Thickness(20, 110, 0, 0);
         private Thickness toolbarControlMargin = new Thickness(90, 71, 0, 0);
 
         // Commands
-        public ICommand ToolbarControlCommand { get; }
-        public ICommand MasterToolbarCommand { get; }
-        public ICommand SwapZOrderCommand { get; }
+        public ICommand ToolbarControlCommand { get; set; }
+        public ICommand MasterToolbarCommand { get; set; }
+        public ICommand SwapZOrderCommand { get; set; }
         
         //Master Toolbar
-        public ICommand CursorCommand { get; }
-        public ICommand BrightnessCommand { get; }
+        public ICommand CursorCommand { get; set; }
+        public ICommand BrightnessCommand { get; set; }
+
+        public ICommand MapsCommand { get; set; }
 
         // Properties
         // Toolbar Control Location
@@ -148,13 +159,42 @@ namespace vFalcon.ViewModels
         }
 
         // Maps Toolbar Menu
-
         public string ActiveGeoMap
         {
             get => (string)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["Bcgs"]["ACtiveGeoMap"];
             set
             {
                 profile.DisplayWindowSettings[0]["DisplaySettings"][0]["Bcgs"]["ACtiveGeoMap"] = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public JArray ArtccGeoMaps
+        {
+            get => (JArray)artcc.facility["eramConfiguration"]["geoMaps"];
+            set
+            {
+                artcc.facility["eramConfiguration"]["geoMaps"] = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string MapsLabelLine1
+        {
+            get => mapsLabelLine1;
+            set
+            {
+                mapsLabelLine1 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string MapsLabelLine2
+        {
+            get => mapsLabelLine2;
+            set
+            {
+                mapsLabelLine2 = value;
                 OnPropertyChanged();
             }
         }
@@ -172,28 +212,10 @@ namespace vFalcon.ViewModels
         {
             this.artcc = artcc;
             this.profile = profile;
-            LoadProfileSettings();
-            ActiveGeoMap = (string)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["Bcgs"]["ActiveGeoMap"] ?? (string)artcc.facility["eramConfiguration"]["geoMaps"][0]["name"]; //FIXME the geomap uises labnelLine1 and labelLine2 and not just "name" to set the map button name
-            BackgroundValue = (int)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["Bcgs"]["Background"];
-            BrightnessValue = (int)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["Bcgs"]["SystemBrightness"];
-            UpdateBackground();
-
-            ToolbarControlContent = new ToolbarControlView(this);
-            MasterRaiseLower = IsRaiseMasterToolbar ? "LOWER" : "RAISE";
-
-            MasterToolbarCommand = new RelayCommand(OnMasterToolbar);
-            SwapZOrderCommand = new RelayCommand(SwapZOrder);
-            CursorCommand = new RelayCommand(OnCursorCommand);
-            BrightnessCommand = new RelayCommand(OnBrightnessCommand);
-
-            IsMasterToolbarOpen = !IsMasterToolbarOpen;
-            OnMasterToolbar();
-
-            if (IsRaiseMasterToolbar)
-                SetZOrderRaised();
-            else
-                SetZOrderLowered();
-
+            InitializeCommands();
+            InitializeProfile();
+            InitializeToolbarViews();
+            InitializeMasterToolbar();
         }
 
         // Public Methods
@@ -211,7 +233,7 @@ namespace vFalcon.ViewModels
             if (!IsMasterToolbarOpen)
             {
                 IsMasterToolbarOpen = !IsMasterToolbarOpen;
-                MasterToolbarContent = new MasterToolbarView(this);
+                MasterToolbarContent = masterToolbarView;
             }
             else
             {
@@ -219,6 +241,7 @@ namespace vFalcon.ViewModels
                 MasterToolbarContent = null;
             }
         }
+
         public void SwapZOrder()
         {
             if (IsRaiseMasterToolbar)
@@ -233,12 +256,12 @@ namespace vFalcon.ViewModels
         {
             if (!cursorToolbarOpen)
             {
-                MasterToolbarContent = new CursorToolbarView(this);
+                MasterToolbarContent = cursorToolbarView;
                 cursorToolbarOpen = true;
             }
             else
             {
-                MasterToolbarContent = new MasterToolbarView(this);
+                MasterToolbarContent = masterToolbarView;
                 cursorToolbarOpen = false;
             }
         }
@@ -247,39 +270,100 @@ namespace vFalcon.ViewModels
         {
             if (!brightnessToolbarOpen)
             {
-                MasterToolbarContent = new BrightnessToolbarView(this);
+                MasterToolbarContent = brightnessToolbarView;
                 brightnessToolbarOpen = true;
             }
             else
             {
-                MasterToolbarContent = new MasterToolbarView(this);
+                MasterToolbarContent = masterToolbarView;
                 brightnessToolbarOpen = false;
             }
         }
 
+        public void OnMapsCommand()
+        {
+            if (!mapsToolbarOpen)
+            {
+                MasterToolbarContent = mapsToolbarView;
+                mapsToolbarOpen = true;
+            }
+            else
+            {
+                MasterToolbarContent = masterToolbarView;
+                mapsToolbarOpen = false;
+            }
+        }
+
         // Private Methods
-        private void SetZOrderRaised()
+        private void InitializeCommands()
         {
-            ToolbarRegionZIndex = 2;
-            CanvasZIndex = 1;
-            IsRaiseMasterToolbar = true;
-            MasterRaiseLower = "LOWER";
-            OnPropertyChanged(nameof(MasterRaiseLower));
+            MasterToolbarCommand = new RelayCommand(OnMasterToolbar);
+            SwapZOrderCommand = new RelayCommand(SwapZOrder);
+            CursorCommand = new RelayCommand(OnCursorCommand);
+            BrightnessCommand = new RelayCommand(OnBrightnessCommand);
+            MapsCommand = new RelayCommand(OnMapsCommand);
         }
 
-        private void SetZOrderLowered()
+        private void InitializeProfile()
         {
-            CanvasZIndex = 2;
-            ToolbarRegionZIndex = 1;
-            IsRaiseMasterToolbar = false;
-            MasterRaiseLower = "RAISE";
-            OnPropertyChanged(nameof(MasterRaiseLower));
-        }
-
-        private void LoadProfileSettings()
-        {
+            LoadGeoMaps();
+            LoadBrightness();
             LoadTimeSettings();
             LoadToolbarControlMenu();
+        }
+
+
+        private void InitializeMasterToolbar()
+        {
+            ToolbarControlContent = new ToolbarControlView(this);
+            MasterRaiseLower = IsRaiseMasterToolbar ? "LOWER" : "RAISE";
+            IsMasterToolbarOpen = !IsMasterToolbarOpen;
+            OnMasterToolbar();
+
+            if (IsRaiseMasterToolbar)
+                SetZOrderRaised();
+            else
+                SetZOrderLowered();
+        }
+
+        private void InitializeToolbarViews()
+        {
+            masterToolbarView = new MasterToolbarView(this);
+            cursorToolbarView = new CursorToolbarView(this);
+            brightnessToolbarView = new BrightnessToolbarView(this);
+            mapsToolbarView = new MapsToolbarView(this);
+        }
+
+        private void LoadGeoMaps()
+        {
+            ActiveGeoMap = (string)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["ActiveGeoMap"] ?? null;
+            ArtccGeoMaps = (JArray)artcc.facility["eramConfiguration"]["geoMaps"];
+            if (ActiveGeoMap == null)
+            {
+                // no geo map set, so we will use the default first one in facility file, same as CRC
+                JObject defaultGeoMap = (JObject)artcc.facility["eramConfiguration"]["geoMaps"][0];
+                ActiveGeoMap = (string)defaultGeoMap["name"];
+                MapsLabelLine1 = (string)defaultGeoMap["labelLine1"];
+                MapsLabelLine2 = (string)defaultGeoMap["labelLine2"];
+                return;
+            }
+            foreach (JObject geoMap in ArtccGeoMaps)
+            {
+                string name = (string)geoMap["name"];
+                if (name == ActiveGeoMap)
+                {
+                    MapsLabelLine1 = (string)geoMap["labelLine1"];
+                    MapsLabelLine2 = (string)geoMap["labelLine2"];
+                    break;
+                }
+            }
+        }
+
+        private void LoadBrightness()
+        {
+            BackgroundValue = (int)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["Bcgs"]["Background"];
+            BrightnessValue = (int)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["Bcgs"]["SystemBrightness"];
+            UpdateBackground();
         }
 
         private void LoadTimeSettings()
@@ -366,6 +450,24 @@ namespace vFalcon.ViewModels
                     return;
                 }
             }
+        }
+
+        private void SetZOrderRaised()
+        {
+            ToolbarRegionZIndex = 2;
+            CanvasZIndex = 1;
+            IsRaiseMasterToolbar = true;
+            MasterRaiseLower = "LOWER";
+            OnPropertyChanged(nameof(MasterRaiseLower));
+        }
+
+        private void SetZOrderLowered()
+        {
+            CanvasZIndex = 2;
+            ToolbarRegionZIndex = 1;
+            IsRaiseMasterToolbar = false;
+            MasterRaiseLower = "RAISE";
+            OnPropertyChanged(nameof(MasterRaiseLower));
         }
     }
 }
