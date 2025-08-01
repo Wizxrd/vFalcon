@@ -1,5 +1,5 @@
 # vFalcon
-![](https://img.shields.io/badge/version-v0.0.4-yellow)
+![](https://img.shields.io/badge/version-v0.0.5-yellow)
 
 ## Overview
 Falcon is a real-world FAA replay system used to track the manipulation of datablocks, aircraft positions, and other sector-specific data within the National Airspace System (NAS).

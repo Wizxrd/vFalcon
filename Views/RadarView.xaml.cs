@@ -25,6 +25,15 @@ namespace vFalcon.Views
         public RadarView()
         {
             InitializeComponent();
+            Loaded += RadarViewLoaded;
+        }
+
+        private void RadarViewLoaded(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is RadarViewModel radarVM)
+            {
+                radarVM.InvalidateCanvas = () => RadarCanvas.InvalidateVisual();
+            }
         }
     }
 }

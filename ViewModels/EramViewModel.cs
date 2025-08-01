@@ -1,7 +1,10 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using GeoJSON.Net.Feature;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,8 +23,8 @@ namespace vFalcon.ViewModels
     public class EramViewModel : ViewModelBase
     {
         // Fields
-        private Artcc artcc;
-        private Profile profile;
+        public Artcc artcc;
+        public Profile profile;
         private MasterToolbarView masterToolbarView;
         private CursorToolbarView cursorToolbarView;
         private BrightnessToolbarView brightnessToolbarView;
@@ -207,11 +210,17 @@ namespace vFalcon.ViewModels
             Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, blue));
         }
 
+        public RadarViewModel RadarViewModel { get; set; }
+        public HashSet<int> ActiveFilters { get; } = new HashSet<int>();
+
         // Constructor
         public EramViewModel(Artcc artcc, Profile profile)
         {
             this.artcc = artcc;
             this.profile = profile;
+
+            RadarViewModel = new RadarViewModel(this);
+
             InitializeCommands();
             InitializeProfile();
             InitializeToolbarViews();
@@ -307,6 +316,7 @@ namespace vFalcon.ViewModels
         private void InitializeProfile()
         {
             LoadGeoMaps();
+            LoadVideoMaps();
             LoadBrightness();
             LoadTimeSettings();
             LoadToolbarControlMenu();
@@ -343,6 +353,7 @@ namespace vFalcon.ViewModels
                 // no geo map set, so we will use the default first one in facility file, same as CRC
                 JObject defaultGeoMap = (JObject)artcc.facility["eramConfiguration"]["geoMaps"][0];
                 ActiveGeoMap = (string)defaultGeoMap["name"];
+                ActiveVideoMapIds = (JArray)defaultGeoMap["videoMapIds"];
                 MapsLabelLine1 = (string)defaultGeoMap["labelLine1"];
                 MapsLabelLine2 = (string)defaultGeoMap["labelLine2"];
                 return;
@@ -352,11 +363,183 @@ namespace vFalcon.ViewModels
                 string name = (string)geoMap["name"];
                 if (name == ActiveGeoMap)
                 {
+                    ActiveVideoMapIds = (JArray)geoMap["videoMapIds"];
                     MapsLabelLine1 = (string)geoMap["labelLine1"];
                     MapsLabelLine2 = (string)geoMap["labelLine2"];
                     break;
                 }
             }
+        }
+
+        public JArray ActiveVideoMapIds;
+
+        public Dictionary<int, List<ProcessedFeature>> FacilityFeatures { get; } = new Dictionary<int, List<ProcessedFeature>>();
+
+        private async Task LoadVideoMaps()
+        {
+            string sourcePath = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                "CRC", $"VideoMaps/{artcc.id}");
+
+            var matchedFiles = ActiveVideoMapIds
+                .Select(id => Path.Combine(sourcePath, id + ".geojson"))
+                .Where(File.Exists)
+                .ToList();
+
+            foreach (var file in matchedFiles)
+            {
+                var json = await File.ReadAllTextAsync(file);
+                JObject geoJson = JsonConvert.DeserializeObject<JObject>(json);
+
+                var defaults = ExtractLastIsDefaults(geoJson);
+                if (geoJson == null) continue;
+                foreach (var feature in geoJson["features"])
+                {
+                    var properties = (JObject)feature["properties"];
+                    if (IsDefaultsFeature(properties)) continue;
+
+                    string geometryType = (string)feature["geometry"]["type"];
+                    var finalProperties = MergeProperties(properties, defaults, geometryType);
+                    var filters = finalProperties.ContainsKey("filters")
+                        ? ((JArray)finalProperties["filters"]).Select(f => (int)f).ToList()
+                        : new List<int>();
+
+                    foreach (var filter in filters)
+                    {
+                        if (!FacilityFeatures.ContainsKey(filter))
+                            FacilityFeatures[filter] = new List<ProcessedFeature>();
+
+                        FacilityFeatures[filter].Add(new ProcessedFeature
+                        {
+                            GeometryType = ResolveFeatureType(geometryType, properties),
+                            Geometry = feature["geometry"],
+                            AppliedAttributes = finalProperties
+                        });
+                    }
+                }
+            }
+
+            Logger.Alert("EramViewModel.LoadVideoMaps", "COMPLETED");
+        }
+
+        private string ResolveFeatureType(string geometryType, JObject props)
+        {
+            if (geometryType == "LineString" || geometryType == "MultiLineString")
+                return "Line";
+            if (geometryType == "Point" && props.ContainsKey("text"))
+                return "Text";
+            if (geometryType == "Point")
+                return "Symbol";
+            return geometryType; // fallback
+        }
+
+        private bool IsDefaultsFeature(JObject props)
+        {
+            if (props == null) return false;
+
+            return props.Value<bool?>("isLineDefaults") == true ||
+                   props.Value<bool?>("isSymbolDefaults") == true ||
+                   props.Value<bool?>("isTextDefaults") == true;
+        }
+
+        private Dictionary<string, object> MergeProperties(JObject featureProps, FeatureDefaults defaults, string geometryType)
+        {
+            var merged = new Dictionary<string, object>();
+
+            // ✅ if no properties exist, use only defaults and CRC auto defaults
+            if (featureProps == null)
+            {
+                Dictionary<string, object> typeDefaultsOnly = geometryType switch
+                {
+                    "LineString" or "MultiLineString" => defaults.LineDefaults,
+                    "Point" => defaults.SymbolDefaults,
+                    _ => new Dictionary<string, object>()
+                };
+
+                foreach (var kv in typeDefaultsOnly)
+                    merged[kv.Key] = kv.Value;
+
+                ApplyCrcAutoDefaults(merged, geometryType);
+                return merged;
+            }
+
+            // ✅ Merge defaults → feature properties
+            Dictionary<string, object> typeDefaults = geometryType switch
+            {
+                "LineString" or "MultiLineString" => defaults.LineDefaults,
+                "Point" => featureProps.ContainsKey("text")
+                              ? defaults.TextDefaults
+                              : defaults.SymbolDefaults,
+                _ => new Dictionary<string, object>()
+            };
+
+            foreach (var kv in typeDefaults)
+                merged[kv.Key] = kv.Value;
+
+            foreach (var kv in featureProps)
+                merged[kv.Key] = kv.Value;
+
+            ApplyCrcAutoDefaults(merged, geometryType);
+
+            return merged;
+        }
+
+        private void ApplyCrcAutoDefaults(Dictionary<string, object> props, string featureType)
+        {
+            switch (featureType)
+            {
+                case "Line":
+                    if (!props.ContainsKey("bcg")) props["bcg"] = 1;
+                    if (!props.ContainsKey("style")) props["style"] = "solid";
+                    if (!props.ContainsKey("thickness")) props["thickness"] = 1;
+                    break;
+
+                case "Symbol":
+                    if (!props.ContainsKey("bcg")) props["bcg"] = 1;
+                    if (!props.ContainsKey("style")) props["style"] = "vor";
+                    if (!props.ContainsKey("size")) props["size"] = 1;
+                    break;
+
+                case "Text":
+                    if (!props.ContainsKey("bcg")) props["bcg"] = 1;
+                    if (!props.ContainsKey("size")) props["size"] = 1;
+                    if (!props.ContainsKey("underline")) props["underline"] = false;
+                    if (!props.ContainsKey("xOffset")) props["xOffset"] = 0;
+                    if (!props.ContainsKey("yOffset")) props["yOffset"] = 0;
+                    if (!props.ContainsKey("opaque")) props["opaque"] = false;
+                    break;
+            }
+        }
+
+        private FeatureDefaults ExtractLastIsDefaults(JObject geojson)
+        {
+            var defaults = new FeatureDefaults
+            {
+                LineDefaults = new Dictionary<string, object>(),
+                SymbolDefaults = new Dictionary<string, object>(),
+                TextDefaults = new Dictionary<string, object>()
+            };
+
+            // ✅ Guard: ensure features array exists
+            if (geojson?["features"] is not JArray featuresArray)
+                return defaults;
+
+            foreach (var feature in featuresArray)
+            {
+                var props = feature["properties"] as JObject;
+                if (props == null) continue;
+
+                if (props.Value<bool?>("isLineDefaults") == true)
+                    defaults.LineDefaults = props.ToObject<Dictionary<string, object>>();
+
+                if (props.Value<bool?>("isSymbolDefaults") == true)
+                    defaults.SymbolDefaults = props.ToObject<Dictionary<string, object>>();
+
+                if (props.Value<bool?>("isTextDefaults") == true)
+                    defaults.TextDefaults = props.ToObject<Dictionary<string, object>>();
+            }
+
+            return defaults;
         }
 
         private void LoadBrightness()

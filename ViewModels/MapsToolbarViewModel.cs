@@ -76,14 +76,17 @@ namespace vFalcon.ViewModels
                     foreach (JObject filter in filterMenu)
                     {
                         string id = (string)filter["id"];
+                        int filterIndex = index + 1;
                         MapFilters.Add(new MapFilter
                         {
                             Id = id,
+                            Index = filterIndex,
                             LabelLine1 = (string)filter["labelLine1"],
                             LabelLine2 = (string)filter["labelLine2"],
                             Row = index < 20 ? 0 : 2,
                             Column = (index % 20) * 2,
-                            Command = new RelayCommand(_ => ToggleMapCommand(id))
+                            Command = new RelayCommand(_ => ToggleMapCommand(filterIndex)),
+                            IsActive = false
                         });
                         index++;
                     }
@@ -92,9 +95,19 @@ namespace vFalcon.ViewModels
             }
         }
 
-        private void ToggleMapCommand(string id)
+        private void ToggleMapCommand(int filterIndex)
         {
-            Logger.Debug("MapsToolbarViewModel.ToggleMapCommand", id);
+            if (eramViewModel.ActiveFilters.Contains(filterIndex))
+            {
+                eramViewModel.ActiveFilters.Remove(filterIndex);
+                Logger.Debug("MapsToolbarViewModel.ToggleMapCommand", $"Filter {filterIndex} disabled");
+            }
+            else
+            {
+                eramViewModel.ActiveFilters.Add(filterIndex);
+                Logger.Debug("MapsToolbarViewModel.ToggleMapCommand", $"Filter {filterIndex} enabled");
+            }
+            eramViewModel.RadarViewModel.InvalidateCanvas?.Invoke();
         }
     }
 }

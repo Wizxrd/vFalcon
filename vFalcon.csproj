@@ -7,8 +7,15 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Resources\Images\vFalcon.ico</ApplicationIcon>
-    <Version>0.0.4</Version>
+    <Version>0.0.5</Version>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="VideoMaps\**" />
+    <EmbeddedResource Remove="VideoMaps\**" />
+    <None Remove="VideoMaps\**" />
+    <Page Remove="VideoMaps\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Remove="Resources\Cursors\Eram1.cur" />
@@ -32,11 +39,8 @@
 
   <ItemGroup>
     <Folder Include="ARTCCs\" />
-    <Folder Include="Behaviors\" />
     <Folder Include="DataFeeds\" />
     <Folder Include="Logs\" />
-    <Folder Include="VideoMaps\" />
-    <Folder Include="Renderers\" />
     <Folder Include="Profiles\" />
   </ItemGroup>
 

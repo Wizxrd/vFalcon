@@ -12,7 +12,7 @@
     xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
     Icon="pack://application:,,,/Resources/Images/vFalcon.png"
     Title="vFalcon"
-    MinWidth="300" Width="1280" MinHeight="300" Height="720"
+    MinWidth="250" Width="1280" MinHeight="250" Height="720"
     FontFamily="Consolas" FontSize="12" 
     Foreground="{StaticResource White}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
     <WindowChrome.WindowChrome>
@@ -25,7 +25,7 @@
             </Grid.RowDefinitions>
             <Border x:Name="TestingBorder" Grid.Row="0" Background="{Binding Background}">
                 <Grid>
-                    <views:RadarView x:Name="RadarVW" Background="{Binding Background, ElementName=TestingBorder}" DataContext="{Binding RadarViewModel}"/>
+                    <views:RadarView x:Name="RadarView" Background="{Binding Background, ElementName=TestingBorder}" DataContext="{Binding RadarViewModel}"/>
                     <ContentControl
                         x:Name="ToolbarRegion"
                         HorizontalAlignment="Stretch"

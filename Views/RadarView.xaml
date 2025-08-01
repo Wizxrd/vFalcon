@@ -7,9 +7,13 @@
              xmlns:skia="clr-namespace:SkiaSharp.Views.WPF;assembly=SkiaSharp.Views.WPF"
              xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
              xmlns:helpers="clr-namespace:vFalcon.Helpers"
+             xmlns:behaviors="clr-namespace:vFalcon.Behaviors"
              mc:Ignorable="d">
     <Border>
         <skia:SKElement Name="RadarCanvas">
+            <i:Interaction.Behaviors>
+                <behaviors:SKElementPaintBehavior PaintCommand="{Binding PaintSurfaceCommand}"/>
+            </i:Interaction.Behaviors>
         </skia:SKElement>
     </Border>
 </UserControl>
