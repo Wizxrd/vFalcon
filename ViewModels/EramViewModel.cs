@@ -446,7 +446,6 @@ namespace vFalcon.ViewModels
         {
             var merged = new Dictionary<string, object>();
 
-            // ✅ if no properties exist, use only defaults and CRC auto defaults
             if (featureProps == null)
             {
                 Dictionary<string, object> typeDefaultsOnly = geometryType switch
@@ -463,7 +462,6 @@ namespace vFalcon.ViewModels
                 return merged;
             }
 
-            // ✅ Merge defaults → feature properties
             Dictionary<string, object> typeDefaults = geometryType switch
             {
                 "LineString" or "MultiLineString" => defaults.LineDefaults,
@@ -520,7 +518,6 @@ namespace vFalcon.ViewModels
                 TextDefaults = new Dictionary<string, object>()
             };
 
-            // ✅ Guard: ensure features array exists
             if (geojson?["features"] is not JArray featuresArray)
                 return defaults;
 
