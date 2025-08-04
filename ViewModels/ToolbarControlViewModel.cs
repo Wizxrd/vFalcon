@@ -1,28 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media.Imaging;
 using vFalcon.Commands;
 
 namespace vFalcon.ViewModels
 {
     public class ToolbarControlViewModel : ViewModelBase
     {
-        // Fields
+        // ========================================================
+        //                  FIELDS
+        // ========================================================
         private EramViewModel eramViewModel;
         private Visibility toolbarControlGrid = Visibility.Collapsed;
 
-        // Commands
+        // ========================================================
+        //                  COMMANDS
+        // ========================================================
         public ICommand MasterToolbarCommand { get; }
         public ICommand ToolbarControlCommand { get; }
         public ICommand SwapZOrderCommand { get; }
 
-        // Properties
+        // ========================================================
+        //                  PROPERTIES
+        // ========================================================
         public bool IsMasterToolbarOpen
         {
             get => eramViewModel.IsMasterToolbarOpen;
@@ -63,7 +64,9 @@ namespace vFalcon.ViewModels
             }
         }
 
-        // Constructor
+        // ========================================================
+        //                  CONSTRUCTOR
+        // ========================================================
         public ToolbarControlViewModel(EramViewModel eramViewModel)
         {
             this.eramViewModel = eramViewModel;
@@ -78,7 +81,9 @@ namespace vFalcon.ViewModels
             ToolbarControlCommand = new RelayCommand(OnToolbarControl);
         }
 
-        // Methods
+        // ========================================================
+        //                  METHODS
+        // ========================================================
         private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName == nameof(EramViewModel.MasterRaiseLower))

@@ -17,5 +17,6 @@ namespace vFalcon.Models
         public int Column { get; set; }
         public ICommand Command { get; set; }
         public bool IsActive { get; set; }
+        public bool IsChecked { get; set; }
     }
 }

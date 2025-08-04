@@ -10,7 +10,7 @@
     xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
     mc:Ignorable="d"
     Icon="pack://application:,,,/Resources/Images/vFalcon.png"
-    Title="Load Profile"
+    Title="Load CRC Profile"
     MinWidth="350" Width="350" Height="500" 
     SizeToContent="Width" ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"

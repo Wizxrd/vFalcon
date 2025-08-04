@@ -1,34 +1,52 @@
-﻿using GeoJSON.Net.Feature;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Threading;
 using vFalcon.Commands;
 using vFalcon.Helpers;
 using vFalcon.Models;
-using vFalcon.Services.Interfaces;
 using vFalcon.Views;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace vFalcon.ViewModels
 {
     public class EramViewModel : ViewModelBase
     {
-        // Fields
+        // ========================================================
+        //                     FIELDS
+        // ========================================================
         public Artcc artcc;
         public Profile profile;
+
         private MasterToolbarView masterToolbarView;
         private CursorToolbarView cursorToolbarView;
         private BrightnessToolbarView brightnessToolbarView;
         private MapsToolbarView mapsToolbarView;
+
+        private DispatcherTimer zuluTimer = new DispatcherTimer();
+        private object masterToolbarContent;
+        private ToolbarControlView toolbarContent;
+        private object ActiveToolbar;
+
+        private Brush background;
+
+        private string title = "vFalcon";
+        private string geoMapStatus;
+        private string zuluTime;
+
+        private string masterRaiseLower;
+        private string mapsLabelLine1;
+        private string mapsLabelLine2;
+        private string zoomLevel;
+
+        private bool cursorToolbarOpen;
+        private bool brightnessToolbarOpen;
+        private bool mapsToolbarOpen;
+        private bool tdmActive;
+        private bool useAlternateMapLayout = false;
 
         private double timeBorderLeft;
         private double timeBorderTop = double.NaN;
@@ -40,180 +58,134 @@ namespace vFalcon.ViewModels
         private double toolbarControlRight;
         private double toolbarControlBottom;
 
-        private object _masterToolbarContent;
-        private ToolbarControlView _toolbarContent;
-
         private int _toolbarRegionZIndex = 1;
-        private int _canvasZIndex = 2;
-        private string masterRaiseLower;
-
-        private Brush background;
+        private int canvasZIndex = 2;
         private int backgroundValue;
         private int brightnessValue;
 
-        private bool cursorToolbarOpen = false;
-        private bool brightnessToolbarOpen = false;
-        private bool mapsToolbarOpen = false;
+        // ========================================================
+        //                     PROPERTIES
+        // ========================================================
 
-        private string mapsLabelLine1;
-        private string mapsLabelLine2;
+        // -- Title Name --
+        public string Title { get => title; set { title = value; OnPropertyChanged(); } }
 
+        // -- Zulu Time --
+        public string ZuluTime { get => zuluTime; set { zuluTime = value; OnPropertyChanged(); } }
 
-        //Default margins
+        // --- Toolbar Content ---
+        public object MasterToolbarContent { get => masterToolbarContent; set { masterToolbarContent = value; OnPropertyChanged(); } }
+        public ToolbarControlView ToolbarControlContent { get => toolbarContent; set { toolbarContent = value; OnPropertyChanged(); } }
+
+        // --- Toolbar Z-Index ---
+        public int ToolbarRegionZIndex { get => _toolbarRegionZIndex; set { _toolbarRegionZIndex = value; OnPropertyChanged(); } }
+        public int CanvasZIndex { get => canvasZIndex; set { canvasZIndex = value; OnPropertyChanged(); } }
+
+        // --- Margins ---
         private Thickness timeMargin = new Thickness(20, 110, 0, 0);
         private Thickness toolbarControlMargin = new Thickness(90, 71, 0, 0);
+        public Thickness TimeMargin { get => timeMargin; set { timeMargin = value; OnPropertyChanged(); } }
+        public Thickness ToolbarControlMargin { get => toolbarControlMargin; set { toolbarControlMargin = value; OnPropertyChanged(); } }
 
-        // Commands
-        public ICommand ToolbarControlCommand { get; set; }
-        public ICommand MasterToolbarCommand { get; set; }
-        public ICommand SwapZOrderCommand { get; set; }
-        
-        //Master Toolbar
-        public ICommand CursorCommand { get; set; }
-        public ICommand BrightnessCommand { get; set; }
-
-        public ICommand MapsCommand { get; set; }
-
-        // Properties
-        // Toolbar Control Location
+        // --- Toolbar Control Position ---
         public double ToolbarControlLeft { get => toolbarControlLeft; set { toolbarControlLeft = value; OnPropertyChanged(); } }
         public double ToolbarControlRight { get => toolbarControlRight; set { toolbarControlRight = value; OnPropertyChanged(); } }
         public double ToolbarControlTop { get => toolbarControlTop; set { toolbarControlTop = value; OnPropertyChanged(); } }
         public double ToolbarControlBottom { get => toolbarControlBottom; set { toolbarControlBottom = value; OnPropertyChanged(); } }
 
-        // Time Location
+        // --- Time Border Position ---
         public double TimeBorderLeft { get => timeBorderLeft; set { timeBorderLeft = value; OnPropertyChanged(); } }
         public double TimeBorderTop { get => timeBorderTop; set { timeBorderTop = value; OnPropertyChanged(); } }
         public double TimeBorderRight { get => timeBorderRight; set { timeBorderRight = value; OnPropertyChanged(); } }
         public double TimeBorderBottom { get => timeBorderBottom; set { timeBorderBottom = value; OnPropertyChanged(); } }
 
-        // Master Toolbar Conent and Toolbar Control Content
-        public object MasterToolbarContent { get => _masterToolbarContent; set { _masterToolbarContent = value; OnPropertyChanged(); } }
-        public ToolbarControlView ToolbarControlContent { get => _toolbarContent; set { _toolbarContent = value; OnPropertyChanged(); } }
-
-        // Default Margins
-        public Thickness TimeMargin { get => timeMargin; set { timeMargin = value; OnPropertyChanged(); } }
-        public Thickness ToolbarControlMargin { get => toolbarControlMargin; set { toolbarControlMargin = value; OnPropertyChanged(); } }
-
-
-        // Toolbar Control Menu
-        public int ToolbarRegionZIndex { get => _toolbarRegionZIndex; set { _toolbarRegionZIndex = value; OnPropertyChanged(); } }
-        public int CanvasZIndex { get => _canvasZIndex; set { _canvasZIndex = value; OnPropertyChanged(); } }
-
+        // --- Toolbar State ---
         public string MasterRaiseLower { get => masterRaiseLower; set { masterRaiseLower = value; OnPropertyChanged(); } }
-
         public bool IsMasterToolbarOpen
         {
             get => (bool)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["MasterToolbarVisible"];
             set { profile.DisplayWindowSettings[0]["DisplaySettings"][0]["MasterToolbarVisible"] = value; OnPropertyChanged(); }
         }
-
         public bool IsRaiseMasterToolbar
         {
             get => (bool)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["RaiseMasterToolbar"];
             set { profile.DisplayWindowSettings[0]["DisplaySettings"][0]["RaiseMasterToolbar"] = value; OnPropertyChanged(); }
         }
 
-        // Cursor Toolbar Menu
+        // --- Cursor ---
         public int CursorSize
         {
             get => (int)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["CursorSize"];
-            set
-            {
-                if ((int)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["CursorSize"] != value)
-                {
-                    profile.DisplayWindowSettings[0]["DisplaySettings"][0]["CursorSize"] = value;
-                    OnPropertyChanged();
-                }
-            }
+            set { profile.DisplayWindowSettings[0]["DisplaySettings"][0]["CursorSize"] = value; OnPropertyChanged(); }
         }
 
-        // Brightness Toolbar Menu
-        public Brush Background
-        {
-            get => background;
-            set
-            {
-                if (background != value)
-                {
-                    background = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-        public int BackgroundValue
-        {
-            get => backgroundValue;
-            set
-            {
-                backgroundValue = value;
-                OnPropertyChanged();
-            }
-        }
+        // --- Background ---
+        public Brush Background { get => background; set { background = value; OnPropertyChanged(); } }
+        public int BackgroundValue { get => backgroundValue; set { backgroundValue = value; OnPropertyChanged(); } }
+        public int BrightnessValue { get => brightnessValue; set { brightnessValue = value; OnPropertyChanged(); } }
 
-        public int BrightnessValue
-        {
-            get => brightnessValue;
-            set
-            {
-                brightnessValue = value;
-                OnPropertyChanged();
-            }
-        }
-
-        // Maps Toolbar Menu
+        // --- Maps ---
+        public HashSet<int> ActiveFilters { get; set; } = new HashSet<int>();
+        public JArray ActiveVideoMapIds;
+        public string GeoMapStatus { get => geoMapStatus; set { geoMapStatus = value; OnPropertyChanged(); } }
+        public bool UseAlternateMapLayout { get => useAlternateMapLayout; set { useAlternateMapLayout = value; mapsToolbarView.RebuildFilters(); OnPropertyChanged(); } }
         public string ActiveGeoMap
         {
             get => (string)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["Bcgs"]["ACtiveGeoMap"];
-            set
-            {
-                profile.DisplayWindowSettings[0]["DisplaySettings"][0]["Bcgs"]["ACtiveGeoMap"] = value;
-                OnPropertyChanged();
-            }
+            set { profile.DisplayWindowSettings[0]["DisplaySettings"][0]["Bcgs"]["ACtiveGeoMap"] = value; OnPropertyChanged(); }
         }
-
         public JArray ArtccGeoMaps
         {
             get => (JArray)artcc.facility["eramConfiguration"]["geoMaps"];
-            set
-            {
-                artcc.facility["eramConfiguration"]["geoMaps"] = value;
-                OnPropertyChanged();
-            }
+            set { artcc.facility["eramConfiguration"]["geoMaps"] = value; OnPropertyChanged(); }
         }
+        public string MapsLabelLine1 { get => mapsLabelLine1; set { mapsLabelLine1 = value; OnPropertyChanged(); } }
+        public string MapsLabelLine2 { get => mapsLabelLine2; set { mapsLabelLine2 = value; OnPropertyChanged(); } }
 
-        public string MapsLabelLine1
-        {
-            get => mapsLabelLine1;
-            set
-            {
-                mapsLabelLine1 = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string MapsLabelLine2
-        {
-            get => mapsLabelLine2;
-            set
-            {
-                mapsLabelLine2 = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public void UpdateBackground()
-        {
-            double brightnessFactor = 0.65 + 0.35 * (BrightnessValue / 100.0); // min factor of 0.65, max factor of 1 (0.65+0.35)
-            double baseBlue = ((BackgroundValue / 60.0) * 127) * brightnessFactor;
-            byte blue = (byte)Math.Max(Math.Min(baseBlue, 255), 0);
-            Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, blue));
-        }
-
+        // --- Radar + Filters ---
         public RadarViewModel RadarViewModel { get; set; }
-        public HashSet<int> ActiveFilters { get; } = new HashSet<int>();
+        public Dictionary<int, List<ProcessedFeature>> FacilityFeatures { get; set; } = new Dictionary<int, List<ProcessedFeature>>();
+        public string ZoomLevel { get => zoomLevel; set { zoomLevel = value; OnPropertyChanged(); } }
 
-        // Constructor
+        // --- TDM ---
+        public bool TdmActive
+        {
+            get => tdmActive;
+            set
+            {
+                if (tdmActive != value)
+                {
+                    tdmActive = value;
+                    RadarViewModel.Redraw();
+                    OnPropertyChanged(nameof(TdmActive)); // ensure bindings update
+                }
+            }
+        }
+
+        // ========================================================
+        //                     COMMANDS
+        // ========================================================
+        public ICommand ToolbarControlCommand { get; set; }
+        public ICommand MasterToolbarCommand { get; set; }
+        public ICommand SwapZOrderCommand { get; set; }
+        public ICommand CursorCommand { get; set; }
+        public ICommand BrightnessCommand { get; set; }
+        public ICommand MapsCommand { get; set; }
+        public ICommand ToggleTdmCommand { get; set; }
+        public ICommand SwitchProfileCommand { get; set; }
+        public ICommand GeneralSettingsCommand { get; set; }
+
+        // ========================================================
+        //                     ACTIONS
+        // ========================================================
+
+        public event Action? SwitchProfileAction;
+        public event Action? GeneralSettingsAction;
+
+        // ========================================================
+        //                 CONSTRUCTOR
+        // ========================================================
+
         public EramViewModel(Artcc artcc, Profile profile)
         {
             this.artcc = artcc;
@@ -221,13 +193,26 @@ namespace vFalcon.ViewModels
 
             RadarViewModel = new RadarViewModel(this);
 
+            SetTitle(this.artcc.id, string.Empty);
+            StartZuluTimer();
             InitializeCommands();
             InitializeProfile();
             InitializeToolbarViews();
             InitializeMasterToolbar();
+            InitializeZoom();
         }
 
-        // Public Methods
+        // ========================================================
+        //               PUBLIC METHODS
+        // ========================================================
+        public void UpdateBackground()
+        {
+            double factor = 0.65 + 0.35 * (BrightnessValue / 100.0);
+            double baseBlue = ((BackgroundValue / 60.0) * 127) * factor;
+            byte blue = (byte)Math.Max(Math.Min(baseBlue, 255), 0);
+            Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, blue));
+        }
+
         public void OnMenuButtonMeasured(double buttonWidth, double buttonHeight)
         {
             if (!double.IsNaN(ToolbarControlRight))
@@ -239,71 +224,79 @@ namespace vFalcon.ViewModels
 
         public void OnMasterToolbar()
         {
-            if (!IsMasterToolbarOpen)
-            {
-                IsMasterToolbarOpen = !IsMasterToolbarOpen;
-                MasterToolbarContent = masterToolbarView;
-            }
-            else
-            {
-                IsMasterToolbarOpen = !IsMasterToolbarOpen;
-                MasterToolbarContent = null;
-            }
+            IsMasterToolbarOpen = !IsMasterToolbarOpen;
+            MasterToolbarContent = IsMasterToolbarOpen ? ActiveToolbar : null;
         }
 
         public void SwapZOrder()
         {
-            if (IsRaiseMasterToolbar)
-                SetZOrderLowered();
-            else
-                SetZOrderRaised();
-
+            if (IsRaiseMasterToolbar) SetZOrderLowered(); else SetZOrderRaised();
             OnPropertyChanged(nameof(IsRaiseMasterToolbar));
         }
 
         public void OnCursorCommand()
         {
-            if (!cursorToolbarOpen)
-            {
-                MasterToolbarContent = cursorToolbarView;
-                cursorToolbarOpen = true;
-            }
-            else
-            {
-                MasterToolbarContent = masterToolbarView;
-                cursorToolbarOpen = false;
-            }
+            if (!cursorToolbarOpen) { ActiveToolbar = cursorToolbarView; MasterToolbarContent = cursorToolbarView; }
+            else { ActiveToolbar = masterToolbarView; MasterToolbarContent = masterToolbarView; }
+            cursorToolbarOpen = !cursorToolbarOpen;
         }
 
         public void OnBrightnessCommand()
         {
-            if (!brightnessToolbarOpen)
-            {
-                MasterToolbarContent = brightnessToolbarView;
-                brightnessToolbarOpen = true;
-            }
-            else
-            {
-                MasterToolbarContent = masterToolbarView;
-                brightnessToolbarOpen = false;
-            }
+            if (!brightnessToolbarOpen) { ActiveToolbar = brightnessToolbarView; MasterToolbarContent = brightnessToolbarView; }
+            else { ActiveToolbar = masterToolbarView; MasterToolbarContent = masterToolbarView; }
+            brightnessToolbarOpen = !brightnessToolbarOpen;
         }
 
         public void OnMapsCommand()
         {
-            if (!mapsToolbarOpen)
+            if (!mapsToolbarOpen) { ActiveToolbar = mapsToolbarView; MasterToolbarContent = mapsToolbarView; }
+            else { ActiveToolbar = masterToolbarView; MasterToolbarContent = masterToolbarView; }
+            mapsToolbarOpen = !mapsToolbarOpen;
+        }
+
+        public void OnSwitchProfileCommand()
+        {
+            SwitchProfileAction?.Invoke();
+        }
+
+        public void OnGeneralSettingsCommand()
+        {
+            GeneralSettingsAction?.Invoke();
+        }
+
+        // ========================================================
+        //             PRIVATE METHODS
+        // =====S===================================================
+
+        private void SetTitle(string artcc, string sector)
+        {
+            if (sector == string.Empty)
             {
-                MasterToolbarContent = mapsToolbarView;
-                mapsToolbarOpen = true;
+                Title = $"vFalcon : {artcc}";
             }
             else
             {
-                MasterToolbarContent = masterToolbarView;
-                mapsToolbarOpen = false;
+                Title = $"vFalcon : {artcc} : {sector}";
             }
         }
 
-        // Private Methods
+        private void StartZuluTimer()
+        {
+            ZuluTimerTick(null, null);
+            zuluTimer.Interval = TimeSpan.FromMilliseconds(500);
+            zuluTimer.Tick += ZuluTimerTick;
+            zuluTimer.Start();
+        }
+
+        private void ZuluTimerTick(object? sender, EventArgs? e)
+        {
+            ZuluTime = DateTime.UtcNow.ToString("HHmm ss");
+        }
+
+        // ========================================================
+        //             INITIALIZATION METHODS
+        // ========================================================
         private void InitializeCommands()
         {
             MasterToolbarCommand = new RelayCommand(OnMasterToolbar);
@@ -311,29 +304,45 @@ namespace vFalcon.ViewModels
             CursorCommand = new RelayCommand(OnCursorCommand);
             BrightnessCommand = new RelayCommand(OnBrightnessCommand);
             MapsCommand = new RelayCommand(OnMapsCommand);
+            ToggleTdmCommand = new RelayCommand(() => { TdmActive = !TdmActive; RadarViewModel.Redraw(); });
+            SwitchProfileCommand = new RelayCommand(OnSwitchProfileCommand);
+            GeneralSettingsCommand = new RelayCommand(OnGeneralSettingsCommand);
         }
 
-        private void InitializeProfile()
+        private async Task InitializeProfile()
         {
-            LoadGeoMaps();
-            LoadVideoMaps();
+            ActiveGeoMap = (string)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["ActiveGeoMap"] ?? null;
+            LoadMapFilters();
             LoadBrightness();
             LoadTimeSettings();
             LoadToolbarControlMenu();
+            LoadGeoMaps();
+            await LoadVideoMaps();
+            ActiveFilters.Add(0);
+            RadarViewModel.Redraw();
         }
 
-
-        private void InitializeMasterToolbar()
+        public async Task SwapGeoMapSet()
         {
-            ToolbarControlContent = new ToolbarControlView(this);
-            MasterRaiseLower = IsRaiseMasterToolbar ? "LOWER" : "RAISE";
-            IsMasterToolbarOpen = !IsMasterToolbarOpen;
-            OnMasterToolbar();
-
-            if (IsRaiseMasterToolbar)
-                SetZOrderRaised();
+            FacilityFeatures.Clear();
+            ActiveFilters.Clear();
+            RadarViewModel.Redraw();
+            if (ActiveToolbar == mapsToolbarView)
+            {
+                Logger.Debug("Maps Open", "setting master to new content");
+                mapsToolbarView = new MapsToolbarView(this);
+                MasterToolbarContent = mapsToolbarView;
+                ActiveToolbar = mapsToolbarView;
+            }
             else
-                SetZOrderLowered();
+            {
+                Logger.Debug("Maps closed", "creating maps toolbar");
+                mapsToolbarView = new MapsToolbarView(this);
+            }
+            LoadGeoMaps();
+            await LoadVideoMaps();
+            ActiveFilters.Add(0);
+            RadarViewModel.Redraw();
         }
 
         private void InitializeToolbarViews()
@@ -344,199 +353,40 @@ namespace vFalcon.ViewModels
             mapsToolbarView = new MapsToolbarView(this);
         }
 
-        private void LoadGeoMaps()
+        private void InitializeMasterToolbar()
         {
-            ActiveGeoMap = (string)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["ActiveGeoMap"] ?? null;
-            ArtccGeoMaps = (JArray)artcc.facility["eramConfiguration"]["geoMaps"];
-            if (ActiveGeoMap == null)
-            {
-                // no geo map set, so we will use the default first one in facility file, same as CRC
-                JObject defaultGeoMap = (JObject)artcc.facility["eramConfiguration"]["geoMaps"][0];
-                ActiveGeoMap = (string)defaultGeoMap["name"];
-                ActiveVideoMapIds = (JArray)defaultGeoMap["videoMapIds"];
-                MapsLabelLine1 = (string)defaultGeoMap["labelLine1"];
-                MapsLabelLine2 = (string)defaultGeoMap["labelLine2"];
-                return;
-            }
-            foreach (JObject geoMap in ArtccGeoMaps)
-            {
-                string name = (string)geoMap["name"];
-                if (name == ActiveGeoMap)
-                {
-                    ActiveVideoMapIds = (JArray)geoMap["videoMapIds"];
-                    MapsLabelLine1 = (string)geoMap["labelLine1"];
-                    MapsLabelLine2 = (string)geoMap["labelLine2"];
-                    break;
-                }
-            }
+            ToolbarControlContent = new ToolbarControlView(this);
+            MasterRaiseLower = IsRaiseMasterToolbar ? "LOWER" : "RAISE";
+            IsMasterToolbarOpen = !IsMasterToolbarOpen;
+            ActiveToolbar = masterToolbarView;
+            OnMasterToolbar();
+            if (IsRaiseMasterToolbar) SetZOrderRaised(); else SetZOrderLowered();
         }
 
-        public JArray ActiveVideoMapIds;
-
-        public Dictionary<int, List<ProcessedFeature>> FacilityFeatures { get; } = new Dictionary<int, List<ProcessedFeature>>();
-
-        private async Task LoadVideoMaps()
+        private void InitializeZoom()
         {
-            string sourcePath = Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                "CRC", $"VideoMaps/{artcc.id}");
-
-            var matchedFiles = ActiveVideoMapIds
-                .Select(id => Path.Combine(sourcePath, id + ".geojson"))
-                .Where(File.Exists)
-                .ToList();
-
-            foreach (var file in matchedFiles)
+            ZoomLevel = RadarViewModel.GetCurrentZoomString();
+            RadarViewModel.ZoomLevelChanged = zoom =>
             {
-                var json = await File.ReadAllTextAsync(file);
-                JObject geoJson = JsonConvert.DeserializeObject<JObject>(json);
+                ZoomLevel = zoom;
+            };
+        }
 
-                var defaults = ExtractLastIsDefaults(geoJson);
-                if (geoJson == null) continue;
-                foreach (var feature in geoJson["features"])
+        private void LoadMapFilters()
+        {
+            string rawFilters = profile.DisplayWindowSettings[0]["DisplaySettings"][0]["MapFilters"]?.ToString();
+            if (rawFilters.ToLower() != "none" || !string.IsNullOrEmpty(rawFilters))
+            {
+                foreach (var token in rawFilters.Split(','))
                 {
-                    var properties = (JObject)feature["properties"];
-                    if (IsDefaultsFeature(properties)) continue;
-
-                    string geometryType = (string)feature["geometry"]["type"];
-                    var finalProperties = MergeProperties(properties, defaults, geometryType);
-                    var filters = finalProperties.ContainsKey("filters")
-                        ? ((JArray)finalProperties["filters"]).Select(f => (int)f).ToList()
-                        : new List<int>();
-
-                    foreach (var filter in filters)
+                    string trimmed = token.Trim();
+                    if (trimmed.StartsWith("Map", StringComparison.OrdinalIgnoreCase) && int.TryParse(trimmed.Substring(3), out int filterNum))
                     {
-                        if (!FacilityFeatures.ContainsKey(filter))
-                            FacilityFeatures[filter] = new List<ProcessedFeature>();
-
-                        FacilityFeatures[filter].Add(new ProcessedFeature
-                        {
-                            GeometryType = ResolveFeatureType(geometryType, properties),
-                            Geometry = feature["geometry"],
-                            AppliedAttributes = finalProperties
-                        });
+                        ActiveFilters.Add(filterNum);
                     }
                 }
             }
-
-            Logger.Alert("EramViewModel.LoadVideoMaps", "COMPLETED");
-        }
-
-        private string ResolveFeatureType(string geometryType, JObject props)
-        {
-            if (geometryType == "LineString" || geometryType == "MultiLineString")
-                return "Line";
-            if (geometryType == "Point" && props.ContainsKey("text"))
-                return "Text";
-            if (geometryType == "Point")
-                return "Symbol";
-            return geometryType; // fallback
-        }
-
-        private bool IsDefaultsFeature(JObject props)
-        {
-            if (props == null) return false;
-
-            return props.Value<bool?>("isLineDefaults") == true ||
-                   props.Value<bool?>("isSymbolDefaults") == true ||
-                   props.Value<bool?>("isTextDefaults") == true;
-        }
-
-        private Dictionary<string, object> MergeProperties(JObject featureProps, FeatureDefaults defaults, string geometryType)
-        {
-            var merged = new Dictionary<string, object>();
-
-            if (featureProps == null)
-            {
-                Dictionary<string, object> typeDefaultsOnly = geometryType switch
-                {
-                    "LineString" or "MultiLineString" => defaults.LineDefaults,
-                    "Point" => defaults.SymbolDefaults,
-                    _ => new Dictionary<string, object>()
-                };
-
-                foreach (var kv in typeDefaultsOnly)
-                    merged[kv.Key] = kv.Value;
-
-                ApplyCrcAutoDefaults(merged, geometryType);
-                return merged;
-            }
-
-            Dictionary<string, object> typeDefaults = geometryType switch
-            {
-                "LineString" or "MultiLineString" => defaults.LineDefaults,
-                "Point" => featureProps.ContainsKey("text")
-                              ? defaults.TextDefaults
-                              : defaults.SymbolDefaults,
-                _ => new Dictionary<string, object>()
-            };
-
-            foreach (var kv in typeDefaults)
-                merged[kv.Key] = kv.Value;
-
-            foreach (var kv in featureProps)
-                merged[kv.Key] = kv.Value;
-
-            ApplyCrcAutoDefaults(merged, geometryType);
-
-            return merged;
-        }
-
-        private void ApplyCrcAutoDefaults(Dictionary<string, object> props, string featureType)
-        {
-            switch (featureType)
-            {
-                case "Line":
-                    if (!props.ContainsKey("bcg")) props["bcg"] = 1;
-                    if (!props.ContainsKey("style")) props["style"] = "solid";
-                    if (!props.ContainsKey("thickness")) props["thickness"] = 1;
-                    break;
-
-                case "Symbol":
-                    if (!props.ContainsKey("bcg")) props["bcg"] = 1;
-                    if (!props.ContainsKey("style")) props["style"] = "vor";
-                    if (!props.ContainsKey("size")) props["size"] = 1;
-                    break;
-
-                case "Text":
-                    if (!props.ContainsKey("bcg")) props["bcg"] = 1;
-                    if (!props.ContainsKey("size")) props["size"] = 1;
-                    if (!props.ContainsKey("underline")) props["underline"] = false;
-                    if (!props.ContainsKey("xOffset")) props["xOffset"] = 0;
-                    if (!props.ContainsKey("yOffset")) props["yOffset"] = 0;
-                    if (!props.ContainsKey("opaque")) props["opaque"] = false;
-                    break;
-            }
-        }
-
-        private FeatureDefaults ExtractLastIsDefaults(JObject geojson)
-        {
-            var defaults = new FeatureDefaults
-            {
-                LineDefaults = new Dictionary<string, object>(),
-                SymbolDefaults = new Dictionary<string, object>(),
-                TextDefaults = new Dictionary<string, object>()
-            };
-
-            if (geojson?["features"] is not JArray featuresArray)
-                return defaults;
-
-            foreach (var feature in featuresArray)
-            {
-                var props = feature["properties"] as JObject;
-                if (props == null) continue;
-
-                if (props.Value<bool?>("isLineDefaults") == true)
-                    defaults.LineDefaults = props.ToObject<Dictionary<string, object>>();
-
-                if (props.Value<bool?>("isSymbolDefaults") == true)
-                    defaults.SymbolDefaults = props.ToObject<Dictionary<string, object>>();
-
-                if (props.Value<bool?>("isTextDefaults") == true)
-                    defaults.TextDefaults = props.ToObject<Dictionary<string, object>>();
-            }
-
-            return defaults;
+            RadarViewModel.Redraw();
         }
 
         private void LoadBrightness()
@@ -551,10 +401,7 @@ namespace vFalcon.ViewModels
             JObject displaySettings = (JObject)profile.DisplayWindowSettings[0]["DisplaySettings"][0];
             JObject timeViewSettings = (JObject)displaySettings["TimeViewSettings"];
 
-            double[] parts = ((string)timeViewSettings["Location"]["Location"])
-                .Split(',')
-                .Select(s => double.Parse(s, CultureInfo.InvariantCulture))
-                .ToArray();
+            double[] parts = ((string)timeViewSettings["Location"]["Location"]).Split(',').Select(s => double.Parse(s, CultureInfo.InvariantCulture)).ToArray();
 
             string anchor = (string)timeViewSettings["Location"]["Anchor"];
             if (parts[0] == TimeMargin.Left && parts[1] == TimeMargin.Top && anchor == "TopLeft") return;
@@ -630,6 +477,43 @@ namespace vFalcon.ViewModels
                     return;
                 }
             }
+        }
+
+        private void LoadGeoMaps()
+        {
+            ArtccGeoMaps = (JArray)artcc.facility["eramConfiguration"]["geoMaps"];
+            if (ActiveGeoMap == null)
+            {
+                // no geo map set, so we will use the default first one in facility file, same as CRC
+                JObject defaultGeoMap = (JObject)artcc.facility["eramConfiguration"]["geoMaps"][0];
+                ActiveGeoMap = (string)defaultGeoMap["name"];
+                ActiveVideoMapIds = (JArray)defaultGeoMap["videoMapIds"];
+                MapsLabelLine1 = (string)defaultGeoMap["labelLine1"];
+                MapsLabelLine2 = (string)defaultGeoMap["labelLine2"];
+                return;
+            }
+            foreach (JObject geoMap in ArtccGeoMaps)
+            {
+                string name = (string)geoMap["name"];
+                if (name == ActiveGeoMap)
+                {
+                    ActiveVideoMapIds = (JArray)geoMap["videoMapIds"];
+                    MapsLabelLine1 = (string)geoMap["labelLine1"];
+                    MapsLabelLine2 = (string)geoMap["labelLine2"];
+                    break;
+                }
+            }
+        }
+        private async Task LoadVideoMaps()
+        {
+            GeoMapStatus = "GEOMAPS UNAVAILABLE";
+            FacilityFeatures = await GeoMap.LoadFacilityFeatures(artcc, ActiveVideoMapIds);
+            GeoMapStatus = "GEOMAPS AVAILABLE";
+            _ = Task.Run(async () =>
+            {
+                await Task.Delay(TimeSpan.FromSeconds(5));
+                GeoMapStatus = string.Empty;
+            });
         }
 
         private void SetZOrderRaised()

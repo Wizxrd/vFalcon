@@ -39,7 +39,6 @@ namespace vFalcon.Views
                         --cursorViewModel.CursorSize;
                         return;
                     }
-                    await Sound.Play(Loader.LoadFile("Sounds", "Error.wav"));
                 }
                 else if (e.MiddleButton == MouseButtonState.Pressed)
                 {
@@ -48,7 +47,6 @@ namespace vFalcon.Views
                         ++cursorViewModel.CursorSize;
                         return;
                     }
-                    await Sound.Play(Loader.LoadFile("Sounds", "Error.wav"));
                 }
             }
         }

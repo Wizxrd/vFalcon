@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using vFalcon.Commands;
 
 namespace vFalcon.ViewModels
 {
     public class BrightnessToolbarViewModel : ViewModelBase
     {
-        private EramViewModel eramViewModel;
+        // ========================================================
+        //                     FIELDS
+        // ========================================================
+        private readonly EramViewModel eramViewModel;
 
+        // ========================================================
+        //                     PROPERTIES
+        // ========================================================
         public int BackgroundValue
         {
             get => eramViewModel.BackgroundValue;
@@ -34,11 +35,18 @@ namespace vFalcon.ViewModels
             }
         }
 
+        // ========================================================
+        //                     COMMANDS
+        // ========================================================
         public ICommand BrightnessBackCommand { get; }
+
+        // ========================================================
+        //                  CONSTRUCTOR
+        // ========================================================
         public BrightnessToolbarViewModel(EramViewModel eramViewModel)
         {
             this.eramViewModel = eramViewModel;
             BrightnessBackCommand = new RelayCommand(() => eramViewModel.OnBrightnessCommand());
         }
     }
-} 
+}

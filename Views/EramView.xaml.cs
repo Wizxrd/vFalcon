@@ -1,52 +1,110 @@
 ﻿using AdonisUI.Controls;
 using Newtonsoft.Json.Linq;
 using SkiaSharp;
+using System;
 using System.Globalization;
+using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using vFalcon.Helpers;
 using vFalcon.Models;
 using vFalcon.ViewModels;
 using vFalcon.Views;
+using static vFalcon.Services.Service.DragService;
 
 namespace vFalcon
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for EramView.xaml
     /// </summary>
     public partial class EramView : AdonisWindow
     {
-        // Fields
-        private EramViewModel eramViewModel;
-        private Artcc artcc;
-        private Profile profile;
+        // ========================================================
+        //                      FIELDS
+        // ========================================================
+        private readonly EramViewModel eramViewModel;
+        private readonly Artcc artcc;
+        private readonly Profile profile;
 
-        // Constructor
+        // ========================================================
+        //                  CONSTRUCTOR
+        // ========================================================
         public EramView(Artcc artcc, Profile profile)
         {
             InitializeComponent();
+
             this.artcc = artcc;
             this.profile = profile;
+
             eramViewModel = new EramViewModel(artcc, profile);
             DataContext = eramViewModel;
+            eramViewModel.SwitchProfileAction += OpenLoadProfileWindow;
+            eramViewModel.GeneralSettingsAction += OpenGeneralSettingsWindow;
 
             InitializeCursor(eramViewModel);
             LoadWindowSettings();
         }
 
-        // Methods
+        // ========================================================
+        //                EVENT HANDLERS
+        // ========================================================
+
+        private void AltKeyDown(object sender, KeyEventArgs e)
+        {
+            Key key = (e.Key == Key.System) ? e.SystemKey : e.Key;
+
+            if (key == Key.LeftAlt || key == Key.RightAlt)
+            {
+                if (!eramViewModel.UseAlternateMapLayout)
+                {
+                    Logger.Debug("ALT", "Detected Alt Key");
+                    eramViewModel.UseAlternateMapLayout = true;
+                }
+
+                e.Handled = true;
+            }
+        }
+
+        private void AltKeyUp(object sender, KeyEventArgs e)
+        {
+            Key key = (e.Key == Key.System) ? e.SystemKey : e.Key;
+
+            if (key == Key.LeftAlt || key == Key.RightAlt && eramViewModel.UseAlternateMapLayout)
+            {
+                eramViewModel.UseAlternateMapLayout = false;
+            }
+        }
+
+        private void MenuButtonClick(object sender, RoutedEventArgs e)
+        {
+            MenuPopup.IsOpen = !MenuPopup.IsOpen;
+        }
+
+        public void OpenLoadProfileWindow()
+        {
+            LoadProfileView loadProfileView = new LoadProfileView();
+            this.Close();
+            loadProfileView.ShowDialog();
+        }
+
+        public void OpenGeneralSettingsWindow()
+        {
+            GeneralSettingsView GeneralSettingsView = new GeneralSettingsView(eramViewModel);
+            GeneralSettingsView.Owner = this;
+            GeneralSettingsView.ShowDialog();
+        }
+
+        // ========================================================
+        //                PRIVATE METHODS
+        // ========================================================
+
         private void InitializeCursor(EramViewModel eramViewModel)
         {
-            UpdateCursorSize((int)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["CursorSize"]); // initial call to set the cursor size!
+            UpdateCursorSize((int)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["CursorSize"]);
+
             eramViewModel.PropertyChanged += (s, e) =>
             {
                 if (e.PropertyName == nameof(eramViewModel.CursorSize))
@@ -69,14 +127,14 @@ namespace vFalcon
             double[] parts = boundsString.Split(',').Select(s => double.Parse(s, CultureInfo.InvariantCulture)).ToArray();
 
             Rect bounds = new Rect(parts[0], parts[1], parts[2], parts[3]);
-            this.Left = bounds.Left;
-            this.Top = bounds.Top;
-            this.Width = bounds.Width;
-            this.Height = bounds.Height;
+            Left = bounds.Left;
+            Top = bounds.Top;
+            Width = bounds.Width;
+            Height = bounds.Height;
 
             if ((bool)windowSettings["IsMaximized"])
             {
-                this.WindowState = WindowState.Maximized;
+                WindowState = WindowState.Maximized;
             }
         }
     }

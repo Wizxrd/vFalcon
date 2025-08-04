@@ -1,50 +1,54 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using vFalcon.Commands;
-using vFalcon.Helpers;
 
 namespace vFalcon.ViewModels
 {
     public class MasterToolbarViewModel : ViewModelBase
     {
-        private EramViewModel eramViewModel;
+        // ========================================================
+        //                      FIELDS
+        // ========================================================
+        private readonly EramViewModel eramViewModel;
 
+        // ========================================================
+        //                      COMMANDS
+        // ========================================================
         public ICommand BrightnessCommand { get; }
         public ICommand CursorCommand { get; }
         public ICommand MapsCommand { get; }
 
-        public string LabelLine1
+        // ========================================================
+        //                      PROPERTIES
+        // ========================================================
+        public string MapsLabelLine1 => eramViewModel.MapsLabelLine1;
+        public string MapsLabelLine2 => eramViewModel.MapsLabelLine2;
+
+        public string ZoomLevel
         {
-            get => eramViewModel.MapsLabelLine1;
-            set
-            {
-                eramViewModel.MapsLabelLine1 = value;
-                OnPropertyChanged();
-            }
+            get => eramViewModel.ZoomLevel;
+            set { eramViewModel.ZoomLevel = value; OnPropertyChanged(); }
         }
 
-        public string LabelLine2
-        {
-            get => eramViewModel.MapsLabelLine2;
-            set
-            {
-                eramViewModel.MapsLabelLine2 = value;
-                OnPropertyChanged();
-            }
-        }
-
+        // ========================================================
+        //                  CONSTRUCTOR
+        // ========================================================
         public MasterToolbarViewModel(EramViewModel eramViewModel)
         {
             this.eramViewModel = eramViewModel;
+
             BrightnessCommand = new RelayCommand(() => eramViewModel.OnBrightnessCommand());
             CursorCommand = new RelayCommand(() => eramViewModel.OnCursorCommand());
             MapsCommand = new RelayCommand(() => eramViewModel.OnMapsCommand());
-            LabelLine1 = eramViewModel.MapsLabelLine1;
-            LabelLine2 = eramViewModel.MapsLabelLine2;
+            ZoomLevel = eramViewModel.ZoomLevel;
+            eramViewModel.PropertyChanged += (s, e) =>
+            {
+                if (e.PropertyName == nameof(eramViewModel.ZoomLevel))
+                    OnPropertyChanged(nameof(ZoomLevel));
+                if (e.PropertyName == nameof(eramViewModel.MapsLabelLine1))
+                    OnPropertyChanged(nameof(MapsLabelLine1));
+                if (e.PropertyName == nameof(eramViewModel.MapsLabelLine2))
+                    OnPropertyChanged(nameof(MapsLabelLine2));
+            };
         }
     }
 }

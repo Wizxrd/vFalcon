@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.DirectoryServices.ActiveDirectory;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using vFalcon.Commands;
 
 namespace vFalcon.ViewModels
 {
     public class CursorToolbarViewModel : ViewModelBase
     {
-        private EramViewModel eramViewModel;
+        // ========================================================
+        //                      FIELDS
+        // ========================================================
+        private readonly EramViewModel eramViewModel;
 
+        // ========================================================
+        //                      PROPERTIES
+        // ========================================================
         public int CursorSize
         {
             get => eramViewModel.CursorSize;
@@ -24,8 +23,14 @@ namespace vFalcon.ViewModels
             }
         }
 
+        // ========================================================
+        //                      COMMANDS
+        // ========================================================
         public ICommand CursorBackCommand { get; }
 
+        // ========================================================
+        //                  CONSTRUCTOR
+        // ========================================================
         public CursorToolbarViewModel(EramViewModel eramViewModel)
         {
             this.eramViewModel = eramViewModel;

@@ -19,12 +19,12 @@
             </Grid.RowDefinitions>
 
             <controls:EramButton
-            x:Name="MenuButton"
-            Grid.Column="0"
-            VerticalAlignment="Top"
-            Line1Text="TOOLBAR"
-            EramButtonStyle="{StaticResource MenuButton}"
-            Command="{Binding ToolbarControlCommand}"/>
+                x:Name="MenuButton"
+                Grid.Column="0"
+                VerticalAlignment="Top"
+                Line1Text="TOOLBAR"
+                EramButtonStyle="{StaticResource MenuButton}"
+                Command="{Binding ToolbarControlCommand}"/>
 
             <Border Grid.Column="1" Background="{StaticResource MasterToolbarBackground}" BorderBrush="#896800" BorderThickness="2" Visibility="{Binding ToolbarControlGrid}">
                 <Grid>

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using vFalcon.Helpers;
+using vFalcon.Resources.Controls;
 using vFalcon.ViewModels;
 
 namespace vFalcon.Views

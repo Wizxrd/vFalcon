@@ -1,66 +1,67 @@
-﻿using Newtonsoft.Json.Linq;
-using OpenTK.Graphics.ES11;
+﻿using Microsoft.VisualBasic.Logging;
+using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Security.Cryptography.Pkcs;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Windows.Input;
 using vFalcon.Commands;
-using vFalcon.Helpers;
 using vFalcon.Models;
+using vFalcon.Helpers;
 
 namespace vFalcon.ViewModels
 {
     public class MapsToolbarViewModel : ViewModelBase
     {
+        // ========================================================
+        //                      FIELDS
+        // ========================================================
+        private readonly EramViewModel eramViewModel;
+        private ObservableCollection<MapFilter> mapFilters = new();
 
-        private EramViewModel eramViewModel;
-
-        private ObservableCollection<MapFilter> mapFilters = new ObservableCollection<MapFilter>();
-
+        // ========================================================
+        //                      COMMANDS
+        // ========================================================
         public ICommand MapsBackCommand { get; }
 
-        public string MapsLabelLine1
-        {
-            get => eramViewModel.MapsLabelLine1;
-            set
-            {
-                eramViewModel.MapsLabelLine1 = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string MapsLabelLine2
-        {
-            get => eramViewModel.MapsLabelLine2;
-            set
-            {
-                eramViewModel.MapsLabelLine2 = value;
-                OnPropertyChanged();
-            }
-        }
+        // ========================================================
+        //                      PROPERTIES
+        // ========================================================
+        public string MapsLabelLine1 => eramViewModel.MapsLabelLine1;
+        public string MapsLabelLine2 => eramViewModel.MapsLabelLine2;
 
         public ObservableCollection<MapFilter> MapFilters
         {
             get => mapFilters;
-            set
-            {
-                mapFilters = value;
-                OnPropertyChanged();
-            }
+            set { mapFilters = value; OnPropertyChanged(); }
         }
 
+        // ========================================================
+        //                  CONSTRUCTOR
+        // ========================================================
         public MapsToolbarViewModel(EramViewModel eramViewModel)
         {
             this.eramViewModel = eramViewModel;
+
             MapsBackCommand = new RelayCommand(() => eramViewModel.OnMapsCommand());
-            MapsLabelLine1 = eramViewModel.MapsLabelLine1;
-            MapsLabelLine2 = eramViewModel.MapsLabelLine2;
+
+            eramViewModel.PropertyChanged += (s, e) =>
+            {
+                if (e.PropertyName == nameof(eramViewModel.MapsLabelLine1))
+                    OnPropertyChanged(nameof(MapsLabelLine1));
+                if (e.PropertyName == nameof(eramViewModel.MapsLabelLine2))
+                    OnPropertyChanged(nameof(MapsLabelLine2));
+            };
+
             InitializeGeoMapSet();
+        }
+
+        // ========================================================
+        //                  PRIVATE METHODS
+        // ========================================================
+
+        public void RebuildFilters()
+        {
+            InitializeGeoMapSet();
+            OnPropertyChanged(nameof(MapFilters));
         }
 
         private void InitializeGeoMapSet()
@@ -68,30 +69,38 @@ namespace vFalcon.ViewModels
             MapFilters.Clear();
             foreach (JObject geoMap in eramViewModel.ArtccGeoMaps)
             {
-                if ((string)geoMap["name"] == eramViewModel.ActiveGeoMap)
-                {
-                    JArray filterMenu = (JArray)geoMap["filterMenu"];
-                    int index = 0;
+                if ((string)geoMap["name"] != eramViewModel.ActiveGeoMap)
+                    continue;
 
-                    foreach (JObject filter in filterMenu)
+                JArray filterMenu = (JArray)geoMap["filterMenu"];
+
+                int baseStart = eramViewModel.UseAlternateMapLayout ? 20 : 0;
+
+                int totalVisible = 20;
+                int columns = 10;
+
+                for (int i = baseStart; i < filterMenu.Count && i < baseStart + totalVisible; i++)
+                {
+                    JObject filter = (JObject)filterMenu[i];
+                    int filterIndex = i + 1;
+                    bool isActive = eramViewModel.ActiveFilters.Contains(filterIndex);
+
+                    int mappedIndex = i - baseStart;
+
+                    MapFilters.Add(new MapFilter
                     {
-                        string id = (string)filter["id"];
-                        int filterIndex = index + 1;
-                        MapFilters.Add(new MapFilter
-                        {
-                            Id = id,
-                            Index = filterIndex,
-                            LabelLine1 = (string)filter["labelLine1"],
-                            LabelLine2 = (string)filter["labelLine2"],
-                            Row = index < 20 ? 0 : 2,
-                            Column = (index % 20) * 2,
-                            Command = new RelayCommand(_ => ToggleMapCommand(filterIndex)),
-                            IsActive = false
-                        });
-                        index++;
-                    }
-                    break;
+                        Id = (string)filter["id"],
+                        Index = filterIndex,
+                        LabelLine1 = (string)filter["labelLine1"],
+                        LabelLine2 = (string)filter["labelLine2"],
+                        Row = (mappedIndex / columns) * 2,
+                        Column = (mappedIndex % columns) * 2,
+                        Command = new RelayCommand(_ => ToggleMapCommand(filterIndex)),
+                        IsActive = isActive,
+                        IsChecked = isActive
+                    });
                 }
+                break;
             }
         }
 
@@ -100,14 +109,12 @@ namespace vFalcon.ViewModels
             if (eramViewModel.ActiveFilters.Contains(filterIndex))
             {
                 eramViewModel.ActiveFilters.Remove(filterIndex);
-                Logger.Debug("MapsToolbarViewModel.ToggleMapCommand", $"Filter {filterIndex} disabled");
             }
             else
             {
                 eramViewModel.ActiveFilters.Add(filterIndex);
-                Logger.Debug("MapsToolbarViewModel.ToggleMapCommand", $"Filter {filterIndex} enabled");
             }
-            eramViewModel.RadarViewModel.InvalidateCanvas?.Invoke();
+            eramViewModel.RadarViewModel.Redraw();
         }
     }
 }

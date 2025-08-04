@@ -1,38 +1,42 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Windows.Input;
 using vFalcon.Commands;
 
 namespace vFalcon.ViewModels
 {
     public class ConfirmViewModel : ViewModelBase
     {
-        // Events
+        // ========================================================
+        //                      EVENTS
+        // ========================================================
         public event Action<bool>? DialogResultSet;
 
-        // Commands
+        // ========================================================
+        //                      PROPERTIES
+        // ========================================================
+        public string Message { get; set; }
+
+        // ========================================================
+        //                      COMMANDS
+        // ========================================================
         public ICommand ConfirmCommand { get; }
         public ICommand CancelCommand { get; }
 
-        // Properties
-        public string Message { get; set; }
-
-        // Constructor
+        // ========================================================
+        //                  CONSTRUCTOR
+        // ========================================================
         public ConfirmViewModel(string message)
         {
             Message = message;
-
             ConfirmCommand = new RelayCommand(OnConfirm);
             CancelCommand = new RelayCommand(OnCancel);
         }
 
-        // Methods
-        private void OnConfirm()
-        {
-            DialogResultSet?.Invoke(true);
-        }
+        // ========================================================
+        //                      METHODS
+        // ========================================================
+        private void OnConfirm() => DialogResultSet?.Invoke(true);
 
-        private void OnCancel()
-        {
-            DialogResultSet?.Invoke(false);
-        }
+        private void OnCancel() => DialogResultSet?.Invoke(false);
     }
 }

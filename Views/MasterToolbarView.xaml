@@ -55,7 +55,7 @@
             <controls:EramButton
                 Grid.Row="0" Grid.Column="6"
                 Line1Text="RANGE"
-                Line2Text="300"
+                Line2Text="{Binding ZoomLevel}"
                 EramButtonStyle="{StaticResource StaticToggleButton}">
             </controls:EramButton>
             <controls:EramButton
@@ -106,8 +106,8 @@
             </controls:EramButton>
             <controls:EramButton
                 Grid.Row="2" Grid.Column="6"
-                Line1Text="{Binding LabelLine1}"
-                Line2Text="{Binding LabelLine2}"
+                Line1Text="{Binding MapsLabelLine1}"
+                Line2Text="{Binding MapsLabelLine2}"
                 Command="{Binding MapsCommand}"
                 EramButtonStyle="{StaticResource MenuButtonClosed}">
             </controls:EramButton>

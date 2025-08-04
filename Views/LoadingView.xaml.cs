@@ -21,12 +21,12 @@ namespace vFalcon.Views
 
         public async void InitializeImports()
         {
-            Logger.Info("LoadingView.InitializeImports", "Initializing imports");
+            Logger.Info("LoadingView.InitializeImports", "Starting");
             TextBlockLoading.Text = "Importing Artccs";
             await ImportArtccs();
             TextBlockLoading.Text = "Importing Profiles";
             await ImportEramProfiles();
-            Logger.Info("LoadingView.InitializeImports", "Initialization completed");
+            Logger.Info("LoadingView.InitializeImports", "Completed");
             LoadProfileView loadProfileView = new LoadProfileView();
             this.Close();
             loadProfileView.ShowDialog();
@@ -36,6 +36,7 @@ namespace vFalcon.Views
         {
             try
             {
+                Logger.Info("LoadingView.ImportArtccs", "Starting");
                 string sourcePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CRC", "ARTCCs");
                 var files = Directory.GetFiles(sourcePath, "*.json");
 
@@ -69,6 +70,7 @@ namespace vFalcon.Views
                     TextBlockLoading.Text = $"Imported ARTCC: \"{id}\"";
                     Logger.Debug("LoadingView.ImportArtccs", $"Imported ARTCC: \"{id}\"");
                 }
+                Logger.Info("LoadingView.ImportArtccs", "Completed");
             }
             catch (Exception ex)
             {
@@ -80,6 +82,7 @@ namespace vFalcon.Views
         {
             try
             {
+                Logger.Info("LoadingView.ImportEramProfiles", "Starting");
                 string crcPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CRC", "Profiles");
                 var files = Directory.GetFiles(crcPath, "*.json");
 
@@ -115,6 +118,7 @@ namespace vFalcon.Views
                     TextBlockLoading.Text = $"Imported profile: \"{profile.Name}\"";
                     Logger.Debug("LoadingView.ImportEramProfiles", $"Imported ERAM Profile: \"{profile.Name}\"");
                 }
+                Logger.Info("LoadingView.ImportEramProfiles", "Completed");
             }
             catch (Exception ex)
             {

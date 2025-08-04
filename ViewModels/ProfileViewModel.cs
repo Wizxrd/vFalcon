@@ -4,24 +4,18 @@ namespace vFalcon.ViewModels
 {
     public class ProfileViewModel : ViewModelBase
     {
-        // Fields
+        // ========================================================
+        //                      FIELDS
+        // ========================================================
         private string _originalName = string.Empty;
         private bool _isSelected;
         private bool _isRenaming;
 
-        // Properties
+        // ========================================================
+        //                      PROPERTIES
+        // ========================================================
         public Profile Model { get; }
         public string OriginalName => _originalName;
-
-        public bool IsSelected
-        {
-            get => _isSelected;
-            set
-            {
-                _isSelected = value;
-                OnPropertyChanged();
-            }
-        }
 
         public string Name
         {
@@ -36,24 +30,30 @@ namespace vFalcon.ViewModels
             }
         }
 
+        public bool IsSelected
+        {
+            get => _isSelected;
+            set { _isSelected = value; OnPropertyChanged(); }
+        }
+
         public bool IsRenaming
         {
             get => _isRenaming;
-            set
-            {
-                _isRenaming = value;
-                OnPropertyChanged();
-            }
+            set { _isRenaming = value; OnPropertyChanged(); }
         }
 
-        // Constructor
+        // ========================================================
+        //                  CONSTRUCTOR
+        // ========================================================
         public ProfileViewModel(Profile model)
         {
             Model = model;
             IsRenaming = false;
         }
 
-        // Methods
+        // ========================================================
+        //                      METHODS
+        // ========================================================
         public void BeginRename()
         {
             _originalName = Name;

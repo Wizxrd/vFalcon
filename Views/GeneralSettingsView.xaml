@@ -1,0 +1,41 @@
+﻿<adonisControls:AdonisWindow 
+    x:Class="vFalcon.Views.GeneralSettingsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:vFalcon.Views"
+    mc:Ignorable="d"
+    xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+    xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+    xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+    Title="General Settings"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterOwner"
+    FontFamily="Consolas" FontSize="12"
+    Width="350" Height="400">
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+    <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0">
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="5">
+
+            <CheckBox 
+                Content="Top-down mode" 
+                IsChecked="{Binding IsTopDownMode}" 
+                Margin="15,10,0,20">
+            </CheckBox>
+
+            <TextBlock 
+                Text="Geo Map:"
+                Margin="15,0,0,5">
+            </TextBlock>
+            <ComboBox 
+                ItemsSource="{Binding GeoMapSets}"
+                SelectedItem="{Binding SelectedGeoMapSet}"
+                Margin="15,0,15,0"
+                MinHeight="25">
+            </ComboBox>
+        </StackPanel>
+    </Border>
+</adonisControls:AdonisWindow>

@@ -10,11 +10,51 @@
     xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
     xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
     xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
-    Icon="pack://application:,,,/Resources/Images/vFalcon.png"
-    Title="vFalcon"
+    IconVisibility="Collapsed"
     MinWidth="250" Width="1280" MinHeight="250" Height="720"
-    FontFamily="Consolas" FontSize="12" 
-    Foreground="{StaticResource White}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+    FontFamily="Consolas" FontSize="12"
+    Foreground="{StaticResource White}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1"
+    KeyDown="AltKeyDown"
+    KeyUp="AltKeyUp">
+    <adonisControls:AdonisWindow.InputBindings>
+        <KeyBinding 
+            Key="T" 
+            Modifiers="Control" 
+            Command="{Binding ToggleTdmCommand}"/>
+        <KeyBinding
+            Key="P"
+            Modifiers="Ctrl+Shift"
+            Command="{Binding SwitchProfileCommand}"/>
+        <KeyBinding
+            Key="G"
+            Modifiers="Ctrl"
+            Command="{Binding GeneralSettingsCommand}"/>
+    </adonisControls:AdonisWindow.InputBindings>
+    <adonisControls:AdonisWindow.TitleBarContent>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="-8,0,0,0">
+            <Button
+                BorderBrush="Transparent"
+                BorderThickness="0"
+                adonisExtensions:CursorSpotlightExtension.BorderBrush="Transparent"
+                Background="Transparent"
+                Content="Menu"
+                Click="MenuButtonClick">
+            </Button>
+            <TextBlock
+                Margin="5,0,5,0"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Text="{Binding Title}">
+            </TextBlock>
+            <Popup
+                x:Name="MenuPopup"
+                PlacementTarget="{Binding ElementName=MenuButton}"
+                Placement="Bottom"
+                StaysOpen="False">
+                <views:MenuView/>
+            </Popup>
+        </StackPanel>
+    </adonisControls:AdonisWindow.TitleBarContent>
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
@@ -43,12 +83,14 @@
                                Canvas.Right="{Binding TimeBorderRight}">
                             <TextBlock
                                    Foreground="White"
-                                   Text="1234 56"
+                                   Text="{Binding ZuluTime}"
                                    FontFamily="/vFalcon;component/Resources/Fonts/#ERAM" FontSize="14"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center">
                             </TextBlock>
                         </Border>
+                    </Canvas>
+                    <Canvas Panel.ZIndex="10" x:Name="ToolbarControlCanvas">
                         <ContentControl
                             Margin="{Binding ToolbarControlMargin}"
                             x:Name="ToolbarControl"
@@ -58,6 +100,14 @@
                             Canvas.Bottom="{Binding ToolbarControlBottom}"
                             Content="{Binding ToolbarControlContent}"/>
                     </Canvas>
+                    <TextBlock
+                        Text="{Binding GeoMapStatus}"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Foreground="Red"
+                        FontFamily="pack://application:,,,/vFalcon;component/Resources/Fonts/ERAM.ttf#ERAM Regular"
+                        FontSize="36">
+                    </TextBlock>
                 </Grid>
             </Border>
         </Grid>

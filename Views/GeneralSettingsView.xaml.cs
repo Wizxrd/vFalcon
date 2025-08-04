@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdonisUI.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,31 +11,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using vFalcon.Helpers;
 using vFalcon.ViewModels;
 
 namespace vFalcon.Views
 {
     /// <summary>
-    /// Interaction logic for MapsToolbarView.xaml
+    /// Interaction logic for GeneralSettingsView.xaml
     /// </summary>
-    public partial class MapsToolbarView : UserControl
+    public partial class GeneralSettingsView : AdonisWindow
     {
-        public MapsToolbarView(EramViewModel eramViewModel)
+        public GeneralSettingsView(EramViewModel eramViewModel)
         {
             InitializeComponent();
-            DataContext = new MapsToolbarViewModel(eramViewModel);
-
-        }
-
-        public void RebuildFilters()
-        {
-            if (DataContext is MapsToolbarViewModel vm)
-            {
-                vm.RebuildFilters();
-            }
+            DataContext = new GeneralSettingsViewModel(eramViewModel);
         }
     }
 }
