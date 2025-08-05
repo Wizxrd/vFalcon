@@ -4,6 +4,7 @@ using SkiaSharp;
 using System;
 using System.Globalization;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,7 +14,6 @@ using vFalcon.Helpers;
 using vFalcon.Models;
 using vFalcon.ViewModels;
 using vFalcon.Views;
-using static vFalcon.Services.Service.DragService;
 
 namespace vFalcon
 {

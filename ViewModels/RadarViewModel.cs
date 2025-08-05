@@ -1,11 +1,16 @@
 ﻿using Newtonsoft.Json.Linq;
 using SkiaSharp;
 using SkiaSharp.Views.Desktop;
+using System.Drawing;
+using System.Net.NetworkInformation;
 using System.Windows.Input;
 using vFalcon.Commands;
 using vFalcon.Helpers;
 using vFalcon.Models;
 using vFalcon.Renderers;
+using vFalcon.Rendering;
+using vFalcon.Services.Service;
+using static System.Windows.Forms.AxHost;
 
 namespace vFalcon.ViewModels
 {
@@ -15,20 +20,16 @@ namespace vFalcon.ViewModels
         //                      FIELDS
         // ========================================================
         private readonly EramViewModel eramViewModel;
-        private readonly VideoMap videoMap;
+        private readonly VideoMap videoMap = new VideoMap();
+        public MapState mapState = new MapState();
 
-        private SKPoint PanOffset = new SKPoint();
-        private double Scale = 0.306;
-        private int Width;
-        private int Height;
+        private List<double> ZoomLevels = BuildZoomLevels();
+        private List<double> ScaleMap;
 
-        private static readonly List<double> ZoomLevels = BuildZoomLevels();
-        private static readonly List<double> ScaleMap = BuildScaleMap();
-        private int _zoomIndex = 144;
+        private int zoomIndex; //default index to match Range 600
 
-        private double CenterLat = 41.223661784766726;
-        private double CenterLon = -80.9481329717042;
         private bool isFirstRender = true;
+
         private SKPoint? _lastMousePosition = null;
 
         // ========================================================
@@ -36,9 +37,6 @@ namespace vFalcon.ViewModels
         // ========================================================
         public Action? InvalidateCanvas;
         public Action<string>? ZoomLevelChanged;
-
-        public int ZoomIndex { get; set; } = 144;
-        public bool ZoomOnMouse { get; set; } = false;
 
         // ========================================================
         //                      COMMANDS
@@ -52,10 +50,13 @@ namespace vFalcon.ViewModels
         // ========================================================
         //                  CONSTRUCTOR
         // ========================================================
+
+        VatsimDataService vatsimDataService;
+        PilotService pilotService;
+        private PilotRenderer pilotRenderer;
         public RadarViewModel(EramViewModel eramViewModel)
         {
             this.eramViewModel = eramViewModel;
-            videoMap = new VideoMap();
 
             MouseDownCommand = new RelayCommand(OnMouseDown);
             MouseMoveCommand = new RelayCommand(OnMouseMove);
@@ -64,55 +65,64 @@ namespace vFalcon.ViewModels
             PaintSurfaceCommand = new RelayCommand(OnPaintCommand);
 
             InitializeCenterCoordinates();
+
+            pilotRenderer = new PilotRenderer();
+            pilotService = new PilotService(eramViewModel.artcc);
+            vatsimDataService = new VatsimDataService(pilotService, eramViewModel.profile, () => InvalidateCanvas?.Invoke());
+            vatsimDataService.Start();
+
         }
 
         // ========================================================
         //                      PUBLIC METHODS
         // ========================================================
         public void Redraw() => InvalidateCanvas?.Invoke();
-        public string GetCurrentZoomString() { return ZoomLevels[_zoomIndex].ToString("0.##"); }
+        public string GetCurrentZoomString() { return ZoomLevels[zoomIndex].ToString("0.##"); }
 
         // ========================================================
         //                      INITIALIZATION
         // ========================================================
+
         private void InitializeCenterCoordinates()
         {
             JToken centerToken = eramViewModel.profile.DisplayWindowSettings?[0]?["DisplaySettings"]?[0]?["Center"];
             if (centerToken is JObject centerObj)
             {
-                CenterLat = (double)centerObj["Lat"];
-                CenterLon = (double)centerObj["Lon"];
+                mapState.CenterLat = (double)centerObj["Lat"];
+                mapState.CenterLon = (double)centerObj["Lon"];
             }
             else
             {
-                CenterLat = (double)eramViewModel.artcc.visibilityCenters[0]["lat"];
-                CenterLon = (double)eramViewModel.artcc.visibilityCenters[0]["lon"];
+                mapState.CenterLat = (double)eramViewModel.artcc.visibilityCenters[0]["lat"];
+                mapState.CenterLon = (double)eramViewModel.artcc.visibilityCenters[0]["lon"];
             }
         }
 
         private static List<double> BuildZoomLevels()
         {
             var levels = new List<double>();
-            for (double z = 1300; z >= 10; z -= 10) levels.Add(z);
-            for (double z = 9; z >= 2; z -= 1) levels.Add(z);
-            for (double z = 1.75; z >= 0.25; z -= 0.25) levels.Add(z);
-            levels.Reverse();
-            return levels;
+
+            for (double z = 0.25; z <= 2; z += 0.25) levels.Add(z); // fine increments for close-in
+            for (double z = 3; z <= 10; z += 1) levels.Add(z);      // 3 → 10 in steps of 1
+            for (double z = 20; z <= 1300; z += 10) levels.Add(z);  // 20 → 1300 in steps of 10
+
+            return levels; // ascending order
         }
 
-        private static List<double> BuildScaleMap()
+        private List<double> BuildScaleMap(int screenHeight, SKPoint panOffset)
         {
-            double minScale = 0.306;
-            double maxScale = 139.0;
-            int count = ZoomLevels.Count;
+            var list = new List<double>();
 
-            var list = new List<double>(count);
-            for (int i = 0; i < count; i++)
+            foreach (var nm in ZoomLevels)
             {
-                double t = (double)i / (count - 1);
-                double logT = Math.Pow(t, 0.01);
-                double scale = minScale + (1.0 - logT) * (maxScale - minScale);
-                list.Add(scale);
+                double testScale = 1.0;
+
+                var top = ScreenMap.ScreenToCoordinate(new System.Drawing.Size(1000, screenHeight), testScale, panOffset, new SKPoint(500, 0));
+                var bottom = ScreenMap.ScreenToCoordinate(new System.Drawing.Size(1000, screenHeight), testScale, panOffset, new SKPoint(500, screenHeight));
+
+                double currentDistance = ScreenMap.DistanceInNM(top.X, top.Y, bottom.X, bottom.Y);
+                double adjustedScale = testScale * (currentDistance / nm);
+                list.Add(adjustedScale);
             }
             return list;
         }
@@ -134,7 +144,7 @@ namespace vFalcon.ViewModels
             if (parameter is SKMouseEventArgs e && _lastMousePosition.HasValue && e.Button == "Right")
             {
                 var delta = e.Location - _lastMousePosition.Value;
-                PanOffset = new SKPoint(PanOffset.X + delta.X, PanOffset.Y + delta.Y);
+                mapState.PanOffset = new SKPoint(mapState.PanOffset.X + delta.X, mapState.PanOffset.Y + delta.Y);
                 _lastMousePosition = e.Location;
                 Redraw();
             }
@@ -154,29 +164,29 @@ namespace vFalcon.ViewModels
             if (parameter is SKMouseWheelEventArgs e)
             {
                 int delta = e.Delta > 0 ? -1 : 1;
-                int newIndex = Math.Clamp(_zoomIndex + delta, 0, ZoomLevels.Count - 1);
-                if (newIndex == _zoomIndex) return;
+                int newIndex = Math.Clamp(zoomIndex + delta, 0, ZoomLevels.Count - 1);
+                if (newIndex == zoomIndex) return;
 
-                SKPoint referencePoint = ZoomOnMouse ? e.Location : new SKPoint(Width / 2f, Height / 2f);
+                SKPoint referencePoint = mapState.ZoomOnMouse ? e.Location : new SKPoint(mapState.Width / 2f, mapState.Height / 2f);
 
                 var before = new SKPoint(
-                    (referencePoint.X - PanOffset.X - Width / 2f) / (float)Scale,
-                    (referencePoint.Y - PanOffset.Y - Height / 2f) / (float)Scale
+                    (referencePoint.X - mapState.PanOffset.X - mapState.Width / 2f) / (float)mapState.Scale,
+                    (referencePoint.Y - mapState.PanOffset.Y - mapState.Height / 2f) / (float)mapState.Scale
                 );
 
-                _zoomIndex = newIndex;
-                Scale = ScaleMap[_zoomIndex];
+                zoomIndex = newIndex;
+                mapState.Scale = ScaleMap[zoomIndex];
 
                 var after = new SKPoint(
-                    (referencePoint.X - PanOffset.X - Width / 2f) / (float)Scale,
-                    (referencePoint.Y - PanOffset.Y - Height / 2f) / (float)Scale
+                    (referencePoint.X - mapState.PanOffset.X - mapState.Width / 2f) / (float)mapState.Scale,
+                    (referencePoint.Y - mapState.PanOffset.Y - mapState.Height / 2f) / (float)mapState.Scale
                 );
 
                 var diff = after - before;
-                PanOffset = new SKPoint(PanOffset.X + diff.X * (float)Scale, PanOffset.Y + diff.Y * (float)Scale);
+                mapState.PanOffset = new SKPoint(mapState.PanOffset.X + diff.X * (float)mapState.Scale, mapState.PanOffset.Y + diff.Y * (float)mapState.Scale);
 
-                ZoomIndex = (int)ZoomLevels[_zoomIndex];
-                ZoomLevelChanged?.Invoke(ZoomLevels[_zoomIndex].ToString("0.##"));
+                mapState.ZoomIndex = (int)ZoomLevels[zoomIndex];
+                ZoomLevelChanged?.Invoke(ZoomLevels[zoomIndex].ToString("0.##"));
                 Redraw();
             }
         }
@@ -184,26 +194,37 @@ namespace vFalcon.ViewModels
         // ========================================================
         //                      PAINTING
         // ========================================================
+
         private void OnPaintCommand(object parameter)
         {
             if (parameter is not SKPaintSurfaceEventArgs e) return;
 
-            Width = e.Info.Width;
-            Height = e.Info.Height;
+            mapState.Width = e.Info.Width;
+            mapState.Height = e.Info.Height;
 
             var canvas = e.Surface.Canvas;
             canvas.Clear();
 
             if (isFirstRender)
             {
-                var pOffset = PanOffset;
-                VideoMap.CenterAtCoordinates(Width, Height, Scale, ref pOffset, CenterLat, CenterLon);
-                PanOffset = pOffset;
+                var pOffset = mapState.PanOffset;
+                ScaleMap = BuildScaleMap(mapState.Height, mapState.PanOffset);
+                zoomIndex = ZoomLevels.Count - 1;
+                mapState.Scale = ScaleMap[zoomIndex];
+                VideoMap.CenterAtCoordinates(mapState.Width, mapState.Height, mapState.Scale, ref pOffset, mapState.CenterLat, mapState.CenterLon);
+                mapState.PanOffset = pOffset;
                 isFirstRender = false;
             }
-
             var activeFeatures = CollectActiveFeatures();
-            videoMap.Render(canvas, new System.Drawing.Size(Width, Height), Scale, PanOffset, activeFeatures);
+            videoMap.Render(canvas, new System.Drawing.Size(mapState.Width, mapState.Height), mapState.Scale, mapState.PanOffset, activeFeatures);
+
+            var size = new Size(mapState.Width, mapState.Height);
+            foreach (var pilot in pilotService.Pilots.Values)
+            {
+                pilotRenderer.Render(pilot, canvas, size, mapState.Scale, mapState.PanOffset);
+            }
+
+
         }
 
         // ========================================================
