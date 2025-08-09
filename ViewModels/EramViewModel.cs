@@ -3,12 +3,14 @@ using Newtonsoft.Json.Linq;
 using System.Globalization;
 using System.IO;
 using System.Windows;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 using vFalcon.Commands;
 using vFalcon.Helpers;
 using vFalcon.Models;
+using vFalcon.Rendering;
 using vFalcon.Views;
 
 namespace vFalcon.ViewModels
@@ -18,6 +20,7 @@ namespace vFalcon.ViewModels
         // ========================================================
         //                     FIELDS
         // ========================================================
+        public EramView eramView;
         public Artcc artcc;
         public Profile profile;
 
@@ -47,6 +50,7 @@ namespace vFalcon.ViewModels
         private bool mapsToolbarOpen;
         private bool tdmActive;
         private bool useAlternateMapLayout = false;
+        private bool sectorActivated = false;
 
         private double timeBorderLeft;
         private double timeBorderTop = double.NaN;
@@ -62,6 +66,8 @@ namespace vFalcon.ViewModels
         private int canvasZIndex = 2;
         private int backgroundValue;
         private int brightnessValue;
+
+        private int velocityVector = 1;
 
         // ========================================================
         //                     PROPERTIES
@@ -128,7 +134,17 @@ namespace vFalcon.ViewModels
         public HashSet<int> ActiveFilters { get; set; } = new HashSet<int>();
         public JArray ActiveVideoMapIds;
         public string GeoMapStatus { get => geoMapStatus; set { geoMapStatus = value; OnPropertyChanged(); } }
-        public bool UseAlternateMapLayout { get => useAlternateMapLayout; set { useAlternateMapLayout = value; mapsToolbarView.RebuildFilters(); OnPropertyChanged(); } }
+        public bool UseAlternateMapLayout
+        {
+            get => useAlternateMapLayout;
+            set
+            {
+                useAlternateMapLayout = value;
+                mapsToolbarView.RebuildFilters();
+                brightnessToolbarView.RebuildBrightnessBcg();
+                OnPropertyChanged();
+            }
+        }
         public string ActiveGeoMap
         {
             get => (string)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["Bcgs"]["ACtiveGeoMap"];
@@ -162,6 +178,26 @@ namespace vFalcon.ViewModels
             }
         }
 
+        public bool SectorActivated
+        {
+            get => sectorActivated;
+            set
+            {
+                sectorActivated = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int VelocityVector
+        {
+            get => velocityVector;
+            set
+            {
+                velocityVector = value;
+                OnPropertyChanged();
+            }
+        }
+
         // ========================================================
         //                     COMMANDS
         // ========================================================
@@ -174,6 +210,9 @@ namespace vFalcon.ViewModels
         public ICommand ToggleTdmCommand { get; set; }
         public ICommand SwitchProfileCommand { get; set; }
         public ICommand GeneralSettingsCommand { get; set; }
+        public ICommand ActivateSectorCommand { get; set; }
+        public ICommand IncreaseVelocityVectorCommand { get; set; }
+        public ICommand DecreaseVelocityVectorCommand { get; set; }
 
         // ========================================================
         //                     ACTIONS
@@ -181,13 +220,16 @@ namespace vFalcon.ViewModels
 
         public event Action? SwitchProfileAction;
         public event Action? GeneralSettingsAction;
+        public event Action? ActivateSectorAction;
 
         // ========================================================
         //                 CONSTRUCTOR
         // ========================================================
 
-        public EramViewModel(Artcc artcc, Profile profile)
+        public EramViewModel(EramView eramView, Artcc artcc, Profile profile)
         {
+            Logger.Info("EramViewModel", "ERAM Starting Up");
+            this.eramView = eramView;
             this.artcc = artcc;
             this.profile = profile;
 
@@ -199,7 +241,6 @@ namespace vFalcon.ViewModels
             InitializeProfile();
             InitializeToolbarViews();
             InitializeMasterToolbar();
-            InitializeZoom();
         }
 
         // ========================================================
@@ -265,6 +306,21 @@ namespace vFalcon.ViewModels
             GeneralSettingsAction?.Invoke();
         }
 
+        public void OnActivateSectorCommand()
+        {
+            ActivateSectorAction?.Invoke();
+        }
+
+        public void OnIncreaseVelocityVectorCommand()
+        {
+            masterToolbarView?.IncreaseVelocityVector();
+        }
+
+        public void OnDecreaseVelocityVectorCommand()
+        {
+            masterToolbarView?.DecreaseVelocityVector();
+        }
+
         // ========================================================
         //             PRIVATE METHODS
         // =====S===================================================
@@ -291,7 +347,10 @@ namespace vFalcon.ViewModels
 
         private void ZuluTimerTick(object? sender, EventArgs? e)
         {
-            ZuluTime = DateTime.UtcNow.ToString("HHmm ss");
+            System.Windows.Application.Current.Dispatcher.Invoke(() =>
+            {
+                ZuluTime = DateTime.UtcNow.ToString("HHmm ss");
+            }, DispatcherPriority.Normal);
         }
 
         // ========================================================
@@ -307,17 +366,22 @@ namespace vFalcon.ViewModels
             ToggleTdmCommand = new RelayCommand(() => { TdmActive = !TdmActive; RadarViewModel.Redraw(); });
             SwitchProfileCommand = new RelayCommand(OnSwitchProfileCommand);
             GeneralSettingsCommand = new RelayCommand(OnGeneralSettingsCommand);
+            ActivateSectorCommand = new RelayCommand(OnActivateSectorCommand);
+            IncreaseVelocityVectorCommand = new RelayCommand(OnIncreaseVelocityVectorCommand);
+            DecreaseVelocityVectorCommand = new RelayCommand(OnDecreaseVelocityVectorCommand);
         }
 
         private async Task InitializeProfile()
         {
             ActiveGeoMap = (string)profile.DisplayWindowSettings[0]["DisplaySettings"][0]["ActiveGeoMap"] ?? null;
+            VelocityVector = 1;
             LoadMapFilters();
             LoadBrightness();
             LoadTimeSettings();
             LoadToolbarControlMenu();
             LoadGeoMaps();
             await LoadVideoMaps();
+            InitializeZoom();
             ActiveFilters.Add(0);
             RadarViewModel.Redraw();
         }
@@ -329,15 +393,34 @@ namespace vFalcon.ViewModels
             RadarViewModel.Redraw();
             if (ActiveToolbar == mapsToolbarView)
             {
-                Logger.Debug("Maps Open", "setting master to new content");
                 mapsToolbarView = new MapsToolbarView(this);
                 MasterToolbarContent = mapsToolbarView;
                 ActiveToolbar = mapsToolbarView;
             }
             else
             {
-                Logger.Debug("Maps closed", "creating maps toolbar");
                 mapsToolbarView = new MapsToolbarView(this);
+            }
+
+            if (ActiveToolbar == brightnessToolbarView)
+            {
+                bool mapBrightnessOpen = false;
+
+                if (brightnessToolbarView.DataContext is BrightnessToolbarViewModel oldVm)
+                {
+                    mapBrightnessOpen = oldVm.MapBrightnessOpen;
+                }
+                brightnessToolbarView = new BrightnessToolbarView(this);
+                if (brightnessToolbarView.DataContext is BrightnessToolbarViewModel newVm)
+                {
+                    if (mapBrightnessOpen) newVm.OpenMapBrightness();
+                }
+                MasterToolbarContent = brightnessToolbarView;
+                ActiveToolbar = brightnessToolbarView;
+            }
+            else
+            {
+                brightnessToolbarView = new BrightnessToolbarView(this);
             }
             LoadGeoMaps();
             await LoadVideoMaps();
@@ -506,14 +589,18 @@ namespace vFalcon.ViewModels
         }
         private async Task LoadVideoMaps()
         {
-            GeoMapStatus = "GEOMAPS UNAVAILABLE";
-            FacilityFeatures = await GeoMap.LoadFacilityFeatures(artcc, ActiveVideoMapIds);
-            GeoMapStatus = "GEOMAPS AVAILABLE";
-            _ = Task.Run(async () =>
+            if (RadarViewModel.PilotsRendering)
             {
-                await Task.Delay(TimeSpan.FromSeconds(5));
-                GeoMapStatus = string.Empty;
-            });
+                GeoMapStatus = "PREPARING GEO MAPS";
+            }
+            else
+            {
+                geoMapStatus = "PREPARING GEO MAPS & SURVEILLANCE DATA";
+            }
+            FacilityFeatures = await GeoMap.LoadFacilityFeatures(artcc, ActiveVideoMapIds);
+            RadarViewModel.InitializeVatsimServices();
+            GeoMapStatus = string.Empty;
+            Logger.Info("EramViewModel.LoadVideoMaps", "ERAM Ready");
         }
 
         private void SetZOrderRaised()

@@ -12,7 +12,7 @@ namespace vFalcon.DataFeeds
     {
         private static readonly string vatsimDataFeedUrl = "https://data.vatsim.net/v3/vatsim-data.json";
         private static string transceiversDataFeed = "https://data.vatsim.net/v3/transceivers-data.json";
-        public static async Task<JObject?> AsyncGet()
+        public static async Task<JObject?> GetPilotsAsync()
         {
             try
             {
@@ -35,7 +35,7 @@ namespace vFalcon.DataFeeds
             }
         }
 
-        public static async Task<Dictionary<string, string>> LoadTransceiverFrequenciesAsync()
+        public static async Task<Dictionary<string, string>> GetTransceiversAsync()
         {
             using var client = new HttpClient();
             string json = await client.GetStringAsync(transceiversDataFeed);

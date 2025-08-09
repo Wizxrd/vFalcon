@@ -12,7 +12,7 @@ namespace vFalcon
     /// </summary>
     public partial class App : Application
     {
-        private string version = "0.0.7";
+        private string version = "0.0.8";
         private static Mutex mutex;
         const string appName = "vFalcon";
         bool createdNew;

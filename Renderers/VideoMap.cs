@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using vFalcon.Helpers;
 using vFalcon.Models;
+using vFalcon.ViewModels;
 
 namespace vFalcon.Renderers
 {
@@ -15,18 +16,20 @@ namespace vFalcon.Renderers
     {
 
         private static readonly SKTypeface EramTypeface = SKTypeface.FromFile(Loader.LoadFile("Resources/Fonts", "ERAM.ttf"));
+        private static readonly SKColor DefaultColor = SKColor.Parse("#757575");
 
         private readonly SKPaint paint = new SKPaint
         {
             Style = SKPaintStyle.Stroke,
-            Color = SKColors.White,
+            Color = DefaultColor,
             IsAntialias = true,
         };
 
         private readonly SKPaint textPaint = new SKPaint
         {
             Typeface = EramTypeface,
-            Color = SKColors.White,
+            TextSize = 12f,
+            Color = DefaultColor,
             IsAntialias = true,
             Style = SKPaintStyle.Fill
         };
@@ -40,10 +43,11 @@ namespace vFalcon.Renderers
             panOffset.Y += shiftY;
         }
 
-        public void Render(SKCanvas canvas, System.Drawing.Size clientSize, double scale, SKPoint panOffset, IEnumerable<ProcessedFeature> features)
+        public void Render(EramViewModel eramViewModel, SKCanvas canvas, System.Drawing.Size clientSize, double scale, SKPoint panOffset, IEnumerable<ProcessedFeature> features)
         {
             try
             {
+                JObject profileBcgs = (JObject)eramViewModel.profile.DisplayWindowSettings[0]["DisplaySettings"][0]["Bcgs"];
                 foreach (var feature in features)
                 {
                     try
@@ -62,35 +66,35 @@ namespace vFalcon.Renderers
 
                         string style = (feature.AppliedAttributes.TryGetValue("style", out var styleValue) && styleValue != null) ? styleValue.ToString() : "OtherWaypoints";
                         float symbolSize = feature.AppliedAttributes.TryGetValue("size", out var sizeValue) ? Convert.ToSingle(sizeValue) : 10f;
-                        SKColor color = SKColors.White;
 
                         paint.StrokeWidth = feature.AppliedAttributes.TryGetValue("thickness", out var thickness) ? Convert.ToSingle(thickness) : 1f;
                         paint.PathEffect = ResolvePathEffect(feature.AppliedAttributes);
-
+                        int bcg = Convert.ToInt32(feature.AppliedAttributes["bcg"]);
+                        int value = (int)profileBcgs[$"MapGroup{bcg}"];
+                        byte rgb = (byte)(value * 243 / 100);
                         if (geomType == "LineString")
                         {
                             if (coordsToken is JArray arr)
-                                DrawLineString(canvas, arr, paint, clientSize, scale, panOffset);
+                                DrawLineString(canvas, arr, paint, clientSize, scale, panOffset, rgb);
                         }
                         else if (geomType == "MultiLineString")
                         {
                             if (coordsToken is JArray multiArray)
-                                DrawMultiLineSegments(canvas, multiArray, paint, clientSize, scale, panOffset);
+                                DrawMultiLineSegments(canvas, multiArray, paint, clientSize, scale, panOffset, rgb);
                         }
                         else if (geomType == "Point")
                         {
                             double lon = coordsToken[0].Value<double>();
                             double lat = coordsToken[1].Value<double>();
                             SKPoint screenPoint = ScreenMap.CoordinateToScreen(clientSize.Width, clientSize.Height, scale, panOffset, lat, lon);
-
-                            DrawSymbol(canvas, style, screenPoint, symbolSize * 6);
+                            DrawSymbol(canvas, style, screenPoint, symbolSize, rgb);
                         }
                         else if (geomType == "Text")
                         {
                             double lon = coordsToken[0].Value<double>();
                             double lat = coordsToken[1].Value<double>();
                             SKPoint screenPoint = ScreenMap.CoordinateToScreen(clientSize.Width, clientSize.Height, scale, panOffset, lat, lon);
-                            DrawTextLabel(canvas, feature.TextContent, screenPoint, feature.FontSize, feature.XOffset, feature.YOffset, feature.Underline);
+                            DrawTextLabel(canvas, feature.TextContent, screenPoint, feature.FontSize, feature.XOffset, feature.YOffset*1.5f, feature.Underline, rgb);
                         }
                     }
                     catch (Exception ex)
@@ -105,35 +109,35 @@ namespace vFalcon.Renderers
             }
         }
 
-        private void DrawSymbol(SKCanvas canvas, string style, SKPoint center, float size)
+        private void DrawSymbol(SKCanvas canvas, string style, SKPoint center, float size, byte rgb)
         {
             switch (style.ToLower())
             {
-                case "obstruction1": Symbols.Obstruction1(canvas, center, size / 2); break;
-                case "obstruction2": Symbols.Obstruction2(canvas, center, size); break;
-                case "helipad": Symbols.Helipad(canvas, center, size); break;
-                case "nuclear": Symbols.Nuclear(canvas, center, size); break;
-                case "emergencyairport": Symbols.EmergencyAirport(canvas, center, size / 3); break;
-                case "radar": Symbols.Radar(canvas, center, size); break;
-                case "iaf": Symbols.Iaf(canvas, center, size); break;
-                case "rnavonlywaypoint": Symbols.RnavOnlyWaypoint(canvas, center, size/1.5f); break;
-                case "rnav": Symbols.Rnav(canvas, center, size/2); break;
-                case "airwayintersection": Symbols.AirwayIntersection(canvas, center, size); break;
-                case "ndb": Symbols.Ndb(canvas, center, size); break;
-                case "vor": Symbols.Vor(canvas, center, size); break;
-                case "otherwaypoints": Symbols.OtherWaypoints(canvas, center, 5); break;
-                case "airport": Symbols.Airport(canvas, center, size / 6); break;
-                case "satelliteairport": Symbols.SatelliteAirport(canvas, center, size); break;
-                case "tacan": Symbols.Tacan(canvas, center, size); break;
-                case "dme": Symbols.Tacan(canvas, center, size); break;
+                case "obstruction1": Symbols.Obstruction1(canvas, center, size, rgb); break;
+                case "obstruction2": Symbols.Obstruction2(canvas, center, size, rgb); break;
+                case "helipad": Symbols.Helipad(canvas, center, size, rgb); break;
+                case "nuclear": Symbols.Nuclear(canvas, center, size, rgb); break;
+                case "emergencyairport": Symbols.EmergencyAirport(canvas, center, size, rgb); break;
+                case "radar": Symbols.Radar(canvas, center, size, rgb); break;
+                case "iaf": Symbols.Iaf(canvas, center, size, rgb); break;
+                case "rnavonlywaypoint": Symbols.RnavOnlyWaypoint(canvas, center, size, rgb); break;
+                case "rnav": Symbols.Rnav(canvas, center, size, rgb); break;
+                case "airwayintersection": Symbols.AirwayIntersection(canvas, center, size, rgb); break;
+                case "ndb": Symbols.Ndb(canvas, center, size, rgb); break;
+                case "vor": Symbols.Vor(canvas, center, size, rgb); break;
+                case "otherwaypoints": Symbols.OtherWaypoints(canvas, center, size, rgb); break;
+                case "airport": Symbols.Airport(canvas, center, size, rgb); break;
+                case "satelliteairport": Symbols.SatelliteAirport(canvas, center, size, rgb); break;
+                case "tacan": Symbols.Tacan(canvas, center, size, rgb); break;
+                case "dme": Symbols.Tacan(canvas, center, size, rgb); break;
             }
         }
 
-        private void DrawTextLabel(SKCanvas canvas, string text, SKPoint position, float fontSize, float xOffset, float yOffset, bool underline)
+        private void DrawTextLabel(SKCanvas canvas, string text, SKPoint position, float fontSize, float xOffset, float yOffset, bool underline, byte rgb)
         {
+            SKColor color = new SKColor(rgb, rgb, rgb);
+            textPaint.Color = color;
             if (string.IsNullOrEmpty(text)) return;
-
-            textPaint.TextSize = fontSize;
 
             SKPoint drawPoint = new SKPoint(position.X + xOffset, position.Y - yOffset);
             string[] lines = text.Split('\n');
@@ -154,27 +158,28 @@ namespace vFalcon.Renderers
             }
         }
 
-        private void DrawMultiLineSegments(SKCanvas canvas, JArray array, SKPaint paint, System.Drawing.Size clientSize, double scale, SKPoint panOffset)
+        private void DrawMultiLineSegments(SKCanvas canvas, JArray array, SKPaint paint, System.Drawing.Size clientSize, double scale, SKPoint panOffset, byte rgb)
         {
             foreach (var item in array)
             {
                 if (item is JArray subArray)
                 {
                     if (subArray.First is JArray firstInner && firstInner.First is JArray)
-                        DrawMultiLineSegments(canvas, subArray, paint, clientSize, scale, panOffset);
+                        DrawMultiLineSegments(canvas, subArray, paint, clientSize, scale, panOffset, rgb);
                     else
-                        DrawLineString(canvas, subArray, paint, clientSize, scale, panOffset);
+                        DrawLineString(canvas, subArray, paint, clientSize, scale, panOffset, rgb);
                 }
             }
         }
 
-        private void DrawLineString(SKCanvas canvas, JArray coordsArray, SKPaint paint, System.Drawing.Size clientSize, double scale, SKPoint panOffset)
+        private void DrawLineString(SKCanvas canvas, JArray coordsArray, SKPaint paint, System.Drawing.Size clientSize, double scale, SKPoint panOffset, byte rgb)
         {
             if (coordsArray == null || coordsArray.Count < 2) return;
 
             using var path = new SKPath();
             bool isFirst = true;
-
+            SKColor color = new SKColor(rgb, rgb, rgb);
+            paint.Color = color;
             foreach (var pt in coordsArray)
             {
                 if (pt is not JArray pointArray || pointArray.Count < 2) continue;

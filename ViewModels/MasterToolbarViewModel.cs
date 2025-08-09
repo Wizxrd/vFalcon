@@ -22,6 +22,7 @@ namespace vFalcon.ViewModels
         // ========================================================
         public string MapsLabelLine1 => eramViewModel.MapsLabelLine1;
         public string MapsLabelLine2 => eramViewModel.MapsLabelLine2;
+        public int VelocityVector => eramViewModel.VelocityVector;
 
         public string ZoomLevel
         {
@@ -48,6 +49,8 @@ namespace vFalcon.ViewModels
                     OnPropertyChanged(nameof(MapsLabelLine1));
                 if (e.PropertyName == nameof(eramViewModel.MapsLabelLine2))
                     OnPropertyChanged(nameof(MapsLabelLine2));
+                if (e.PropertyName == nameof(eramViewModel.VelocityVector))
+                    OnPropertyChanged(nameof(VelocityVector));
             };
         }
     }

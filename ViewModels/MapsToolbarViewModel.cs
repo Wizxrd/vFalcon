@@ -27,7 +27,6 @@ namespace vFalcon.ViewModels
         // ========================================================
         public string MapsLabelLine1 => eramViewModel.MapsLabelLine1;
         public string MapsLabelLine2 => eramViewModel.MapsLabelLine2;
-
         public ObservableCollection<MapFilter> MapFilters
         {
             get => mapFilters;
@@ -71,7 +70,6 @@ namespace vFalcon.ViewModels
             {
                 if ((string)geoMap["name"] != eramViewModel.ActiveGeoMap)
                     continue;
-
                 JArray filterMenu = (JArray)geoMap["filterMenu"];
 
                 int baseStart = eramViewModel.UseAlternateMapLayout ? 20 : 0;
@@ -95,7 +93,7 @@ namespace vFalcon.ViewModels
                         LabelLine2 = (string)filter["labelLine2"],
                         Row = (mappedIndex / columns) * 2,
                         Column = (mappedIndex % columns) * 2,
-                        Command = new RelayCommand(_ => ToggleMapCommand(filterIndex)),
+                        Command = new RelayCommand(_ => ToggleMapCommand(filterIndex, (string)geoMap["name"])),
                         IsActive = isActive,
                         IsChecked = isActive
                     });
@@ -104,8 +102,9 @@ namespace vFalcon.ViewModels
             }
         }
 
-        private void ToggleMapCommand(int filterIndex)
+        private void ToggleMapCommand(int filterIndex, string name)
         {
+            Logger.Debug("ToggleMapCommand", name);
             if (eramViewModel.ActiveFilters.Contains(filterIndex))
             {
                 eramViewModel.ActiveFilters.Remove(filterIndex);

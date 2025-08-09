@@ -1,65 +1,85 @@
 ﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Threading;
 using vFalcon.DataFeeds;
 using vFalcon.Helpers;
 using vFalcon.Models;
+using vFalcon.Services.Service;
 
-namespace vFalcon.Services.Service
+public class VatsimDataService
 {
-    public class VatsimDataService
+    private readonly DispatcherTimer refreshTimer = new();
+    private readonly PilotService pilotService;
+    private readonly Profile profile;
+    private readonly Action invalidateCanvas;
+
+    // Store the last update timestamp to avoid redundant updates
+    private DateTime? lastUpdateTimestamp = null;
+
+    public VatsimDataService(PilotService pilotService, Profile profile, Action invalidateCanvas)
     {
-        private readonly DispatcherTimer refreshTimer = new();
-        private readonly PilotService pilotService;
-        private readonly Profile profile;
-        private readonly Action invalidateCanvas;
+        this.pilotService = pilotService;
+        this.profile = profile;
+        this.invalidateCanvas = invalidateCanvas;
+    }
 
-        public VatsimDataService(PilotService pilotService, Profile profile, Action invalidateCanvas)
-        {
-            this.pilotService = pilotService;
-            this.profile = profile;
-            this.invalidateCanvas = invalidateCanvas;
-        }
+    public async void Start()
+    {
+        refreshTimer.Interval = TimeSpan.FromSeconds(15); // Initial interval
+        refreshTimer.Tick += async (s, e) => await RefreshAsync();
+        refreshTimer.Start();
+        await RefreshAsync();
+    }
 
-        public async void Start()
-        {
-            refreshTimer.Interval = TimeSpan.FromSeconds(30);
-            refreshTimer.Tick += async (s, e) => await RefreshAsync();
-            refreshTimer.Start();
-            await RefreshAsync();
-        }
+    public async void Refresh()
+    {
+        await RefreshAsync();
+    }
 
-        public async void Refresh()
-        {
-            await RefreshAsync();
-        }
+    private async Task RefreshAsync()
+    {
+        Logger.Debug("VatsimDataService.RefreshAsync", "Refreshing");
 
-        private async Task RefreshAsync()
+        // Wrap the data fetching and processing in a task to prevent UI blockage
+        await Task.Run(async () =>
         {
             try
             {
-                JObject? dataFeed = await VatsimDataFeed.AsyncGet();
+                JObject? dataFeed = await VatsimDataFeed.GetPilotsAsync();
                 if (dataFeed == null) return;
 
-                var transceiverFrequencies = await VatsimDataFeed.LoadTransceiverFrequenciesAsync();
-                string? sectorFreq = await vNasDataFeed.GetArtccFrequencyAsync(profile.ArtccId, string.Empty);//FIXME
+                string timestampStr = dataFeed["general"]?["update_timestamp"]?.ToString();
+                DateTime lastUpdateUtc;
 
-                await Task.Run(() =>
+                if (DateTime.TryParse(timestampStr, out lastUpdateUtc))
                 {
-                    pilotService.UpdateFromDataFeed(dataFeed, transceiverFrequencies, sectorFreq);
-                });
+                    lastUpdateUtc = lastUpdateUtc.AddMilliseconds(-lastUpdateUtc.Millisecond);
+                    Logger.Debug("VatsimDataService.RefreshAsync", $"Last update timestamp: {lastUpdateUtc}");
 
-                invalidateCanvas();
+                    if (lastUpdateTimestamp.HasValue && lastUpdateTimestamp.Value == lastUpdateUtc)
+                    {
+                        Logger.Debug("VatsimDataService.RefreshAsync", "Skipping refresh, update timestamp is the same.");
+                        return;
+                    }
+
+                    lastUpdateTimestamp = lastUpdateUtc;
+                }
+
+                var transceiverFrequencies = await VatsimDataFeed.GetTransceiversAsync();
+                string? sectorFreq = await vNasDataFeed.GetArtccFrequencyAsync(profile.ArtccId, profile.ActivatedSectorName);
+
+                // Update pilot service on a background thread
+                await Task.Run(() => pilotService.UpdateFromDataFeed(dataFeed, transceiverFrequencies, sectorFreq));
+
+                // Invoke the UI updates on the main thread
+                Application.Current.Dispatcher.Invoke(() => invalidateCanvas());
             }
             catch (Exception ex)
             {
                 Logger.Error("VatsimDataService.RefreshAsync", ex.ToString());
             }
-        }
+        });
     }
+
 }
+

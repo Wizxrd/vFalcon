@@ -21,10 +21,51 @@ namespace vFalcon.Views
     /// </summary>
     public partial class MasterToolbarView : UserControl
     {
+        private EramViewModel eramViewModel;
         public MasterToolbarView(EramViewModel eramViewModel)
         {
             InitializeComponent();
+            this.eramViewModel = eramViewModel;
             DataContext = new MasterToolbarViewModel(eramViewModel);
+        }
+
+
+        public void DecreaseVelocityVector()
+        {
+            {
+                if (eramViewModel.VelocityVector > 0)
+                {
+                    eramViewModel.VelocityVector /= 2;
+                    eramViewModel.RadarViewModel.Redraw();
+                }
+            }
+        }
+
+        public void IncreaseVelocityVector()
+        {
+            if (eramViewModel.VelocityVector == 0)
+            {
+                eramViewModel.VelocityVector = 1;
+                eramViewModel.RadarViewModel.Redraw();
+                return;
+            }
+            if (eramViewModel.VelocityVector < 8)
+            {
+                eramViewModel.VelocityVector *= 2;
+                eramViewModel.RadarViewModel.Redraw();
+            }
+        }
+
+        private void VelocityVectorMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DecreaseVelocityVector();
+            }
+            if (e.MiddleButton == MouseButtonState.Pressed)
+            {
+                IncreaseVelocityVector();
+            }
         }
     }
 }

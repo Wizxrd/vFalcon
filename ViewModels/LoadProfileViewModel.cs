@@ -177,7 +177,7 @@ namespace vFalcon.ViewModels
             if (RequestConfirmation != null)
             {
                 bool confirmed = await RequestConfirmation.Invoke(
-                    $"Are you sure you want to delete profile: \"{profile.Name}\"");
+                    $"Are you sure you want to delete your CRC profile: \"{profile.Name}\"");
 
                 if (confirmed)
                 {

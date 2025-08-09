@@ -6,14 +6,15 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:local="clr-namespace:vFalcon.Views"
     mc:Ignorable="d" 
+    FontFamily="Consolas" FontSize="12"
     Width="275" Height="Auto">
     <StackPanel>
         <Button
-             Name="ActivateSectorButton"
-             FontFamily="Consolas" FontSize="12"
-             Height="26"
-             HorizontalContentAlignment="Stretch"
-             BorderBrush="#3d3d4c">
+            Name="ActivateSectorButton"
+            Height="26"
+            HorizontalContentAlignment="Stretch"
+            BorderBrush="#3d3d4c"
+            Click="ActivateSectorButtonClick">
             <Button.Content>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -21,19 +22,14 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock
-                         x:Name="ActivateSectorTextBlock1"
-                         Text="Activate Sector"
+                         Text="{Binding ActivateSectorText}"
                          Grid.Column="0"
-                         FontFamily="Consolas"
-                         FontSize="12"
                          VerticalAlignment="Center"
                          Padding="10,0,0,0"/>
                     <TextBlock
                          x:Name="ActivateSectorTextBlock2"
-                         Text="LCtrl+A"
+                         Text="Ctrl+F12"
                          Grid.Column="1"
-                         FontFamily="Consolas"
-                         FontSize="12"
                          VerticalAlignment="Center"
                          HorizontalAlignment="Right"
                          Padding="0,0,10,0"/>
@@ -42,7 +38,6 @@
         </Button>
         <Button 
             Name="LoadReplayButton"
-            FontFamily="Consolas" FontSize="12"
             Height="26"
             HorizontalContentAlignment="Stretch"
             BorderBrush="#3d3d4c">
@@ -55,15 +50,11 @@
                     <TextBlock
                          Text="Load Replay"
                          Grid.Column="0"
-                         FontFamily="Consolas"
-                         FontSize="12"
                          VerticalAlignment="Center"
                          Padding="10,0,0,0"/>
                     <TextBlock
-                         Text="LCtrl+L"
+                         Text="Ctrl+L"
                          Grid.Column="1"
-                         FontFamily="Consolas"
-                         FontSize="12"
                          VerticalAlignment="Center"
                          HorizontalAlignment="Right"
                          Padding="0,0,10,0"/>
@@ -72,7 +63,6 @@
         </Button>
         <Button 
             Name="StartReplayButton"
-            FontFamily="Consolas" FontSize="12"
             Height="26"
             HorizontalContentAlignment="Stretch"
             BorderBrush="#3d3d4c">
@@ -85,15 +75,11 @@
                     <TextBlock
                          Text="Start Replay"
                          Grid.Column="0"
-                         FontFamily="Consolas"
-                         FontSize="12"
                          VerticalAlignment="Center"
                          Padding="10,0,0,0"/>
                     <TextBlock
-                         Text="LCtrl+R"
+                         Text="Ctrl+R"
                          Grid.Column="1"
-                         FontFamily="Consolas"
-                         FontSize="12"
                          VerticalAlignment="Center"
                          HorizontalAlignment="Right"
                          Padding="0,0,10,0"/>
@@ -102,7 +88,6 @@
         </Button>
         <Button
             Name="StopReplayButton"
-            FontFamily="Consolas" FontSize="12"
             Height="26"
             HorizontalContentAlignment="Stretch"
             BorderBrush="#3d3d4c">
@@ -115,15 +100,11 @@
                     <TextBlock
                          Text="Stop Replay"
                          Grid.Column="0"
-                         FontFamily="Consolas"
-                         FontSize="12"
                          VerticalAlignment="Center"
                          Padding="10,0,0,0"/>
                     <TextBlock
-                         Text="LCtrl+S"
+                         Text="Ctrl+S"
                          Grid.Column="1"
-                         FontFamily="Consolas"
-                         FontSize="12"
                          VerticalAlignment="Center"
                          HorizontalAlignment="Right"
                          Padding="0,0,10,0"/>
@@ -132,7 +113,6 @@
         </Button>
         <Button
             Name="StartRecordingButton"
-            FontFamily="Consolas" FontSize="12"
             Height="26"
             HorizontalContentAlignment="Stretch"
             BorderBrush="#3d3d4c">
@@ -145,15 +125,11 @@
                     <TextBlock
                          Text="Start Recording"
                          Grid.Column="0"
-                         FontFamily="Consolas"
-                         FontSize="12"
                          VerticalAlignment="Center"
                          Padding="10,0,0,0"/>
                     <TextBlock
-                         Text="LCtrl+LShft+R"
+                         Text="Ctrl+Shift+R"
                          Grid.Column="1"
-                         FontFamily="Consolas"
-                         FontSize="12"
                          VerticalAlignment="Center"
                          HorizontalAlignment="Right"
                          Padding="0,0,10,0"/>
@@ -162,7 +138,6 @@
         </Button>
         <Button 
             Name="StopRecordingButton"
-            FontFamily="Consolas" FontSize="12"
             Height="26"
             HorizontalContentAlignment="Stretch"
             BorderBrush="#3d3d4c">
@@ -175,15 +150,11 @@
                     <TextBlock
                          Text="Stop Recording"
                          Grid.Column="0"
-                         FontFamily="Consolas"
-                         FontSize="12"
                          VerticalAlignment="Center"
                          Padding="10,0,0,0"/>
                     <TextBlock
-                         Text="LCtrl+LShft+S"
+                         Text="Ctrl+Shift+S"
                          Grid.Column="1"
-                         FontFamily="Consolas"
-                         FontSize="12"
                          VerticalAlignment="Center"
                          HorizontalAlignment="Right"
                          Padding="0,0,10,0"/>
@@ -192,7 +163,6 @@
         </Button>
         <Button
             Name="SwitchProfileButton"
-            FontFamily="Consolas" FontSize="12"
             Height="26"
             HorizontalContentAlignment="Stretch"
             BorderBrush="#3d3d4c"
@@ -206,15 +176,11 @@
                     <TextBlock
                          Text="Switch Profile"
                          Grid.Column="0"
-                         FontFamily="Consolas"
-                         FontSize="12"
                          VerticalAlignment="Center"
                          Padding="10,0,0,0"/>
                     <TextBlock
-                         Text="LCtrl+LShft+P"
+                         Text="Ctrl+Shift+P"
                          Grid.Column="1"
-                         FontFamily="Consolas"
-                         FontSize="12"
                          VerticalAlignment="Center"
                          HorizontalAlignment="Right"
                          Padding="0,0,10,0"/>
@@ -223,7 +189,6 @@
         </Button>
         <Button
             Name="GeneralSettingsButton"
-            FontFamily="Consolas" FontSize="12"
             Height="26"
             HorizontalContentAlignment="Stretch"
             BorderBrush="#3d3d4c"
@@ -235,17 +200,13 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock
-                         Text="General Settings"
-                         Grid.Column="0"
-                         FontFamily="Consolas"
-                         FontSize="12"
-                         VerticalAlignment="Center"
-                         Padding="10,0,0,0"/>
+                        Text="General Settings"
+                        Grid.Column="0"
+                        VerticalAlignment="Center"
+                        Padding="10,0,0,0"/>
                     <TextBlock
-                         Text="LCtrl+G"
+                         Text="Ctrl+G"
                          Grid.Column="1"
-                         FontFamily="Consolas"
-                         FontSize="12"
                          VerticalAlignment="Center"
                          HorizontalAlignment="Right"
                          Padding="0,0,10,0"/>

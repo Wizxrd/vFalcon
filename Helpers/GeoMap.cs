@@ -2,10 +2,9 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 using vFalcon.Models;
 
 namespace vFalcon.Helpers
@@ -29,7 +28,10 @@ namespace vFalcon.Helpers
                 }
             }
 
-            var matchedFiles = activeVideoMapIds.Select(id => Path.Combine(sourcePath, id + ".geojson")).Where(File.Exists).ToList();
+            var matchedFiles = activeVideoMapIds
+                .Select(id => Path.Combine(sourcePath, id + ".geojson"))
+                .Where(File.Exists)
+                .ToList();
 
             await Task.Run(() =>
             {
@@ -47,19 +49,30 @@ namespace vFalcon.Helpers
 
                         var defaults = ExtractLastIsDefaults(geoJson);
 
-                        foreach (JObject feature in geoJson["features"])
+                        foreach (JObject feature in geoJson["features"] ?? Enumerable.Empty<JToken>())
                         {
-                            var properties = feature["properties"] as JObject;
-                            if (properties == null || IsDefaultsFeature(properties)) continue;
+                            var properties = feature["properties"] as JObject
+                                           ?? feature["geometry"]?["properties"] as JObject
+                                           ?? new JObject();
 
-                            var geomObj = feature["geometry"] as JObject;
-                            if (geomObj == null)
-                            {
-                                Logger.Error("GeoMap.LoadVideoMap", feature["properties"].ToString());
+                            if (IsDefaultsFeature(properties))
                                 continue;
+
+                            var geometryToken = feature["geometry"];
+                            if (geometryToken == null || geometryToken.Type == JTokenType.Null || geometryToken["coordinates"] == null)
+                            {
+                                Logger.Info("GeoMap.LoadFacilityFeatures", $"Missing or invalid geometry. Substituting default Point.\n{feature.ToString(Formatting.None)}");
+                                geometryToken = new JObject
+                                {
+                                    ["type"] = "Point",
+                                    ["coordinates"] = new JArray(0.0, 0.0)
+                                };
+                                feature["geometry"] = geometryToken;
                             }
 
-                            string geometryType = geomObj.Value<string>("type") ?? "Unknown";
+                            var geomObj = geometryToken as JObject;
+                            string geometryType = geomObj?.Value<string>("type") ?? "Point";
+
                             var finalProperties = MergeProperties(properties, defaults, geometryType);
                             finalProperties["tdmOnly"] = tdmOnly;
 
@@ -70,10 +83,22 @@ namespace vFalcon.Helpers
                                     filters.AddRange(arr.Where(f => f != null && f.Type != JTokenType.Null).Select(f => (int)f));
                                 else if (filtersObj is JValue val && val.Value != null)
                                     filters.Add(val.Value<int>());
-                                else if (filtersObj is int intFilter)
-                                    filters.Add(intFilter);
                                 else if (int.TryParse(filtersObj.ToString(), out int parsed))
                                     filters.Add(parsed);
+                            }
+
+                            if (filters.Count == 0)
+                            {
+                                // fallback to defaults
+                                if (defaults.LineDefaults.TryGetValue("filters", out var defaultFiltersObj) && defaultFiltersObj != null)
+                                {
+                                    if (defaultFiltersObj is JArray arr)
+                                        filters.AddRange(arr.Select(f => Convert.ToInt32(f)));
+                                    else if (defaultFiltersObj is int dfInt)
+                                        filters.Add(dfInt);
+                                    else if (int.TryParse(defaultFiltersObj.ToString(), out int parsedDf))
+                                        filters.Add(parsedDf);
+                                }
                             }
 
                             foreach (int filter in filters)
@@ -97,7 +122,6 @@ namespace vFalcon.Helpers
                         var featuresList = kvp.Value;
                         var condensedList = new List<ProcessedFeature>();
 
-                        // Combine lines
                         foreach (var group in featuresList
                             .Where(f => f.GeometryType is "Line" or "LineString" or "MultiLineString")
                             .GroupBy(f => JsonConvert.SerializeObject(f.AppliedAttributes)))
@@ -106,10 +130,7 @@ namespace vFalcon.Helpers
 
                             foreach (var f in group)
                             {
-                                var geomObj = f.Geometry as JObject ?? (f.Geometry as JToken as JObject);
-                                if (geomObj == null) continue;
-
-                                var coords = geomObj["coordinates"] as JArray;
+                                var coords = (f.Geometry as JObject)?["coordinates"] as JArray;
                                 if (coords == null || coords.Count == 0) continue;
 
                                 if (f.GeometryType is "Line" or "LineString")
@@ -138,7 +159,6 @@ namespace vFalcon.Helpers
                             }
                         }
 
-                        // Combine points
                         foreach (var group in featuresList
                             .Where(f => f.GeometryType == "Symbol" && ((f.Geometry as JObject)?["type"]?.ToString() == "Point"))
                             .GroupBy(f => JsonConvert.SerializeObject(f.AppliedAttributes)))
@@ -157,7 +177,6 @@ namespace vFalcon.Helpers
                             }
                         }
 
-                        // Combine text
                         foreach (var group in featuresList
                             .Where(f => f.GeometryType == "Text" && ((f.Geometry as JObject)?["type"]?.ToString() == "Point"))
                             .GroupBy(f => JsonConvert.SerializeObject(f.AppliedAttributes)))
@@ -178,9 +197,9 @@ namespace vFalcon.Helpers
                                     Geometry = new JObject { ["type"] = "Point", ["coordinates"] = coords },
                                     AppliedAttributes = attrs,
                                     TextContent = textStr,
-                                    FontSize = attrs.TryGetValue("size", out var ts) ? Convert.ToSingle(ts) * 12f : 14f,
-                                    XOffset = attrs.TryGetValue("xOffset", out var xo) ? Convert.ToSingle(xo) : 0f,
-                                    YOffset = attrs.TryGetValue("yOffset", out var yo) ? Convert.ToSingle(yo) : 0f,
+                                    FontSize = SafeGetFloat(attrs, "size", 14f) * 12f,
+                                    XOffset = SafeGetFloat(attrs, "xOffset", 0f),
+                                    YOffset = SafeGetFloat(attrs, "yOffset", 0f),
                                     Underline = attrs.TryGetValue("underline", out var ul) && Convert.ToBoolean(ul)
                                 });
                             }
@@ -196,7 +215,6 @@ namespace vFalcon.Helpers
                     Logger.Error("GeoMap.LoadFacilityFeatures", ex.ToString());
                 }
             });
-
             return features;
         }
 
@@ -217,45 +235,54 @@ namespace vFalcon.Helpers
 
             return props.Value<bool?>("isLineDefaults") == true || props.Value<bool?>("isSymbolDefaults") == true || props.Value<bool?>("isTextDefaults") == true;
         }
-
         public static Dictionary<string, object> MergeProperties(JObject featureProps, FeatureDefaults defaults, string geometryType)
         {
             var merged = new Dictionary<string, object>();
 
-            if (featureProps == null)
+            // Normalize feature type
+            string normalizedType = geometryType switch
             {
-                Dictionary<string, object> typeDefaultsOnly = geometryType switch
-                {
-                    "LineString" or "MultiLineString" => defaults.LineDefaults,
-                    "Point" => defaults.SymbolDefaults,
-                    _ => new Dictionary<string, object>()
-                };
+                "LineString" or "MultiLineString" => "Line",
+                "Point" when featureProps?.ContainsKey("text") == true => "Text",
+                "Point" => "Symbol",
+                _ => geometryType
+            };
 
-                foreach (var kv in typeDefaultsOnly)
-                    merged[kv.Key] = kv.Value;
-
-                ApplyCrcAutoDefaults(merged, geometryType);
-                return merged;
-            }
-
-            Dictionary<string, object> typeDefaults = geometryType
-                switch
+            Dictionary<string, object> typeDefaults = normalizedType switch
             {
-                "LineString" or "MultiLineString" => defaults.LineDefaults,
-                "Point" => featureProps.ContainsKey("text") ? defaults.TextDefaults : defaults.SymbolDefaults,
+                "Line" => defaults.LineDefaults,
+                "Symbol" => defaults.SymbolDefaults,
+                "Text" => defaults.TextDefaults,
                 _ => new Dictionary<string, object>()
             };
 
+            if (featureProps == null || featureProps.Count == 0)
+            {
+                foreach (var kv in typeDefaults)
+                    merged[kv.Key] = kv.Value;
+
+                ApplyCrcAutoDefaults(merged, normalizedType);
+                return merged;
+            }
+
             foreach (var kv in typeDefaults)
-                merged[kv.Key] = kv.Value;
+            {
+                if (!featureProps.TryGetValue(kv.Key, out var value) || value == null || value.Type == JTokenType.Null)
+                    merged[kv.Key] = kv.Value;
+                else
+                    merged[kv.Key] = value;
+            }
 
             foreach (var kv in featureProps)
-                merged[kv.Key] = kv.Value;
+            {
+                if (!merged.ContainsKey(kv.Key))
+                    merged[kv.Key] = kv.Value;
+            }
 
-            ApplyCrcAutoDefaults(merged, geometryType);
-
+            ApplyCrcAutoDefaults(merged, normalizedType);
             return merged;
         }
+
 
         public static void ApplyCrcAutoDefaults(Dictionary<string, object> props, string featureType)
         {
@@ -302,16 +329,34 @@ namespace vFalcon.Helpers
                 if (props == null) continue;
 
                 if (props.Value<bool?>("isLineDefaults") == true)
+                {
+                    props.Remove("isLineDefaults");
                     defaults.LineDefaults = props.ToObject<Dictionary<string, object>>();
+                }
 
                 if (props.Value<bool?>("isSymbolDefaults") == true)
+                {
+                    props.Remove("isSymbolDefaults");
                     defaults.SymbolDefaults = props.ToObject<Dictionary<string, object>>();
+                }
 
                 if (props.Value<bool?>("isTextDefaults") == true)
+                {
+                    props.Remove("isTextDefaults");
                     defaults.TextDefaults = props.ToObject<Dictionary<string, object>>();
+                }
             }
 
             return defaults;
+        }
+
+        private static float SafeGetFloat(Dictionary<string, object> dict, string key, float fallback)
+        {
+            if (!dict.TryGetValue(key, out var val) || val == null)
+                return fallback;
+
+            try { return Convert.ToSingle(val); }
+            catch { return fallback; }
         }
     }
 }

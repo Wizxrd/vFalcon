@@ -10,9 +10,9 @@ namespace vFalcon.Helpers
 {
     public class ScreenMap
     {
-        private static double EarthRadiusNM = 3440.065;
+        public static double EarthRadiusNM = 3440.065;
         private static double EarthRadiusKM = 6371.0;
-        private static double RadPerDeg = Math.PI / 180.0;
+        public static double RadPerDeg = Math.PI / 180.0;
 
         public static SKPoint CoordinateToScreen(int width, int height, double scale, SKPoint panOffset, double lat, double lon)
         {

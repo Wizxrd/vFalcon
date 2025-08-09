@@ -25,5 +25,8 @@ namespace vFalcon.Models
         public JArray SelectedBeaconCodes { get; set; } = new JArray();
         public bool? InvertNumericKeypad { get; set; } = null;
         public JArray SecondaryVoiceSwitchPositionIds { get; set; } = new JArray();
+
+        public string ActivatedSectorName { get; set; } = string.Empty;
+        public string ActivatedSectorFreq {  get; set; } = string.Empty;
     }
 }

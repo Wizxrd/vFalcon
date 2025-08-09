@@ -83,11 +83,11 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <controls:EramButton
-                        Line1Text="{Binding LabelLine1}"
-                        Line2Text="{Binding LabelLine2}"
-                        EramButtonStyle="{StaticResource ToggleButton}"
-                        Command="{Binding Command}"
-                        IsChecked="{Binding IsChecked}"/>
+                                    Line1Text="{Binding LabelLine1}"
+                                    Line2Text="{Binding LabelLine2}"
+                                    EramButtonStyle="{StaticResource ToggleButton}"
+                                    Command="{Binding Command}"
+                                    IsChecked="{Binding IsChecked}"/>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
@@ -139,11 +139,11 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <controls:EramButton
-                        Line1Text="{Binding LabelLine1}"
-                        Line2Text="{Binding LabelLine2}"
-                        EramButtonStyle="{StaticResource ToggleButton}"
-                        Command="{Binding Command}"
-                        IsChecked="{Binding IsChecked}"/>
+                                    Line1Text="{Binding LabelLine1}"
+                                    Line2Text="{Binding LabelLine2}"
+                                    EramButtonStyle="{StaticResource ToggleButton}"
+                                    Command="{Binding Command}"
+                                    IsChecked="{Binding IsChecked}"/>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>

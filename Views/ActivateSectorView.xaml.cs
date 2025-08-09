@@ -12,21 +12,22 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using vFalcon.Models;
 using vFalcon.ViewModels;
 
 namespace vFalcon.Views
 {
     /// <summary>
-    /// Interaction logic for GeneralSettingsView.xaml
+    /// Interaction logic for ActivateSectorView.xaml
     /// </summary>
-    public partial class GeneralSettingsView : AdonisWindow
+    public partial class ActivateSectorView : AdonisWindow
     {
-        public GeneralSettingsView(EramViewModel eramViewModel)
+        public ActivateSectorView(Artcc artcc, Profile profile)
         {
             InitializeComponent();
-            GeneralSettingsViewModel generalSettingsViewModel = new GeneralSettingsViewModel(eramViewModel);
-            DataContext = generalSettingsViewModel;
-            generalSettingsViewModel.Close += () => this.Close();
+            ActivateSectorViewModel viewModel = new ActivateSectorViewModel(artcc, profile);
+            DataContext = viewModel;
+            viewModel.Close += () => this.Close();
         }
     }
 }

@@ -28,6 +28,14 @@ namespace vFalcon.Views
             DataContext = new BrightnessToolbarViewModel(eramViewModel);
         }
 
+        public void RebuildBrightnessBcg()
+        {
+            if (DataContext is BrightnessToolbarViewModel brightnessToolbarViewModel)
+            {
+                brightnessToolbarViewModel.RebuildBrightnessBcg();
+            }
+        }
+
         private void BackgroundButtonMouseDown(object sender, MouseButtonEventArgs e)
         {
             if (DataContext is BrightnessToolbarViewModel brightnessViewModel)
@@ -40,7 +48,7 @@ namespace vFalcon.Views
                         return;
                     }
                 }
-                if (e.MiddleButton == MouseButtonState.Pressed)
+                else if (e.MiddleButton == MouseButtonState.Pressed)
                 {
                     if (brightnessViewModel.BackgroundValue < 60)
                     {
@@ -63,7 +71,7 @@ namespace vFalcon.Views
                         return;
                     }
                 }
-                if (e.MiddleButton == MouseButtonState.Pressed)
+                else if (e.MiddleButton == MouseButtonState.Pressed)
                 {
                     if (brightnessViewModel.BrightnessValue < 100)
                     {

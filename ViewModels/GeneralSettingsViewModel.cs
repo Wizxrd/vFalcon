@@ -9,9 +9,16 @@ namespace vFalcon.ViewModels
 {
     public class GeneralSettingsViewModel : ViewModelBase
     {
-        private EramViewModel eramViewModel;
-
+        // ========================================================
+        //                      FIELDS
+        // ========================================================
+        private readonly EramViewModel eramViewModel;
         private string selectedGeoMapSet;
+        private bool isTopDownMode;
+
+        // ========================================================
+        //                      PROPERTIES
+        // ========================================================
         public string SelectedGeoMapSet
         {
             get => selectedGeoMapSet;
@@ -21,7 +28,8 @@ namespace vFalcon.ViewModels
                 {
                     selectedGeoMapSet = value;
                     eramViewModel.ActiveGeoMap = value;
-                    eramViewModel.SwapGeoMapSet();
+                    _ = eramViewModel.SwapGeoMapSet();
+                    Close?.Invoke();
                     OnPropertyChanged();
                 }
             }
@@ -29,7 +37,6 @@ namespace vFalcon.ViewModels
 
         public ObservableCollection<string> GeoMapSets { get; }
 
-        private bool isTopDownMode;
         public bool IsTopDownMode
         {
             get => isTopDownMode;
@@ -44,13 +51,22 @@ namespace vFalcon.ViewModels
             }
         }
 
-
-
+        // ========================================================
+        //                      EVENTS
+        // ========================================================
+        public event Action? Close;
+        // ========================================================
+        //                      CONSTRUCTOR
+        // ========================================================
         public GeneralSettingsViewModel(EramViewModel eramViewModel)
         {
             this.eramViewModel = eramViewModel;
             IsTopDownMode = eramViewModel.TdmActive;
-            GeoMapSets = new ObservableCollection<string>(eramViewModel.ArtccGeoMaps.Select(g => g["name"]?.ToString()).Where(n => !string.IsNullOrEmpty(n)));
+
+            GeoMapSets = new ObservableCollection<string>(
+                eramViewModel.ArtccGeoMaps.Select(g => g["name"]?.ToString()).Where(n => !string.IsNullOrEmpty(n))
+            );
+
             selectedGeoMapSet = eramViewModel.ActiveGeoMap;
         }
     }

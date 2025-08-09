@@ -84,8 +84,9 @@
             <controls:EramButton
                 Grid.Row="0" Grid.Column="16"
                 Line1Text="VECTOR"
-                Line2Text="0"
-                EramButtonStyle="{StaticResource IncDecToggleButton}">
+                Line2Text="{Binding VelocityVector}"
+                EramButtonStyle="{StaticResource IncDecToggleButton}"
+                PreviewMouseDown="VelocityVectorMouseDown">
             </controls:EramButton>
             <controls:EramButton
                 Grid.Row="2" Grid.Column="0"

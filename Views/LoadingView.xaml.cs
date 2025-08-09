@@ -82,6 +82,13 @@ namespace vFalcon.Views
         {
             try
             {
+                // clear folder
+                string folderPath = Loader.LoadFolder("Profiles");
+                foreach (var file in Directory.GetFiles(folderPath))
+                {
+                    File.Delete(file);
+                }
+
                 Logger.Info("LoadingView.ImportEramProfiles", "Starting");
                 string crcPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CRC", "Profiles");
                 var files = Directory.GetFiles(crcPath, "*.json");

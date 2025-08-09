@@ -1,5 +1,6 @@
 ﻿using AdonisUI.Controls;
 using System.Windows.Input;
+using vFalcon.Helpers;
 using vFalcon.ViewModels;
 
 namespace vFalcon.Views
@@ -68,9 +69,16 @@ namespace vFalcon.Views
         {
             if (DataContext is LoadProfileViewModel vm)
             {
-                var mainWindow = new EramView(vm.SelectedProfileArtcc, vm.SelectedProfile);
-                this.Close();
-                mainWindow.ShowDialog();
+                try
+                {
+                    var mainWindow = new EramView(vm.SelectedProfileArtcc, vm.SelectedProfile);
+                    this.Close();
+                    mainWindow.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                    Logger.Error("LoadProfileView.OpenEramWindow", ex.ToString());
+                }
             }
         }
     }

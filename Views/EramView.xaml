@@ -14,8 +14,13 @@
     MinWidth="250" Width="1280" MinHeight="250" Height="720"
     FontFamily="Consolas" FontSize="12"
     Foreground="{StaticResource White}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1"
-    KeyDown="AltKeyDown"
-    KeyUp="AltKeyUp">
+    KeyDown="EramKeyDown"
+    KeyUp="EramKeyUp"
+    MouseDown="EramMouseDown"
+    MouseWheel="RemovePilotContext"
+    SizeChanged="EramSizeChanged"
+    StateChanged="RemovePilotContext"
+    Deactivated="RemovePilotContext">
     <adonisControls:AdonisWindow.InputBindings>
         <KeyBinding 
             Key="T" 
@@ -29,6 +34,16 @@
             Key="G"
             Modifiers="Ctrl"
             Command="{Binding GeneralSettingsCommand}"/>
+        <KeyBinding
+            Key="F12"
+            Modifiers="Ctrl"
+            Command="{Binding ActivateSectorCommand}"/>
+        <KeyBinding
+            Key="PageUp"
+            Command="{Binding IncreaseVelocityVectorCommand}"/>
+        <KeyBinding
+            Key="PageDown"
+            Command="{Binding DecreaseVelocityVectorCommand}"/>
     </adonisControls:AdonisWindow.InputBindings>
     <adonisControls:AdonisWindow.TitleBarContent>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="-8,0,0,0">
@@ -51,7 +66,7 @@
                 PlacementTarget="{Binding ElementName=MenuButton}"
                 Placement="Bottom"
                 StaysOpen="False">
-                <views:MenuView/>
+                <views:MenuView x:Name="MenuPopupControl"/>
             </Popup>
         </StackPanel>
     </adonisControls:AdonisWindow.TitleBarContent>
@@ -106,8 +121,14 @@
                         HorizontalAlignment="Center"
                         Foreground="Red"
                         FontFamily="pack://application:,,,/vFalcon;component/Resources/Fonts/ERAM.ttf#ERAM Regular"
-                        FontSize="36">
+                        FontSize="24">
                     </TextBlock>
+                    <Popup
+                        x:Name="PilotContext"
+                        StaysOpen="True"
+                        Placement="Relative">
+                        <views:PilotContextView x:Name="PilotContextControl"/>
+                    </Popup>
                 </Grid>
             </Border>
         </Grid>

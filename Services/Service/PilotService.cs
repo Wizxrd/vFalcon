@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using vFalcon.Models;
 using vFalcon.Helpers;
+using System.Windows.Forms;
 
 namespace vFalcon.Services.Service
 {
@@ -30,26 +31,44 @@ namespace vFalcon.Services.Service
                 double lat = (double)pilot["latitude"];
                 double lon = (double)pilot["longitude"];
 
-                bool withinRange = false;
+                bool withinAsrRange = false;
+                bool withinSurveillanceRange = false;
                 foreach (JObject asr in (JArray)artcc.facility["eramConfiguration"]["asrSites"])
                 {
                     JObject location = (JObject)asr["location"];
                     int range = (int)asr["range"];
                     if (ScreenMap.DistanceInNM(lat, lon, (double)location["lat"], (double)location["lon"]) <= range)
                     {
-                        withinRange = true;
+                        withinAsrRange = true;
                         break;
                     }
                 }
+                foreach (JObject facility in (JArray)artcc.facility["childFacilities"])
+                {
+                    var starsConfig = facility["starsConfiguration"];
+                    if (starsConfig?["areas"] is JArray areas)
+                    {
+                        foreach (JObject area in areas)
+                        {
+                            JObject visibilityCenter = (JObject)area["visibilityCenter"];
+                            int surveillanceRange = (int)area["surveillanceRange"];
+                            if (visibilityCenter == null) continue;
+                            if (ScreenMap.DistanceInNM(lat, lon, (double)visibilityCenter["lat"], (double)visibilityCenter["lon"]) <= surveillanceRange)
+                            {
+                                withinSurveillanceRange = true;
+                            }
+                        }
+                    }
+                }
+                
 
-                if (!withinRange) continue;
+                if (!withinAsrRange && !withinSurveillanceRange) continue;
 
                 string callsign = (string)pilot["callsign"];
                 bool fullDataBlock = transceiverFrequencies.TryGetValue(callsign, out var freq) && freq == sectorFreq;
-
-                if (!Pilots.TryGetValue(callsign, out var p))
+                if (!Pilots.ContainsKey(callsign))
                 {
-                    p = new Pilot
+                    Pilot newPilot = new Pilot
                     {
                         CID = (int)pilot["cid"],
                         Name = (string)pilot["name"],
@@ -60,19 +79,42 @@ namespace vFalcon.Services.Service
                         Transponder = (string)pilot["transponder"],
                         QNHinHG = (double)pilot["qnh_i_hg"],
                         QNHmb = (int)pilot["qnh_mb"],
-                        LogOnTime = (DateTime)pilot["logon_time"]
+                        LogOnTime = (DateTime)pilot["logon_time"],
                     };
-                    Pilots[callsign] = p;
+                    Pilots[callsign] = newPilot;
                 }
 
-                p.Latitude = lat;
-                p.Longitude = lon;
-                p.Altitude = (int)pilot["altitude"];
-                p.GroundSpeed = (int)pilot["groundspeed"];
-                p.Heading = (int)pilot["heading"];
-                p.FlightPlan = pilot["flight_plan"] as JObject;
-                p.LastUpdated = (DateTime)pilot["last_updated"];
-                p.FullDataBlock = true;
+                Pilot existingPilot = Pilots[callsign];
+                existingPilot.Latitude = lat;
+                existingPilot.Longitude = lon;
+                existingPilot.Altitude = (int)pilot["altitude"];
+                existingPilot.GroundSpeed = (int)pilot["groundspeed"];
+                existingPilot.Heading = (int)pilot["heading"];
+                existingPilot.FlightPlan = pilot["flight_plan"] as JObject;
+                existingPilot.LastUpdated = (DateTime)pilot["last_updated"];
+                existingPilot.FullDataBlock = fullDataBlock;
+
+                if (existingPilot.ForcedFullDataBlock == true)
+                {
+                    existingPilot.FullDataBlock = true;
+                }
+
+                if (existingPilot.History == null)
+                    existingPilot.History = new List<(double, double)>();
+
+                var lastPoint = existingPilot.History.Count > 0 ? existingPilot.History[^1] : (double.NaN, double.NaN);
+                if (lastPoint.Item1 != lat || lastPoint.Item2 != lon)
+                {
+                    if (existingPilot.History.Count <= 6) // FIXME history count in MasterToolbar!
+                    {
+                        existingPilot.History.Add((lat, lon));
+                    }
+                    else
+                    {
+                        existingPilot.History.Add((lat, lon));
+                        existingPilot.History.RemoveAt(0);
+                    }
+                }
             }
 
             var stale = Pilots
