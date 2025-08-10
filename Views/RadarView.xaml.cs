@@ -32,7 +32,11 @@ namespace vFalcon.Views
         {
             if (DataContext is RadarViewModel radarVM)
             {
-                radarVM.InvalidateCanvas = () => RadarCanvas.InvalidateVisual();
+                radarVM.InvalidateCanvas = () =>
+                Dispatcher.BeginInvoke(
+                    System.Windows.Threading.DispatcherPriority.Render,
+                    new Action(() => RadarCanvas.InvalidateVisual())
+                );
             }
         }
     }

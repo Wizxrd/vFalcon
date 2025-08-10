@@ -11,6 +11,7 @@ using System.Security.Policy;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
+using System.Windows.Threading;
 using vFalcon.Commands;
 using vFalcon.Helpers;
 using vFalcon.Models;
@@ -97,7 +98,11 @@ namespace vFalcon.ViewModels
             mapState.ZoomOnMouse = zoomOnMouse;
         }
 
-        public void Redraw() => InvalidateCanvas?.Invoke();
+        public void Redraw()
+        {
+            InvalidateCanvas?.Invoke();
+        }
+
         public string GetCurrentZoomString() { return ZoomLevels[zoomIndex].ToString("0.##"); }
 
         public void UpdateVatsimDataService()
@@ -352,6 +357,20 @@ namespace vFalcon.ViewModels
                 {
                     var pOffset = mapState.PanOffset;
                     VideoMap.CenterAtCoordinates(mapState.Width, mapState.Height, mapState.Scale, ref pOffset, mapState.CenterLat, mapState.CenterLon);
+                    mapState.PanOffset = pOffset;
+                }
+                else
+                {
+                    var newCenter = ScreenMap.ScreenToCoordinate(
+                        new System.Drawing.Size(mapState.Width, mapState.Height),
+                        mapState.Scale,
+                        mapState.PanOffset,
+                        new SKPoint(mapState.Width / 2f, mapState.Height / 2f)
+                    );
+
+                    mapState.CenterLat = newCenter.X;
+                    mapState.CenterLon = newCenter.Y;
+                    var pOffset = mapState.PanOffset;
                     mapState.PanOffset = pOffset;
                 }
 
