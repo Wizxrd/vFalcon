@@ -15,7 +15,7 @@ The primary use of vFalcon is for reviewing busy traffic scenarios, debriefing c
   * Consolidated Radar Client. The primary application used by controllers to connect to the VATSIM network and control an ATC position in the USA region of VATSIM (VATUSA).  
 * ERAM  
   * [En Route Automation Modernization](https://www.faa.gov/air_traffic/technology/eram). The FAA’s primary air traffic control system for managing high-altitude flights in en route airspace. It processes radar, flight plan, and weather data to track aircraft, provide conflict detection, and coordinate handoffs between sectors and facilities. It replaced the older Host Computer System and is used at all U.S. ARTCCs.  
-*  FDB  
+* FDB  
   * Full Data Block. Usually consisting of all the data ATC can see about an aircraft that is paired with a flight plan such as current and assigned altitudes, ground speed, vector lines, callsign, Computer ID, etc…  
 * FILTERS (GEOMAP Filter)  
   * Up to 40 buttons that display the selected features from the current GeoMap. Most may refer to these as Video Maps.  
@@ -42,7 +42,8 @@ The primary use of vFalcon is for reviewing busy traffic scenarios, debriefing c
 * The desired facility to be reviewed must be installed via CRC
 
 # DATA BLOCKS  
-The data block simulation will replicate, as closely as possible, the format and behavior used in the CRC program for the applicable facility type (ARTCC/TRACON/CAB/ASDEX). At present, due to limited available data, many fields are not displayed such as assigned headings, speeds, interim/temporary altitudes, procedural altitudes, fourth-line data, scratchpad entries, VCI, CID matching, and other similar elements. Once the necessary APIs (data exchange ports) are created by VATSIM and vNAS, these features are expected to be implemented in vFalcon to the fullest extent possible.  
+The data block simulation will replicate, as closely as possible, the format and behavior used in the CRC program for the applicable facility type (ARTCC/TRACON/CAB/ASDEX). At present, due to limited available data, many fields are not displayed such as assigned headings, speeds, interim/temporary altitudes, procedural altitudes, fourth-line data, scratchpad entries, VCI, CID matching, and other similar elements. Once the necessary APIs (data exchange ports) are created by VATSIM and vNAS, these features are expected to be implemented in vFalcon to the fullest extent possible.
+
 Until the appropriate APIs are created, vFalcon determines whether to display a LDB or a FDB by checking for an active CRC ATC whose frequency matches the sector frequency currently active in vFalcon. If no matching controller is found, the data block remains an LDB, even if the pilot is tuned to that frequency. If a matching controller is detected, the data block is displayed as an FDB. The user may also center-click on a LBD displaying a callsign to manually toggle it to an FDB.
 
 # FEATURES  
@@ -81,6 +82,9 @@ vFalcon integrates the following VATSIM and vNAS data feeds to generate its disp
   * vFalcon refreshes in sync with the Aircraft Data and Transceivers feeds.
 
 vFalcon allows users to record the live network data while vFalcon is open via the “Record” menu and this data may be stored on the users computer and reviewed later using the vFalcon Replay Mode. vFalcon also allows users to set up a server to monitor/record the data from VATSIM without vFalcon being launched, so that the user may point the Replay Mode to the server and review archived data; This is more ideal to be setup on an ARTCC level, at minimum.
+
+# KEYBOARD SHORTCUTS 
+todo
 
 ## License
 
