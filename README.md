@@ -68,7 +68,7 @@ Prior to vFalcon displaying video map data (lines, symbols, text, etc…), you m
 * ASDEX:  Simulates similar UI and controls as CRC-ASDEX windows
 
 # DATA USAGE  
-vFalcon integrates the following VATSIM and vNAS data feeds to generate its display environment, including aircraft position, altitude, reroute assignments, and other operational details.
+vFalcon integrates the following VATSIM and vNAS data feeds to generate its display environment, including aircraft position, altitude, route assignments, and other operational details.
 
 * [Aircraft Data Feed](https://data.vatsim.net/v3/vatsim-data.json)  
   * Provides aircraft position, flight plan, and data block information.  
