@@ -11,13 +11,15 @@ The primary use of vFalcon is for reviewing busy traffic scenarios, debriefing c
 
 * ARTCC  
   * Air Route Traffic Control Center. A facility that manages and separates aircraft flying under instrument flight rules in high-altitude enroute airspace between airports. ARTCC facilities usually utilize the ERAM system to control aircraft.  
+* CAB  
+  * CRC window used for simulating visual identification of aircraft from a control tower.  
 * CRC  
   * Consolidated Radar Client. The primary application used by controllers to connect to the VATSIM network and control an ATC position in the USA region of VATSIM (VATUSA).  
 * ERAM  
   * [En Route Automation Modernization](https://www.faa.gov/air_traffic/technology/eram). The FAA’s primary air traffic control system for managing high-altitude flights in en route airspace. It processes radar, flight plan, and weather data to track aircraft, provide conflict detection, and coordinate handoffs between sectors and facilities. It replaced the older Host Computer System and is used at all U.S. ARTCCs.  
 * FDB  
   * Full Data Block. Usually consisting of all the data ATC can see about an aircraft that is paired with a flight plan such as current and assigned altitudes, ground speed, vector lines, callsign, Computer ID, etc…  
-* FILTERS (GEOMAP Filter)  
+* FILTERS (ERAM GEOMAP Filter)  
   * Up to 40 buttons that display the selected features from the current GeoMap. Most may refer to these as Video Maps.  
 * GEOMAP  
   * A collection of features (lines, symbols and/or text) to be displayed on an ERAM Situation Display (scope).  
@@ -61,11 +63,7 @@ Prior to vFalcon displaying video map data (lines, symbols, text, etc…), you m
 * Requires data to have been recorded on the user's local computer (no current internet connection required) or via a server that records the data for later review (internet connection required to retrieve data from server).
 
 ## CLIENT SIMULATION
-
-* ERAM: Simulates similar UI and controls as CRC-ERAM windows  
-* STARS:  Simulates similar UI and controls as CRC-STARS windows  
-* CAB:  Simulates similar UI and controls as CRC-CAB windows  
-* ASDEX:  Simulates similar UI and controls as CRC-ASDEX windows
+vFalcon will simulate the CRC equivalent window for the user-selected facility to the furthest extent nessessary. Available windows: ERAM, STARS, CAB, and ASDEX. 
 
 # DATA USAGE  
 vFalcon integrates the following VATSIM and vNAS data feeds to generate its display environment, including aircraft position, altitude, route assignments, and other operational details.
