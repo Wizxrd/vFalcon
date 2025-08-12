@@ -5,6 +5,7 @@ using vFalcon.DataFeeds;
 using vFalcon.Helpers;
 using vFalcon.Models;
 using vFalcon.Services.Service;
+using vFalcon.ViewModels;
 
 public class VatsimDataService
 {
@@ -36,11 +37,14 @@ public class VatsimDataService
         await RefreshAsync();
     }
 
+    public void Stop()
+    {
+        refreshTimer.Stop();
+    }
+
     private async Task RefreshAsync()
     {
-        Logger.Debug("VatsimDataService.RefreshAsync", "Refreshing");
-
-        // Wrap the data fetching and processing in a task to prevent UI blockage
+        //Logger.Debug("VatsimDataService.RefreshAsync", "Refreshing");
         await Task.Run(async () =>
         {
             try
@@ -54,11 +58,11 @@ public class VatsimDataService
                 if (DateTime.TryParse(timestampStr, out lastUpdateUtc))
                 {
                     lastUpdateUtc = lastUpdateUtc.AddMilliseconds(-lastUpdateUtc.Millisecond);
-                    Logger.Debug("VatsimDataService.RefreshAsync", $"Last update timestamp: {lastUpdateUtc}");
+                    //Logger.Debug("VatsimDataService.RefreshAsync", $"Last update timestamp: {lastUpdateUtc}");
 
                     if (lastUpdateTimestamp.HasValue && lastUpdateTimestamp.Value == lastUpdateUtc)
                     {
-                        Logger.Debug("VatsimDataService.RefreshAsync", "Skipping refresh, update timestamp is the same.");
+                        //Logger.Debug("VatsimDataService.RefreshAsync", "Skipping refresh, update timestamp is the same.");
                         return;
                     }
 
@@ -67,11 +71,7 @@ public class VatsimDataService
 
                 var transceiverFrequencies = await VatsimDataFeed.GetTransceiversAsync();
                 string? sectorFreq = await vNasDataFeed.GetArtccFrequencyAsync(profile.ArtccId, profile.ActivatedSectorName);
-
-                // Update pilot service on a background thread
                 await Task.Run(() => pilotService.UpdateFromDataFeed(dataFeed, transceiverFrequencies, sectorFreq));
-
-                // Invoke the UI updates on the main thread
                 Application.Current.Dispatcher.Invoke(() => invalidateCanvas());
             }
             catch (Exception ex)

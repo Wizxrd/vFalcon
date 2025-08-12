@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using vFalcon.ViewModels;
 using vFalcon.Models;
 using vFalcon.Helpers;
 using System.Windows.Forms;
@@ -13,12 +14,15 @@ namespace vFalcon.Services.Service
 {
     public class PilotService
     {
+        private EramViewModel eramViewModel;
         private Artcc artcc;
+        public RecordingService recordingService = new();
         public Dictionary<string, Pilot> Pilots { get; } = new(StringComparer.OrdinalIgnoreCase);
 
-        public PilotService(Artcc artcc)
+        public PilotService(EramViewModel eramViewModel)
         {
-            this.artcc = artcc; 
+            this.eramViewModel = eramViewModel;
+            artcc = eramViewModel.artcc; 
         }
 
         public void UpdateFromDataFeed(JObject dataFeed, Dictionary<string, string> transceiverFrequencies, string? sectorFreq)
@@ -28,6 +32,7 @@ namespace vFalcon.Services.Service
 
             foreach (var pilot in pilots)
             {
+                if ((int)pilot["groundspeed"] < 30) continue;
                 double lat = (double)pilot["latitude"];
                 double lon = (double)pilot["longitude"];
 
@@ -123,7 +128,19 @@ namespace vFalcon.Services.Service
                 .ToList();
 
             foreach (var c in stale)
+            {
                 Pilots.Remove(c);
+                if (recordingService.recordingData.ContainsKey(c))
+                {
+                    Logger.Trace("Removing", c.ToString());
+                    recordingService.recordingData.Remove(c);
+                }
+            }
+
+            if (eramViewModel.IsRecording)
+            {
+                recordingService.Update(Pilots);
+            }
         }
     }
 }

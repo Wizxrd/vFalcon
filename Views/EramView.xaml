@@ -61,6 +61,13 @@
                 HorizontalAlignment="Center"
                 Text="{Binding Title}">
             </TextBlock>
+            <TextBlock
+                Margin="5,0,0,0"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Foreground="#e81123"
+                Text="{Binding RecordingStatus}">
+            </TextBlock>
             <Popup
                 x:Name="MenuPopup"
                 PlacementTarget="{Binding ElementName=MenuButton}"

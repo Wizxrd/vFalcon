@@ -30,7 +30,7 @@ namespace vFalcon.ViewModels
         private readonly EramViewModel eramViewModel;
         private readonly VideoMap videoMap = new VideoMap();
         public MapState mapState = new MapState();
-        private VatsimDataService vatsimDataService;
+        public VatsimDataService vatsimDataService;
         public PilotService pilotService;
         private PilotRenderer pilotRenderer;
 
@@ -86,7 +86,7 @@ namespace vFalcon.ViewModels
             if (pilotRenderer == null) //nothing else *should* be null so only check pilotRenderer 
             {
                 pilotRenderer = new PilotRenderer(eramViewModel);
-                pilotService = new PilotService(eramViewModel.artcc);
+                pilotService = new PilotService(eramViewModel);
                 vatsimDataService = new VatsimDataService(pilotService, eramViewModel.profile, () => InvalidateCanvas?.Invoke());
                 vatsimDataService.Start();
                 PilotsRendering = true;

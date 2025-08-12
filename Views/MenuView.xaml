@@ -40,7 +40,8 @@
             Name="LoadReplayButton"
             Height="26"
             HorizontalContentAlignment="Stretch"
-            BorderBrush="#3d3d4c">
+            BorderBrush="#3d3d4c"
+            Click="LoadReplayButtonClick">
             <Button.Content>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -115,7 +116,8 @@
             Name="StartRecordingButton"
             Height="26"
             HorizontalContentAlignment="Stretch"
-            BorderBrush="#3d3d4c">
+            BorderBrush="#3d3d4c"
+            Click="StartRecordingButtonClick">
             <Button.Content>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -123,37 +125,14 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock
+                        Name="StartRecordingName"
                          Text="Start Recording"
                          Grid.Column="0"
                          VerticalAlignment="Center"
                          Padding="10,0,0,0"/>
                     <TextBlock
+                         Name="StartRecordingKeybind"
                          Text="Ctrl+Shift+R"
-                         Grid.Column="1"
-                         VerticalAlignment="Center"
-                         HorizontalAlignment="Right"
-                         Padding="0,0,10,0"/>
-                </Grid>
-            </Button.Content>
-        </Button>
-        <Button 
-            Name="StopRecordingButton"
-            Height="26"
-            HorizontalContentAlignment="Stretch"
-            BorderBrush="#3d3d4c">
-            <Button.Content>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="150"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock
-                         Text="Stop Recording"
-                         Grid.Column="0"
-                         VerticalAlignment="Center"
-                         Padding="10,0,0,0"/>
-                    <TextBlock
-                         Text="Ctrl+Shift+S"
                          Grid.Column="1"
                          VerticalAlignment="Center"
                          HorizontalAlignment="Right"

@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Windows;
@@ -11,6 +12,7 @@ using vFalcon.Commands;
 using vFalcon.Helpers;
 using vFalcon.Models;
 using vFalcon.Rendering;
+using vFalcon.Services;
 using vFalcon.Views;
 
 namespace vFalcon.ViewModels
@@ -320,6 +322,71 @@ namespace vFalcon.ViewModels
         {
             masterToolbarView?.DecreaseVelocityVector();
         }
+
+        private string recordingStatus = string.Empty;
+        private bool isRecording = false;
+        private DispatcherTimer recordingTimer = new DispatcherTimer();
+        private Stopwatch recordingStopwatch = new Stopwatch();
+
+        public string RecordingStatus
+        {
+            get => recordingStatus;
+            set
+            {
+                recordingStatus = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsRecording
+        {
+            get => isRecording;
+            set
+            {
+                isRecording = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public void OnToggleRecording()
+        {
+            if (!IsRecording)
+            {
+                if (RadarViewModel.pilotService.recordingService != null)
+                {
+                    IsRecording = true;
+                    recordingTimer.Interval = TimeSpan.FromSeconds(1);
+                    recordingTimer.Tick += OnRecordingTick;
+                    recordingTimer.Start();
+                    recordingStopwatch.Restart();
+                    RadarViewModel.pilotService.recordingService.Start();
+                }
+            }
+            else
+            {
+                RecordingStatus = string.Empty;
+                IsRecording = false;
+                recordingTimer.Stop();
+                recordingStopwatch.Stop();
+                RadarViewModel.pilotService.recordingService.Stop();
+            }
+        }
+
+        private void OnRecordingTick(object? sender, EventArgs? e)
+        {
+            var elapsed = recordingStopwatch.Elapsed;
+            RecordingStatus = $"Recording {elapsed:hh\\:mm\\:ss}";
+        }
+
+        private PlaybackService playbackService = new();
+        public void OnLoadRecording(string recordingPath)
+        {
+            RadarViewModel.vatsimDataService.Stop();
+            RadarViewModel.pilotService.Pilots.Clear();
+            RadarViewModel.Redraw();
+            playbackService.StartPlayback(RadarViewModel, recordingPath);
+        }
+
 
         // ========================================================
         //             PRIVATE METHODS
