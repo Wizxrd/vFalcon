@@ -1,9 +1,5 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.IO;
-using System.Windows;
+﻿using System.Windows;
 using vFalcon.Helpers;
-using vFalcon.Models;
 
 namespace vFalcon
 {

@@ -4,41 +4,36 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:local="clr-namespace:vFalcon.Views"
     xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
     xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
     xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+    xmlns:local="clr-namespace:vFalcon.Views"
     mc:Ignorable="d"
-    TitleVisibility="Collapsed"
     WindowStyle="None"
-    ResizeMode="NoResize"
-    IconVisibility="Collapsed"
     WindowStartupLocation="CenterScreen"
-    FontFamily="Consolas"
-    Width="400" Height="150">
-    <WindowChrome.WindowChrome>
-        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
-    </WindowChrome.WindowChrome>
+    ResizeMode="NoResize"
+    FontFamily="Consolas" FontSize="12"
+    Height="200" Width="400"
+    BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock
-            Name ="TextBlockTitle"
-            Text="vFalcon"
             Grid.Row="0"
-            VerticalAlignment="Bottom" HorizontalAlignment="Center" TextAlignment="Center"
-            Foreground="{DynamicResource White}"
-            FontSize="24" FontWeight="Bold">
-        </TextBlock>
-        <TextBlock
-            Name ="TextBlockLoading"
-            Text="Importing Artccs"
+            Text="vFalcon"
+            FontWeight="Bold" FontSize="32"
+            Margin="0,75,0,0"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"/>
+        <ProgressBar
             Grid.Row="1"
-            VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"
-            Foreground="{DynamicResource White}"
-            FontSize="15">
-        </TextBlock>
+            adonisExtensions:ProgressBarExtension.IsProgressAnimationEnabled="False"
+            adonisExtensions:ProgressBarExtension.Content="{Binding ProgressContent}"
+            Width="200" Height="25"
+            Minimum="0"
+            Maximum="100"
+            Value="{Binding ProgressValue}"/>
     </Grid>
 </adonisControls:AdonisWindow>

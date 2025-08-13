@@ -11,36 +11,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ARTTCs\**" />
+    <Compile Remove="Logs\**" />
     <Compile Remove="VideoMaps\**" />
+    <EmbeddedResource Remove="ARTTCs\**" />
+    <EmbeddedResource Remove="Logs\**" />
     <EmbeddedResource Remove="VideoMaps\**" />
+    <None Remove="ARTTCs\**" />
+    <None Remove="Logs\**" />
     <None Remove="VideoMaps\**" />
+    <Page Remove="ARTTCs\**" />
+    <Page Remove="Logs\**" />
     <Page Remove="VideoMaps\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Resources\Cursors\Eram1.cur" />
-    <None Remove="Resources\Cursors\Eram2.cur" />
-    <None Remove="Resources\Cursors\Eram3.cur" />
-    <None Remove="Resources\Cursors\Eram4.cur" />
-    <None Remove="Resources\Cursors\Eram5.cur" />
-    <None Remove="Resources\Fonts\ERAM.ttf" />
-    <None Remove="Resources\Images\Copy.png" />
-    <None Remove="Resources\Images\Delete.png" />
-    <None Remove="Resources\Images\Export.png" />
-    <None Remove="Resources\Images\QuestionBlue.png" />
-    <None Remove="Resources\Images\Rename.png" />
     <None Remove="Resources\Images\vFalcon.ico" />
-    <None Remove="Resources\Images\vFalcon.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Resources\Images\vFalcon.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ARTCCs\" />
-    <Folder Include="Logs\" />
-    <Folder Include="Profiles\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -56,19 +42,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\Cursors\Eram1.cur" />
-    <Resource Include="Resources\Cursors\Eram2.cur" />
-    <Resource Include="Resources\Cursors\Eram3.cur" />
-    <Resource Include="Resources\Cursors\Eram4.cur" />
-    <Resource Include="Resources\Cursors\Eram5.cur" />
-    <Resource Include="Resources\Fonts\ERAM.ttf" />
-    <Resource Include="Resources\Images\Copy.png" />
-    <Resource Include="Resources\Images\Delete.png" />
-    <Resource Include="Resources\Images\Export.png" />
-    <Resource Include="Resources\Images\QuestionBlue.png" />
-    <Resource Include="Resources\Images\Rename.png" />
+    <Folder Include="Models\" />
+    <Folder Include="ARTCCs\" />
+    <Folder Include="Profiles\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Resources\Images\vFalcon.ico" />
-    <Resource Include="Resources\Images\vFalcon.png" />
   </ItemGroup>
 
 </Project>
