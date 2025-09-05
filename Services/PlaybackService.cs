@@ -86,7 +86,7 @@ namespace vFalcon.Services
                 var pilotsObj = replayJson["Pilots"] as JObject;
                 if (pilotsObj is null) return;
 
-                string? sectorFreq = profile.ActivatedSectorFreq; //FIXME
+                string? sectorFreq = profile.ActivatedSectorFreq;
 
                 foreach (var prop in pilotsObj.Properties())
                 {

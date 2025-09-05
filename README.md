@@ -1,9 +1,9 @@
 # vFALCON
-![](https://img.shields.io/badge/version-v0.0.10-lime)
+![](https://img.shields.io/badge/version-v0.0.11-limegreen)
 ## [DOWNLOAD](https://github.com/Wizxrd/vFalcon/releases)
 
 # OVERVIEW  
-vFalcon is a VATSIM replay and analysis platform modeled after the FAA’s “Falcon” program used to track the manipulation of datablocks, aircraft positions, and other sector-specific data within the National Airspace System (NAS). Its interface and functions are configured to align with CRC profile standards, providing a consistent and familiar environment for operational training and review.
+vFalcon is a VATSIM replay and analysis platform modeled after the FAAï¿½s ï¿½Falconï¿½ program used to track the manipulation of datablocks, aircraft positions, and other sector-specific data within the National Airspace System (NAS). Its interface and functions are configured to align with CRC profile standards, providing a consistent and familiar environment for operational training and review.
 
 The primary use of vFalcon is for reviewing busy traffic scenarios, debriefing close calls, evaluating controller performance, and assisting in student training from live network situations.
 
@@ -16,9 +16,9 @@ The primary use of vFalcon is for reviewing busy traffic scenarios, debriefing c
 * CRC  
   * Consolidated Radar Client. The primary application used by controllers to connect to the VATSIM network and control an ATC position in the USA region of VATSIM (VATUSA).  
 * ERAM  
-  * [En Route Automation Modernization](https://www.faa.gov/air_traffic/technology/eram). The FAA’s primary air traffic control system for managing high-altitude flights in en route airspace. It processes radar, flight plan, and weather data to track aircraft, provide conflict detection, and coordinate handoffs between sectors and facilities. It replaced the older Host Computer System and is used at all U.S. ARTCCs.  
+  * [En Route Automation Modernization](https://www.faa.gov/air_traffic/technology/eram). The FAAï¿½s primary air traffic control system for managing high-altitude flights in en route airspace. It processes radar, flight plan, and weather data to track aircraft, provide conflict detection, and coordinate handoffs between sectors and facilities. It replaced the older Host Computer System and is used at all U.S. ARTCCs.  
 * FDB  
-  * Full Data Block. Usually consisting of all the data ATC can see about an aircraft that is paired with a flight plan such as current and assigned altitudes, ground speed, vector lines, callsign, Computer ID, etc…  
+  * Full Data Block. Usually consisting of all the data ATC can see about an aircraft that is paired with a flight plan such as current and assigned altitudes, ground speed, vector lines, callsign, Computer ID, etcï¿½  
 * FILTERS (ERAM GEOMAP Filter)  
   * Up to 40 buttons that display the selected features from the current GeoMap. Most may refer to these as Video Maps.  
 * GEOMAP  
@@ -28,7 +28,7 @@ The primary use of vFalcon is for reviewing busy traffic scenarios, debriefing c
 * STARS  
   * Standard Terminal Automation Replacement System. The air traffic control automation platform used in TRACONs and some towers to process and display radar data, assist with sequencing, and provide controllers with flight plan and track information for managing aircraft in terminal airspace. It replaced older systems like ARTS (Automated Radar Terminal System).  
 * TRACON  
-  * Terminal Radar Approach Control. A facility that manages and separates aircraft arriving, departing, and transitioning through the airspace around one or more airports, typically within about a 30–50 mile radius and up to around 10,000 feet. A TRACON usually receives flight data from the parent “ARTCC” computer.  
+  * Terminal Radar Approach Control. A facility that manages and separates aircraft arriving, departing, and transitioning through the airspace around one or more airports, typically within about a 30ï¿½50 mile radius and up to around 10,000 feet. A TRACON usually receives flight data from the parent ï¿½ARTCCï¿½ computer.  
 * VATSIM  
   * [Virtual Air Traffic Simulation](https://vatsim.net/). A free online network where pilots and air traffic controllers connect in a shared virtual world for realistic flight simulation.  
 * vNAS  
@@ -50,7 +50,7 @@ Until the appropriate APIs are created, vFalcon determines whether to display a 
 
 # FEATURES  
 ## GENERAL  
-Prior to vFalcon displaying video map data (lines, symbols, text, etc…), you must first have CRC installed on your local computer. Furthermore, you must have the facility you wish to review installed via the CRC Facility manager menu. Refer to [CRC documentation](https://crc.virtualnas.net/docs/#/) for more information concerning CRC installation and setup.
+Prior to vFalcon displaying video map data (lines, symbols, text, etcï¿½), you must first have CRC installed on your local computer. Furthermore, you must have the facility you wish to review installed via the CRC Facility manager menu. Refer to [CRC documentation](https://crc.virtualnas.net/docs/#/) for more information concerning CRC installation and setup.
 
 ## LIVE MONITOR MODE
 
@@ -70,7 +70,7 @@ vFalcon integrates the following VATSIM and vNAS data feeds to generate its disp
 
 * [Aircraft Data Feed](https://data.vatsim.net/v3/vatsim-data.json)  
   * Provides aircraft position, flight plan, and data block information.  
-  * Refresh rate: 15 seconds (comparable to ERAM’s 12-second cycle).  
+  * Refresh rate: 15 seconds (comparable to ERAMï¿½s 12-second cycle).  
   * vFalcon synchronizes updates to occur one second after the expected refresh interval.  
 * [Transceivers](https://data.vatsim.net/v3/transceivers-data.json)  
   * Provides frequency data used to pair pilots with controller-used frequencies for data block population.  
@@ -79,10 +79,23 @@ vFalcon integrates the following VATSIM and vNAS data feeds to generate its disp
   * Provides real-time updates on ATC connection status.  
   * vFalcon refreshes in sync with the Aircraft Data and Transceivers feeds.
 
-vFalcon allows users to record the live network data while vFalcon is open via the “Record” menu and this data may be stored on the users computer and reviewed later using the vFalcon Replay Mode. vFalcon also allows users to set up a server to monitor/record the data from VATSIM without vFalcon being launched, so that the user may point the Replay Mode to the server and review archived data; This is more ideal to be setup on an ARTCC level, at minimum.
+vFalcon allows users to record the live network data while vFalcon is open via the ï¿½Recordï¿½ menu and this data may be stored on the users computer and reviewed later using the vFalcon Replay Mode. vFalcon also allows users to set up a server to monitor/record the data from VATSIM without vFalcon being launched, so that the user may point the Replay Mode to the server and review archived data; This is more ideal to be setup on an ARTCC level, at minimum.
 
-# KEYBOARD SHORTCUTS 
-todo
+# KEYBINDS
+**Keybind** | **Description**
+---|---
+**CTRL+F12** | Toggles activating/deactivating a sector (enables FDB for pilots on that frequency).
+**CTRL+E** | Exits replay mode.
+**CTRL+L** | Opens window to select a recording file.
+**CTRL+SHIFT+R** | Starts/stops recording in live mode.
+**CTRL+SHIFT+P** | Switch profile.
+**CTRL+G** | Opens general settings.
+**CTRL+T** | Toggles TDM mode (only for video maps).
+**Page Up** | Increases velocity vector lines.
+**Page Down** | Decreases velocity vector lines.
+**Left Arrow** | Rewinds by 1 tick.
+**Right Arrow** | Fast Fowards by 1 tick.
+**Space** | Toggles play/pause.
 
 ## License
 

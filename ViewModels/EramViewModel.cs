@@ -382,6 +382,7 @@ namespace vFalcon.ViewModels
 
         public void OnToggleRecording()
         {
+            if (isPlaybackMode) return;
             if (!IsRecording)
             {
                 if (RadarViewModel.pilotService.recordingService != null)
