@@ -85,6 +85,7 @@ namespace vFalcon.Services.Service
                         QNHinHG = (double)pilot["qnh_i_hg"],
                         QNHmb = (int)pilot["qnh_mb"],
                         LogOnTime = (DateTime)pilot["logon_time"],
+                        Frequency = freq
                     };
                     Pilots[callsign] = newPilot;
                 }
@@ -98,6 +99,7 @@ namespace vFalcon.Services.Service
                 existingPilot.FlightPlan = pilot["flight_plan"] as JObject;
                 existingPilot.LastUpdated = (DateTime)pilot["last_updated"];
                 existingPilot.FullDataBlock = fullDataBlock;
+                existingPilot.Frequency = freq;
 
                 if (existingPilot.ForcedFullDataBlock == true)
                 {

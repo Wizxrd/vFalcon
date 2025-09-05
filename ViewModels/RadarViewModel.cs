@@ -183,14 +183,11 @@ namespace vFalcon.ViewModels
         private void InitializeRange()
         {
             int l = (int)eramViewModel.profile.DisplayWindowSettings[0]["DisplaySettings"][0]["Range"];
-            Logger.Debug("RANGE", l.ToString());
             int i = 0;
             foreach (int level in ZoomLevels)
             {
-                Logger.Debug("LEVLE", level.ToString());
                 if (level == l)
                 {
-                    Logger.Debug("MATCH", i.ToString());
                     zoomIndex = i;
                     break;
                 }

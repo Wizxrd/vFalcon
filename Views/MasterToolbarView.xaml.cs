@@ -29,7 +29,6 @@ namespace vFalcon.Views
             DataContext = new MasterToolbarViewModel(eramViewModel);
         }
 
-
         public void DecreaseVelocityVector()
         {
             {

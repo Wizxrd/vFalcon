@@ -1,4 +1,5 @@
 ﻿using AdonisUI.Controls;
+using Microsoft.Win32;
 using NAudio.Gui;
 using Newtonsoft.Json.Linq;
 using SkiaSharp;
@@ -46,6 +47,9 @@ namespace vFalcon
             eramViewModel.SwitchProfileAction += OpenLoadProfileWindow;
             eramViewModel.GeneralSettingsAction += OpenGeneralSettingsWindow;
             eramViewModel.ActivateSectorAction += OpenActivateSectorWindow;
+            eramViewModel.LoadRecordingAction += OpenLoadRecordingWindow;
+            eramViewModel.StartStopRecordingAction += StartStopRecording;
+            eramViewModel.ExitRecordingAction += () => MenuPopupControl.ExitRecordingButton.IsEnabled = false;
 
             InitializeCursor(eramViewModel);
             LoadWindowSettings();
@@ -249,10 +253,24 @@ namespace vFalcon
         //                PUBLIC METHODS
         // ========================================================
 
+        public void StartStopRecording()
+        {
+            MenuPopupControl.StartRecordingButtonClick(null, null);
+        }
+
+        public void OpenLoadRecordingWindow()
+        {
+            MenuPopupControl.LoadReplayButtonClick(null, null);
+        }
+
         public void OpenLoadProfileWindow()
         {
             LoadProfileView loadProfileView = new LoadProfileView();
             this.Close();
+            if (eramViewModel.isRecording)
+            {
+                eramViewModel.OnToggleRecording();
+            }
             loadProfileView.ShowDialog();
         }
 

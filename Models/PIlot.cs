@@ -29,5 +29,6 @@ namespace vFalcon.Models
         public int FullDataBlockPosition { get; set; } = 9; // default
         public int LeaderLingLength { get; set; } = 1; // default
         public List<(double Lat, double Lon)>? History { get; set; }
+        public string Frequency { get; set; } = string.Empty;
     }
 }

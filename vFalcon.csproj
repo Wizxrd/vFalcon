@@ -7,7 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Resources\Images\vFalcon.ico</ApplicationIcon>
-    <Version>0.0.9</Version>
+    <Version>0.0.10</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,8 +27,12 @@
     <None Remove="Resources\Images\Copy.png" />
     <None Remove="Resources\Images\Delete.png" />
     <None Remove="Resources\Images\Export.png" />
+    <None Remove="Resources\Images\FastFoward.png" />
+    <None Remove="Resources\Images\Pause.png" />
+    <None Remove="Resources\Images\Play.png" />
     <None Remove="Resources\Images\QuestionBlue.png" />
     <None Remove="Resources\Images\Rename.png" />
+    <None Remove="Resources\Images\Rewind.png" />
     <None Remove="Resources\Images\vFalcon.ico" />
     <None Remove="Resources\Images\vFalcon.png" />
   </ItemGroup>
@@ -66,8 +70,12 @@
     <Resource Include="Resources\Images\Copy.png" />
     <Resource Include="Resources\Images\Delete.png" />
     <Resource Include="Resources\Images\Export.png" />
+    <Resource Include="Resources\Images\FastFoward.png" />
+    <Resource Include="Resources\Images\Pause.png" />
+    <Resource Include="Resources\Images\Play.png" />
     <Resource Include="Resources\Images\QuestionBlue.png" />
     <Resource Include="Resources\Images\Rename.png" />
+    <Resource Include="Resources\Images\Rewind.png" />
     <Resource Include="Resources\Images\vFalcon.ico" />
     <Resource Include="Resources\Images\vFalcon.png" />
   </ItemGroup>

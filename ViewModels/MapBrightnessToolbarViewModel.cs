@@ -17,7 +17,6 @@ namespace vFalcon.ViewModels
 {
     public class MapBrightnessToolbarViewModel : ViewModelBase
     {
-        private BrightnessToolbarViewModel brightnessToolbarViewModel;
         private EramViewModel eramViewModel;
 
         private ObservableCollection<MapBrightnessButtonViewModel> brightnessBcg = new();
@@ -36,9 +35,8 @@ namespace vFalcon.ViewModels
         public ICommand IncreaseBrightnessCommand { get; }
         public ICommand DecreaseBrightnessCommand { get; }
 
-        public MapBrightnessToolbarViewModel(BrightnessToolbarViewModel brightnessToolbarViewModel, EramViewModel eramViewModel)
+        public MapBrightnessToolbarViewModel(EramViewModel eramViewModel)
         {
-            this.brightnessToolbarViewModel = brightnessToolbarViewModel;
             this.eramViewModel = eramViewModel;
             MapBrightnessBackCommand = new RelayCommand(OnMapBrightnessBackCommand);
             IncreaseBrightnessCommand = new RelayCommand<MapBrightnessButtonViewModel>(OnIncreaseBrightness);
@@ -82,7 +80,7 @@ namespace vFalcon.ViewModels
 
         private void OnMapBrightnessBackCommand()
         {
-            brightnessToolbarViewModel.OnMapBrightnessCommand();
+            eramViewModel.OnMapBrightnessCommand();
         }
 
         private void OnIncreaseBrightness(MapBrightnessButtonViewModel vm)

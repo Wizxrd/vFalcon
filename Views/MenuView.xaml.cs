@@ -66,7 +66,20 @@ namespace vFalcon.Views
             }
         }
 
-        public void LoadReplayButtonClick(object sender, RoutedEventArgs e)
+        public void ExitRecordingButtonClick(object? sewnder, RoutedEventArgs e)
+        {
+            var window = Window.GetWindow(this);
+            if (window is EramView eramView)
+            {
+                if (eramView.DataContext is EramViewModel eramViewModel)
+                {
+                    eramViewModel.ExitRecording();
+                    ExitRecordingButton.IsEnabled = false;
+                }
+            }
+        }
+
+        public void LoadReplayButtonClick(object? sender, RoutedEventArgs? e)
         {
             var window = Window.GetWindow(this);
             if (window is EramView eramView)
@@ -75,21 +88,22 @@ namespace vFalcon.Views
                 {
                     OpenFileDialog openFileDialog = new OpenFileDialog
                     {
-                        InitialDirectory = Loader.LoadFolder("Recordings"), // Set the default folder
-                        Filter = "JSON Files (*.json)|*.json|All Files (*.*)|*.*", // Filter to show only JSON files
-                        Title = "Select a JSON File" // Set the title of the dialog
+                        InitialDirectory = Loader.LoadFolder("Recordings"),
+                        Filter = "JSON Files (*.json)|*.json|All Files (*.*)|*.*",
+                        Title = "Select a JSON File"
                     };
 
                     if (openFileDialog.ShowDialog() == true)
                     {
                         string selectedFilePath = openFileDialog.FileName;
                         eramViewModel.OnLoadRecording(selectedFilePath);
+                        ExitRecordingButton.IsEnabled = true;
                     }
                 }
             }
         }
 
-        public void StartRecordingButtonClick(object sender, RoutedEventArgs e)
+        public void StartRecordingButtonClick(object? sender, RoutedEventArgs? e)
         {
             var window = Window.GetWindow(this);
             if (window is EramView eramView)

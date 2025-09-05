@@ -11,30 +11,24 @@
     <UserControl.Resources>
         <converters:BoolToCollapsedConverter x:Key="BoolToCollapsedConverter"/>
     </UserControl.Resources>
-    <Border Background="{StaticResource MasterToolbarBackground}" BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="3,1,0,0">
+    <Border Background="{StaticResource MasterToolbarBackground}" BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="2,1,0,0">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="3"/>
-                <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="3"/>
-                <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <controls:EramButton
-                Grid.Column="6"
-                Margin="6,0,0,2"
-                VerticalAlignment="Bottom"
+                VerticalAlignment="Top"
+                Grid.Column="0"
+                Margin="1,2,0,2"
                 Line1Text="{Binding MapsLabelLine1}"
                 Line2Text="{Binding MapsLabelLine2}"
                 EramButtonStyle="{StaticResource MenuButtonOpen}"
                 Command="{Binding MapsBackCommand}"/>
-            <Border Grid.Column="8" BorderBrush="#896800" BorderThickness="2">
+            <Border Grid.Column="1" BorderBrush="#896800" BorderThickness="2">
                 <Grid>
                     <!-- Default Layout -->
                     <ItemsControl x:Name="DefaultLayout"

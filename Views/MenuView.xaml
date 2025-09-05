@@ -36,6 +36,33 @@
                 </Grid>
             </Button.Content>
         </Button>
+        <Button
+            Name="ExitRecordingButton"
+            IsEnabled="False"
+            Height="26"
+            HorizontalContentAlignment="Stretch"
+            BorderBrush="#3d3d4c"
+            Click="ExitRecordingButtonClick">
+            <Button.Content>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                         Text="Exit Playback"
+                         Grid.Column="0"
+                         VerticalAlignment="Center"
+                         Padding="10,0,0,0"/>
+                    <TextBlock
+                         Text="Ctrl+E"
+                         Grid.Column="1"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Right"
+                         Padding="0,0,10,0"/>
+                </Grid>
+            </Button.Content>
+        </Button>
         <Button 
             Name="LoadReplayButton"
             Height="26"
@@ -49,62 +76,12 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock
-                         Text="Load Replay"
+                         Text="Load Recording"
                          Grid.Column="0"
                          VerticalAlignment="Center"
                          Padding="10,0,0,0"/>
                     <TextBlock
                          Text="Ctrl+L"
-                         Grid.Column="1"
-                         VerticalAlignment="Center"
-                         HorizontalAlignment="Right"
-                         Padding="0,0,10,0"/>
-                </Grid>
-            </Button.Content>
-        </Button>
-        <Button 
-            Name="StartReplayButton"
-            Height="26"
-            HorizontalContentAlignment="Stretch"
-            BorderBrush="#3d3d4c">
-            <Button.Content>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="150"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock
-                         Text="Start Replay"
-                         Grid.Column="0"
-                         VerticalAlignment="Center"
-                         Padding="10,0,0,0"/>
-                    <TextBlock
-                         Text="Ctrl+R"
-                         Grid.Column="1"
-                         VerticalAlignment="Center"
-                         HorizontalAlignment="Right"
-                         Padding="0,0,10,0"/>
-                </Grid>
-            </Button.Content>
-        </Button>
-        <Button
-            Name="StopReplayButton"
-            Height="26"
-            HorizontalContentAlignment="Stretch"
-            BorderBrush="#3d3d4c">
-            <Button.Content>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="150"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock
-                         Text="Stop Replay"
-                         Grid.Column="0"
-                         VerticalAlignment="Center"
-                         Padding="10,0,0,0"/>
-                    <TextBlock
-                         Text="Ctrl+S"
                          Grid.Column="1"
                          VerticalAlignment="Center"
                          HorizontalAlignment="Right"

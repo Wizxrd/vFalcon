@@ -7,7 +7,7 @@
              xmlns:controls="clr-namespace:vFalcon.Resources.Controls"
              mc:Ignorable="d" 
              Width="Auto" Height="75">
-    <Border Background="{StaticResource MasterToolbarBackground}" BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="3,1,0,0">
+    <Border Background="{StaticResource MasterToolbarBackground}" Margin="0,0,0,0" BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="2,1,0,0">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -15,41 +15,25 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="3"/>
-                <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="3"/>
-                <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="3"/>
-                <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="3"/>
-                <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="3"/>
+                <ColumnDefinition Width="85"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
             <controls:EramButton
-                Grid.Column="10"
-                Margin="10,2,0,0"
+                Grid.Column="1"
+                Margin="1,2,0,0"
                 VerticalAlignment="Top"
-                Line1Text="BRIGHT"
+                Line1Text="MASTER"
+                Line2Text="BRIGHT"
                 EramButtonStyle="{StaticResource MenuButtonOpen}"
                 Command="{Binding BrightnessBackCommand}"/>
 
-            <ContentControl
-                Grid.Column="12"
-                x:Name="MapBrightnessControl"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Top"
-                Content="{Binding MapBrightnessContent}"
-                Panel.ZIndex="999"/>
-
-            <Border Grid.Column="12" BorderBrush="#896800" BorderThickness="2">
+            <Border Grid.Column="2" BorderBrush="#896800" BorderThickness="2">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="3"/>
+                        <RowDefinition Height="2"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
@@ -59,175 +43,20 @@
                         <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="3"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="3"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="3"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="3"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="3"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="3"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="3"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="3"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="3"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="3"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="3"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="3"/>
-                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <controls:EramButton
-                        Grid.Row="0" Grid.Column="0"
-                        Line1Text="MAP"
-                        Line2Text="BRIGHT"
-                        EramButtonStyle="{StaticResource MenuButtonClosed}"
-                        Command="{Binding MapBrightnessCommand}"/>
-                    <controls:EramButton
-                        Grid.Row="0" Grid.Column="2"
-                        Line1Text="CPDLC"
-                        EramButtonStyle="{StaticResource MenuButtonClosed}"/>
                     <controls:NoTearoffButton
-                        Grid.Row="0" Grid.Column="4"
+                        Grid.Row="0" Grid.Column="2"
                         NoTearoffLine1Text="BCKGRD"
                         NoTearoffLine2Text="{Binding BackgroundValue}"
                         NoTearoffStyle="{StaticResource IncDecButton}"
                         PreviewMouseDown="BackgroundButtonMouseDown"/>
                     <controls:NoTearoffButton
-                        Grid.Row="0" Grid.Column="6"
-                        NoTearoffLine1Text="CURSOR"
-                        NoTearoffLine2Text="100"
-                        NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                        Grid.Row="0" Grid.Column="8"
-                        NoTearoffLine1Text="TEXT"
-                        NoTearoffLine2Text="100"
-                        NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                        Grid.Row="0" Grid.Column="10"
-                        NoTearoffLine1Text="PR TGT"
-                        NoTearoffLine2Text="100"
-                        NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                        Grid.Row="0" Grid.Column="12"
-                        NoTearoffLine1Text="UNP TGT"
-                        NoTearoffLine2Text="100"
-                        NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                        Grid.Row="0" Grid.Column="14"
-                        NoTearoffLine1Text="PR HIST"
-                        NoTearoffLine2Text="100"
-                        NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                        Grid.Row="0" Grid.Column="16"
-                        NoTearoffLine1Text="UNP HIST"
-                        NoTearoffLine2Text="100"
-                        NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                        Grid.Row="0" Grid.Column="18"
-                        NoTearoffLine1Text="LDB"
-                        NoTearoffLine2Text="100"
-                        NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                        Grid.Row="0" Grid.Column="20"
-                        NoTearoffLine1Text="SLDB"
-                        NoTearoffLine2Text="+5"
-                        NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                        Grid.Row="0" Grid.Column="22"
-                        NoTearoffLine1Text="WX"
-                        NoTearoffLine2Text="100"
-                        NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                        Grid.Row="0" Grid.Column="24"
-                        NoTearoffLine1Text="NEXRAD"
-                        NoTearoffLine2Text="100"
-                        NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <!-- row break -->
-                    <controls:NoTearoffButton
-                        Margin="15,0,0,0"
-                        Grid.Row="2" Grid.Column="0"
+                        Margin="0,0,0,0"
+                        Grid.Row="0" Grid.Column="4"
                         NoTearoffLine1Text="BCKLGHT"
                         NoTearoffLine2Text="{Binding BrightnessValue}"
                         NoTearoffStyle="{StaticResource IncDecButton}"
                         PreviewMouseDown="BacklightButtonMouseDown"/>
-                    <controls:NoTearoffButton
-                        Margin="15,0,0,0"
-                        Grid.Row="2" Grid.Column="2"
-                        NoTearoffLine1Text="BUTTON"
-                        NoTearoffLine2Text="100"
-                        NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                        Grid.Row="2" Grid.Column="4"
-                        NoTearoffLine1Text="BORDER"
-                        NoTearoffLine2Text="100"
-                        NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                        Grid.Row="2" Grid.Column="6"
-                        NoTearoffLine1Text="TOOLBAR"
-                        NoTearoffLine2Text="100"
-                        NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                        Grid.Row="2" Grid.Column="8"
-                        NoTearoffLine1Text="TB BRDR"
-                        NoTearoffLine2Text="100"
-                        NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                        Grid.Row="2" Grid.Column="10"
-                        NoTearoffLine1Text="AB BRDR"
-                        NoTearoffLine2Text="100"
-                        NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                        Grid.Row="2" Grid.Column="12"
-                        NoTearoffLine1Text="FDB"
-                        NoTearoffLine2Text="100"
-                        NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                       Grid.Row="2" Grid.Column="14"
-                       NoTearoffLine1Text="PORTAL"
-                       NoTearoffLine2Text="100"
-                       NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                       Grid.Row="2" Grid.Column="16"
-                       NoTearoffLine1Text="SATCOMM"
-                       NoTearoffLine2Text="100"
-                       NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                       Grid.Row="2" Grid.Column="18"
-                       NoTearoffLine1Text="ON-FREQ"
-                       NoTearoffLine2Text="100"
-                       NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                       Grid.Row="2" Grid.Column="20"
-                       NoTearoffLine1Text="LINE 4"
-                       NoTearoffLine2Text="100"
-                       NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                       Grid.Row="2" Grid.Column="22"
-                       NoTearoffLine1Text="DWELL"
-                       NoTearoffLine2Text="100"
-                       NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                       Grid.Row="2" Grid.Column="24"
-                       NoTearoffLine1Text="FENCE"
-                       NoTearoffLine2Text="100"
-                       NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                       Grid.Row="2" Grid.Column="26"
-                       NoTearoffLine1Text="DBFEL"
-                       NoTearoffLine2Text="100"
-                       NoTearoffStyle="{StaticResource IncDecButton}"/>
-                    <controls:NoTearoffButton
-                       Grid.Row="2" Grid.Column="28"
-                       NoTearoffLine1Text="OUTAGE"
-                       NoTearoffLine2Text="100"
-                       NoTearoffStyle="{StaticResource IncDecButton}"/>
                 </Grid>
             </Border>
         </Grid>

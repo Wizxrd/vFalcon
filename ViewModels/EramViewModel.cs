@@ -30,10 +30,12 @@ namespace vFalcon.ViewModels
         private CursorToolbarView cursorToolbarView;
         private BrightnessToolbarView brightnessToolbarView;
         private MapsToolbarView mapsToolbarView;
+        private MapBrightnessToolbarView mapBrightnessToolbarView;
 
         private DispatcherTimer zuluTimer = new DispatcherTimer();
         private object masterToolbarContent;
         private ToolbarControlView toolbarContent;
+        private ReplayControlsView replayControlsContent;
         private object ActiveToolbar;
 
         private Brush background;
@@ -82,6 +84,7 @@ namespace vFalcon.ViewModels
         public string ZuluTime { get => zuluTime; set { zuluTime = value; OnPropertyChanged(); } }
 
         // --- Toolbar Content ---
+        public ReplayControlsView ReplayControlsContent { get => replayControlsContent; set { replayControlsContent = value; OnPropertyChanged(); } }
         public object MasterToolbarContent { get => masterToolbarContent; set { masterToolbarContent = value; OnPropertyChanged(); } }
         public ToolbarControlView ToolbarControlContent { get => toolbarContent; set { toolbarContent = value; OnPropertyChanged(); } }
 
@@ -143,7 +146,7 @@ namespace vFalcon.ViewModels
             {
                 useAlternateMapLayout = value;
                 mapsToolbarView.RebuildFilters();
-                brightnessToolbarView.RebuildBrightnessBcg();
+                mapBrightnessToolbarView.RebuildBrightnessBcg();
                 OnPropertyChanged();
             }
         }
@@ -200,6 +203,17 @@ namespace vFalcon.ViewModels
             }
         }
 
+        private Visibility replayControlVisibility = Visibility.Collapsed;
+        public Visibility ReplayControlVisibility
+        {
+            get => replayControlVisibility;
+            set
+            {
+                replayControlVisibility = value;
+                OnPropertyChanged();
+            }
+        }
+
         // ========================================================
         //                     COMMANDS
         // ========================================================
@@ -209,20 +223,29 @@ namespace vFalcon.ViewModels
         public ICommand CursorCommand { get; set; }
         public ICommand BrightnessCommand { get; set; }
         public ICommand MapsCommand { get; set; }
+        public ICommand MapBrightnessCommand { get; set; }
         public ICommand ToggleTdmCommand { get; set; }
+        public ICommand LoadRecordingCommand { get; set; }
+        public ICommand StartStopRecordingCommand { get; set; }
         public ICommand SwitchProfileCommand { get; set; }
         public ICommand GeneralSettingsCommand { get; set; }
         public ICommand ActivateSectorCommand { get; set; }
         public ICommand IncreaseVelocityVectorCommand { get; set; }
         public ICommand DecreaseVelocityVectorCommand { get; set; }
+        public ICommand RewindCommand { get; set; }
+        public ICommand PlayPauseCommand { get; set; }
+        public ICommand FastForwardCommand { get; set; }
+        public ICommand ExitRecordingCommand { get; set; }
 
         // ========================================================
         //                     ACTIONS
         // ========================================================
-
+        public event Action? LoadRecordingAction;
         public event Action? SwitchProfileAction;
         public event Action? GeneralSettingsAction;
         public event Action? ActivateSectorAction;
+        public event Action? StartStopRecordingAction;
+        public event Action? ExitRecordingAction;
 
         // ========================================================
         //                 CONSTRUCTOR
@@ -284,6 +307,14 @@ namespace vFalcon.ViewModels
             cursorToolbarOpen = !cursorToolbarOpen;
         }
 
+        private bool mapBrightnessToolbarOpen = false;
+        public void OnMapBrightnessCommand()
+        {
+            if (!mapBrightnessToolbarOpen) { ActiveToolbar = mapBrightnessToolbarView; MasterToolbarContent = mapBrightnessToolbarView; }
+            else { ActiveToolbar = masterToolbarView; MasterToolbarContent = masterToolbarView; }
+            mapBrightnessToolbarOpen = !mapBrightnessToolbarOpen;
+        }
+
         public void OnBrightnessCommand()
         {
             if (!brightnessToolbarOpen) { ActiveToolbar = brightnessToolbarView; MasterToolbarContent = brightnessToolbarView; }
@@ -324,7 +355,8 @@ namespace vFalcon.ViewModels
         }
 
         private string recordingStatus = string.Empty;
-        private bool isRecording = false;
+        public bool isRecording = false;
+        private bool isPlaybackMode = false;
         private DispatcherTimer recordingTimer = new DispatcherTimer();
         private Stopwatch recordingStopwatch = new Stopwatch();
 
@@ -378,15 +410,60 @@ namespace vFalcon.ViewModels
             RecordingStatus = $"Recording {elapsed:hh\\:mm\\:ss}";
         }
 
-        private PlaybackService playbackService = new();
+        public PlaybackService playbackService = new();
+
+        public void UpdateReplayControls(int tick)
+        {
+            if (replayControlsContent.DataContext is ReplayControlsViewModel rcvm)
+            {
+                rcvm.SliderValueTick = tick;
+                var ts = TimeSpan.FromSeconds(tick*15);
+                rcvm.ElapsedTimeTick = $"{(int)ts.TotalHours:D2}:{ts.Minutes:D2}:{ts.Seconds:D2}";
+
+            }
+        }
+
+        public void ExitRecording()
+        {
+            playbackService.StopPlayback();
+            replayControlVisibility = Visibility.Collapsed;
+            RadarViewModel.vatsimDataService.Start();
+            RadarViewModel.Redraw();
+            ExitRecordingAction?.Invoke();
+            isPlaybackMode = false;
+            SetTitle(this.artcc.id, string.Empty);
+        }
+
         public void OnLoadRecording(string recordingPath)
         {
             RadarViewModel.vatsimDataService.Stop();
             RadarViewModel.pilotService.Pilots.Clear();
             RadarViewModel.Redraw();
-            playbackService.StartPlayback(RadarViewModel, recordingPath);
+            playbackService.StartPlayback(this, profile, recordingPath);
+            ReplayControlVisibility = Visibility.Visible;
+            if (replayControlsContent.DataContext is ReplayControlsViewModel rcvm)
+            {
+                rcvm.MaximumSliderValue = playbackService.GetTotalTickCount();
+            }
+            isPlaybackMode = true;
+            SetTitle(this.artcc.id, string.Empty);
+            RadarViewModel.Redraw();
         }
 
+        public void OnRewindCommand()
+        {
+            replayControlsContent.RewindButtonClick(null, null);
+        }
+
+        public void OnPlayPauseCommand()
+        {
+            replayControlsContent.PlayPauseButtonClick(null, null);
+        }
+
+        public void OnFastForwardCommand()
+        {
+            replayControlsContent.FastForwardButtonClick(null, null);
+        }
 
         // ========================================================
         //             PRIVATE METHODS
@@ -396,11 +473,21 @@ namespace vFalcon.ViewModels
         {
             if (sector == string.Empty)
             {
-                Title = $"vFalcon : {artcc}";
+                if (isPlaybackMode)
+                {
+                    Title = $"vFalcon : {artcc} : Playback Mode";
+                    return;
+                }
+                Title = $"vFalcon : {artcc} : Live Mode";
             }
             else
             {
-                Title = $"vFalcon : {artcc} : {sector}";
+                if (isPlaybackMode)
+                {
+                    Title = $"vFalcon : {artcc} : {sector} : Playback Mode";
+                    return;
+                }
+                Title = $"vFalcon : {artcc} : {sector} : Live Mode";
             }
         }
 
@@ -430,12 +517,19 @@ namespace vFalcon.ViewModels
             CursorCommand = new RelayCommand(OnCursorCommand);
             BrightnessCommand = new RelayCommand(OnBrightnessCommand);
             MapsCommand = new RelayCommand(OnMapsCommand);
+            MapBrightnessCommand = new RelayCommand(OnMapBrightnessCommand);
             ToggleTdmCommand = new RelayCommand(() => { TdmActive = !TdmActive; RadarViewModel.Redraw(); });
+            LoadRecordingCommand = new RelayCommand(() => LoadRecordingAction?.Invoke());
+            StartStopRecordingCommand = new RelayCommand(() => StartStopRecordingAction?.Invoke());
             SwitchProfileCommand = new RelayCommand(OnSwitchProfileCommand);
             GeneralSettingsCommand = new RelayCommand(OnGeneralSettingsCommand);
             ActivateSectorCommand = new RelayCommand(OnActivateSectorCommand);
             IncreaseVelocityVectorCommand = new RelayCommand(OnIncreaseVelocityVectorCommand);
             DecreaseVelocityVectorCommand = new RelayCommand(OnDecreaseVelocityVectorCommand);
+            RewindCommand = new RelayCommand(OnRewindCommand);
+            PlayPauseCommand = new RelayCommand(OnPlayPauseCommand);
+            FastForwardCommand = new RelayCommand(OnFastForwardCommand);
+            ExitRecordingCommand = new RelayCommand(() => ExitRecording());
         }
 
         private async Task InitializeProfile()
@@ -501,6 +595,9 @@ namespace vFalcon.ViewModels
             cursorToolbarView = new CursorToolbarView(this);
             brightnessToolbarView = new BrightnessToolbarView(this);
             mapsToolbarView = new MapsToolbarView(this);
+            mapBrightnessToolbarView = new MapBrightnessToolbarView(this);
+            ReplayControlsContent = new ReplayControlsView(this);
+
         }
 
         private void InitializeMasterToolbar()

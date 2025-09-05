@@ -10,9 +10,8 @@
         Grid.Row="{Binding (Grid.Row), RelativeSource={RelativeSource AncestorType=UserControl}}" 
         Grid.Column="{Binding (Grid.Column), RelativeSource={RelativeSource AncestorType=UserControl}}" 
         Orientation="Horizontal">
-        <Button Style="{StaticResource TearoffButton}"/>
         <ToggleButton
-            Margin="2,0,0,0"
+            Margin="0,0,0,0"
             Style="{Binding EramButtonStyle, RelativeSource={RelativeSource AncestorType=UserControl}}" 
             Command="{Binding Command, RelativeSource={RelativeSource AncestorType=UserControl}}"
             IsChecked="{Binding IsChecked, RelativeSource={RelativeSource AncestorType=UserControl}}">

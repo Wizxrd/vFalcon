@@ -15,5 +15,6 @@ namespace vFalcon.Models
         public JArray Heading { get; set; }
         public JArray FullDataBlock { get; set; }
         public JArray? History { get; set; }
+        public JArray? Frequency {  get; set; }
     }
 }

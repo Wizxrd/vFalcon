@@ -11,20 +11,23 @@
     <UserControl.Resources>
         <converters:BoolToCollapsedConverter x:Key="BoolToCollapsedConverter"/>
     </UserControl.Resources>
-    <Border Padding="0" BorderBrush="{StaticResource MasterToolbarBackground}" BorderThickness="2">
+    <Border Background="{StaticResource MasterToolbarBackground}" Padding="0,1,0,0" BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" >
         <Grid>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="85"/>
+                <ColumnDefinition Width="85"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <controls:EramButton
-                Grid.Column="0" Grid.Row="0"
+                Margin="3,2,0,0"
+                Grid.Column="2" Grid.Row="0"
                 VerticalAlignment="Top"
                 Line1Text="MAP"
                 Line2Text="BRIGHT"
                 EramButtonStyle="{StaticResource MenuButtonOpen}"
                 Command="{Binding MapBrightnessBackCommand}"/>
-            <Border Grid.Column="1" Background="{StaticResource MasterToolbarBackground}" BorderBrush="#896800" BorderThickness="2" Margin="0,-2,0,2">
+            <Border Grid.Column="3" Background="{StaticResource MasterToolbarBackground}" BorderBrush="#896800" BorderThickness="2" Padding="2,1,0,0">
                 <Grid>
                     <ItemsControl 
                         x:Name="DefaultLayout" 

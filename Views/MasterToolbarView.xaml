@@ -7,134 +7,35 @@
              xmlns:controls="clr-namespace:vFalcon.Resources.Controls"
              mc:Ignorable="d" 
              Width="Auto" Height="75">
-    <Border Background="{StaticResource MasterToolbarBackground}" BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="3,3,0,0">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="3"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="3"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="3"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="3"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="3"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="3"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="3"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="3"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="3"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="3"/>
-            </Grid.ColumnDefinitions>
+    <Border Background="{StaticResource MasterToolbarBackground}" BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="3">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
             <controls:EramButton
-                x:Name="DrawButton"
-                Grid.Row="0" Grid.Column="0"
-                Line1Text="DRAW"
-                EramButtonStyle="{StaticResource MenuButtonClosed}">
-            </controls:EramButton>
-            <controls:EramButton
-                Grid.Row="0" Grid.Column="2"
-                Line1Text="ATC"
-                Line2Text="TOOLS"
-                EramButtonStyle="{StaticResource MenuButtonClosed}">
-            </controls:EramButton>
-            <controls:EramButton
-                Grid.Row="0" Grid.Column="4"
-                Line1Text="AB"
-                Line2Text="SETTING"
-                EramButtonStyle="{StaticResource MenuButtonClosed}">
-            </controls:EramButton>
-            <controls:EramButton
-                Grid.Row="0" Grid.Column="6"
-                Line1Text="RANGE"
-                Line2Text="{Binding ZoomLevel}"
-                EramButtonStyle="{StaticResource StaticToggleButton}">
-            </controls:EramButton>
-            <controls:EramButton
-                Grid.Row="0" Grid.Column="8"
-                Line1Text="CURSOR"
-                EramButtonStyle="{StaticResource MenuButtonClosed}"
-                Command="{Binding CursorCommand}">
-            </controls:EramButton>
-            <controls:EramButton
-                Grid.Row="0" Grid.Column="10"
-                Line1Text="BRIGHT"
-                EramButtonStyle="{StaticResource MenuButtonClosed}"
-                Command="{Binding BrightnessCommand}">
-            </controls:EramButton>
-            <controls:EramButton
-                Grid.Row="0" Grid.Column="12"
-                Line1Text="FONT"
-                EramButtonStyle="{StaticResource MenuButtonClosed}">
-            </controls:EramButton>
-            <controls:EramButton
-                Grid.Row="0" Grid.Column="14"
-                Line1Text="DB"
-                Line2Text="FIELDS"
-                EramButtonStyle="{StaticResource MenuButtonClosed}">
-            </controls:EramButton>
-            <controls:EramButton
-                Grid.Row="0" Grid.Column="16"
-                Line1Text="VECTOR"
-                Line2Text="{Binding VelocityVector}"
-                EramButtonStyle="{StaticResource IncDecToggleButton}"
-                PreviewMouseDown="VelocityVectorMouseDown">
-            </controls:EramButton>
-            <controls:EramButton
-                Grid.Row="2" Grid.Column="0"
-                Line1Text="VIEWS"
-                EramButtonStyle="{StaticResource MenuButtonClosed}">
-            </controls:EramButton>
-            <controls:EramButton
-                Grid.Row="2" Grid.Column="2"
-                Line1Text="CHECK"
-                Line2Text="LISTS"
-                EramButtonStyle="{StaticResource MenuButtonClosed}">
-            </controls:EramButton>
-            <controls:EramButton
-                Grid.Row="2" Grid.Column="4"
-                Line1Text="COMMAND"
-                Line2Text="MENUS"
-                EramButtonStyle="{StaticResource MenuButtonClosed}">
-            </controls:EramButton>
-            <controls:EramButton
-                Grid.Row="2" Grid.Column="6"
                 Line1Text="{Binding MapsLabelLine1}"
                 Line2Text="{Binding MapsLabelLine2}"
                 Command="{Binding MapsCommand}"
                 EramButtonStyle="{StaticResource MenuButtonClosed}">
             </controls:EramButton>
             <controls:EramButton
-                Grid.Row="2" Grid.Column="8"
-                Line1Text="ALT LIM"
-                Line2Text="000B999"
-                EramButtonStyle="{StaticResource StaticToggleButton}">
+                Margin="2,0,0,0"
+                Line1Text="MASTER"
+                Line2Text="BRIGHT"
+                EramButtonStyle="{StaticResource MenuButtonClosed}"
+                Command="{Binding BrightnessCommand}">
             </controls:EramButton>
             <controls:EramButton
-                Grid.Row="2" Grid.Column="10"
-                Line1Text="RADAR"
-                Line2Text="FILTER"
-                EramButtonStyle="{StaticResource MenuButtonClosed}">
+                Margin="2,0,0,0"
+                Line1Text="MAP"
+                Line2Text="BRIGHT"
+                EramButtonStyle="{StaticResource MenuButtonClosed}"
+                Command="{Binding MapBrightnessCommand}">
             </controls:EramButton>
             <controls:EramButton
-                Grid.Row="2" Grid.Column="12"
-                Line1Text="PREFSET"
-                EramButtonStyle="{StaticResource MenuButtonClosed}">
+                Margin="2,0,0,0"
+                Line1Text="VECTOR"
+                Line2Text="{Binding VelocityVector}"
+                EramButtonStyle="{StaticResource IncDecToggleButton}"
+                PreviewMouseDown="VelocityVectorMouseDown">
             </controls:EramButton>
-            <controls:EramButton
-                Grid.Row="2" Grid.Column="14"
-                Line1Text="DELETE"
-                Line2Text="TEAROFF"
-                EramButtonStyle="{StaticResource DeleteButton}">
-            </controls:EramButton>
-        </Grid>
+        </StackPanel>
     </Border>
 </UserControl>

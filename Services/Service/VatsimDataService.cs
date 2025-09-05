@@ -52,22 +52,22 @@ public class VatsimDataService
                 JObject? dataFeed = await VatsimDataFeed.GetPilotsAsync();
                 if (dataFeed == null) return;
 
-                string timestampStr = dataFeed["general"]?["update_timestamp"]?.ToString();
-                DateTime lastUpdateUtc;
+                //string timestampStr = dataFeed["general"]?["update_timestamp"]?.ToString();
+                //DateTime lastUpdateUtc;
 
-                if (DateTime.TryParse(timestampStr, out lastUpdateUtc))
-                {
-                    lastUpdateUtc = lastUpdateUtc.AddMilliseconds(-lastUpdateUtc.Millisecond);
-                    //Logger.Debug("VatsimDataService.RefreshAsync", $"Last update timestamp: {lastUpdateUtc}");
+                //if (DateTime.TryParse(timestampStr, out lastUpdateUtc))
+                //{
+                //    lastUpdateUtc = lastUpdateUtc.AddMilliseconds(-lastUpdateUtc.Millisecond);
+                //    //Logger.Debug("VatsimDataService.RefreshAsync", $"Last update timestamp: {lastUpdateUtc}");
 
-                    if (lastUpdateTimestamp.HasValue && lastUpdateTimestamp.Value == lastUpdateUtc)
-                    {
-                        //Logger.Debug("VatsimDataService.RefreshAsync", "Skipping refresh, update timestamp is the same.");
-                        return;
-                    }
+                //    if (lastUpdateTimestamp.HasValue && lastUpdateTimestamp.Value == lastUpdateUtc)
+                //    {
+                //        //Logger.Debug("VatsimDataService.RefreshAsync", "Skipping refresh, update timestamp is the same.");
+                //        return;
+                //    }
 
-                    lastUpdateTimestamp = lastUpdateUtc;
-                }
+                //    lastUpdateTimestamp = lastUpdateUtc;
+                //}
 
                 var transceiverFrequencies = await VatsimDataFeed.GetTransceiversAsync();
                 string? sectorFreq = await vNasDataFeed.GetArtccFrequencyAsync(profile.ArtccId, profile.ActivatedSectorName);

@@ -24,10 +24,10 @@ namespace vFalcon.Views
     /// </summary>
     public partial class MapBrightnessToolbarView : UserControl
     {
-        public MapBrightnessToolbarView(BrightnessToolbarViewModel brightnessToolbarViewModel, EramViewModel eramViewmModel)
+        public MapBrightnessToolbarView(EramViewModel eramViewModel)
         {
             InitializeComponent();
-            DataContext = new MapBrightnessToolbarViewModel(brightnessToolbarViewModel, eramViewmModel);
+            DataContext = new MapBrightnessToolbarViewModel(eramViewModel);
         }
 
         public void RebuildBrightnessBcg()

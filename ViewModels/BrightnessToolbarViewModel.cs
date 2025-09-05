@@ -57,7 +57,6 @@ namespace vFalcon.ViewModels
         //                     COMMANDS
         // ========================================================
         public ICommand BrightnessBackCommand { get; set; }
-        public ICommand MapBrightnessCommand { get; set; }
 
         // ========================================================
         //                  CONSTRUCTOR
@@ -66,15 +65,8 @@ namespace vFalcon.ViewModels
         {
             this.eramViewModel = eramViewModel;
 
-            mapBrightnessView = new MapBrightnessToolbarView(this, eramViewModel);
 
             BrightnessBackCommand = new RelayCommand(() => eramViewModel.OnBrightnessCommand());
-            MapBrightnessCommand = new RelayCommand(OnMapBrightnessCommand);
-        }
-
-        public void RebuildBrightnessBcg()
-        {
-            mapBrightnessView.RebuildBrightnessBcg();
         }
 
         public void OpenMapBrightness()

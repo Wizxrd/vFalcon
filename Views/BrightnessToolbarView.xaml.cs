@@ -28,14 +28,6 @@ namespace vFalcon.Views
             DataContext = new BrightnessToolbarViewModel(eramViewModel);
         }
 
-        public void RebuildBrightnessBcg()
-        {
-            if (DataContext is BrightnessToolbarViewModel brightnessToolbarViewModel)
-            {
-                brightnessToolbarViewModel.RebuildBrightnessBcg();
-            }
-        }
-
         private void BackgroundButtonMouseDown(object sender, MouseButtonEventArgs e)
         {
             if (DataContext is BrightnessToolbarViewModel brightnessViewModel)

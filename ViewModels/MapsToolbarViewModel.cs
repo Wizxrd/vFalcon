@@ -104,7 +104,6 @@ namespace vFalcon.ViewModels
 
         private void ToggleMapCommand(int filterIndex, string name)
         {
-            Logger.Debug("ToggleMapCommand", name);
             if (eramViewModel.ActiveFilters.Contains(filterIndex))
             {
                 eramViewModel.ActiveFilters.Remove(filterIndex);

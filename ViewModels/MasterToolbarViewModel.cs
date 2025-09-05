@@ -1,5 +1,8 @@
-﻿using System.Windows.Input;
+﻿using Microsoft.VisualBasic.Logging;
+using System.Windows.Input;
 using vFalcon.Commands;
+using vFalcon.Helpers;
+using vFalcon.Views;
 
 namespace vFalcon.ViewModels
 {
@@ -10,12 +13,17 @@ namespace vFalcon.ViewModels
         // ========================================================
         private readonly EramViewModel eramViewModel;
 
+        private object? mapBrightnessContent;
+
+        public bool MapBrightnessOpen = false;
+
         // ========================================================
         //                      COMMANDS
         // ========================================================
         public ICommand BrightnessCommand { get; }
         public ICommand CursorCommand { get; }
         public ICommand MapsCommand { get; }
+        public ICommand MapBrightnessCommand { get; set; }
 
         // ========================================================
         //                      PROPERTIES
@@ -30,15 +38,25 @@ namespace vFalcon.ViewModels
             set { eramViewModel.ZoomLevel = value; OnPropertyChanged(); }
         }
 
+        public object? MapBrightnessContent
+        {
+            get => mapBrightnessContent;
+            set
+            {
+                mapBrightnessContent = value;
+                OnPropertyChanged();
+            }
+        }
+
         // ========================================================
         //                  CONSTRUCTOR
         // ========================================================
         public MasterToolbarViewModel(EramViewModel eramViewModel)
         {
             this.eramViewModel = eramViewModel;
-
             BrightnessCommand = new RelayCommand(() => eramViewModel.OnBrightnessCommand());
             CursorCommand = new RelayCommand(() => eramViewModel.OnCursorCommand());
+            MapBrightnessCommand = new RelayCommand(() => eramViewModel.OnMapBrightnessCommand());
             MapsCommand = new RelayCommand(() => eramViewModel.OnMapsCommand());
             ZoomLevel = eramViewModel.ZoomLevel;
             eramViewModel.PropertyChanged += (s, e) =>

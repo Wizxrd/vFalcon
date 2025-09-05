@@ -8,7 +8,6 @@ namespace vFalcon.ViewModels
 {
     public class MenuViewModel : ViewModelBase
     {
-
         private string activateSectorText = string.Empty;
 
         public string ActivateSectorText
