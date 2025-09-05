@@ -2,6 +2,7 @@
 /Logs/
 /Profiles/
 /CRCProfileTesting/
+/Recordings/
 
 # Created by https://www.toptal.com/developers/gitignore/api/csharp,visualstudio
 # Edit at https://www.toptal.com/developers/gitignore?templates=csharp,visualstudio
