@@ -2,7 +2,6 @@
 using System.Windows.Input;
 using vFalcon.Helpers;
 using vFalcon.ViewModels;
-using vFalcon.Models;
 
 namespace vFalcon.Views
 {
@@ -14,13 +13,10 @@ namespace vFalcon.Views
         public LoadProfileView()
         {
             InitializeComponent();
-
             var viewModel = new LoadProfileViewModel();
             DataContext = viewModel;
-            viewModel.Close += () => this.Close();
-            viewModel.RequestOpenMainWindow += OpenMainWindow;
-            viewModel.RequestNewProfileWindow += OpenNewProfileWindow;
             viewModel.RequestConfirmation += ShowConfirmDialog;
+            viewModel.OpenEramWindow += OpenEramWindow;
         }
 
         protected override void OnPreviewKeyDown(KeyEventArgs e)
@@ -36,19 +32,19 @@ namespace vFalcon.Views
                         if (vm.LastSelectedProfileVM != null && vm.LastSelectedProfileVM.IsSelected)
                         {
                             vm.SelectedProfile = vm.LastSelectedProfileVM.Model;
-                            OpenMainWindow();
+                            OpenEramWindow();
                             e.Handled = true;
                         }
                         break;
                     case Key.Up:
-                        if (vm.FilteredProfiles.Count > 0)
+                        if (vm.FilteredProfiles.Count> 0)
                         {
                             vm.SelectedIndex = Math.Max(0, vm.SelectedIndex - 1);
                             e.Handled = true;
                         }
                         break;
                     case Key.Down:
-                        if (vm.FilteredProfiles.Count > 0)
+                        if (vm.FilteredProfiles.Count> 0)
                         {
                             vm.SelectedIndex = Math.Min(vm.FilteredProfiles.Count - 1, vm.SelectedIndex + 1);
                             e.Handled = true;
@@ -56,30 +52,6 @@ namespace vFalcon.Views
                         break;
                 }
             }
-        }
-
-        private void OpenMainWindow()
-        {
-            if (DataContext is LoadProfileViewModel vm && vm.SelectedProfile != null)
-            {
-                var mainWindow = new EramView(vm.SelectedProfile);
-                this.Close();
-                mainWindow.ShowDialog();
-            }
-        }
-        private Task<NewProfileResult> OpenNewProfileWindow()
-        {
-            var newProfileView = new NewProfileView
-            {
-                Owner = this
-            };
-            newProfileView.ShowDialog();
-            if (newProfileView.DataContext is NewProfileViewModel vm)
-            {
-                return Task.FromResult(new NewProfileResult(vm.WasCreated, vm.NewName));
-            }
-
-            return Task.FromResult(new NewProfileResult(false, string.Empty));
         }
 
         private Task<bool> ShowConfirmDialog(string message)
@@ -91,6 +63,23 @@ namespace vFalcon.Views
             };
             bool? result = dialog.ShowDialog();
             return Task.FromResult(result == true);
+        }
+
+        private void OpenEramWindow()
+        {
+            if (DataContext is LoadProfileViewModel vm)
+            {
+                try
+                {
+                    var mainWindow = new EramView(vm.SelectedProfileArtcc, vm.SelectedProfile);
+                    this.Close();
+                    mainWindow.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                    Logger.Error("LoadProfileView.OpenEramWindow", ex.ToString());
+                }
+            }
         }
     }
 }

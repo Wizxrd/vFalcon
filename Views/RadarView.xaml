@@ -12,12 +12,12 @@
     <Border>
         <skia:SKElement Name="RadarCanvas">
             <i:Interaction.Behaviors>
-                <behaviors:SKElementPaintBehavior PaintCommand="{Binding PaintSurfaceCommand}" />
+                <behaviors:SKElementPaintBehavior PaintCommand="{Binding PaintSurfaceCommand}"/>
                 <behaviors:SKElementMouseBehavior
                     MouseDownCommand="{Binding MouseDownCommand}"
                     MouseMoveCommand="{Binding MouseMoveCommand}"
                     MouseUpCommand="{Binding MouseUpCommand}"
-                    MouseWheelCommand="{Binding MouseWheelCommand}" />
+                    MouseWheelCommand="{Binding MouseWheelCommand}"/>
             </i:Interaction.Behaviors>
         </skia:SKElement>
     </Border>

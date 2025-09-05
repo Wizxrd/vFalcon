@@ -34,6 +34,7 @@
                         x:Name="Border"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
+                        CornerRadius="2"
                         BorderThickness="1">
                         <ContentPresenter
                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -58,15 +59,14 @@
     </Style>
     <Style x:Key="RenameButtonControl" TargetType="ContentControl">
         <Setter Property="Foreground" Value="{StaticResource White}"/>
-        <Setter Property="FontWeight" Value="Light"/>
-        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="FontWeight" Value="Bold"/>
         <Style.Triggers>
             <DataTrigger Binding="{Binding IsRenaming}" Value="True">
                 <Setter Property="ContentTemplate">
                     <Setter.Value>
                         <DataTemplate>
                             <TextBox
-                                FontFamily="Consolas" FontSize="15" FontWeight="Bold"
                                 Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
                                 Tag="{Binding Text, RelativeSource={RelativeSource Self}}"
                                 Background="#141420"
@@ -93,7 +93,6 @@
                     <Setter.Value>
                         <DataTemplate>
                             <TextBlock
-                                FontFamily="Consolas" FontSize="15" FontWeight="Bold"
                                 Margin="9,0,0,0"
                                 Text="{Binding Name}"
                                 VerticalAlignment="Center"
@@ -103,5 +102,51 @@
                 </Setter>
             </DataTrigger>
         </Style.Triggers>
+    </Style>
+    <Style x:Key="CustomSlider" TargetType="Thumb">
+        <Setter Property="Background" Value="#808080"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Thumb">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Value label -->
+                        <Border Grid.Row="0"
+                                Padding="2,0"
+                                Background="Transparent"
+                                HorizontalAlignment="Center">
+                            <TextBlock Text="{Binding Value,
+                                                      RelativeSource={RelativeSource AncestorType=Slider},
+                                                      StringFormat={}{0:0}}"
+                                       FontSize="12"
+                                       FontWeight="SemiBold"/>
+                        </Border>
+
+                        <!-- Rectangle handle -->
+                        <Border Grid.Row="1"
+                                Width="22"
+                                Height="10"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="0"/>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#9a9a9a"/>
+                        </Trigger>
+                        <Trigger Property="IsDragging" Value="True">
+                            <Setter Property="Background" Value="#c0c0c0"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>

@@ -12,8 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using vFalcon.ViewModels;
 using vFalcon.Models;
+using vFalcon.ViewModels;
 
 namespace vFalcon.Views
 {
@@ -22,9 +22,10 @@ namespace vFalcon.Views
     /// </summary>
     public partial class ActivateSectorView : AdonisWindow
     {
-        public ActivateSectorView(ActivateSectorViewModel viewModel)
+        public ActivateSectorView(Artcc artcc, Profile profile)
         {
             InitializeComponent();
+            ActivateSectorViewModel viewModel = new ActivateSectorViewModel(artcc, profile);
             DataContext = viewModel;
             viewModel.Close += () => this.Close();
         }

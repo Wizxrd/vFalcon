@@ -1,18 +1,21 @@
 ﻿using SkiaSharp;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace vFalcon.Models
 {
     public class MapState
     {
-        public double Scale { get; set; } = 0.0112332;
-        public SKPoint PanOffset { get; set; } = SKPoint.Empty;
+        public double Scale { get; set; }
+        public SKPoint PanOffset { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
-        public double CenterLat { get; set; } = 40.93177398650218;
-        public double CenterLon { get; set; } = -80.82024227841458;
-        public double CurrentLat { get; set; } = 40.93177398650218;
-        public double CurrentLon { get; set; } = -80.82024227841458;
-
-        public int ZoomIndex { get; set; } = 25;
+        public double CenterLat { get; set; }
+        public double CenterLon { get; set; }
+        public int ZoomIndex { get; set; }
+        public bool ZoomOnMouse { get; set; }
     }
 }

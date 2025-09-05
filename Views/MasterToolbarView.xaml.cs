@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -22,36 +21,50 @@ namespace vFalcon.Views
     /// </summary>
     public partial class MasterToolbarView : UserControl
     {
-        public event Action? ProfileButtonClicked;
-        public event Action<ToggleButton>? ActivateButtonClicked;
-        public event Action? CursorButtonClicked;
-        public event Action? MapsButtonClicked;
-        public MasterToolbarView()
+        private EramViewModel eramViewModel;
+        public MasterToolbarView(EramViewModel eramViewModel)
         {
             InitializeComponent();
+            this.eramViewModel = eramViewModel;
+            DataContext = new MasterToolbarViewModel(eramViewModel);
         }
 
-        private void ProfileButtonClick(object sender, RoutedEventArgs e)
+        public void DecreaseVelocityVector()
         {
-            ProfileButtonClicked?.Invoke();
-        }
-
-        private void ActivateButtonClick(object sender, RoutedEventArgs e)
-        {
-            if (sender is ToggleButton button)
             {
-                ActivateButtonClicked?.Invoke(button);
+                if (eramViewModel.VelocityVector > 0)
+                {
+                    eramViewModel.VelocityVector /= 2;
+                    eramViewModel.RadarViewModel.Redraw();
+                }
             }
         }
 
-        private void CursorButtonClick(object sender, RoutedEventArgs e)
+        public void IncreaseVelocityVector()
         {
-            CursorButtonClicked?.Invoke();
+            if (eramViewModel.VelocityVector == 0)
+            {
+                eramViewModel.VelocityVector = 1;
+                eramViewModel.RadarViewModel.Redraw();
+                return;
+            }
+            if (eramViewModel.VelocityVector < 8)
+            {
+                eramViewModel.VelocityVector *= 2;
+                eramViewModel.RadarViewModel.Redraw();
+            }
         }
 
-        private void MapsButtonClick(object sender, RoutedEventArgs e)
+        private void VelocityVectorMouseDown(object sender, MouseButtonEventArgs e)
         {
-            MapsButtonClicked?.Invoke();
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DecreaseVelocityVector();
+            }
+            if (e.MiddleButton == MouseButtonState.Pressed)
+            {
+                IncreaseVelocityVector();
+            }
         }
     }
 }

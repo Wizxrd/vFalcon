@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using vFalcon.ViewModels;
+using vFalcon.Helpers;
 
 namespace vFalcon.Views
 {
@@ -21,24 +22,32 @@ namespace vFalcon.Views
     /// </summary>
     public partial class CursorToolbarView : UserControl
     {
-        public event Action? CursorBackButtonClicked;
-        public CursorToolbarView()
+        public CursorToolbarView(EramViewModel eramViewModel)
         {
             InitializeComponent();
-        }
-        private void CursorBackButtonClick(object sender, RoutedEventArgs e)
-        {
-            CursorBackButtonClicked?.Invoke();
+            DataContext = new CursorToolbarViewModel(eramViewModel);
         }
 
-        private void SizeButtonPreviewMouseDown(object sender, MouseButtonEventArgs e)
+        private async void CursorSizeButtonMouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (DataContext is EramViewModel vm)
+            if (DataContext is CursorToolbarViewModel cursorViewModel)
             {
-                if (e.ChangedButton == MouseButton.Left)
-                    vm.DecreaseCursorSizeCommand.Execute(null);
-                else if (e.ChangedButton == MouseButton.Middle)
-                    vm.IncreaseCursorSizeCommand.Execute(null);
+                if (e.LeftButton == MouseButtonState.Pressed)
+                {
+                    if (cursorViewModel.CursorSize> 1)
+                    {
+                        --cursorViewModel.CursorSize;
+                        return;
+                    }
+                }
+                else if (e.MiddleButton == MouseButtonState.Pressed)
+                {
+                    if (cursorViewModel.CursorSize < 5)
+                    {
+                        ++cursorViewModel.CursorSize;
+                        return;
+                    }
+                }
             }
         }
     }

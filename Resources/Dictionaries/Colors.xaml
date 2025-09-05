@@ -10,14 +10,15 @@
     <SolidColorBrush x:Key="ButtonBackgroundChecked" Color="#2a2b34"/>
     <SolidColorBrush x:Key="ButtonBorderChecked" Color="#5c5f74"/>
     <SolidColorBrush x:Key="RenameTextBoxBackground" Color="#141420"/>
-    
+
     <SolidColorBrush x:Key="MasterToolbarBackground" Color="#272727"/>
-    <SolidColorBrush x:Key="MasterToolbarMenuBackground" Color="#505050"/>
+    <SolidColorBrush x:Key="MasterToolbarMenuBackground" Color="#636363"/>
     <SolidColorBrush x:Key="MasterToolbarBorder" Color="#797979"/>
-    <SolidColorBrush x:Key="MenuClosedButtonBackground" Color="#000075"/>
-    <SolidColorBrush x:Key="MenuOpenButtonBackground" Color="#4b1313"/>
-    <SolidColorBrush x:Key="TearoffButtonBackground" Color="#757500"/>
-    <SolidColorBrush x:Key="IncDecButtonBackground" Color="#007500"/>
+    <SolidColorBrush x:Key="MenuClosedButtonBackground" Color="#00006a"/>
+    <SolidColorBrush x:Key="MenuOpenButtonBackground" Color="#6e504d"/>
+    <SolidColorBrush x:Key="TearoffButtonBackground" Color="#7f7f50"/>
+    <SolidColorBrush x:Key="IncDecButtonBackground" Color="#006600"/>
     <SolidColorBrush x:Key="DeactivatedToggleButtonBackground" Color="#000000"/>
-    <SolidColorBrush x:Key="ActivatedToggleButtonBackground" Color="#616161"/>
+    <SolidColorBrush x:Key="ActivatedToggleButtonBackground" Color="#636363"/>
+    <SolidColorBrush x:Key="DeleteTearoffBackground" Color="#00646a"/>
 </ResourceDictionary>

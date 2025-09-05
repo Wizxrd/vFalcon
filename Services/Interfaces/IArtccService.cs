@@ -1,11 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using vFalcon.Models;
 
 namespace vFalcon.Services.Interfaces
 {
     public interface IArtccService
     {
-        IEnumerable<string> GetArtccs();
-        void BuildArtccFile(string inputPath, string outputPath);
-        IEnumerable<string> GetArtccSectors(string artccId);
+        public Task<Artcc>? LoadArtcc(string artccId);
     }
 }

@@ -4,47 +4,62 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:vFalcon.Views"
+             xmlns:controls="clr-namespace:vFalcon.Resources.Controls"
              mc:Ignorable="d" 
-             Width="Auto" Height="74">
-    <Border
-        Background="{StaticResource MasterToolbarBackground}"
-        BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="2,2,1,0">
+             Width="Auto" Height="75">
+    <Border Background="{StaticResource MasterToolbarBackground}" BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="3,1,0,0">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="33"/>
-                <RowDefinition Height="2"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="120"/>
-                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
+                <ColumnDefinition Width="3"/>
+                <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
+                <ColumnDefinition Width="3"/>
+                <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
+                <ColumnDefinition Width="3"/>
+                <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
+                <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="2"/>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="2"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <Button
-                    x:Name="CursorBackButton"
-                    Content="CURSOR"
-                    Background="{StaticResource MenuOpenButtonBackground}"
-                    Style="{StaticResource ToolbarButton}"
-                    Click="CursorBackButtonClick"/>
-            </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="4" Orientation="Horizontal">
-                <Button
-                    x:Name="SizeButton"
-                    Background="{StaticResource IncDecButtonBackground}"
-                    Style="{StaticResource ToolbarButton}"
-                    PreviewMouseDown="SizeButtonPreviewMouseDown">
-                    <TextBlock TextWrapping="Wrap" TextAlignment="Center">
-                        <Run Text="SIZE"/>
-                        <LineBreak/>
-                        <Run Text="{Binding CursorSize}"/>
-                    </TextBlock>
-                </Button>
-            </StackPanel>
+
+            <controls:EramButton
+                Grid.Column="8"
+                Margin="8,2,0,0"
+                VerticalAlignment="Top"
+                Line1Text="CURSOR"
+                EramButtonStyle="{StaticResource MenuButtonOpen}"
+                Command="{Binding CursorBackCommand}"/>
+
+            <Border Grid.Column="10" Height="36" BorderBrush="#896800" BorderThickness="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="3"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="3"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <controls:NoTearoffButton
+                        Grid.Column="0"
+                        NoTearoffLine1Text="SPEED"
+                        NoTearoffLine2Text="1"
+                        NoTearoffStyle="{StaticResource IncDecButton}"/>
+                    <controls:NoTearoffButton
+                        Grid.Column="2"
+                        NoTearoffLine1Text="SIZE"
+                        NoTearoffLine2Text="{Binding CursorSize}"
+                        NoTearoffStyle="{StaticResource IncDecButton}"
+                        PreviewMouseDown="CursorSizeButtonMouseDown"/>
+                    <controls:NoTearoffButton
+                        Grid.Column="4"
+                        NoTearoffLine1Text="VOLUME"
+                        NoTearoffLine2Text="5"
+                        NoTearoffStyle="{StaticResource IncDecButton}"/>
+                </Grid>
+            </Border>
         </Grid>
     </Border>
 </UserControl>

@@ -6,14 +6,12 @@ namespace vFalcon.Services.Interfaces
 {
     public interface IProfileService
     {
-        List<Profile> LoadProfiles();
-        Task New(string artcc, string name);
-        Task Rename(string oldName, string newName);
-        Task Copy(Profile profile);
-        void Export(Profile profile);
-        Task Delete(Profile profile);
-        Task Import(string file);
-        Task Save(Profile profile);
-        Task SaveAs(Profile profile, string name);
+        public Task<List<Profile>> LoadProfiles();
+        public Task Rename(string oldName, string newName);
+        public Task Copy(Profile profile);
+        public void Export(Profile profile);
+        public Task Delete(Profile profile);
+        public void Save(Profile profile);
+        public Task SaveAs(Profile profile, string name);
     }
 }

@@ -4,79 +4,146 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:vFalcon.Views"
+             xmlns:controls="clr-namespace:vFalcon.Resources.Controls"
+             xmlns:converters="clr-namespace:vFalcon.Converters"
              mc:Ignorable="d" 
-             Width="Auto" Height="74">
-    <Border
-        Background="{StaticResource MasterToolbarBackground}"
-        BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="2,2,1,0">
+             Width="Auto" Height="75">
+    <UserControl.Resources>
+        <converters:BoolToCollapsedConverter x:Key="BoolToCollapsedConverter"/>
+    </UserControl.Resources>
+    <Border Background="{StaticResource MasterToolbarBackground}" BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="2,1,0,0">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="2"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="2"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="120"/>
-                <ColumnDefinition Width="2"/>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="2"/>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="2"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="2"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="2"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <Button
-                    x:Name="MapsBackButton"
-                    Content="MAPS"
-                    Background="{StaticResource MenuOpenButtonBackground}"
-                    Style="{StaticResource ToolbarButton}"
-                    Click="MapsBackButtonClick"/>
-            </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="4" Orientation="Horizontal">
-                <ToggleButton
-                    x:Name="BndryButton"
-                    Content="BNDRY"
-                    Style="{StaticResource ToolbarToggleButton}"
-                    IsChecked="{Binding IsBndryEnabled, Mode=TwoWay}"
-                    Command="{Binding ToggleVideoMapCommand}"
-                    CommandParameter="BOUNDARY">
-                </ToggleButton>
-            </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="6" Orientation="Horizontal">
-                <ToggleButton
-                    x:Name="LowsButton"
-                    Content="LOWS"
-                    Style="{StaticResource ToolbarToggleButton}"
-                    IsChecked="{Binding IsLowsEnabled, Mode=TwoWay}"
-                    Command="{Binding ToggleVideoMapCommand}"
-                    CommandParameter="LOW_SECTORS">
-                </ToggleButton>
-            </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="4" Orientation="Horizontal">
-                <ToggleButton
-                    x:Name="AppchButton"
-                    Content="APPCH"
-                    Style="{StaticResource ToolbarToggleButton}"
-                    IsChecked="{Binding IsAppchEnabled, Mode=TwoWay}"
-                    Command="{Binding ToggleVideoMapCommand}"
-                    CommandParameter="APPROACH_CONTROL">
-                </ToggleButton>
-            </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="6" Orientation="Horizontal">
-                <ToggleButton
-                    x:Name="HighsButton"
-                    Content="HIGHS"
-                    Style="{StaticResource ToolbarToggleButton}"
-                    IsChecked="{Binding IsHighsEnabled, Mode=TwoWay}"
-                    Command="{Binding ToggleVideoMapCommand}"
-                    CommandParameter="HIGH_SECTORS">
-                </ToggleButton>
-            </StackPanel>
+            <controls:EramButton
+                VerticalAlignment="Top"
+                Grid.Column="0"
+                Margin="1,2,0,2"
+                Line1Text="{Binding MapsLabelLine1}"
+                Line2Text="{Binding MapsLabelLine2}"
+                EramButtonStyle="{StaticResource MenuButtonOpen}"
+                Command="{Binding MapsBackCommand}"/>
+            <Border Grid.Column="1" BorderBrush="#896800" BorderThickness="2">
+                <Grid>
+                    <!-- Default Layout -->
+                    <ItemsControl x:Name="DefaultLayout"
+                      ItemsSource="{Binding MapFilters}"
+                      Visibility="{Binding UseAlternateMapLayout, Converter={StaticResource BoolToCollapsedConverter}, ConverterParameter=True}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="3"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="3"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="3"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="3"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="3"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="3"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="3"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="3"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="3"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="3"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                </Grid>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+
+                        <ItemsControl.ItemContainerStyle>
+                            <Style TargetType="ContentPresenter">
+                                <Setter Property="Grid.Row" Value="{Binding Row}"/>
+                                <Setter Property="Grid.Column" Value="{Binding Column}"/>
+                            </Style>
+                        </ItemsControl.ItemContainerStyle>
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <controls:EramButton
+                                    Line1Text="{Binding LabelLine1}"
+                                    Line2Text="{Binding LabelLine2}"
+                                    EramButtonStyle="{StaticResource ToggleButton}"
+                                    Command="{Binding Command}"
+                                    IsChecked="{Binding IsChecked}"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                    <ItemsControl x:Name="AlternateLayout"
+                      ItemsSource="{Binding MapFilters}"
+                      Visibility="{Binding UseAlternateMapLayout, Converter={StaticResource BoolToCollapsedConverter}}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="3"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <!-- Only 10 columns in this layout -->
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="3"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="3"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="3"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="3"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="3"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="3"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="3"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="3"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="3"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                </Grid>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+
+                        <ItemsControl.ItemContainerStyle>
+                            <Style TargetType="ContentPresenter">
+                                <Setter Property="Grid.Row" Value="{Binding Row}"/>
+                                <Setter Property="Grid.Column" Value="{Binding Column}"/>
+                            </Style>
+                        </ItemsControl.ItemContainerStyle>
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <controls:EramButton
+                                    Line1Text="{Binding LabelLine1}"
+                                    Line2Text="{Binding LabelLine2}"
+                                    EramButtonStyle="{StaticResource ToggleButton}"
+                                    Command="{Binding Command}"
+                                    IsChecked="{Binding IsChecked}"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
+            </Border>
+
         </Grid>
     </Border>
 </UserControl>

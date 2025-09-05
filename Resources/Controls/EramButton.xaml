@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="vFalcon.Resources.Controls.EramButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:vFalcon.Resources.Controls"
+             mc:Ignorable="d" 
+             d:Height="Auto" d:Width="Auto">
+    <StackPanel Background="{StaticResource MasterToolbarMenuBackground}"
+        Grid.Row="{Binding (Grid.Row), RelativeSource={RelativeSource AncestorType=UserControl}}" 
+        Grid.Column="{Binding (Grid.Column), RelativeSource={RelativeSource AncestorType=UserControl}}" 
+        Orientation="Horizontal">
+        <ToggleButton
+            Margin="0,0,0,0"
+            Style="{Binding EramButtonStyle, RelativeSource={RelativeSource AncestorType=UserControl}}" 
+            Command="{Binding Command, RelativeSource={RelativeSource AncestorType=UserControl}}"
+            IsChecked="{Binding IsChecked, RelativeSource={RelativeSource AncestorType=UserControl}}">
+            <TextBlock TextAlignment="Center">
+                <Run Text="{Binding Line1Text, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                <LineBreak/>
+                <Run Text="{Binding Line2Text, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+            </TextBlock>
+        </ToggleButton>
+    </StackPanel>
+</UserControl>

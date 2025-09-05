@@ -4,76 +4,38 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:vFalcon.Views"
+             xmlns:controls="clr-namespace:vFalcon.Resources.Controls"
              mc:Ignorable="d" 
-             Width="Auto" Height="Auto">
-    <Border
-        Background="{StaticResource MasterToolbarBackground}"
-        BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="2">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="2"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="2"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="2"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="2"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="2"/>
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <Button
-                    x:Name="ProfileButton"
-                    Content="PROFILE"
-                    Background="{StaticResource MenuClosedButtonBackground}"
-                    Style="{StaticResource ToolbarButton}"
-                    Click="ProfileButtonClick"/>
-            </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <Button
-                    x:Name="MapsButton"
-                    Content="MAPS"
-                    Background="{StaticResource MenuClosedButtonBackground}"
-                    Style="{StaticResource ToolbarButton}"
-                    Click="MapsButtonClick"/>
-            </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="4" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <Button
-                    x:Name="RangeButton"
-                    Background="{StaticResource Black}"
-                    Style="{StaticResource ToolbarButton}">
-                    <TextBlock TextWrapping="Wrap" TextAlignment="Center">
-                        <Run Text="RANGE"/>
-                        <LineBreak/>
-                        <Run Text="100"/>
-                    </TextBlock>
-                </Button>
-            </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <ToggleButton
-                    x:Name="ActivateButton"
-                    Content="{Binding ActivateButtonLabel}"
-                    Style="{StaticResource ToolbarToggleButton}"
-                    Command="{Binding ToggleSectorCommand}"
-                    CommandParameter="{Binding ElementName=ActivateButton}"/>
-            </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
-                <Button Style="{StaticResource TearoffButton}"/>
-                <Button
-                    x:Name="CursorButton"
-                    Content="CURSOR"
-                    Background="{StaticResource MenuClosedButtonBackground}"
-                    Style="{StaticResource ToolbarButton}"
-                    Click="CursorButtonClick"/>
-            </StackPanel>
-        </Grid>
+             Width="Auto" Height="75">
+    <Border Background="{StaticResource MasterToolbarBackground}" BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="3">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+            <controls:EramButton
+                Line1Text="{Binding MapsLabelLine1}"
+                Line2Text="{Binding MapsLabelLine2}"
+                Command="{Binding MapsCommand}"
+                EramButtonStyle="{StaticResource MenuButtonClosed}">
+            </controls:EramButton>
+            <controls:EramButton
+                Margin="2,0,0,0"
+                Line1Text="MASTER"
+                Line2Text="BRIGHT"
+                EramButtonStyle="{StaticResource MenuButtonClosed}"
+                Command="{Binding BrightnessCommand}">
+            </controls:EramButton>
+            <controls:EramButton
+                Margin="2,0,0,0"
+                Line1Text="MAP"
+                Line2Text="BRIGHT"
+                EramButtonStyle="{StaticResource MenuButtonClosed}"
+                Command="{Binding MapBrightnessCommand}">
+            </controls:EramButton>
+            <controls:EramButton
+                Margin="2,0,0,0"
+                Line1Text="VECTOR"
+                Line2Text="{Binding VelocityVector}"
+                EramButtonStyle="{StaticResource IncDecToggleButton}"
+                PreviewMouseDown="VelocityVectorMouseDown">
+            </controls:EramButton>
+        </StackPanel>
     </Border>
 </UserControl>

@@ -1,4 +1,5 @@
-﻿<adonisControls:AdonisWindow 
+﻿<adonisControls:AdonisWindow
+    x:Name="EramViewAdonisWindow"
     x:Class="vFalcon.EramView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -10,28 +11,94 @@
     xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
     xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
     xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
-    Icon="pack://application:,,,/Resources/Images/vFalcon.png"
-    Title="{Binding ProfileName}"
-    MinWidth="300" Width="1280" MinHeight="300" Height="720"
-    FontFamily="Consolas" FontSize="12" 
+    IconVisibility="Collapsed"
+    MinWidth="250" Width="1280" MinHeight="250" Height="720"
+    FontFamily="Consolas" FontSize="12"
     Foreground="{StaticResource White}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1"
-    SizeChanged="EramWindowSizeChanged"
-    LocationChanged="EramWindowLocationChanged"
-    StateChanged="EramWindowStateChanged">
+    KeyDown="EramKeyDown"
+    KeyUp="EramKeyUp"
+    MouseDown="EramMouseDown"
+    MouseWheel="RemovePilotContext"
+    SizeChanged="EramSizeChanged"
+    StateChanged="RemovePilotContext"
+    Deactivated="RemovePilotContext">
     <adonisControls:AdonisWindow.InputBindings>
+        <KeyBinding
+            Key="E"
+            Modifiers="Ctrl"
+            Command="{Binding ExitRecordingCommand}"/>
         <KeyBinding 
-            Key="P" 
+            Key="T" 
+            Modifiers="Ctrl" 
+            Command="{Binding ToggleTdmCommand}"/>
+        <KeyBinding
+            Key="L"
+            Modifiers="Ctrl"
+            Command="{Binding LoadRecordingCommand}"/>
+        <KeyBinding
+            Key="R"
+            Modifiers="Ctrl+Shift"
+            Command="{Binding StartStopRecordingCommand}"/>
+        <KeyBinding
+            Key="P"
             Modifiers="Ctrl+Shift"
             Command="{Binding SwitchProfileCommand}"/>
-        <KeyBinding 
-            Key="S" 
+        <KeyBinding
+            Key="G"
             Modifiers="Ctrl"
-            Command="{Binding SaveProfileCommand}"/>
-        <KeyBinding 
-            Key="S" 
-            Modifiers="Ctrl+Shift"
-            Command="{Binding SaveProfileAsCommand}"/>
+            Command="{Binding GeneralSettingsCommand}"/>
+        <KeyBinding
+            Key="F12"
+            Modifiers="Ctrl"
+            Command="{Binding ActivateSectorCommand}"/>
+        <KeyBinding
+            Key="PageUp"
+            Command="{Binding IncreaseVelocityVectorCommand}"/>
+        <KeyBinding
+            Key="PageDown"
+            Command="{Binding DecreaseVelocityVectorCommand}"/>
+        <KeyBinding
+            Key="Left"
+            Command="{Binding RewindCommand}"/>
+        <KeyBinding
+            Key="Space"
+            Command="{Binding PlayPauseCommand}"/>
+        <KeyBinding
+            Key="Right"
+            Command="{Binding FastForwardCommand}"/>
     </adonisControls:AdonisWindow.InputBindings>
+    <adonisControls:AdonisWindow.TitleBarContent>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="-8,0,0,0">
+            <Button
+                BorderBrush="Transparent"
+                BorderThickness="0"
+                adonisExtensions:CursorSpotlightExtension.BorderBrush="Transparent"
+                Background="Transparent"
+                Content="Menu"
+                Click="MenuButtonClick">
+            </Button>
+            <TextBlock
+                Margin="5,0,5,0"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Text="{Binding Title}">
+            </TextBlock>
+            <TextBlock
+                Margin="5,0,0,0"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Foreground="#e81123"
+                Text="{Binding RecordingStatus}">
+            </TextBlock>
+            <Popup
+                x:Name="MenuPopup"
+                PlacementTarget="{Binding ElementName=MenuButton}"
+                Placement="Bottom"
+                StaysOpen="False">
+                <views:MenuView x:Name="MenuPopupControl"/>
+            </Popup>
+        </StackPanel>
+    </adonisControls:AdonisWindow.TitleBarContent>
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
@@ -40,37 +107,64 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Border Grid.Row="0" Background="Black">
+            <Border x:Name="TestingBorder" Grid.Row="0" Background="{Binding Background}">
                 <Grid>
-                    <views:RadarView DataContext="{Binding RadarViewModel}"/>
-                    <ContentControl x:Name="ToolbarRegion" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
-                    <Border
-                        Background="Black"
-                        BorderBrush="#797979"
-                        BorderThickness="1"
+                    <views:RadarView x:Name="RadarView" Background="{Binding Background, ElementName=TestingBorder}" DataContext="{Binding RadarViewModel}"/>
+                    <ContentControl
+                        Margin="5,0,5,5"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Stretch"
+                        Visibility="{Binding ReplayControlVisibility}"
+                        Content="{Binding ReplayControlsContent}">
+                    </ContentControl>
+                    <ContentControl
+                        x:Name="ToolbarRegion"
+                        HorizontalAlignment="Stretch"
                         VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Margin="30,100,0,0">
-                        <TextBlock
-                            x:Name="ZuluTextBlock"
-                            Text="{Binding ZuluTime}"
-                            Margin="2"
-                            FontFamily="Consolas" FontSize="16"
-                            Width="Auto" MinWidth="65"
-                            Foreground="#c2c2c2"
-                            VerticalAlignment="Center"
-                            HorizontalAlignment="Right">
-                        </TextBlock>
-                    </Border>
-                    <StackPanel Margin="30,0,0,0" Orientation="Horizontal">
-                        <Button Style="{StaticResource TearoffButton}"/>
-                        <Button
-                            x:Name="CursorButton"
-                            Content="TOOLBAR"
-                            Background="{StaticResource MenuClosedButtonBackground}"
-                            Style="{StaticResource ToolbarButton}"
-                            Click="ToolbarButtonClick"/>
-                    </StackPanel>
+                        Content="{Binding MasterToolbarContent}"
+                        Panel.ZIndex="{Binding ToolbarRegionZIndex}"/>
+                    <Canvas Panel.ZIndex="{Binding CanvasZIndex}">
+                        <Border
+                               x:Name="TimeBorder" Margin="{Binding ZuluMargin}"
+                               Background="{Binding Background, ElementName=TestingBorder}" BorderBrush="White" BorderThickness="1"
+                               Width="90" Height="26"
+                               Canvas.Top="{Binding TimeBorderTop}"
+                               Canvas.Left="{Binding TimeBorderLeft}"
+                               Canvas.Bottom="{Binding TimeBorderBottom}"
+                               Canvas.Right="{Binding TimeBorderRight}">
+                            <TextBlock
+                                   Foreground="White"
+                                   Text="{Binding ZuluTime}"
+                                   FontFamily="/vFalcon;component/Resources/Fonts/#ERAM" FontSize="14"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center">
+                            </TextBlock>
+                        </Border>
+                    </Canvas>
+                    <Canvas Panel.ZIndex="10" x:Name="ToolbarControlCanvas">
+                        <ContentControl
+                            Margin="{Binding ToolbarControlMargin}"
+                            x:Name="ToolbarControl"
+                            Canvas.Top="{Binding ToolbarControlTop}"
+                            Canvas.Left="{Binding ToolbarControlLeft}"
+                            Canvas.Right="{Binding ToolbarControlRight}"
+                            Canvas.Bottom="{Binding ToolbarControlBottom}"
+                            Content="{Binding ToolbarControlContent}"/>
+                    </Canvas>
+                    <TextBlock
+                        Text="{Binding GeoMapStatus}"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Foreground="Red"
+                        FontFamily="pack://application:,,,/vFalcon;component/Resources/Fonts/ERAM.ttf#ERAM Regular"
+                        FontSize="24">
+                    </TextBlock>
+                    <Popup
+                        x:Name="PilotContext"
+                        StaysOpen="True"
+                        Placement="Relative">
+                        <views:PilotContextView x:Name="PilotContextControl"/>
+                    </Popup>
                 </Grid>
             </Border>
         </Grid>

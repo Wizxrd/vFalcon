@@ -8,12 +8,7 @@ namespace vFalcon.Behaviors
 {
     public class SKElementPaintBehavior : Behavior<SKElement>
     {
-        public static readonly DependencyProperty PaintCommandProperty =
-            DependencyProperty.Register(
-                nameof(PaintCommand),
-                typeof(ICommand),
-                typeof(SKElementPaintBehavior),
-                new PropertyMetadata(null));
+        public static readonly DependencyProperty PaintCommandProperty = DependencyProperty.Register(nameof(PaintCommand), typeof(ICommand), typeof(SKElementPaintBehavior), new PropertyMetadata(null));
 
         public ICommand PaintCommand
         {
@@ -35,8 +30,7 @@ namespace vFalcon.Behaviors
 
         private void OnPaintSurface(object sender, SKPaintSurfaceEventArgs e)
         {
-            if (PaintCommand?.CanExecute(e) == true)
-                PaintCommand.Execute(e);
+            if (PaintCommand?.CanExecute(e) == true) PaintCommand.Execute(e);
         }
     }
 }

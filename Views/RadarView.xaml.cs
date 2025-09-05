@@ -32,14 +32,11 @@ namespace vFalcon.Views
         {
             if (DataContext is RadarViewModel radarVM)
             {
-                radarVM.CaptureMouse = () => RadarCanvas.CaptureMouse();
-                radarVM.ReleaseMouse = () => RadarCanvas.ReleaseMouseCapture();
-                radarVM.InvalidateCanvas = () => RadarCanvas.InvalidateVisual();
-
-                if (Application.Current.MainWindow?.DataContext is EramViewModel mainVM)
-                {
-                    radarVM.SetCursorVisibility = visible => mainVM.IsCursorVisible = visible;
-                }
+                radarVM.InvalidateCanvas = () =>
+                Dispatcher.BeginInvoke(
+                    System.Windows.Threading.DispatcherPriority.Render,
+                    new Action(() => RadarCanvas.InvalidateVisual())
+                );
             }
         }
     }

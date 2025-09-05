@@ -4,28 +4,18 @@ namespace vFalcon.ViewModels
 {
     public class ProfileViewModel : ViewModelBase
     {
-        public Profile Model { get; }
-
-        private string _originalName;
+        // ========================================================
+        //                      FIELDS
+        // ========================================================
+        private string _originalName = string.Empty;
         private bool _isSelected;
-        public string OriginalName => _originalName;
         private bool _isRenaming;
 
-        public ProfileViewModel(Profile model)
-        {
-            Model = model;
-            IsRenaming = false;
-        }
-
-        public bool IsSelected
-        {
-            get => _isSelected;
-            set
-            {
-                _isSelected = value;
-                OnPropertyChanged();
-            }
-        }
+        // ========================================================
+        //                      PROPERTIES
+        // ========================================================
+        public Profile Model { get; }
+        public string OriginalName => _originalName;
 
         public string Name
         {
@@ -40,16 +30,30 @@ namespace vFalcon.ViewModels
             }
         }
 
+        public bool IsSelected
+        {
+            get => _isSelected;
+            set { _isSelected = value; OnPropertyChanged(); }
+        }
+
         public bool IsRenaming
         {
             get => _isRenaming;
-            set
-            {
-                _isRenaming = value;
-                OnPropertyChanged();
-            }
+            set { _isRenaming = value; OnPropertyChanged(); }
         }
 
+        // ========================================================
+        //                  CONSTRUCTOR
+        // ========================================================
+        public ProfileViewModel(Profile model)
+        {
+            Model = model;
+            IsRenaming = false;
+        }
+
+        // ========================================================
+        //                      METHODS
+        // ========================================================
         public void BeginRename()
         {
             _originalName = Name;
