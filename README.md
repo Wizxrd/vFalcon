@@ -96,6 +96,7 @@ vFalcon allows users to record the live network data while vFalcon is open via t
 **Left Arrow** | Rewinds by 1 tick.
 **Right Arrow** | Fast Fowards by 1 tick.
 **Space** | Toggles play/pause.
+**Middle Click** | Middle click slew on target to toggle FDB.
 **Right Click** | Right click slew on target to bring up context menu.
 **CTRL+Left Click** | Left click slew on target to cycle through FDB positions (same as CRC, goes counter-clockwise).
 **CTRL+Right Click** | Right click slew on target to toggle leader line length.
