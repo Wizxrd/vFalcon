@@ -31,6 +31,11 @@
             </controls:EramButton>
             <controls:EramButton
                 Margin="2,0,0,0"
+                Line1Text="CURSOR"
+                EramButtonStyle="{StaticResource MenuButtonClosed}"
+                Command="{Binding CursorCommand}"/>
+            <controls:EramButton
+                Margin="2,0,0,0"
                 Line1Text="VECTOR"
                 Line2Text="{Binding VelocityVector}"
                 EramButtonStyle="{StaticResource IncDecToggleButton}"

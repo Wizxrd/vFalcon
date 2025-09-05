@@ -7,57 +7,40 @@
              xmlns:controls="clr-namespace:vFalcon.Resources.Controls"
              mc:Ignorable="d" 
              Width="Auto" Height="75">
-    <Border Background="{StaticResource MasterToolbarBackground}" BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="3,1,0,0">
+    <Border Background="{StaticResource MasterToolbarBackground}" BorderBrush="{StaticResource MasterToolbarBorder}" BorderThickness="1" Padding="0,1,0,0">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="3"/>
-                <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="3"/>
-                <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="3"/>
-                <ColumnDefinition Width="{StaticResource GridButtonWidth}"/>
-                <ColumnDefinition Width="3"/>
+                <ColumnDefinition Width="85"/>
+                <ColumnDefinition Width="85"/>
+                <ColumnDefinition Width="85"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
             <controls:EramButton
-                Grid.Column="8"
-                Margin="8,2,0,0"
+                Grid.Column="3"
+                Margin="3,2,0,0"
                 VerticalAlignment="Top"
                 Line1Text="CURSOR"
                 EramButtonStyle="{StaticResource MenuButtonOpen}"
                 Command="{Binding CursorBackCommand}"/>
 
-            <Border Grid.Column="10" Height="36" BorderBrush="#896800" BorderThickness="2">
+            <Border Grid.Column="4" Height="36" BorderBrush="#896800" BorderThickness="2">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="3"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="3"/>
+                        <ColumnDefinition Width="0"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <controls:NoTearoffButton
-                        Grid.Column="0"
-                        NoTearoffLine1Text="SPEED"
-                        NoTearoffLine2Text="1"
-                        NoTearoffStyle="{StaticResource IncDecButton}"/>
                     <controls:NoTearoffButton
                         Grid.Column="2"
                         NoTearoffLine1Text="SIZE"
                         NoTearoffLine2Text="{Binding CursorSize}"
                         NoTearoffStyle="{StaticResource IncDecButton}"
                         PreviewMouseDown="CursorSizeButtonMouseDown"/>
-                    <controls:NoTearoffButton
-                        Grid.Column="4"
-                        NoTearoffLine1Text="VOLUME"
-                        NoTearoffLine2Text="5"
-                        NoTearoffStyle="{StaticResource IncDecButton}"/>
                 </Grid>
             </Border>
         </Grid>

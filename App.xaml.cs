@@ -21,7 +21,7 @@ namespace vFalcon
         {
             mutex = new Mutex(true, appName, out createdNew);
             Logger.DebugMode = true;
-            Logger.LogLevelThreshold = LogLevel.Trace;
+            Logger.LogLevelThreshold = LogLevel.Info;
             Logger.Info("App", $"Launching vFalcon v{version}");
         }
 
