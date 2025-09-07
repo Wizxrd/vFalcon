@@ -135,7 +135,7 @@ namespace vFalcon.Services.Service
                 if (recordingService.recordingData.ContainsKey(c))
                 {
                     Logger.Trace("Removing", c.ToString());
-                    recordingService.recordingData.Remove(c);
+                    //recordingService.recordingData.Remove(c);
                 }
             }
 

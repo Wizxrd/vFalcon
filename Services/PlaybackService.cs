@@ -74,14 +74,14 @@ namespace vFalcon.Services
             paused = false;
             playbackTimer.Start();
         }
-
         public async void PlaybackTimerTick(object? sender, EventArgs? e)
         {
             try
             {
                 eramViewModel.UpdateReplayControls(Tick);
-                var tickCountToken = replayJson["TickCount"];
-                if (tickCountToken != null && Tick >= tickCountToken.Value<int>()) return;
+
+                var tct = replayJson["TickCount"];
+                if (tct != null && Tick >= tct.Value<int>()) return;
 
                 var pilotsObj = replayJson["Pilots"] as JObject;
                 if (pilotsObj is null) return;
@@ -94,15 +94,18 @@ namespace vFalcon.Services
                     var data = prop.Value as JObject;
                     if (data is null) continue;
 
+                    int startTick = data["StartTick"]?.Value<int?>() ?? 0;
+                    int frame = Tick - startTick;
+
                     var history = data["History"] as JArray;
-                    if (history is null || Tick < 0 || Tick >= history.Count)
+                    if (history is null || frame < 0 || frame >= history.Count)
                     {
                         if (radarViewModel.pilotService.Pilots.Remove(callsign))
                             Logger.Debug("Removing", callsign);
                         continue;
                     }
 
-                    var coords = history[Tick] as JArray;
+                    var coords = history[frame] as JArray;
                     if (coords is null || coords.Count < 2) continue;
 
                     double lat = coords[0].Value<double>();
@@ -126,20 +129,20 @@ namespace vFalcon.Services
                     var hdgArr = data["Heading"] as JArray;
                     var freqArr = data["Frequency"] as JArray;
 
-                    if (altArr is not null && Tick < altArr.Count && altArr[Tick]?.Type != JTokenType.Null)
-                        pilot.Altitude = altArr[Tick]!.Value<int>();
+                    if (altArr is not null && frame < altArr.Count && altArr[frame]?.Type != JTokenType.Null)
+                        pilot.Altitude = altArr[frame]!.Value<int>();
 
-                    if (gsArr is not null && Tick < gsArr.Count && gsArr[Tick]?.Type != JTokenType.Null)
-                        pilot.GroundSpeed = gsArr[Tick]!.Value<int>();
+                    if (gsArr is not null && frame < gsArr.Count && gsArr[frame]?.Type != JTokenType.Null)
+                        pilot.GroundSpeed = gsArr[frame]!.Value<int>();
 
-                    if (hdgArr is not null && Tick < hdgArr.Count && hdgArr[Tick]?.Type != JTokenType.Null)
-                        pilot.Heading = hdgArr[Tick]!.Value<int>();
+                    if (hdgArr is not null && frame < hdgArr.Count && hdgArr[frame]?.Type != JTokenType.Null)
+                        pilot.Heading = hdgArr[frame]!.Value<int>();
 
                     if (!string.IsNullOrEmpty(sectorFreq) &&
                         freqArr is not null &&
-                        Tick < freqArr.Count &&
-                        freqArr[Tick]?.Type != JTokenType.Null &&
-                        string.Equals(freqArr[Tick]!.Value<string>(), sectorFreq, StringComparison.OrdinalIgnoreCase))
+                        frame < freqArr.Count &&
+                        freqArr[frame]?.Type != JTokenType.Null &&
+                        string.Equals(freqArr[frame]!.Value<string>(), sectorFreq, StringComparison.OrdinalIgnoreCase))
                     {
                         pilot.FullDataBlock = true;
                     }
@@ -154,10 +157,7 @@ namespace vFalcon.Services
                     }
                 }
 
-                if (!paused)
-                {
-                    Tick++;
-                }
+                if (!paused) Tick++;
                 radarViewModel?.Redraw();
             }
             catch (Exception ex)

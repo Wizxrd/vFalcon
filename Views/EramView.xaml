@@ -87,7 +87,7 @@
                 Margin="5,0,0,0"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"
-                Foreground="#e81123"
+                Foreground="#ff5664"
                 Text="{Binding RecordingStatus}">
             </TextBlock>
             <Popup

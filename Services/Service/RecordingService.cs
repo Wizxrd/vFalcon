@@ -3,7 +3,8 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
+using System.Text;
+using System.Threading;
 using vFalcon.Helpers;
 using vFalcon.Models;
 
@@ -17,6 +18,8 @@ namespace vFalcon.Services.Service
         private DateTime startedUtc = DateTime.MinValue;
         private int tickCount = 0;
         private DateTime? lastUpdatedUtc;
+        private readonly SemaphoreSlim saveGate = new(1, 1);
+        private static readonly Encoding Utf8NoBom = new UTF8Encoding(false);
 
         public void Start()
         {
@@ -43,12 +46,14 @@ namespace vFalcon.Services.Service
             }
             tickCount++;
             lastUpdatedUtc = DateTime.UtcNow;
-            foreach (var pilot in pilots.Values.ToList())
+
+            foreach (var pilot in pilots.Values)
             {
                 if (!recordingData.ContainsKey(pilot.Callsign))
                 {
                     recordingData[pilot.Callsign] = new Recording
                     {
+                        StartTick = Math.Max(0, tickCount - 1),
                         FlightPlan = pilot.FlightPlan,
                         Altitude = new JArray { pilot.Altitude },
                         GroundSpeed = new JArray { pilot.GroundSpeed },
@@ -73,6 +78,7 @@ namespace vFalcon.Services.Service
 
         private void Save()
         {
+            saveGate.Wait();
             try
             {
                 var serializer = new JsonSerializer
@@ -97,12 +103,33 @@ namespace vFalcon.Services.Service
                 };
 
                 var folder = Loader.LoadFolder("Recordings");
-                File.WriteAllText(Loader.LoadFile(folder, $"{recordingName}.json"), root.ToString(Formatting.Indented));
+                var finalPath = Loader.LoadFile(folder, $"{recordingName}.json");
+                var tmpPath = finalPath + ".tmp";
+
+                using (var fs = new FileStream(tmpPath, FileMode.Create, FileAccess.Write, FileShare.None, 81920, FileOptions.WriteThrough))
+                using (var sw = new StreamWriter(fs, Utf8NoBom))
+                using (var jw = new JsonTextWriter(sw) { Formatting = Formatting.Indented })
+                {
+                    root.WriteTo(jw);
+                    jw.Flush();
+                    sw.Flush();
+                    fs.Flush(true);
+                }
+
+                if (File.Exists(finalPath))
+                    File.Replace(tmpPath, finalPath, null);
+                else
+                    File.Move(tmpPath, finalPath);
+
                 Logger.Info("Recording.Save", "Saved recording data");
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error saving pilot data: {ex.Message}");
+            }
+            finally
+            {
+                saveGate.Release();
             }
         }
     }

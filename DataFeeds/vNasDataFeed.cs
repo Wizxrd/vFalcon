@@ -1,50 +1,89 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Collections.Concurrent;
+using System.Net;
 using System.Net.Http;
-using System.Text;
+using System.Net.Http.Headers;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace vFalcon.DataFeeds
 {
-    public class vNasDataFeed
+    public static class vNasDataFeed
     {
-        private static readonly string vNasDataFeedUrl = "https://live.env.vnas.vatsim.net/data-feed/controllers.json";
+        private static readonly string Url = "https://live.env.vnas.vatsim.net/data-feed/controllers.json";
+        private static readonly ConcurrentDictionary<string, string> Cache = new(StringComparer.OrdinalIgnoreCase);
 
-        public static async Task<string?> GetArtccFrequencyAsync(string artccId, string sectorName)
+        private static readonly HttpClient Http = CreateClient();
+        private static HttpClient CreateClient()
         {
-            using var client = new HttpClient();
-            string json = await client.GetStringAsync(vNasDataFeedUrl);
+            var h = new HttpClientHandler { AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate };
+            var c = new HttpClient(h) { Timeout = TimeSpan.FromSeconds(10) };
+            c.DefaultRequestHeaders.UserAgent.ParseAdd("vFalcon/1.0");
+            c.DefaultRequestHeaders.AcceptEncoding.Add(new StringWithQualityHeaderValue("gzip"));
+            c.DefaultRequestHeaders.AcceptEncoding.Add(new StringWithQualityHeaderValue("deflate"));
+            return c;
+        }
 
-            var root = JObject.Parse(json);
-            var controllers = root["controllers"] as JArray;
+        public static async Task<string?> GetArtccFrequencyAsync(string artccId, string sectorName, CancellationToken ct = default)
+        {
+            var cacheKey = artccId + "||" + sectorName;
+            const int maxAttempts = 3;
 
-            foreach (var controller in controllers)
+            for (int attempt = 1; attempt <= maxAttempts; attempt++)
             {
-                string controllerArtccId = controller["artccId"]?.ToString() ?? "";
-                if (!controllerArtccId.Equals(artccId, StringComparison.OrdinalIgnoreCase))
-                    continue;
-
-                var positions = controller["positions"] as JArray;
-                if (positions == null) continue;
-
-                foreach (var position in positions)
+                try
                 {
-                    string facilitySectorName = position["positionName"]?.ToString() ?? "";
-                    if (!facilitySectorName.Equals(sectorName, StringComparison.OrdinalIgnoreCase))
-                        continue;
+                    using var resp = await Http.GetAsync(Url, HttpCompletionOption.ResponseHeadersRead, ct).ConfigureAwait(false);
+                    resp.EnsureSuccessStatusCode();
+                    await using var s = await resp.Content.ReadAsStreamAsync(ct).ConfigureAwait(false);
+                    using var sr = new System.IO.StreamReader(s);
+                    using var jr = new Newtonsoft.Json.JsonTextReader(sr) { CloseInput = false };
+                    var root = await JObject.LoadAsync(jr, ct).ConfigureAwait(false);
 
-                    long frequencyHz = position["frequency"]?.ToObject<long>() ?? 0;
-                    if (frequencyHz > 0)
+                    var controllers = root["controllers"] as JArray;
+                    if (controllers is null) return Cache.TryGetValue(cacheKey, out var freq0) ? freq0 : null;
+
+                    foreach (var controller in controllers)
                     {
-                        double frequencyMHz = frequencyHz / 1_000_000.0;
-                        return frequencyMHz.ToString("F3");
+                        var id = controller?["artccId"]?.ToString();
+                        if (!string.Equals(id, artccId, StringComparison.OrdinalIgnoreCase)) continue;
+
+                        var positions = controller?["positions"] as JArray;
+                        if (positions is null) continue;
+
+                        foreach (var position in positions)
+                        {
+                            var name = position?["positionName"]?.ToString();
+                            if (!string.Equals(name, sectorName, StringComparison.OrdinalIgnoreCase)) continue;
+
+                            var hz = position?["frequency"]?.ToObject<long?>() ?? 0;
+                            if (hz > 0)
+                            {
+                                var mhz = (hz / 1_000_000.0).ToString("F3");
+                                Cache[cacheKey] = mhz;
+                                return mhz;
+                            }
+                        }
                     }
+
+                    return Cache.TryGetValue(cacheKey, out var freq) ? freq : null;
+                }
+                catch (HttpRequestException) when (attempt < maxAttempts)
+                {
+                    await Task.Delay(TimeSpan.FromMilliseconds(200 * attempt), ct).ConfigureAwait(false);
+                }
+                catch (TaskCanceledException) when (!ct.IsCancellationRequested && attempt < maxAttempts)
+                {
+                    await Task.Delay(TimeSpan.FromMilliseconds(200 * attempt), ct).ConfigureAwait(false);
+                }
+                catch (Newtonsoft.Json.JsonReaderException) when (attempt < maxAttempts)
+                {
+                    await Task.Delay(TimeSpan.FromMilliseconds(200 * attempt), ct).ConfigureAwait(false);
                 }
             }
 
-            return null;
+            return Cache.TryGetValue(cacheKey, out var fallback) ? fallback : null;
         }
     }
 }

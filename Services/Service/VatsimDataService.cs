@@ -41,44 +41,43 @@ public class VatsimDataService
     {
         refreshTimer.Stop();
     }
-
-    private async Task RefreshAsync()
+    private async Task RefreshAsync(CancellationToken ct = default)
     {
-        //Logger.Debug("VatsimDataService.RefreshAsync", "Refreshing");
-        await Task.Run(async () =>
+        try
         {
-            try
+            var dataFeed = await VatsimDataFeed.GetPilotsAsync(ct);
+            if (dataFeed is null) return;
+
+            string timestampStr = dataFeed["general"]?["update_timestamp"]?.ToString();
+            DateTime lastUpdateUtc;
+
+            if (DateTime.TryParse(timestampStr, out lastUpdateUtc))
             {
-                JObject? dataFeed = await VatsimDataFeed.GetPilotsAsync();
-                if (dataFeed == null) return;
+                lastUpdateUtc = lastUpdateUtc.AddMilliseconds(-lastUpdateUtc.Millisecond);
+                Logger.Debug("VatsimDataService.RefreshAsync", $"Last update timestamp: {lastUpdateUtc}");
 
-                //string timestampStr = dataFeed["general"]?["update_timestamp"]?.ToString();
-                //DateTime lastUpdateUtc;
+                if (lastUpdateTimestamp.HasValue && lastUpdateTimestamp.Value == lastUpdateUtc)
+                {
+                    Logger.Debug("VatsimDataService.RefreshAsync", "Skipping refresh, update timestamp is the same.");
+                    return;
+                }
 
-                //if (DateTime.TryParse(timestampStr, out lastUpdateUtc))
-                //{
-                //    lastUpdateUtc = lastUpdateUtc.AddMilliseconds(-lastUpdateUtc.Millisecond);
-                //    //Logger.Debug("VatsimDataService.RefreshAsync", $"Last update timestamp: {lastUpdateUtc}");
-
-                //    if (lastUpdateTimestamp.HasValue && lastUpdateTimestamp.Value == lastUpdateUtc)
-                //    {
-                //        //Logger.Debug("VatsimDataService.RefreshAsync", "Skipping refresh, update timestamp is the same.");
-                //        return;
-                //    }
-
-                //    lastUpdateTimestamp = lastUpdateUtc;
-                //}
-
-                var transceiverFrequencies = await VatsimDataFeed.GetTransceiversAsync();
-                string? sectorFreq = await vNasDataFeed.GetArtccFrequencyAsync(profile.ArtccId, profile.ActivatedSectorName);
-                await Task.Run(() => pilotService.UpdateFromDataFeed(dataFeed, transceiverFrequencies, sectorFreq));
-                Application.Current.Dispatcher.Invoke(() => invalidateCanvas());
+                lastUpdateTimestamp = lastUpdateUtc;
             }
-            catch (Exception ex)
-            {
-                Logger.Error("VatsimDataService.RefreshAsync", ex.ToString());
-            }
-        });
+            var transceiverFrequencies = await VatsimDataFeed.GetTransceiversAsync(ct);
+            var sectorFreq = await vNasDataFeed.GetArtccFrequencyAsync(profile.ArtccId, profile.ActivatedSectorName, ct);
+
+            // If CPU-bound:
+            await Task.Run(() => pilotService.UpdateFromDataFeed(dataFeed, transceiverFrequencies, sectorFreq), ct);
+
+            // Back to UI:
+            Application.Current.Dispatcher.BeginInvoke(invalidateCanvas);
+        }
+        catch (OperationCanceledException) { /* ignore */ }
+        catch (Exception ex)
+        {
+            Logger.Error("VatsimDataService.RefreshAsync", ex.ToString());
+        }
     }
 
 }

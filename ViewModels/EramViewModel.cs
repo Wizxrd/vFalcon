@@ -385,6 +385,7 @@ namespace vFalcon.ViewModels
             if (isPlaybackMode) return;
             if (!IsRecording)
             {
+                if (RadarViewModel.pilotService == null) return;
                 if (RadarViewModel.pilotService.recordingService != null)
                 {
                     IsRecording = true;
@@ -427,7 +428,7 @@ namespace vFalcon.ViewModels
         public void ExitRecording()
         {
             playbackService.StopPlayback();
-            replayControlVisibility = Visibility.Collapsed;
+            ReplayControlVisibility = Visibility.Collapsed;
             RadarViewModel.vatsimDataService.Start();
             RadarViewModel.Redraw();
             ExitRecordingAction?.Invoke();
@@ -453,17 +454,26 @@ namespace vFalcon.ViewModels
 
         public void OnRewindCommand()
         {
-            replayControlsContent.RewindButtonClick(null, null);
+            if (isPlaybackMode)
+            {
+                replayControlsContent.RewindButtonClick(null, null);
+            }
         }
 
         public void OnPlayPauseCommand()
         {
-            replayControlsContent.PlayPauseButtonClick(null, null);
+            if (isPlaybackMode)
+            {
+                replayControlsContent.PlayPauseButtonClick(null, null);
+            }
         }
 
         public void OnFastForwardCommand()
         {
-            replayControlsContent.FastForwardButtonClick(null, null);
+            if (isPlaybackMode)
+            {
+                replayControlsContent.FastForwardButtonClick(null, null);
+            }
         }
 
         // ========================================================

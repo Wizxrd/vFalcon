@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using vFalcon.Helpers;
 
 namespace vFalcon.ViewModels
 {
@@ -29,6 +30,7 @@ namespace vFalcon.ViewModels
             get => sliderValueTick;
             set
             {
+                Logger.Debug("SLiderTick", value.ToString());
                 sliderValueTick = value;
                 eramViewModel.playbackService.Tick = value;
                 OnPropertyChanged();
