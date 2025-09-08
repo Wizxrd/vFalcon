@@ -12,7 +12,7 @@ namespace vFalcon
     /// </summary>
     public partial class App : Application
     {
-        private string version = "0.0.12";
+        private string version = "0.0.13";
         private static Mutex mutex;
         const string appName = "vFalcon";
         bool createdNew;
@@ -20,7 +20,7 @@ namespace vFalcon
         public App()
         {
             mutex = new Mutex(true, appName, out createdNew);
-            Logger.DebugMode = false;
+            Logger.DebugMode = true;
             Logger.LogLevelThreshold = LogLevel.Trace;
             Logger.Info("App", $"Launching vFalcon v{version}");
         }

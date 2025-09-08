@@ -87,7 +87,6 @@ namespace vFalcon.Services
                 if (pilotsObj is null) return;
 
                 string? sectorFreq = profile.ActivatedSectorFreq;
-
                 foreach (var prop in pilotsObj.Properties())
                 {
                     string callsign = prop.Name;
@@ -145,6 +144,10 @@ namespace vFalcon.Services
                         string.Equals(freqArr[frame]!.Value<string>(), sectorFreq, StringComparison.OrdinalIgnoreCase))
                     {
                         pilot.FullDataBlock = true;
+                    }
+                    else
+                    {
+                        pilot.FullDataBlock = false;
                     }
                     if (pilot.ForcedFullDataBlock) pilot.FullDataBlock = true;
 
