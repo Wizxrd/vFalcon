@@ -1,13 +1,13 @@
 # vFALCON
-![](https://img.shields.io/badge/version-v1.0.0-limegreen)
-## [DOWNLOAD](https://github.com/Wizxrd/vFalcon/releases)
+![](https://img.shields.io/badge/version-v1.0.0-limegreen)  
+[DOWNLOAD](https://github.com/Wizxrd/vFalcon/releases)
 
-# OVERVIEW  
+## OVERVIEW  
 vFalcon is a VATSIM replay and analysis platform modeled after the FAA's Falcon program used to track the manipulation of datablocks, aircraft positions, and other sector-specific data within the National Airspace System (NAS). Its interface and functions are configured to align with CRC profile standards, providing a consistent and familiar environment for operational training and review.
 
 The primary use of vFalcon is for reviewing busy traffic scenarios, debriefing close calls, evaluating controller performance, and assisting in student training from live network situations.
 
-# DEFINITIONS
+## DEFINITIONS
 
 * ARTCC  
   * Air Route Traffic Control Center. A facility that manages and separates aircraft flying under instrument flight rules in high-altitude enroute airspace between airports. ARTCC facilities usually utilize the ERAM system to control aircraft.  
@@ -34,7 +34,7 @@ The primary use of vFalcon is for reviewing busy traffic scenarios, debriefing c
 * vNAS  
   * [Virtual National Airspace System](https://vnas.vatsim.net/). The core system supporting advanced ATC clients for controlling U.S. airspace on VATSIM, integrating with VATSIM to share traffic data, coordinate internationally, store flight plans, manage ARTCC virtual systems, and sync data across all U.S. ATC facilities.
 
-# MINIMUM REQUIREMENTS
+## MINIMUM REQUIREMENTS
 
 * Windows OS 10 or higher  
 * Mouse or track pad with Center-Click abilities  
@@ -43,29 +43,29 @@ The primary use of vFalcon is for reviewing busy traffic scenarios, debriefing c
 * CRC Installed  
 * The desired facility to be reviewed must be installed via CRC
 
-# DATA BLOCKS  
+## DATA BLOCKS  
 The data block simulation will replicate, as closely as possible, the format and behavior used in the CRC program for the applicable facility type (ARTCC/TRACON/CAB/ASDEX). At present, due to limited available data, many fields are not displayed such as assigned headings, speeds, interim/temporary altitudes, procedural altitudes, fourth-line data, scratchpad entries, VCI, CID matching, and other similar elements. Once the necessary APIs (data exchange ports) are created by VATSIM and vNAS, these features are expected to be implemented in vFalcon to the fullest extent possible.
 
 Until the appropriate APIs are created, vFalcon determines whether to display a LDB or a FDB by checking for an active CRC ATC whose frequency matches the sector frequency currently active in vFalcon. If no matching controller is found, the data block remains an LDB, even if the pilot is tuned to that frequency. If a matching controller is detected, the data block is displayed as an FDB. The user may also center-click on a LBD displaying a callsign to manually toggle it to an FDB.
 
-# FEATURES  
-## GENERAL  
+## FEATURES
+### GENERAL  
 Prior to vFalcon displaying video map data (lines, symbols, text, etc�), you must first have CRC installed on your local computer. Furthermore, you must have the facility you wish to review installed via the CRC Facility manager menu. Refer to [CRC documentation](https://crc.virtualnas.net/docs/#/) for more information concerning CRC installation and setup.
 
-## LIVE MONITOR MODE
+### LIVE MONITOR MODE
 
 * Monitor current traffic situations as they are happening now on the network.  
 * Requires internet connection
 
-## REPLAY MODE
+### REPLAY MODE
 
 * Review past recorded data.  
 * Requires data to have been recorded on the user's local computer (no current internet connection required) or via a server that records the data for later review (internet connection required to retrieve data from server).
 
-## CLIENT SIMULATION
+### CLIENT SIMULATION
 vFalcon will simulate the CRC equivalent window for the user-selected facility to the furthest extent nessessary. Available windows: ERAM, STARS, CAB, and ASDEX. 
 
-# DATA USAGE  
+## DATA USAGE  
 vFalcon integrates the following VATSIM and vNAS data feeds to generate its display environment, including aircraft position, altitude, route assignments, and other operational details.
 
 * [Aircraft Data Feed](https://data.vatsim.net/v3/vatsim-data.json)  
@@ -81,28 +81,38 @@ vFalcon integrates the following VATSIM and vNAS data feeds to generate its disp
 
 vFalcon allows users to record the live network data while vFalcon is open via the �Record� menu and this data may be stored on the users computer and reviewed later using the vFalcon Replay Mode. vFalcon also allows users to set up a server to monitor/record the data from VATSIM without vFalcon being launched, so that the user may point the Replay Mode to the server and review archived data; This is more ideal to be setup on an ARTCC level, at minimum.
 
-# KEYBINDS
+## KEYBINDS
 **Keybind** | **Description**
 ---|---
-**Ctrl+F12** | Toggles activating/deactivating a sector (enables FDB for pilots on that frequency).
-**Ctrl+E** | Exits replay mode.
-**Ctrl+L** | Opens window to select a recording file.
-**Alt+R** | Starts/stops recording in live mode.
-**Alt+P** | Switch profile.
-**Ctrl+G** | Opens general settings.
-**Ctrl+T** | Toggles TDM mode (only for video maps).
-**Page Up** | Increases velocity vector lines.
-**Page Down** | Decreases velocity vector lines.
-**Left Arrow** | Rewinds by 1 tick.
-**Right Arrow** | Fast Fowards by 1 tick.
-**Space** | Toggles play/pause.
-**Middle Click** | Middle click slew on target to toggle FDB.
-**Right Click** | Right click slew on target to bring up context menu.
-**Ctrl+Left Click** | Left click slew on target to cycle through FDB positions (same as CRC, goes counter-clockwise).
-**Ctrl+Right Click** | Right click slew on target to toggle leader line length.
-**Shift+Left Click** | Left click slew on target to toggle J-Ring.
-**Alt+Left Click** | Left click slew on target to toggle Dwell lock.
-**J+Left Click** | Left click slew on target to cycle through J-Ring size (3, 5, 10, 15, 20, 30).
+**Esc** | Clear find by square
+**Alt+F** | Toggles fullscreen
+**Alt+T** | Toggles titlebar
+**Alt+B** | Toggles resize border
+**Alt+R** | Start/stop recording
+**Ctrl+E** | Exit replay mode
+**Ctrl+T** | Toggle TDM mode (only for video maps)
+**Ctrl+L** | Load recording
+**Ctrl+S** | Save profile
+**Ctrl+G** | Open general settings window
+**Ctrl+F12** | Open positions window
+**Ctrl+Shift+S** | Save profile as
+**Ctrl+Shift+P** | Switch profile
+**Shift+S** | Open search by window
+**Shift+F** | Open find by window
+**Shift+Alt+S** | Screenshot application window
+**PageUp** | Increase velocity vectors
+**PageDown** | Decrease velocity vectors
+**LeftArrow** | Rewind replay
+**Space** | Play/pause replay
+**RightArrow** | Fast forward replay
+**Middle Click** | Middle click on target to toggle FDB
+**Right Click** | Right click on target to bring up context menu
+**Ctrl+Left Click** | Left click on target to cycle through FDB positions (same as CRC, goes counter-clockwise)
+**Ctrl+Right Click** | Right click on target to toggle leader line length
+**Shift+Left Click** | Left click on target to toggle J-Ring
+**Alt+Left Click** | Left click on target to toggle Dwell lock
+**J+Left Click** | Left click on target to cycle through J-Ring size (3, 5, 10, 15, 20, 30)
+**Q+Left Click** | Left click on target to toggle Filed Route Display
 
 ## License
 
