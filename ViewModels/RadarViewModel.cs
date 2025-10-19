@@ -474,7 +474,6 @@ namespace vFalcon.ViewModels
                     }
                     else if (ScreenMap.DistanceInNM(pilot.Latitude, pilot.Longitude, depCoords?[0] ?? 0, depCoords?[1] ?? 0) <= 50 && depCoords != null)
                     {
-                        Logger.Error("2", "2");
                         var childFacilities = (JArray)eramViewModel.artcc.facility["childFacilities"];
                         var match = childFacilities?.FirstOrDefault(cf => (string)cf["id"] == eramViewModel.profile.FacilityId) as JObject;
                         var starsConfig = match?["starsConfiguration"] as JObject;
@@ -512,7 +511,6 @@ namespace vFalcon.ViewModels
                     }
                     else
                     {
-                        Logger.Error("3", "3");
                         string acShort = pilot.FlightPlan?["aircraft_short"]?.ToString();
                         acShort = string.IsNullOrWhiteSpace(acShort) ? groundSpeed : acShort;
                         switch (executedCycle)

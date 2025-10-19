@@ -84,74 +84,107 @@ namespace vFalcon.Services.Service
                 }
             }
             if (best == string.Empty) return fixes[fixes.Count - 1];
-            return best; // empty string if none are in front
+            return best;
         }
-
 
         public List<string> GetFixesFromRouteString(string route)
         {
-            string[] splitRoute = Regex.Split($"{route}", @"\s+").Where(s => !string.IsNullOrWhiteSpace(s)).ToArray();
-            List<string> fixes = new List<string>();
+            var fixes = new List<string>();
+            if (string.IsNullOrWhiteSpace(route)) return fixes;
+
+            // Tokenize robustly
+            var splitRoute = Regex.Split(route.Trim(), @"\s+")
+                                  .Where(s => !string.IsNullOrWhiteSpace(s))
+                                  .ToArray();
+
+            // small local helpers
+            bool TryGet(int index, out string value)
+            {
+                if (index >= 0 && index < splitRoute.Length)
+                {
+                    value = splitRoute[index];
+                    return true;
+                }
+                value = string.Empty;
+                return false;
+            }
+
+            bool Is(string s, string pattern) => !string.IsNullOrEmpty(s) && Regex.IsMatch(s, pattern);
+
             for (int i = 0; i < splitRoute.Length; i++)
             {
                 var fix = splitRoute[i];
+
                 if (fix == "DCT") continue;
-                if (Regex.IsMatch(fix, airportRegexPattern))
+
+                // Airport
+                if (Is(fix, airportRegexPattern))
                 {
-                    //Logger.Debug("GetCordsFromRouteString", $"Airport: {fix}");
                     fixes.Add(fix);
+                    continue;
                 }
-                else if (Regex.IsMatch(fix, fixRegexPattern))
+
+                // Plain fix (e.g., 3–5 letter)
+                if (Is(fix, fixRegexPattern))
                 {
-                    //Logger.Debug("GetCordsFromRouteString", $"Fix: {fix}");
                     fixes.Add(fix);
+                    continue;
                 }
-                else if (Regex.IsMatch(fix, fixLatLonRegexPattern))
+
+                // Lat/Lon (strip trailing /...)
+                if (Is(fix, fixLatLonRegexPattern))
                 {
-                    fix = Regex.Replace(fix, @"/.*$", "");
-                    fixes.Add(fix);
+                    var cleaned = Regex.Replace(fix, @"/.*$", "");
+                    fixes.Add(cleaned);
+                    continue;
                 }
-                else if (Regex.IsMatch(fix, airwayRegexPattern))
+
+                // Airway segment: "FIX AIRWAY FIX"  → collect endpoints
+                if (Is(fix, airwayRegexPattern))
                 {
-                    //Logger.Debug("GetCordsFromRouteString", $"Airway: {fix}");
-                    string start = splitRoute[i - 1];
-                    string end = splitRoute[i + 1];
-                    var airwayFixes = GetAirwayFixes(start, fix, end);
-                    if (airwayFixes == null) continue;
-                    foreach (var airwayFix in airwayFixes)
+                    if (TryGet(i - 1, out var start) && TryGet(i + 1, out var end))
                     {
-                        fixes.Add(airwayFix);
-                    }
-                }
-                else if (Regex.IsMatch(fix, procedureRegexPattern))
-                {
-                    Logger.Debug("GetCordsFromRouteString", $"Procedure: {fix} | {splitRoute[i + 1]}");
-                    if (Regex.IsMatch(splitRoute[i + 1], fixRegexPattern))
-                    {
-                        string transition = splitRoute[i + 1];
-                        //Logger.Alert("SID", $"{fix} {transition}");
-                        var procedureFixes = GetProcedureFixes($"{fix} {transition}");
-                        if (procedureFixes == null) continue;
-                        foreach (var procedureFix in procedureFixes)
+                        // Only attempt if neighbors look like fixes
+                        if (Is(start, fixRegexPattern) && Is(end, fixRegexPattern))
                         {
-                            fixes.Add(procedureFix);
+                            var airwayFixes = GetAirwayFixes(start, fix, end);
+                            if (airwayFixes != null)
+                                fixes.AddRange(airwayFixes);
                         }
                     }
-                    else if (Regex.IsMatch(splitRoute[i - 1], fixRegexPattern))
+                    // else: no neighbors → skip safely
+                    continue;
+                }
+
+                // Procedure (SID/STAR) with a transition token adjacent
+                if (Is(fix, procedureRegexPattern))
+                {
+                    // Prefer "PROC NEXT" (SID PROC.TRANS) if NEXT exists and is a fix
+                    if (TryGet(i + 1, out var nextTok) && Is(nextTok, fixRegexPattern))
                     {
-                        string transition = splitRoute[i - 1];
-                        //Logger.Alert("STAR", $"{transition} {fix}");
-                        var procedureFixes = GetProcedureFixes($"{transition} {fix}");
-                        if (procedureFixes == null) continue;
-                        foreach (var procedureFix in procedureFixes)
-                        {
-                            fixes.Add(procedureFix);
-                        }
+                        // Logger.Debug("GetCordsFromRouteString", $"Procedure: {fix} | {nextTok}");
+                        var procedureFixes = GetProcedureFixes($"{fix} {nextTok}");
+                        if (procedureFixes != null) fixes.AddRange(procedureFixes);
+                        continue;
                     }
+
+                    // Fallback to "PREV PROC" (STAR TRANS.PROC) if PREV exists and is a fix
+                    if (TryGet(i - 1, out var prevTok) && Is(prevTok, fixRegexPattern))
+                    {
+                        // Logger.Debug("GetCordsFromRouteString", $"Procedure: {prevTok} | {fix}");
+                        var procedureFixes = GetProcedureFixes($"{prevTok} {fix}");
+                        if (procedureFixes != null) fixes.AddRange(procedureFixes);
+                        continue;
+                    }
+
+                    // No neighbor → nothing to expand; skip safely.
+                    continue;
                 }
             }
+
             return fixes;
         }
+
 
         public JArray GetCoordsFromRouteString(string route)
         {

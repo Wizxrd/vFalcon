@@ -16,288 +16,305 @@ namespace vFalcon.Helpers
 
         public static async Task<Dictionary<string, List<ProcessedFeature>>> LoadFacilityFeaturesStars(Artcc artcc, JArray activeVideoMapIds)
         {
-            string sourcePath = Path.Combine(Loader.GetAppDirectory(), $"VideoMaps\\{artcc.id}");
-            var result = new Dictionary<string, List<ProcessedFeature>>();
-            var videoMapTdmLookup = new Dictionary<string, bool>();
-
-            foreach (JObject vm in (JArray)artcc.videoMaps)
+            try
             {
-                string id = vm["id"]?.ToString();
-                if (id != null && activeVideoMapIds.Any(aid => aid.ToString() == id))
-                    videoMapTdmLookup[id] = vm["tdmOnly"]?.Value<bool>() ?? false;
-            }
+                Logger.Info("GeoMap.LoadFacilityFeaturesStars", "Creating FacilityFeatures...");
+                string sourcePath = Path.Combine(Loader.GetAppDirectory(), $"VideoMaps\\{artcc.id}");
+                var result = new Dictionary<string, List<ProcessedFeature>>();
+                var videoMapTdmLookup = new Dictionary<string, bool>();
 
-            var matchedFiles = activeVideoMapIds
-                .Select(id => Path.Combine(sourcePath, id + ".geojson"))
-                .Where(File.Exists)
-                .ToList();
-
-            await Task.Run(() =>
-            {
-                foreach (var file in matchedFiles)
+                foreach (JObject vm in (JArray)artcc.videoMaps)
                 {
-                    var fileId = Path.GetFileNameWithoutExtension(file);
-                    bool tdmOnly = videoMapTdmLookup.TryGetValue(fileId, out var tdm) && tdm;
-
-                    var text = File.ReadAllText(file);
-                    var geoJson = JsonConvert.DeserializeObject<JObject>(text);
-                    if (geoJson == null) continue;
-
-                    var defaults = ExtractLastIsDefaults(geoJson);
-                    var list = new List<ProcessedFeature>();
-
-                    foreach (JObject feature in geoJson["features"] ?? Enumerable.Empty<JToken>())
-                    {
-                        var properties = feature["properties"] as JObject
-                                         ?? feature["geometry"]?["properties"] as JObject
-                                         ?? new JObject();
-
-                        if (IsDefaultsFeature(properties)) continue;
-
-                        var geometryToken = feature["geometry"];
-                        if (geometryToken == null || geometryToken.Type == JTokenType.Null || geometryToken["coordinates"] == null)
-                        {
-                            geometryToken = new JObject { ["type"] = "Point", ["coordinates"] = new JArray(0.0, 0.0) };
-                            feature["geometry"] = geometryToken;
-                        }
-
-                        var geomObj = (JObject)geometryToken;
-                        string geometryType = geomObj.Value<string>("type") ?? "Point";
-
-                        var finalProps = MergeProperties(properties, defaults, geometryType);
-                        finalProps["tdmOnly"] = tdmOnly;
-
-                        var pf = new ProcessedFeature
-                        {
-                            GeometryType = ResolveFeatureType(geometryType, properties),
-                            Geometry = geometryToken,
-                            AppliedAttributes = finalProps
-                        };
-
-                        if (pf.GeometryType == "Text" && geomObj["type"]?.ToString() == "Point")
-                        {
-                            string textStr = finalProps.TryGetValue("text", out var tVal) && tVal is JArray tArr
-                                ? string.Join("\n", tArr.Select(t => t.ToString()))
-                                : string.Empty;
-                            pf.TextContent = textStr;
-                            pf.FontSize = SafeGetFloat(finalProps, "size", 14f) * 12f;
-                            pf.XOffset = SafeGetFloat(finalProps, "xOffset", 0f);
-                            pf.YOffset = SafeGetFloat(finalProps, "yOffset", 0f);
-                            pf.Underline = finalProps.TryGetValue("underline", out var ul) && Convert.ToBoolean(ul);
-                        }
-
-                        list.Add(pf);
-                    }
-
-                    result[fileId] = list;
+                    string id = vm["id"]?.ToString();
+                    if (id != null && activeVideoMapIds.Any(aid => aid.ToString() == id))
+                        videoMapTdmLookup[id] = vm["tdmOnly"]?.Value<bool>() ?? false;
                 }
-            });
 
-            return result;
-        }
+                var matchedFiles = activeVideoMapIds
+                    .Select(id => Path.Combine(sourcePath, id + ".geojson"))
+                    .Where(File.Exists)
+                    .ToList();
 
-        public static async Task<Dictionary<string, List<ProcessedFeature>>> LoadFacilityFeatures(Artcc artcc, JArray activeVideoMapIds)
-        {
-            Logger.Info("GeoMap.LoadFacilityFeatures", "Creating FacilityFeatures...");
-            string sourcePath = Path.Combine(Loader.GetAppDirectory(), $"VideoMaps\\{artcc.id}");
-            var features = new Dictionary<string, List<ProcessedFeature>>();
-            var videoMapTdmLookup = new Dictionary<string, bool>();
-
-            foreach (JObject vm in (JArray)artcc.videoMaps)
-            {
-                string id = vm["id"]?.ToString();
-                if (id != null && activeVideoMapIds.Any(aid => aid.ToString() == id))
+                await Task.Run(() =>
                 {
-                    videoMapTdmLookup[id] = vm["tdmOnly"]?.Value<bool>() ?? false;
-                }
-            }
-
-            var matchedFiles = activeVideoMapIds
-                .Select(id => Path.Combine(sourcePath, id + ".geojson"))
-                .Where(File.Exists)
-                .ToList();
-
-            await Task.Run(() =>
-            {
-                try
-                {
-                    var rawFeatures = new Dictionary<int, List<ProcessedFeature>>();
-
                     foreach (var file in matchedFiles)
                     {
-                        string fileId = Path.GetFileNameWithoutExtension(file);
+                        var fileId = Path.GetFileNameWithoutExtension(file);
                         bool tdmOnly = videoMapTdmLookup.TryGetValue(fileId, out var tdm) && tdm;
 
-                        JObject geoJson = JsonConvert.DeserializeObject<JObject>(File.ReadAllText(file));
+                        var text = File.ReadAllText(file);
+                        var geoJson = JsonConvert.DeserializeObject<JObject>(text);
                         if (geoJson == null) continue;
+
                         var defaults = ExtractLastIsDefaults(geoJson);
+                        var list = new List<ProcessedFeature>();
 
                         foreach (JObject feature in geoJson["features"] ?? Enumerable.Empty<JToken>())
                         {
                             var properties = feature["properties"] as JObject
-                                           ?? feature["geometry"]?["properties"] as JObject
-                                           ?? new JObject();
+                                             ?? feature["geometry"]?["properties"] as JObject
+                                             ?? new JObject();
 
-                            if (IsDefaultsFeature(properties))
-                                continue;
+                            if (IsDefaultsFeature(properties)) continue;
 
                             var geometryToken = feature["geometry"];
                             if (geometryToken == null || geometryToken.Type == JTokenType.Null || geometryToken["coordinates"] == null)
                             {
-                                Logger.Info("GeoMap.LoadFacilityFeatures", $"Missing or invalid geometry. Substituting default Point.\n{feature.ToString(Formatting.None)}");
-                                geometryToken = new JObject
-                                {
-                                    ["type"] = "Point",
-                                    ["coordinates"] = new JArray(0.0, 0.0)
-                                };
+                                geometryToken = new JObject { ["type"] = "Point", ["coordinates"] = new JArray(0.0, 0.0) };
                                 feature["geometry"] = geometryToken;
                             }
 
-                            var geomObj = geometryToken as JObject;
-                            string geometryType = geomObj?.Value<string>("type") ?? "Point";
+                            var geomObj = (JObject)geometryToken;
+                            string geometryType = geomObj.Value<string>("type") ?? "Point";
 
-                            var finalProperties = MergeProperties(properties, defaults, geometryType);
-                            finalProperties["tdmOnly"] = tdmOnly;
+                            var finalProps = MergeProperties(properties, defaults, geometryType);
+                            finalProps["tdmOnly"] = tdmOnly;
 
-                            List<int> filters = new List<int>();
-                            if (finalProperties.TryGetValue("filters", out var filtersObj) && filtersObj != null)
+                            var pf = new ProcessedFeature
                             {
-                                if (filtersObj is JArray arr)
-                                    filters.AddRange(arr.Where(f => f != null && f.Type != JTokenType.Null).Select(f => (int)f));
-                                else if (filtersObj is JValue val && val.Value != null)
-                                    filters.Add(val.Value<int>());
-                                else if (int.TryParse(filtersObj.ToString(), out int parsed))
-                                    filters.Add(parsed);
-                            }
+                                GeometryType = ResolveFeatureType(geometryType, properties),
+                                Geometry = geometryToken,
+                                AppliedAttributes = finalProps
+                            };
 
-                            if (filters.Count == 0)
+                            if (pf.GeometryType == "Text" && geomObj["type"]?.ToString() == "Point")
                             {
-                                if (defaults.LineDefaults.TryGetValue("filters", out var defaultFiltersObj) && defaultFiltersObj != null)
-                                {
-                                    if (defaultFiltersObj is JArray arr)
-                                        filters.AddRange(arr.Select(f => Convert.ToInt32(f)));
-                                    else if (defaultFiltersObj is int dfInt)
-                                        filters.Add(dfInt);
-                                    else if (int.TryParse(defaultFiltersObj.ToString(), out int parsedDf))
-                                        filters.Add(parsedDf);
-                                }
-                            }
-
-                            foreach (int filter in filters)
-                            {
-                                if (!rawFeatures.ContainsKey(filter))
-                                    rawFeatures[filter] = new List<ProcessedFeature>();
-
-                                rawFeatures[filter].Add(new ProcessedFeature
-                                {
-                                    GeometryType = ResolveFeatureType(geometryType, properties),
-                                    Geometry = feature["geometry"],
-                                    AppliedAttributes = finalProperties
-                                });
-                            }
-                        }
-                    }
-
-                    foreach (var kvp in rawFeatures)
-                    {
-                        int filterIndex = kvp.Key;
-                        var featuresList = kvp.Value;
-                        var condensedList = new List<ProcessedFeature>();
-
-                        foreach (var group in featuresList
-                            .Where(f => f.GeometryType is "Line" or "LineString" or "MultiLineString")
-                            .GroupBy(f => JsonConvert.SerializeObject(f.AppliedAttributes)))
-                        {
-                            var mergedCoords = new JArray();
-
-                            foreach (var f in group)
-                            {
-                                var coords = (f.Geometry as JObject)?["coordinates"] as JArray;
-                                if (coords == null || coords.Count == 0) continue;
-
-                                if (f.GeometryType is "Line" or "LineString")
-                                {
-                                    mergedCoords.Add(coords);
-                                }
-                                else if (f.GeometryType == "MultiLineString")
-                                {
-                                    foreach (var segment in coords.OfType<JArray>())
-                                        mergedCoords.Add(segment);
-                                }
-                            }
-
-                            if (mergedCoords.Count > 0)
-                            {
-                                condensedList.Add(new ProcessedFeature
-                                {
-                                    GeometryType = "MultiLineString",
-                                    Geometry = new JObject
-                                    {
-                                        ["type"] = "MultiLineString",
-                                        ["coordinates"] = mergedCoords
-                                    },
-                                    AppliedAttributes = JsonConvert.DeserializeObject<Dictionary<string, object>>(group.Key)
-                                });
-                            }
-                        }
-
-                        foreach (var group in featuresList
-                            .Where(f => f.GeometryType == "Symbol" && ((f.Geometry as JObject)?["type"]?.ToString() == "Point"))
-                            .GroupBy(f => JsonConvert.SerializeObject(f.AppliedAttributes)))
-                        {
-                            foreach (var f in group)
-                            {
-                                var coords = (f.Geometry as JObject)?["coordinates"] as JArray;
-                                if (coords == null || coords.Count != 2) continue;
-
-                                condensedList.Add(new ProcessedFeature
-                                {
-                                    GeometryType = "Point",
-                                    Geometry = new JObject { ["type"] = "Point", ["coordinates"] = coords },
-                                    AppliedAttributes = JsonConvert.DeserializeObject<Dictionary<string, object>>(group.Key)
-                                });
-                            }
-                        }
-
-                        foreach (var group in featuresList
-                            .Where(f => f.GeometryType == "Text" && ((f.Geometry as JObject)?["type"]?.ToString() == "Point"))
-                            .GroupBy(f => JsonConvert.SerializeObject(f.AppliedAttributes)))
-                        {
-                            foreach (var f in group)
-                            {
-                                var coords = (f.Geometry as JObject)?["coordinates"] as JArray;
-                                if (coords == null || coords.Count != 2) continue;
-
-                                var attrs = JsonConvert.DeserializeObject<Dictionary<string, object>>(group.Key);
-                                string textStr = attrs.TryGetValue("text", out var tVal) && tVal is JArray tArr
+                                string textStr = finalProps.TryGetValue("text", out var tVal) && tVal is JArray tArr
                                     ? string.Join("\n", tArr.Select(t => t.ToString()))
                                     : string.Empty;
+                                pf.TextContent = textStr;
+                                pf.FontSize = SafeGetFloat(finalProps, "size", 14f) * 12f;
+                                pf.XOffset = SafeGetFloat(finalProps, "xOffset", 0f);
+                                pf.YOffset = SafeGetFloat(finalProps, "yOffset", 0f);
+                                pf.Underline = finalProps.TryGetValue("underline", out var ul) && Convert.ToBoolean(ul);
+                            }
 
-                                condensedList.Add(new ProcessedFeature
+                            list.Add(pf);
+                        }
+
+                        result[fileId] = list;
+                    }
+                });
+                Logger.Info("GeoMap.LoadFacilityFeaturesStars", "Created FacilityFeatures");
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Logger.Error("GeoMap.LoadFacilityFeaturesStars", ex.ToString());
+                return new Dictionary<string, List<ProcessedFeature>>();
+            }
+        }
+
+        public static async Task<Dictionary<string, List<ProcessedFeature>>> LoadFacilityFeatures(Artcc artcc, JArray activeVideoMapIds)
+        {
+            try
+            {
+                Logger.Info("GeoMap.LoadFacilityFeatures", "Creating FacilityFeatures...");
+                string sourcePath = Path.Combine(Loader.GetAppDirectory(), $"VideoMaps\\{artcc.id}");
+                var features = new Dictionary<string, List<ProcessedFeature>>();
+                var videoMapTdmLookup = new Dictionary<string, bool>();
+
+                foreach (JObject vm in (JArray)artcc.videoMaps)
+                {
+                    string id = vm["id"]?.ToString();
+                    if (id != null && activeVideoMapIds.Any(aid => aid.ToString() == id))
+                    {
+                        videoMapTdmLookup[id] = vm["tdmOnly"]?.Value<bool>() ?? false;
+                    }
+                }
+
+                var matchedFiles = activeVideoMapIds
+                    .Select(id => Path.Combine(sourcePath, id + ".geojson"))
+                    .Where(File.Exists)
+                    .ToList();
+
+                await Task.Run(() =>
+                {
+                    try
+                    {
+                        var rawFeatures = new Dictionary<int, List<ProcessedFeature>>();
+
+                        foreach (var file in matchedFiles)
+                        {
+                            string fileId = Path.GetFileNameWithoutExtension(file);
+                            bool tdmOnly = videoMapTdmLookup.TryGetValue(fileId, out var tdm) && tdm;
+
+                            JObject geoJson = JsonConvert.DeserializeObject<JObject>(File.ReadAllText(file));
+                            if (geoJson == null) continue;
+                            var defaults = ExtractLastIsDefaults(geoJson);
+
+                            foreach (JObject feature in geoJson["features"] ?? Enumerable.Empty<JToken>())
+                            {
+                                var properties = feature["properties"] as JObject
+                                               ?? feature["geometry"]?["properties"] as JObject
+                                               ?? new JObject();
+
+                                if (IsDefaultsFeature(properties))
+                                    continue;
+
+                                var geometryToken = feature["geometry"];
+                                if (geometryToken == null || geometryToken.Type == JTokenType.Null || geometryToken["coordinates"] == null)
                                 {
-                                    GeometryType = "Text",
-                                    Geometry = new JObject { ["type"] = "Point", ["coordinates"] = coords },
-                                    AppliedAttributes = attrs,
-                                    TextContent = textStr,
-                                    FontSize = SafeGetFloat(attrs, "size", 14f) * 12f,
-                                    XOffset = SafeGetFloat(attrs, "xOffset", 0f),
-                                    YOffset = SafeGetFloat(attrs, "yOffset", 0f),
-                                    Underline = attrs.TryGetValue("underline", out var ul) && Convert.ToBoolean(ul)
-                                });
+                                    Logger.Info("GeoMap.LoadFacilityFeatures", $"Missing or invalid geometry. Substituting default Point.\n{feature.ToString(Formatting.None)}");
+                                    geometryToken = new JObject
+                                    {
+                                        ["type"] = "Point",
+                                        ["coordinates"] = new JArray(0.0, 0.0)
+                                    };
+                                    feature["geometry"] = geometryToken;
+                                }
+
+                                var geomObj = geometryToken as JObject;
+                                string geometryType = geomObj?.Value<string>("type") ?? "Point";
+
+                                var finalProperties = MergeProperties(properties, defaults, geometryType);
+                                finalProperties["tdmOnly"] = tdmOnly;
+
+                                List<int> filters = new List<int>();
+                                if (finalProperties.TryGetValue("filters", out var filtersObj) && filtersObj != null)
+                                {
+                                    if (filtersObj is JArray arr)
+                                        filters.AddRange(arr.Where(f => f != null && f.Type != JTokenType.Null).Select(f => (int)f));
+                                    else if (filtersObj is JValue val && val.Value != null)
+                                        filters.Add(val.Value<int>());
+                                    else if (int.TryParse(filtersObj.ToString(), out int parsed))
+                                        filters.Add(parsed);
+                                }
+
+                                if (filters.Count == 0)
+                                {
+                                    if (defaults.LineDefaults.TryGetValue("filters", out var defaultFiltersObj) && defaultFiltersObj != null)
+                                    {
+                                        if (defaultFiltersObj is JArray arr)
+                                            filters.AddRange(arr.Select(f => Convert.ToInt32(f)));
+                                        else if (defaultFiltersObj is int dfInt)
+                                            filters.Add(dfInt);
+                                        else if (int.TryParse(defaultFiltersObj.ToString(), out int parsedDf))
+                                            filters.Add(parsedDf);
+                                    }
+                                }
+
+                                foreach (int filter in filters)
+                                {
+                                    if (!rawFeatures.ContainsKey(filter))
+                                        rawFeatures[filter] = new List<ProcessedFeature>();
+
+                                    rawFeatures[filter].Add(new ProcessedFeature
+                                    {
+                                        GeometryType = ResolveFeatureType(geometryType, properties),
+                                        Geometry = feature["geometry"],
+                                        AppliedAttributes = finalProperties
+                                    });
+                                }
                             }
                         }
 
-                        features[filterIndex.ToString()] = condensedList;
-                    }
+                        foreach (var kvp in rawFeatures)
+                        {
+                            int filterIndex = kvp.Key;
+                            var featuresList = kvp.Value;
+                            var condensedList = new List<ProcessedFeature>();
 
-                    Logger.Info("GeoMap.LoadFacilityFeatures", "Created FacilityFeatures");
-                }
-                catch (Exception ex)
-                {
-                    Logger.Error("GeoMap.LoadFacilityFeatures", ex.ToString());
-                }
-            });
-            return features;
+                            foreach (var group in featuresList
+                                .Where(f => f.GeometryType is "Line" or "LineString" or "MultiLineString")
+                                .GroupBy(f => JsonConvert.SerializeObject(f.AppliedAttributes)))
+                            {
+                                var mergedCoords = new JArray();
+
+                                foreach (var f in group)
+                                {
+                                    var coords = (f.Geometry as JObject)?["coordinates"] as JArray;
+                                    if (coords == null || coords.Count == 0) continue;
+
+                                    if (f.GeometryType is "Line" or "LineString")
+                                    {
+                                        mergedCoords.Add(coords);
+                                    }
+                                    else if (f.GeometryType == "MultiLineString")
+                                    {
+                                        foreach (var segment in coords.OfType<JArray>())
+                                            mergedCoords.Add(segment);
+                                    }
+                                }
+
+                                if (mergedCoords.Count > 0)
+                                {
+                                    condensedList.Add(new ProcessedFeature
+                                    {
+                                        GeometryType = "MultiLineString",
+                                        Geometry = new JObject
+                                        {
+                                            ["type"] = "MultiLineString",
+                                            ["coordinates"] = mergedCoords
+                                        },
+                                        AppliedAttributes = JsonConvert.DeserializeObject<Dictionary<string, object>>(group.Key)
+                                    });
+                                }
+                            }
+
+                            foreach (var group in featuresList
+                                .Where(f => f.GeometryType == "Symbol" && ((f.Geometry as JObject)?["type"]?.ToString() == "Point"))
+                                .GroupBy(f => JsonConvert.SerializeObject(f.AppliedAttributes)))
+                            {
+                                foreach (var f in group)
+                                {
+                                    var coords = (f.Geometry as JObject)?["coordinates"] as JArray;
+                                    if (coords == null || coords.Count != 2) continue;
+
+                                    condensedList.Add(new ProcessedFeature
+                                    {
+                                        GeometryType = "Point",
+                                        Geometry = new JObject { ["type"] = "Point", ["coordinates"] = coords },
+                                        AppliedAttributes = JsonConvert.DeserializeObject<Dictionary<string, object>>(group.Key)
+                                    });
+                                }
+                            }
+
+                            foreach (var group in featuresList
+                                .Where(f => f.GeometryType == "Text" && ((f.Geometry as JObject)?["type"]?.ToString() == "Point"))
+                                .GroupBy(f => JsonConvert.SerializeObject(f.AppliedAttributes)))
+                            {
+                                foreach (var f in group)
+                                {
+                                    var coords = (f.Geometry as JObject)?["coordinates"] as JArray;
+                                    if (coords == null || coords.Count != 2) continue;
+
+                                    var attrs = JsonConvert.DeserializeObject<Dictionary<string, object>>(group.Key);
+                                    string textStr = attrs.TryGetValue("text", out var tVal) && tVal is JArray tArr
+                                        ? string.Join("\n", tArr.Select(t => t.ToString()))
+                                        : string.Empty;
+
+                                    condensedList.Add(new ProcessedFeature
+                                    {
+                                        GeometryType = "Text",
+                                        Geometry = new JObject { ["type"] = "Point", ["coordinates"] = coords },
+                                        AppliedAttributes = attrs,
+                                        TextContent = textStr,
+                                        FontSize = SafeGetFloat(attrs, "size", 14f) * 12f,
+                                        XOffset = SafeGetFloat(attrs, "xOffset", 0f),
+                                        YOffset = SafeGetFloat(attrs, "yOffset", 0f),
+                                        Underline = attrs.TryGetValue("underline", out var ul) && Convert.ToBoolean(ul)
+                                    });
+                                }
+                            }
+
+                            features[filterIndex.ToString()] = condensedList;
+                        }
+
+                        Logger.Info("GeoMap.LoadFacilityFeatures", "Created FacilityFeatures");
+                    }
+                    catch (Exception ex)
+                    {
+                        Logger.Error("GeoMap.LoadFacilityFeatures", ex.ToString());
+                    }
+                });
+                return features;
+            }
+            catch (Exception ex)
+            {
+                Logger.Error("GeoMap.LoadFacilityFeatures", ex.ToString());
+                return new Dictionary<string, List<ProcessedFeature>>();
+            }
         }
 
         public static string ResolveFeatureType(string geometryType, JObject props)
