@@ -1,0 +1,117 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":14,"filters":[14],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.87192222,
+					42.79086944
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "FLOKA"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.70936388,
+					42.92321944
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "ZETTR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.38399444,
+					43.02568888
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "TANKO"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.93333333,
+					43.2825
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "KELTI"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.34916666,
+					43.65361111
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "SIKBO"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.14444444,
+					43.72305555
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "KARIT"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.12972222,
+					44.52694444
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "ETBOX"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.29638888,
+					44.66638888
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "DUTEL"
+			}
+		}
+	]
+}

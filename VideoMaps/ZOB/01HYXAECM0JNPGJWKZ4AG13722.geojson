@@ -1,0 +1,125 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":14,"filters":[14],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.87192222,
+					42.79086944
+				]
+			},
+			"properties": {
+				"text": [
+					"FLOKA"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.70936388,
+					42.92321944
+				]
+			},
+			"properties": {
+				"text": [
+					"ZETTR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.38399444,
+					43.02568888
+				]
+			},
+			"properties": {
+				"text": [
+					"TANKO"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.93333333,
+					43.2825
+				]
+			},
+			"properties": {
+				"text": [
+					"KELTI"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.34916666,
+					43.65361111
+				]
+			},
+			"properties": {
+				"text": [
+					"SIKBO"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.14444444,
+					43.72305555
+				]
+			},
+			"properties": {
+				"text": [
+					"KARIT"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.12972222,
+					44.52694444
+				]
+			},
+			"properties": {
+				"text": [
+					"ETBOX"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.29638888,
+					44.66638888
+				]
+			},
+			"properties": {
+				"text": [
+					"DUTEL"
+				]
+			}
+		}
+	]
+}

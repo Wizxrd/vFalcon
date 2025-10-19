@@ -1,0 +1,5513 @@
+{
+    "type": "FeatureCollection",
+    "name": "ZLA-LAXSIDFilter15",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    180,
+                    90
+                ]
+            },
+            "properties": {
+                "filters": [
+                    15
+                ],
+                "bcg": 11,
+                "style": "LongDashShortDash",
+                "thickness": 1,
+                "isLineDefaults": true
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    180,
+                    90
+                ]
+            },
+            "properties": {
+                "filters": [
+                    15
+                ],
+                "bcg": 11,
+                "style": "OtherWaypoints",
+                "size": 2,
+                "isSymbolDefaults": true
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.894047,
+                        34.255711
+                    ],
+                    [
+                        -118.810819,
+                        34.165081
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.810819,
+                        34.165081
+                    ],
+                    [
+                        -118.663667,
+                        34.029647
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -119.059553,
+                        34.442658
+                    ],
+                    [
+                        -118.973192,
+                        34.342956
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -120.107739,
+                        35.666022
+                    ],
+                    [
+                        -119.824239,
+                        35.288858
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -119.476178,
+                        34.915097
+                    ],
+                    [
+                        -119.328397,
+                        34.749897
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -119.824239,
+                        35.288858
+                    ],
+                    [
+                        -119.476178,
+                        34.915097
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -119.166981,
+                        34.564047
+                    ],
+                    [
+                        -119.059553,
+                        34.442658
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -119.242597,
+                        34.651739
+                    ],
+                    [
+                        -119.166981,
+                        34.564047
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -119.328397,
+                        34.749897
+                    ],
+                    [
+                        -119.242597,
+                        34.651739
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.973192,
+                        34.342956
+                    ],
+                    [
+                        -118.894047,
+                        34.255711
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.9564,
+                        34.637622
+                    ],
+                    [
+                        -118.894047,
+                        34.255711
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -119.732675,
+                        35.666925
+                    ],
+                    [
+                        -119.614722,
+                        35.981389
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -119.824239,
+                        35.288858
+                    ],
+                    [
+                        -119.732675,
+                        35.666925
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.663667,
+                        34.029647
+                    ],
+                    [
+                        -118.554078,
+                        34.019319
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.457106,
+                        34.010178
+                    ],
+                    [
+                        -118.358394,
+                        34.027175
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.358394,
+                        34.027175
+                    ],
+                    [
+                        -118.298681,
+                        34.033261
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -119.359442,
+                        34.19115
+                    ],
+                    [
+                        -119.063161,
+                        34.186125
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -120.065869,
+                        34.201614
+                    ],
+                    [
+                        -119.359442,
+                        34.19115
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.554078,
+                        34.019319
+                    ],
+                    [
+                        -118.457106,
+                        34.010178
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.752483,
+                        34.064483
+                    ],
+                    [
+                        -118.663667,
+                        34.029647
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -119.063161,
+                        34.186125
+                    ],
+                    [
+                        -118.752483,
+                        34.064483
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -120.287233,
+                        34.482442
+                    ],
+                    [
+                        -120.065869,
+                        34.201614
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -120.446978,
+                        34.683711
+                    ],
+                    [
+                        -120.287233,
+                        34.482442
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -120.914583,
+                        35.181278
+                    ],
+                    [
+                        -120.677053,
+                        34.971614
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -120.677053,
+                        34.971614
+                    ],
+                    [
+                        -120.446978,
+                        34.683711
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -121.150556,
+                        35.388139
+                    ],
+                    [
+                        -120.914583,
+                        35.181278
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -121.7025,
+                        31.238889
+                    ],
+                    [
+                        -121.634444,
+                        31.198056
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -121.763889,
+                        31.290278
+                    ],
+                    [
+                        -121.7025,
+                        31.238889
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -121.811389,
+                        31.350556
+                    ],
+                    [
+                        -121.763889,
+                        31.290278
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -121.849444,
+                        31.415556
+                    ],
+                    [
+                        -121.811389,
+                        31.350556
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -121.871111,
+                        31.485556
+                    ],
+                    [
+                        -121.849444,
+                        31.415556
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -121.945833,
+                        30.872778
+                    ],
+                    [
+                        -121.875833,
+                        30.834444
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.35,
+                        31.409722
+                    ],
+                    [
+                        -122.330833,
+                        31.34
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.013889,
+                        30.9175
+                    ],
+                    [
+                        -121.945833,
+                        30.872778
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.077778,
+                        30.966667
+                    ],
+                    [
+                        -122.013889,
+                        30.9175
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.134444,
+                        31.020278
+                    ],
+                    [
+                        -122.077778,
+                        30.966667
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.186667,
+                        31.078056
+                    ],
+                    [
+                        -122.134444,
+                        31.020278
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.231944,
+                        31.138333
+                    ],
+                    [
+                        -122.186667,
+                        31.078056
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.272778,
+                        31.203056
+                    ],
+                    [
+                        -122.231944,
+                        31.138333
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.304167,
+                        31.270278
+                    ],
+                    [
+                        -122.272778,
+                        31.203056
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.330833,
+                        31.34
+                    ],
+                    [
+                        -122.304167,
+                        31.270278
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.262778,
+                        30.555
+                    ],
+                    [
+                        -122.115278,
+                        30.472778
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.3975,
+                        30.654722
+                    ],
+                    [
+                        -122.262778,
+                        30.555
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.518333,
+                        30.765
+                    ],
+                    [
+                        -122.3975,
+                        30.654722
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.623889,
+                        30.888889
+                    ],
+                    [
+                        -122.518333,
+                        30.765
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.708333,
+                        31.021944
+                    ],
+                    [
+                        -122.623889,
+                        30.888889
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.776944,
+                        31.164167
+                    ],
+                    [
+                        -122.708333,
+                        31.021944
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.824167,
+                        31.311667
+                    ],
+                    [
+                        -122.776944,
+                        31.164167
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": 16,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.828333,
+                        31.3325
+                    ],
+                    [
+                        -122.824167,
+                        31.311667
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.427131,
+                        33.278383
+                    ],
+                    [
+                        -120.638422,
+                        34.126378
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -120.638422,
+                        34.126378
+                    ],
+                    [
+                        -120.318983,
+                        34.192011
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -120.318983,
+                        34.192011
+                    ],
+                    [
+                        -120.065869,
+                        34.201614
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -119.655336,
+                        33.896386
+                    ],
+                    [
+                        -119.318572,
+                        34.061614
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -119.318572,
+                        34.061614
+                    ],
+                    [
+                        -119.063161,
+                        34.186125
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.051008,
+                        32.683364
+                    ],
+                    [
+                        -119.655336,
+                        33.896386
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -120.977433,
+                        34.139511
+                    ],
+                    [
+                        -120.318983,
+                        34.192011
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.054758,
+                        33.7833
+                    ],
+                    [
+                        -118.008056,
+                        33.647778
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.4491,
+                        33.342603
+                    ],
+                    [
+                        -118.098283,
+                        33.322864
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.6708,
+                        33.184853
+                    ],
+                    [
+                        -118.4491,
+                        33.342603
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.098283,
+                        33.322864
+                    ],
+                    [
+                        -117.996639,
+                        33.404858
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.005147,
+                        33.582583
+                    ],
+                    [
+                        -117.996639,
+                        33.404858
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.106931,
+                        33.892061
+                    ],
+                    [
+                        -118.054758,
+                        33.7833
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.008056,
+                        33.647778
+                    ],
+                    [
+                        -118.005147,
+                        33.582583
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -121.391797,
+                        31.557606
+                    ],
+                    [
+                        -120.268422,
+                        31.942089
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -119.591181,
+                        32.475592
+                    ],
+                    [
+                        -118.6708,
+                        33.184853
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -120.268422,
+                        31.942089
+                    ],
+                    [
+                        -119.591181,
+                        32.475592
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.417269,
+                        34.410158
+                    ],
+                    [
+                        -118.302825,
+                        34.209247
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.467722,
+                        34.496581
+                    ],
+                    [
+                        -118.417269,
+                        34.410158
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.512353,
+                        34.572875
+                    ],
+                    [
+                        -118.467722,
+                        34.496581
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -119.097294,
+                        35.484556
+                    ],
+                    [
+                        -118.701403,
+                        35.031814
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.600106,
+                        34.748139
+                    ],
+                    [
+                        -118.576939,
+                        34.682972
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.576939,
+                        34.682972
+                    ],
+                    [
+                        -118.512353,
+                        34.572875
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.701403,
+                        35.031814
+                    ],
+                    [
+                        -118.634233,
+                        34.843322
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.634233,
+                        34.843322
+                    ],
+                    [
+                        -118.600106,
+                        34.748139
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.755381,
+                        35.183811
+                    ],
+                    [
+                        -118.701403,
+                        35.031814
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -119.020808,
+                        35.91305
+                    ],
+                    [
+                        -118.874961,
+                        35.513156
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.874961,
+                        35.513156
+                    ],
+                    [
+                        -118.755381,
+                        35.183811
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.150572,
+                        34.165803
+                    ],
+                    [
+                        -116.982778,
+                        34.211203
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.498439,
+                        34.073203
+                    ],
+                    [
+                        -117.370244,
+                        34.1053
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.370244,
+                        34.1053
+                    ],
+                    [
+                        -117.150572,
+                        34.165803
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.460669,
+                        34.793181
+                    ],
+                    [
+                        -114.377364,
+                        34.763844
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.477039,
+                        34.416858
+                    ],
+                    [
+                        -115.893278,
+                        34.633483
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.982778,
+                        34.211203
+                    ],
+                    [
+                        -116.676381,
+                        34.334733
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.676381,
+                        34.334733
+                    ],
+                    [
+                        -116.477039,
+                        34.416858
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.893278,
+                        34.633483
+                    ],
+                    [
+                        -115.460669,
+                        34.793181
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.460669,
+                        34.793181
+                    ],
+                    [
+                        -114.904553,
+                        35.035317
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.577839,
+                        35.124686
+                    ],
+                    [
+                        -115.079733,
+                        35.507864
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.023872,
+                        34.774319
+                    ],
+                    [
+                        -115.577839,
+                        35.124686
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.477039,
+                        34.416858
+                    ],
+                    [
+                        -116.023872,
+                        34.774319
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.031017,
+                        34.026664
+                    ],
+                    [
+                        -116.887986,
+                        34.045189
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.887986,
+                        34.045189
+                    ],
+                    [
+                        -116.588392,
+                        34.073153
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.229119,
+                        34.003139
+                    ],
+                    [
+                        -117.031017,
+                        34.026664
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.588392,
+                        34.073153
+                    ],
+                    [
+                        -116.298786,
+                        34.104236
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.488486,
+                        33.972414
+                    ],
+                    [
+                        -117.308486,
+                        33.993619
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.308486,
+                        33.993619
+                    ],
+                    [
+                        -117.229119,
+                        34.003139
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.018961,
+                        34.056228
+                    ],
+                    [
+                        -114.113583,
+                        33.905139
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.689456,
+                        34.163833
+                    ],
+                    [
+                        -115.018961,
+                        34.056228
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.989656,
+                        34.134769
+                    ],
+                    [
+                        -115.689456,
+                        34.163833
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.298786,
+                        34.104236
+                    ],
+                    [
+                        -115.989656,
+                        34.134769
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.689456,
+                        34.163833
+                    ],
+                    [
+                        -114.755136,
+                        34.754156
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.21845,
+                        34.264831
+                    ],
+                    [
+                        -114.921642,
+                        34.330139
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -114.921642,
+                        34.330139
+                    ],
+                    [
+                        -114.055722,
+                        34.515769
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.689456,
+                        34.163833
+                    ],
+                    [
+                        -115.21845,
+                        34.264831
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.583994,
+                        33.482914
+                    ],
+                    [
+                        -120.466133,
+                        34.343417
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -119.532511,
+                        34.411103
+                    ],
+                    [
+                        -119.186408,
+                        34.009992
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -120.466133,
+                        34.343417
+                    ],
+                    [
+                        -119.532511,
+                        34.411103
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -119.186408,
+                        34.009992
+                    ],
+                    [
+                        -119.01665,
+                        33.922381
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -120.462914,
+                        32.595242
+                    ],
+                    [
+                        -119.3486,
+                        33.80145
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -121.391797,
+                        31.557606
+                    ],
+                    [
+                        -120.462914,
+                        32.595242
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -119.3486,
+                        33.80145
+                    ],
+                    [
+                        -119.01665,
+                        33.922381
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -121.083139,
+                        35.483094
+                    ],
+                    [
+                        -119.532511,
+                        34.411103
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -120.256353,
+                        35.171919
+                    ],
+                    [
+                        -119.532511,
+                        34.411103
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -120.581858,
+                        35.526608
+                    ],
+                    [
+                        -120.256353,
+                        35.171919
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -120.372642,
+                        35.0875
+                    ],
+                    [
+                        -119.532511,
+                        34.411103
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "text": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -120.818244,
+                        35.483492
+                    ],
+                    [
+                        -120.372642,
+                        35.0875
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.101783,
+                        34.541667
+                    ],
+                    [
+                        -116.644694,
+                        34.854167
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.944792,
+                        33.906269
+                    ],
+                    [
+                        -117.902475,
+                        33.952614
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.179664,
+                        33.644603
+                    ],
+                    [
+                        -117.944792,
+                        33.906269
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.464669,
+                        34.299817
+                    ],
+                    [
+                        -117.101783,
+                        34.541667
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.776978,
+                        34.089686
+                    ],
+                    [
+                        -117.464669,
+                        34.299817
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.503525,
+                        35.696089
+                    ],
+                    [
+                        -114.826136,
+                        36.182453
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.644694,
+                        34.854167
+                    ],
+                    [
+                        -115.503525,
+                        35.696089
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.902475,
+                        33.952614
+                    ],
+                    [
+                        -117.776978,
+                        34.089686
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.644694,
+                        34.854167
+                    ],
+                    [
+                        -116.40385,
+                        35.10235
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.74,
+                        35.063333
+                    ],
+                    [
+                        -115.971111,
+                        35.637222
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.986944,
+                        34.876944
+                    ],
+                    [
+                        -116.74,
+                        35.063333
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.779461,
+                        35.632003
+                    ],
+                    [
+                        -115.159797,
+                        36.079703
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.728022,
+                        34.919633
+                    ],
+                    [
+                        -115.779461,
+                        35.632003
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.728022,
+                        34.919633
+                    ],
+                    [
+                        -116.40385,
+                        35.10235
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.101783,
+                        34.541667
+                    ],
+                    [
+                        -116.644694,
+                        34.854167
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.693144,
+                        34.349731
+                    ],
+                    [
+                        -117.101783,
+                        34.541667
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.503525,
+                        35.696089
+                    ],
+                    [
+                        -114.826136,
+                        36.182453
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.644694,
+                        34.854167
+                    ],
+                    [
+                        -115.503525,
+                        35.696089
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.74,
+                        35.063333
+                    ],
+                    [
+                        -115.971111,
+                        35.637222
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.986944,
+                        34.876944
+                    ],
+                    [
+                        -116.74,
+                        35.063333
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.693144,
+                        34.349731
+                    ],
+                    [
+                        -116.986944,
+                        34.876944
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.779461,
+                        35.632003
+                    ],
+                    [
+                        -115.159797,
+                        36.079703
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.728022,
+                        34.919633
+                    ],
+                    [
+                        -115.779461,
+                        35.632003
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.693144,
+                        34.349731
+                    ],
+                    [
+                        -116.728022,
+                        34.919633
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.728022,
+                        34.919633
+                    ],
+                    [
+                        -116.40385,
+                        35.10235
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.100533,
+                        34.121128
+                    ],
+                    [
+                        -117.693144,
+                        34.349731
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.299592,
+                        34.008447
+                    ],
+                    [
+                        -118.100533,
+                        34.121128
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.438778,
+                        33.929506
+                    ],
+                    [
+                        -118.299592,
+                        34.008447
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.775986,
+                        34.570822
+                    ],
+                    [
+                        -119.063883,
+                        34.975139
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -119.063883,
+                        34.975139
+                    ],
+                    [
+                        -119.483883,
+                        35.556667
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.674169,
+                        34.426717
+                    ],
+                    [
+                        -118.775986,
+                        34.570822
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.7314,
+                        34.719536
+                    ],
+                    [
+                        -119.235278,
+                        35.447961
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "text": null,
+                "thickness": null,
+                "isLineDefaults": null,
+                "underline": null,
+                "opaque": null,
+                "xOffset": null,
+                "yOffset": null,
+                "isTextDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.674169,
+                        34.426717
+                    ],
+                    [
+                        -118.7314,
+                        34.719536
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.150572,
+                        34.165803
+                    ],
+                    [
+                        -116.982778,
+                        34.211203
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.498439,
+                        34.073203
+                    ],
+                    [
+                        -117.370244,
+                        34.1053
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.370244,
+                        34.1053
+                    ],
+                    [
+                        -117.150572,
+                        34.165803
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.460669,
+                        34.793181
+                    ],
+                    [
+                        -114.377364,
+                        34.763844
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.477039,
+                        34.416858
+                    ],
+                    [
+                        -115.893278,
+                        34.633483
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.982778,
+                        34.211203
+                    ],
+                    [
+                        -116.676381,
+                        34.334733
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.676381,
+                        34.334733
+                    ],
+                    [
+                        -116.477039,
+                        34.416858
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.893278,
+                        34.633483
+                    ],
+                    [
+                        -115.460669,
+                        34.793181
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.460669,
+                        34.793181
+                    ],
+                    [
+                        -114.904553,
+                        35.035317
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.577839,
+                        35.124686
+                    ],
+                    [
+                        -115.079733,
+                        35.507864
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.023872,
+                        34.774319
+                    ],
+                    [
+                        -115.577839,
+                        35.124686
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.477039,
+                        34.416858
+                    ],
+                    [
+                        -116.023872,
+                        34.774319
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.031017,
+                        34.026664
+                    ],
+                    [
+                        -116.887986,
+                        34.045189
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.887986,
+                        34.045189
+                    ],
+                    [
+                        -116.588392,
+                        34.073153
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.229119,
+                        34.003139
+                    ],
+                    [
+                        -117.031017,
+                        34.026664
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.588392,
+                        34.073153
+                    ],
+                    [
+                        -116.298786,
+                        34.104236
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.488486,
+                        33.972414
+                    ],
+                    [
+                        -117.308486,
+                        33.993619
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.308486,
+                        33.993619
+                    ],
+                    [
+                        -117.229119,
+                        34.003139
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.018961,
+                        34.056228
+                    ],
+                    [
+                        -114.113583,
+                        33.905139
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.689456,
+                        34.163833
+                    ],
+                    [
+                        -115.018961,
+                        34.056228
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.989656,
+                        34.134769
+                    ],
+                    [
+                        -115.689456,
+                        34.163833
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.298786,
+                        34.104236
+                    ],
+                    [
+                        -115.989656,
+                        34.134769
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.689456,
+                        34.163833
+                    ],
+                    [
+                        -114.755136,
+                        34.754156
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.21845,
+                        34.264831
+                    ],
+                    [
+                        -114.921642,
+                        34.330139
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -114.921642,
+                        34.330139
+                    ],
+                    [
+                        -114.055722,
+                        34.515769
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.689456,
+                        34.163833
+                    ],
+                    [
+                        -115.21845,
+                        34.264831
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.795283,
+                        33.644106
+                    ],
+                    [
+                        -117.233639,
+                        33.751372
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.233639,
+                        33.751372
+                    ],
+                    [
+                        -116.973875,
+                        33.746056
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.973875,
+                        33.746056
+                    ],
+                    [
+                        -116.073311,
+                        33.723383
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.424483,
+                        33.492158
+                    ],
+                    [
+                        -116.034181,
+                        33.486047
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -116.034181,
+                        33.486047
+                    ],
+                    [
+                        -115.582422,
+                        33.617708
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.795283,
+                        33.644106
+                    ],
+                    [
+                        -117.2333,
+                        33.504817
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -117.2333,
+                        33.504817
+                    ],
+                    [
+                        -116.424483,
+                        33.492158
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.342997,
+                        33.64455
+                    ],
+                    [
+                        -117.795283,
+                        33.644106
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "filters": null,
+                "bcg": null,
+                "style": null,
+                "size": null,
+                "isSymbolDefaults": null,
+                "thickness": null,
+                "isLineDefaults": null
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.520833,
+                        33.697222
+                    ],
+                    [
+                        -118.342997,
+                        33.64455
+                    ]
+                ]
+            }
+        }
+    ]
+}

@@ -1,6 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+                    xmlns:fontAwesome="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp">
     <GridLength x:Key="GridButtonWidth">96</GridLength>
     <Style x:Key="MenuButton" TargetType="ToggleButton">
         <Setter Property="Width" Value="83"/>
@@ -15,13 +17,13 @@
             <Setter.Value>
                 <ControlTemplate TargetType="ToggleButton">
                     <Border 
-                Background="{TemplateBinding Background}"
-                BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}">
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
                         <ContentPresenter 
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Top"
-                    TextBlock.TextAlignment="Center"/>
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                                TextBlock.TextAlignment="Center"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -35,6 +37,13 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style x:Key="OptionsIcon" TargetType="fontAwesome:IconImage">
+        <Setter Property="Foreground" Value="#959595"/>
+        <Setter Property="Height" Value="14"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+    
     <Style x:Key="MenuButtonClosed" TargetType="ToggleButton">
         <Setter Property="Width" Value="83"/>
         <Setter Property="Height" Value="32"/>

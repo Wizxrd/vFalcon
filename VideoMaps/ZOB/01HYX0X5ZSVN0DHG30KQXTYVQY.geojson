@@ -1,0 +1,117 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":5,"filters":[5],"style":"airport","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.05941944,
+					41.51614444
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "TRYBE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.28092777,
+					41.50693888
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "NAGGY"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.51309444,
+					41.66792777
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "LFTON"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.68068888,
+					41.62201388
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "HFNER"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.77913333,
+					42.13010833
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "THOME"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.06286666,
+					41.79005555
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "BEELL"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.13883055,
+					41.24406944
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "UPPRR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.68325277,
+					41.40644166
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "DECRR"
+			}
+		}
+	]
+}

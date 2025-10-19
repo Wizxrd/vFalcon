@@ -1,0 +1,50 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":15,"filters":[15],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},	
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.09592777,
+					40.95683888
+				]
+			},
+			"properties": {
+				"text": [
+					"LBRON"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.29866388,
+					40.6274
+				]
+			},
+			"properties": {
+				"text": [
+					"CAVVS"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.58830136,
+					40.15106272
+				]
+			},
+			"properties": {
+				"text": [
+					"APE"
+				]
+			}
+		}
+	]
+}

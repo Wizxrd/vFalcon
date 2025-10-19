@@ -1,0 +1,260 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":5,"filters":[5],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.21329166,
+					41.85250555
+				]
+			},
+			"properties": {
+				"text": [
+					"BRWNZ"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.20920833,
+					41.88568055
+				]
+			},
+			"properties": {
+				"text": [
+					"BENJO"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.28250555,
+					41.94809444
+				]
+			},
+			"properties": {
+				"text": [
+					"COWCH"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.33645,
+					42.00774722
+				]
+			},
+			"properties": {
+				"text": [
+					"FRYYE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.10857222,
+					41.99059444
+				]
+			},
+			"properties": {
+				"text": [
+					"MCKOY"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.93499444,
+					41.97701944
+				]
+			},
+			"properties": {
+				"text": [
+					"WEEDN"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.77929166,
+					41.96453888
+				]
+			},
+			"properties": {
+				"text": [
+					"RDZON"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.57489722,
+					41.92407222
+				]
+			},
+			"properties": {
+				"text": [
+					"WINNZ"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.41773888,
+					41.89295833
+				]
+			},
+			"properties": {
+				"text": [
+					"GOLIC"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.09416388,
+					42.11903888
+				]
+			},
+			"properties": {
+				"text": [
+					"DETMR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.40591944,
+					42.07871388
+				]
+			},
+			"properties": {
+				"text": [
+					"CHUUB"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.16736111,
+					42.67095277
+				]
+			},
+			"properties": {
+				"text": [
+					"HASTE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.75158055,
+					42.54445
+				]
+			},
+			"properties": {
+				"text": [
+					"MNZEL"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.69778055,
+					42.14696666
+				]
+			},
+			"properties": {
+				"text": [
+					"KWYNN"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.48611388,
+					42.78463055
+				]
+			},
+			"properties": {
+				"text": [
+					"OLYEE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.06088888,
+					42.702675
+				]
+			},
+			"properties": {
+				"text": [
+					"SCHAM"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.24689166,
+					42.54145555
+				]
+			},
+			"properties": {
+				"text": [
+					"HAVEN"
+				]
+			}
+		}
+	]
+}

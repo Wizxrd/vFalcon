@@ -1,0 +1,75 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":4,"filters":[4],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.32671944,
+					42.45075555
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "WNGNT"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.72968055,
+					42.46980277
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "JACCI"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.61666666,
+					42.51916666
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "VOLPE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.37025,
+					42.52525833
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "SAYCH"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.79823611,
+					42.49295555
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "NUTTZ"
+			}
+		}
+	]
+}

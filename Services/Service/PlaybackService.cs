@@ -24,11 +24,25 @@ namespace vFalcon.Services
         private EramViewModel eramViewModel;
         private Profile profile;
         private DispatcherTimer playbackTimer = new DispatcherTimer();
-        private JObject replayJson = new JObject();
+        public JObject replayJson = new JObject();
         private bool paused = false;
         public int Tick;
-        public int speed = 1;
+        public int speed = 15;
         private int baseMs = 1000;
+
+        public int speedMultiplier = 1;
+        private const int DefaultTicksPerSecond = 15;
+        private const int MinIntervalMs = 15; // floor so the UI thread isn't hammered
+
+        private const double BaseSecondsPerTick = 15.0; // 1× = 15 seconds per tick
+        private void ApplyInterval()
+        {
+            int m = Math.Max(1, speedMultiplier);
+            double secondsPerTick = BaseSecondsPerTick / m;
+            playbackTimer.Stop();
+            playbackTimer.Interval = TimeSpan.FromSeconds(secondsPerTick);
+            playbackTimer.Start();
+        }
 
         public int GetTotalTickCount()
         {
@@ -36,23 +50,45 @@ namespace vFalcon.Services
             return (int)replayJson["TickCount"];
         }
 
-        public void SetPlaybackSpeed(int speed)
+        public void SetPlaybackSpeed(int multiplier)
         {
-            if (speed < 1) speed = 1;
-            this.speed = speed;
-            playbackTimer.Interval = TimeSpan.FromMilliseconds(baseMs / speed);
+            // allowed: 1,2,4,8,16,32,64,128
+            if (multiplier < 1) multiplier = 1;
+            if ((multiplier & (multiplier - 1)) != 0) // not power of two
+            {
+                // snap to nearest power of two between 1 and 128
+                int p = 1;
+                while (p < multiplier && p < 128) p <<= 1;
+                int lower = p >> 1;
+                multiplier = (p - multiplier) < (multiplier - Math.Max(1, lower)) ? p : Math.Max(1, lower);
+                if (multiplier > 128) multiplier = 128;
+            }
+            if (multiplier > 128) multiplier = 128;
+
+            speedMultiplier = multiplier;
+            ApplyInterval();
         }
 
-        public void StartPlayback(EramViewModel eramViewModel, Profile profile, string recordingPath)
+        public JObject SetRecordingPath(string recordingPath)
+        {
+            replayJson = JObject.Parse(File.ReadAllText(recordingPath));
+            return replayJson;
+        }
+
+        public void StartPlayback(EramViewModel eramViewModel, Profile profile)
         {
             Tick = 0;
             this.eramViewModel = eramViewModel;
             radarViewModel = eramViewModel.RadarViewModel;
             this.profile = profile;
-            replayJson = JObject.Parse(File.ReadAllText(recordingPath));
-            playbackTimer.Interval = TimeSpan.FromSeconds(1);
+
+            playbackTimer.Tick -= PlaybackTimerTick;
             playbackTimer.Tick += PlaybackTimerTick;
+
+            ApplyInterval(); // uses DefaultTicksPerSecond * speedMultiplier
+
             playbackTimer.Start();
+            PlaybackTimerTick(null, null);
         }
 
         public void StopPlayback()
@@ -60,6 +96,7 @@ namespace vFalcon.Services
             playbackTimer.Tick -= PlaybackTimerTick;
             playbackTimer.Stop();
             radarViewModel = null;
+            replayJson = new JObject();
             Tick = 0;
         }
 
@@ -74,19 +111,18 @@ namespace vFalcon.Services
             paused = false;
             playbackTimer.Start();
         }
-        public async void PlaybackTimerTick(object? sender, EventArgs? e)
+        public void PlaybackTimerTick(object? sender, EventArgs? e)
         {
             try
             {
                 eramViewModel.UpdateReplayControls(Tick);
 
-                var tct = replayJson["TickCount"];
-                if (tct != null && Tick >= tct.Value<int>()) return;
+                var tct = replayJson["TickCount"]?.Value<int?>();
+                if (tct.HasValue && Tick >= tct.Value) return;
 
                 var pilotsObj = replayJson["Pilots"] as JObject;
                 if (pilotsObj is null) return;
 
-                string? sectorFreq = profile.ActivatedSectorFreq;
                 foreach (var prop in pilotsObj.Properties())
                 {
                     string callsign = prop.Name;
@@ -99,8 +135,7 @@ namespace vFalcon.Services
                     var history = data["History"] as JArray;
                     if (history is null || frame < 0 || frame >= history.Count)
                     {
-                        if (radarViewModel.pilotService.Pilots.Remove(callsign))
-                            Logger.Debug("Removing", callsign);
+                        radarViewModel.pilotService.Pilots.Remove(callsign);
                         continue;
                     }
 
@@ -119,7 +154,8 @@ namespace vFalcon.Services
                         };
                         radarViewModel.pilotService.Pilots[callsign] = pilot;
                     }
-
+                    var acType = pilot.FlightPlan?["aircraft_short"]?.Value<string>();
+                    pilot.CwtCode = Cwt.GetCwtCodeFromType(acType);
                     pilot.Latitude = lat;
                     pilot.Longitude = lon;
 
@@ -137,19 +173,15 @@ namespace vFalcon.Services
                     if (hdgArr is not null && frame < hdgArr.Count && hdgArr[frame]?.Type != JTokenType.Null)
                         pilot.Heading = hdgArr[frame]!.Value<int>();
 
-                    if (!string.IsNullOrEmpty(sectorFreq) &&
-                        freqArr is not null &&
-                        frame < freqArr.Count &&
-                        freqArr[frame]?.Type != JTokenType.Null &&
-                        string.Equals(freqArr[frame]!.Value<string>(), sectorFreq, StringComparison.OrdinalIgnoreCase))
-                    {
-                        pilot.FullDataBlock = true;
-                    }
-                    else
-                    {
-                        pilot.FullDataBlock = false;
-                    }
-                    if (pilot.ForcedFullDataBlock) pilot.FullDataBlock = true;
+                    string tunedFrequency =
+                        (freqArr is not null && frame < freqArr.Count && freqArr[frame]?.Type == JTokenType.String)
+                        ? freqArr[frame]!.Value<string>() ?? string.Empty
+                        : string.Empty;
+
+                    bool isOnActiveSectorFrequency = (eramViewModel.ActivatedSectors?.Values ?? Enumerable.Empty<string>())
+                        .Any(sectorFrequency => string.Equals(sectorFrequency, tunedFrequency, StringComparison.OrdinalIgnoreCase));
+
+                    pilot.FullDataBlock = isOnActiveSectorFrequency || pilot.ForcedFullDataBlock;
 
                     pilot.History ??= new List<(double, double)>();
                     var last = pilot.History.Count > 0 ? pilot.History[^1] : (double.NaN, double.NaN);

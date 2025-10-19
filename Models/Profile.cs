@@ -5,28 +5,20 @@ namespace vFalcon.Models
     public class Profile
     {
         public string Id { get; set; } = string.Empty;
-        public int Version { get; set; }
         public string Name { get; set; } = string.Empty;
-        public string LastUsedAt { get; set; } = string.Empty;
+        public DateTime LastUsedAt { get; set; }
         public string ArtccId { get; set; } = string.Empty;
-        public string LastUsedEnvironment { get; set; } = string.Empty;
-        public string LastUsedPositionId { get; set; } = string.Empty;
-        public string NetowrkRating { get; set; } = string.Empty;
-        public string Role { get; set; } = string.Empty;
-        public string ControllerInfo { get; set; } = string.Empty;
-
-        public JArray DisplayWindowSettings { get; set; } = new JArray();
-        public JObject ControllerListSettings { get; set; } = new JObject();
-        public JObject FlightPlanEditorSettings { get; set; } = new JObject();
-        public JObject MessagesAreaSettings { get; set; } = new JObject();
-        public JObject VoiceSwitchSettings { get; set; } = new JObject();
-
-        public JArray Bookmarks { get; set; } = new JArray();
-        public JArray SelectedBeaconCodes { get; set; } = new JArray();
-        public bool? InvertNumericKeypad { get; set; } = null;
-        public JArray SecondaryVoiceSwitchPositionIds { get; set; } = new JArray();
-
-        public string ActivatedSectorName { get; set; } = string.Empty;
-        public string ActivatedSectorFreq {  get; set; } = string.Empty;
+        public string FacilityId { get; set; } = string.Empty;
+        public string DisplayType { get; set; } = string.Empty;
+        public string ActiveGeoMap { get; set; } = string.Empty;
+        public bool TopDown { get; set; } = false;
+        public int LogLevel { get; set; }
+        public bool RecordAudio { get; set; } = false;
+        public int? PttKey { get; set; } = 0;
+        public int ZoomRange { get; set; } = 0;
+        public JObject Center { get; set; } = new JObject();
+        public JObject WindowSettings { get; set; } = new JObject();
+        public JObject AppearanceSettings { get; set; } = new JObject();
+        public JObject MapFilters { get; set; } = new JObject();
     }
 }

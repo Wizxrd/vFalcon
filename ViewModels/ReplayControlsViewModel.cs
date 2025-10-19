@@ -30,7 +30,6 @@ namespace vFalcon.ViewModels
             get => sliderValueTick;
             set
             {
-                Logger.Debug("SLiderTick", value.ToString());
                 sliderValueTick = value;
                 eramViewModel.playbackService.Tick = value;
                 OnPropertyChanged();

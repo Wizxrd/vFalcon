@@ -1,0 +1,89 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":14,"filters":[14],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.74678055,
+					42.45770277
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "DDOGE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.32997777,
+					42.43110277
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "MTRCT"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.93392777,
+					42.22028888
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "FDRCH"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.62464166,
+					42.43881111
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "KAYLN"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.959875,
+					42.44665833
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "IIICE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.127325,
+					42.466325
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "SMUUV"
+			}
+		}
+	]
+}

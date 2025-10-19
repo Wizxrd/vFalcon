@@ -1,0 +1,140 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":4,"filters":[4],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.17736388,
+					41.73590277
+				]
+			},
+			"properties": {
+				"text": [
+					"HANBL"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.48408333,
+					40.67615
+				]
+			},
+			"properties": {
+				"text": [
+					"SWAYD"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.25605555,
+					40.87069444
+				]
+			},
+			"properties": {
+				"text": [
+					"JOEBU"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.80432222,
+					41.16378055
+				]
+			},
+			"properties": {
+				"text": [
+					"VDUUB"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.57866666,
+					41.32892777
+				]
+			},
+			"properties": {
+				"text": [
+					"CLRIC"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.42529722,
+					41.44071944
+				]
+			},
+			"properties": {
+				"text": [
+					"SHANX"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.41635833,
+					40.74160277
+				]
+			},
+			"properties": {
+				"text": [
+					"TORRR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.353225,
+					39.86779166
+				]
+			},
+			"properties": {
+				"text": [
+					"WWODD"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.13129444,
+					40.07031666
+				]
+			},
+			"properties": {
+				"text": [
+					"DERBN"
+				]
+			}
+		}
+	]
+}

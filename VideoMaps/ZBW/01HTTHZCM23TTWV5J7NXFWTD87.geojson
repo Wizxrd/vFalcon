@@ -1,0 +1,32 @@
+{
+"type": "FeatureCollection",
+"name": "ZBW_A90 DREEM STAR",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "isSymbolDefaults": true, "bcg": 10, "filters": [ 33 ], "size": 1 }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
+{ "type": "Feature", "properties": { "style": "vor" }, "geometry": { "type": "Point", "coordinates": [ -72.547419, 41.641106 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -72.303125, 41.862378 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -72.031525, 42.101186 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -71.854864, 42.262831 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -71.742814, 42.361847 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -71.661258, 42.419275 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -71.553408, 42.494972 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -71.418675, 42.551397 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -71.193189, 42.577297 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -72.117375, 41.839600 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -72.177131, 41.656408 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -72.009131, 41.722989 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -72.015261, 41.826972 ] } },
+{ "type": "Feature", "properties": { "style": "vor" }, "geometry": { "type": "Point", "coordinates": [ -71.999353, 41.556403 ] } },
+{ "type": "Feature", "properties": { "isLineDefaults": true, "bcg": 10, "filters": [ 33 ], "style": "longDashShortDash", "thickness": 1 }, "geometry": { "type": "Point", "coordinates": [ 90, 180 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -72.547419, 41.641106 ], [ -72.303125, 41.862378 ], [ -72.031525, 42.101186 ], [ -71.854864, 42.262831 ], [ -71.742814, 42.361847 ], [ -71.661258, 42.419275 ], [ -71.553408, 42.494972 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -72.177131, 41.656408 ], [ -72.117375, 41.839600 ], [ -72.031525, 42.101186 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -71.999353, 41.556403 ], [ -72.009131, 41.722989 ], [ -72.015261, 41.826972 ], [ -72.031525, 42.101186 ] ] } },
+{ "type": "Feature", "properties": { "isTextDefaults": true, "bcg": 30, "filters": [ 33 ], "text": ["Line 1", "Line 2", "Line 3"], "size": 0, "opaque": false }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
+{ "type": "Feature", "properties": { "text": [ "DVANY", "110" ], "xOffset": -35, "yOffset": 18 }, "geometry": { "type": "Point", "coordinates": [ -72.303125, 41.862378 ] } },
+{ "type": "Feature", "properties": { "text": [ "PAISN", "110" ], "xOffset": -42, "yOffset": 16 }, "geometry": { "type": "Point", "coordinates": [ -72.117375, 41.839600 ] } },
+{ "type": "Feature", "properties": { "text": [ "BLATT", "110" ], "xOffset": 12, "yOffset": 8 }, "geometry": { "type": "Point", "coordinates": [ -72.015261, 41.826972 ] } },
+{ "type": "Feature", "properties": { "text": [ "GASSE", "050" ], "xOffset": 15 }, "geometry": { "type": "Point", "coordinates": [ -71.854864, 42.262831 ] } },
+{ "type": "Feature", "properties": { "text": [ "DREEM" ], "xOffset": 15 }, "geometry": { "type": "Point", "coordinates": [ -71.742814, 42.361847 ] } }
+]
+}

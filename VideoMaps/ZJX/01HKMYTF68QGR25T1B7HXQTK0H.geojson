@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "SSCDepartures",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -80.460320771272578, 33.984230161096939 ], [ -80.410961127326345, 34.045525414971301 ], [ -80.414421766569774, 34.045223576388679 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -80.410778988418784, 34.045374495814301 ], [ -80.410414710603661, 34.042959752773776 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -80.480356051103072, 33.962026142197352 ], [ -80.593191104330657, 33.827772523018893 ], [ -80.593555382145766, 33.831101178605358 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -80.592826826515576, 33.827696870249369 ], [ -80.590641159624937, 33.827772523018908 ] ] } }
+]
+}

@@ -1,0 +1,29 @@
+{
+"type": "FeatureCollection",
+"name": "ZBW_A90 ROBUC STAR",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "isSymbolDefaults": true, "bcg": 10, "filters": [ 21 ], "size": 1 }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -73.137431, 41.38195 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -72.209428, 41.479342 ] } },
+{ "type": "Feature", "properties": { "style": "vor" }, "geometry": { "type": "Point", "coordinates": [ -73.771392, 40.632883 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -73.444936, 40.855614 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -72.9166, 41.210983 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -71.999158, 41.556244 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -71.867675, 41.595664 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -71.585117, 41.678919 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -71.431714, 41.723739 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -71.287564, 41.785381 ] } },
+{ "type": "Feature", "properties": { "isLineDefaults": true, "bcg": 10, "filters": [ 21 ], "style": "longDashShortDash", "thickness": 1 }, "geometry": { "type": "Point", "coordinates": [ 90, 180 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -73.771392, 40.632883 ], [ -73.444936, 40.855614 ], [ -72.9166, 41.210983 ], [ -72.209428, 41.479342 ], [ -71.999158, 41.556244 ], [ -71.867675, 41.595664 ], [ -71.585117, 41.678919 ], [ -71.431714, 41.723739 ], [ -71.287564, 41.785381 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -73.137431, 41.38195 ], [ -72.209428, 41.479342 ] ] } },
+{ "type": "Feature", "properties": { "isTextDefaults": true, "bcg": 30, "filters": [ 21 ], "text": ["Line 1", "Line 2", "Line 3"], "size": 0, "opaque": false, "xOffset": 7, "yOffset": -10 }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
+{ "type": "Feature", "properties": { "text": [ "NEWES", "270" ] }, "geometry": { "type": "Point", "coordinates": [ -73.444936, 40.855614 ] } },
+{ "type": "Feature", "properties": { "text": [ "FEXXX", "230" ] }, "geometry": { "type": "Point", "coordinates": [ -72.9166, 41.210983 ] } },
+{ "type": "Feature", "properties": { "text": [ "RUIZE", "230B210" ], "yOffset": -15 }, "geometry": { "type": "Point", "coordinates": [ -72.209428, 41.479342 ] } },
+{ "type": "Feature", "properties": { "text": [ "AWLIN", "AOA170" ], "xOffset": -50, "yOffset": 25 }, "geometry": { "type": "Point", "coordinates": [ -71.999158, 41.556244 ] } },
+{ "type": "Feature", "properties": { "text": [ "BANKI", "AOA160" ], "yOffset": -8 }, "geometry": { "type": "Point", "coordinates": [ -71.867675, 41.595664 ] } },
+{ "type": "Feature", "properties": { "text": [ "ROBUC", "190B120", "260K" ], "xOffset": -35, "yOffset": 38 }, "geometry": { "type": "Point", "coordinates": [ -71.585117, 41.678919 ] } },
+{ "type": "Feature", "properties": { "text": [ "PROVI", "AOA110" ] }, "geometry": { "type": "Point", "coordinates": [ -71.431714, 41.723739 ] } }
+]
+}

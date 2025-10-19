@@ -1,0 +1,61 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":6,"filters":[6],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.71374722,
+					40.19445833
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "NESTO"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.41489166,
+					40.00339444
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "LEJOY"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.60538888,
+					40.12764166
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "PLEEZ"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.95588888,
+					39.97116944
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "VINSE"
+			}
+		}
+	]
+}

@@ -1,0 +1,103 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":7,"filters":[7],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.8604123,
+					39.55671525
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "MGW"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.53023055,
+					39.49717222
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "BRNDN"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.40885833,
+					39.47534166
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "HIROY"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.18425833,
+					39.43393333
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "JIMVE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.92655833,
+					39.38865
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "TABBE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.56753333,
+					39.32388611
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "KIKKR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.36980555,
+					39.28824444
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "IGGGY"
+			}
+		}
+	]
+}

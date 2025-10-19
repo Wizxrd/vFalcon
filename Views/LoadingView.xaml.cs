@@ -4,16 +4,20 @@ using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
-using System.Linq;
 using System.Windows;
+using System.Windows.Shapes;
 using vFalcon.Helpers;
 using vFalcon.Models;
+using vFalcon.Nasr;
+using vFalcon.Services.Service;
+using Path = System.IO.Path;
 
 namespace vFalcon.Views
 {
@@ -22,21 +26,45 @@ namespace vFalcon.Views
         public LoadingView()
         {
             InitializeComponent();
-            InitializeImports();
+            Initialize();
         }
 
-        public async void InitializeImports()
+        private async void Initialize()
         {
             Logger.Info("LoadingView.InitializeImports", "Starting");
+            TextBlockLoading.Text = "Checking for updates";
             await CheckForUpdate();
-            TextBlockLoading.Text = "Importing Artccs";
-            await ImportArtccs();
-            TextBlockLoading.Text = "Importing Profiles";
-            await ImportEramProfiles();
+            await InitializeNavData();
+            await InitializeImports();
+            TextBlockLoading.Text = "vFalcon ready";
+            await Task.Delay(250);
             Logger.Info("LoadingView.InitializeImports", "Completed");
             LoadProfileView loadProfileView = new LoadProfileView();
+            Application.Current.MainWindow = loadProfileView;
             this.Close();
             loadProfileView.ShowDialog();
+        }
+
+        public async Task InitializeNavData()
+        {
+            TextBlockLoading.Text = "Initializing nasr data";
+            await Task.Delay(1000);
+            NavData nasr = new NavData(null)
+            {
+                ForceDownload = false,
+                SwapNavDate = false,
+                TextBlockLoading = TextBlockLoading,
+                Delay = 250,
+            };
+            await nasr.Run();
+            TextBlockLoading.Text = "Nav data up-to-date";
+            await Task.Delay(1000);
+        }
+
+        public async Task InitializeImports()
+        {
+            TextBlockLoading.Text = "Checking artccs";
+            await ImportArtccs();
         }
 
         private static readonly HttpClient http = new HttpClient();
@@ -210,7 +238,7 @@ namespace vFalcon.Views
             #if !DEBUG
             TextBlockLoading.Text = "Checking For Update";
             var current = GetCurrentVersion();
-            TextBlockLoading.Text = $"Current Version: {current}";
+            TextBlockLoading.Text = $"Current version: {current}";
             var (tag, assetName, assetUrl) = await GetLatestReleaseAsync();
             if (!TryParseTagToVersion(tag, out var latest)) return;
             if (latest <= current)
@@ -234,83 +262,54 @@ namespace vFalcon.Views
             try
             {
                 Logger.Info("LoadingView.ImportArtccs", "Starting");
-                string sourcePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CRC", "ARTCCs");
-                var files = Directory.GetFiles(sourcePath, "*.json");
+
+                var folder = Loader.LoadFolder("ARTCCs");
+                Directory.CreateDirectory(folder);
+                var files = Directory.GetFiles(folder, "*.json");
 
                 foreach (var file in files)
                 {
-                    var json = await File.ReadAllTextAsync(file);
-                    var incoming = JsonConvert.DeserializeObject<JObject>(json);
+                    string artccId = Path.GetFileNameWithoutExtension(file);
+                    string url = $"https://data-api.vnas.vatsim.net/api/artccs/{artccId}";
+
+                    using var resp = await http.GetAsync(url, HttpCompletionOption.ResponseHeadersRead);
+                    resp.EnsureSuccessStatusCode();
+                    string jsonText = await resp.Content.ReadAsStringAsync();
+
+                    var incoming = JsonConvert.DeserializeObject<JObject>(jsonText);
                     if (incoming == null || incoming["id"] == null) continue;
 
-                    string id = incoming["id"].ToString();
-                    string newTimestamp = incoming["lastUpdatedAt"]?.ToString() ?? "";
+                    string id = incoming["id"]!.ToString();
+                    string newTimestamp = incoming["lastUpdatedAt"]?.ToString() ?? string.Empty;
 
-                    string filename = $"{id}.json";
-                    string destinationPath = Loader.LoadFile("ARTCCs", filename);
+                    string destinationPath = Loader.LoadFile("ARTCCs", $"{id}.json");
 
                     if (File.Exists(destinationPath))
                     {
                         var existingJson = await File.ReadAllTextAsync(destinationPath);
                         var existing = JsonConvert.DeserializeObject<JObject>(existingJson);
-                        string existingTimestamp = existing?["lastUpdatedAt"]?.ToString() ?? "";
+                        string existingTimestamp = existing?["lastUpdatedAt"]?.ToString() ?? string.Empty;
 
-                        if (DateTime.TryParse(existingTimestamp, out var existingTime) && DateTime.TryParse(newTimestamp, out var incomingTime) && incomingTime <= existingTime)
+                        if (DateTimeOffset.TryParse(existingTimestamp, out var existingTime) &&
+                            DateTimeOffset.TryParse(newTimestamp, out var incomingTime) &&
+                            incomingTime <= existingTime)
                         {
-                            TextBlockLoading.Text = $"Skipped ARTCC: \"{id}\"";
+                            TextBlockLoading.Text = $"Skipped: {id}";
                             Logger.Debug("LoadingView.ImportArtccs", $"Skipped up to date ARTCC: \"{id}\"");
                             continue;
                         }
                     }
 
                     await File.WriteAllTextAsync(destinationPath, incoming.ToString(Formatting.Indented));
-                    TextBlockLoading.Text = $"Imported ARTCC: \"{id}\"";
+                    TextBlockLoading.Text = $"Updated: {id}";
                     Logger.Debug("LoadingView.ImportArtccs", $"Imported ARTCC: \"{id}\"");
                 }
+
                 Logger.Info("LoadingView.ImportArtccs", "Completed");
             }
             catch (Exception ex)
             {
                 Logger.Error("LoadingView.ImportArtccs", ex.ToString());
-            }
-        }
-
-        private async Task ImportEramProfiles()
-        {
-            try
-            {
-                string folderPath = Loader.LoadFolder("Profiles");
-                foreach (var file in Directory.GetFiles(folderPath))
-                {
-                    File.Delete(file);
-                }
-
-                Logger.Info("LoadingView.ImportEramProfiles", "Starting");
-                string crcPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CRC", "Profiles");
-                var files = Directory.GetFiles(crcPath, "*.json");
-
-                foreach (var file in files)
-                {
-                    var json = await File.ReadAllTextAsync(file);
-                    var profile = JsonConvert.DeserializeObject<Profile>(json);
-                    if (profile == null) continue;
-
-                    var jobj = JObject.Parse(json);
-                    var displaySettings = jobj["DisplayWindowSettings"]?.FirstOrDefault()?["DisplaySettings"] as JArray;
-                    if (displaySettings == null || !displaySettings.Any(s => s["$type"]?.ToString().Contains("Eram") == true)) continue;
-
-                    string filename = $"{profile.Id}.json";
-                    string destinationPath = Loader.LoadFile("Profiles", filename);
-
-                    await File.WriteAllTextAsync(destinationPath, JsonConvert.SerializeObject(profile, Formatting.Indented));
-                    TextBlockLoading.Text = $"Imported profile: \"{profile.Name}\"";
-                    Logger.Debug("LoadingView.ImportEramProfiles", $"Imported ERAM Profile: \"{profile.Name}\"");
-                }
-                Logger.Info("LoadingView.ImportEramProfiles", "Completed");
-            }
-            catch (Exception ex)
-            {
-                Logger.Error("LoadingView.ImportEramProfiles", ex.ToString());
             }
         }
     }

@@ -1,20 +1,25 @@
-﻿using AdonisUI.Converters;
+﻿using AdonisUI;
+using AdonisUI.Converters;
 using NAudio.Gui;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SkiaSharp;
 using SkiaSharp.Views.Desktop;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Net.NetworkInformation;
 using System.Security.Policy;
+using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Threading;
 using vFalcon.Commands;
 using vFalcon.Helpers;
 using vFalcon.Models;
+using vFalcon.Nasr;
 using vFalcon.Renderers;
 using vFalcon.Rendering;
 using vFalcon.Services.Service;
@@ -27,12 +32,13 @@ namespace vFalcon.ViewModels
         // ========================================================
         //                      FIELDS
         // ========================================================
-        private readonly EramViewModel eramViewModel;
+        public EramViewModel eramViewModel;
+        private RouteRenderer routeRenderer = new();
         private readonly VideoMap videoMap = new VideoMap();
         public MapState mapState = new MapState();
         public VatsimDataService vatsimDataService;
         public PilotService pilotService;
-        private PilotRenderer pilotRenderer;
+        public PilotRenderer pilotRenderer;
 
         public List<double> ZoomLevels = BuildZoomLevels();
         private List<double> ScaleMap;
@@ -43,6 +49,9 @@ namespace vFalcon.ViewModels
         public bool PilotsRendering = false;
 
         private SKPoint? _lastMousePosition = null;
+
+        public bool Find = false;
+        public List<double> FindCoords;
 
         // ========================================================
         //                      PROPERTIES
@@ -73,6 +82,7 @@ namespace vFalcon.ViewModels
             MouseWheelCommand = new RelayCommand(OnMouseWheel);
             PaintSurfaceCommand = new RelayCommand(OnPaintCommand);
 
+            StartDatablockTimer();
             InitializeRange();
             InitializeCenterCoordinates();
         }
@@ -182,7 +192,8 @@ namespace vFalcon.ViewModels
 
         private void InitializeRange()
         {
-            int l = (int)eramViewModel.profile.DisplayWindowSettings[0]["DisplaySettings"][0]["Range"];
+            if (eramViewModel.profile.DisplayType == "STARS") eramViewModel.profile.ZoomRange = 150;
+            int l = (int)eramViewModel.profile.ZoomRange;
             int i = 0;
             foreach (int level in ZoomLevels)
             {
@@ -199,21 +210,42 @@ namespace vFalcon.ViewModels
         {
             try
             {
-                JToken centerToken = eramViewModel.profile.DisplayWindowSettings?[0]?["DisplaySettings"]?[0]?["Center"];
+                JToken centerToken = eramViewModel.profile.Center;
                 if (centerToken is JObject centerObj)
                 {
-                    mapState.CenterLat = (double)centerObj["Lat"];
-                    mapState.CenterLon = (double)centerObj["Lon"];
+                    if (centerObj.HasValues)
+                    {
+                        mapState.CenterLat = (double)centerObj["Lat"];
+                        mapState.CenterLon = (double)centerObj["Lon"];
+                    }
                 }
                 else
                 {
-                    mapState.CenterLat = (double)eramViewModel.artcc.visibilityCenters[0]["lat"];
-                    mapState.CenterLon = (double)eramViewModel.artcc.visibilityCenters[0]["lon"];
+                    if (eramViewModel.profile.DisplayType == "ERAM")
+                    {
+                        mapState.CenterLat = (double)eramViewModel.artcc.visibilityCenters[0]["lat"];
+                        mapState.CenterLon = (double)eramViewModel.artcc.visibilityCenters[0]["lon"];
+                    }
+                    else if (eramViewModel.profile.DisplayType == "STARS")
+                    {
+                        JArray facilities = (JArray)eramViewModel.artcc.facility["childFacilities"];
+                        foreach (JObject facility in facilities)
+                        {
+                            if ((string)facility["id"] == eramViewModel.profile.FacilityId)
+                            {
+                                JObject childFacilities = (JObject)facility["starsConfiguration"];
+                                JObject area = (JObject)childFacilities["areas"][0]["visibilityCenter"];
+                                mapState.CenterLat = (double)area["lat"];
+                                mapState.CenterLon = (double)area["lon"];
+                                return;
+                            }
+                        }
+                    }
                 }
             }
             catch (Exception ex)
             {
-                Logger.Debug("RadarViewModel.InitializeCenterCoordinates", ex.ToString());
+                Logger.Error("RadarViewModel.InitializeCenterCoordinates", ex.ToString());
             }
         }
 
@@ -309,7 +341,11 @@ namespace vFalcon.ViewModels
 
                 mapState.CenterLat = newCenter.X;
                 mapState.CenterLon = newCenter.Y;
-
+                eramViewModel.profile.Center = new JObject
+                {
+                    { "Lat", newCenter.X},
+                    { "Lon", newCenter.Y}
+                };
                 _lastMousePosition = null;
                 isPanning = false;
                 eramViewModel.eramView.ShowCursor();
@@ -350,7 +386,7 @@ namespace vFalcon.ViewModels
                 mapState.ZoomIndex = (int)ZoomLevels[zoomIndex];
                 ZoomLevelChanged?.Invoke(ZoomLevels[zoomIndex].ToString("0.##"));
 
-                if (!mapState.ZoomOnMouse)
+                if (!mapState.ZoomOnMouse && !isPanning)
                 {
                     var pOffset = mapState.PanOffset;
                     VideoMap.CenterAtCoordinates(mapState.Width, mapState.Height, mapState.Scale, ref pOffset, mapState.CenterLat, mapState.CenterLon);
@@ -370,8 +406,150 @@ namespace vFalcon.ViewModels
                     var pOffset = mapState.PanOffset;
                     mapState.PanOffset = pOffset;
                 }
+                eramViewModel.profile.ZoomRange = (int)ZoomLevels[zoomIndex];
+                Redraw();
+            }
+        }
+
+        private int cylceMaxCount = 4;
+        private int currentCycleCount = 1;
+        private DispatcherTimer? datablockTimer = new();
+        private void StartDatablockTimer()
+        {
+            datablockTimer.Interval = TimeSpan.FromSeconds(1);
+            datablockTimer.Tick += CycleDatablock;
+            datablockTimer.Start();
+        }
+
+        public void StopDatablockCycle()
+        {
+            datablockTimer.Tick -= CycleDatablock;
+            datablockTimer.Stop();
+            datablockTimer = null;
+        }
+        private bool _isCycling;
+
+        private void CycleDatablock(object? sender, EventArgs e)
+        {
+            if (_isCycling) return;
+            _isCycling = true;
+
+            try
+            {
+                int executedCycle = currentCycleCount;
+                if (pilotService == null) return;
+
+                var pilots = pilotService.Pilots.Values.ToList();
+                foreach (var pilot in pilots)
+                {
+                    if (pilot.DatablockType != "STARS" && pilot.FullDataBlock != true) continue;
+                    string arrival = pilot.FlightPlan?["arrival"]?.ToString();
+                    if (!string.IsNullOrEmpty(arrival) && arrival.Length > 1 && arrival.StartsWith("K"))
+                        arrival = arrival.Substring(1);
+                    List<double>? arrCoords = routeService.GetAirportCoords(arrival);
+                    List<double>? depCoords = routeService.GetAirportCoords(pilot.FlightPlan?["departure"]?.ToString());
+                    int gsTens = Math.Clamp(pilot.GroundSpeed / 10, 0, 99);
+                    string groundSpeed = $"{gsTens:00} {pilot.CwtCode}^";
+                    if (ScreenMap.DistanceInNM(pilot.Latitude, pilot.Longitude, arrCoords?[0] ?? 0, arrCoords?[1] ?? 0) <= 50 && arrCoords != null)
+                    {
+                        switch (executedCycle)
+                        {
+                            case 1:
+                                pilot.Row2Col1 = arrival;
+                                pilot.Row2Col2 = pilot.FlightPlan?["aircraft_short"]?.ToString();
+                                break;
+                            case 2:
+                                pilot.Row2Col1 = (pilot.Altitude / 100).ToString("D3");
+                                pilot.Row2Col2 = groundSpeed;
+                                break;
+                            case 3:
+                                pilot.Row2Col1 = arrival;
+                                pilot.Row2Col2 = groundSpeed;
+                                break;
+                            case 4:
+                                pilot.Row2Col1 = (pilot.Altitude / 100).ToString("D3");
+                                pilot.Row2Col2 = groundSpeed;
+                                break;
+                        }
+                    }
+                    else if (ScreenMap.DistanceInNM(pilot.Latitude, pilot.Longitude, depCoords?[0] ?? 0, depCoords?[1] ?? 0) <= 50 && depCoords != null)
+                    {
+                        Logger.Error("2", "2");
+                        var childFacilities = (JArray)eramViewModel.artcc.facility["childFacilities"];
+                        var match = childFacilities?.FirstOrDefault(cf => (string)cf["id"] == eramViewModel.profile.FacilityId) as JObject;
+                        var starsConfig = match?["starsConfiguration"] as JObject;
+                        var primScratch = starsConfig?["primaryScratchpadRules"] as JArray;
+
+                        string dep = (string)pilot.FlightPlan["departure"];
+                        string arr = (string)pilot.FlightPlan["arrival"];
+                        string route = (string)pilot.FlightPlan["route"];
+
+                        string template = ScratchpadMatcher.GetTemplate(primScratch, route, dep, arr);
+                        template = string.IsNullOrWhiteSpace(template)
+                            ? (!string.IsNullOrWhiteSpace(arr)? arr.Replace("K", "")
+                                : !string.IsNullOrWhiteSpace(dep) ? dep.Replace("K", "")
+                                : template)
+                            : template;
+                        switch (executedCycle)
+                        {
+                            case 1:
+                                pilot.Row2Col1 = template;
+                                pilot.Row2Col2 = pilot.FlightPlan?["aircraft_short"]?.ToString();
+                                break;
+                            case 2:
+                                pilot.Row2Col1 = (pilot.Altitude / 100).ToString("D3");
+                                pilot.Row2Col2 = groundSpeed;
+                                break;
+                            case 3:
+                                pilot.Row2Col1 = template;
+                                pilot.Row2Col2 = groundSpeed;
+                                break;
+                            case 4:
+                                pilot.Row2Col1 = (pilot.Altitude / 100).ToString("D3");
+                                pilot.Row2Col2 = groundSpeed;
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        Logger.Error("3", "3");
+                        string acShort = pilot.FlightPlan?["aircraft_short"]?.ToString();
+                        acShort = string.IsNullOrWhiteSpace(acShort) ? groundSpeed : acShort;
+                        switch (executedCycle)
+                        {
+                            case 1:
+                                pilot.Row2Col1 = (pilot.Altitude / 100).ToString("D3");
+                                pilot.Row2Col2 = acShort;
+                                break;
+                            case 2:
+                                pilot.Row2Col1 = (pilot.Altitude / 100).ToString("D3");
+                                pilot.Row2Col2 = groundSpeed;
+                                break;
+                            case 3:
+                                pilot.Row2Col1 = (pilot.Altitude / 100).ToString("D3");
+                                pilot.Row2Col2 = acShort;
+                                break;
+                            case 4:
+                                pilot.Row2Col1 = (pilot.Altitude / 100).ToString("D3");
+                                pilot.Row2Col2 = groundSpeed;
+                                break;
+                        }
+                    }
+                }
 
                 Redraw();
+                // --------------------------------------------------------------------
+
+                // advance cycle
+                currentCycleCount++;
+                if (currentCycleCount > cylceMaxCount) currentCycleCount = 1;
+                datablockTimer.Interval = (executedCycle == 1)
+                    ? TimeSpan.FromSeconds(1.25)
+                    : TimeSpan.FromMilliseconds(750);
+            }
+            finally
+            {
+                _isCycling = false;
             }
         }
 
@@ -379,45 +557,91 @@ namespace vFalcon.ViewModels
         // ========================================================
         //                      PAINTING
         // ========================================================
+
+        public RouteService routeService = new RouteService(null);
+        FindRenderer findRender = new();
+
         private void OnPaintCommand(object parameter)
         {
-            if (parameter is not SKPaintSurfaceEventArgs e) return;
-
-            mapState.Width = e.Info.Width;
-            mapState.Height = e.Info.Height;
-
-            var canvas = e.Surface.Canvas;
-            canvas.Clear();
-            if (isFirstRender)
+            try
             {
-                var pOffset = mapState.PanOffset;
-                mapState.Scale = ScaleMap[zoomIndex];
-                mapState.ZoomIndex = (int)ZoomLevels[zoomIndex];
-                VideoMap.CenterAtCoordinates(mapState.Width, mapState.Height, mapState.Scale, ref pOffset, mapState.CenterLat, mapState.CenterLon);
-                mapState.PanOffset = pOffset;
-                isFirstRender = false;
-            }
+                if (parameter is not SKPaintSurfaceEventArgs e) return;
 
-            var activeFeatures = CollectActiveFeatures();
-            videoMap.Render(eramViewModel, canvas, new System.Drawing.Size(mapState.Width, mapState.Height), mapState.Scale, mapState.PanOffset, activeFeatures);
+                mapState.Width = e.Info.Width;
+                mapState.Height = e.Info.Height;
 
-            if (pilotService != null)
-            {
+                var canvas = e.Surface.Canvas;
+                canvas.Clear();
+                if (isFirstRender && ScaleMap != null)
+                {
+                    var pOffset = mapState.PanOffset;
+                    mapState.Scale = ScaleMap[zoomIndex];
+                    mapState.ZoomIndex = (int)ZoomLevels[zoomIndex];
+                    VideoMap.CenterAtCoordinates(mapState.Width, mapState.Height, mapState.Scale, ref pOffset, mapState.CenterLat, mapState.CenterLon);
+                    mapState.PanOffset = pOffset;
+                    isFirstRender = false;
+                }
+
                 System.Drawing.Size size = new System.Drawing.Size(mapState.Width, mapState.Height);
-                var pilots = pilotService.Pilots.Values.ToList();
-                foreach (var pilot in pilots)
+
+                if (Find)
                 {
-                    if (!pilot.JRingEnabled) continue;
-                    pilotRenderer.RenderJRing(canvas, size, mapState.Scale, mapState.PanOffset, pilot);
+                    findRender.RenderFind(canvas, size, mapState.Scale, mapState.PanOffset, FindCoords);
                 }
-                foreach (var pilot in pilots)
+
+                var activeFeatures = CollectActiveFeatures();
+                videoMap.Render(eramViewModel, canvas, new System.Drawing.Size(mapState.Width, mapState.Height), mapState.Scale, mapState.PanOffset, activeFeatures);
+
+                if (pilotService != null)
                 {
-                    pilotRenderer.RenderHistory(canvas, size, mapState.Scale, mapState.PanOffset, pilot);
+                    var pilots = pilotService.Pilots.Values.ToList();
+                    foreach (var pilot in pilots)
+                    {
+                        if (!pilot.JRingEnabled) continue;
+                        pilotRenderer.RenderJRing(canvas, size, mapState.Scale, mapState.PanOffset, pilot);
+                    }
+                    foreach (var pilot in pilots)
+                    {
+                        pilotRenderer.RenderHistory(canvas, size, mapState.Scale, mapState.PanOffset, pilot);
+                    }
+                    foreach (var pilot in pilots)
+                    {
+                        pilotRenderer.RenderPilot(pilot, canvas, size, mapState.Scale, mapState.PanOffset);
+                    }
+                    foreach (var pilot in pilots)
+                    {
+                        if (pilot.DisplayRoute && pilot.DisplayCoords == null)
+                        {
+                            string route = $"{pilot.FlightPlan?["departure"]} {pilot.FlightPlan?["route"]} {pilot.FlightPlan?["arrival"]}";
+                            route = string.Join(" ", routeService.GetFixesFromRouteString(route));
+                            string nextFix = routeService.GetNextFix(route, pilot.Heading, pilot.Latitude, pilot.Longitude);
+                            if (!string.IsNullOrEmpty(nextFix) && route.Contains(nextFix))
+                            {
+                                int index = route.IndexOf(nextFix, StringComparison.OrdinalIgnoreCase);
+                                if (index >= 0)
+                                    route = route.Substring(index);
+                            }
+                            JArray coords = new JArray();
+                            coords.Add(new JArray(pilot.Latitude, pilot.Longitude));
+                            JArray fixesFromRoute = routeService.GetCoordsFromRouteString(route);
+                            foreach (var latlon in fixesFromRoute)
+                            {
+                                double lat = (double)latlon[0];
+                                double lon = (double)latlon[1];
+                                coords.Add(new JArray(lat, lon));
+                            }
+                            pilot.DisplayCoords = coords;
+                        }
+                    }
+                    foreach (var pilot in pilots)
+                    {
+                        routeRenderer.RenderRoute(pilot.Callsign, eramViewModel, canvas, size, mapState.Scale, mapState.PanOffset, pilot.DisplayCoords);
+                    }
                 }
-                foreach (var pilot in pilots)
-                {
-                    pilotRenderer.RenderPilot(pilot, canvas, size, mapState.Scale, mapState.PanOffset);
-                }
+            }
+            catch (Exception e)
+            {
+                Logger.Error("RadarViewModel.OnPaintCommand", e.ToString());
             }
         }
 
@@ -429,20 +653,27 @@ namespace vFalcon.ViewModels
             var activeFeatures = new List<ProcessedFeature>();
             foreach (var kvp in eramViewModel.FacilityFeatures)
             {
-                if (!eramViewModel.ActiveFilters.Contains(kvp.Key)) continue;
-
-                var filtered = kvp.Value.Where(f =>
+                if (eramViewModel.profile.DisplayType == "ERAM")
                 {
-                    if (f.AppliedAttributes.TryGetValue("tdmOnly", out var tdmVal))
+                    if (!eramViewModel.ActiveFilters.Contains(int.Parse(kvp.Key))) continue;
+                    var filtered = kvp.Value.Where(f =>
                     {
-                        bool isTdmOnly = Convert.ToBoolean(tdmVal);
-                        if (isTdmOnly && !eramViewModel.TdmActive)
-                            return false;
-                    }
-                    return true;
-                });
+                        if (f.AppliedAttributes.TryGetValue("tdmOnly", out var tdmVal))
+                        {
+                            bool isTdmOnly = Convert.ToBoolean(tdmVal);
+                            if (isTdmOnly && !eramViewModel.TdmActive)
+                                return false;
+                        }
+                        return true;
+                    });
 
-                activeFeatures.AddRange(filtered);
+                    activeFeatures.AddRange(filtered);
+                }
+                else if (eramViewModel.profile.DisplayType == "STARS")
+                {
+                    if (!eramViewModel.StarsActiveFilters.Contains(kvp.Key)) continue;
+                    activeFeatures.AddRange(kvp.Value);
+                }
             }
 
             return activeFeatures;

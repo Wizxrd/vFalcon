@@ -1,0 +1,89 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":7,"filters":[7],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.532875,
+					40.00520833
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "ZANDR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.84552777,
+					39.80565277
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "SACHO"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.12724722,
+					39.62394166
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "CLPRR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.81722894,
+					40.01702408
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "AIR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.49256666,
+					39.81133333
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "MEYRR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.46076666,
+					39.03321944
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "KHAAN"
+			}
+		}
+	]
+}

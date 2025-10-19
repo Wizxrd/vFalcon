@@ -1,0 +1,75 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":7,"filters":[7],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.12130763,
+					42.18860694
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "JHW"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.85260555,
+					41.86501111
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "HOXIE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.55192222,
+					41.78575833
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "DMACK"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.15275555,
+					41.67904722
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "STENT"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-75.68946622,
+					41.27279891
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "LVZ"
+			}
+		}
+	]
+}

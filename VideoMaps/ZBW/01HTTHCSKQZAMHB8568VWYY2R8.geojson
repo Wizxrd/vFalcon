@@ -1,0 +1,23 @@
+{
+"type": "FeatureCollection",
+"name": "ZBW_A90 DEEPO STAR",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "isSymbolDefaults": true, "bcg": 10, "filters": [ 31 ], "size": 1 }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
+{ "type": "Feature", "properties": { "name": "KYSKY", "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -72.205958, 40.781319 ] } },
+{ "type": "Feature", "properties": { "name": "CPCOD", "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -71.629372, 40.932269 ] } },
+{ "type": "Feature", "properties": { "name": "LIBBE", "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -71.355650, 41.004406 ] } },
+{ "type": "Feature", "properties": { "name": "FLAPE", "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -71.069597, 41.065639 ] } },
+{ "type": "Feature", "properties": { "name": "DEEPO", "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -70.836069, 41.114989 ] } },
+{ "type": "Feature", "properties": { "name": "VESSL", "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -70.592094, 41.145283 ] } },
+{ "type": "Feature", "properties": { "name": "YANTC", "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -71.99915, 41.556336 ] } },
+{ "type": "Feature", "properties": { "name": "MINNK", "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -71.424222, 41.361297 ] } },
+{ "type": "Feature", "properties": { "name": "GON", "style": "vor" }, "geometry": { "type": "Point", "coordinates": [ -72.051986, 41.330403 ] } },
+{ "type": "Feature", "properties": { "isLineDefaults": true, "bcg": 10, "filters": [ 31 ], "style": "longDashShortDash", "thickness": 1 }, "geometry": { "type": "Point", "coordinates": [ 90, 180 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -72.205958, 40.781319 ], [ -71.629372, 40.932269 ], [ -71.355650, 41.004406 ], [ -71.069597, 41.065639 ], [ -70.836069, 41.114989 ], [ -70.592094, 41.145283 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -71.99915, 41.556336 ], [ -71.424222, 41.361297 ], [ -70.836069, 41.114989 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -72.051986, 41.330403 ], [ -71.424222, 41.361297 ] ] } },
+{ "type": "Feature", "properties": { "isTextDefaults": true, "bcg": 30, "filters": [ 31 ], "text": ["Line 1", "Line 2", "Line 3"], "size": 0, "opaque": false }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
+{ "type": "Feature", "properties": { "text": [ "DEEPO", "110" ], "xOffset": 8, "yOffset": 38 }, "geometry": { "type": "Point", "coordinates": [ -70.836069, 41.114989 ] } }
+]
+}

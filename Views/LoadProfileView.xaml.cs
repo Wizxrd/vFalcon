@@ -1,6 +1,7 @@
 ﻿using AdonisUI.Controls;
 using System.Windows.Input;
 using vFalcon.Helpers;
+using vFalcon.Services.Service;
 using vFalcon.ViewModels;
 
 namespace vFalcon.Views
@@ -10,13 +11,32 @@ namespace vFalcon.Views
     /// </summary>
     public partial class LoadProfileView : AdonisWindow
     {
+        private LoadProfileViewModel loadProfileViewModel = new();
+
         public LoadProfileView()
         {
             InitializeComponent();
-            var viewModel = new LoadProfileViewModel();
-            DataContext = viewModel;
-            viewModel.RequestConfirmation += ShowConfirmDialog;
-            viewModel.OpenEramWindow += OpenEramWindow;
+            DataContext = loadProfileViewModel;
+            loadProfileViewModel.RequestConfirmation += ShowConfirmDialog;
+            loadProfileViewModel.OpenEramWindow += OpenEramWindow;
+            loadProfileViewModel.OpenNewProfileView += OpenNewProfileView;
+            loadProfileViewModel.OpenManageArtccsView += OpenManagedArtccsView;
+        }
+
+        private void OpenManagedArtccsView()
+        {
+            ManageArtccsView manageArtccsView = new ManageArtccsView();
+            manageArtccsView.Owner = this;
+            manageArtccsView.ShowDialog();
+            loadProfileViewModel.LoadProfiles();
+        }
+
+        private void OpenNewProfileView()
+        {
+            NewProfileView newProfileView = new();
+            newProfileView.Owner = this;
+            newProfileView.ShowDialog();
+            loadProfileViewModel.LoadProfiles();
         }
 
         protected override void OnPreviewKeyDown(KeyEventArgs e)
@@ -32,6 +52,8 @@ namespace vFalcon.Views
                         if (vm.LastSelectedProfileVM != null && vm.LastSelectedProfileVM.IsSelected)
                         {
                             vm.SelectedProfile = vm.LastSelectedProfileVM.Model;
+                            vm.SelectedProfile.LastUsedAt = DateTime.UtcNow;
+                            loadProfileViewModel.profileService.Save(vm.SelectedProfile);
                             OpenEramWindow();
                             e.Handled = true;
                         }

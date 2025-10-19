@@ -1,0 +1,103 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":7,"filters":[7],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.13741944,
+					39.45091388
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "BUBBI"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.40226111,
+					39.51064722
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "KEESH"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.04170833,
+					39.86050277
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "KEMAN"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.59235,
+					39.77261666
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "BYNER"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.09293611,
+					39.66094444
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "LUNDY"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.60992777,
+					39.55498888
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "CURBY"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.81722777,
+					40.03369166
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "NUSMM"
+			}
+		}
+	]
+}

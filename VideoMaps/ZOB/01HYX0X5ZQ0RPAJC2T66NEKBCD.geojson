@@ -1,0 +1,80 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":5,"filters":[5],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.74565,
+					40.88143055
+				]
+			},
+			"properties": {
+				"text": [
+					"ROLLN"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.73862777,
+					41.05160833
+				]
+			},
+			"properties": {
+				"text": [
+					"STOHN"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.00863333,
+					39.77776111
+				]
+			},
+			"properties": {
+				"text": [
+					"JANYS"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.86883333,
+					40.35515833
+				]
+			},
+			"properties": {
+				"text": [
+					"JPLIN"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.82657222,
+					40.53644722
+				]
+			},
+			"properties": {
+				"text": [
+					"GEDDY"
+				]
+			}
+		}
+	]
+}

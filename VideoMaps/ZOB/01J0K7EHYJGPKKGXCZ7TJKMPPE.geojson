@@ -1,0 +1,48 @@
+{
+	"type": "FeatureCollection",
+	"features": [
+	{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":15,"filters":[15],"style":"airport","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.09592777,
+					40.95683888
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "LBRON"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.29866388,
+					40.6274
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "CAVVS"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.58830136,
+					40.15106272
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "APE"
+			}
+		}
+	]
+}

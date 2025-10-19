@@ -1,0 +1,25 @@
+{
+"type": "FeatureCollection",
+"name": "symbol_testing",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "isSymbolDefaults": true, "bcg": 30, "filters": [ 30 ], "size": 4 }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
+{ "type": "Feature", "properties": { "style": "obstruction1" }, "geometry": { "type": "Point", "coordinates": [ -75.0, 44.0 ] } },
+{ "type": "Feature", "properties": { "style": "obstruction2" }, "geometry": { "type": "Point", "coordinates": [ -74.0, 44.0 ] } },
+{ "type": "Feature", "properties": { "style": "heliport" }, "geometry": { "type": "Point", "coordinates": [ -73.0, 44.0 ] } },
+{ "type": "Feature", "properties": { "style": "nuclear" }, "geometry": { "type": "Point", "coordinates": [ -72.0, 44.0 ] } },
+{ "type": "Feature", "properties": { "style": "emergencyAirport" }, "geometry": { "type": "Point", "coordinates": [ -71.0, 44.0 ] } },
+{ "type": "Feature", "properties": { "style": "radar" }, "geometry": { "type": "Point", "coordinates": [ -70.0, 44.0 ] } },
+{ "type": "Feature", "properties": { "style": "iaf" }, "geometry": { "type": "Point", "coordinates": [ -69.0, 44.0 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -68.0, 44.0 ] } },
+{ "type": "Feature", "properties": { "style": "rnav" }, "geometry": { "type": "Point", "coordinates": [ -68.0, 43.0 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -69.0, 43.0 ] } },
+{ "type": "Feature", "properties": { "style": "ndb" }, "geometry": { "type": "Point", "coordinates": [ -70.0, 43.0 ] } },
+{ "type": "Feature", "properties": { "style": "vor" }, "geometry": { "type": "Point", "coordinates": [ -71.0, 43.0 ] } },
+{ "type": "Feature", "properties": { "style": "otherWaypoints" }, "geometry": { "type": "Point", "coordinates": [ -72.0, 43.0 ] } },
+{ "type": "Feature", "properties": { "style": "airport" }, "geometry": { "type": "Point", "coordinates": [ -73.0, 43.0 ] } },
+{ "type": "Feature", "properties": { "style": "satelliteAirport" }, "geometry": { "type": "Point", "coordinates": [ -74.0, 43.0 ] } },
+{ "type": "Feature", "properties": { "style": "tacan" }, "geometry": { "type": "Point", "coordinates": [ -75.0, 43.0 ] } },
+{ "type": "Feature", "properties": { "style": "dme" }, "geometry": { "type": "Point", "coordinates": [ -75.0, 42.0 ] } }
+]
+}

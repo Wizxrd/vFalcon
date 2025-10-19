@@ -1,0 +1,24 @@
+{
+"type": "FeatureCollection",
+"name": "ZBW_PVD WIPOR STAR",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "isSymbolDefaults": true, "bcg": 10, "filters": [ 25 ], "size": 1 }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
+{ "type": "Feature", "properties": { "style": "vor" }, "geometry": { "type": "Point", "coordinates": [ -73.803183, 42.747281 ] } },
+{ "type": "Feature", "properties": { "style": "vor" }, "geometry": { "type": "Point", "coordinates": [ -75.316283, 42.063058 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -73.316939, 42.399431 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -73.137706, 42.269761 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -74.362244, 42.158836 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -72.688578, 41.941011 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -72.177131, 41.656408 ] } },
+{ "type": "Feature", "properties": { "style": "vor" }, "geometry": { "type": "Point", "coordinates": [ -71.999353, 41.556403 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -71.800542, 41.489453 ] } },
+{ "type": "Feature", "properties": { "isLineDefaults": true, "bcg": 10, "filters": [ 25 ], "style": "longDashShortDash", "thickness": 1 }, "geometry": { "type": "Point", "coordinates": [ 90, 180 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -73.803183, 42.747281 ], [ -73.316939, 42.399431 ], [ -73.137706, 42.269761 ], [ -72.688578, 41.941011 ], [ -72.177131, 41.656408 ], [ -71.999353, 41.556403 ], [ -71.800542, 41.489453 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -75.316283, 42.063058 ], [ -74.362244, 42.158836 ], [ -73.137706, 42.269761 ] ] } },
+{ "type": "Feature", "properties": { "isTextDefaults": true, "bcg": 30, "filters": [ 25 ], "text": ["Line 1", "Line 2", "Line 3"], "size": 0, "opaque": false }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
+{ "type": "Feature", "properties": { "text": [ "HINGZ", "290" ], "xOffset": 8, "yOffset": 28 }, "geometry": { "type": "Point", "coordinates": [ -74.362244, 42.158836 ] } },
+{ "type": "Feature", "properties": { "text": [ "NELIE", "X20NW", "AOB210" ], "xOffset": 8, "yOffset": 28 }, "geometry": { "type": "Point", "coordinates": [ -72.688578, 41.941011 ] } },
+{ "type": "Feature", "properties": { "text": [ "WIPOR", "110" ], "xOffset": 8, "yOffset": 15 }, "geometry": { "type": "Point", "coordinates": [ -72.177131, 41.656408 ] } }
+]
+}

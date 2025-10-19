@@ -1,0 +1,30 @@
+{
+"type": "FeatureCollection",
+"name": "ZBW_N90 PARCH STAR",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "isSymbolDefaults": true, "bcg": 10, "filters": [ 40 ], "size": 1 }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -70.426914, 42.043747 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -70.911497, 42.815986 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -71.917597, 41.284653 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -72.120739, 41.099228 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -73.032611, 40.685464 ] } },
+{ "type": "Feature", "properties": { "style": "vor" }, "geometry": { "type": "Point", "coordinates": [ -70.613525, 43.425672 ] } },
+{ "type": "Feature", "properties": { "style": "vor" }, "geometry": { "type": "Point", "coordinates": [ -71.429642, 41.724342 ] } },
+{ "type": "Feature", "properties": { "style": "vor" }, "geometry": { "type": "Point", "coordinates": [ -72.798858, 40.929619 ] } },
+{ "type": "Feature", "properties": { "style": "vor" }, "geometry": { "type": "Point", "coordinates": [ -71.576086, 41.167436 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -69.824644, 42.229869 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -68.487222, 42.628056 ] } },
+{ "type": "Feature", "properties": { "isLineDefaults": true, "bcg": 10, "filters": [ 40 ], "style": "longDashShortDash", "thickness": 1 }, "geometry": { "type": "Point", "coordinates": [ 90, 180 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -70.613525, 43.425672 ], [ -70.911497, 42.815986 ], [ -71.429642, 41.724342 ], [ -71.917597, 41.284653 ], [ -72.120739, 41.099228 ], [ -72.798858, 40.929619 ], [ -73.032611, 40.685464 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -71.576086, 41.167436 ], [ -72.120739, 41.099228 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -70.426914, 42.043747 ], [ -71.429642, 41.724342 ] ] } },
+{ "type": "Feature", "properties": { "isTextDefaults": true, "bcg": 30, "filters": [ 40 ], "text": ["Line 1", "Line 2", "Line 3"], "size": 0, "opaque": false, "xOffset": 10, "yOffset": -10 }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
+{ "type": "Feature", "properties": { "text": [ "ENE" ] }, "geometry": { "type": "Point", "coordinates": [ -70.613525, 43.425672 ] } },
+{ "type": "Feature", "properties": { "text": [ "PVD" ] }, "geometry": { "type": "Point", "coordinates": [ -71.429642, 41.724342 ] } },
+{ "type": "Feature", "properties": { "text": [ "TRAIT", "240" ], "xOffset": -35, "yOffset": 20 }, "geometry": { "type": "Point", "coordinates": [ -71.917597, 41.284653 ] } },
+{ "type": "Feature", "properties": { "text": [ "CCC", "120", "250K" ] }, "geometry": { "type": "Point", "coordinates": [ -72.798858, 40.929619 ] } },
+{ "type": "Feature", "properties": { "text": [ "SHANK" ] }, "geometry": { "type": "Point", "coordinates": [ -68.487222, 42.628056 ] } },
+{ "type": "Feature", "properties": { "text": [ "FRILL" ] }, "geometry": { "type": "Point", "coordinates": [ -69.824644, 42.229869 ] } }
+]
+}

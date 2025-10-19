@@ -14,15 +14,47 @@
     IconVisibility="Collapsed"
     MinWidth="250" Width="1280" MinHeight="250" Height="720"
     FontFamily="Consolas" FontSize="12"
-    Foreground="{StaticResource White}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1"
+    Foreground="{StaticResource White}"
+    BorderBrush="{StaticResource BorderBrush}" BorderThickness="1"
     KeyDown="EramKeyDown"
     KeyUp="EramKeyUp"
+    LocationChanged="EramLocationChanged"
     MouseDown="EramMouseDown"
     MouseWheel="RemovePilotContext"
     SizeChanged="EramSizeChanged"
     StateChanged="RemovePilotContext"
-    Deactivated="RemovePilotContext">
+    Deactivated="RemovePilotContext"
+    MouseMove="EramMouseMove"
+    TitleBarBackground="#101010"
+    WindowButtonHighlightBrush="#353535">
     <adonisControls:AdonisWindow.InputBindings>
+        <KeyBinding
+            Key="F"
+            Modifiers="Alt"
+            Command="{Binding FullscreenCommand}"/>
+        <KeyBinding
+            Key="T"
+            Modifiers="Alt"
+            Command="{Binding ToggleTitleBarCommand}"/>
+        <KeyBinding
+            Key="B"
+            Modifiers="Alt"
+            Command="{Binding ToggleResizeBorderCommand}"/>
+        <KeyBinding
+            Key="S"
+            Modifiers="Shift+Alt"
+            Command="{Binding CaptureScreenCommand}"/>
+        <KeyBinding
+            Key="S"
+            Modifiers="Shift"
+            Command="{Binding OpenSearchWindow}"/>
+        <KeyBinding
+            Key="F"
+            Modifiers="Shift"
+            Command="{Binding OpenFindWindow}"/>
+        <KeyBinding
+            Key="Esc"
+            Command="{Binding ClearFindCommand}"/>
         <KeyBinding
             Key="E"
             Modifiers="Ctrl"
@@ -37,8 +69,16 @@
             Command="{Binding LoadRecordingCommand}"/>
         <KeyBinding
             Key="R"
-            Modifiers="Ctrl+Shift"
+            Modifiers="Alt"
             Command="{Binding StartStopRecordingCommand}"/>
+        <KeyBinding
+            Key="S"
+            Modifiers="Ctrl"
+            Command="{Binding SaveProfileCommand}"/>
+        <KeyBinding
+            Key="S"
+            Modifiers="Ctrl+Shift"
+            Command="{Binding SaveProfileAsCommand}"/>
         <KeyBinding
             Key="P"
             Modifiers="Ctrl+Shift"
@@ -69,14 +109,6 @@
     </adonisControls:AdonisWindow.InputBindings>
     <adonisControls:AdonisWindow.TitleBarContent>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="-8,0,0,0">
-            <Button
-                BorderBrush="Transparent"
-                BorderThickness="0"
-                adonisExtensions:CursorSpotlightExtension.BorderBrush="Transparent"
-                Background="Transparent"
-                Content="Menu"
-                Click="MenuButtonClick">
-            </Button>
             <TextBlock
                 Margin="5,0,5,0"
                 VerticalAlignment="Center"
@@ -90,19 +122,12 @@
                 Foreground="#ff5664"
                 Text="{Binding RecordingStatus}">
             </TextBlock>
-            <Popup
-                x:Name="MenuPopup"
-                PlacementTarget="{Binding ElementName=MenuButton}"
-                Placement="Bottom"
-                StaysOpen="False">
-                <views:MenuView x:Name="MenuPopupControl"/>
-            </Popup>
         </StackPanel>
     </adonisControls:AdonisWindow.TitleBarContent>
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
-    <Border>
+    <Border VerticalAlignment="Stretch">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -111,46 +136,22 @@
                 <Grid>
                     <views:RadarView x:Name="RadarView" Background="{Binding Background, ElementName=TestingBorder}" DataContext="{Binding RadarViewModel}"/>
                     <ContentControl
+                        VerticalAlignment="Top"
+                        Content="{Binding OptionsToolbarContent}">
+                    </ContentControl>
+                    <TextBlock
+                        Text="{Binding MouseCoordinates}"
+                        Foreground="White"
+                        FontFamily="pack://application:,,,/vFalcon;component/Resources/Fonts/ERAM.ttf#ERAM Regular"
+                        FontSize="16"
+                        VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,37,10,0"/>
+                    <ContentControl
                         Margin="5,0,5,5"
                         VerticalAlignment="Bottom"
                         HorizontalAlignment="Stretch"
                         Visibility="{Binding ReplayControlVisibility}"
                         Content="{Binding ReplayControlsContent}">
                     </ContentControl>
-                    <ContentControl
-                        x:Name="ToolbarRegion"
-                        HorizontalAlignment="Stretch"
-                        VerticalAlignment="Top"
-                        Content="{Binding MasterToolbarContent}"
-                        Panel.ZIndex="{Binding ToolbarRegionZIndex}"/>
-                    <Canvas Panel.ZIndex="{Binding CanvasZIndex}">
-                        <Border
-                               x:Name="TimeBorder" Margin="{Binding ZuluMargin}"
-                               Background="{Binding Background, ElementName=TestingBorder}" BorderBrush="White" BorderThickness="1"
-                               Width="90" Height="26"
-                               Canvas.Top="{Binding TimeBorderTop}"
-                               Canvas.Left="{Binding TimeBorderLeft}"
-                               Canvas.Bottom="{Binding TimeBorderBottom}"
-                               Canvas.Right="{Binding TimeBorderRight}">
-                            <TextBlock
-                                   Foreground="White"
-                                   Text="{Binding ZuluTime}"
-                                   FontFamily="/vFalcon;component/Resources/Fonts/#ERAM" FontSize="14"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center">
-                            </TextBlock>
-                        </Border>
-                    </Canvas>
-                    <Canvas Panel.ZIndex="10" x:Name="ToolbarControlCanvas">
-                        <ContentControl
-                            Margin="{Binding ToolbarControlMargin}"
-                            x:Name="ToolbarControl"
-                            Canvas.Top="{Binding ToolbarControlTop}"
-                            Canvas.Left="{Binding ToolbarControlLeft}"
-                            Canvas.Right="{Binding ToolbarControlRight}"
-                            Canvas.Bottom="{Binding ToolbarControlBottom}"
-                            Content="{Binding ToolbarControlContent}"/>
-                    </Canvas>
                     <TextBlock
                         Text="{Binding GeoMapStatus}"
                         VerticalAlignment="Center"

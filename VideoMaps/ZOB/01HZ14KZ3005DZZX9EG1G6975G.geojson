@@ -1,0 +1,95 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":7,"filters":[7],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.99271694,
+					40.91625888
+				]
+			},
+			"properties": {
+				"text": [
+					"PSB"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.06955888,
+					40.30223972
+				]
+			},
+			"properties": {
+				"text": [
+					"HAR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.8341665,
+					40.31672561
+				]
+			},
+			"properties": {
+				"text": [
+					"JST"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.35741666,
+					40.31547777
+				]
+			},
+			"properties": {
+				"text": [
+					"MIROY"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.96693888,
+					40.31298055
+				]
+			},
+			"properties": {
+				"text": [
+					"COFAX"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.48340277,
+					40.30806666
+				]
+			},
+			"properties": {
+				"text": [
+					"LOMON"
+				]
+			}
+		}
+	]
+}

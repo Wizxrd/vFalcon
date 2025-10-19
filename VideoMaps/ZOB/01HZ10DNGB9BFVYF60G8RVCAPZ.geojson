@@ -1,0 +1,65 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":6,"filters":[6],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.71374722,
+					40.19445833
+				]
+			},
+			"properties": {
+				"text": [
+					"NESTO"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.41489166,
+					40.00339444
+				]
+			},
+			"properties": {
+				"text": [
+					"LEJOY"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.60538888,
+					40.12764166
+				]
+			},
+			"properties": {
+				"text": [
+					"PLEEZ"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.95588888,
+					39.97116944
+				]
+			},
+			"properties": {
+				"text": [
+					"VINSE"
+				]
+			}
+		}
+	]
+}

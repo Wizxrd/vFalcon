@@ -1,6 +1,7 @@
 ﻿using SkiaSharp;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,14 @@ namespace vFalcon.Helpers
 {
     public class Symbols
     {
+        private static SKPaint airportPaint = new SKPaint
+        {
+            Color = SKColors.White,
+            StrokeWidth = 1,
+            IsAntialias = true,
+            Style = SKPaintStyle.Stroke
+        };
+
         private static SKPaint symbolPaint = new SKPaint
         {
             Color = SKColors.White,
@@ -34,12 +43,40 @@ namespace vFalcon.Helpers
             Style = SKPaintStyle.Fill
         };
 
-        // size = 10
-        public static void Obstruction1(SKCanvas canvas, SKPoint center, float size, byte rgb)
+        public static void Airport(SKCanvas canvas, SKPoint center, float size, string color)
+        {
+            SKPaint paint = airportPaint;
+            paint.Color = SKColor.Parse(color);
+            float width = size / 1.5f;
+            float height = size;
+
+            SKPoint topLeft = new SKPoint(center.X - width, center.Y - height);
+            SKPoint topRight = new SKPoint(center.X + width, center.Y - height);
+            SKPoint bottomLeft = new SKPoint(center.X - width, center.Y + height);
+            SKPoint bottomRight = new SKPoint(center.X + width, center.Y + height);
+
+            using var path = new SKPath();
+
+            path.MoveTo(topLeft);
+            path.LineTo(center);
+            path.LineTo(topRight);
+            path.LineTo(topLeft); // optional, closes top triangle
+
+            path.MoveTo(bottomLeft);
+            path.LineTo(center);
+            path.LineTo(bottomRight);
+
+            canvas.Save();
+            canvas.RotateDegrees(180, center.X, center.Y);
+            canvas.DrawPath(path, paint);
+            canvas.Restore();
+        }
+
+        public static void Obstruction1(SKCanvas canvas, SKPoint center, byte rgb)
         {
             SKColor color = new SKColor(rgb, rgb, rgb);
             symbolPaint.Color = color;
-            size = 6f;
+            float size = 6f;
             float width = size/2;
             float height = size;
 
@@ -63,13 +100,13 @@ namespace vFalcon.Helpers
         }
 
         // size = 10
-        public static void Obstruction2(SKCanvas canvas, SKPoint center, float size, byte rgb)
+        public static void Obstruction2(SKCanvas canvas, SKPoint center, byte rgb)
         {
             SKColor color = new SKColor(rgb, rgb, rgb);
             symbolPaint.Color = color;
             dotPaint.Color = color;
 
-            size = 10f;
+            float size = 10f;
 
             SKPoint dotCenter = center;
             float spread = size * 0.6f;
@@ -91,11 +128,11 @@ namespace vFalcon.Helpers
         }
 
         // size = 15
-        public static void Helipad(SKCanvas canvas, SKPoint center, float size, byte rgb)
+        public static void Helipad(SKCanvas canvas, SKPoint center, byte rgb)
         {
             SKColor color = new SKColor(rgb, rgb, rgb);
             symbolPaint.Color = color;
-            size = 15f;
+            float size = 15f;
 
             float radius = size / 2;
 
@@ -117,11 +154,11 @@ namespace vFalcon.Helpers
         }
 
         // size = 25
-        public static void Nuclear(SKCanvas canvas, SKPoint center, float size, byte rgb)
+        public static void Nuclear(SKCanvas canvas, SKPoint center, byte rgb)
         {
             SKColor color = new SKColor(rgb, rgb, rgb);
             fillPaint.Color = color;
-            size = 20f;
+            float size = 20f;
 
             float innerRadius = size * 0.1f;
             float bladeInner = size * 0.2f;
@@ -162,11 +199,11 @@ namespace vFalcon.Helpers
         }
 
         // size = 10
-        public static void EmergencyAirport(SKCanvas canvas, SKPoint center, float size, byte rgb)
+        public static void EmergencyAirport(SKCanvas canvas, SKPoint center, byte rgb)
         {
             SKColor color = new SKColor(rgb, rgb, rgb);
             symbolPaint.Color = color;
-            size = 3f;
+            float size = 3f;
 
             float extension = size * 0.8f;
 
@@ -191,11 +228,11 @@ namespace vFalcon.Helpers
         }
 
         // size = 20
-        public static void Radar(SKCanvas canvas, SKPoint center, float size, byte rgb)
+        public static void Radar(SKCanvas canvas, SKPoint center, byte rgb)
         {
             SKColor color = new SKColor(rgb, rgb, rgb);
             symbolPaint.Color = color;
-            size = 20f;
+            float size = 20f;
 
             float radius = size / 2;
 
@@ -233,11 +270,11 @@ namespace vFalcon.Helpers
         }
 
         // size = 10
-        public static void Iaf(SKCanvas canvas, SKPoint center, float size, byte rgb)
+        public static void Iaf(SKCanvas canvas, SKPoint center, byte rgb)
         {
             SKColor color = new SKColor(rgb, rgb, rgb);
             symbolPaint.Color = color;
-            size = 10f;
+            float size = 10f;
 
             float radius = size / 2;
 
@@ -253,11 +290,11 @@ namespace vFalcon.Helpers
         }
 
         // size = 10 - this one is hard to see
-        public static void RnavOnlyWaypoint(SKCanvas canvas, SKPoint center, float size, byte rgb)
+        public static void RnavOnlyWaypoint(SKCanvas canvas, SKPoint center, byte rgb)
         {
             SKColor color = new SKColor(rgb, rgb, rgb);
             symbolPaint.Color = color;
-            size = 10f;
+            float size = 10f;
 
             float radius = size / 2;
 
@@ -279,11 +316,11 @@ namespace vFalcon.Helpers
         }
 
         // size = 5
-        public static void Rnav(SKCanvas canvas, SKPoint center, float size, byte rgb)
+        public static void Rnav(SKCanvas canvas, SKPoint center, byte rgb)
         {
             SKColor color = new SKColor(rgb, rgb, rgb);
             symbolPaint.Color = color;
-            size = 5f;
+            float size = 5f;
 
             SKPoint topLeft = new SKPoint(center.X - size, center.Y - size);
             SKPoint topRight = new SKPoint(center.X + size, center.Y - size);
@@ -305,11 +342,11 @@ namespace vFalcon.Helpers
         }
 
         // size = 10
-        public static void AirwayIntersection(SKCanvas canvas, SKPoint center, float size, byte rgb)
+        public static void AirwayIntersection(SKCanvas canvas, SKPoint center, byte rgb)
         {
             SKColor color = new SKColor(rgb, rgb, rgb);
             symbolPaint.Color = color;
-            size = 10f;
+            float size = 10f;
 
             float half = size / 2;
             float height = (float)(Math.Sqrt(3) / 2 * size);
@@ -328,12 +365,12 @@ namespace vFalcon.Helpers
         }
 
         // size = 10
-        public static void Ndb(SKCanvas canvas, SKPoint center, float size, byte rgb)
+        public static void Ndb(SKCanvas canvas, SKPoint center, byte rgb)
         {
             SKColor color = new SKColor(rgb, rgb, rgb);
             symbolPaint.Color = color;
 
-            size = 10f;
+            float size = 10f;
 
             float radiusX = size / 3;
             float radiusY = size / 2;
@@ -348,11 +385,11 @@ namespace vFalcon.Helpers
         }
 
         // size = 10
-        public static void Vor(SKCanvas canvas, SKPoint center, float size, byte rgb)
+        public static void Vor(SKCanvas canvas, SKPoint center, byte rgb)
         {
             SKColor color = new SKColor(rgb, rgb, rgb);
             symbolPaint.Color = color;
-            size = 10f;
+            float size = 10f;
 
             float radiusX = size / 3;
             float radiusY = size / 2;
@@ -363,11 +400,11 @@ namespace vFalcon.Helpers
         }
 
         // size = 10
-        public static void OtherWaypoints(SKCanvas canvas, SKPoint center, float size, byte rgb)
+        public static void OtherWaypoints(SKCanvas canvas, SKPoint center, byte rgb)
         {
             SKColor color = new SKColor(rgb, rgb, rgb);
             symbolPaint.Color = color;
-            size = 5f;
+            float size = 5f;
 
             canvas.DrawLine(new SKPoint(center.X, center.Y - size), new SKPoint(center.X, center.Y + size), symbolPaint);
 
@@ -375,11 +412,11 @@ namespace vFalcon.Helpers
         }
 
         // size = 5
-        public static void Airport(SKCanvas canvas, SKPoint center, float size, byte rgb)
+        public static void Airport(SKCanvas canvas, SKPoint center, byte rgb)
         {
             SKColor color = new SKColor(rgb, rgb, rgb);
             symbolPaint.Color = color;
-            size = 3f;
+            float size = 3f;
 
             SKPoint topLeft = new SKPoint(center.X - size, center.Y - size);
             SKPoint topRight = new SKPoint(center.X + size, center.Y - size);
@@ -397,11 +434,11 @@ namespace vFalcon.Helpers
         }
 
         // size = 5
-        public static void SatelliteAirport(SKCanvas canvas, SKPoint center, float size, byte rgb)
+        public static void SatelliteAirport(SKCanvas canvas, SKPoint center, byte rgb)
         {
             SKColor color = new SKColor(rgb, rgb, rgb);
             symbolPaint.Color = color;
-            size = 5f;
+            float size = 5f;
 
             SKPoint bottomLeft = new SKPoint(center.X - size, center.Y + size/3f);
             SKPoint topLeft = new SKPoint(center.X - size, center.Y - size);
@@ -412,12 +449,12 @@ namespace vFalcon.Helpers
             canvas.DrawLine(topLeft, topRight, symbolPaint);
         }
 
-        public static void Tacan(SKCanvas canvas, SKPoint center, float size, byte rgb)
+        public static void Tacan(SKCanvas canvas, SKPoint center, byte rgb)
         {
             SKColor color = new SKColor(rgb, rgb, rgb);
             symbolPaint.Color = color;
             dotPaint.Color = color;
-            size = 10f;
+            float size = 10f;
 
             float radiusX = size / 3;
             float radiusY = size / 2;

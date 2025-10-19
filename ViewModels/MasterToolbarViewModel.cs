@@ -21,7 +21,6 @@ namespace vFalcon.ViewModels
         //                      COMMANDS
         // ========================================================
         public ICommand BrightnessCommand { get; }
-        public ICommand CursorCommand { get; }
         public ICommand MapsCommand { get; }
         public ICommand MapBrightnessCommand { get; set; }
 
@@ -54,9 +53,6 @@ namespace vFalcon.ViewModels
         public MasterToolbarViewModel(EramViewModel eramViewModel)
         {
             this.eramViewModel = eramViewModel;
-            BrightnessCommand = new RelayCommand(() => eramViewModel.OnBrightnessCommand());
-            CursorCommand = new RelayCommand(() => eramViewModel.OnCursorCommand());
-            MapBrightnessCommand = new RelayCommand(() => eramViewModel.OnMapBrightnessCommand());
             MapsCommand = new RelayCommand(() => eramViewModel.OnMapsCommand());
             ZoomLevel = eramViewModel.ZoomLevel;
             eramViewModel.PropertyChanged += (s, e) =>

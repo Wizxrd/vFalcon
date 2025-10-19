@@ -6,17 +6,101 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using vFalcon.Models;
+using vFalcon.Renderers;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace vFalcon.Helpers
 {
     public class GeoMap
     {
-        public static async Task<Dictionary<int, List<ProcessedFeature>>> LoadFacilityFeatures(Artcc artcc, JArray activeVideoMapIds)
+
+        public static async Task<Dictionary<string, List<ProcessedFeature>>> LoadFacilityFeaturesStars(Artcc artcc, JArray activeVideoMapIds)
+        {
+            string sourcePath = Path.Combine(Loader.GetAppDirectory(), $"VideoMaps\\{artcc.id}");
+            var result = new Dictionary<string, List<ProcessedFeature>>();
+            var videoMapTdmLookup = new Dictionary<string, bool>();
+
+            foreach (JObject vm in (JArray)artcc.videoMaps)
+            {
+                string id = vm["id"]?.ToString();
+                if (id != null && activeVideoMapIds.Any(aid => aid.ToString() == id))
+                    videoMapTdmLookup[id] = vm["tdmOnly"]?.Value<bool>() ?? false;
+            }
+
+            var matchedFiles = activeVideoMapIds
+                .Select(id => Path.Combine(sourcePath, id + ".geojson"))
+                .Where(File.Exists)
+                .ToList();
+
+            await Task.Run(() =>
+            {
+                foreach (var file in matchedFiles)
+                {
+                    var fileId = Path.GetFileNameWithoutExtension(file);
+                    bool tdmOnly = videoMapTdmLookup.TryGetValue(fileId, out var tdm) && tdm;
+
+                    var text = File.ReadAllText(file);
+                    var geoJson = JsonConvert.DeserializeObject<JObject>(text);
+                    if (geoJson == null) continue;
+
+                    var defaults = ExtractLastIsDefaults(geoJson);
+                    var list = new List<ProcessedFeature>();
+
+                    foreach (JObject feature in geoJson["features"] ?? Enumerable.Empty<JToken>())
+                    {
+                        var properties = feature["properties"] as JObject
+                                         ?? feature["geometry"]?["properties"] as JObject
+                                         ?? new JObject();
+
+                        if (IsDefaultsFeature(properties)) continue;
+
+                        var geometryToken = feature["geometry"];
+                        if (geometryToken == null || geometryToken.Type == JTokenType.Null || geometryToken["coordinates"] == null)
+                        {
+                            geometryToken = new JObject { ["type"] = "Point", ["coordinates"] = new JArray(0.0, 0.0) };
+                            feature["geometry"] = geometryToken;
+                        }
+
+                        var geomObj = (JObject)geometryToken;
+                        string geometryType = geomObj.Value<string>("type") ?? "Point";
+
+                        var finalProps = MergeProperties(properties, defaults, geometryType);
+                        finalProps["tdmOnly"] = tdmOnly;
+
+                        var pf = new ProcessedFeature
+                        {
+                            GeometryType = ResolveFeatureType(geometryType, properties),
+                            Geometry = geometryToken,
+                            AppliedAttributes = finalProps
+                        };
+
+                        if (pf.GeometryType == "Text" && geomObj["type"]?.ToString() == "Point")
+                        {
+                            string textStr = finalProps.TryGetValue("text", out var tVal) && tVal is JArray tArr
+                                ? string.Join("\n", tArr.Select(t => t.ToString()))
+                                : string.Empty;
+                            pf.TextContent = textStr;
+                            pf.FontSize = SafeGetFloat(finalProps, "size", 14f) * 12f;
+                            pf.XOffset = SafeGetFloat(finalProps, "xOffset", 0f);
+                            pf.YOffset = SafeGetFloat(finalProps, "yOffset", 0f);
+                            pf.Underline = finalProps.TryGetValue("underline", out var ul) && Convert.ToBoolean(ul);
+                        }
+
+                        list.Add(pf);
+                    }
+
+                    result[fileId] = list;
+                }
+            });
+
+            return result;
+        }
+
+        public static async Task<Dictionary<string, List<ProcessedFeature>>> LoadFacilityFeatures(Artcc artcc, JArray activeVideoMapIds)
         {
             Logger.Info("GeoMap.LoadFacilityFeatures", "Creating FacilityFeatures...");
-            string sourcePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CRC", $"VideoMaps/{artcc.id}");
-
-            var features = new Dictionary<int, List<ProcessedFeature>>();
+            string sourcePath = Path.Combine(Loader.GetAppDirectory(), $"VideoMaps\\{artcc.id}");
+            var features = new Dictionary<string, List<ProcessedFeature>>();
             var videoMapTdmLookup = new Dictionary<string, bool>();
 
             foreach (JObject vm in (JArray)artcc.videoMaps)
@@ -46,7 +130,6 @@ namespace vFalcon.Helpers
 
                         JObject geoJson = JsonConvert.DeserializeObject<JObject>(File.ReadAllText(file));
                         if (geoJson == null) continue;
-
                         var defaults = ExtractLastIsDefaults(geoJson);
 
                         foreach (JObject feature in geoJson["features"] ?? Enumerable.Empty<JToken>())
@@ -89,7 +172,6 @@ namespace vFalcon.Helpers
 
                             if (filters.Count == 0)
                             {
-                                // fallback to defaults
                                 if (defaults.LineDefaults.TryGetValue("filters", out var defaultFiltersObj) && defaultFiltersObj != null)
                                 {
                                     if (defaultFiltersObj is JArray arr)
@@ -205,7 +287,7 @@ namespace vFalcon.Helpers
                             }
                         }
 
-                        features[filterIndex] = condensedList;
+                        features[filterIndex.ToString()] = condensedList;
                     }
 
                     Logger.Info("GeoMap.LoadFacilityFeatures", "Created FacilityFeatures");

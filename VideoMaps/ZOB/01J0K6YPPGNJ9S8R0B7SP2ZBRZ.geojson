@@ -1,0 +1,590 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":2,"filters":[2],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.25861111,
+					42.68194444
+				]
+			},
+			"properties": {
+				"text": [
+					"QWERI"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.03805555,
+					42.80111111
+				]
+			},
+			"properties": {
+				"text": [
+					"KNOOK"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.929325,
+					42.57899444
+				]
+			},
+			"properties": {
+				"text": [
+					"FRSST"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.03333333,
+					42.3
+				]
+			},
+			"properties": {
+				"text": [
+					"POSTS"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.47444444,
+					42.28583333
+				]
+			},
+			"properties": {
+				"text": [
+					"PADDE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.21309166,
+					42.04838055
+				]
+			},
+			"properties": {
+				"text": [
+					"UNBAR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.47361111,
+					42.1225
+				]
+			},
+			"properties": {
+				"text": [
+					"DOXXY"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.33645,
+					42.00774722
+				]
+			},
+			"properties": {
+				"text": [
+					"FRYYE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.01873055,
+					42.71061111
+				]
+			},
+			"properties": {
+				"text": [
+					"BOOTT"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.55286111,
+					42.80947222
+				]
+			},
+			"properties": {
+				"text": [
+					"TWIGS"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.58193888,
+					42.33138888
+				]
+			},
+			"properties": {
+				"text": [
+					"BROKK"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.83095555,
+					41.91759444
+				]
+			},
+			"properties": {
+				"text": [
+					"KEEHO"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.04580555,
+					42.4282
+				]
+			},
+			"properties": {
+				"text": [
+					"DOBIE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.74513611,
+					42.28896666
+				]
+			},
+			"properties": {
+				"text": [
+					"BEWEL"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.89075833,
+					42.70684444
+				]
+			},
+			"properties": {
+				"text": [
+					"GGUCE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.32277777,
+					42.75659444
+				]
+			},
+			"properties": {
+				"text": [
+					"FINGL"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.34770555,
+					42.68471944
+				]
+			},
+			"properties": {
+				"text": [
+					"WLFMN"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.37025,
+					42.52525833
+				]
+			},
+			"properties": {
+				"text": [
+					"SAYCH"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.20749166,
+					41.65724444
+				]
+			},
+			"properties": {
+				"text": [
+					"ZORBO"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.58462222,
+					41.80163888
+				]
+			},
+			"properties": {
+				"text": [
+					"DORET"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.86430277,
+					41.29456388
+				]
+			},
+			"properties": {
+				"text": [
+					"MIGET"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.11181944,
+					41.42110555
+				]
+			},
+			"properties": {
+				"text": [
+					"TEESY"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.85260555,
+					41.86501111
+				]
+			},
+			"properties": {
+				"text": [
+					"HOXIE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.96693888,
+					40.31298055
+				]
+			},
+			"properties": {
+				"text": [
+					"COFAX"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.35741666,
+					40.31547777
+				]
+			},
+			"properties": {
+				"text": [
+					"MIROY"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.69851388,
+					39.574275
+				]
+			},
+			"properties": {
+				"text": [
+					"LUISE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.21778055,
+					41.22260833
+				]
+			},
+			"properties": {
+				"text": [
+					"WEEVR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-76.78487777,
+					42.96861666
+				]
+			},
+			"properties": {
+				"text": [
+					"NABOR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.58993055,
+					41.70517777
+				]
+			},
+			"properties": {
+				"text": [
+					"HUUTZ"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.15489166,
+					42.22439166
+				]
+			},
+			"properties": {
+				"text": [
+					"BROZZ"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.411975,
+					41.70902777
+				]
+			},
+			"properties": {
+				"text": [
+					"PHAUL"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.64763333,
+					42.2493
+				]
+			},
+			"properties": {
+				"text": [
+					"MALTB"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.32997777,
+					42.43110277
+				]
+			},
+			"properties": {
+				"text": [
+					"MTRCT"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.7354,
+					42.07355833
+				]
+			},
+			"properties": {
+				"text": [
+					"KZLOV"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.85510277,
+					42.78379722
+				]
+			},
+			"properties": {
+				"text": [
+					"JAXII"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.62671111,
+					42.14391944
+				]
+			},
+			"properties": {
+				"text": [
+					"SLVVA"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.78972222,
+					41.69906111
+				]
+			},
+			"properties": {
+				"text": [
+					"JWELS"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.36906111,
+					42.90036666
+				]
+			},
+			"properties": {
+				"text": [
+					"LOALA"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.87192222,
+					42.79086944
+				]
+			},
+			"properties": {
+				"text": [
+					"FLOKA"
+				]
+			}
+		}
+	]
+}

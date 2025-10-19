@@ -1,0 +1,185 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":4,"filters":[4],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.96035833,
+					42.68706944
+				]
+			},
+			"properties": {
+				"text": [
+					"RKCTY"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.5247,
+					43.07626111
+				]
+			},
+			"properties": {
+				"text": [
+					"DUUDA"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.86098333,
+					43.13741666
+				]
+			},
+			"properties": {
+				"text": [
+					"TINDR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.48221388,
+					42.946525
+				]
+			},
+			"properties": {
+				"text": [
+					"FRELE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.10938888,
+					42.76148055
+				]
+			},
+			"properties": {
+				"text": [
+					"SMMNS"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.07898055,
+					42.85318055
+				]
+			},
+			"properties": {
+				"text": [
+					"ENGRM"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.94461111,
+					42.87432222
+				]
+			},
+			"properties": {
+				"text": [
+					"DYWKR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.50155,
+					43.80659444
+				]
+			},
+			"properties": {
+				"text": [
+					"HOOTA"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.48716388,
+					43.411
+				]
+			},
+			"properties": {
+				"text": [
+					"STIDL"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.21241666,
+					43.30183611
+				]
+			},
+			"properties": {
+				"text": [
+					"BUCKE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-87.12371666,
+					43.25986388
+				]
+			},
+			"properties": {
+				"text": [
+					"PORZL"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.05093611,
+					43.29813888
+				]
+			},
+			"properties": {
+				"text": [
+					"CHEFE"
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,131 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":4,"filters":[4],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.17736388,
+					41.73590277
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "HANBL"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.48408333,
+					40.67615
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "SWAYD"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.25605555,
+					40.87069444
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "JOEBU"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.80432222,
+					41.16378055
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "VDUUB"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.57866666,
+					41.32892777
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "CLRIC"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.42529722,
+					41.44071944
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "SHANX"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.41635833,
+					40.74160277
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "TORRR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.353225,
+					39.86779166
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "WWODD"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.13129444,
+					40.07031666
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "DERBN"
+			}
+		}
+	]
+}

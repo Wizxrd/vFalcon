@@ -1,0 +1,110 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":7,"filters":[7],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.13741944,
+					39.45091388
+				]
+			},
+			"properties": {
+				"text": [
+					"BUBBI"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.40226111,
+					39.51064722
+				]
+			},
+			"properties": {
+				"text": [
+					"KEESH"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.04170833,
+					39.86050277
+				]
+			},
+			"properties": {
+				"text": [
+					"KEMAN"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.59235,
+					39.77261666
+				]
+			},
+			"properties": {
+				"text": [
+					"BYNER"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.09293611,
+					39.66094444
+				]
+			},
+			"properties": {
+				"text": [
+					"LUNDY"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.60992777,
+					39.55498888
+				]
+			},
+			"properties": {
+				"text": [
+					"CURBY"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.81722777,
+					40.03369166
+				]
+			},
+			"properties": {
+				"text": [
+					"NUSMM"
+				]
+			}
+		}
+	]
+}

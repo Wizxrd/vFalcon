@@ -1,0 +1,118 @@
+{
+	"type": "FeatureCollection",
+	"features": [
+	{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":15,"filters":[15],"style":"airport","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.52729444,
+					41.64614166
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "PFLYD"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.98949722,
+					41.76908055
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "CURTY"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.58462222,
+					41.80163888
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "DORET"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.70389722,
+					41.99712777
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "DUUKR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.59985277,
+					41.85770833
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "JASEE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.59852777,
+					41.68460833
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "MAAJR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.484575,
+					41.76007777
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "LNDYN"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.39006111,
+					42.01236944
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "PATRC"
+			}
+		}
+	]
+}

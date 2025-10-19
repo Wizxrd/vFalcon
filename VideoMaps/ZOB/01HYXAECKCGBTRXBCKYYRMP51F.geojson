@@ -1,0 +1,65 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":14,"filters":[14],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.51076111,
+					42.031725
+				]
+			},
+			"properties": {
+				"text": [
+					"LIDDS"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.0864,
+					41.9536
+				]
+			},
+			"properties": {
+				"text": [
+					"NOONR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.82380833,
+					41.70338888
+				]
+			},
+			"properties": {
+				"text": [
+					"ZEYOU"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.2185,
+					41.07952222
+				]
+			},
+			"properties": {
+				"text": [
+					"GRIVY"
+				]
+			}
+		}
+	]
+}

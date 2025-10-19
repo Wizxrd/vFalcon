@@ -1,0 +1,110 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.144444,41.991667]},"properties":{"isLineDefaults":true,"bcg":2,"filters":[2],"style":"ShortDashed","thickness":1}},
+{
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -84.144444,
+            41.991667
+          ],
+          [
+            -84.072222,
+            41.991667
+          ],
+          [
+            -83.875,
+            41.794444
+          ]
+        ]
+      },
+      "properties": {
+        "bcg": 2,
+        "style": "shortDashed"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -83.090278,
+            41.811667
+          ],
+          [
+            -82.964167,
+            41.7175
+          ]
+        ]
+      },
+      "properties": {
+        "bcg": 2,
+        "style": "shortDashed"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -83.875,
+            41.794444
+          ],
+          [
+            -83.090278,
+            41.811667
+          ]
+        ]
+      },
+      "properties": {
+        "bcg": 2,
+        "style": "shortDashed"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -83.896944,
+            41.696389
+          ],
+          [
+            -83.875,
+            41.794444
+          ]
+        ]
+      },
+      "properties": {
+        "bcg": 2,
+        "style": "shortDashed"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -83.995833,
+            41.7875
+          ],
+          [
+            -83.875,
+            41.794444
+          ]
+        ]
+      },
+      "properties": {
+        "bcg": 2,
+        "style": "shortDashed"
+      }
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":7,"filters":[7],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.532875,
+					40.00520833
+				]
+			},
+			"properties": {
+				"text": [
+					"ZANDR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.84552777,
+					39.80565277
+				]
+			},
+			"properties": {
+				"text": [
+					"SACHO"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.12724722,
+					39.62394166
+				]
+			},
+			"properties": {
+				"text": [
+					"CLPRR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.81722894,
+					40.01702408
+				]
+			},
+			"properties": {
+				"text": [
+					"AIR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.49256666,
+					39.81133333
+				]
+			},
+			"properties": {
+				"text": [
+					"MEYRR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.46076666,
+					39.03321944
+				]
+			},
+			"properties": {
+				"text": [
+					"KHAAN"
+				]
+			}
+		}
+	]
+}

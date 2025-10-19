@@ -1,0 +1,6 @@
+{
+       "type": "FeatureCollection",
+       "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[180,-90]},"properties":{"isTextDefaults":true,"bcg":1,"filters":[1,8],"size":0,"underline":false,"opaque":false,"xOffset":0,"yOffset":0}}
+]
+}

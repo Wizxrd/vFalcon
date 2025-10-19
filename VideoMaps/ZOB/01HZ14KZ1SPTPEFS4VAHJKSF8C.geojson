@@ -1,0 +1,95 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":7,"filters":[7],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.0516,
+					41.34280277
+				]
+			},
+			"properties": {
+				"text": [
+					"WWSHR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.41946944,
+					40.63450277
+				]
+			},
+			"properties": {
+				"text": [
+					"WAAHU"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.45406666,
+					40.56501111
+				]
+			},
+			"properties": {
+				"text": [
+					"BUGZZ"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.40398611,
+					40.43955
+				]
+			},
+			"properties": {
+				"text": [
+					"THORO"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.49136944,
+					40.45488611
+				]
+			},
+			"properties": {
+				"text": [
+					"AGING"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.54051111,
+					40.32530277
+				]
+			},
+			"properties": {
+				"text": [
+					"CBUSS"
+				]
+			}
+		}
+	]
+}

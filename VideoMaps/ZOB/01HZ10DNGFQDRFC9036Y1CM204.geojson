@@ -1,0 +1,103 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":6,"filters":[6],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.67609444,
+					40.12913611
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "WISKE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.26786161,
+					39.2532178
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "CKB"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.81722894,
+					40.01702408
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "AIR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.02616761,
+					38.75412463
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "HNN"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.37476047,
+					39.44118036
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "JPU"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.28248055,
+					39.53734722
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "PYRAT"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.47647666,
+					40.22920861
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "CTW"
+			}
+		}
+	]
+}

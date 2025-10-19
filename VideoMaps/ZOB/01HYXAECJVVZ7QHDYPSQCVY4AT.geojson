@@ -1,0 +1,47 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":14,"filters":[14],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.15489166,
+					42.22439166
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "BROZZ"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.3791,
+					42.22890277
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "CCOBB"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.08198333,
+					42.23950555
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "ZEGBI"
+			}
+		}
+	]
+}

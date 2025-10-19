@@ -1,0 +1,25 @@
+{
+"type": "FeatureCollection",
+"name": "ZBW_A90 NEWBE STAR",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "isSymbolDefaults": true, "bcg": 10, "filters": [ 35 ], "size": 1 }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
+{ "type": "Feature", "properties": { "style": "vor" }, "geometry": { "type": "Point", "coordinates": [ -72.316706, 40.918997 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -71.914628, 41.0547 ] } },
+{ "type": "Feature", "properties": { "style": "vor" }, "geometry": { "type": "Point", "coordinates": [ -71.576086, 41.167436 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -71.074144, 41.206775 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -70.836069, 41.114989 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -70.535269, 41.177778 ] } },
+{ "type": "Feature", "properties": { "style": "vor" }, "geometry": { "type": "Point", "coordinates": [ -72.051986, 41.330403 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -71.917597, 41.284653 ] } },
+{ "type": "Feature", "properties": { "style": "vor" }, "geometry": { "type": "Point", "coordinates": [ -71.429642, 41.724342 ] } },
+{ "type": "Feature", "properties": { "isLineDefaults": true, "bcg": 10, "filters": [ 35 ], "style": "longDashShortDash", "thickness": 1 }, "geometry": { "type": "Point", "coordinates": [ 90, 180 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -72.316706, 40.918997 ], [ -71.914628, 41.0547 ], [ -71.576086, 41.167436 ], [ -71.074144, 41.206775 ], [ -70.836069, 41.114989 ], [ -70.535269, 41.177778 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -72.051986, 41.330403 ], [ -71.917597, 41.284653 ], [ -71.576086, 41.167436 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -71.429642, 41.724342 ], [ -71.074144, 41.206775 ] ] } },
+{ "type": "Feature", "properties": { "isTextDefaults": true, "bcg": 30, "filters": [ 35 ], "text": ["Line 1", "Line 2", "Line 3"], "size": 0, "opaque": false }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
+{ "type": "Feature", "properties": { "text": [ "JORDN" ], "xOffset": -48, "yOffset": 10 }, "geometry": { "type": "Point", "coordinates": [ -71.914628, 41.0547 ] } },
+{ "type": "Feature", "properties": { "text": [ "NEWBE" ], "xOffset": 15, "yOffset": 10 }, "geometry": { "type": "Point", "coordinates": [ -71.074144, 41.206775 ] } },
+{ "type": "Feature", "properties": { "text": [ "CALMY", "AOA030" ], "xOffset": 10, "yOffset": 8 }, "geometry": { "type": "Point", "coordinates": [ -70.535269, 41.177778 ] } }
+]
+}

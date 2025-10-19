@@ -21,6 +21,7 @@ namespace vFalcon.Renderers
         private readonly SKPaint paint = new SKPaint
         {
             Style = SKPaintStyle.Stroke,
+            StrokeWidth = 1,
             Color = DefaultColor,
             IsAntialias = true,
         };
@@ -47,7 +48,6 @@ namespace vFalcon.Renderers
         {
             try
             {
-                JObject profileBcgs = (JObject)eramViewModel.profile.DisplayWindowSettings[0]["DisplaySettings"][0]["Bcgs"];
                 foreach (var feature in features)
                 {
                     try
@@ -65,12 +65,10 @@ namespace vFalcon.Renderers
                         if (coordsToken == null) continue;
 
                         string style = (feature.AppliedAttributes.TryGetValue("style", out var styleValue) && styleValue != null) ? styleValue.ToString() : "OtherWaypoints";
-                        float symbolSize = feature.AppliedAttributes.TryGetValue("size", out var sizeValue) ? Convert.ToSingle(sizeValue) : 10f;
 
-                        paint.StrokeWidth = feature.AppliedAttributes.TryGetValue("thickness", out var thickness) ? Convert.ToSingle(thickness) : 1f;
+                        //paint.StrokeWidth = feature.AppliedAttributes.TryGetValue("thickness", out var thickness) ? Convert.ToSingle(thickness) : 1f;
                         paint.PathEffect = ResolvePathEffect(feature.AppliedAttributes);
-                        int bcg = Convert.ToInt32(feature.AppliedAttributes["bcg"]);
-                        int value = (int)profileBcgs[$"MapGroup{bcg}"];
+                        int value = eramViewModel.MapBrightness;
                         byte rgb = (byte)(value * 243 / 100);
                         if (geomType == "LineString")
                         {
@@ -87,7 +85,7 @@ namespace vFalcon.Renderers
                             double lon = coordsToken[0].Value<double>();
                             double lat = coordsToken[1].Value<double>();
                             SKPoint screenPoint = ScreenMap.CoordinateToScreen(clientSize.Width, clientSize.Height, scale, panOffset, lat, lon);
-                            DrawSymbol(canvas, style, screenPoint, symbolSize, rgb);
+                            DrawSymbol(canvas, style, screenPoint, rgb);
                         }
                         else if (geomType == "Text")
                         {
@@ -109,27 +107,27 @@ namespace vFalcon.Renderers
             }
         }
 
-        private void DrawSymbol(SKCanvas canvas, string style, SKPoint center, float size, byte rgb)
+        private void DrawSymbol(SKCanvas canvas, string style, SKPoint center, byte rgb)
         {
             switch (style.ToLower())
             {
-                case "obstruction1": Symbols.Obstruction1(canvas, center, size, rgb); break;
-                case "obstruction2": Symbols.Obstruction2(canvas, center, size, rgb); break;
-                case "helipad": Symbols.Helipad(canvas, center, size, rgb); break;
-                case "nuclear": Symbols.Nuclear(canvas, center, size, rgb); break;
-                case "emergencyairport": Symbols.EmergencyAirport(canvas, center, size, rgb); break;
-                case "radar": Symbols.Radar(canvas, center, size, rgb); break;
-                case "iaf": Symbols.Iaf(canvas, center, size, rgb); break;
-                case "rnavonlywaypoint": Symbols.RnavOnlyWaypoint(canvas, center, size, rgb); break;
-                case "rnav": Symbols.Rnav(canvas, center, size, rgb); break;
-                case "airwayintersection": Symbols.AirwayIntersection(canvas, center, size, rgb); break;
-                case "ndb": Symbols.Ndb(canvas, center, size, rgb); break;
-                case "vor": Symbols.Vor(canvas, center, size, rgb); break;
-                case "otherwaypoints": Symbols.OtherWaypoints(canvas, center, size, rgb); break;
-                case "airport": Symbols.Airport(canvas, center, size, rgb); break;
-                case "satelliteairport": Symbols.SatelliteAirport(canvas, center, size, rgb); break;
-                case "tacan": Symbols.Tacan(canvas, center, size, rgb); break;
-                case "dme": Symbols.Tacan(canvas, center, size, rgb); break;
+                case "obstruction1": Symbols.Obstruction1(canvas, center, rgb); break;
+                case "obstruction2": Symbols.Obstruction2(canvas, center, rgb); break;
+                case "helipad": Symbols.Helipad(canvas, center, rgb); break;
+                case "nuclear": Symbols.Nuclear(canvas, center, rgb); break;
+                case "emergencyairport": Symbols.EmergencyAirport(canvas, center, rgb); break;
+                case "radar": Symbols.Radar(canvas, center, rgb); break;
+                case "iaf": Symbols.Iaf(canvas, center, rgb); break;
+                case "rnavonlywaypoint": Symbols.RnavOnlyWaypoint(canvas, center, rgb); break;
+                case "rnav": Symbols.Rnav(canvas, center, rgb); break;
+                case "airwayintersection": Symbols.AirwayIntersection(canvas, center, rgb); break;
+                case "ndb": Symbols.Ndb(canvas, center, rgb); break;
+                case "vor": Symbols.Vor(canvas, center, rgb); break;
+                case "otherwaypoints": Symbols.OtherWaypoints(canvas, center, rgb); break;
+                case "airport": Symbols.Airport(canvas, center, rgb); break;
+                case "satelliteairport": Symbols.SatelliteAirport(canvas, center, rgb); break;
+                case "tacan": Symbols.Tacan(canvas, center, rgb); break;
+                case "dme": Symbols.Tacan(canvas, center, rgb); break;
             }
         }
 

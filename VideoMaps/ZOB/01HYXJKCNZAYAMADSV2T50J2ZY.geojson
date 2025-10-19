@@ -1,0 +1,125 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":4,"filters":[4],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.42013611,
+					42.58955555
+				]
+			},
+			"properties": {
+				"text": [
+					"TPGUN"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.65861111,
+					43.81444444
+				]
+			},
+			"properties": {
+				"text": [
+					"BOBTA"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.56416944,
+					43.00566111
+				]
+			},
+			"properties": {
+				"text": [
+					"JAIBE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.89075833,
+					42.70684444
+				]
+			},
+			"properties": {
+				"text": [
+					"GGUCE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.34770555,
+					42.68471944
+				]
+			},
+			"properties": {
+				"text": [
+					"WLFMN"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.81015833,
+					42.64495
+				]
+			},
+			"properties": {
+				"text": [
+					"MAVVV"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.72734444,
+					42.78471388
+				]
+			},
+			"properties": {
+				"text": [
+					"DONEO"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.37170277,
+					42.72970555
+				]
+			},
+			"properties": {
+				"text": [
+					"VYPRE"
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,103 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":4,"filters":[4],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.60197222,
+					42.91506388
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "GRAYT"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.37305555,
+					44.16944444
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "DAYYY"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.31604722,
+					43.7789
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "PNNTO"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.18638055,
+					43.6138
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "WLEYE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.03688888,
+					43.42284166
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "YUUPR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.81283888,
+					43.16399444
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "THEEE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.76666666,
+					44.1
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "LEFSA"
+			}
+		}
+	]
+}

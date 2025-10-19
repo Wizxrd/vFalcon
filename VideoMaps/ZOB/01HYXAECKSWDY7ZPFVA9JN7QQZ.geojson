@@ -1,0 +1,110 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":14,"filters":[14],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.78972222,
+					41.69906111
+				]
+			},
+			"properties": {
+				"text": [
+					"JWELS"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.14845555,
+					41.24998888
+				]
+			},
+			"properties": {
+				"text": [
+					"SNDRS"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.639675,
+					41.10238055
+				]
+			},
+			"properties": {
+				"text": [
+					"REEDA"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.29091111,
+					40.99119444
+				]
+			},
+			"properties": {
+				"text": [
+					"SEABS"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.89359722,
+					40.88478333
+				]
+			},
+			"properties": {
+				"text": [
+					"KNRKO"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-87.93333333,
+					40.65
+				]
+			},
+			"properties": {
+				"text": [
+					"BGHRT"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.41635833,
+					40.74160277
+				]
+			},
+			"properties": {
+				"text": [
+					"TORRR"
+				]
+			}
+		}
+	]
+}

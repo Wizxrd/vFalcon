@@ -1,0 +1,125 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":15,"filters":[15],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.52729444,
+					41.64614166
+				]
+			},
+			"properties": {
+				"text": [
+					"PFLYD"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.98949722,
+					41.76908055
+				]
+			},
+			"properties": {
+				"text": [
+					"CURTY"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.58462222,
+					41.80163888
+				]
+			},
+			"properties": {
+				"text": [
+					"DORET"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.70389722,
+					41.99712777
+				]
+			},
+			"properties": {
+				"text": [
+					"DUUKR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.59985277,
+					41.85770833
+				]
+			},
+			"properties": {
+				"text": [
+					"JASEE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.59852777,
+					41.68460833
+				]
+			},
+			"properties": {
+				"text": [
+					"MAAJR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.484575,
+					41.76007777
+				]
+			},
+			"properties": {
+				"text": [
+					"LNDYN"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.39006111,
+					42.01236944
+				]
+			},
+			"properties": {
+				"text": [
+					"PATRC"
+				]
+			}
+		}
+	]
+}

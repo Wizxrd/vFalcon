@@ -1,0 +1,95 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":14,"filters":[14],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.74678055,
+					42.45770277
+				]
+			},
+			"properties": {
+				"text": [
+					"DDOGE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.32997777,
+					42.43110277
+				]
+			},
+			"properties": {
+				"text": [
+					"MTRCT"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.93392777,
+					42.22028888
+				]
+			},
+			"properties": {
+				"text": [
+					"FDRCH"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.62464166,
+					42.43881111
+				]
+			},
+			"properties": {
+				"text": [
+					"KAYLN"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.959875,
+					42.44665833
+				]
+			},
+			"properties": {
+				"text": [
+					"IIICE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.127325,
+					42.466325
+				]
+			},
+			"properties": {
+				"text": [
+					"SMUUV"
+				]
+			}
+		}
+	]
+}

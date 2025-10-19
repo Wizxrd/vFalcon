@@ -1,0 +1,50 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":14,"filters":[14],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.58993055,
+					41.70517777
+				]
+			},
+			"properties": {
+				"text": [
+					"HUUTZ"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.12213611,
+					40.88958333
+				]
+			},
+			"properties": {
+				"text": [
+					"BARII"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.38520277,
+					40.45129166
+				]
+			},
+			"properties": {
+				"text": [
+					"SINKR"
+				]
+			}
+		}
+	]
+}

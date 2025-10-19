@@ -1,0 +1,61 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":6,"filters":[6],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.67466502,
+					41.33102538
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "YNG"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.64323611,
+					40.87625277
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "CUTTA"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.20151891,
+					41.10790311
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "ACO"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.43211711,
+					40.74070638
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "BSV"
+			}
+		}
+	]
+}

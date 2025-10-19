@@ -1,0 +1,90 @@
+{
+	"type": "FeatureCollection",
+	"features": [
+	{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":15,"filters":[15],"style":"airport","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.44296666,
+					41.18925555
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "MOHUM"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.76324166,
+					41.105325
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "ZAAPA"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.05595555,
+					40.12066666
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "PUUDL"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.91737222,
+					40.89744722
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "YELOE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.38520277,
+					40.45129166
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "SINKR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.05330555,
+					39.87328888
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "SNNOH"
+			}
+		}
+	]
+}

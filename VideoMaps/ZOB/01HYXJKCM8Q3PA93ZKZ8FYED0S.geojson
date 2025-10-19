@@ -1,0 +1,103 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":4,"filters":[4],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.2975,
+					41.96614722
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "HAYLL"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.07006388,
+					42.00703333
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "HOSSA"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.81043888,
+					41.99374722
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "KRABN"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.567575,
+					41.98103611
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "URBAN"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-87.4625,
+					41.97916666
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "SAMPL"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.13772222,
+					42.05499166
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "WNNNE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.54533611,
+					42.02888333
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "SAADD"
+			}
+		}
+	]
+}

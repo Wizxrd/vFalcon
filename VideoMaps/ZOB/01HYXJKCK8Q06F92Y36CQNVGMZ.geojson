@@ -1,0 +1,117 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":4,"filters":[4],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.42013611,
+					42.58955555
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "TPGUN"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.65861111,
+					43.81444444
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "BOBTA"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.56416944,
+					43.00566111
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "JAIBE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.89075833,
+					42.70684444
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "GGUCE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.34770555,
+					42.68471944
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "WLFMN"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.81015833,
+					42.64495
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "MAVVV"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.72734444,
+					42.78471388
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "DONEO"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.37170277,
+					42.72970555
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "VYPRE"
+			}
+		}
+	]
+}

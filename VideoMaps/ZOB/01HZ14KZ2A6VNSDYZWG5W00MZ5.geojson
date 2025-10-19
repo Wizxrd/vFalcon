@@ -1,0 +1,110 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":7,"filters":[7],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.8604123,
+					39.55671525
+				]
+			},
+			"properties": {
+				"text": [
+					"MGW"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.53023055,
+					39.49717222
+				]
+			},
+			"properties": {
+				"text": [
+					"BRNDN"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.40885833,
+					39.47534166
+				]
+			},
+			"properties": {
+				"text": [
+					"HIROY"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.18425833,
+					39.43393333
+				]
+			},
+			"properties": {
+				"text": [
+					"JIMVE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.92655833,
+					39.38865
+				]
+			},
+			"properties": {
+				"text": [
+					"TABBE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.56753333,
+					39.32388611
+				]
+			},
+			"properties": {
+				"text": [
+					"KIKKR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.36980555,
+					39.28824444
+				]
+			},
+			"properties": {
+				"text": [
+					"IGGGY"
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":14,"filters":[14],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.58993055,
+					41.70517777
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "HUUTZ"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.12213611,
+					40.88958333
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "BARII"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.38520277,
+					40.45129166
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "SINKR"
+			}
+		}
+	]
+}

@@ -1,0 +1,89 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":14,"filters":[14],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.85510277,
+					42.78379722
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "JAXII"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.13998333,
+					42.99866666
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "MIGGY"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.46415277,
+					43.2405
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "MONEE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.05085,
+					43.16865277
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "GETCH"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.93883055,
+					43.45008333
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "SLLAP"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.91666666,
+					43.7
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "HUBBY"
+			}
+		}
+	]
+}

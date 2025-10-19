@@ -1,0 +1,50 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":14,"filters":[14],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.45017222,
+					42.14301944
+				]
+			},
+			"properties": {
+				"text": [
+					"PAVYL"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.788275,
+					42.05887777
+				]
+			},
+			"properties": {
+				"text": [
+					"ESSBE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.59065,
+					42.09256388
+				]
+			},
+			"properties": {
+				"text": [
+					"MRDOC"
+				]
+			}
+		}
+	]
+}

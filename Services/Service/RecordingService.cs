@@ -12,7 +12,7 @@ namespace vFalcon.Services.Service
 {
     public class RecordingService
     {
-        private static string recordingName = string.Empty;
+        public string recordingName = string.Empty;
         public Dictionary<string, Recording> recordingData = new Dictionary<string, Recording>();
 
         private DateTime startedUtc = DateTime.MinValue;
@@ -21,8 +21,13 @@ namespace vFalcon.Services.Service
         private readonly SemaphoreSlim saveGate = new(1, 1);
         private static readonly Encoding Utf8NoBom = new UTF8Encoding(false);
 
+        string json = File.ReadAllText(Loader.LoadFile("", "NavDataSerial.json"));
+        public JObject navData;
+
         public void Start()
         {
+            string json = File.ReadAllText(Loader.LoadFile("", "NavDataSerial.json"));
+            navData = JObject.Parse(json);
             recordingName = UniqueHash.Generate();
             recordingData = new Dictionary<string, Recording>();
             startedUtc = DateTime.UtcNow;
@@ -97,6 +102,7 @@ namespace vFalcon.Services.Service
 
                 var root = new JObject
                 {
+                    ["NavData"] = navData,
                     ["TickCount"] = tickCount,
                     ["LastUpdateTimeStamp"] = lastUpdatedUtc,
                     ["Pilots"] = pilotsObj
@@ -108,7 +114,7 @@ namespace vFalcon.Services.Service
 
                 using (var fs = new FileStream(tmpPath, FileMode.Create, FileAccess.Write, FileShare.None, 81920, FileOptions.WriteThrough))
                 using (var sw = new StreamWriter(fs, Utf8NoBom))
-                using (var jw = new JsonTextWriter(sw) { Formatting = Formatting.Indented })
+                using (var jw = new JsonTextWriter(sw) { Formatting = Formatting.None })
                 {
                     root.WriteTo(jw);
                     jw.Flush();

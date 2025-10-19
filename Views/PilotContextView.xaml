@@ -9,142 +9,88 @@
     xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
     xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
     xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+    xmlns:converter="clr-namespace:vFalcon.Converters"
     mc:Ignorable="d"
-    FontFamily="Consolas"
-    FontSize="12"
-    Width="200"
-    Height="Auto">
-
-    <StackPanel 
-        Background="#2a2b34"
-        Orientation="Vertical"
-        Grid.IsSharedSizeScope="True">
-        <Border 
-            Height="24"
-            Background="Black"
-            BorderBrush="#e4e400"
-            BorderThickness="1">
-            <TextBlock 
-                Text="{Binding PilotCallsign}"
-                Foreground="#e4e400"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center"/>
-        </Border>
-        <Button 
-            Command="{Binding DisplayRouteCommand}"
-            Height="30"
-            HorizontalContentAlignment="Center">
-            <TextBlock
-                Text="Display Route" Margin="0,0,0,0">
-                
-            </TextBlock>
-        </Button>
-        <Button 
-            adonisExtensions:RippleExtension.BackgroundBrush="Transparent"
-            adonisExtensions:RippleExtension.BorderBrush="Transparent"
-            BorderBrush="#3d3d4c"
-            Height="30">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition 
-                        Width="Auto"/>
-                    <ColumnDefinition 
-                        Width="*" 
-                        SharedSizeGroup="LabelCenter"/>
-                    <ColumnDefinition 
-                        Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <CheckBox 
-                    Grid.Column="0"
-                    Opacity="0"
-                    IsHitTestVisible="False"
-                    Margin="0,0,8,0"/>
-                <TextBlock 
-                    Grid.Column="1"
-                    Text="FDB Position"
-                    Foreground="White"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"/>
-                <xctk:IntegerUpDown 
-                    Grid.Column="2"
-                    Foreground="White"
-                    Background="Transparent"
-                    BorderBrush="Transparent"
-                    Value="{Binding FullDataBlockPosition}"
-                    Minimum="1"
-                    Maximum="9"
-                    Increment="1"
-                    VerticalAlignment="Center"
-                    Margin="8,0,0,0"/>
-            </Grid>
-        </Button>
-        <Button 
-            adonisExtensions:RippleExtension.BackgroundBrush="Transparent"
-            adonisExtensions:RippleExtension.BorderBrush="Transparent"
-            BorderBrush="#3d3d4c"
-            Height="30">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition 
-                        Width="Auto"/>
-                    <ColumnDefinition 
-                        Width="*" 
-                        SharedSizeGroup="LabelCenter"/>
-                    <ColumnDefinition 
-                        Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <CheckBox 
-                    Grid.Column="0"
-                    Opacity="0"
-                    IsHitTestVisible="False"
-                    Margin="0,0,8,0"/>
-                <TextBlock 
-                    Grid.Column="1"
-                    Text="Leader Line"
-                    Foreground="White"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"/>
-                <xctk:IntegerUpDown 
-                    Grid.Column="2"
-                    Foreground="White"
-                    Background="Transparent"
-                    BorderBrush="Transparent"
-                    Value="{Binding LeaderLineLength}"
-                    Minimum="0"
-                    Maximum="3"
-                    Increment="1"
-                    VerticalAlignment="Center"
-                    Margin="8,0,0,0"/>
-            </Grid>
-        </Button>
-        <Button 
-            adonisExtensions:RippleExtension.BackgroundBrush="Transparent"
-            adonisExtensions:RippleExtension.BorderBrush="Transparent"
-            BorderBrush="#3d3d4c"
-            Height="30">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition 
-                        Width="Auto"/>
-                    <ColumnDefinition 
-                        Width="*" 
-                        SharedSizeGroup="LabelCenter"/>
-                    <ColumnDefinition 
-                        Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <CheckBox 
-                    Grid.Column="0"
-                    Background="#272730"
-                    IsChecked="{Binding JRingEnabled}"
-                    VerticalAlignment="Center"
-                    Margin="0,0,8,0"/>
-                <TextBlock 
-                    Grid.Column="1"
-                    Text="J-Ring"
-                    Foreground="White"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"/>
-            </Grid>
-        </Button>
-    </StackPanel>
+    FontFamily="Consolas" FontSize="12"
+    Background="#3d3d4c"
+    BorderBrush="{StaticResource PopupBorderBrush}" BorderThickness="1"
+    Height="Auto" Width="Auto">
+    <UserControl.Resources>
+        <converter:EqualsConverter x:Key="EqualsConverter"/>
+    </UserControl.Resources>
+    <Menu Background="Transparent" Height="32" VerticalAlignment="Center" FontFamily="Consolas" FontSize="14">
+        <MenuItem Header="Target" Height="32">
+            <MenuItem Header="Toggle Full Datablock" Command="{Binding ToggleFullDatablockCommand}"/>
+            <MenuItem Header="Datablock Type">
+                <RadioButton Content="ERAM" IsChecked="{Binding DatablockType, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=0}"/>
+                <RadioButton Content="STARS" IsChecked="{Binding DatablockType, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=1}"/>
+            </MenuItem>
+            <MenuItem Header="Toggle Dwell Lock" Command="{Binding ToggleDwellLockCommand}"/>
+            <MenuItem Header="JRing">
+                <CheckBox Content="Enabled" IsChecked="{Binding JRingEnabled}"/>
+                <RadioButton Content="1NM" IsChecked="{Binding JRingSize, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=1}"/>
+                <RadioButton Content="3NM" IsChecked="{Binding JRingSize, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=3}"/>
+                <RadioButton Content="5NM" IsChecked="{Binding JRingSize, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=5}"/>
+                <RadioButton Content="10NM" IsChecked="{Binding JRingSize, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=10}"/>
+                <RadioButton Content="15NM" IsChecked="{Binding JRingSize, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=15}"/>
+                <RadioButton Content="20NM" IsChecked="{Binding JRingSize, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=20}"/>
+                <RadioButton Content="25NM" IsChecked="{Binding JRingSize, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=25}"/>
+                <RadioButton Content="30NM" IsChecked="{Binding JRingSize, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=30}"/>
+            </MenuItem>
+            <MenuItem Header="Hit Details">
+                <MenuItem Header="{Binding Time}"/>
+                <MenuItem Header="{Binding PilotCallsign}">
+                    <MenuItem Header="Copy to Clipboard" Command="{Binding CopyCallsignCommand}"/>
+                </MenuItem>
+                <MenuItem Header="{Binding CID}">
+                    <MenuItem Header="Copy to Clipboard" Command="{Binding CopyCIDCommand}"/>
+                </MenuItem>
+                <MenuItem Header="{Binding Type}"/>
+                <MenuItem Header="{Binding ReportedAltitude}"/>
+                <MenuItem Header="{Binding RequestedAltitude}"/>
+                <MenuItem Header="{Binding Heading}"/>
+                <MenuItem Header="{Binding Speed}"/>
+                <MenuItem Header="{Binding AssignedBeacon}"/>
+                <MenuItem Header="{Binding FlightRules}"/>
+                <MenuItem Header="{Binding LatLon}">
+                    <MenuItem Header="Copy to Clipboard" Command="{Binding CopyLatLonCommand}"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Full Datablock Position">
+                <RadioButton Content="1" IsChecked="{Binding FullDataBlockPosition, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=1}"/>
+                <RadioButton Content="2" IsChecked="{Binding FullDataBlockPosition, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=2}"/>
+                <RadioButton Content="3" IsChecked="{Binding FullDataBlockPosition, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=3}"/>
+                <RadioButton Content="4" IsChecked="{Binding FullDataBlockPosition, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=4}"/>
+                <RadioButton Content="5" IsChecked="{Binding FullDataBlockPosition, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=5}"/>
+                <RadioButton Content="6" IsChecked="{Binding FullDataBlockPosition, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=6}"/>
+                <RadioButton Content="7" IsChecked="{Binding FullDataBlockPosition, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=7}"/>
+                <RadioButton Content="8" IsChecked="{Binding FullDataBlockPosition, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=8}"/>
+                <RadioButton Content="9"  IsChecked="{Binding FullDataBlockPosition, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=9}"/>
+            </MenuItem>
+            <MenuItem Header="Leader Line Length">
+                <RadioButton Content="0" IsChecked="{Binding LeaderLineLength, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=0}"/>
+                <RadioButton Content="1" IsChecked="{Binding LeaderLineLength, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=1}"/>
+                <RadioButton Content="2" IsChecked="{Binding LeaderLineLength, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=2}"/>
+                <RadioButton Content="3" IsChecked="{Binding LeaderLineLength, Mode=TwoWay, Converter={StaticResource EqualsConverter}, ConverterParameter=3}"/>
+            </MenuItem>
+        </MenuItem>
+        <MenuItem Header="Plotting">
+            <MenuItem Header="Full Route" Visibility="{Binding FullRouteVisibility}" Command="{Binding DisplayFullRouteCommand}"/>
+            <MenuItem Header="Filed Route" Command="{Binding DisplayRouteCommand}"/>
+            <MenuItem Header="Copy Lat/Lon to Clipboard" Command="{Binding CopyLatLonCommand}"/>
+            <MenuItem Header="Plot on SkyVector" Command="{Binding PlotOnSkyVectorCommand}"/>
+        </MenuItem>
+        <MenuItem Header="Flight Plan">
+            <MenuItem StaysOpenOnClick="True">
+                <MenuItem.Header>
+                    <StackPanel Width="200">
+                        <TextBlock Text="{Binding FlightPlan}"
+                           TextWrapping="Wrap"
+                           MaxWidth="200"/>
+                    </StackPanel>
+                </MenuItem.Header>
+                <MenuItem Header="Copy" Command="{Binding CopyFlightPlanCommand}"/>
+            </MenuItem>
+        </MenuItem>
+    </Menu>
 </UserControl>

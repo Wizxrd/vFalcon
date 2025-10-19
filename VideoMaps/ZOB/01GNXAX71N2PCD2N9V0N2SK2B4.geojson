@@ -1,0 +1,42 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-81.797778,40.941389]},"properties":{"isSymbolDefaults":true,"bcg":11,"filters":[11],"style":"Airport","size":1}},
+{
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.779022,
+          40.761167
+        ]
+      },
+      "properties": {
+        "bcg": 11,
+        "filters": [
+          11
+        ],
+        "style": "airport",
+        "size": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.797778,
+          40.941389
+        ]
+      },
+      "properties": {
+        "bcg": 11,
+        "filters": [
+          11
+        ],
+        "style": "airport",
+        "size": 1
+      }
+    }
+  ]
+}

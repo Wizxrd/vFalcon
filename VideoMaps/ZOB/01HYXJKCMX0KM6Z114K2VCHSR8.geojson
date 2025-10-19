@@ -1,0 +1,103 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":4,"filters":[4],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.797125,
+					41.74841388
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "BONZZ"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.86225555,
+					39.71075
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "JAMOX"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.01285833,
+					40.54878333
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "BOBCT"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.13969166,
+					40.91954166
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "SSAID"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.24545277,
+					41.225875
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "EEEZI"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.53693611,
+					41.50334722
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "HUMRR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.58473611,
+					40.59504722
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "KOZAR"
+			}
+		}
+	]
+}

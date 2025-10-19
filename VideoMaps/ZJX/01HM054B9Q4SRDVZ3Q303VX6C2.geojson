@@ -1,0 +1,17 @@
+{
+"type": "FeatureCollection",
+"name": "CEWAPP",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -86.545719260985436, 30.85124182564503 ], [ -86.527301842946912, 30.854497055162966 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -86.533802108136996, 30.846126241768154 ], [ -86.528926909244447, 30.828917276051225 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -86.528385220478611, 30.821009419463838 ], [ -86.524593399117748, 30.798212542447676 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -86.513759623800965, 30.694744563501217 ], [ -86.500759093420839, 30.698470873010969 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -86.493446295082023, 30.597110648095313 ], [ -86.484508430445658, 30.598509442571334 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -86.490467006869892, 30.602122901496703 ], [ -86.49371713946492, 30.620071634897254 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -86.495613050145366, 30.62822905021476 ], [ -86.498863182740408, 30.648969094640567 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -86.501029937803764, 30.658522000835674 ], [ -86.504280070398792, 30.676693215833332 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -86.50753020299382, 30.701847716725311 ], [ -86.511592868737594, 30.723736112825858 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -86.51240540188634, 30.730778928352191 ], [ -86.517009756395993, 30.756850326894906 ] ] } }
+]
+}

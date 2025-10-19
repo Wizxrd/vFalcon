@@ -1,0 +1,24 @@
+{
+"type": "FeatureCollection",
+"name": "ZBW_A90 ZELKA STAR",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "isSymbolDefaults": true, "bcg": 10, "filters": [ 33 ], "size": 1 }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -73.137919, 42.625342 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -72.959353, 42.605486 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -72.257439, 42.520550 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -72.068042, 42.496439 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -71.842747, 42.496081 ] } },
+{ "type": "Feature", "properties": { "style": "rnavOnlyWaypoint" }, "geometry": { "type": "Point", "coordinates": [ -71.643522, 42.495394 ] } },
+{ "type": "Feature", "properties": { "isLineDefaults": true, "bcg": 10, "filters": [ 33 ], "style": "longDashShortDash", "thickness": 1 }, "geometry": { "type": "Point", "coordinates": [ 90, 180 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -73.137919, 42.625342 ], [ -72.959353, 42.605486 ], [ -72.257439, 42.520550 ], [ -72.068042, 42.496439 ], [ -71.842747, 42.496081 ], [ -71.643522, 42.495394 ], [ -71.553408, 42.494972 ], [ -71.418675, 42.551397 ], [ -71.193189, 42.577297 ] ] } },
+{ "type": "Feature", "properties": { "isTextDefaults": true, "bcg": 30, "filters": [ 33 ], "text": ["Line 1", "Line 2", "Line 3"], "size": 0, "opaque": false }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
+{ "type": "Feature", "properties": { "text": [ "TERIA", "AOA240" ], "xOffset": -8, "yOffset": 30 }, "geometry": { "type": "Point", "coordinates": [ -72.959353, 42.605486 ] } },
+{ "type": "Feature", "properties": { "text": [ "HAUKS", "AOA140" ], "xOffset": -10, "yOffset": 33 }, "geometry": { "type": "Point", "coordinates": [ -72.257439, 42.520550 ] } },
+{ "type": "Feature", "properties": { "text": [ "WORIA", "110B130" ], "xOffset": -5, "yOffset": 28 }, "geometry": { "type": "Point", "coordinates": [ -72.068042, 42.496439 ] } },
+{ "type": "Feature", "properties": { "text": [ "BCATS", "080B090" ], "xOffset": -3, "yOffset": 28 }, "geometry": { "type": "Point", "coordinates": [ -71.842747, 42.496081 ] } },
+{ "type": "Feature", "properties": { "text": [ "GOLEE", "060" ], "yOffset": 28 }, "geometry": { "type": "Point", "coordinates": [ -71.643522, 42.495394 ] } },
+{ "type": "Feature", "properties": { "text": [ "RIKAH", "060", "210K" ], "xOffset": 8, "yOffset": 43 }, "geometry": { "type": "Point", "coordinates": [ -71.418675, 42.551397 ] } },
+{ "type": "Feature", "properties": { "text": [ "EXXRO", "060", "210K" ], "xOffset": 8, "yOffset": 40 }, "geometry": { "type": "Point", "coordinates": [ -71.193189, 42.577297 ] } }
+]
+}

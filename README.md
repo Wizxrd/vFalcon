@@ -1,9 +1,9 @@
 # vFALCON
-![](https://img.shields.io/badge/version-v0.0.13-limegreen)
+![](https://img.shields.io/badge/version-v1.0.0-limegreen)
 ## [DOWNLOAD](https://github.com/Wizxrd/vFalcon/releases)
 
 # OVERVIEW  
-vFalcon is a VATSIM replay and analysis platform modeled after the FAA�s �Falcon� program used to track the manipulation of datablocks, aircraft positions, and other sector-specific data within the National Airspace System (NAS). Its interface and functions are configured to align with CRC profile standards, providing a consistent and familiar environment for operational training and review.
+vFalcon is a VATSIM replay and analysis platform modeled after the FAA's Falcon program used to track the manipulation of datablocks, aircraft positions, and other sector-specific data within the National Airspace System (NAS). Its interface and functions are configured to align with CRC profile standards, providing a consistent and familiar environment for operational training and review.
 
 The primary use of vFalcon is for reviewing busy traffic scenarios, debriefing close calls, evaluating controller performance, and assisting in student training from live network situations.
 
@@ -84,13 +84,13 @@ vFalcon allows users to record the live network data while vFalcon is open via t
 # KEYBINDS
 **Keybind** | **Description**
 ---|---
-**CTRL+F12** | Toggles activating/deactivating a sector (enables FDB for pilots on that frequency).
-**CTRL+E** | Exits replay mode.
-**CTRL+L** | Opens window to select a recording file.
-**CTRL+SHIFT+R** | Starts/stops recording in live mode.
-**CTRL+SHIFT+P** | Switch profile.
-**CTRL+G** | Opens general settings.
-**CTRL+T** | Toggles TDM mode (only for video maps).
+**Ctrl+F12** | Toggles activating/deactivating a sector (enables FDB for pilots on that frequency).
+**Ctrl+E** | Exits replay mode.
+**Ctrl+L** | Opens window to select a recording file.
+**Alt+R** | Starts/stops recording in live mode.
+**Alt+P** | Switch profile.
+**Ctrl+G** | Opens general settings.
+**Ctrl+T** | Toggles TDM mode (only for video maps).
 **Page Up** | Increases velocity vector lines.
 **Page Down** | Decreases velocity vector lines.
 **Left Arrow** | Rewinds by 1 tick.
@@ -98,9 +98,10 @@ vFalcon allows users to record the live network data while vFalcon is open via t
 **Space** | Toggles play/pause.
 **Middle Click** | Middle click slew on target to toggle FDB.
 **Right Click** | Right click slew on target to bring up context menu.
-**CTRL+Left Click** | Left click slew on target to cycle through FDB positions (same as CRC, goes counter-clockwise).
-**CTRL+Right Click** | Right click slew on target to toggle leader line length.
-**SHIFT+Left Click** | Left click slew on target to toggle J-Ring.
+**Ctrl+Left Click** | Left click slew on target to cycle through FDB positions (same as CRC, goes counter-clockwise).
+**Ctrl+Right Click** | Right click slew on target to toggle leader line length.
+**Shift+Left Click** | Left click slew on target to toggle J-Ring.
+**Alt+Left Click** | Left click slew on target to toggle Dwell lock.
 **J+Left Click** | Left click slew on target to cycle through J-Ring size (3, 5, 10, 15, 20, 30).
 
 ## License

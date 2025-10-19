@@ -1,0 +1,61 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":7,"filters":[7],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.41990577,
+					41.69525319
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "SFK"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.14275638,
+					41.21494972
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "ETG"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.99271694,
+					40.91625888
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "PSB"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-76.66528994,
+					41.02339191
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "MIP"
+			}
+		}
+	]
+}

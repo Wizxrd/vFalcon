@@ -1,0 +1,155 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":7,"filters":[7],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.7469878,
+					42.9667665
+				]
+			},
+			"properties": {
+				"text": [
+					"FNT"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.58066666,
+					42.88443333
+				]
+			},
+			"properties": {
+				"text": [
+					"KAYYS"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.91830555,
+					42.84935833
+				]
+			},
+			"properties": {
+				"text": [
+					"LTOUR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.49707277,
+					42.78671727
+				]
+			},
+			"properties": {
+				"text": [
+					"VIO"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.71670555,
+					42.74734722
+				]
+			},
+			"properties": {
+				"text": [
+					"DITCA"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.05109444,
+					42.68649722
+				]
+			},
+			"properties": {
+				"text": [
+					"WLTER"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.27059722,
+					42.64595555
+				]
+			},
+			"properties": {
+				"text": [
+					"RHIVR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.72260555,
+					42.56103055
+				]
+			},
+			"properties": {
+				"text": [
+					"PAITN"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-87.110175,
+					42.45575833
+				]
+			},
+			"properties": {
+				"text": [
+					"WYNDE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.127325,
+					42.466325
+				]
+			},
+			"properties": {
+				"text": [
+					"SMUUV"
+				]
+			}
+		}
+	]
+}

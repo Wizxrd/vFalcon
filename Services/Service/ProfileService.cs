@@ -18,20 +18,15 @@ namespace vFalcon.Services.Service
             List<Profile> list = new List<Profile>();
             try
             {
-                string crcPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CRC", "Profiles");
-                var files = Directory.GetFiles(crcPath, "*.json");
+                string profilesPath = Loader.LoadFolder("Profiles");
+                var files = Directory.GetFiles(profilesPath, "*.json");
 
                 foreach (var file in files)
                 {
                     var json = await File.ReadAllTextAsync(file);
                     var profile = JsonConvert.DeserializeObject<Profile>(json);
                     if (profile == null) continue;
-
-                    var jobj = JObject.Parse(json);
-                    var displaySettings = jobj["DisplayWindowSettings"]?.FirstOrDefault()?["DisplaySettings"] as JArray;
-                    if (displaySettings == null || !displaySettings.Any(s => s["$type"]?.ToString().Contains("Eram") == true)) continue;
                     list.Add(profile);
-                    Logger.Info("ProfileService.LoadProfiles", $"Loaded ERAM Profile: \"{profile.Name}\"");
                 }
             }
             catch (Exception ex)
@@ -41,13 +36,88 @@ namespace vFalcon.Services.Service
             return list;
         }
 
+        public async Task New(string name, string artccId, string facilityId, string displayType)
+        {
+            Profile profile = new()
+            {
+                Id = UniqueHash.Generate(),
+                Name = name,
+                LastUsedAt = DateTime.UtcNow,
+                ArtccId = artccId,
+                FacilityId = facilityId,
+                DisplayType = displayType,
+                ActiveGeoMap = null,
+                TopDown = false,
+                LogLevel = 3,
+                RecordAudio = false,
+                PttKey = null,
+                ZoomRange = 500,
+                Center = null,
+                WindowSettings = new JObject
+                {
+                    { "Bounds", "50,50,1280,720" },
+                    { "IsMaximized", false },
+                    { "IsFullscreen", false },
+                    { "ShowTitleBar", true }
+                },
+                AppearanceSettings = new JObject
+                {
+                    { "Background", 2 },
+                    { "Backlight", 100 },
+                    { "DatablockFontSize", 12 },
+                    { "FullDatablockBrightness", 100 },
+                    { "LimitedDatablockBrightness", 50 },
+                    { "MapBrightness", 100 },
+                    { "HistoryBrightness", 25 },
+                    { "HistoryLength", 5 },
+                    { "VectorLength", 1 },
+                },
+                MapFilters = new JObject()
+            };
+            string filePath = Path.Combine(Loader.LoadFolder("Profiles"), $"{profile.Id}.json");
+            string serialized = JsonConvert.SerializeObject(profile, Formatting.Indented);
+            await File.WriteAllTextAsync(filePath, serialized);
+        }
+
+        public async Task<bool> Import()
+        {
+            var dialog = new Microsoft.Win32.OpenFileDialog
+            {
+                Title = "Import Profile",
+                Filter = "vFalcon Profile (*.falcon|*.falcon",
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+            };
+            if (dialog.ShowDialog() == true)
+            {
+                try
+                {
+                    string json = File.ReadAllText(dialog.FileName);
+                    Profile? imported = JsonConvert.DeserializeObject<Profile>(json);
+
+                    if (imported != null)
+                    {
+                        imported.Id = UniqueHash.Generate();
+                        string filePath = Path.Combine(Loader.LoadFolder("Profiles"), $"{imported.Id}.json");
+                        string serialized = JsonConvert.SerializeObject(imported, Formatting.Indented);
+                        await File.WriteAllTextAsync(filePath, serialized);
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Logger.Error("ProfileService.Import", ex.ToString());
+                }
+            }
+            return false;
+        }
+
         public async Task Rename(string oldName, string newName)
         {
             try
             {
 
-                string crcPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CRC", "Profiles");
-                string[] files = Directory.GetFiles(Loader.LoadFolder(crcPath), "*.json");
+                string profilesPath = Loader.LoadFolder("Profiles");
+                var files = Directory.GetFiles(profilesPath, "*.json");
                 foreach (string file in files)
                 {
                     JObject profile = JObject.Parse(File.ReadAllText(file));
@@ -71,13 +141,12 @@ namespace vFalcon.Services.Service
         {
             try
             {
-                string copy = $"{profile.Name} - Copy";
-                string oldName = profile.Name;
-                profile.Name = copy;
-                string crcPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CRC", "Profiles");
-                string serialized = JsonConvert.SerializeObject(profile, Formatting.Indented);
-                await Task.Run(() => File.WriteAllText(Loader.LoadFile(crcPath, $"{UniqueHash.Generate()}.json"), serialized));
-                Logger.Info("ProfileService.Rename", $"Copied profile: \"{profile.Name}\" as: \"{copy}\"");
+                Profile copy = profile;
+                copy.Id = UniqueHash.Generate();
+                copy.Name = $"{profile.Name} - Copy";
+                string serialized = JsonConvert.SerializeObject(copy, Formatting.Indented);
+                await Task.Run(() => File.WriteAllText(Loader.LoadFile("Profiles", $"{copy.Id}.json"), serialized));
+                Logger.Debug("ProfileService.Rename", $"Copied profile: \"{profile.Name}\" as: \"{copy.Name}\"");
             }
             catch (Exception ex)
             {
@@ -92,14 +161,19 @@ namespace vFalcon.Services.Service
                 var dialog = new Microsoft.Win32.SaveFileDialog
                 {
                     Title = "Export Profile",
-                    Filter = "JSON File (*.json)|*.json",
+                    Filter = "vFalcon Profile (*.falcon)|*.falcon",
+                    DefaultExt = ".falcon",
+                    AddExtension = true,
                     InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
                 };
 
                 if (dialog.ShowDialog() == true)
                 {
+                    var fileName = dialog.FileName;
+                    if (!fileName.EndsWith(".falcon", StringComparison.OrdinalIgnoreCase))
+                        fileName += ".falcon";
                     string serialized = JsonConvert.SerializeObject(profile, Formatting.Indented);
-                    File.WriteAllText(dialog.FileName, serialized);
+                    File.WriteAllText(fileName, serialized);
                     Logger.Info("ProfileService.Export", $"Exported profile: \"{profile.Name}\" to: \"{dialog.FileName}\"");
                 }
             }
@@ -111,8 +185,8 @@ namespace vFalcon.Services.Service
 
         public async Task Delete(Profile profile)
         {
-            string crcPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CRC", "Profiles");
-            string[] files = Directory.GetFiles(crcPath, "*.json");
+            string profilesPath = Loader.LoadFolder("Profiles");
+            string[] files = Directory.GetFiles(profilesPath, "*.json");
             foreach (string file in files)
             {
                 try
@@ -137,10 +211,26 @@ namespace vFalcon.Services.Service
         {
             try
             {
-                string filename = $"{profile.Id}.json"; // Or $"{profile.Id}.json"
+                string filename = $"{profile.Id}.json";
                 string path = Loader.LoadFile("Profiles", filename);
                 string serialized = JsonConvert.SerializeObject(profile, Formatting.Indented);
                 File.WriteAllText(path, serialized);
+                Logger.Debug("ProfileService.Save", $"Saved profile: \"{profile.Name}\"");
+            }
+            catch (Exception ex)
+            {
+                Logger.Error("ProfileService.Save", ex.ToString());
+            }
+        }
+
+        public async Task SaveAsync(Profile profile)
+        {
+            try
+            {
+                string filename = $"{profile.Id}.json";
+                string path = Loader.LoadFile("Profiles", filename);
+                string serialized = JsonConvert.SerializeObject(profile, Formatting.Indented);
+                await File.WriteAllTextAsync(path, serialized);
                 Logger.Debug("ProfileService.Save", $"Saved profile: \"{profile.Name}\"");
             }
             catch (Exception ex)
@@ -156,10 +246,10 @@ namespace vFalcon.Services.Service
             {
                 try
                 {
+                    profile.Id = UniqueHash.Generate();
                     profile.Name = name;
                     string serialized = JsonConvert.SerializeObject(profile, Formatting.Indented);
-                    Logger.Debug("E", UniqueHash.Generate());
-                    await Task.Run(() => File.WriteAllText(Loader.LoadFile("Profiles", $"{UniqueHash.Generate()}.json"), serialized));
+                    await Task.Run(() => File.WriteAllText(Loader.LoadFile("Profiles", $"{profile.Id}.json"), serialized));
                     Logger.Debug("ProfileService.SaveAs", $"Saved profile as: \"{profile.Name}\"");
                     return;
                 }

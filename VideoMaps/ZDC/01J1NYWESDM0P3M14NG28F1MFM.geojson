@@ -1,0 +1,37 @@
+{
+  "type": "FeatureCollection",
+  "name": "ZDC ZOB SHELF",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinate": [0, 0]
+      },
+      "properties": {
+        "isLineDefaults": true,
+        "bcg": 1,
+        "filters": [0],
+        "size": 1,
+        "style": "shortDashed"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [-78.55833333, 39.67166667],
+            [-78.52222222, 39.59166667],
+            [-78.47305556, 39.48250000],
+            [-77.61722222, 39.77222222]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,357 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    90.0,
+                    180.0
+                ]
+            },
+            "properties": {
+                "isTextDefaults": true,
+                "bcg": 1,
+                "filters": [
+                    1
+                ],
+                "size": 1,
+                "underline": false,
+                "opaque": false,
+                "xOffset": 0,
+                "yOffset": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -85.9220717,
+                    44.1743922
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZMP P11 133.400"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -87.2640628,
+                    42.0829936
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZAU G81 120.350"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.9059631,
+                    39.5730856
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZID I34 119.550"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.3797078,
+                    38.5371436
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZDC W32 133.720"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1166189,
+                    41.0637103
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZNY N56 125.320"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.6191197,
+                    43.4614447
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZBW B37 134.700"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.4523097,
+                    43.9696419
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZYZ YZ 125.770"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -85.5,
+                    41.3833328
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZOB LOW"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.2101717,
+                    44.0552728
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZOB SFC-060"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.0758456,
+                    43.6896089
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZYZ HI"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.3818389,
+                    43.2147808
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZOB 110-230"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.4045083,
+                    43.0093592
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZBW REST"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.0235311,
+                    42.7696411
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZNY SFC-170"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.9824281,
+                    42.4708353
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZBW FL180+"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0241211,
+                    42.0833333
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZNY LO ZOB HI"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.3748497,
+                    38.5833333
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZOB WHILE CKB OPEN"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.3858819,
+                    38.8174161
+                ]
+            },
+            "properties": {
+                "text": [
+                    "SFC-100"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.6057992,
+                    39.4605508
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZOB SFC-060"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.3114583,
+                    40.2607111
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZOB SFC-080"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.3844478,
+                    40.6062094
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZID HI"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.94821,
+                    43.1662483
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZYZ 110-230"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.9166667,
+                    43.0
+                ]
+            },
+            "properties": {
+                "text": [
+                    "ZOB REST"
+                ]
+            }
+        }
+    ]
+}

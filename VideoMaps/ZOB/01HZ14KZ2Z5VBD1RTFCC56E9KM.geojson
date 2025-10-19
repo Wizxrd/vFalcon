@@ -1,0 +1,89 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":7,"filters":[7],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.99271694,
+					40.91625888
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "PSB"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.06955888,
+					40.30223972
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "HAR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.8341665,
+					40.31672561
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "JST"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.35741666,
+					40.31547777
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "MIROY"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.96693888,
+					40.31298055
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "COFAX"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.48340277,
+					40.30806666
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "LOMON"
+			}
+		}
+	]
+}

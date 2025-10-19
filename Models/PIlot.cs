@@ -26,9 +26,17 @@ namespace vFalcon.Models
         public bool JRingEnabled { get; set; } = false; // default
         public int JRingSize { get; set; } = 5; // default
         public int VelocityVector { get; set; } = 1; // default
-        public int FullDataBlockPosition { get; set; } = 9; // default
+        public int FullDataBlockPosition { get; set; } = 8; // default
         public int LeaderLingLength { get; set; } = 1; // default
         public List<(double Lat, double Lon)>? History { get; set; }
         public string Frequency { get; set; } = string.Empty;
+        public bool DisplayRoute { get; set; } = false;
+        public JArray? DisplayCoords { get; set; }
+        public bool DwellLock { get; set; } = false;
+        public string CwtCode { get; set; } = string.Empty;
+        public string Row2Col1 { get; set; } = string.Empty;
+        public string Row2Col2 { get; set; } = string.Empty;
+        public string StarsSectorId = string.Empty;
+        public string DatablockType { get; set; } = string.Empty;
     }
 }

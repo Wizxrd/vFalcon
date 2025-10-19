@@ -1,0 +1,95 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":6,"filters":[6],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.80058888,
+					40.85685
+				]
+			},
+			"properties": {
+				"text": [
+					"GRACE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.82256388,
+					40.77534444
+				]
+			},
+			"properties": {
+				"text": [
+					"HAYNZ"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.45797386,
+					41.14629333
+				]
+			},
+			"properties": {
+				"text": [
+					"CIP"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.68010833,
+					40.95904166
+				]
+			},
+			"properties": {
+				"text": [
+					"EARED"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.99271694,
+					40.91625888
+				]
+			},
+			"properties": {
+				"text": [
+					"PSB"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.97010972,
+					41.51275944
+				]
+			},
+			"properties": {
+				"text": [
+					"SLT"
+				]
+			}
+		}
+	]
+}

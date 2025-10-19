@@ -1,0 +1,95 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":14,"filters":[14],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.411975,
+					41.70902777
+				]
+			},
+			"properties": {
+				"text": [
+					"PHAUL"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.55463333,
+					41.39321388
+				]
+			},
+			"properties": {
+				"text": [
+					"CLVIN"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.79830555,
+					40.84616944
+				]
+			},
+			"properties": {
+				"text": [
+					"TFTUN"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.04291944,
+					40.28780833
+				]
+			},
+			"properties": {
+				"text": [
+					"RINTE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.05595555,
+					40.12066666
+				]
+			},
+			"properties": {
+				"text": [
+					"PUUDL"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.14697777,
+					38.9372
+				]
+			},
+			"properties": {
+				"text": [
+					"STAZE"
+				]
+			}
+		}
+	]
+}

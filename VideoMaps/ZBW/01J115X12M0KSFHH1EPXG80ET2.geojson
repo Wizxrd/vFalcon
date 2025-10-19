@@ -1,0 +1,23 @@
+{
+"type": "FeatureCollection",
+"name": "ZBW_A90 GRAYM STAR",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "isSymbolDefaults": true, "bcg": 10, "filters": [ 35 ], "size": 1 }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
+{ "type": "Feature", "properties": { "style": "vor" }, "geometry": { "type": "Point", "coordinates": [ -72.547419, 41.641106 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -72.303125, 41.862378 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -72.031525, 42.101186 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -71.854864, 42.262831 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -71.742814, 42.361847 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections", "text": null }, "geometry": { "type": "Point", "coordinates": [ -72.009131, 41.722989 ] } },
+{ "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -72.015261, 41.826972 ] } },
+{ "type": "Feature", "properties": { "style": "vor" }, "geometry": { "type": "Point", "coordinates": [ -71.999353, 41.556403 ] } },
+{ "type": "Feature", "properties": { "isLineDefaults": true, "bcg": 10, "filters": [ 35 ], "style": "longDashShortDash", "thickness": 1 }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -72.547419, 41.641106 ], [ -72.303125, 41.862378 ], [ -72.031525, 42.101186 ], [ -71.854864, 42.262831 ], [ -71.742814, 42.361847 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -71.999353, 41.556403 ], [ -72.009131, 41.722989 ], [ -72.015261, 41.826972 ], [ -72.031525, 42.101186 ] ] } },
+{ "type": "Feature", "properties": { "isTextDefaults": true, "bcg": 30, "filters": [ 35 ], "text": [ "Line 1", "Line 2", "Line 3" ], "size": 0, "opaque": false }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
+{ "type": "Feature", "properties": { "text": [ "DVANY", "AOB110" ], "xOffset": -52, "yOffset": 18 }, "geometry": { "type": "Point", "coordinates": [ -72.303125, 41.862378 ] } },
+{ "type": "Feature", "properties": { "text": [ "BLATT", "AOB110" ], "xOffset": 12, "yOffset": 8 }, "geometry": { "type": "Point", "coordinates": [ -72.015261, 41.826972 ] } },
+{ "type": "Feature", "properties": { "text": [ "GASSE", "050" ], "xOffset": 15 }, "geometry": { "type": "Point", "coordinates": [ -71.854864, 42.262831 ] } }
+]
+}

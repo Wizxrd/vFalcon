@@ -1,0 +1,174 @@
+{
+	"type": "FeatureCollection",
+	"features": [
+	{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":15,"filters":[15],"style":"airport","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.46291944,
+					41.28209722
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "AYYLE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.63723611,
+					41.27684444
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "BRNIN"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.98601388,
+					41.30932777
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "GTLKE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.86965,
+					41.90958333
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "DORRT"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.50991666,
+					42.4359
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "ALPHE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.30171944,
+					41.34338888
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "ELEOT"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.29816944,
+					41.47769444
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "MUNDR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.61368888,
+					41.515975
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "BAGEL"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.63666944,
+					41.234375
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "NOLNN"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.85527777,
+					41.26888888
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "DAIFE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.61782777,
+					41.36407222
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "NESSS"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.70729722,
+					41.39463611
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "YABRO"
+			}
+		}
+	]
+}

@@ -1,0 +1,145 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":7,"filters":[7],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.7469878,
+					42.9667665
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "FNT"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.58066666,
+					42.88443333
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "EMMMA"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.91830555,
+					42.84935833
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "LTOUR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.49707277,
+					42.78671727
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "VIO"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.71670555,
+					42.74734722
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "DITCA"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.05109444,
+					42.68649722
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "WLTER"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.27059722,
+					42.64595555
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "RHIVR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.72260555,
+					42.56103055
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "PAITN"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-87.110175,
+					42.45575833
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "WYNDE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.127325,
+					42.466325
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "SMUUV"
+			}
+		}
+	]
+}

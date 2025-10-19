@@ -1,0 +1,110 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":4,"filters":[4],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.2975,
+					41.96614722
+				]
+			},
+			"properties": {
+				"text": [
+					"HAYLL"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.07006388,
+					42.00703333
+				]
+			},
+			"properties": {
+				"text": [
+					"HOSSA"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.81043888,
+					41.99374722
+				]
+			},
+			"properties": {
+				"text": [
+					"KRABN"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.567575,
+					41.98103611
+				]
+			},
+			"properties": {
+				"text": [
+					"URBAN"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-87.4625,
+					41.97916666
+				]
+			},
+			"properties": {
+				"text": [
+					"SAMPL"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.13772222,
+					42.05499166
+				]
+			},
+			"properties": {
+				"text": [
+					"WNNNE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.54533611,
+					42.02888333
+				]
+			},
+			"properties": {
+				"text": [
+					"SAADD"
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,62 @@
+{
+	"type": "FeatureCollection",
+	"features": [
+	{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":15,"filters":[15],"style":"airport","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.41217222,
+					41.20174722
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "KKIDS"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.64706388,
+					41.07423333
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "ZAVEE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.21154555,
+					40.82493266
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "EWC"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.81722777,
+					40.03369166
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "NUSMM"
+			}
+		}
+	]
+}

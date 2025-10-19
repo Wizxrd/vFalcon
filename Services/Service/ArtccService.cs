@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using vFalcon.Helpers;
 using vFalcon.Models;
 using vFalcon.Services.Interfaces;
+using vFalcon.ViewModels;
+using static vFalcon.Nasr.Models.StarCsvDataModel;
 
 namespace vFalcon.Services.Service
 {
@@ -28,6 +30,38 @@ namespace vFalcon.Services.Service
                 Logger.Error("ArtccService.LoadArtcc", ex.ToString());
             }
             return null;
+        }
+
+        public static IEnumerable<string> GetStarsPositions(EramViewModel eramViewModel)
+        {
+            var positions = new List<string>();
+            var starred = new List<string>();
+            var nonStarred = new List<string>();
+
+            var childFacilities = (JArray)eramViewModel.artcc.facility["childFacilities"];
+            var match = childFacilities?.FirstOrDefault(cf => (string)cf["id"] == eramViewModel.profile.FacilityId) as JObject;
+            var starsConfig = match?["positions"] as JArray;
+            foreach (var position in starsConfig)
+            {
+                string name = position["name"]?.ToString() ?? "Unknown";
+                bool isStarred = position["starred"]?.ToObject<bool>() ?? false;
+                long frequencyHz = position["frequency"]?.ToObject<long>() ?? 0;
+                double frequencyMHz = frequencyHz / 1_000_000.0;
+
+                string display = $"{name} - {frequencyMHz:F3}";
+
+                if (isStarred)
+                {
+                    starred.Add(display);
+                }
+                else
+                {
+                    nonStarred.Add(display);
+                }
+            }
+            positions.AddRange(starred);
+            positions.AddRange(nonStarred);
+            return positions;
         }
 
         public static IEnumerable<string> GetArtccSectors(string artccId)

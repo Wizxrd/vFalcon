@@ -10,12 +10,20 @@
     xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
     mc:Ignorable="d"
     Icon="pack://application:,,,/Resources/Images/vFalcon.png"
-    Title="Load CRC Profile"
-    MinWidth="350" Width="350" Height="500" 
+    Title="Load Profile"
+    MinWidth="400" Width="400" Height="500"
     SizeToContent="Width" ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     FontFamily="Consolas" FontSize="12"
     Foreground="{StaticResource White}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+    <adonisControls:AdonisWindow.InputBindings>
+        <KeyBinding
+            Key="Esc"
+            Command="{Binding StopRenamingCommand}"/>
+        <KeyBinding
+            Key="Enter"
+            Command="{Binding StopRenamingCommand}"/>
+    </adonisControls:AdonisWindow.InputBindings>
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
@@ -24,22 +32,31 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" MinWidth="300"/>
+                <ColumnDefinition Width="*" MinWidth="100"/>
+            </Grid.ColumnDefinitions>
             <TextBox
                 Grid.Row="0"
+                Grid.ColumnSpan="2"
                 Margin="10,5,10,0"
                 adonisExtensions:WatermarkExtension.Watermark="Search..."
                 Text="{Binding SearchQuery, UpdateSourceTrigger=PropertyChanged}">
             </TextBox>
-            <Border Grid.Row="1">
+            <Border
+                x:Name="SizedBorder"
+                Grid.Row="1" Grid.Column="0"
+                Margin="10,5,0,0"
+                BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <ItemsControl ItemsSource="{Binding FilteredProfiles}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <ToggleButton
                                     Tag="{Binding}"
-                                    IsChecked="{Binding IsSelected}"
-                                    BorderBrush="{Binding IsSelected}"
+                                    IsChecked="{Binding IsSelected, Mode=TwoWay}"
                                     Margin="5,2"
                                     Height="32"
                                     HorizontalAlignment="Stretch"
@@ -51,90 +68,8 @@
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="Auto"/>
                                             </Grid.ColumnDefinitions>
-                                            <ContentControl Content="{Binding}" Grid.Column="0" Style="{DynamicResource RenameButtonControl}"/>
-                                            <StackPanel
-                                                Orientation="Horizontal"
-                                                HorizontalAlignment="Right"
-                                                VerticalAlignment="Center"
-                                                Grid.Column="1">
-                                                <Button
-                                                    x:Name="RenameButton"
-                                                    Style="{DynamicResource {x:Static adonisUi:Styles.WindowButton}}"
-                                                    Width="24"
-                                                    Background="Transparent"
-                                                    ToolTip="Rename"
-                                                    Command="{Binding DataContext.RenameProfileCommand, RelativeSource={RelativeSource AncestorType=Window}}"
-                                                    CommandParameter="{Binding}">
-                                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                                        <Image
-                                                            Source="pack://application:,,,/vFalcon;component/Resources/Images/Rename.png"
-                                                            Width="16"
-                                                            Height="16"
-                                                            Stretch="Uniform"
-                                                            Style="{StaticResource ProfileSubButtonHover}">
-                                                        </Image>
-                                                    </StackPanel>
-                                                </Button>
-                                                <Button 
-                                                    Style="{DynamicResource {x:Static adonisUi:Styles.WindowButton}}"
-                                                    FontFamily="Consolas"
-                                                    Width="24"
-                                                    Background="Transparent"
-                                                    FontSize="14"
-                                                    ToolTip="Copy"
-                                                    Command="{Binding DataContext.CopyProfileCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
-                                                    CommandParameter="{Binding}">
-                                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                                        <Image
-                                                            Source="pack://application:,,,/vFalcon;component/Resources/Images/Copy.png"
-                                                            Width="16"
-                                                            Height="16"
-                                                            Stretch="Uniform"
-                                                            Style="{StaticResource ProfileSubButtonHover}">
-                                                        </Image>
-                                                    </StackPanel>
-                                                </Button>
-                                                <Button 
-                                                    Style="{DynamicResource {x:Static adonisUi:Styles.WindowButton}}"
-                                                    FontFamily="Consolas"
-                                                    Width="24"
-                                                    Background="Transparent"
-                                                    FontSize="14"
-                                                    ToolTip="Export"
-                                                    Command="{Binding DataContext.ExportProfileCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
-                                                    CommandParameter="{Binding}">
-                                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                                        <Image
-                                                            Source="pack://application:,,,/vFalcon;component/Resources/Images/Export.png"
-                                                            Width="16"
-                                                            Height="16"
-                                                            Stretch="Uniform"
-                                                            Style="{StaticResource ProfileSubButtonHover}">
-                                                        </Image>
-                                                    </StackPanel>
-                                                </Button>
-                                                <Button 
-                                                    Style="{DynamicResource {x:Static adonisUi:Styles.WindowButton}}"
-                                                    FontFamily="Consolas"
-                                                    Width="24"
-                                                    Background="Transparent"
-                                                    FontSize="14"
-                                                    ToolTip="Delete"
-                                                    Command="{Binding DataContext.DeleteProfileCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
-                                                    CommandParameter="{Binding}">
-                                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                                        <Image
-                                                            Source="pack://application:,,,/vFalcon;component/Resources/Images/Delete.png"
-                                                            Width="16"
-                                                            Height="16"
-                                                            Stretch="Uniform"
-                                                            Style="{StaticResource ProfileSubButtonHover}">
-                                                        </Image>
-                                                    </StackPanel>
-                                                </Button>
-                                            </StackPanel>
+                                            <ContentControl Grid.Column="0" Content="{Binding}" Style="{DynamicResource RenameButtonControl}"/>
                                         </Grid>
                                     </ToggleButton.Content>
                                 </ToggleButton>
@@ -143,6 +78,65 @@
                     </ItemsControl>
                 </ScrollViewer>
             </Border>
+            <StackPanel Grid.Row="1" Grid.Column="1" Margin="0,10,0,0">
+                <StackPanel>
+                    <Button
+                        Margin="5,0,10,0"
+                        Content="New"
+                        Height="24"
+                        Command="{Binding NewProfileCommand}"/>
+                    <Button
+                        Margin="5,5,10,10"
+                        Height="24"
+                        Content="Import"
+                        Command="{Binding ImportProfileCommand}"/>
+                </StackPanel>
+                <StackPanel>
+                    <Button
+                        Margin="5,10,10,0"
+                        Content="Load"
+                        Height="24"
+                        IsEnabled="{Binding IsProfileSelected}"
+                        Command="{Binding LoadProfileCommand}"/>
+                    <Button
+                        Margin="5,5,10,0"
+                        Content="Rename"
+                        Height="24"
+                        IsEnabled="{Binding IsProfileSelected}"
+                        Command="{Binding DataContext.RenameProfileCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                        CommandParameter="{Binding}"/>
+                    <Button
+                        Margin="5,5,10,0"
+                        Content="Copy"
+                        Height="24"
+                        IsEnabled="{Binding IsProfileSelected}"
+                        Command="{Binding CopyProfileCommand}"/>
+                    <Button
+                        Margin="5,5,10,0"
+                        Content="Export"
+                        Height="24"
+                        IsEnabled="{Binding IsProfileSelected}"
+                        Command="{Binding ExportProfileCommand}"/>
+                    <Button
+                        Margin="5,5,10,0"
+                        Content="Delete"
+                        Height="24"
+                        IsEnabled="{Binding IsProfileSelected}"
+                        Command="{Binding DeleteProfileCommand}"/>
+                </StackPanel>
+            </StackPanel>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Button
+                    Grid.Column="0"
+                    Height="24"
+                    Margin="10,5,0,5"
+                    Content="Manage ARTCCs"
+                    Command="{Binding OpenManageArtccsCommand}"/>
+            </Grid>
         </Grid>
     </Border>
 </adonisControls:AdonisWindow>

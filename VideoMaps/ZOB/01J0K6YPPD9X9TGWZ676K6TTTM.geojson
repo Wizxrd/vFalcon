@@ -1,0 +1,551 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":2,"filters":[2],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.25861111,
+					42.68194444
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "QWERI"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.03805555,
+					42.80111111
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "KNOOK"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.929325,
+					42.57899444
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "FRSST"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.03333333,
+					42.3
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "POSTS"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.47444444,
+					42.28583333
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "PADDE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-85.21309166,
+					42.04838055
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "UNBAR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.47361111,
+					42.1225
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "DOXXY"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.33645,
+					42.00774722
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "FRYYE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.01873055,
+					42.71061111
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "BOOTT"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.55286111,
+					42.80947222
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "TWIGS"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.58193888,
+					42.33138888
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "BROKK"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.83095555,
+					41.91759444
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "KEEHO"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.04580555,
+					42.4282
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "DOBIE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.74513611,
+					42.28896666
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "BEWEL"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.89075833,
+					42.70684444
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "GGUCE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.32277777,
+					42.75659444
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "FINGL"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.34770555,
+					42.68471944
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "WLFMN"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.37025,
+					42.52525833
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "SAYCH"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-79.20749166,
+					41.65724444
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "ZORBO"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.58462222,
+					41.80163888
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "DORET"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.86430277,
+					41.29456388
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "MIGET"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.11181944,
+					41.42110555
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "TEESY"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.85260555,
+					41.86501111
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "HOXIE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-77.96693888,
+					40.31298055
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "COFAX"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-78.35741666,
+					40.31547777
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "MIROY"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.69851388,
+					39.574275
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "LUISE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.21778055,
+					41.22260833
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "WEEVR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-76.78487777,
+					42.96861666
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "NABOR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.58993055,
+					41.70517777
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "HUUTZ"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.15489166,
+					42.22439166
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "BROZZ"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.411975,
+					41.70902777
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "PHAUL"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.64763333,
+					42.2493
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "MALTB"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.32997777,
+					42.43110277
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "MTRCT"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.7354,
+					42.07355833
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "KZLOV"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.85510277,
+					42.78379722
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "JAXII"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.62671111,
+					42.14391944
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "SLVVA"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.78972222,
+					41.69906111
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "JWELS"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.36906111,
+					42.90036666
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "LOALA"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.87192222,
+					42.79086944
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "FLOKA"
+			}
+		}
+	]
+}

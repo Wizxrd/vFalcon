@@ -27,21 +27,21 @@ public class VatsimDataService
     public async void Start()
     {
         refreshTimer.Interval = TimeSpan.FromSeconds(15); // Initial interval
-        refreshTimer.Tick += async (s, e) => await RefreshAsync();
+        refreshTimer.Tick += async (s, e) => await RefreshAsync(false);
         refreshTimer.Start();
-        await RefreshAsync();
+        await RefreshAsync(true);
     }
 
     public async void Refresh()
     {
-        await RefreshAsync();
+        await RefreshAsync(true);
     }
 
     public void Stop()
     {
         refreshTimer.Stop();
     }
-    private async Task RefreshAsync(CancellationToken ct = default)
+    private async Task RefreshAsync(bool force, CancellationToken ct = default)
     {
         try
         {
@@ -56,7 +56,7 @@ public class VatsimDataService
                 lastUpdateUtc = lastUpdateUtc.AddMilliseconds(-lastUpdateUtc.Millisecond);
                 Logger.Debug("VatsimDataService.RefreshAsync", $"Last update timestamp: {lastUpdateUtc}");
 
-                if (lastUpdateTimestamp.HasValue && lastUpdateTimestamp.Value == lastUpdateUtc)
+                if (lastUpdateTimestamp.HasValue && lastUpdateTimestamp.Value == lastUpdateUtc && !force)
                 {
                     Logger.Debug("VatsimDataService.RefreshAsync", "Skipping refresh, update timestamp is the same.");
                     return;
@@ -65,12 +65,8 @@ public class VatsimDataService
                 lastUpdateTimestamp = lastUpdateUtc;
             }
             var transceiverFrequencies = await VatsimDataFeed.GetTransceiversAsync(ct);
-            var sectorFreq = await vNasDataFeed.GetArtccFrequencyAsync(profile.ArtccId, profile.ActivatedSectorName, ct);
 
-            // If CPU-bound:
-            await Task.Run(() => pilotService.UpdateFromDataFeed(dataFeed, transceiverFrequencies, sectorFreq), ct);
-
-            // Back to UI:
+            await Task.Run(() => pilotService.UpdateFromDataFeed(dataFeed, transceiverFrequencies), ct);
             Application.Current.Dispatcher.BeginInvoke(invalidateCanvas);
         }
         catch (OperationCanceledException) { /* ignore */ }

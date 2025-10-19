@@ -1,0 +1,124 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.216667,44.382222]},"properties":{"isLineDefaults":true,"bcg":1,"filters":[1],"style":"LongDashed","thickness":1}},
+{
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -76.233056,
+            42.366667
+          ],
+          [
+            -76.0525,
+            42.311944
+          ]
+        ]
+      },
+      "properties": {
+        "style": "longDashed"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -76.796667,
+            43.631111
+          ],
+          [
+            -76.583056,
+            43.9
+          ]
+        ]
+      },
+      "properties": {
+        "style": "longDashed"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -84.7,
+            40.908333
+          ],
+          [
+            -84.687019,
+            40.6582
+          ]
+        ]
+      },
+      "properties": {
+        "style": "longDashed"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -84.951028,
+            40.563422
+          ],
+          [
+            -84.687019,
+            40.6582
+          ]
+        ]
+      },
+      "properties": {
+        "style": "longDashed"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -86.216667,
+            43.651111
+          ],
+          [
+            -84.963611,
+            43.586667
+          ]
+        ]
+      },
+      "properties": {
+        "style": "longDashed"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -82.303889,
+            44.382222
+          ],
+          [
+            -82.169444,
+            43.855278
+          ],
+          [
+            -81.0,
+            43.916667
+          ]
+        ]
+      },
+      "properties": {
+        "style": "longDashed"
+      }
+    }
+  ]
+}

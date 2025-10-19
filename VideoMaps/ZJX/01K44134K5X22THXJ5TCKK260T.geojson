@@ -1,0 +1,298 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    -86.13141388888889,
+                    30.814241666666668
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "style": "airwayIntersections"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.83999999999999,
+                    30.77472222222222
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "style": "airwayIntersections"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -83.09790555555556,
+                    28.570644444444444
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "style": "airwayIntersections"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            -83.00288055555555,
+                            28.419216666666667
+                        ],
+                        [
+                            -82.91144722222222,
+                            28.273041666666664
+                        ]
+                    ],
+                    [
+                        [
+                            -84.39516666666667,
+                            31.64730833333333
+                        ],
+                        [
+                            -84.39696388888889,
+                            30.33055277777778
+                        ],
+                        [
+                            -83.89524722222222,
+                            29.821975
+                        ],
+                        [
+                            -83.51072222222223,
+                            29.22293333333333
+                        ],
+                        [
+                            -83.38879722222222,
+                            29.031041666666667
+                        ],
+                        [
+                            -83.09790555555556,
+                            28.570644444444444
+                        ],
+                        [
+                            -83.00288055555555,
+                            28.419216666666667
+                        ]
+                    ],
+                    [
+                        [
+                            -86.13141388888889,
+                            30.814241666666668
+                        ],
+                        [
+                            -84.83999999999999,
+                            30.77472222222222
+                        ],
+                        [
+                            -84.39696388888889,
+                            30.33055277777778
+                        ]
+                    ],
+                    [
+                        [
+                            -82.70148333333334,
+                            31.5438
+                        ],
+                        [
+                            -83.87085555555555,
+                            31.227891666666665
+                        ],
+                        [
+                            -84.39696388888889,
+                            30.33055277777778
+                        ]
+                    ],
+                    [
+                        [
+                            -85.85819722222222,
+                            31.773155555555554
+                        ],
+                        [
+                            -84.83999999999999,
+                            30.77472222222222
+                        ]
+                    ]
+                ],
+                "type": "MultiLineString"
+            },
+            "properties": {},
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -83.00288055555555,
+                    28.419216666666667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "style": "airwayIntersections"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -85.85819722222222,
+                    31.773155555555554
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "style": "airwayIntersections"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.39516666666667,
+                    31.64730833333333
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "style": "airwayIntersections"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.39696388888889,
+                    30.33055277777778
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "style": "airwayIntersections"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -82.91144722222222,
+                    28.273041666666664
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "style": "airwayIntersections"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -83.51072222222223,
+                    29.22293333333333
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "style": "airwayIntersections"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -83.38879722222222,
+                    29.031041666666667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "style": "airwayIntersections"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -83.89524722222222,
+                    29.821975
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "style": "airwayIntersections"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    0,
+                    0
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "bcg": 33,
+                "filters": [
+                    33
+                ],
+                "isLineDefaults": true,
+                "style": "longDashShortDash",
+                "thickness": 1
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    0,
+                    0
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "bcg": 33,
+                "filters": [
+                    33
+                ],
+                "isSymbolDefaults": true,
+                "size": 1
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -83.87085555555555,
+                    31.227891666666665
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "style": "airwayIntersections"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -82.70148333333334,
+                    31.5438
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "style": "airwayIntersections"
+            },
+            "type": "Feature"
+        }
+    ]
+}

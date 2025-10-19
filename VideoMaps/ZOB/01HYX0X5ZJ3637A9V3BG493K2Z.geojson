@@ -1,0 +1,95 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":5,"filters":[5],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.50393333,
+					40.93120555
+				]
+			},
+			"properties": {
+				"text": [
+					"ROKNN"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.35094722,
+					41.05103611
+				]
+			},
+			"properties": {
+				"text": [
+					"DEVOH"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.99683611,
+					39.68797222
+				]
+			},
+			"properties": {
+				"text": [
+					"DRUGA"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.44706388,
+					40.18171388
+				]
+			},
+			"properties": {
+				"text": [
+					"DEAHD"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.06536388,
+					40.48638611
+				]
+			},
+			"properties": {
+				"text": [
+					"HEADZ"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.30920277,
+					40.10124722
+				]
+			},
+			"properties": {
+				"text": [
+					"TALKN"
+				]
+			}
+		}
+	]
+}

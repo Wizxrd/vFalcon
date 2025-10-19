@@ -1,9 +1,12 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Globalization;
 using System.IO;
+using System.Text;
 using System.Windows;
 using vFalcon.Helpers;
 using vFalcon.Models;
+using vFalcon.Services.Service;
 
 namespace vFalcon
 {
@@ -12,7 +15,7 @@ namespace vFalcon
     /// </summary>
     public partial class App : Application
     {
-        private string version = "0.0.13";
+        private string version = "1.0.0";
         private static Mutex mutex;
         const string appName = "vFalcon";
         bool createdNew;
@@ -22,7 +25,7 @@ namespace vFalcon
             mutex = new Mutex(true, appName, out createdNew);
             Logger.DebugMode = true;
             Logger.LogLevelThreshold = LogLevel.Trace;
-            Logger.Info("App", $"Launching vFalcon v{version}");
+            Logger.Info("App", $"Launching vFalcon v{version}");;
         }
 
         protected override void OnStartup(StartupEventArgs e)
@@ -37,6 +40,16 @@ namespace vFalcon
 
         protected override void OnExit(ExitEventArgs e)
         {
+            for (int i = Application.Current.Windows.Count - 1; i >= 0; i--)
+            {
+                var w = Application.Current.Windows[i];
+                if (w == null) continue;
+                if (!w.Dispatcher.CheckAccess())
+                    w.Dispatcher.Invoke(() => { if (w.IsLoaded) w.Close(); });
+                else
+                    if (w.IsLoaded) w.Close();
+            }
+
             mutex?.ReleaseMutex();
             base.OnExit(e);
         }

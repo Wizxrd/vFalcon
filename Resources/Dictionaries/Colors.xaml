@@ -4,6 +4,7 @@
     <SolidColorBrush x:Key="Black" Color="#000000"/>
 
     <SolidColorBrush x:Key="BorderBrush" Color="#3f3f3f"/>
+    <SolidColorBrush x:Key="PopupBorderBrush" Color="#555555"/>
     <SolidColorBrush x:Key="ButtonBackground" Color="#3d3d4c"/>
     <SolidColorBrush x:Key="ToggleButtonBackground" Color="#2a2b34"/>
     

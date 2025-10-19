@@ -1,0 +1,47 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":14,"filters":[14],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.46835,
+					42.25642222
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "HHOWE"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.5176,
+					42.24371944
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "LNCON"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-81.58193888,
+					42.33138888
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "BROKK"
+			}
+		}
+	]
+}

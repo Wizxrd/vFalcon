@@ -1,0 +1,95 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":15,"filters":[15],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.44296666,
+					41.18925555
+				]
+			},
+			"properties": {
+				"text": [
+					"MOHUM"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.76324166,
+					41.105325
+				]
+			},
+			"properties": {
+				"text": [
+					"ZAAPA"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.05595555,
+					40.12066666
+				]
+			},
+			"properties": {
+				"text": [
+					"PUUDL"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-83.91737222,
+					40.89744722
+				]
+			},
+			"properties": {
+				"text": [
+					"YELOE"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.38520277,
+					40.45129166
+				]
+			},
+			"properties": {
+				"text": [
+					"SINKR"
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.05330555,
+					39.87328888
+				]
+			},
+			"properties": {
+				"text": [
+					"SNNOH"
+				]
+			}
+		}
+	]
+}

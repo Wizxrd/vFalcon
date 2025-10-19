@@ -2,13 +2,15 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using vFalcon.ViewModels;
-using vFalcon.Models;
-using vFalcon.Helpers;
 using System.Windows.Forms;
+using vFalcon.Helpers;
+using vFalcon.Models;
+using vFalcon.ViewModels;
 
 namespace vFalcon.Services.Service
 {
@@ -25,7 +27,20 @@ namespace vFalcon.Services.Service
             artcc = eramViewModel.artcc; 
         }
 
-        public void UpdateFromDataFeed(JObject dataFeed, Dictionary<string, string> transceiverFrequencies, string? sectorFreq)
+        private bool showAll = false;
+        static long NormalizeHz(long value)
+        {
+            // If your data is already Hz (e.g., 126225000), this just returns it.
+            // If you ever get kHz (e.g., 126225), this promotes to Hz.
+            return value < 1_000_000 && value >= 1_000 ? value * 1_000 : value;
+        }
+
+        static string ToMhzString(long hz)
+        {
+            double mhz = NormalizeHz(hz) / 1_000_000d;
+            return mhz.ToString("0.000", CultureInfo.InvariantCulture);
+        }
+        public void UpdateFromDataFeed(JObject dataFeed, Dictionary<string, string> transceiverFrequencies)
         {
             JArray? pilots = (JArray?)dataFeed["pilots"];
             if (pilots == null) return;
@@ -38,18 +53,22 @@ namespace vFalcon.Services.Service
 
                 bool withinAsrRange = false;
                 bool withinSurveillanceRange = false;
-                foreach (JObject asr in (JArray)artcc.facility["eramConfiguration"]["asrSites"])
+                if (eramViewModel.profile.DisplayType == "ERAM")
                 {
-                    JObject location = (JObject)asr["location"];
-                    int range = (int)asr["range"];
-                    if (ScreenMap.DistanceInNM(lat, lon, (double)location["lat"], (double)location["lon"]) <= range)
+                    foreach (JObject asr in (JArray)artcc.facility["eramConfiguration"]["asrSites"])
                     {
-                        withinAsrRange = true;
-                        break;
+                        JObject location = (JObject)asr["location"];
+                        int range = (int)asr["range"];
+                        if (ScreenMap.DistanceInNM(lat, lon, (double)location["lat"], (double)location["lon"]) <= range)
+                        {
+                            withinAsrRange = true;
+                            break;
+                        }
                     }
                 }
                 foreach (JObject facility in (JArray)artcc.facility["childFacilities"])
                 {
+                    if (eramViewModel.profile.DisplayType == "STARS" && eramViewModel.profile.FacilityId != (string)facility["id"]) continue;
                     var starsConfig = facility["starsConfiguration"];
                     if (starsConfig?["areas"] is JArray areas)
                     {
@@ -67,13 +86,24 @@ namespace vFalcon.Services.Service
                 }
                 
 
-                if (!withinAsrRange && !withinSurveillanceRange) continue;
+                if (!withinAsrRange && !withinSurveillanceRange && !showAll) continue;
 
                 string callsign = (string)pilot["callsign"];
-                bool fullDataBlock = transceiverFrequencies.TryGetValue(callsign, out var freq) && freq == sectorFreq;
-                if (!Pilots.ContainsKey(callsign))
+
+                string tunedFrequency = transceiverFrequencies.TryGetValue(callsign, out var mappedFrequency)
+                    ? mappedFrequency
+                    : string.Empty;
+
+                bool isOnActiveSectorFrequency = eramViewModel.ActivatedSectors
+                    .Select(kv => kv.Value)
+                    .Any(sectorFrequency => string.Equals(sectorFrequency, tunedFrequency, StringComparison.OrdinalIgnoreCase));
+
+                bool fullDataBlock = isOnActiveSectorFrequency;
+                JObject flightPlan = pilot["flight_plan"] as JObject;
+                if (!Pilots.TryGetValue(callsign, out var existingPilot))
                 {
-                    Pilot newPilot = new Pilot
+                    var acType = flightPlan?["aircraft_short"]?.Value<string>();
+                    var newPilot = new Pilot
                     {
                         CID = (int)pilot["cid"],
                         Name = (string)pilot["name"],
@@ -85,21 +115,64 @@ namespace vFalcon.Services.Service
                         QNHinHG = (double)pilot["qnh_i_hg"],
                         QNHmb = (int)pilot["qnh_mb"],
                         LogOnTime = (DateTime)pilot["logon_time"],
-                        Frequency = freq
+                        Frequency = tunedFrequency,
+                        CwtCode = Cwt.GetCwtCodeFromType(acType),
+                        FlightPlan = flightPlan,
+                        FullDataBlock = fullDataBlock,
+                        StarsSectorId = string.Empty,
+                        DatablockType = eramViewModel.profile.DisplayType
                     };
+                    if (isOnActiveSectorFrequency)
+                    {
+                        var childFacilities = (JArray)eramViewModel.artcc.facility["childFacilities"];
+                        var match = childFacilities?.FirstOrDefault(cf => (string)cf["id"] == eramViewModel.profile.FacilityId) as JObject;
+                        var positions = match?["positions"] as JArray;
+                        var pos = positions?
+                            .OfType<JObject>()
+                            .FirstOrDefault(p =>
+                            {
+                                var hz = p.Value<long?>("frequency");
+                                if (!hz.HasValue) return false;
+                                return string.Equals(ToMhzString(hz.Value), newPilot.Frequency, StringComparison.Ordinal);
+                            });
+
+                        var starsConfiguration = pos?["starsConfiguration"] as JObject;
+                        string sectorId = (string)starsConfiguration?["sectorId"];
+                        newPilot.StarsSectorId = sectorId;
+                    }
                     Pilots[callsign] = newPilot;
+                    existingPilot = newPilot;
                 }
 
-                Pilot existingPilot = Pilots[callsign];
-                existingPilot.Latitude = lat;
-                existingPilot.Longitude = lon;
+                existingPilot.Latitude = (double)pilot["latitude"];
+                existingPilot.Longitude = (double)pilot["longitude"];
                 existingPilot.Altitude = (int)pilot["altitude"];
                 existingPilot.GroundSpeed = (int)pilot["groundspeed"];
                 existingPilot.Heading = (int)pilot["heading"];
-                existingPilot.FlightPlan = pilot["flight_plan"] as JObject;
+                existingPilot.FlightPlan = flightPlan;
                 existingPilot.LastUpdated = (DateTime)pilot["last_updated"];
                 existingPilot.FullDataBlock = fullDataBlock;
-                existingPilot.Frequency = freq;
+                existingPilot.Frequency = tunedFrequency;
+                existingPilot.StarsSectorId = string.Empty;
+
+                if (isOnActiveSectorFrequency)
+                {
+                    var childFacilities = (JArray)eramViewModel.artcc.facility["childFacilities"];
+                    var match = childFacilities?.FirstOrDefault(cf => (string)cf["id"] == eramViewModel.profile.FacilityId) as JObject;
+                    var positions = match?["positions"] as JArray;
+                    var pos = positions?
+                        .OfType<JObject>()
+                        .FirstOrDefault(p =>
+                        {
+                            var hz = p.Value<long?>("frequency");
+                            if (!hz.HasValue) return false;
+                            return string.Equals(ToMhzString(hz.Value), existingPilot.Frequency, StringComparison.Ordinal);
+                        });
+
+                    var starsConfiguration = pos?["starsConfiguration"] as JObject;
+                    string sectorId = (string)starsConfiguration?["sectorId"];
+                    existingPilot.StarsSectorId = sectorId;
+                }
 
                 if (existingPilot.ForcedFullDataBlock == true)
                 {
@@ -112,7 +185,7 @@ namespace vFalcon.Services.Service
                 var lastPoint = existingPilot.History.Count > 0 ? existingPilot.History[^1] : (double.NaN, double.NaN);
                 if (lastPoint.Item1 != lat || lastPoint.Item2 != lon)
                 {
-                    if (existingPilot.History.Count <= 6) // FIXME history count in MasterToolbar!
+                    if (existingPilot.History.Count <= eramViewModel.HistoryCount) // FIXME history count in MasterToolbar!
                     {
                         existingPilot.History.Add((lat, lon));
                     }

@@ -1,0 +1,89 @@
+{
+	"type": "FeatureCollection",
+	"features": [{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isSymbolDefaults":true,"bcg":7,"filters":[7],"style":"otherWaypoints","size":1}},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.0516,
+					41.34280277
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "WWSHR"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.41946944,
+					40.63450277
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "WAAHU"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.45406666,
+					40.56501111
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "BUGZZ"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.40398611,
+					40.43955
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "THORO"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.49136944,
+					40.45488611
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "AGING"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-82.54051111,
+					40.32530277
+				]
+			},
+			"properties": {
+				"style": "otherWaypoints",
+				"waypoint_id": "CBUSS"
+			}
+		}
+	]
+}

@@ -15,30 +15,47 @@
     IconVisibility="Collapsed"
     WindowStartupLocation="CenterScreen"
     FontFamily="Consolas"
-    Width="400" Height="150">
-    <WindowChrome.WindowChrome>
-        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
-    </WindowChrome.WindowChrome>
+    Background="Black"
+    SizeToContent="Height"
+    BorderBrush="{StaticResource BorderBrush}" BorderThickness="1"
+    Width="720">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Image
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Source="/Resources/Images/ATC.jpg"
+            Opacity="0.75"
+            VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         <TextBlock
             Name ="TextBlockTitle"
             Text="vFalcon"
-            Grid.Row="0"
-            VerticalAlignment="Bottom" HorizontalAlignment="Center" TextAlignment="Center"
-            Foreground="{DynamicResource White}"
-            FontSize="24" FontWeight="Bold">
+            Grid.RowSpan="2"
+            VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"
+            Foreground="White"
+            FontWeight="Bold"
+            FontSize="72">
         </TextBlock>
+        <ContentControl
+            Grid.Row="1"
+            ContentTemplate="{DynamicResource {x:Static adonisUi:Templates.LoadingBars}}"
+            Foreground="White"
+            Width="24"
+            Height="24"
+            Margin="0,0,0,75"
+            VerticalAlignment="Bottom" HorizontalAlignment="Center"
+            Focusable="False"/>
         <TextBlock
             Name ="TextBlockLoading"
-            Text="Importing Artccs"
+            Text="Initializing Nasr Data"
             Grid.Row="1"
-            VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"
+            Margin="0,0,0,50"
+            VerticalAlignment="Bottom" HorizontalAlignment="Center" TextAlignment="Center"
             Foreground="{DynamicResource White}"
-            FontSize="15">
+            FontSize="18">
         </TextBlock>
     </Grid>
 </adonisControls:AdonisWindow>
