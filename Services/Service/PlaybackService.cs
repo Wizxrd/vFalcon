@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic.Logging;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,7 @@ namespace vFalcon.Services
         private const int MinIntervalMs = 15; // floor so the UI thread isn't hammered
 
         private const double BaseSecondsPerTick = 15.0; // 1× = 15 seconds per tick
+        private int tickStep = 1;
         private void ApplyInterval()
         {
             int m = Math.Max(1, speedMultiplier);
@@ -52,11 +54,9 @@ namespace vFalcon.Services
 
         public void SetPlaybackSpeed(int multiplier)
         {
-            // allowed: 1,2,4,8,16,32,64,128
             if (multiplier < 1) multiplier = 1;
-            if ((multiplier & (multiplier - 1)) != 0) // not power of two
+            if ((multiplier & (multiplier - 1)) != 0)
             {
-                // snap to nearest power of two between 1 and 128
                 int p = 1;
                 while (p < multiplier && p < 128) p <<= 1;
                 int lower = p >> 1;
@@ -66,7 +66,7 @@ namespace vFalcon.Services
             if (multiplier > 128) multiplier = 128;
 
             speedMultiplier = multiplier;
-            ApplyInterval();
+            tickStep = speedMultiplier;
         }
 
         public JObject SetRecordingPath(string recordingPath)
@@ -85,7 +85,7 @@ namespace vFalcon.Services
             playbackTimer.Tick -= PlaybackTimerTick;
             playbackTimer.Tick += PlaybackTimerTick;
 
-            ApplyInterval(); // uses DefaultTicksPerSecond * speedMultiplier
+            playbackTimer.Interval = TimeSpan.FromSeconds(1);
 
             playbackTimer.Start();
             PlaybackTimerTick(null, null);
@@ -117,8 +117,8 @@ namespace vFalcon.Services
             {
                 eramViewModel.UpdateReplayControls(Tick);
 
-                var tct = replayJson["TickCount"]?.Value<int?>();
-                if (tct.HasValue && Tick >= tct.Value) return;
+                var total = replayJson["TickCount"]?.Value<int?>() ?? 0;
+                if (Tick >= total) return;
 
                 var pilotsObj = replayJson["Pilots"] as JObject;
                 if (pilotsObj is null) return;
@@ -154,7 +154,9 @@ namespace vFalcon.Services
                         };
                         radarViewModel.pilotService.Pilots[callsign] = pilot;
                     }
+
                     var acType = pilot.FlightPlan?["aircraft_short"]?.Value<string>();
+                    pilot.DatablockType = eramViewModel.profile.DisplayType;
                     pilot.CwtCode = Cwt.GetCwtCodeFromType(acType);
                     pilot.Latitude = lat;
                     pilot.Longitude = lon;
@@ -192,7 +194,13 @@ namespace vFalcon.Services
                     }
                 }
 
-                if (!paused) Tick++;
+                if (!paused)
+                {
+                    int next = Tick + tickStep;
+                    var totalTick = replayJson["TickCount"]?.Value<int?>() ?? 0;
+                    Tick = next >= totalTick ? totalTick : next;
+                }
+
                 radarViewModel?.Redraw();
             }
             catch (Exception ex)
@@ -200,5 +208,6 @@ namespace vFalcon.Services
                 Logger.Error("PlaybackTimerTick", ex.Message);
             }
         }
+
     }
 }

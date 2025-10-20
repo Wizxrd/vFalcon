@@ -131,7 +131,8 @@ namespace vFalcon.Services.Service
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error saving pilot data: {ex.Message}");
+                Logger.Error("ERROR", $"Error saving pilot data: {ex.Message}");
+
             }
             finally
             {

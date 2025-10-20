@@ -463,10 +463,12 @@ namespace vFalcon.ViewModels
             try
             {
                 ReplayControlsContent = new ReplayControlsView(this);
-                RadarViewModel.vatsimDataService.Stop();
+                if (RadarViewModel.vatsimDataService != null) RadarViewModel.vatsimDataService.Stop();
                 RadarViewModel.pilotService.Pilots.Clear();
                 RadarViewModel.Redraw();
                 GeoMapStatus = "PREPARING NAV DATA";
+                playbackService.StopPlayback();
+                playbackService = new();
                 JObject replayJson = playbackService.SetRecordingPath(recordingPath);
                 JObject navData = (JObject)playbackService.replayJson["NavData"];
                 NavData nasr = new NavData(null)
