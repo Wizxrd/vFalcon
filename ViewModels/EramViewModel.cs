@@ -464,6 +464,7 @@ namespace vFalcon.ViewModels
             {
                 ReplayControlsContent = new ReplayControlsView(this);
                 if (RadarViewModel.vatsimDataService != null) RadarViewModel.vatsimDataService.Stop();
+                if (RadarViewModel.pilotService == null) return;
                 RadarViewModel.pilotService.Pilots.Clear();
                 RadarViewModel.Redraw();
                 GeoMapStatus = "PREPARING NAV DATA";
@@ -661,6 +662,7 @@ namespace vFalcon.ViewModels
 
         public async Task SwapGeoMapSet()
         {
+            DisplayReady = false;
             FacilityFeatures.Clear();
             ActiveFilters.Clear();
             RadarViewModel.Redraw();
@@ -768,6 +770,7 @@ namespace vFalcon.ViewModels
             }
         }
 
+        public bool DisplayReady = false;
         private async Task LoadVideoMaps()
         {
             if (RadarViewModel.PilotsRendering)
@@ -790,6 +793,7 @@ namespace vFalcon.ViewModels
             RadarViewModel.InitializeVatsimServices();
             GeoMapStatus = string.Empty;
             Logger.Info("Display", "Ready");
+            DisplayReady = true;
             eramView.InitializeGeneralSettings();
         }
     }

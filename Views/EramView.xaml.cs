@@ -211,7 +211,8 @@ namespace vFalcon
                     if (flightRules == "I") flightRules = "IFR";
                     else if (flightRules == "V") flightRules = "VFR";
                     string requestedAltitude = (string)clickedTarget.FlightPlan?["altitude"];
-                    if (requestedAltitude.Contains("VFR")) flightRules = "VFR";
+                    if (requestedAltitude == null) requestedAltitude = "VFR";
+                    if(requestedAltitude.Contains("VFR")) flightRules = "VFR";
                     PilotContext.HorizontalOffset = pos.X;
                     PilotContext.VerticalOffset = pos.Y + 10;
                     PilotContext.PlacementTarget = (FrameworkElement)sender;

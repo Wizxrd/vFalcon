@@ -252,7 +252,7 @@ namespace vFalcon.ViewModels
 
         private void OnLoadReplayCommand()
         {
-            if (!eramViewModel.IsRecording)
+            if (!eramViewModel.IsRecording && eramViewModel.DisplayReady)
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog
                 {
@@ -270,7 +270,7 @@ namespace vFalcon.ViewModels
             }
             else
             {
-                var confirmed = MessageBox.Confirm("Cannot load a replay while recording");
+                var confirmed = MessageBox.Confirm("Cannot load replay while recording or loading GeoMap set");
             }
         }
         private void OnStartRecordingCommand()

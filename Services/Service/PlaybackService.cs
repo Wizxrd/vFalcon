@@ -115,6 +115,7 @@ namespace vFalcon.Services
         {
             try
             {
+                if (eramViewModel.RadarViewModel.pilotService == null) return;
                 eramViewModel.UpdateReplayControls(Tick);
 
                 var total = replayJson["TickCount"]?.Value<int?>() ?? 0;
@@ -156,7 +157,7 @@ namespace vFalcon.Services
                     }
 
                     var acType = pilot.FlightPlan?["aircraft_short"]?.Value<string>();
-                    pilot.DatablockType = eramViewModel.profile.DisplayType;
+                    if (string.IsNullOrEmpty(pilot.DatablockType)) pilot.DatablockType = eramViewModel.profile.DisplayType;
                     pilot.CwtCode = Cwt.GetCwtCodeFromType(acType);
                     pilot.Latitude = lat;
                     pilot.Longitude = lon;
