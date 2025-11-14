@@ -7,40 +7,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Resources\Images\vFalcon.ico</ApplicationIcon>
-    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="FAA\**" />
-    <Compile Remove="NavData\ParsedData\**" />
-    <EmbeddedResource Remove="FAA\**" />
-    <EmbeddedResource Remove="NavData\ParsedData\**" />
-    <None Remove="FAA\**" />
-    <None Remove="NavData\ParsedData\**" />
-    <Page Remove="FAA\**" />
-    <Page Remove="NavData\ParsedData\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="NavData\NavData.json" />
-    <None Remove="Resources\Cursors\Eram1.cur" />
-    <None Remove="Resources\Cursors\Eram2.cur" />
-    <None Remove="Resources\Cursors\Eram3.cur" />
-    <None Remove="Resources\Cursors\Eram4.cur" />
-    <None Remove="Resources\Cursors\Eram5.cur" />
     <None Remove="Resources\Fonts\ERAM.ttf" />
     <None Remove="Resources\Images\ATC.jpg" />
-    <None Remove="Resources\Images\Copy.png" />
-    <None Remove="Resources\Images\Delete.png" />
-    <None Remove="Resources\Images\Export.png" />
-    <None Remove="Resources\Images\FastFoward.png" />
-    <None Remove="Resources\Images\Pause.png" />
-    <None Remove="Resources\Images\Play.png" />
-    <None Remove="Resources\Images\QuestionBlue.png" />
-    <None Remove="Resources\Images\Rename.png" />
-    <None Remove="Resources\Images\Rewind.png" />
-    <None Remove="Resources\Images\vFalcon.ico" />
-    <None Remove="Resources\Images\vFalcon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,12 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ARTCCs\" />
-    <Folder Include="AudioRecordings\Input\" />
-    <Folder Include="AudioRecordings\Output\" />
     <Folder Include="Logs\" />
-    <Folder Include="NavData\2025-10-02\" />
-    <Folder Include="VideoMaps\" />
+    <Folder Include="NavData\" />
     <Folder Include="Profiles\" />
     <Folder Include="Recordings\" />
   </ItemGroup>
@@ -62,35 +29,16 @@
     <PackageReference Include="AdonisUI" Version="1.17.1" />
     <PackageReference Include="AdonisUI.ClassicTheme" Version="1.17.1" />
     <PackageReference Include="CsvHelper" Version="33.1.0" />
-    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.7.25104.5739" />
     <PackageReference Include="FontAwesome.Sharp" Version="6.6.0" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
-    <PackageReference Include="NAudio" Version="2.2.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="SkiaSharp" Version="3.119.0" />
-    <PackageReference Include="SkiaSharp.Views.WPF" Version="3.119.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="SkiaSharp.Views.WPF" Version="3.119.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\Cursors\Stars.cur" />
-    <Resource Include="Resources\Cursors\Eram1.cur" />
-    <Resource Include="Resources\Cursors\Eram2.cur" />
-    <Resource Include="Resources\Cursors\Eram3.cur" />
-    <Resource Include="Resources\Cursors\Eram4.cur" />
-    <Resource Include="Resources\Cursors\Eram5.cur" />
     <Resource Include="Resources\Fonts\ERAM.ttf" />
+    <Resource Include="Resources\Fonts\ERAM_old.ttf" />
     <Resource Include="Resources\Images\ATC.jpg" />
-    <Resource Include="Resources\Images\Copy.png" />
-    <Resource Include="Resources\Images\Delete.png" />
-    <Resource Include="Resources\Images\Export.png" />
-    <Resource Include="Resources\Images\FastFoward.png" />
-    <Resource Include="Resources\Images\Pause.png" />
-    <Resource Include="Resources\Images\Play.png" />
-    <Resource Include="Resources\Images\QuestionBlue.png" />
-    <Resource Include="Resources\Images\Rename.png" />
-    <Resource Include="Resources\Images\Rewind.png" />
-    <Resource Include="Resources\Images\vFalcon.ico" />
-    <Resource Include="Resources\Images\vFalcon.png" />
   </ItemGroup>
 
 </Project>

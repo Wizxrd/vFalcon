@@ -1,8 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "TLH RWY 09 PTAC CONE",
-"features": [
-{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -0.0, 0.0 ], [ -0.0, 0.0 ] ] } },
-{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -84.72793, 30.48997 ], [ -84.51619, 30.38989 ], [ -84.71838, 30.28418 ] ] } }
-]
-}

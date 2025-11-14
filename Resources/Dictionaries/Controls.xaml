@@ -2,30 +2,12 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI">
-
-    <Style x:Key="ProfileSubButtonHover" TargetType="Image">
-        <Setter Property="Opacity" Value="0.5"/>
-        <Style.Triggers>
-            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Button}}" Value="True">
-                <Setter Property="Opacity" Value="1.0"/>
-                <Setter Property="Effect">
-                    <Setter.Value>
-                        <DropShadowEffect
-                            Color="White"
-                            BlurRadius="2"
-                            Opacity="0.2"
-                            ShadowDepth="0"/>
-                    </Setter.Value>
-                </Setter>
-            </DataTrigger>
-        </Style.Triggers>
-    </Style>
     <Style x:Key="ProfileToggleButton" TargetType="ToggleButton">
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="FontWeight" Value="Light"/>
-        <Setter Property="Foreground" Value="{StaticResource White}"/>
+        <Setter Property="Foreground" Value="White"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="Background" Value="{StaticResource ToggleButtonBackground}"/>
+        <Setter Property="Background" Value="{StaticResource ProfileButtonBackground}"/>
         <Setter Property="Height" Value="30"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -44,13 +26,10 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Border" Property="Background" Value="{StaticResource ButtonBackground}"/>
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource MouseOverProfileButtonBackground}"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource ButtonBorderChecked}"/>
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="Border" Property="Background" Value="Transparent"/>
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource ProfileButtonIsChecked}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -58,7 +37,7 @@
         </Setter>
     </Style>
     <Style x:Key="RenameButtonControl" TargetType="ContentControl">
-        <Setter Property="Foreground" Value="{StaticResource White}"/>
+        <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontSize" Value="15"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Style.Triggers>
@@ -73,7 +52,7 @@
                                 BorderBrush="Transparent"
                                 adonisExtensions:CursorSpotlightExtension.BackgroundBrush="{StaticResource RenameTextBoxBackground}"
                                 adonisExtensions:CursorSpotlightExtension.BorderBrush="Transparent"
-                                Foreground="{StaticResource White}"
+                                Foreground="White"
                                 BorderThickness="1"
                                 VerticalAlignment="Center"
                                 Margin="1,0,5,0">

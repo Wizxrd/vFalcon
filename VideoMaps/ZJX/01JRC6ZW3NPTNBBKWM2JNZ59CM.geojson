@@ -1,8 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "TLH RWY 27 PTAC CONE",
-"features": [
-{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -0.0, 0.0 ], [ -0.0, 0.0 ] ] } },
-{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -83.98373, 30.48988 ], [ -84.17070, 30.39267 ], [ -83.98540, 30.30442 ] ] } }
-]
-}
