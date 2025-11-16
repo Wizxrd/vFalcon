@@ -44,7 +44,7 @@ public static class Logger
     {
         Directory.CreateDirectory(LogsDirectory);
 
-        TimestampedLogPath = Path.Combine(LogsDirectory, $"{DateTime.Now:yyyy-MM-ddHH-mm-ss}.log");
+        TimestampedLogPath = Path.Combine(LogsDirectory, $"{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.log");
         DebugLogPath = Path.Combine(LogsDirectory, "debug.log");
 
         if (!debugMode)

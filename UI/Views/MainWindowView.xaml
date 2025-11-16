@@ -83,14 +83,14 @@
                 Content="{Binding DisplayStatus}"
                 Foreground="Red"
                 HorizontalAlignment="Center" VerticalAlignment="Center"
-                FontFamily="/Resources/Fonts/ERAM.ttf#ERAM Regular"
+                FontFamily="/Resources/Fonts/Retro.ttf#Retro Regular"
                 FontSize="32"/>
             <Label
                 Content="{Binding MouseCoordinates, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 Foreground="White"
                 Margin="0,50,50,0"
                 HorizontalAlignment="Right" VerticalAlignment="Top"
-                FontFamily="/Resources/Fonts/ERAM.ttf#ERAM Regular"
+                FontFamily="/Resources/Fonts/Retro.ttf#Retro Regular"
                 FontSize="16"/>
             <Popup
                 x:Name="PilotContextPopup"
