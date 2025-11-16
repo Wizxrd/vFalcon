@@ -84,35 +84,36 @@ vFalcon allows users to record the live network data while vFalcon is open via t
 ## KEYBINDS
 **Keybind** | **Description**
 ---|---
-**Esc** | Clear find by square
-**Alt+F** | Toggles fullscreen
-**Alt+T** | Toggles titlebar
-**Alt+B** | Toggles resize border
+**Esc** | Clear find-by square
+**Alt+F** | Toggle fullscreen
+**Alt+T** | Toggle titlebar
+**Alt+B** | Toggle resize border
 **Alt+R** | Start/stop recording
+**Alt+Shift+S** | Capture application window
+**Ctrl+L** | Load recording
 **Ctrl+E** | Exit replay mode
 **Ctrl+T** | Toggle Top-Down mode
-**Ctrl+L** | Load recording
 **Ctrl+S** | Save profile
 **Ctrl+Shift+S** | Save profile as
 **Ctrl+Shift+P** | Switch profile
 **Ctrl+G** | Open general settings window
+**Ctrl+A** | Open appearance settings window
+**Ctrl+M** | Open maps window
 **Ctrl+P** | Open positions window
-**Shift+S** | Open search by window
-**Shift+F** | Open find by window
-**Shift+Alt+S** | Screenshot application window
+**Ctrl+F** | Open filters window
+**Shift+F** | Open find-by window
+**LeftArrow** | Rewind replay
+**RightArrow** | Fast forward replay
+**Space** | Play/pause replay
 **PageUp** | Increase velocity vectors
 **PageDown** | Decrease velocity vectors
-**LeftArrow** | Rewind replay
-**Space** | Play/pause replay
-**RightArrow** | Fast forward replay
-**Middle Click** | Middle click on target to toggle FDB
+**Middle Click** | Middle click on target to toggle FDB/LDB
 **Right Click** | Right click on target to bring up context menu
-**Ctrl+Left Click** | Left click on target to cycle through FDB positions (same as CRC, goes counter-clockwise)
+**Ctrl+Left Click** | Left click on target to cycle through FDB positions (counter-clockwise)
 **Ctrl+Right Click** | Right click on target to toggle leader line length
-**Shift+Left Click** | Left click on target to toggle J-Ring
+**Shift+Left Click** | Left click on target to toggle DRI
 **Alt+Left Click** | Left click on target to toggle Dwell lock
-**J+Left Click** | Left click on target to cycle through J-Ring size (3, 5, 10, 15, 20, 30)
-**Q+Left Click** | Left click on target to toggle Filed Route Display
+**J+Left Click** | Left click on target to cycle DRI size
 
 ## License
 

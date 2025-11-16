@@ -32,6 +32,8 @@
         <KeyBinding Key="A" Modifiers="Ctrl" Command="{Binding OpenAppearanceSettingsCommand}"/>
         <KeyBinding Key="M" Modifiers="Ctrl" Command="{Binding OpenMapsCommand}"/>
         <KeyBinding Key="P" Modifiers="Ctrl" Command="{Binding OpenPositionsCommand}"/>
+        <KeyBinding Key="F" Modifiers="Ctrl" Command="{Binding OpenFiltersCommand}"/>
+        <KeyBinding Key="F" Modifiers="Shift" Command="{Binding OpenFindCommand}"/>
         <KeyBinding Key="Left" Command="{Binding RewindCommand}"/>
         <KeyBinding Key="Right" Command="{Binding FastForwardCommand}"/>
         <KeyBinding Key="Space" Command="{Binding PlayPauseCommand}"/>

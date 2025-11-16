@@ -24,6 +24,7 @@ public partial class LoadingView : AdonisWindow
             Delay = 250,
         };
         await nasr.Run();
+        TextBlockLoading.Text = "Nav data up-to-date";
         await vNas.CheckForUpdates(TextBlockLoading);
         LoadProfileView loadProfileView = new LoadProfileView();
         Application.Current.MainWindow = loadProfileView;

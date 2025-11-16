@@ -139,8 +139,10 @@ public class MainWindowViewModel : ViewModelBase
     public ICommand SwitchProfileCommand { get; set; }
     public ICommand OpenGeneralSettingsCommand { get; set; }
     public ICommand OpenAppearanceSettingsCommand { get; set; }
-    public ICommand OpenMapsCommand { get; set; }
     public ICommand OpenPositionsCommand { get; set; }
+    public ICommand OpenMapsCommand { get; set; }
+    public ICommand OpenFiltersCommand { get; set; }
+    public ICommand OpenFindCommand { get; set; }
     public ICommand RewindCommand { get; set; }
     public ICommand FastForwardCommand { get; set; }
     public ICommand PlayPauseCommand { get; set; }
@@ -184,6 +186,8 @@ public class MainWindowViewModel : ViewModelBase
         OpenGeneralSettingsCommand = new RelayCommand(OnOpenGeneralSettingsCommand);
         OpenAppearanceSettingsCommand = new RelayCommand(OnOpenAppearanceSettingsCommand);
         OpenMapsCommand = new RelayCommand(OnOpenMapsCommand);
+        OpenFiltersCommand = new RelayCommand(OnOpenFiltersCommand);
+        OpenFindCommand = new RelayCommand(OnOpenFindCommand);
         OpenPositionsCommand = new RelayCommand(OnOpenPositionsCommand);
         RewindCommand = new RelayCommand(OnRewindCommand);
         FastForwardCommand = new RelayCommand(OnFastForwardCommand);
@@ -910,6 +914,16 @@ public class MainWindowViewModel : ViewModelBase
     private void OnOpenMapsCommand()
     {
         App.ViewManager.OpenMapsView();
+    }
+
+    private void OnOpenFiltersCommand()
+    {
+        App.ViewManager.OpenFiltersView();
+    }
+
+    private void OnOpenFindCommand()
+    {
+        App.ViewManager.OpenFindView();
     }
 
     private void OnOpenPositionsCommand()
