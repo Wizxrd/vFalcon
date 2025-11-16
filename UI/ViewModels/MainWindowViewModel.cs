@@ -862,6 +862,7 @@ public class MainWindowViewModel : ViewModelBase
 
     public void OnExitRecordingCommand()
     {
+        if (!IsPlayback) return;
         PilotService.Pilots.Clear();
         PlaybackService.Stop();
         IsPlayback = false;
