@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using vFalcon.Engines;
 using vFalcon.Models;
 using vFalcon.Mvvm;
+using vFalcon.Nasr;
 using vFalcon.Renderables.Interfaces;
 using vFalcon.Services;
 using vFalcon.UI.ViewModels.Controls;
@@ -810,7 +811,7 @@ public class MainWindowViewModel : ViewModelBase
         Screenshot.Capture();
     }
 
-    public void OnLoadRecordingCommand()
+    public async void OnLoadRecordingCommand()
     {
         if (App.MainWindowViewModel.IsRecording || !App.MainWindowViewModel.DisplayState.IsReady)
         {
@@ -826,11 +827,24 @@ public class MainWindowViewModel : ViewModelBase
 
         if (openFileDialog.ShowDialog() == true)
         {
+            SetDisplayReady(false);
+            DisplayStatus = "Preparing Nav Data";
             string selectedFilePath = openFileDialog.FileName;
             PilotService.Stop();
+            PilotService.Dispose();
             PilotService.Pilots.Clear();
             GraphicsEngine.RequestRender();
             PlaybackService.SetRecordingPath(selectedFilePath);
+            JObject navData = (JObject)PlaybackService.ReplayJson["NavData"];
+            NavData nasr = new NavData(null)
+            {
+                Date = (string)navData["Date"],
+                ForceDownload = true,
+                SwapNavDate = true,
+                Delay = 250
+            };
+            await nasr.Run();
+            RouteService = new((string)navData["Date"]);
             PlaybackService.Start();
             PlaybackService.Play();
             IsPlayback = true;
@@ -840,6 +854,7 @@ public class MainWindowViewModel : ViewModelBase
             tbvm.ExitReplayIsEnabled = true;
             ReplayControlsViewModel rcvm = App.MainWindowView.ReplayControlsView.DataContext as ReplayControlsViewModel;
             rcvm.MaximumSliderValue = PlaybackService.GetTotalTickCount();
+            SetDisplayReady(true);
             return;
         }
         return;
@@ -851,7 +866,7 @@ public class MainWindowViewModel : ViewModelBase
         PlaybackService.Stop();
         IsPlayback = false;
         ToolbarViewModel tbvm = App.MainWindowView.ToolbarView.DataContext as ToolbarViewModel;
-        tbvm.ExitReplayIsEnabled = true;
+        tbvm.ExitReplayIsEnabled = false;
         ReplayControlVisibility = Visibility.Collapsed;
         SetTitle();
         PilotService.Start();

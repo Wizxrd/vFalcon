@@ -24,7 +24,7 @@ public class PilotService
 
     public async void Start()
     {
-        JObject? dataFeed = await VatsimDataFeed.GetDataFeed();
+        JObject? dataFeed = await VatsimDataFeed.GetDataFeedAsync();
         if (dataFeed == null) return;
         DateTime dataFeedUtc = (DateTime)dataFeed?["general"]?["update_timestamp"];
         DateTime nowUtc = DateTime.UtcNow;
@@ -279,7 +279,7 @@ public class PilotService
         try
         {
             if (stopped || disposed || App.MainWindowViewModel.IsPlayback || App.MainWindowViewModel == null) return;
-            JObject? dataFeed = await VatsimDataFeed.GetDataFeed();
+            JObject? dataFeed = await VatsimDataFeed.GetDataFeedAsync();
             if (dataFeed == null) return;
             if (ForceRefresh) ForceRefresh = false;
             Dictionary<string, string> transceiverFrequencies = await VatsimDataFeed.GetTransceiversAsync();

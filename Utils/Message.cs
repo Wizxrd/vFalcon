@@ -13,4 +13,9 @@ public class Message
     {
         return MessageBox.Show(msg, title ?? "Confirm", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes;
     }
+
+    public static void Warning(string msg, string ? title = null)
+    {
+        MessageBox.Show(msg, title ?? "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+    }
 }

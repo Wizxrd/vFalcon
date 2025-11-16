@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json.Linq;
-using vFalcon.Utils;
 namespace vFalcon.Models;
 
 public class Profile

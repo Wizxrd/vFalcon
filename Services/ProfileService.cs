@@ -181,7 +181,7 @@ public class ProfileService : IProfileService
             string path = PathFinder.GetFilePath("Profiles", filename);
             string serialized = JsonConvert.SerializeObject(profile, Formatting.Indented);
             File.WriteAllText(path, serialized);
-            Logger.Debug("ProfileService.Save", $"Saved profile: \"{profile.Name}\"");
+            Logger.Info("ProfileService.Save", $"Saved profile: \"{profile.Name}\"");
         }
         catch (Exception ex)
         {

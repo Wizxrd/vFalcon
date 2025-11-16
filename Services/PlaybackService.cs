@@ -8,7 +8,7 @@ namespace vFalcon.Services;
 public class PlaybackService
 {
     public ScheduledFunction Scheduler { get; set; }
-    public JObject replayJson = new JObject();
+    public JObject ReplayJson = new JObject();
     public bool Paused = false;
     public int Tick;
     private int speedMultiplier = 1;
@@ -23,8 +23,8 @@ public class PlaybackService
 
     public int GetTotalTickCount()
     {
-        if (replayJson == null) return 0;
-        return (int)replayJson["TickCount"];
+        if (ReplayJson == null) return 0;
+        return (int)ReplayJson["TickCount"];
     }
 
     public void SetPlaybackSpeed(int multiplier)
@@ -46,8 +46,8 @@ public class PlaybackService
 
     public JObject SetRecordingPath(string recordingPath)
     {
-        replayJson = JObject.Parse(File.ReadAllText(recordingPath));
-        return replayJson;
+        ReplayJson = JObject.Parse(File.ReadAllText(recordingPath));
+        return ReplayJson;
     }
 
     public void Start()
@@ -62,14 +62,14 @@ public class PlaybackService
     {
         disposed = true;
         stopped = true;
-        replayJson = new JObject();
+        ReplayJson = new JObject();
         Scheduler.Dispose();
     }
 
     public void Stop()
     {
         stopped = true;
-        replayJson = new JObject();
+        ReplayJson = new JObject();
         Scheduler.Stop();
         Tick = 0;
     }
@@ -89,10 +89,10 @@ public class PlaybackService
         if (stopped || disposed) return;
         try
         {
-            var total = replayJson["TickCount"]?.Value<int?>() ?? 0;
+            var total = ReplayJson["TickCount"]?.Value<int?>() ?? 0;
             if (Tick >= total) return;
 
-            JObject pilotsObj = (JObject)replayJson["Pilots"];
+            JObject pilotsObj = (JObject)ReplayJson["Pilots"];
             if (pilotsObj is null) return;
 
             foreach (var prop in pilotsObj)
@@ -159,7 +159,7 @@ public class PlaybackService
             if (!Paused)
             {
                 int next = Tick + tickStep;
-                var totalTick = replayJson["TickCount"]?.Value<int?>() ?? 0;
+                var totalTick = ReplayJson["TickCount"]?.Value<int?>() ?? 0;
                 Tick = next >= totalTick ? totalTick : next;
             }
             ReplayControlsViewModel rcvm = App.MainWindowView.ReplayControlsView.DataContext as ReplayControlsViewModel;

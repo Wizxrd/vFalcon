@@ -1,5 +1,4 @@
 ﻿using vFalcon.Utils;
-
 namespace vFalcon.Models;
 
 public class AppearanceSettings

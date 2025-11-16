@@ -14,7 +14,7 @@ public class ReplayControlsViewModel : ViewModelBase
     private string elapsedTimeTick = string.Empty;
     public int MaximumSliderValue
     {
-        get => App.MainWindowViewModel.PlaybackService.GetTotalTickCount();
+        get => maximumSliderValue;
         set
         {
             maximumSliderValue = value;

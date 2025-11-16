@@ -85,9 +85,9 @@ public class NavData
             await Task.Delay(Delay);
             Directory.Delete(downloadDir, recursive: true);
             Directory.Delete(extractDir, recursive: true);
-#if !DEBUG
-            Directory.Delete($"{PathFinder.GetAppDirectory()}\\Nasr", recursive: true);
-#endif
+            #if !DEBUG
+                Directory.Delete($"{PathFinder.GetAppDirectory()}\\Nasr", recursive: true);
+            #endif
         }
         catch (Exception ex)
         {
@@ -125,7 +125,11 @@ public class NavData
             return;
         }
 
-        if (latest.Date <= state.Date) return;
+        if (latest.Date <= state.Date)
+        {
+            Logger.Error("HERE", "WHY");
+            return;
+        }
 
         foreach (var entry in table.Where(t => t.Date > state.Date && t.Date <= latest.Date))
         {
@@ -318,6 +322,7 @@ public class NavData
         list.Sort((a, b) => a.Date.CompareTo(b.Date));
         return list;
     }
+
     private async Task DownloadAndExtractCycleAsync(DateTime effectiveUtc, CancellationToken ct, bool forceHttpDownload = false)
     {
         void Update(string msg)

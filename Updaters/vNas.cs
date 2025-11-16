@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Windows.Controls;
 using vFalcon.Models;
 using vFalcon.Utils;
 namespace vFalcon.Updaters;
@@ -11,11 +12,11 @@ public class vNas
 {
     private static readonly HttpClient http = new HttpClient();
 
-    public static async Task CheckForUpdates()
+    public static async Task CheckForUpdates(TextBlock TextBlockLoading)
     {
         try
         {
-            Logger.Info("vNas.UpdateArtccs", "Starting");
+            Logger.Info("vNas.CheckForUpdates", "Starting");
 
             var folder = PathFinder.GetFolderPath("ARTCCs");
             Directory.CreateDirectory(folder);
@@ -38,7 +39,7 @@ public class vNas
 
                 string destinationPath = PathFinder.GetFilePath("ARTCCs", $"{id}.json");
 
-                await UpdateVideoMaps(JsonConvert.DeserializeObject<Artcc>(jsonText));
+                await UpdateVideoMaps(JsonConvert.DeserializeObject<Artcc>(jsonText), TextBlockLoading);
 
                 if (File.Exists(destinationPath))
                 {
@@ -50,22 +51,24 @@ public class vNas
                         DateTimeOffset.TryParse(newTimestamp, out var incomingTime) &&
                         incomingTime <= existingTime)
                     {
-                        Logger.Debug("vNas.UpdateArtccs", $"\"{id}\" up to date");
+                        TextBlockLoading.Text = $"\"{id}\" up to date";
+                        Logger.Info("vNas.UpdateArtccs", $"\"{id}\" up to date");
                         continue;
                     }
                 }
                 await File.WriteAllTextAsync(destinationPath, incoming.ToString(Formatting.Indented));
-                Logger.Debug("vNas.UpdateArtccs", $"Updated ARTCC: \"{id}\"");
+                TextBlockLoading.Text = $"Updated ARTCC: \"{id}\"";
+                Logger.Info("vNas.CheckForUpdates", $"Updated ARTCC: \"{id}\"");
             }
-            Logger.Info("vNas.UpdateArtccs", "Completed");
+            Logger.Info("vNas.CheckForUpdates", "Completed");
         }
         catch (Exception ex)
         {
-            Logger.Error("vNas.UpdateArtccs", ex.ToString());
+            Logger.Error("vNas.CheckForUpdates", ex.ToString());
         }
     }
 
-    private static async Task UpdateVideoMaps(Artcc artcc)
+    private static async Task UpdateVideoMaps(Artcc artcc, TextBlock TextBlockLoading)
     {
         Logger.Info("vNas.UpdateVideoMaps", $"Checking: {artcc.id}");
         foreach (JObject videoMap in artcc.videoMaps)
@@ -86,6 +89,7 @@ public class vNas
                 JObject downloadedVideoMap = JsonConvert.DeserializeObject<JObject>(jsonText);
                 Directory.CreateDirectory(Path.GetDirectoryName(path)!);
                 await File.WriteAllTextAsync(path, downloadedVideoMap.ToString(Formatting.Indented));
+                TextBlockLoading.Text = $"Updated VideoMap: {videoMap["id"]}";
                 Logger.Info("vNas.UpdateVideoMaps", $"Updated: {videoMap["id"]}");
             }
         }

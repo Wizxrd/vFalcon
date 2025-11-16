@@ -13,7 +13,6 @@ public class RecordingService
     private int tickCount = 0;
     private DateTime? lastUpdatedUtc;
     public JObject navData = new();
-    private readonly SemaphoreSlim saveGate = new(1, 1);
     public Dictionary<string, PilotRecording> recordingData = new();
     public void Start()
     {
@@ -65,7 +64,6 @@ public class RecordingService
     }
     private void Save()
     {
-        saveGate.Wait();
         try
         {
             JsonSerializer serializer = new JsonSerializer
@@ -101,17 +99,11 @@ public class RecordingService
                 File.Replace(tmpPath, finalPath, null);
             else
                 File.Move(tmpPath, finalPath);
-
-            Logger.Info("RecordingService.Save", "Saved recording data");
         }
         catch (Exception ex)
         {
             Logger.Error("RecordingService.Save", $"Error saving pilot data: {ex.Message}");
 
-        }
-        finally
-        {
-            saveGate.Release();
         }
     }
 }

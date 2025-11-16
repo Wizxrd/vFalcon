@@ -19,6 +19,7 @@ public class Github
     public static async Task CheckForUpdate(TextBlock TextBlockLoading)
     {
 #if !DEBUG
+        Logger.Debug("Github.CheckForUpdates", "Checking for update");
         TextBlockLoading.Text = "Checking For Update";
         var current = GetCurrentVersion();
         TextBlockLoading.Text = $"Current version: {current}";
