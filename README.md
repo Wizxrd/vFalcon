@@ -1,5 +1,5 @@
 # vFALCON
-![](https://img.shields.io/badge/version-v1.0.0-limegreen)  
+![](https://img.shields.io/badge/version-v1.0.1-limegreen)  
 [DOWNLOAD](https://github.com/Wizxrd/vFalcon/releases)
 
 ## OVERVIEW  
