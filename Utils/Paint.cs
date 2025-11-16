@@ -4,7 +4,7 @@ namespace vFalcon.Utils;
 
 public class Paint
 {
-    private static readonly SKTypeface FontTypeFace = SKTypeface.FromFile(PathFinder.GetFilePath("Resources/Fonts", "ERAM.ttf"));
+    private static readonly SKTypeface FontTypeFace = SKTypeface.FromFile(PathFinder.GetFilePath("Resources/Fonts", "Retro.ttf"));
     public static SKPaint VideoMapLine(ProcessedFeature f, byte rgb)
     {
         SKPaint paint = new SKPaint

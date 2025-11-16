@@ -11,7 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\Fonts\ERAM.ttf" />
+    <None Remove="Resources\Fonts\Retro.ttf" />
     <None Remove="Resources\Images\ATC.jpg" />
     <None Remove="Resources\Images\FastFoward.png" />
     <None Remove="Resources\Images\Pause.png" />
@@ -41,8 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\Fonts\ERAM.ttf" />
-    <Resource Include="Resources\Fonts\ERAM_old.ttf" />
+    <Resource Include="Resources\Fonts\Retro.ttf" />
     <Resource Include="Resources\Images\ATC.jpg" />
     <Resource Include="Resources\Images\FastFoward.png" />
     <Resource Include="Resources\Images\Pause.png" />
