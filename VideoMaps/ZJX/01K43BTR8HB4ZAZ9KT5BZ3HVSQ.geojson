@@ -1,0 +1,123 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    -81.16948888888889,
+                    29.187911111111113
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "text": [
+                    "NICCK",
+                    "14000",
+                    "12000"
+                ]
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -81.21424722222223,
+                    29.707791666666665
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "text": [
+                    "NOOMN",
+                    "+FL190"
+                ]
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    0,
+                    0
+                ],
+                "type": "Point"
+            },
+             "properties": {
+                "bcg": 32,
+                "filters": [
+                    32
+                ],
+                "isTextDefaults": true
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -81.28115555555556,
+                    30.60255
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "text": [
+                    "LPERD",
+                    "FL340",
+                    "FL300"
+                ]
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -81.10863333333333,
+                    29.04531388888889
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "text": [
+                    "BGBBY",
+                    "+10000",
+                    "250"
+                ]
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -81.17903333333334,
+                    29.296244444444447
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "text": [
+                    "FORYU",
+                    "+13000",
+                    "280"
+                ]
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -81.08159444444443,
+                    28.973980555555553
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "text": [
+                    "GTOUT",
+                    "11000",
+                    "9000"
+                ]
+            },
+            "type": "Feature"
+        }
+    ]
+}

@@ -1,20 +1,24 @@
 ﻿using Newtonsoft.Json.Linq;
-namespace vFalcon.Models;
 
-public class Profile
+namespace vFalcon.Models
 {
-    public string Id { get; set; } = string.Empty;
-    public string Name { get; set; } = string.Empty;
-    public DateTime LastUsedAt { get; set; }
-    public string ArtccId { get; set; } = string.Empty;
-    public GeneralSettings GeneralSettings { get; set; } = new();
-    public MapSettings MapSettings { get; set; } = new();
-    public FilterSettings FilterSettings { get; set; } = new();
-    public DisplaySettings DisplaySettings { get; set; } = new();
-    public WindowSettings WindowSettings { get; set; } = new();
-    public AppearanceSettings AppearanceSettings { get; set; } = new();
-    public JArray ActivePositions { get; set; } = new();
-    public HashSet<string> ActiveEramFilters { get; set; } = new();
-    public HashSet<string> ActiveStarsVideoMaps { get; set; } = new();
-
+    public class Profile
+    {
+        public string Id { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
+        public DateTime LastUsedAt { get; set; }
+        public string ArtccId { get; set; } = string.Empty;
+        public string FacilityId { get; set; } = string.Empty;
+        public string DisplayType { get; set; } = string.Empty;
+        public string ActiveGeoMap { get; set; } = string.Empty;
+        public bool TopDown { get; set; } = false;
+        public int LogLevel { get; set; }
+        public bool RecordAudio { get; set; } = false;
+        public int? PttKey { get; set; } = 0;
+        public int ZoomRange { get; set; } = 0;
+        public JObject Center { get; set; } = new JObject();
+        public JObject WindowSettings { get; set; } = new JObject();
+        public JObject AppearanceSettings { get; set; } = new JObject();
+        public JObject MapFilters { get; set; } = new JObject();
+    }
 }

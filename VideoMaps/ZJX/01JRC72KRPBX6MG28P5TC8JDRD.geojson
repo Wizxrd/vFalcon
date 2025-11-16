@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "TLH RWY 18 PTAC CONE",
+"features": [
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -0.0, 0.0 ], [ -0.0, 0.0 ] ] } },
+{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -84.47095, 30.71782 ], [ -84.36053, 30.56015 ], [ -84.25695, 30.72176 ] ] } }
+]
+}

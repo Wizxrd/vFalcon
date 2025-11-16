@@ -1,0 +1,61 @@
+﻿<adonisControls:AdonisWindow 
+    x:Class="vFalcon.Views.ConfirmView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:vFalcon.Views"
+    xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+    xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+    xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+    mc:Ignorable="d"
+    Icon="pack://application:,,,/Resources/Images/QuestionBlue.png"
+    Title="Confirm"
+    Width="350" MinHeight="150" Height="150"
+    SizeToContent="Height" ResizeMode="NoResize"
+    WindowStartupLocation="CenterOwner"
+    BorderBrush="{StaticResource BorderBrush}" BorderThickness="1"
+    FontFamily="Consolas" FontSize="12">
+    <adonisControls:AdonisWindow.InputBindings>
+        <KeyBinding Key="Enter" Command="{Binding CancelCommand}"/>
+    </adonisControls:AdonisWindow.InputBindings>
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+    <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock
+                Grid.Row="0"
+                x:Name="MessageTextBlock"
+                VerticalAlignment="Center"
+                FontFamily="Consolas" FontSize="12"
+                Text="{Binding Message}"
+                TextWrapping="Wrap"
+                Margin="10,35,10,0">
+            </TextBlock>
+            <Border Grid.Row="1">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                    <Button
+                    Name="YesButton"
+                    Content="Yes"
+                    Width="75" Height="25"
+                    Margin="0,0,5,0"
+                    Command="{Binding ConfirmCommand}">
+                    </Button>
+                    <Button
+                    Name="NoButton"
+                    Content="No"
+                    Width="75" Height="25"
+                    Margin="5,0,0,0"
+                    BorderBrush="#425595"
+                    Command="{Binding CancelCommand}">
+                    </Button>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Border>
+</adonisControls:AdonisWindow>

@@ -1,63 +1,57 @@
-﻿using System;
-using System.Configuration;
-using System.Data;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Globalization;
+using System.IO;
+using System.Text;
 using System.Windows;
+using vFalcon.Helpers;
 using vFalcon.Models;
-using vFalcon.UI.ViewModels;
-using vFalcon.UI.Views;
-using vFalcon.UI.Views.Manager;
-using vFalcon.Utils;
-namespace vFalcon;
-public partial class App : Application
+using vFalcon.Services.Service;
+
+namespace vFalcon
 {
-    public static string Version { get; } = "1.0.1";
-    public static Profile Profile { get; set; }
-    public static Artcc Artcc { get; set; }
-    public static ViewManager ViewManager { get; set; } = new();
-    public static MainWindowView MainWindowView { get; set; }
-    public static MainWindowViewModel MainWindowViewModel { get; set; }
-
-    private static Mutex Mutex = new();
-    private const string appName = "vFalcon";
-    private bool createdNew;
-
-    public App()
+    /// <summary>
+    /// Interaction logic for App.xaml
+    /// </summary>
+    public partial class App : Application
     {
-        Logger.DebugMode = true;
-        Logger.LogLevelThreshold = LogLevel.Trace;
-        Logger.Info("App", $"Launching vFalcon v{Version}");
-        Mutex = new Mutex(true, appName, out createdNew);
-    }
+        private string version = "1.0.0";
+        private static Mutex mutex;
+        const string appName = "vFalcon";
+        bool createdNew;
 
-    protected override void OnStartup(StartupEventArgs e)
-    {
-        if (!createdNew)
+        public App()
         {
-            Message.Warning("Another instance of vFalcon is already running!");
-            Shutdown();
-            return;
-        }
-        base.OnStartup(e);
-    }
-
-    protected override void OnExit(ExitEventArgs e)
-    {
-        for (int i = Application.Current.Windows.Count - 1; i >= 0; i--)
-        {
-            var w = Application.Current.Windows[i];
-            if (w == null) continue;
-            if (!w.Dispatcher.CheckAccess())
-                w.Dispatcher.Invoke(() => { if (w.IsLoaded) w.Close(); });
-            else
-                if (w.IsLoaded) w.Close();
+            mutex = new Mutex(true, appName, out createdNew);
+            Logger.DebugMode = false;
+            Logger.LogLevelThreshold = LogLevel.Info;
+            Logger.Info("App", $"Launching vFalcon v{version}");;
         }
 
-        Mutex?.ReleaseMutex();
-        base.OnExit(e);
-    }
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            if (!createdNew)
+            {
+                Shutdown();
+                return;
+            }
+            base.OnStartup(e);
+        }
 
-    public static MainWindowViewModel GetMainWindowViewModel()
-    {
-        return Application.Current?.MainWindow?.DataContext as MainWindowViewModel;
+        protected override void OnExit(ExitEventArgs e)
+        {
+            for (int i = Application.Current.Windows.Count - 1; i >= 0; i--)
+            {
+                var w = Application.Current.Windows[i];
+                if (w == null) continue;
+                if (!w.Dispatcher.CheckAccess())
+                    w.Dispatcher.Invoke(() => { if (w.IsLoaded) w.Close(); });
+                else
+                    if (w.IsLoaded) w.Close();
+            }
+
+            mutex?.ReleaseMutex();
+            base.OnExit(e);
+        }
     }
 }

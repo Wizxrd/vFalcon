@@ -3,15 +3,15 @@
 "name": "ZBW_N90 IGN STAR",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "isSymbolDefaults": true, "bcg": 10, "filters": [ 30 ], "size": 1 }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
+{ "type": "Feature", "properties": { "isSymbolDefaults": true, "bcg": 10, "filters": [ 40 ], "size": 1 }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
 { "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -74.031322, 41.722553 ] } },
 { "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -74.063483, 41.385503 ] } },
 { "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -74.367703, 41.028178 ] } },
 { "type": "Feature", "properties": { "style": "airwayIntersections" }, "geometry": { "type": "Point", "coordinates": [ -74.135258, 40.914836 ] } },
 { "type": "Feature", "properties": { "style": "vor" }, "geometry": { "type": "Point", "coordinates": [ -73.822239, 41.665453 ] } },
-{ "type": "Feature", "properties": { "isLineDefaults": true, "bcg": 10, "filters": [ 30 ], "style": "longDashShortDash", "thickness": 1 }, "geometry": { "type": "Point", "coordinates": [ 90, 180 ] } },
+{ "type": "Feature", "properties": { "isLineDefaults": true, "bcg": 10, "filters": [ 40 ], "style": "longDashShortDash", "thickness": 1 }, "geometry": { "type": "Point", "coordinates": [ 90, 180 ] } },
 { "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -73.822239, 41.665453 ], [ -74.063483, 41.385503 ], [ -74.367703, 41.028178 ], [ -74.135258, 40.914836 ] ] } },
-{ "type": "Feature", "properties": { "isTextDefaults": true, "bcg": 30, "filters": [ 30 ], "text": ["Line 1", "Line 2"], "size": 0, "opaque": false, "xOffset": 15, "yOffset": 10 }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
+{ "type": "Feature", "properties": { "isTextDefaults": true, "bcg": 30, "filters": [ 40 ], "text": ["Line 1", "Line 2"], "size": 0, "opaque": false, "xOffset": 15, "yOffset": 10 }, "geometry": { "type": "Point", "coordinates": [ 90.0, 180.0 ] } },
 { "type": "Feature", "properties": { "text": [ "YODAA" ], "xOffset": -47, "yOffset": -3 }, "geometry": { "type": "Point", "coordinates": [ -74.031322, 41.722553 ] } },
 { "type": "Feature", "properties": { "text": [ "IGN" ], "yOffset": 8 }, "geometry": { "type": "Point", "coordinates": [ -73.822239, 41.665453 ] } },
 { "type": "Feature", "properties": { "text": [ "LOLLY", "200" ] }, "geometry": { "type": "Point", "coordinates": [ -74.063483, 41.385503 ] } }
