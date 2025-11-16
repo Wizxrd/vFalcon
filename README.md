@@ -90,13 +90,13 @@ vFalcon allows users to record the live network data while vFalcon is open via t
 **Alt+B** | Toggles resize border
 **Alt+R** | Start/stop recording
 **Ctrl+E** | Exit replay mode
-**Ctrl+T** | Toggle TDM mode (only for video maps)
+**Ctrl+T** | Toggle Top-Down mode
 **Ctrl+L** | Load recording
 **Ctrl+S** | Save profile
-**Ctrl+G** | Open general settings window
-**Ctrl+P** | Open positions window
 **Ctrl+Shift+S** | Save profile as
 **Ctrl+Shift+P** | Switch profile
+**Ctrl+G** | Open general settings window
+**Ctrl+P** | Open positions window
 **Shift+S** | Open search by window
 **Shift+F** | Open find by window
 **Shift+Alt+S** | Screenshot application window
