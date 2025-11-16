@@ -1,8 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "TLH RWY 36 PTAC CONE",
-"features": [
-{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -0.0, 0.0 ], [ -0.0, 0.0 ] ] } },
-{ "type": "Feature", "properties": { }, "geometry": { "type": "LineString", "coordinates": [ [ -84.47285, 30.08209 ], [ -84.35745, 30.26511 ], [ -84.23108, 30.08437 ] ] } }
-]
-}

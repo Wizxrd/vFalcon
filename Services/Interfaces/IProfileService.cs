@@ -1,13 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using vFalcon.Models;
-
+﻿using vFalcon.Models;
 namespace vFalcon.Services.Interfaces
 {
     public interface IProfileService
     {
-        public Task<List<Profile>> LoadProfiles();
-        public Task New(string name, string artccId, string facilityId, string displayType);
+        public Task<List<Profile>> GetProfiles();
+        public Task New(string name, string artccId);
         public Task<bool> Import();
         public Task Rename(string oldName, string newName);
         public Task Copy(Profile profile);

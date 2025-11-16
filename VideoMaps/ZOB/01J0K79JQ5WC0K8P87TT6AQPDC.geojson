@@ -1,1 +1,6859 @@
-{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[90.0,180.0]},"properties":{"isTextDefaults":true,"bcg":12,"filters":[12],"size":1,"underline":false,"opaque":false,"xOffset":12,"yOffset":0}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.939513,34.648314]},"properties":{"text":["DCU","DECATUR DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.633847,34.797239]},"properties":{"text":["RQZ","ROCKET VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.491517,34.706869]},"properties":{"text":["MSL","MUSCLE SHOALS DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-94.121391,36.246427]},"properties":{"text":["RZC","RAZORBACK VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-92.458389,36.299646]},"properties":{"text":["FLP","FLIPPIN DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-94.271524,35.388408]},"properties":{"text":["FSM","FORT SMITH VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-90.478159,35.34703]},"properties":{"text":["GQE","GILMORE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-93.213272,36.318308]},"properties":{"text":["HRO","HARRISON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-90.674401,34.575047]},"properties":{"text":["UJM","MARVELL VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-92.157668,34.918064]},"properties":{"text":["LRF","JACKSONVILLE TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-90.588504,35.874916]},"properties":{"text":["JBR","JONESBORO VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-92.180528,34.677673]},"properties":{"text":["LIT","LITTLE ROCK VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-90.953693,36.11002]},"properties":{"text":["ARG","WALNUT RIDGE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-73.124486,41.160706]},"properties":{"text":["BDR","BRIDGEPORT VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-72.051985,41.330402]},"properties":{"text":["GON","GROTON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-72.547418,41.641105]},"properties":{"text":["HFD","HARTFORD VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-72.692203,41.313861]},"properties":{"text":["MAD","MADISON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-72.88519,41.262313]},"properties":{"text":["HVN","NEW HAVEN DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-71.999353,41.556404]},"properties":{"text":["ORW","NORWICH VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-71.844095,41.95546]},"properties":{"text":["PUT","PUTNAM VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-72.699873,41.930562]},"properties":{"text":["BYT","BRADLEY DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.036436,38.859453]},"properties":{"text":["DCA","WASHINGTON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.467408,39.1324]},"properties":{"text":["DOV","DOVER TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.51597,39.231647]},"properties":{"text":["ENO","SMYRNA VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.211323,38.80981]},"properties":{"text":["ATR","WATERLOO VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.607086,39.67814]},"properties":{"text":["DQO","DUPONT VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-83.915674,34.942998]},"properties":{"text":["HRS","HARRIS TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-90.92589,40.723456]},"properties":{"text":["BRL","BURLINGTON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-91.785749,41.887548]},"properties":{"text":["CID","CEDAR RAPIDS VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-90.483314,41.708548]},"properties":{"text":["CVA","DAVENPORT VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-93.648558,41.437625]},"properties":{"text":["DSM","DES MOINES VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-90.709078,42.401469]},"properties":{"text":["DBQ","DUBUQUE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-94.294816,42.611125]},"properties":{"text":["FOD","FORT DODGE TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-91.613252,41.51896]},"properties":{"text":["IOW","IOWA CITY VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-93.967592,40.596764]},"properties":{"text":["LMN","LAMONI VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-92.908746,42.111293]},"properties":{"text":["JWJ","ELMWOOD DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-93.329872,43.094757]},"properties":{"text":["MCW","MASON CITY VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.736853,41.167167]},"properties":{"text":["OVR","OMAHA VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-91.149279,41.366299]},"properties":{"text":["DDD","PORT CITY DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-93.109032,41.783884]},"properties":{"text":["TNU","NEWTON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-92.325906,41.029146]},"properties":{"text":["OTM","OTTUMWA DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.200992,43.162177]},"properties":{"text":["SPW","SPENCER VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-92.398924,42.556497]},"properties":{"text":["ALO","WATERLOO VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-91.537362,43.280086]},"properties":{"text":["UKN","WAUKON DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.851646,38.545362]},"properties":{"text":["SKE","SCOTT TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.481805,38.920345]},"properties":{"text":["BIB","BIBLE GROVE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.931266,40.480805]},"properties":{"text":["BMI","BLOOMINGTON DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.587873,41.159731]},"properties":{"text":["BDF","BRADFORD TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.158998,38.419999]},"properties":{"text":["ENL","CENTRALIA VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.276076,40.034531]},"properties":{"text":["CMI","CHAMPAIGN VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.902328,41.994089]},"properties":{"text":["GCO","CHICAGO DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.571546,41.510007]},"properties":{"text":["CGT","CHICAGO HEIGHTS VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.199272,42.225578]},"properties":{"text":["RFD","ROCKFORD DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.350178,41.890371]},"properties":{"text":["DPA","DUPAGE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.55726,40.293766]},"properties":{"text":["DNV","DANVILLE TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.856431,39.737521]},"properties":{"text":["AXC","ADDERS VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-90.434464,40.937343]},"properties":{"text":["GBG","GALESBURG DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-90.238605,39.776521]},"properties":{"text":["IJX","JACKSONVILLE DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.318411,41.546419]},"properties":{"text":["JOT","JOLIET VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.850163,41.074379]},"properties":{"text":["IKK","KANKAKEE DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.603828,38.769868]},"properties":{"text":["LWV","LAWRENCEVILLE DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.011803,37.754379]},"properties":{"text":["MWA","MARION DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.286208,39.477892]},"properties":{"text":["MTO","MATTOON DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-90.638214,41.320921]},"properties":{"text":["MZV","MOLINE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.807337,38.361954]},"properties":{"text":["VNN","MOUNT VERNON DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.95167,42.221377]},"properties":{"text":["OBK","NORTHBROOK VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.792753,40.680069]},"properties":{"text":["PIA","PEORIA VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.791054,41.269632]},"properties":{"text":["EON","PEOTONE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.52422,41.965642]},"properties":{"text":["PLL","POLO DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.733509,40.821201]},"properties":{"text":["PNT","PONTIAC DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-91.278924,39.847875]},"properties":{"text":["UIN","QUINCY TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.164268,40.581701]},"properties":{"text":["RBS","ROBERTS VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.085806,38.485188]},"properties":{"text":["SAM","SAMSVILLE DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.677736,39.839733]},"properties":{"text":["SPI","SPINNER VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.918592,38.73915]},"properties":{"text":["TOY","TROY VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.162367,39.093775]},"properties":{"text":["VLA","VANDALIA DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.613018,39.143822]},"properties":{"text":["OOM","HOOSIER VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.76238,37.92832]},"properties":{"text":["PXV","POCKET CITY VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.188058,40.979064]},"properties":{"text":["FWA","FORT WAYNE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.027953,41.525155]},"properties":{"text":["GSH","GOSHEN TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.3675,39.814729]},"properties":{"text":["VHP","BRICKYARD VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.649289,41.322059]},"properties":{"text":["OXI","KNOX DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.057999,40.52778]},"properties":{"text":["OKK","KOKOMO TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.069374,40.556172]},"properties":{"text":["BVT","BOILER VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.470644,38.758339]},"properties":{"text":["GVR","HANOVER DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.67925,40.493331]},"properties":{"text":["MZZ","MARION VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.394037,40.237292]},"properties":{"text":["MIE","MUNCIE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.151714,40.644906]},"properties":{"text":["GUS","GRISSOM TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.838829,39.755008]},"properties":{"text":["RID","RICHMOND DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.824316,39.632542]},"properties":{"text":["SHB","SHELBYVILLE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.249013,39.488942]},"properties":{"text":["TTH","TERRE HAUTE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.497397,41.246908]},"properties":{"text":["OLK","WEBSTER LAKE VOR"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.59347,37.626159]},"properties":{"text":["CNU","CHANUTE DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.203633,37.157511]},"properties":{"text":["OSW","OSWEGO DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.423547,39.850925]},"properties":{"text":["RBA","ROBINSON DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.661179,38.94737]},"properties":{"text":["FOE","FORBES TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.549169,39.137078]},"properties":{"text":["TOP","TOPEKA VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.423333,36.964444]},"properties":{"text":["BWG","BOWLING GREEN DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.263704,37.382422]},"properties":{"text":["CCT","CENTRAL CITY DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.703346,39.015981]},"properties":{"text":["CVG","CINCINNATI TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.310602,38.649441]},"properties":{"text":["FLM","FALMOUTH VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.511136,36.659304]},"properties":{"text":["HXW","SCREAMING EAGLE TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.972564,37.907217]},"properties":{"text":["FTK","FORT KNOX VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.908623,38.182423]},"properties":{"text":["FFT","FRANKFORT VOR"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-83.263005,37.391257]},"properties":{"text":["AZQ","HAZARD DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.472528,37.966349]},"properties":{"text":["HYK","LEXINGTON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.110075,37.03315]},"properties":{"text":["LOZ","LONDON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.577437,38.103464]},"properties":{"text":["IIU","LOUISVILLE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.244528,37.894066]},"properties":{"text":["MYS","MYSTIC VOR"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.675878,37.631811]},"properties":{"text":["EWO","NEW HOPE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-82.910055,38.158362]},"properties":{"text":["ECB","NEWCOMBE DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.165937,37.743555]},"properties":{"text":["OWB","OWENSBORO VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.836913,37.008609]},"properties":{"text":["CNG","CUNNINGHAM VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-82.978339,38.644133]},"properties":{"text":["YRK","YORK TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-70.989548,42.35745]},"properties":{"text":["BOS","BOSTON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-72.949394,42.291319]},"properties":{"text":["CTR","CHESTER VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-72.058188,42.545921]},"properties":{"text":["GDM","GARDNER VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-71.09485,42.740418]},"properties":{"text":["LWM","LAWRENCE DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-70.026704,41.281875]},"properties":{"text":["ACK","NANTUCKET VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-70.037232,42.017188]},"properties":{"text":["LFV","MARCONI VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-72.526315,42.197544]},"properties":{"text":["CEF","WESTOVER TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-70.612716,41.396215]},"properties":{"text":["MVY","MARTHAS VINEYARD VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-72.716199,42.161959]},"properties":{"text":["BAF","BARNES VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.661256,39.171063]},"properties":{"text":["BAL","BALTIMORE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.866256,38.807219]},"properties":{"text":["ADW","ANDREWS VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.375116,39.412236]},"properties":{"text":["FDK","FREDERICK VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-79.050567,39.635067]},"properties":{"text":["GRV","GRANTSVILLE DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.855718,39.697727]},"properties":{"text":["HGR","HAGERSTOWN VOR"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.744746,38.705871]},"properties":{"text":["OTT","NOTTINGHAM TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.410634,38.281047]},"properties":{"text":["NHK","NAS PATUXENT RIVER TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.510574,38.345006]},"properties":{"text":["SBY","SALISBURY VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.463901,38.056594]},"properties":{"text":["SWL","SNOW HILL VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.978572,39.495008]},"properties":{"text":["EMI","WESTMINSTER VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-70.613526,43.425672]},"properties":{"text":["ENE","KENNEBUNK VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-83.557004,45.082779]},"properties":{"text":["APN","ALPENA VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-83.457573,42.048027]},"properties":{"text":["CRL","CARLETON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-83.366663,42.213136]},"properties":{"text":["DXO","DETROIT VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.089598,45.722635]},"properties":{"text":["ESC","ESCANABA VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-83.746988,42.966766]},"properties":{"text":["FNT","FLINT VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.704279,45.012486]},"properties":{"text":["GLR","GAYLORD DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.497073,42.786717]},"properties":{"text":["VIO","VICTORY VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.728597,44.681418]},"properties":{"text":["CGG","GRAYLING VOR"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.485393,47.170262]},"properties":{"text":["CMX","HOUGHTON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.112136,45.816044]},"properties":{"text":["IMT","IRON MOUNTAIN DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-90.12585,46.532256]},"properties":{"text":["IWD","IRONWOOD VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.458549,42.25924]},"properties":{"text":["JXN","JACKSON DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.553152,42.236986]},"properties":{"text":["AZO","KALAMAZOO DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.122706,42.144412]},"properties":{"text":["ELX","KEELER VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.254044,44.270642]},"properties":{"text":["MBL","MANISTEE DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.173436,45.976335]},"properties":{"text":["ISQ","SCHOOLCRAFT COUNTY DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.397422,46.358923]},"properties":{"text":["SAW","SAWYER VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.647165,45.180153]},"properties":{"text":["MNM","MENOMINEE DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-82.831771,42.612888]},"properties":{"text":["MTC","SELFRIDGE TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.737265,43.622826]},"properties":{"text":["MOP","MOUNT PLEASANT VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.039378,43.169253]},"properties":{"text":["MKG","MUSKEGON TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.318452,41.768611]},"properties":{"text":["GIJ","GIPPER VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-83.394283,44.449128]},"properties":{"text":["ASP","AU SABLE DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-82.717929,43.255886]},"properties":{"text":["ECK","PECK TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.664108,45.630646]},"properties":{"text":["PLN","PELLSTON VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-83.532773,42.70086]},"properties":{"text":["PSI","PONTIAC DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.104808,42.466034]},"properties":{"text":["PMM","PULLMAN VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.077303,43.531648]},"properties":{"text":["MBS","SAGINAW VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-83.593902,42.408641]},"properties":{"text":["SVM","SALEM VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.314872,46.41211]},"properties":{"text":["SSM","SAULT STE MARIE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.550011,44.667916]},"properties":{"text":["TVC","TRAVERSE CITY VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-93.370755,43.681735]},"properties":{"text":["AEL","ALBERT LEA VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.232635,45.958388]},"properties":{"text":["AXN","ALEXANDRIA VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-94.923309,47.507707]},"properties":{"text":["IDJ","LAKE BEMIDJI VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-94.45385,45.087462]},"properties":{"text":["DWN","DARWIN DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.887323,46.825524]},"properties":{"text":["DTL","DETROIT LAKES VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-92.202869,46.802164]},"properties":{"text":["DLH","DULUTH VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-92.185926,46.843851]},"properties":{"text":["LKI","LAKESIDE TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-91.83014,47.8219]},"properties":{"text":["ELO","ELY DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-94.413198,43.637758]},"properties":{"text":["FNX","FAIRMONT DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-93.182053,44.630953]},"properties":{"text":["FGT","FARMINGTON VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-93.488932,47.163444]},"properties":{"text":["GPZ","GRAND RAPIDS VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-92.704043,47.301531]},"properties":{"text":["HIB","HIBBING VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-93.912356,44.219907]},"properties":{"text":["MKT","MANKATO DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.824762,44.448412]},"properties":{"text":["MML","MARSHALL VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-93.442689,44.82535]},"properties":{"text":["FCM","FLYING CLOUD VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-93.373181,45.145685]},"properties":{"text":["GEP","GOPHER VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-93.236532,44.896499]},"properties":{"text":["MSP","MINNEAPOLIS VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.712192,44.972676]},"properties":{"text":["MVE","MONTEVIDEO VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.969333,45.565417]},"properties":{"text":["MOX","MORRIS VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-93.3705,44.204444]},"properties":{"text":["FOW","HALFWAY VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-91.467516,43.912329]},"properties":{"text":["ODI","NODINE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.07101,46.898086]},"properties":{"text":["PKD","PARK RAPIDS DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.12823,44.467274]},"properties":{"text":["RWF","REDWOOD FALLS VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-92.59696,43.782903]},"properties":{"text":["RST","ROCHESTER VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-94.0586,45.549307]},"properties":{"text":["STC","ST CLOUD VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.127061,45.117671]},"properties":{"text":["BDH","WILLMAR VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.581834,43.646776]},"properties":{"text":["OTG","WORTHINGTON DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-93.875278,39.630556]},"properties":{"text":["BQS","BRAYMER VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-94.488261,38.27208]},"properties":{"text":["BUM","BUTLER VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.572411,37.227539]},"properties":{"text":["CGI","CAPE GIRARDEAU DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-92.218274,38.810823]},"properties":{"text":["COU","COLUMBIA VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-92.876923,37.023469]},"properties":{"text":["DGD","DOGWOOD VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-90.234061,37.673463]},"properties":{"text":["FAM","FARMINGTON VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-90.971269,38.694334]},"properties":{"text":["FTZ","FORISTELL VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-92.138994,37.742432]},"properties":{"text":["TBN","FORNEY VOR"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-92.128234,39.113541]},"properties":{"text":["HLV","HALLSVILLE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-92.602412,38.040617]},"properties":{"text":["SHY","SUNSHINE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-94.737061,39.285283]},"properties":{"text":["MCI","KANSAS CITY VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-92.591715,40.135018]},"properties":{"text":["IRK","KIRKSVILLE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-93.550431,38.7357]},"properties":{"text":["SZL","WHITEMAN TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-92.482136,39.654047]},"properties":{"text":["MCM","MACON DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.911422,36.555114]},"properties":{"text":["MAW","MALDEN TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-91.78857,37.590765]},"properties":{"text":["MAP","MAPLES TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-94.128835,39.095424]},"properties":{"text":["ANX","NAPOLEON VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-94.435701,36.842448]},"properties":{"text":["EOS","NEOSHO DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-91.706772,38.154072]},"properties":{"text":["VIH","VICHY VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-93.334044,37.355947]},"properties":{"text":["SGF","SPRINGFIELD VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-94.92522,39.960578]},"properties":{"text":["STJ","ST JOSEPH VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-90.36096,38.752744]},"properties":{"text":["CSX","CARDINAL DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-90.482349,38.860723]},"properties":{"text":["STL","ST LOUIS VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-91.899992,36.871384]},"properties":{"text":["HUW","HUTTON DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.496519,34.770246]},"properties":{"text":["HLI","HOLLY SPRINGS VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-82.268614,35.406506]},"properties":{"text":["SUG","SUGARLOAF MOUNTAIN VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-80.951753,35.190289]},"properties":{"text":["CLT","CHARLOTTE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.874795,34.902264]},"properties":{"text":["NKT","CHERRY POINT TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.871545,36.372914]},"properties":{"text":["CVI","COFIELD VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.175598,36.257573]},"properties":{"text":["ECG","ELIZABETH CITY VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-78.875064,34.985551]},"properties":{"text":["FAY","FAYETTEVILLE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-79.019572,35.168422]},"properties":{"text":["POB","POPE TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.971317,35.335198]},"properties":{"text":["GSB","SEYMOUR JOHNSON TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-79.976371,36.045693]},"properties":{"text":["GSO","GREENSBORO VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-81.240529,35.868854]},"properties":{"text":["BZM","BARRETTS MOUNTAIN VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.440302,34.707142]},"properties":{"text":["NCA","NEW RIVER TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.558315,35.370948]},"properties":{"text":["ISO","KINSTON VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-79.612592,35.811621]},"properties":{"text":["LIB","LIBERTY VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.696935,35.920505]},"properties":{"text":["RBX","WRIGHT BROTHERS VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.045066,35.073141]},"properties":{"text":["EWN","NEW BERN VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-78.783342,35.872521]},"properties":{"text":["RDU","RALEIGH/DURHAM VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.703732,35.976724]},"properties":{"text":["TYI","TAR RIVER VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-79.587937,35.215481]},"properties":{"text":["SDZ","SANDHILLS VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.900008,41.117231]},"properties":{"text":["OFF","OFFUTT TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-71.186192,44.633533]},"properties":{"text":["BML","BERLIN DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-71.575453,43.219787]},"properties":{"text":["CON","CONCORD VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-72.291778,42.794278]},"properties":{"text":["EEN","KEENE DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-72.216074,43.678856]},"properties":{"text":["LEB","LEBANON DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-71.369534,42.86853]},"properties":{"text":["MHT","MANCHESTER DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-70.831987,43.084464]},"properties":{"text":["PSM","PEASE DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-74.576315,39.455875]},"properties":{"text":["ACY","ATLANTIC CITY VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-74.159729,40.311629]},"properties":{"text":["COL","COLTS NECK VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-74.431626,39.817338]},"properties":{"text":["CYN","COYLE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-74.353143,40.036971]},"properties":{"text":["NEL","LAKEHURST TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-74.967144,39.537671]},"properties":{"text":["VCN","CEDAR LAKE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-74.177967,40.674344]},"properties":{"text":["EWR","NEWARK DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-74.495026,40.202402]},"properties":{"text":["RBV","ROBBINSVILLE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-74.821832,40.798433]},"properties":{"text":["BWZ","BROADWAY VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-74.800344,39.095509]},"properties":{"text":["SIE","SEA ISLE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-74.741791,40.583044]},"properties":{"text":["SBJ","SOLBERG VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-74.538308,41.067541]},"properties":{"text":["SAX","SPARTA VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-74.86903,40.99582]},"properties":{"text":["STW","STILLWATER VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-74.062237,40.848724]},"properties":{"text":["TEB","TETERBORO VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.303056,39.636078]},"properties":{"text":["OOD","WOODSTOWN VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-74.596511,40.009475]},"properties":{"text":["GXU","MC GUIRE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-73.803184,42.747281]},"properties":{"text":["ALB","ALBANY VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.136472,42.15749]},"properties":{"text":["CFB","BINGHAMTON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-78.646349,42.928991]},"properties":{"text":["BUF","BUFFALO DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-72.798858,40.929619]},"properties":{"text":["CCC","CALVERTON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-73.344019,42.994289]},"properties":{"text":["CAM","CAMBRIDGE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-73.894463,40.612469]},"properties":{"text":["CRI","CANARSIE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-73.581326,41.280089]},"properties":{"text":["CMK","CARMEL VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-73.303677,40.791767]},"properties":{"text":["DPK","DEER PARK VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-74.956941,42.178281]},"properties":{"text":["DNY","DELANCEY VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-79.274103,42.4904]},"properties":{"text":["DKK","DUNKIRK DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-72.316704,40.918996]},"properties":{"text":["HTO","HAMPTON VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.732751,42.834396]},"properties":{"text":["GEE","GENESEO VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.826747,42.788956]},"properties":{"text":["GGT","GEORGETOWN TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.316284,42.063057]},"properties":{"text":["HNK","HANCOCK VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-74.591594,41.409687]},"properties":{"text":["HUO","HUGUENOT VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.459727,42.495027]},"properties":{"text":["ITH","ITHACA DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-79.121308,42.188607]},"properties":{"text":["JHW","JAMESTOWN VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-73.822239,41.665452]},"properties":{"text":["IGN","KINGSTON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-74.722718,44.914422]},"properties":{"text":["MSS","MASSENA TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-73.771392,40.632884]},"properties":{"text":["JFK","KENNEDY VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-73.868599,40.783715]},"properties":{"text":["LGA","LA GUARDIA VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-78.960239,43.112546]},"properties":{"text":["IAG","NIAGARA FALLS TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-73.600551,41.769771]},"properties":{"text":["PWL","PAWLING VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.672795,43.117959]},"properties":{"text":["ROC","ROCHESTER VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.239228,42.466331]},"properties":{"text":["RKA","ROCKDALE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-74.204506,44.38456]},"properties":{"text":["SLK","SARANAC LAKE DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.204559,43.160519]},"properties":{"text":["SYR","SYRACUSE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.164522,43.026514]},"properties":{"text":["UCA","UTICA TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.064627,43.952132]},"properties":{"text":["ART","WATERTOWN VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.999549,42.089651]},"properties":{"text":["ELZ","WELLSVILLE DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-72.631841,40.837775]},"properties":{"text":["FOK","SUFFOLK CO TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-81.201519,41.107903]},"properties":{"text":["ACO","AKRON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-82.588301,40.151063]},"properties":{"text":["APE","APPLETON VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-80.817229,40.017024]},"properties":{"text":["AIR","BELLAIRE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-81.432117,40.740706]},"properties":{"text":["BSV","BRIGGS VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-81.163186,41.516928]},"properties":{"text":["CXR","CHARDON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-82.977941,39.526884]},"properties":{"text":["XUB","YELLOW BUD VOR"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-82.161969,41.358065]},"properties":{"text":["DJB","DRYER VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.396898,40.016444]},"properties":{"text":["DQN","DAYTON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.055481,39.818978]},"properties":{"text":["FFO","PATTERSON TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-83.756025,40.955334]},"properties":{"text":["FBC","FLAG CITY VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-80.748111,41.760117]},"properties":{"text":["JFN","JEFFERSON DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-82.590961,40.868612]},"properties":{"text":["MFD","MANSFIELD TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-83.063826,40.616598]},"properties":{"text":["BUD","BUCKEYE VOR"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-81.476477,40.229209]},"properties":{"text":["CTW","NEWCOMERSTOWN DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.043096,40.287801]},"properties":{"text":["ROD","ROSEWOOD VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-83.844956,39.836541]},"properties":{"text":["SGH","SPRINGFIELD DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-83.840625,39.83813]},"properties":{"text":["XSF","SPRINGFIELD TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-83.799364,41.593702]},"properties":{"text":["TOL","TOLEDO TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-83.801239,39.429695]},"properties":{"text":["MXQ","MIDWEST VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-80.674656,41.331024]},"properties":{"text":["YNG","YOUNGSTOWN TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-81.892603,39.940859]},"properties":{"text":["ZZV","ZANESVILLE DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-96.018431,36.834335]},"properties":{"text":["BVO","BARTLESVILLE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.782344,34.849441]},"properties":{"text":["MLC","MC ALESTER TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.865954,35.693074]},"properties":{"text":["OKM","OKMULGEE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-94.609002,34.680465]},"properties":{"text":["PGO","RICH MOUNTAIN VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.968651,35.9209]},"properties":{"text":["GNP","GLENPOOL DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-95.78809,36.196253]},"properties":{"text":["TUL","TULSA VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.454745,40.726687]},"properties":{"text":["FJC","ALLENTOWN VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-78.619349,41.786387]},"properties":{"text":["BFD","BRADFORD DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-79.457974,41.146293]},"properties":{"text":["CIP","CLARION DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.68403,40.581039]},"properties":{"text":["ETX","EAST TEXAS VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-80.211546,40.824933]},"properties":{"text":["EWC","ELLWOOD CITY VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-80.292698,42.017397]},"properties":{"text":["ERI","ERIE TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-79.856706,41.438498]},"properties":{"text":["FKL","FRANKLIN VOR"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.069559,40.30224]},"properties":{"text":["HAR","HARRISBURG VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-78.834166,40.316726]},"properties":{"text":["JST","JOHNSTOWN VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-78.142756,41.21495]},"properties":{"text":["ETG","KEATING VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.291295,40.119976]},"properties":{"text":["LRP","LANCASTER VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.66529,41.023392]},"properties":{"text":["MIP","MILTON VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.670821,39.91805]},"properties":{"text":["MXE","MODENA VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.992717,40.916259]},"properties":{"text":["PSB","PHILIPSBURG VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-80.040855,40.278644]},"properties":{"text":["AGC","ALLEGHENY VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-80.193833,40.488]},"properties":{"text":["MMJ","MONTOUR DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.560251,40.222232]},"properties":{"text":["PTW","POTTSTOWN VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.599381,40.553393]},"properties":{"text":["RAV","RAVINE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-78.747022,40.546459]},"properties":{"text":["REC","REVLOC DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.884042,40.790859]},"properties":{"text":["SEG","SELINSGROVE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-79.358368,39.974242]},"properties":{"text":["IHD","INDIAN HEAD TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.97011,41.512759]},"properties":{"text":["SLT","SLATE RUN VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.950944,39.933228]},"properties":{"text":["THS","ST THOMAS TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.419906,41.695253]},"properties":{"text":["SFK","STONYFORK VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-79.417271,41.713032]},"properties":{"text":["TDT","TIDIOUTE DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.689466,41.272799]},"properties":{"text":["LVZ","WILKES-BARRE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.774867,41.338559]},"properties":{"text":["FQM","WILLIAMSPORT VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-74.907612,40.253342]},"properties":{"text":["ARD","YARDLEY VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-71.576086,41.167436]},"properties":{"text":["SEY","SANDY POINT VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-71.429641,41.724342]},"properties":{"text":["PVD","PROVIDENCE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-81.198308,34.783006]},"properties":{"text":["XKD","CHESTER DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-80.274916,34.650498]},"properties":{"text":["CTF","CHESTERFIELD VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-81.92701,35.033626]},"properties":{"text":["SPA","SPARTANBURG VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-83.297661,34.695873]},"properties":{"text":["ODF","FOOTHILLS VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.451801,35.833942]},"properties":{"text":["GHM","GRAHAM DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.153369,34.961274]},"properties":{"text":["GQO","CHOO CHOO DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.412659,36.621986]},"properties":{"text":["CKV","CLARKSVILLE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.978452,35.781013]},"properties":{"text":["HCH","HINCH MOUNTAIN VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.317692,36.01855]},"properties":{"text":["DYR","DYERSBURG TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-82.1296,36.437056]},"properties":{"text":["HMV","HOLSTON MOUNTAIN VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.910429,35.603565]},"properties":{"text":["MKL","MC KELLAR VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-83.89472,35.904839]},"properties":{"text":["VXV","VOLUNTEER VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.166623,36.584509]},"properties":{"text":["LVT","LIVINGSTON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.983202,35.015106]},"properties":{"text":["MEM","MEMPHIS VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.684771,36.13696]},"properties":{"text":["BNA","NASHVILLE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.439149,35.561975]},"properties":{"text":["SYI","SHELBYVILLE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-83.052369,35.790099]},"properties":{"text":["SOT","SNOWBIRD VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-82.078974,36.825101]},"properties":{"text":["GZG","GLADE SPRING VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.352866,38.336257]},"properties":{"text":["BRV","BROOKE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.997653,37.347539]},"properties":{"text":["CCV","CAPE CHARLES VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.865499,38.641202]},"properties":{"text":["CSN","CASANOVA VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-80.712882,37.087686]},"properties":{"text":["PSK","PULASKI VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.828219,37.528509]},"properties":{"text":["FAK","FLAT ROCK VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-78.153027,38.013599]},"properties":{"text":["GVE","GORDONSVILLE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.359408,37.085557]},"properties":{"text":["LFI","LANGLEY TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.711354,37.44866]},"properties":{"text":["HCM","HARCUM VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.466702,38.934592]},"properties":{"text":["AML","ARMEL VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.115944,37.32887]},"properties":{"text":["HPW","HOPEWELL VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.902968,36.818036]},"properties":{"text":["LVL","LAWRENCEVILLE DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-78.205571,38.854398]},"properties":{"text":["LDN","LINDEN VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-79.236381,37.254577]},"properties":{"text":["LYH","LYNCHBURG VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-79.106889,37.900525]},"properties":{"text":["MOL","MONTEBELLO VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.277282,36.940045]},"properties":{"text":["NGU","CHAMBERS TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.200327,36.891905]},"properties":{"text":["ORF","NORFOLK VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.320276,37.502348]},"properties":{"text":["RIC","RICHMOND VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-80.070397,37.343463]},"properties":{"text":["ROA","ROANOKE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-79.014499,36.675039]},"properties":{"text":["SBV","SOUTH BOSTON VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-76.037046,36.824223]},"properties":{"text":["NTU","OCEANA TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-72.449363,44.085477]},"properties":{"text":["MPV","MONTPELIER VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-73.156757,44.476936]},"properties":{"text":["BJA","BURLINGTON TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-73.182635,44.397105]},"properties":{"text":["BTV","BURLINGTON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-72.950722,43.52677]},"properties":{"text":["RUT","RUTLAND DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.763622,43.550836]},"properties":{"text":["DLL","DELLS VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.301779,42.689324]},"properties":{"text":["BUU","BURBUN DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-90.259047,43.942833]},"properties":{"text":["VOK","VOLK TACAN"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-91.478535,44.89767]},"properties":{"text":["EAU","EAU CLAIRE VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.194857,44.55516]},"properties":{"text":["GRB","GREEN BAY VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-91.446396,46.019007]},"properties":{"text":["HYR","HAYWARD DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.105258,42.558008]},"properties":{"text":["JVL","JANESVILLE VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.931672,42.599077]},"properties":{"text":["ENW","KENOSHA DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-91.255993,43.876122]},"properties":{"text":["LSE","LA CROSSE DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-90.133146,43.294403]},"properties":{"text":["LNR","LONE ROCK DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.339697,43.144835]},"properties":{"text":["MSN","MADISON VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.679918,44.128499]},"properties":{"text":["MTW","MANITOWOC DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.284344,43.116853]},"properties":{"text":["BAE","BADGER VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.037281,43.109775]},"properties":{"text":["LJT","TIMMERMAN DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.555932,43.99043]},"properties":{"text":["OSH","OSHKOSH VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.814722,42.762167]},"properties":{"text":["HRK","HORLICK DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.457781,45.633789]},"properties":{"text":["RHI","RHINELANDER VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.848769,43.768786]},"properties":{"text":["FAH","FALLS DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-92.374516,45.820445]},"properties":{"text":["RZN","SIREN DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-88.125181,43.421972]},"properties":{"text":["BJB","WEST BEND VOR"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-81.123456,37.7803]},"properties":{"text":["BKW","BECKLEY DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-81.194269,37.30644]},"properties":{"text":["BLF","BLUEFIELD VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-81.769914,38.349676]},"properties":{"text":["HVQ","CHARLESTON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-80.267862,39.253218]},"properties":{"text":["CKB","CLARKSBURG VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-80.099272,38.914436]},"properties":{"text":["EKN","ELKINS VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-82.026168,38.754125]},"properties":{"text":["HNN","HENDERSON DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-78.9895,39.225493]},"properties":{"text":["ESL","KESSEL VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-80.391818,37.863865]},"properties":{"text":["LWB","GREENBRIER DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.848356,39.385572]},"properties":{"text":["MRB","MARTINSBURG VORTAC"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-79.860412,39.556715]},"properties":{"text":["MGW","MORGANTOWN VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-81.374761,39.44118]},"properties":{"text":["JPU","PARKERSBURG VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-80.568625,40.259902]},"properties":{"text":["HLG","WHEELING VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-70.846038,45.925056]},"properties":{"text":["YJX","BEAUCE DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-81.14893,43.037911]},"properties":{"text":["YXU","LONDON VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-73.970833,45.615833]},"properties":{"text":["YUL","MONTREAL VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-71.269281,48.017128]},"properties":{"text":["YUC","SAGUENAY DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-75.896934,45.441703]},"properties":{"text":["YOW","OTTAWA DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-79.631431,43.658021]},"properties":{"text":["YYZ","TORONTO VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-77.820756,48.175081]},"properties":{"text":["YVO","VAL-D'OR VOR/DME"]}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-81.105319,44.744725]},"properties":{"text":["YVV","WIARTON VOR/DME"]}}]}
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.0,
+          180.0
+        ]
+      },
+      "properties": {
+        "isTextDefaults": true,
+        "bcg": 12,
+        "filters": [
+          12
+        ],
+        "size": 1,
+        "underline": false,
+        "opaque": false,
+        "xOffset": 12,
+        "yOffset": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.939513,
+          34.648314
+        ]
+      },
+      "properties": {
+        "text": [
+          "DCU",
+          "DECATUR DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.633847,
+          34.797239
+        ]
+      },
+      "properties": {
+        "text": [
+          "RQZ",
+          "ROCKET VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.491517,
+          34.706869
+        ]
+      },
+      "properties": {
+        "text": [
+          "MSL",
+          "MUSCLE SHOALS DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.121391,
+          36.246427
+        ]
+      },
+      "properties": {
+        "text": [
+          "RZC",
+          "RAZORBACK VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.458389,
+          36.299646
+        ]
+      },
+      "properties": {
+        "text": [
+          "FLP",
+          "FLIPPIN DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.271524,
+          35.388408
+        ]
+      },
+      "properties": {
+        "text": [
+          "FSM",
+          "FORT SMITH VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.478159,
+          35.34703
+        ]
+      },
+      "properties": {
+        "text": [
+          "GQE",
+          "GILMORE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.213272,
+          36.318308
+        ]
+      },
+      "properties": {
+        "text": [
+          "HRO",
+          "HARRISON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.674401,
+          34.575047
+        ]
+      },
+      "properties": {
+        "text": [
+          "UJM",
+          "MARVELL VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.157668,
+          34.918064
+        ]
+      },
+      "properties": {
+        "text": [
+          "LRF",
+          "JACKSONVILLE TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.588504,
+          35.874916
+        ]
+      },
+      "properties": {
+        "text": [
+          "JBR",
+          "JONESBORO VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.180528,
+          34.677673
+        ]
+      },
+      "properties": {
+        "text": [
+          "LIT",
+          "LITTLE ROCK VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.953693,
+          36.11002
+        ]
+      },
+      "properties": {
+        "text": [
+          "ARG",
+          "WALNUT RIDGE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.124486,
+          41.160706
+        ]
+      },
+      "properties": {
+        "text": [
+          "BDR",
+          "BRIDGEPORT VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.051985,
+          41.330402
+        ]
+      },
+      "properties": {
+        "text": [
+          "GON",
+          "GROTON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.547418,
+          41.641105
+        ]
+      },
+      "properties": {
+        "text": [
+          "HFD",
+          "HARTFORD VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.692203,
+          41.313861
+        ]
+      },
+      "properties": {
+        "text": [
+          "MAD",
+          "MADISON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.88519,
+          41.262313
+        ]
+      },
+      "properties": {
+        "text": [
+          "HVN",
+          "NEW HAVEN DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.999353,
+          41.556404
+        ]
+      },
+      "properties": {
+        "text": [
+          "ORW",
+          "NORWICH VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.844095,
+          41.95546
+        ]
+      },
+      "properties": {
+        "text": [
+          "PUT",
+          "PUTNAM VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.699873,
+          41.930562
+        ]
+      },
+      "properties": {
+        "text": [
+          "BYT",
+          "BRADLEY DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.036436,
+          38.859453
+        ]
+      },
+      "properties": {
+        "text": [
+          "DCA",
+          "WASHINGTON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.467408,
+          39.1324
+        ]
+      },
+      "properties": {
+        "text": [
+          "DOV",
+          "DOVER TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.51597,
+          39.231647
+        ]
+      },
+      "properties": {
+        "text": [
+          "ENO",
+          "SMYRNA VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.211323,
+          38.80981
+        ]
+      },
+      "properties": {
+        "text": [
+          "ATR",
+          "WATERLOO VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.607086,
+          39.67814
+        ]
+      },
+      "properties": {
+        "text": [
+          "DQO",
+          "DUPONT VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.915674,
+          34.942998
+        ]
+      },
+      "properties": {
+        "text": [
+          "HRS",
+          "HARRIS TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.92589,
+          40.723456
+        ]
+      },
+      "properties": {
+        "text": [
+          "BRL",
+          "BURLINGTON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.785749,
+          41.887548
+        ]
+      },
+      "properties": {
+        "text": [
+          "CID",
+          "CEDAR RAPIDS VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.483314,
+          41.708548
+        ]
+      },
+      "properties": {
+        "text": [
+          "CVA",
+          "DAVENPORT VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.648558,
+          41.437625
+        ]
+      },
+      "properties": {
+        "text": [
+          "DSM",
+          "DES MOINES VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.709078,
+          42.401469
+        ]
+      },
+      "properties": {
+        "text": [
+          "DBQ",
+          "DUBUQUE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.294816,
+          42.611125
+        ]
+      },
+      "properties": {
+        "text": [
+          "FOD",
+          "FORT DODGE TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.613252,
+          41.51896
+        ]
+      },
+      "properties": {
+        "text": [
+          "IOW",
+          "IOWA CITY VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.967592,
+          40.596764
+        ]
+      },
+      "properties": {
+        "text": [
+          "LMN",
+          "LAMONI VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.908746,
+          42.111293
+        ]
+      },
+      "properties": {
+        "text": [
+          "JWJ",
+          "ELMWOOD DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.329872,
+          43.094757
+        ]
+      },
+      "properties": {
+        "text": [
+          "MCW",
+          "MASON CITY VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.736853,
+          41.167167
+        ]
+      },
+      "properties": {
+        "text": [
+          "OVR",
+          "OMAHA VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.149279,
+          41.366299
+        ]
+      },
+      "properties": {
+        "text": [
+          "DDD",
+          "PORT CITY DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.109032,
+          41.783884
+        ]
+      },
+      "properties": {
+        "text": [
+          "TNU",
+          "NEWTON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.325906,
+          41.029146
+        ]
+      },
+      "properties": {
+        "text": [
+          "OTM",
+          "OTTUMWA DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.200992,
+          43.162177
+        ]
+      },
+      "properties": {
+        "text": [
+          "SPW",
+          "SPENCER VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.398924,
+          42.556497
+        ]
+      },
+      "properties": {
+        "text": [
+          "ALO",
+          "WATERLOO VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.537362,
+          43.280086
+        ]
+      },
+      "properties": {
+        "text": [
+          "UKN",
+          "WAUKON DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.851646,
+          38.545362
+        ]
+      },
+      "properties": {
+        "text": [
+          "SKE",
+          "SCOTT TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.481805,
+          38.920345
+        ]
+      },
+      "properties": {
+        "text": [
+          "BIB",
+          "BIBLE GROVE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.931266,
+          40.480805
+        ]
+      },
+      "properties": {
+        "text": [
+          "BMI",
+          "BLOOMINGTON DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.587873,
+          41.159731
+        ]
+      },
+      "properties": {
+        "text": [
+          "BDF",
+          "BRADFORD TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.158998,
+          38.419999
+        ]
+      },
+      "properties": {
+        "text": [
+          "ENL",
+          "CENTRALIA VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.276076,
+          40.034531
+        ]
+      },
+      "properties": {
+        "text": [
+          "CMI",
+          "CHAMPAIGN VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.902328,
+          41.994089
+        ]
+      },
+      "properties": {
+        "text": [
+          "GCO",
+          "CHICAGO DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.571546,
+          41.510007
+        ]
+      },
+      "properties": {
+        "text": [
+          "CGT",
+          "CHICAGO HEIGHTS VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.199272,
+          42.225578
+        ]
+      },
+      "properties": {
+        "text": [
+          "RFD",
+          "ROCKFORD DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.350178,
+          41.890371
+        ]
+      },
+      "properties": {
+        "text": [
+          "DPA",
+          "DUPAGE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.55726,
+          40.293766
+        ]
+      },
+      "properties": {
+        "text": [
+          "DNV",
+          "DANVILLE TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.856431,
+          39.737521
+        ]
+      },
+      "properties": {
+        "text": [
+          "AXC",
+          "ADDERS VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.434464,
+          40.937343
+        ]
+      },
+      "properties": {
+        "text": [
+          "GBG",
+          "GALESBURG DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.238605,
+          39.776521
+        ]
+      },
+      "properties": {
+        "text": [
+          "IJX",
+          "JACKSONVILLE DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.318411,
+          41.546419
+        ]
+      },
+      "properties": {
+        "text": [
+          "JOT",
+          "JOLIET VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.850163,
+          41.074379
+        ]
+      },
+      "properties": {
+        "text": [
+          "IKK",
+          "KANKAKEE DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.603828,
+          38.769868
+        ]
+      },
+      "properties": {
+        "text": [
+          "LWV",
+          "LAWRENCEVILLE DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.011803,
+          37.754379
+        ]
+      },
+      "properties": {
+        "text": [
+          "MWA",
+          "MARION DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.286208,
+          39.477892
+        ]
+      },
+      "properties": {
+        "text": [
+          "MTO",
+          "MATTOON DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.638214,
+          41.320921
+        ]
+      },
+      "properties": {
+        "text": [
+          "MZV",
+          "MOLINE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.807337,
+          38.361954
+        ]
+      },
+      "properties": {
+        "text": [
+          "VNN",
+          "MOUNT VERNON DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.95167,
+          42.221377
+        ]
+      },
+      "properties": {
+        "text": [
+          "OBK",
+          "NORTHBROOK VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.792753,
+          40.680069
+        ]
+      },
+      "properties": {
+        "text": [
+          "PIA",
+          "PEORIA VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.791054,
+          41.269632
+        ]
+      },
+      "properties": {
+        "text": [
+          "EON",
+          "PEOTONE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.52422,
+          41.965642
+        ]
+      },
+      "properties": {
+        "text": [
+          "PLL",
+          "POLO DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.733509,
+          40.821201
+        ]
+      },
+      "properties": {
+        "text": [
+          "PNT",
+          "PONTIAC DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.278924,
+          39.847875
+        ]
+      },
+      "properties": {
+        "text": [
+          "UIN",
+          "QUINCY TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.164268,
+          40.581701
+        ]
+      },
+      "properties": {
+        "text": [
+          "RBS",
+          "ROBERTS VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.085806,
+          38.485188
+        ]
+      },
+      "properties": {
+        "text": [
+          "SAM",
+          "SAMSVILLE DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.677736,
+          39.839733
+        ]
+      },
+      "properties": {
+        "text": [
+          "SPI",
+          "SPINNER VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.918592,
+          38.73915
+        ]
+      },
+      "properties": {
+        "text": [
+          "TOY",
+          "TROY VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.162367,
+          39.093775
+        ]
+      },
+      "properties": {
+        "text": [
+          "VLA",
+          "VANDALIA DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.613018,
+          39.143822
+        ]
+      },
+      "properties": {
+        "text": [
+          "OOM",
+          "HOOSIER VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.76238,
+          37.92832
+        ]
+      },
+      "properties": {
+        "text": [
+          "PXV",
+          "POCKET CITY VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.188058,
+          40.979064
+        ]
+      },
+      "properties": {
+        "text": [
+          "FWA",
+          "FORT WAYNE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.027953,
+          41.525155
+        ]
+      },
+      "properties": {
+        "text": [
+          "GSH",
+          "GOSHEN TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.3675,
+          39.814729
+        ]
+      },
+      "properties": {
+        "text": [
+          "VHP",
+          "BRICKYARD VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.649289,
+          41.322059
+        ]
+      },
+      "properties": {
+        "text": [
+          "OXI",
+          "KNOX DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.057999,
+          40.52778
+        ]
+      },
+      "properties": {
+        "text": [
+          "OKK",
+          "KOKOMO TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.069374,
+          40.556172
+        ]
+      },
+      "properties": {
+        "text": [
+          "BVT",
+          "BOILER VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.470644,
+          38.758339
+        ]
+      },
+      "properties": {
+        "text": [
+          "GVR",
+          "HANOVER DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.67925,
+          40.493331
+        ]
+      },
+      "properties": {
+        "text": [
+          "MZZ",
+          "MARION VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.394037,
+          40.237292
+        ]
+      },
+      "properties": {
+        "text": [
+          "MIE",
+          "MUNCIE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.151714,
+          40.644906
+        ]
+      },
+      "properties": {
+        "text": [
+          "GUS",
+          "GRISSOM TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.838829,
+          39.755008
+        ]
+      },
+      "properties": {
+        "text": [
+          "RID",
+          "RICHMOND DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.824316,
+          39.632542
+        ]
+      },
+      "properties": {
+        "text": [
+          "SHB",
+          "SHELBYVILLE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.249013,
+          39.488942
+        ]
+      },
+      "properties": {
+        "text": [
+          "TTH",
+          "TERRE HAUTE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.497397,
+          41.246908
+        ]
+      },
+      "properties": {
+        "text": [
+          "OLK",
+          "WEBSTER LAKE VOR"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.59347,
+          37.626159
+        ]
+      },
+      "properties": {
+        "text": [
+          "CNU",
+          "CHANUTE DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.203633,
+          37.157511
+        ]
+      },
+      "properties": {
+        "text": [
+          "OSW",
+          "OSWEGO DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.423547,
+          39.850925
+        ]
+      },
+      "properties": {
+        "text": [
+          "RBA",
+          "ROBINSON DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.661179,
+          38.94737
+        ]
+      },
+      "properties": {
+        "text": [
+          "FOE",
+          "FORBES TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.549169,
+          39.137078
+        ]
+      },
+      "properties": {
+        "text": [
+          "TOP",
+          "TOPEKA VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.423333,
+          36.964444
+        ]
+      },
+      "properties": {
+        "text": [
+          "BWG",
+          "BOWLING GREEN DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.263704,
+          37.382422
+        ]
+      },
+      "properties": {
+        "text": [
+          "CCT",
+          "CENTRAL CITY DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.703346,
+          39.015981
+        ]
+      },
+      "properties": {
+        "text": [
+          "CVG",
+          "CINCINNATI TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.310602,
+          38.649441
+        ]
+      },
+      "properties": {
+        "text": [
+          "FLM",
+          "FALMOUTH VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.511136,
+          36.659304
+        ]
+      },
+      "properties": {
+        "text": [
+          "HXW",
+          "SCREAMING EAGLE TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.972564,
+          37.907217
+        ]
+      },
+      "properties": {
+        "text": [
+          "FTK",
+          "FORT KNOX VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.908623,
+          38.182423
+        ]
+      },
+      "properties": {
+        "text": [
+          "FFT",
+          "FRANKFORT VOR"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.263005,
+          37.391257
+        ]
+      },
+      "properties": {
+        "text": [
+          "AZQ",
+          "HAZARD DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.472528,
+          37.966349
+        ]
+      },
+      "properties": {
+        "text": [
+          "HYK",
+          "LEXINGTON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.110075,
+          37.03315
+        ]
+      },
+      "properties": {
+        "text": [
+          "LOZ",
+          "LONDON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.577437,
+          38.103464
+        ]
+      },
+      "properties": {
+        "text": [
+          "IIU",
+          "LOUISVILLE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.244528,
+          37.894066
+        ]
+      },
+      "properties": {
+        "text": [
+          "MYS",
+          "MYSTIC VOR"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.675878,
+          37.631811
+        ]
+      },
+      "properties": {
+        "text": [
+          "EWO",
+          "NEW HOPE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.910055,
+          38.158362
+        ]
+      },
+      "properties": {
+        "text": [
+          "ECB",
+          "NEWCOMBE DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.165937,
+          37.743555
+        ]
+      },
+      "properties": {
+        "text": [
+          "OWB",
+          "OWENSBORO VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.836913,
+          37.008609
+        ]
+      },
+      "properties": {
+        "text": [
+          "CNG",
+          "CUNNINGHAM VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.978339,
+          38.644133
+        ]
+      },
+      "properties": {
+        "text": [
+          "YRK",
+          "YORK TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.989548,
+          42.35745
+        ]
+      },
+      "properties": {
+        "text": [
+          "BOS",
+          "BOSTON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.949394,
+          42.291319
+        ]
+      },
+      "properties": {
+        "text": [
+          "CTR",
+          "CHESTER VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.058188,
+          42.545921
+        ]
+      },
+      "properties": {
+        "text": [
+          "GDM",
+          "GARDNER VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.09485,
+          42.740418
+        ]
+      },
+      "properties": {
+        "text": [
+          "LWM",
+          "LAWRENCE DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.026704,
+          41.281875
+        ]
+      },
+      "properties": {
+        "text": [
+          "ACK",
+          "NANTUCKET VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.037232,
+          42.017188
+        ]
+      },
+      "properties": {
+        "text": [
+          "LFV",
+          "MARCONI VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.526315,
+          42.197544
+        ]
+      },
+      "properties": {
+        "text": [
+          "CEF",
+          "WESTOVER TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.612716,
+          41.396215
+        ]
+      },
+      "properties": {
+        "text": [
+          "MVY",
+          "MARTHAS VINEYARD VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.716199,
+          42.161959
+        ]
+      },
+      "properties": {
+        "text": [
+          "BAF",
+          "BARNES VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.661256,
+          39.171063
+        ]
+      },
+      "properties": {
+        "text": [
+          "BAL",
+          "BALTIMORE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.866256,
+          38.807219
+        ]
+      },
+      "properties": {
+        "text": [
+          "ADW",
+          "ANDREWS VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.375116,
+          39.412236
+        ]
+      },
+      "properties": {
+        "text": [
+          "FDK",
+          "FREDERICK VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.050567,
+          39.635067
+        ]
+      },
+      "properties": {
+        "text": [
+          "GRV",
+          "GRANTSVILLE DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.855718,
+          39.697727
+        ]
+      },
+      "properties": {
+        "text": [
+          "HGR",
+          "HAGERSTOWN VOR"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.744746,
+          38.705871
+        ]
+      },
+      "properties": {
+        "text": [
+          "OTT",
+          "NOTTINGHAM TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.410634,
+          38.281047
+        ]
+      },
+      "properties": {
+        "text": [
+          "NHK",
+          "NAS PATUXENT RIVER TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.510574,
+          38.345006
+        ]
+      },
+      "properties": {
+        "text": [
+          "SBY",
+          "SALISBURY VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.463901,
+          38.056594
+        ]
+      },
+      "properties": {
+        "text": [
+          "SWL",
+          "SNOW HILL VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.978572,
+          39.495008
+        ]
+      },
+      "properties": {
+        "text": [
+          "EMI",
+          "WESTMINSTER VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.613526,
+          43.425672
+        ]
+      },
+      "properties": {
+        "text": [
+          "ENE",
+          "KENNEBUNK VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.557004,
+          45.082779
+        ]
+      },
+      "properties": {
+        "text": [
+          "APN",
+          "ALPENA VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.457573,
+          42.048027
+        ]
+      },
+      "properties": {
+        "text": [
+          "CRL",
+          "CARLETON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.366663,
+          42.213136
+        ]
+      },
+      "properties": {
+        "text": [
+          "DXO",
+          "DETROIT VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.089598,
+          45.722635
+        ]
+      },
+      "properties": {
+        "text": [
+          "ESC",
+          "ESCANABA VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.746988,
+          42.966766
+        ]
+      },
+      "properties": {
+        "text": [
+          "FNT",
+          "FLINT VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.704279,
+          45.012486
+        ]
+      },
+      "properties": {
+        "text": [
+          "GLR",
+          "GAYLORD DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.497073,
+          42.786717
+        ]
+      },
+      "properties": {
+        "text": [
+          "VIO",
+          "VICTORY VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.728597,
+          44.681418
+        ]
+      },
+      "properties": {
+        "text": [
+          "CGG",
+          "GRAYLING VOR"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.485393,
+          47.170262
+        ]
+      },
+      "properties": {
+        "text": [
+          "CMX",
+          "HOUGHTON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.112136,
+          45.816044
+        ]
+      },
+      "properties": {
+        "text": [
+          "IMT",
+          "IRON MOUNTAIN DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.12585,
+          46.532256
+        ]
+      },
+      "properties": {
+        "text": [
+          "IWD",
+          "IRONWOOD VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.458549,
+          42.25924
+        ]
+      },
+      "properties": {
+        "text": [
+          "JXN",
+          "JACKSON DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.553152,
+          42.236986
+        ]
+      },
+      "properties": {
+        "text": [
+          "AZO",
+          "KALAMAZOO DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.122706,
+          42.144412
+        ]
+      },
+      "properties": {
+        "text": [
+          "ELX",
+          "KEELER VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.254044,
+          44.270642
+        ]
+      },
+      "properties": {
+        "text": [
+          "MBL",
+          "MANISTEE DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.173436,
+          45.976335
+        ]
+      },
+      "properties": {
+        "text": [
+          "ISQ",
+          "SCHOOLCRAFT COUNTY DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.397422,
+          46.358923
+        ]
+      },
+      "properties": {
+        "text": [
+          "SAW",
+          "SAWYER VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.647165,
+          45.180153
+        ]
+      },
+      "properties": {
+        "text": [
+          "MNM",
+          "MENOMINEE DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.831771,
+          42.612888
+        ]
+      },
+      "properties": {
+        "text": [
+          "MTC",
+          "SELFRIDGE TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.737265,
+          43.622826
+        ]
+      },
+      "properties": {
+        "text": [
+          "MOP",
+          "MOUNT PLEASANT VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.039378,
+          43.169253
+        ]
+      },
+      "properties": {
+        "text": [
+          "MKG",
+          "MUSKEGON TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.318452,
+          41.768611
+        ]
+      },
+      "properties": {
+        "text": [
+          "GIJ",
+          "GIPPER VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.394283,
+          44.449128
+        ]
+      },
+      "properties": {
+        "text": [
+          "ASP",
+          "AU SABLE DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.717929,
+          43.255886
+        ]
+      },
+      "properties": {
+        "text": [
+          "ECK",
+          "PECK TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.664108,
+          45.630646
+        ]
+      },
+      "properties": {
+        "text": [
+          "PLN",
+          "PELLSTON VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.532773,
+          42.70086
+        ]
+      },
+      "properties": {
+        "text": [
+          "PSI",
+          "PONTIAC DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.104808,
+          42.466034
+        ]
+      },
+      "properties": {
+        "text": [
+          "PMM",
+          "PULLMAN VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.077303,
+          43.531648
+        ]
+      },
+      "properties": {
+        "text": [
+          "MBS",
+          "SAGINAW VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.593902,
+          42.408641
+        ]
+      },
+      "properties": {
+        "text": [
+          "SVM",
+          "SALEM VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.314872,
+          46.41211
+        ]
+      },
+      "properties": {
+        "text": [
+          "SSM",
+          "SAULT STE MARIE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.550011,
+          44.667916
+        ]
+      },
+      "properties": {
+        "text": [
+          "TVC",
+          "TRAVERSE CITY VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.370755,
+          43.681735
+        ]
+      },
+      "properties": {
+        "text": [
+          "AEL",
+          "ALBERT LEA VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.232635,
+          45.958388
+        ]
+      },
+      "properties": {
+        "text": [
+          "AXN",
+          "ALEXANDRIA VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.923309,
+          47.507707
+        ]
+      },
+      "properties": {
+        "text": [
+          "IDJ",
+          "LAKE BEMIDJI VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.45385,
+          45.087462
+        ]
+      },
+      "properties": {
+        "text": [
+          "DWN",
+          "DARWIN DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.887323,
+          46.825524
+        ]
+      },
+      "properties": {
+        "text": [
+          "DTL",
+          "DETROIT LAKES VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.202869,
+          46.802164
+        ]
+      },
+      "properties": {
+        "text": [
+          "DLH",
+          "DULUTH VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.185926,
+          46.843851
+        ]
+      },
+      "properties": {
+        "text": [
+          "LKI",
+          "LAKESIDE TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.83014,
+          47.8219
+        ]
+      },
+      "properties": {
+        "text": [
+          "ELO",
+          "ELY DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.413198,
+          43.637758
+        ]
+      },
+      "properties": {
+        "text": [
+          "FNX",
+          "FAIRMONT DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.182053,
+          44.630953
+        ]
+      },
+      "properties": {
+        "text": [
+          "FGT",
+          "FARMINGTON VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.488932,
+          47.163444
+        ]
+      },
+      "properties": {
+        "text": [
+          "GPZ",
+          "GRAND RAPIDS VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.704043,
+          47.301531
+        ]
+      },
+      "properties": {
+        "text": [
+          "HIB",
+          "HIBBING VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.912356,
+          44.219907
+        ]
+      },
+      "properties": {
+        "text": [
+          "MKT",
+          "MANKATO DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.824762,
+          44.448412
+        ]
+      },
+      "properties": {
+        "text": [
+          "MML",
+          "MARSHALL VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.442689,
+          44.82535
+        ]
+      },
+      "properties": {
+        "text": [
+          "FCM",
+          "FLYING CLOUD VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.373181,
+          45.145685
+        ]
+      },
+      "properties": {
+        "text": [
+          "GEP",
+          "GOPHER VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.236532,
+          44.896499
+        ]
+      },
+      "properties": {
+        "text": [
+          "MSP",
+          "MINNEAPOLIS VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.712192,
+          44.972676
+        ]
+      },
+      "properties": {
+        "text": [
+          "MVE",
+          "MONTEVIDEO VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.969333,
+          45.565417
+        ]
+      },
+      "properties": {
+        "text": [
+          "MOX",
+          "MORRIS VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.3705,
+          44.204444
+        ]
+      },
+      "properties": {
+        "text": [
+          "FOW",
+          "HALFWAY VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.467516,
+          43.912329
+        ]
+      },
+      "properties": {
+        "text": [
+          "ODI",
+          "NODINE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.07101,
+          46.898086
+        ]
+      },
+      "properties": {
+        "text": [
+          "PKD",
+          "PARK RAPIDS DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.12823,
+          44.467274
+        ]
+      },
+      "properties": {
+        "text": [
+          "RWF",
+          "REDWOOD FALLS VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.59696,
+          43.782903
+        ]
+      },
+      "properties": {
+        "text": [
+          "RST",
+          "ROCHESTER VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.0586,
+          45.549307
+        ]
+      },
+      "properties": {
+        "text": [
+          "STC",
+          "ST CLOUD VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.127061,
+          45.117671
+        ]
+      },
+      "properties": {
+        "text": [
+          "BDH",
+          "WILLMAR VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.581834,
+          43.646776
+        ]
+      },
+      "properties": {
+        "text": [
+          "OTG",
+          "WORTHINGTON DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.875278,
+          39.630556
+        ]
+      },
+      "properties": {
+        "text": [
+          "BQS",
+          "BRAYMER VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.488261,
+          38.27208
+        ]
+      },
+      "properties": {
+        "text": [
+          "BUM",
+          "BUTLER VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.572411,
+          37.227539
+        ]
+      },
+      "properties": {
+        "text": [
+          "CGI",
+          "CAPE GIRARDEAU DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.218274,
+          38.810823
+        ]
+      },
+      "properties": {
+        "text": [
+          "COU",
+          "COLUMBIA VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.876923,
+          37.023469
+        ]
+      },
+      "properties": {
+        "text": [
+          "DGD",
+          "DOGWOOD VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.234061,
+          37.673463
+        ]
+      },
+      "properties": {
+        "text": [
+          "FAM",
+          "FARMINGTON VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.971269,
+          38.694334
+        ]
+      },
+      "properties": {
+        "text": [
+          "FTZ",
+          "FORISTELL VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.138994,
+          37.742432
+        ]
+      },
+      "properties": {
+        "text": [
+          "TBN",
+          "FORNEY VOR"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.128234,
+          39.113541
+        ]
+      },
+      "properties": {
+        "text": [
+          "HLV",
+          "HALLSVILLE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.602412,
+          38.040617
+        ]
+      },
+      "properties": {
+        "text": [
+          "SHY",
+          "SUNSHINE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.737061,
+          39.285283
+        ]
+      },
+      "properties": {
+        "text": [
+          "MCI",
+          "KANSAS CITY VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.591715,
+          40.135018
+        ]
+      },
+      "properties": {
+        "text": [
+          "IRK",
+          "KIRKSVILLE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.550431,
+          38.7357
+        ]
+      },
+      "properties": {
+        "text": [
+          "SZL",
+          "WHITEMAN TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.482136,
+          39.654047
+        ]
+      },
+      "properties": {
+        "text": [
+          "MCM",
+          "MACON DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.911422,
+          36.555114
+        ]
+      },
+      "properties": {
+        "text": [
+          "MAW",
+          "MALDEN TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.78857,
+          37.590765
+        ]
+      },
+      "properties": {
+        "text": [
+          "MAP",
+          "MAPLES TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.128835,
+          39.095424
+        ]
+      },
+      "properties": {
+        "text": [
+          "ANX",
+          "NAPOLEON VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.435701,
+          36.842448
+        ]
+      },
+      "properties": {
+        "text": [
+          "EOS",
+          "NEOSHO DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.706772,
+          38.154072
+        ]
+      },
+      "properties": {
+        "text": [
+          "VIH",
+          "VICHY VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.334044,
+          37.355947
+        ]
+      },
+      "properties": {
+        "text": [
+          "SGF",
+          "SPRINGFIELD VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.92522,
+          39.960578
+        ]
+      },
+      "properties": {
+        "text": [
+          "STJ",
+          "ST JOSEPH VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.36096,
+          38.752744
+        ]
+      },
+      "properties": {
+        "text": [
+          "CSX",
+          "CARDINAL DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.482349,
+          38.860723
+        ]
+      },
+      "properties": {
+        "text": [
+          "STL",
+          "ST LOUIS VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.899992,
+          36.871384
+        ]
+      },
+      "properties": {
+        "text": [
+          "HUW",
+          "HUTTON DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.496519,
+          34.770246
+        ]
+      },
+      "properties": {
+        "text": [
+          "HLI",
+          "HOLLY SPRINGS VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.268614,
+          35.406506
+        ]
+      },
+      "properties": {
+        "text": [
+          "SUG",
+          "SUGARLOAF MOUNTAIN VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.951753,
+          35.190289
+        ]
+      },
+      "properties": {
+        "text": [
+          "CLT",
+          "CHARLOTTE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.874795,
+          34.902264
+        ]
+      },
+      "properties": {
+        "text": [
+          "NKT",
+          "CHERRY POINT TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.871545,
+          36.372914
+        ]
+      },
+      "properties": {
+        "text": [
+          "CVI",
+          "COFIELD VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.175598,
+          36.257573
+        ]
+      },
+      "properties": {
+        "text": [
+          "ECG",
+          "ELIZABETH CITY VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.875064,
+          34.985551
+        ]
+      },
+      "properties": {
+        "text": [
+          "FAY",
+          "FAYETTEVILLE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.019572,
+          35.168422
+        ]
+      },
+      "properties": {
+        "text": [
+          "POB",
+          "POPE TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.971317,
+          35.335198
+        ]
+      },
+      "properties": {
+        "text": [
+          "GSB",
+          "SEYMOUR JOHNSON TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.976371,
+          36.045693
+        ]
+      },
+      "properties": {
+        "text": [
+          "GSO",
+          "GREENSBORO VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.240529,
+          35.868854
+        ]
+      },
+      "properties": {
+        "text": [
+          "BZM",
+          "BARRETTS MOUNTAIN VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.440302,
+          34.707142
+        ]
+      },
+      "properties": {
+        "text": [
+          "NCA",
+          "NEW RIVER TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.558315,
+          35.370948
+        ]
+      },
+      "properties": {
+        "text": [
+          "ISO",
+          "KINSTON VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.612592,
+          35.811621
+        ]
+      },
+      "properties": {
+        "text": [
+          "LIB",
+          "LIBERTY VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.696935,
+          35.920505
+        ]
+      },
+      "properties": {
+        "text": [
+          "RBX",
+          "WRIGHT BROTHERS VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.045066,
+          35.073141
+        ]
+      },
+      "properties": {
+        "text": [
+          "EWN",
+          "NEW BERN VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.783342,
+          35.872521
+        ]
+      },
+      "properties": {
+        "text": [
+          "RDU",
+          "RALEIGH/DURHAM VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.703732,
+          35.976724
+        ]
+      },
+      "properties": {
+        "text": [
+          "TYI",
+          "TAR RIVER VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.587937,
+          35.215481
+        ]
+      },
+      "properties": {
+        "text": [
+          "SDZ",
+          "SANDHILLS VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.900008,
+          41.117231
+        ]
+      },
+      "properties": {
+        "text": [
+          "OFF",
+          "OFFUTT TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.186192,
+          44.633533
+        ]
+      },
+      "properties": {
+        "text": [
+          "BML",
+          "BERLIN DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575453,
+          43.219787
+        ]
+      },
+      "properties": {
+        "text": [
+          "CON",
+          "CONCORD VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.291778,
+          42.794278
+        ]
+      },
+      "properties": {
+        "text": [
+          "EEN",
+          "KEENE DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.216074,
+          43.678856
+        ]
+      },
+      "properties": {
+        "text": [
+          "LEB",
+          "LEBANON DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.369534,
+          42.86853
+        ]
+      },
+      "properties": {
+        "text": [
+          "MHT",
+          "MANCHESTER DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.831987,
+          43.084464
+        ]
+      },
+      "properties": {
+        "text": [
+          "PSM",
+          "PEASE DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.576315,
+          39.455875
+        ]
+      },
+      "properties": {
+        "text": [
+          "ACY",
+          "ATLANTIC CITY VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.159729,
+          40.311629
+        ]
+      },
+      "properties": {
+        "text": [
+          "COL",
+          "COLTS NECK VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.431626,
+          39.817338
+        ]
+      },
+      "properties": {
+        "text": [
+          "CYN",
+          "COYLE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.353143,
+          40.036971
+        ]
+      },
+      "properties": {
+        "text": [
+          "NEL",
+          "LAKEHURST TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.967144,
+          39.537671
+        ]
+      },
+      "properties": {
+        "text": [
+          "VCN",
+          "CEDAR LAKE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.177967,
+          40.674344
+        ]
+      },
+      "properties": {
+        "text": [
+          "EWR",
+          "NEWARK DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.495026,
+          40.202402
+        ]
+      },
+      "properties": {
+        "text": [
+          "RBV",
+          "ROBBINSVILLE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.821832,
+          40.798433
+        ]
+      },
+      "properties": {
+        "text": [
+          "BWZ",
+          "BROADWAY VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.800344,
+          39.095509
+        ]
+      },
+      "properties": {
+        "text": [
+          "SIE",
+          "SEA ISLE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.741791,
+          40.583044
+        ]
+      },
+      "properties": {
+        "text": [
+          "SBJ",
+          "SOLBERG VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.538308,
+          41.067541
+        ]
+      },
+      "properties": {
+        "text": [
+          "SAX",
+          "SPARTA VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.86903,
+          40.99582
+        ]
+      },
+      "properties": {
+        "text": [
+          "STW",
+          "STILLWATER VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.062237,
+          40.848724
+        ]
+      },
+      "properties": {
+        "text": [
+          "TEB",
+          "TETERBORO VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.303056,
+          39.636078
+        ]
+      },
+      "properties": {
+        "text": [
+          "OOD",
+          "WOODSTOWN VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.596511,
+          40.009475
+        ]
+      },
+      "properties": {
+        "text": [
+          "GXU",
+          "MC GUIRE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.803184,
+          42.747281
+        ]
+      },
+      "properties": {
+        "text": [
+          "ALB",
+          "ALBANY VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.136472,
+          42.15749
+        ]
+      },
+      "properties": {
+        "text": [
+          "CFB",
+          "BINGHAMTON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.646349,
+          42.928991
+        ]
+      },
+      "properties": {
+        "text": [
+          "BUF",
+          "BUFFALO DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.798858,
+          40.929619
+        ]
+      },
+      "properties": {
+        "text": [
+          "CCC",
+          "CALVERTON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.344019,
+          42.994289
+        ]
+      },
+      "properties": {
+        "text": [
+          "CAM",
+          "CAMBRIDGE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.894463,
+          40.612469
+        ]
+      },
+      "properties": {
+        "text": [
+          "CRI",
+          "CANARSIE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.581326,
+          41.280089
+        ]
+      },
+      "properties": {
+        "text": [
+          "CMK",
+          "CARMEL VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.303677,
+          40.791767
+        ]
+      },
+      "properties": {
+        "text": [
+          "DPK",
+          "DEER PARK VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.956941,
+          42.178281
+        ]
+      },
+      "properties": {
+        "text": [
+          "DNY",
+          "DELANCEY VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.274103,
+          42.4904
+        ]
+      },
+      "properties": {
+        "text": [
+          "DKK",
+          "DUNKIRK DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.316704,
+          40.918996
+        ]
+      },
+      "properties": {
+        "text": [
+          "HTO",
+          "HAMPTON VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.732751,
+          42.834396
+        ]
+      },
+      "properties": {
+        "text": [
+          "GEE",
+          "GENESEO VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.826747,
+          42.788956
+        ]
+      },
+      "properties": {
+        "text": [
+          "GGT",
+          "GEORGETOWN TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.316284,
+          42.063057
+        ]
+      },
+      "properties": {
+        "text": [
+          "HNK",
+          "HANCOCK VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.591594,
+          41.409687
+        ]
+      },
+      "properties": {
+        "text": [
+          "HUO",
+          "HUGUENOT VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.459727,
+          42.495027
+        ]
+      },
+      "properties": {
+        "text": [
+          "ITH",
+          "ITHACA DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.121308,
+          42.188607
+        ]
+      },
+      "properties": {
+        "text": [
+          "JHW",
+          "JAMESTOWN VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.822239,
+          41.665452
+        ]
+      },
+      "properties": {
+        "text": [
+          "IGN",
+          "KINGSTON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.722718,
+          44.914422
+        ]
+      },
+      "properties": {
+        "text": [
+          "MSS",
+          "MASSENA TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.771392,
+          40.632884
+        ]
+      },
+      "properties": {
+        "text": [
+          "JFK",
+          "KENNEDY VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.868599,
+          40.783715
+        ]
+      },
+      "properties": {
+        "text": [
+          "LGA",
+          "LA GUARDIA VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.960239,
+          43.112546
+        ]
+      },
+      "properties": {
+        "text": [
+          "IAG",
+          "NIAGARA FALLS TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.600551,
+          41.769771
+        ]
+      },
+      "properties": {
+        "text": [
+          "PWL",
+          "PAWLING VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.672795,
+          43.117959
+        ]
+      },
+      "properties": {
+        "text": [
+          "ROC",
+          "ROCHESTER VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.239228,
+          42.466331
+        ]
+      },
+      "properties": {
+        "text": [
+          "RKA",
+          "ROCKDALE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.204506,
+          44.38456
+        ]
+      },
+      "properties": {
+        "text": [
+          "SLK",
+          "SARANAC LAKE DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.204559,
+          43.160519
+        ]
+      },
+      "properties": {
+        "text": [
+          "SYR",
+          "SYRACUSE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.164522,
+          43.026514
+        ]
+      },
+      "properties": {
+        "text": [
+          "UCA",
+          "UTICA TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.064627,
+          43.952132
+        ]
+      },
+      "properties": {
+        "text": [
+          "ART",
+          "WATERTOWN VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.999549,
+          42.089651
+        ]
+      },
+      "properties": {
+        "text": [
+          "ELZ",
+          "WELLSVILLE DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.631841,
+          40.837775
+        ]
+      },
+      "properties": {
+        "text": [
+          "FOK",
+          "SUFFOLK CO TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.201519,
+          41.107903
+        ]
+      },
+      "properties": {
+        "text": [
+          "ACO",
+          "AKRON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.588301,
+          40.151063
+        ]
+      },
+      "properties": {
+        "text": [
+          "APE",
+          "APPLETON VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.817229,
+          40.017024
+        ]
+      },
+      "properties": {
+        "text": [
+          "AIR",
+          "BELLAIRE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.432117,
+          40.740706
+        ]
+      },
+      "properties": {
+        "text": [
+          "BSV",
+          "BRIGGS VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.163186,
+          41.516928
+        ]
+      },
+      "properties": {
+        "text": [
+          "CXR",
+          "CHARDON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.977941,
+          39.526884
+        ]
+      },
+      "properties": {
+        "text": [
+          "XUB",
+          "YELLOW BUD VOR"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.161969,
+          41.358065
+        ]
+      },
+      "properties": {
+        "text": [
+          "DJB",
+          "DRYER VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.396898,
+          40.016444
+        ]
+      },
+      "properties": {
+        "text": [
+          "DQN",
+          "DAYTON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.055481,
+          39.818978
+        ]
+      },
+      "properties": {
+        "text": [
+          "FFO",
+          "PATTERSON TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.756025,
+          40.955334
+        ]
+      },
+      "properties": {
+        "text": [
+          "FBC",
+          "FLAG CITY VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.748111,
+          41.760117
+        ]
+      },
+      "properties": {
+        "text": [
+          "JFN",
+          "JEFFERSON DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.590961,
+          40.868612
+        ]
+      },
+      "properties": {
+        "text": [
+          "MFD",
+          "MANSFIELD TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.063826,
+          40.616598
+        ]
+      },
+      "properties": {
+        "text": [
+          "BUD",
+          "BUCKEYE VOR"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.476477,
+          40.229209
+        ]
+      },
+      "properties": {
+        "text": [
+          "CTW",
+          "NEWCOMERSTOWN DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.043096,
+          40.287801
+        ]
+      },
+      "properties": {
+        "text": [
+          "ROD",
+          "ROSEWOOD VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.844956,
+          39.836541
+        ]
+      },
+      "properties": {
+        "text": [
+          "SGH",
+          "SPRINGFIELD DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.840625,
+          39.83813
+        ]
+      },
+      "properties": {
+        "text": [
+          "XSF",
+          "SPRINGFIELD TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.799364,
+          41.593702
+        ]
+      },
+      "properties": {
+        "text": [
+          "TOL",
+          "TOLEDO TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.801239,
+          39.429695
+        ]
+      },
+      "properties": {
+        "text": [
+          "MXQ",
+          "MIDWEST VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.674656,
+          41.331024
+        ]
+      },
+      "properties": {
+        "text": [
+          "YNG",
+          "YOUNGSTOWN TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.892603,
+          39.940859
+        ]
+      },
+      "properties": {
+        "text": [
+          "ZZV",
+          "ZANESVILLE DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.018431,
+          36.834335
+        ]
+      },
+      "properties": {
+        "text": [
+          "BVO",
+          "BARTLESVILLE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.782344,
+          34.849441
+        ]
+      },
+      "properties": {
+        "text": [
+          "MLC",
+          "MC ALESTER TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.865954,
+          35.693074
+        ]
+      },
+      "properties": {
+        "text": [
+          "OKM",
+          "OKMULGEE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.609002,
+          34.680465
+        ]
+      },
+      "properties": {
+        "text": [
+          "PGO",
+          "RICH MOUNTAIN VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.968651,
+          35.9209
+        ]
+      },
+      "properties": {
+        "text": [
+          "GNP",
+          "GLENPOOL DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.78809,
+          36.196253
+        ]
+      },
+      "properties": {
+        "text": [
+          "TUL",
+          "TULSA VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.454745,
+          40.726687
+        ]
+      },
+      "properties": {
+        "text": [
+          "FJC",
+          "ALLENTOWN VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.619349,
+          41.786387
+        ]
+      },
+      "properties": {
+        "text": [
+          "BFD",
+          "BRADFORD DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.457974,
+          41.146293
+        ]
+      },
+      "properties": {
+        "text": [
+          "CIP",
+          "CLARION DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.68403,
+          40.581039
+        ]
+      },
+      "properties": {
+        "text": [
+          "ETX",
+          "EAST TEXAS VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.211546,
+          40.824933
+        ]
+      },
+      "properties": {
+        "text": [
+          "EWC",
+          "ELLWOOD CITY VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.292698,
+          42.017397
+        ]
+      },
+      "properties": {
+        "text": [
+          "ERI",
+          "ERIE TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.856706,
+          41.438498
+        ]
+      },
+      "properties": {
+        "text": [
+          "FKL",
+          "FRANKLIN VOR"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.069559,
+          40.30224
+        ]
+      },
+      "properties": {
+        "text": [
+          "HAR",
+          "HARRISBURG VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.834166,
+          40.316726
+        ]
+      },
+      "properties": {
+        "text": [
+          "JST",
+          "JOHNSTOWN VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.142756,
+          41.21495
+        ]
+      },
+      "properties": {
+        "text": [
+          "ETG",
+          "KEATING VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.291295,
+          40.119976
+        ]
+      },
+      "properties": {
+        "text": [
+          "LRP",
+          "LANCASTER VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.66529,
+          41.023392
+        ]
+      },
+      "properties": {
+        "text": [
+          "MIP",
+          "MILTON VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.670821,
+          39.91805
+        ]
+      },
+      "properties": {
+        "text": [
+          "MXE",
+          "MODENA VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.992717,
+          40.916259
+        ]
+      },
+      "properties": {
+        "text": [
+          "PSB",
+          "PHILIPSBURG VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.040855,
+          40.278644
+        ]
+      },
+      "properties": {
+        "text": [
+          "AGC",
+          "ALLEGHENY VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.193833,
+          40.488
+        ]
+      },
+      "properties": {
+        "text": [
+          "MMJ",
+          "MONTOUR DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.560251,
+          40.222232
+        ]
+      },
+      "properties": {
+        "text": [
+          "PTW",
+          "POTTSTOWN VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.599381,
+          40.553393
+        ]
+      },
+      "properties": {
+        "text": [
+          "RAV",
+          "RAVINE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.747022,
+          40.546459
+        ]
+      },
+      "properties": {
+        "text": [
+          "REC",
+          "REVLOC DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.884042,
+          40.790859
+        ]
+      },
+      "properties": {
+        "text": [
+          "SEG",
+          "SELINSGROVE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.358368,
+          39.974242
+        ]
+      },
+      "properties": {
+        "text": [
+          "IHD",
+          "INDIAN HEAD TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.97011,
+          41.512759
+        ]
+      },
+      "properties": {
+        "text": [
+          "SLT",
+          "SLATE RUN VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.950944,
+          39.933228
+        ]
+      },
+      "properties": {
+        "text": [
+          "THS",
+          "ST THOMAS TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.419906,
+          41.695253
+        ]
+      },
+      "properties": {
+        "text": [
+          "SFK",
+          "STONYFORK VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.417271,
+          41.713032
+        ]
+      },
+      "properties": {
+        "text": [
+          "TDT",
+          "TIDIOUTE DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.689466,
+          41.272799
+        ]
+      },
+      "properties": {
+        "text": [
+          "LVZ",
+          "WILKES-BARRE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.774867,
+          41.338559
+        ]
+      },
+      "properties": {
+        "text": [
+          "FQM",
+          "WILLIAMSPORT VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.907612,
+          40.253342
+        ]
+      },
+      "properties": {
+        "text": [
+          "ARD",
+          "YARDLEY VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576086,
+          41.167436
+        ]
+      },
+      "properties": {
+        "text": [
+          "SEY",
+          "SANDY POINT VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.429641,
+          41.724342
+        ]
+      },
+      "properties": {
+        "text": [
+          "PVD",
+          "PROVIDENCE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.198308,
+          34.783006
+        ]
+      },
+      "properties": {
+        "text": [
+          "XKD",
+          "CHESTER DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.274916,
+          34.650498
+        ]
+      },
+      "properties": {
+        "text": [
+          "CTF",
+          "CHESTERFIELD VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.92701,
+          35.033626
+        ]
+      },
+      "properties": {
+        "text": [
+          "SPA",
+          "SPARTANBURG VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.297661,
+          34.695873
+        ]
+      },
+      "properties": {
+        "text": [
+          "ODF",
+          "FOOTHILLS VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.451801,
+          35.833942
+        ]
+      },
+      "properties": {
+        "text": [
+          "GHM",
+          "GRAHAM DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.153369,
+          34.961274
+        ]
+      },
+      "properties": {
+        "text": [
+          "GQO",
+          "CHOO CHOO DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.412659,
+          36.621986
+        ]
+      },
+      "properties": {
+        "text": [
+          "CKV",
+          "CLARKSVILLE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.978452,
+          35.781013
+        ]
+      },
+      "properties": {
+        "text": [
+          "HCH",
+          "HINCH MOUNTAIN VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.317692,
+          36.01855
+        ]
+      },
+      "properties": {
+        "text": [
+          "DYR",
+          "DYERSBURG TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.1296,
+          36.437056
+        ]
+      },
+      "properties": {
+        "text": [
+          "HMV",
+          "HOLSTON MOUNTAIN VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.910429,
+          35.603565
+        ]
+      },
+      "properties": {
+        "text": [
+          "MKL",
+          "MC KELLAR VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.89472,
+          35.904839
+        ]
+      },
+      "properties": {
+        "text": [
+          "VXV",
+          "VOLUNTEER VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.166623,
+          36.584509
+        ]
+      },
+      "properties": {
+        "text": [
+          "LVT",
+          "LIVINGSTON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.983202,
+          35.015106
+        ]
+      },
+      "properties": {
+        "text": [
+          "MEM",
+          "MEMPHIS VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.684771,
+          36.13696
+        ]
+      },
+      "properties": {
+        "text": [
+          "BNA",
+          "NASHVILLE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.439149,
+          35.561975
+        ]
+      },
+      "properties": {
+        "text": [
+          "SYI",
+          "SHELBYVILLE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.052369,
+          35.790099
+        ]
+      },
+      "properties": {
+        "text": [
+          "SOT",
+          "SNOWBIRD VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.078974,
+          36.825101
+        ]
+      },
+      "properties": {
+        "text": [
+          "GZG",
+          "GLADE SPRING VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.352866,
+          38.336257
+        ]
+      },
+      "properties": {
+        "text": [
+          "BRV",
+          "BROOKE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.997653,
+          37.347539
+        ]
+      },
+      "properties": {
+        "text": [
+          "CCV",
+          "CAPE CHARLES VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.865499,
+          38.641202
+        ]
+      },
+      "properties": {
+        "text": [
+          "CSN",
+          "CASANOVA VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.712882,
+          37.087686
+        ]
+      },
+      "properties": {
+        "text": [
+          "PSK",
+          "PULASKI VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.828219,
+          37.528509
+        ]
+      },
+      "properties": {
+        "text": [
+          "FAK",
+          "FLAT ROCK VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.153027,
+          38.013599
+        ]
+      },
+      "properties": {
+        "text": [
+          "GVE",
+          "GORDONSVILLE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.359408,
+          37.085557
+        ]
+      },
+      "properties": {
+        "text": [
+          "LFI",
+          "LANGLEY TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.711354,
+          37.44866
+        ]
+      },
+      "properties": {
+        "text": [
+          "HCM",
+          "HARCUM VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.466702,
+          38.934592
+        ]
+      },
+      "properties": {
+        "text": [
+          "AML",
+          "ARMEL VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.115944,
+          37.32887
+        ]
+      },
+      "properties": {
+        "text": [
+          "HPW",
+          "HOPEWELL VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.902968,
+          36.818036
+        ]
+      },
+      "properties": {
+        "text": [
+          "LVL",
+          "LAWRENCEVILLE DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.205571,
+          38.854398
+        ]
+      },
+      "properties": {
+        "text": [
+          "LDN",
+          "LINDEN VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.236381,
+          37.254577
+        ]
+      },
+      "properties": {
+        "text": [
+          "LYH",
+          "LYNCHBURG VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.106889,
+          37.900525
+        ]
+      },
+      "properties": {
+        "text": [
+          "MOL",
+          "MONTEBELLO VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.277282,
+          36.940045
+        ]
+      },
+      "properties": {
+        "text": [
+          "NGU",
+          "CHAMBERS TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.200327,
+          36.891905
+        ]
+      },
+      "properties": {
+        "text": [
+          "ORF",
+          "NORFOLK VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.320276,
+          37.502348
+        ]
+      },
+      "properties": {
+        "text": [
+          "RIC",
+          "RICHMOND VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.070397,
+          37.343463
+        ]
+      },
+      "properties": {
+        "text": [
+          "ROA",
+          "ROANOKE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.014499,
+          36.675039
+        ]
+      },
+      "properties": {
+        "text": [
+          "SBV",
+          "SOUTH BOSTON VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.037046,
+          36.824223
+        ]
+      },
+      "properties": {
+        "text": [
+          "NTU",
+          "OCEANA TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.449363,
+          44.085477
+        ]
+      },
+      "properties": {
+        "text": [
+          "MPV",
+          "MONTPELIER VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.156757,
+          44.476936
+        ]
+      },
+      "properties": {
+        "text": [
+          "BJA",
+          "BURLINGTON TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.182635,
+          44.397105
+        ]
+      },
+      "properties": {
+        "text": [
+          "BTV",
+          "BURLINGTON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.950722,
+          43.52677
+        ]
+      },
+      "properties": {
+        "text": [
+          "RUT",
+          "RUTLAND DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.763622,
+          43.550836
+        ]
+      },
+      "properties": {
+        "text": [
+          "DLL",
+          "DELLS VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.301779,
+          42.689324
+        ]
+      },
+      "properties": {
+        "text": [
+          "BUU",
+          "BURBUN DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.259047,
+          43.942833
+        ]
+      },
+      "properties": {
+        "text": [
+          "VOK",
+          "VOLK TACAN"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.478535,
+          44.89767
+        ]
+      },
+      "properties": {
+        "text": [
+          "EAU",
+          "EAU CLAIRE VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.194857,
+          44.55516
+        ]
+      },
+      "properties": {
+        "text": [
+          "GRB",
+          "GREEN BAY VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.446396,
+          46.019007
+        ]
+      },
+      "properties": {
+        "text": [
+          "HYR",
+          "HAYWARD DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.105258,
+          42.558008
+        ]
+      },
+      "properties": {
+        "text": [
+          "JVL",
+          "JANESVILLE VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.931672,
+          42.599077
+        ]
+      },
+      "properties": {
+        "text": [
+          "ENW",
+          "KENOSHA DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.255993,
+          43.876122
+        ]
+      },
+      "properties": {
+        "text": [
+          "LSE",
+          "LA CROSSE DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.133146,
+          43.294403
+        ]
+      },
+      "properties": {
+        "text": [
+          "LNR",
+          "LONE ROCK DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.339697,
+          43.144835
+        ]
+      },
+      "properties": {
+        "text": [
+          "MSN",
+          "MADISON VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.679918,
+          44.128499
+        ]
+      },
+      "properties": {
+        "text": [
+          "MTW",
+          "MANITOWOC DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.284344,
+          43.116853
+        ]
+      },
+      "properties": {
+        "text": [
+          "BAE",
+          "BADGER VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.037281,
+          43.109775
+        ]
+      },
+      "properties": {
+        "text": [
+          "LJT",
+          "TIMMERMAN DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.555932,
+          43.99043
+        ]
+      },
+      "properties": {
+        "text": [
+          "OSH",
+          "OSHKOSH VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.814722,
+          42.762167
+        ]
+      },
+      "properties": {
+        "text": [
+          "HRK",
+          "HORLICK DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.457781,
+          45.633789
+        ]
+      },
+      "properties": {
+        "text": [
+          "RHI",
+          "RHINELANDER VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.848769,
+          43.768786
+        ]
+      },
+      "properties": {
+        "text": [
+          "FAH",
+          "FALLS DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.374516,
+          45.820445
+        ]
+      },
+      "properties": {
+        "text": [
+          "RZN",
+          "SIREN DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.125181,
+          43.421972
+        ]
+      },
+      "properties": {
+        "text": [
+          "BJB",
+          "WEST BEND VOR"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.123456,
+          37.7803
+        ]
+      },
+      "properties": {
+        "text": [
+          "BKW",
+          "BECKLEY DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.194269,
+          37.30644
+        ]
+      },
+      "properties": {
+        "text": [
+          "BLF",
+          "BLUEFIELD VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.769914,
+          38.349676
+        ]
+      },
+      "properties": {
+        "text": [
+          "HVQ",
+          "CHARLESTON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.267862,
+          39.253218
+        ]
+      },
+      "properties": {
+        "text": [
+          "CKB",
+          "CLARKSBURG VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.099272,
+          38.914436
+        ]
+      },
+      "properties": {
+        "text": [
+          "EKN",
+          "ELKINS VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.026168,
+          38.754125
+        ]
+      },
+      "properties": {
+        "text": [
+          "HNN",
+          "HENDERSON DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.9895,
+          39.225493
+        ]
+      },
+      "properties": {
+        "text": [
+          "ESL",
+          "KESSEL VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.391818,
+          37.863865
+        ]
+      },
+      "properties": {
+        "text": [
+          "LWB",
+          "GREENBRIER DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.848356,
+          39.385572
+        ]
+      },
+      "properties": {
+        "text": [
+          "MRB",
+          "MARTINSBURG VORTAC"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.860412,
+          39.556715
+        ]
+      },
+      "properties": {
+        "text": [
+          "MGW",
+          "MORGANTOWN VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.374761,
+          39.44118
+        ]
+      },
+      "properties": {
+        "text": [
+          "JPU",
+          "PARKERSBURG VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.568625,
+          40.259902
+        ]
+      },
+      "properties": {
+        "text": [
+          "HLG",
+          "WHEELING VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.846038,
+          45.925056
+        ]
+      },
+      "properties": {
+        "text": [
+          "YJX",
+          "BEAUCE DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.14893,
+          43.037911
+        ]
+      },
+      "properties": {
+        "text": [
+          "YXU",
+          "LONDON VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.970833,
+          45.615833
+        ]
+      },
+      "properties": {
+        "text": [
+          "YUL",
+          "MONTREAL VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.269281,
+          48.017128
+        ]
+      },
+      "properties": {
+        "text": [
+          "YUC",
+          "SAGUENAY DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.896934,
+          45.441703
+        ]
+      },
+      "properties": {
+        "text": [
+          "YOW",
+          "OTTAWA DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.631431,
+          43.658021
+        ]
+      },
+      "properties": {
+        "text": [
+          "YYZ",
+          "TORONTO VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.820756,
+          48.175081
+        ]
+      },
+      "properties": {
+        "text": [
+          "YVO",
+          "VAL-D'OR VOR/DME"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.105319,
+          44.744725
+        ]
+      },
+      "properties": {
+        "text": [
+          "YVV",
+          "WIARTON VOR/DME"
+        ]
+      }
+    }
+  ]
+}

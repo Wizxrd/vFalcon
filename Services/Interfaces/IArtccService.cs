@@ -9,6 +9,8 @@ namespace vFalcon.Services.Interfaces
 {
     public interface IArtccService
     {
-        public Task<Artcc>? LoadArtcc(string artccId);
+        public Task<Artcc?> GetArtcc(string artccId);
+        public IEnumerable<string>? GetStarsPositions(Artcc artcc, string facilityId);
+        public IEnumerable<string>? GetArtccPositions(Artcc artcc);
     }
 }
