@@ -94,7 +94,7 @@ vFalcon allows users to record the live network data while vFalcon is open via t
 **Ctrl+L** | Load recording
 **Ctrl+S** | Save profile
 **Ctrl+G** | Open general settings window
-**Ctrl+F12** | Open positions window
+**Ctrl+P** | Open positions window
 **Ctrl+Shift+S** | Save profile as
 **Ctrl+Shift+P** | Switch profile
 **Shift+S** | Open search by window
