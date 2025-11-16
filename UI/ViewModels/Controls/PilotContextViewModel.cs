@@ -26,6 +26,7 @@ public class PilotContextViewModel : ViewModelBase
     private string heading = string.Empty;
     private string speed = string.Empty;
     private string assignedBeacon = string.Empty;
+    private string frequency = string.Empty;
     private string flightRules = string.Empty;
     private string latLon = string.Empty;
     private string flightPlan = string.Empty;
@@ -99,7 +100,6 @@ public class PilotContextViewModel : ViewModelBase
             OnPropertyChanged();
         }
     }
-
     public string Time
     {
         get => time;
@@ -181,6 +181,16 @@ public class PilotContextViewModel : ViewModelBase
             OnPropertyChanged();
         }
     }
+    public string Frequency
+    {
+        get => frequency;
+        set
+        {
+            frequency = value;
+            OnPropertyChanged();
+        }
+
+    }
     public string FlightRules
     {
         get => flightRules;
@@ -215,6 +225,7 @@ public class PilotContextViewModel : ViewModelBase
     public ICommand CopyCIDCommand { get; set; }
     public ICommand CopyLatLonCommand { get; set; }
     public ICommand DisplayFiledRouteCommand { get; set; }
+    public ICommand DisplayFullRouteCommand { get; set; }
     public ICommand PlotOnSkyVectorCommand { get; set; }
     public ICommand CopyFlightPlanCommand { get; set; }
 
@@ -226,6 +237,7 @@ public class PilotContextViewModel : ViewModelBase
         CopyCIDCommand = new RelayCommand(OnCopyCIDCommand);
         CopyLatLonCommand = new RelayCommand(OnCopyLatLonCommand);
         DisplayFiledRouteCommand = new RelayCommand(OnDisplayFiledRouteCommand);
+        DisplayFullRouteCommand = new RelayCommand(OnDisplayFullRouteCommand);
         PlotOnSkyVectorCommand = new RelayCommand(OnPlotOnSkyVectorCommand);
         CopyFlightPlanCommand = new RelayCommand(OnCopyFlightPlanCommand);
     }
@@ -261,6 +273,12 @@ public class PilotContextViewModel : ViewModelBase
     private void OnDisplayFiledRouteCommand()
     {
         Pilot.DisplayFiledRoute = !Pilot.DisplayFiledRoute;
+        App.MainWindowViewModel.GraphicsEngine.RequestRender();
+    }
+
+    private void OnDisplayFullRouteCommand()
+    {
+        Pilot.DisplayFullRoute = !Pilot.DisplayFullRoute;
         App.MainWindowViewModel.GraphicsEngine.RequestRender();
     }
 

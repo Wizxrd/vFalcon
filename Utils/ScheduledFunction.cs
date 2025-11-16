@@ -48,7 +48,7 @@ public class ScheduledFunction : IDisposable
                 }
                 catch (TaskCanceledException ex)
                 {
-                    Logger.Debug("ScheduledFunction.Start", "Task canceled exception");
+                    Logger.Debug("ScheduledFunction.Start", "Scheduler canceled");
                     break;
                 }
             }

@@ -1,6 +1,7 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using SkiaSharp;
-using System.Windows.Controls;
+using System.Windows.Media.Media3D;
 using vFalcon.Engines;
 using vFalcon.Models;
 using vFalcon.Renderables.Interfaces;
@@ -23,84 +24,92 @@ namespace vFalcon.Renderables
         private const float DatablockYSpacing = 2f;
         private const float DwellEmphasisPadding = 2f;
         private const float StarsTargetSize = 8f;
+        private const float FindBySquareSize = 10f;
 
         public static List<IRenderable> FromFeatures(DisplayState displayState, IEnumerable<ProcessedFeature> features)
         {
             var list = new List<IRenderable>();
-            foreach (var f in features)
+            try
             {
-                var geomType = f.GeometryType == "Line" ? "LineString" : f.GeometryType;
-                var geomObj = f.Geometry as JObject ?? (f.Geometry is JToken t ? (JObject)t : null);
-                if (geomObj == null) continue;
-
-                var coords = geomObj["coordinates"] as JArray;
-                if (coords == null) continue;
-
-                var style = (f.AppliedAttributes.TryGetValue("style", out var sv) && sv != null) ? sv.ToString() : "OtherWaypoints";
-                var rgb = (byte)(App.Profile.AppearanceSettings.MapBrightness * 243 / 100);
-
-                switch (geomType)
+                foreach (var f in features)
                 {
-                    case "LineString":
-                        {
-                            var segments = ToSegments(geomType, coords);
-                            if (segments.Count == 0) break;
-                            SKPaint paint = Paint.VideoMapLine(f, rgb);
-                            foreach (var segment in segments)
+                    var geomType = f.GeometryType == "Line" ? "LineString" : f.GeometryType;
+                    var geomObj = f.Geometry as JObject ?? (f.Geometry is JToken t ? (JObject)t : null);
+                    if (geomObj == null) continue;
+
+                    var coords = geomObj["coordinates"] as JArray;
+                    if (coords == null) continue;
+
+                    var style = (f.AppliedAttributes.TryGetValue("style", out var sv) && sv != null) ? sv.ToString() : "OtherWaypoints";
+                    var rgb = (byte)(App.Profile.AppearanceSettings.MapBrightness * 243 / 100);
+
+                    switch (geomType)
+                    {
+                        case "LineString":
                             {
-                                if (segment.Count < 2) continue;
-                                for (int i = 0; i < segment.Count - 1; i++)
+                                var segments = ToSegments(geomType, coords);
+                                if (segments.Count == 0) break;
+                                SKPaint paint = Paint.VideoMapLine(f, rgb);
+                                foreach (var segment in segments)
                                 {
-                                    SKPoint startScreen = ScreenMap.CoordinateToScreen(displayState.Width, displayState.Height, displayState.Scale, displayState.PanOffset, segment[i].lat, segment[i].lon);
-                                    SKPoint endScreen = ScreenMap.CoordinateToScreen(displayState.Width, displayState.Height, displayState.Scale, displayState.PanOffset, segment[i + 1].lat, segment[i + 1].lon);
-                                    list.Add(new Line(startScreen, endScreen, paint, 0));
+                                    if (segment.Count < 2) continue;
+                                    for (int i = 0; i < segment.Count - 1; i++)
+                                    {
+                                        SKPoint startScreen = ScreenMap.CoordinateToScreen(displayState.Width, displayState.Height, displayState.Scale, displayState.PanOffset, segment[i].lat, segment[i].lon);
+                                        SKPoint endScreen = ScreenMap.CoordinateToScreen(displayState.Width, displayState.Height, displayState.Scale, displayState.PanOffset, segment[i + 1].lat, segment[i + 1].lon);
+                                        list.Add(new Line(startScreen, endScreen, paint, 0));
+                                    }
                                 }
+                                break;
                             }
-                            break;
-                        }
-                    case "MultiLineString":
-                        {
-                            var segments = ToSegments(geomType, coords);
-                            if (segments.Count == 0) break;
-                            SKPaint paint = Paint.VideoMapLine(f, rgb);
-                            foreach (var segment in segments)
+                        case "MultiLineString":
                             {
-                                if (segment.Count < 2) continue;
-                                for (int i = 0; i < segment.Count - 1; i++)
+                                var segments = ToSegments(geomType, coords);
+                                if (segments.Count == 0) break;
+                                SKPaint paint = Paint.VideoMapLine(f, rgb);
+                                foreach (var segment in segments)
                                 {
-                                    SKPoint startScreen = ScreenMap.CoordinateToScreen(displayState.Width, displayState.Height, displayState.Scale, displayState.PanOffset, segment[i].lat, segment[i].lon);
-                                    SKPoint endScreen = ScreenMap.CoordinateToScreen(displayState.Width, displayState.Height, displayState.Scale, displayState.PanOffset, segment[i + 1].lat, segment[i + 1].lon);
-                                    list.Add(new Line(startScreen, endScreen, paint, 0));
+                                    if (segment.Count < 2) continue;
+                                    for (int i = 0; i < segment.Count - 1; i++)
+                                    {
+                                        SKPoint startScreen = ScreenMap.CoordinateToScreen(displayState.Width, displayState.Height, displayState.Scale, displayState.PanOffset, segment[i].lat, segment[i].lon);
+                                        SKPoint endScreen = ScreenMap.CoordinateToScreen(displayState.Width, displayState.Height, displayState.Scale, displayState.PanOffset, segment[i + 1].lat, segment[i + 1].lon);
+                                        list.Add(new Line(startScreen, endScreen, paint, 0));
+                                    }
                                 }
+                                break;
                             }
-                            break;
-                        }
-                    case "Point":
-                        {
-                            double lon = coords[0].Value<double>();
-                            double lat = coords[1].Value<double>();
-                            SKPaint paint = Paint.VideoMapSymbol(rgb);
-                            if (lat != 0 || lon != 0)
+                        case "Point":
                             {
-                                SKPoint screenPoint = ScreenMap.CoordinateToScreen(displayState.Width, displayState.Height, displayState.Scale, displayState.PanOffset, lat, lon);
-                                list.Add(new Symbol(style, screenPoint, paint, 0));
+                                double lon = coords[0].Value<double>();
+                                double lat = coords[1].Value<double>();
+                                SKPaint paint = Paint.VideoMapSymbol(rgb);
+                                if (lat != 0 || lon != 0)
+                                {
+                                    SKPoint screenPoint = ScreenMap.CoordinateToScreen(displayState.Width, displayState.Height, displayState.Scale, displayState.PanOffset, lat, lon);
+                                    list.Add(new Symbol(style, screenPoint, paint, 0));
+                                }
+                                break;
                             }
-                            break;
-                        }
-                    case "Text":
-                        {
-                            double lon = coords[0].Value<double>();
-                            double lat = coords[1].Value<double>();
-                            if (lat != 0 || lon != 0)
+                        case "Text":
                             {
-                                SKPaint paint = Paint.VideoMapText(rgb, f.FontSize);
-                                SKPoint screenPoint = ScreenMap.CoordinateToScreen(displayState.Width, displayState.Height, displayState.Scale, displayState.PanOffset, lat, lon);
-                                SKPoint drawPoint = new SKPoint(screenPoint.X + f.XOffset, screenPoint.Y - (f.YOffset * 1.5f));
-                                list.Add(new Text(f.TextContent, drawPoint, paint, 0));
+                                double lon = coords[0].Value<double>();
+                                double lat = coords[1].Value<double>();
+                                if (lat != 0 || lon != 0)
+                                {
+                                    SKPaint paint = Paint.VideoMapText(rgb, f.FontSize);
+                                    SKPoint screenPoint = ScreenMap.CoordinateToScreen(displayState.Width, displayState.Height, displayState.Scale, displayState.PanOffset, lat, lon);
+                                    SKPoint drawPoint = new SKPoint(screenPoint.X + f.XOffset, screenPoint.Y - (f.YOffset * 1.5f));
+                                    list.Add(new Text(f.TextContent, drawPoint, paint, 0));
+                                }
+                                break;
                             }
-                            break;
-                        }
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                Logger.Error("Renderables.FromFeatures", ex.ToString());
             }
             return list;
         }
@@ -110,16 +119,50 @@ namespace vFalcon.Renderables
             List<IRenderable> renderables = new();
             foreach (Pilot pilot in pilots.Values.ToList())
             {
+                if (App.Profile.FilterSettings.Enabled)
+                {
+                    pilot.Filtered = true;
+                    if (FilterService.WithinFilterParam(pilot))
+                    {
+                        pilot.ForcedFullDatablock = true;
+                        pilot.FullDatablockEnabled = true;
+                    }
+                    else
+                    {
+                        pilot.ForcedFullDatablock = false;
+                        pilot.FullDatablockEnabled = false;
+                    }
+                }
+                else
+                {
+                    if (pilot.Filtered)
+                    {
+                        pilot.Filtered = false;
+                        pilot.ForcedFullDatablock = false;
+                        pilot.FullDatablockEnabled = false;
+                    }
+                }
                 if (pilot == null) continue;
                 if (pilot.GroundSpeed < 30)
                 {
-                    if (!App.Profile.TopDown) continue;
+                    if (!App.Profile.GeneralSettings.TopDown) continue;
                     renderables.AddRange(ForTopDown(displayState, pilot));
                     continue;
                 }
                 if (pilot.DisplayFiledRoute)
                 {
                     renderables.AddRange(ForFiledRoute(displayState, pilot));
+                }
+                if (pilot.DisplayFullRoute)
+                {
+                    if (App.MainWindowViewModel.IsPlayback)
+                    {
+                        renderables.AddRange(ForFullRouteHistory(displayState, pilot));
+                    }
+                    else
+                    {
+                        renderables.AddRange(ForFullRoute(displayState, pilot));
+                    }
                 }
                 switch (pilot.DatablockType)
                 {
@@ -139,6 +182,40 @@ namespace vFalcon.Renderables
             return renderables;
         }
 
+        public static List<IRenderable> FromThingsToFind(DisplayState displayState, List<string> thingsToFind)
+        {
+            List<IRenderable> renderables = new();
+            SKPaint rectPaint = Paint.Rect(Colors.FindBySquare, SKPaintStyle.Fill, 0);
+            foreach (string thing in thingsToFind)
+            {
+                Coordinate? airportCoords = App.MainWindowViewModel.RouteService.GetAirportCoords(thing.ToUpper());
+                Coordinate? fixCoords = App.MainWindowViewModel.RouteService.GetFixCoordinate(thing.ToUpper());
+                if (airportCoords != null)
+                {
+                    SKPoint screenPoint = ScreenMap.CoordinateToScreen(displayState.Width, displayState.Height, displayState.Scale, displayState.PanOffset, airportCoords.Lat, airportCoords.Lon);
+                    float left = screenPoint.X - FindBySquareSize;
+                    float top = screenPoint.Y - FindBySquareSize;
+                    float right = left + FindBySquareSize;
+                    float bottom = top + FindBySquareSize;
+                    SKRect findRect = new SKRect(left, top, right, bottom);
+                    renderables.Add(new Rect(findRect, rectPaint, 4));
+                    continue;
+                }
+                if (fixCoords != null)
+                {
+                    SKPoint screenPoint = ScreenMap.CoordinateToScreen(displayState.Width, displayState.Height, displayState.Scale, displayState.PanOffset, fixCoords.Lat, fixCoords.Lon);
+                    float left = screenPoint.X - FindBySquareSize;
+                    float top = screenPoint.Y - FindBySquareSize;
+                    float right = left + FindBySquareSize;
+                    float bottom = top + FindBySquareSize;
+                    SKRect findRect = new SKRect(left, top, right, bottom);
+                    renderables.Add(new Rect(findRect, rectPaint, 4));
+                    continue;
+                }
+            }
+            return renderables;
+        }
+
         private static List<IRenderable> ForFiledRoute(DisplayState displayState, Pilot pilot)
         {
             List<IRenderable> renderables = new();
@@ -147,6 +224,7 @@ namespace vFalcon.Renderables
             string nextFix = App.MainWindowViewModel.RouteService.GetNextFix(route, pilot.Heading, pilot.Latitude, pilot.Longitude);
             string routeAfterFix = App.MainWindowViewModel.RouteService.GetRouteAfterFix(route, nextFix);
             JArray fixesFromRoute = App.MainWindowViewModel.RouteService.GetCoordsFromRouteString(routeAfterFix);
+            if (fixesFromRoute.Count < 1) return renderables;
             SKPoint pilotPoint = ScreenMap.CoordinateToScreen(displayState.Width, displayState.Height, displayState.Scale, displayState.PanOffset, pilot.Latitude, pilot.Longitude);
             SKPoint nextFixPoint = ScreenMap.CoordinateToScreen(displayState.Width, displayState.Height, displayState.Scale, displayState.PanOffset, (double)fixesFromRoute[0][0], (double)fixesFromRoute[0][1]);
             SKColor paintColor = new();
@@ -171,6 +249,39 @@ namespace vFalcon.Renderables
                 else
                 {
                     renderables.Add(new Symbol("routeEnd", firstPoint, Paint.Symbol(paintColor, SKPaintStyle.Stroke, 1f), 1));
+                }
+            }
+            return renderables;
+        }
+
+        public static List<IRenderable> ForFullRoute(DisplayState displayState, Pilot pilot)
+        {
+            List<IRenderable> renderables = new();
+            renderables.AddRange(ForFullRouteHistory(displayState, pilot));
+            renderables.AddRange(ForFiledRoute(displayState, pilot));
+            return renderables;
+        }
+
+        private static List<IRenderable> ForFullRouteHistory(DisplayState displayState, Pilot pilot)
+        {
+            List<IRenderable> renderables = new();
+            SKColor paintColor = new();
+            paintColor = Colors.LimeGreen;
+            SKPoint pilotPoint = ScreenMap.CoordinateToScreen(displayState.Width, displayState.Height, displayState.Scale, displayState.PanOffset, pilot.History[0].Lat, pilot.History[0].Lon);
+            renderables.Add(new Text(pilot.Callsign, new SKPoint(pilotPoint.X - 25, pilotPoint.Y + 40), Paint.Text(paintColor, 18f, SKPaintStyle.Fill), 1));
+            for (int i = 0; i < pilot.History.Count; i++)
+            {
+                var firstCoordinate = pilot.History[i];
+                double firstLat = firstCoordinate.Lat;
+                double firstLon = firstCoordinate.Lon;
+                SKPoint firstPoint = ScreenMap.CoordinateToScreen(displayState.Width, displayState.Height, displayState.Scale, displayState.PanOffset, firstLat, firstLon);
+                if (i != pilot.History.Count - 1)
+                {
+                    var nextCoordinate = pilot.History[i + 1];
+                    double nextLat = nextCoordinate.Lat;
+                    double nextLon = nextCoordinate.Lon;
+                    SKPoint nextPoint = ScreenMap.CoordinateToScreen(displayState.Width, displayState.Height, displayState.Scale, displayState.PanOffset, nextLat, nextLon);
+                    renderables.Add(new Line(firstPoint, nextPoint, Paint.Line(paintColor, SKPaintStyle.Stroke, 1f), 1));
                 }
             }
             return renderables;
@@ -412,6 +523,7 @@ namespace vFalcon.Renderables
 
         private static List<IRenderable> ForStarsFullDatablock(DisplayState displayState, Pilot pilot)
             => ForStarsDatablock(displayState, pilot, Colors.StarsFullDatablock, Colors.White);
+
         private static List<IRenderable> ForStarsDatablock(DisplayState displayState, Pilot pilot, SKColor styleColor, SKColor markColor)
         {
             List<IRenderable> renderables = new();
@@ -650,8 +762,7 @@ namespace vFalcon.Renderables
         private static (SKPoint pilotScreenPoint, SKRect targetBox, SKPoint slantStart, SKPoint slantEnd) PilotScreenAndBox(DisplayState s, Pilot p) // FIXME
         {
             var pilotScreenPoint = GetPilotScreenPoint(s, p);
-            var targetBox = new SKRect(pilotScreenPoint.X - TargetSize, pilotScreenPoint.Y - TargetSize,
-                                       pilotScreenPoint.X + TargetSize, pilotScreenPoint.Y + TargetSize);
+            var targetBox = new SKRect(pilotScreenPoint.X - TargetSize, pilotScreenPoint.Y - TargetSize, pilotScreenPoint.X + TargetSize, pilotScreenPoint.Y + TargetSize);
             var slantStart = new SKPoint(targetBox.Left - CorrelatedSlantSize, targetBox.Top - CorrelatedSlantSize);
             var slantEnd = new SKPoint(targetBox.Right + CorrelatedSlantSize, targetBox.Bottom + CorrelatedSlantSize);
             return (pilotScreenPoint, targetBox, slantStart, slantEnd);

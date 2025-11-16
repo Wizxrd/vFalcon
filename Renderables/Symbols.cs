@@ -388,16 +388,16 @@ public class Symbols
 
     public static void Tacan(SKCanvas canvas, SKPoint center, SKPaint paint)
     {
-        float size = 10f;
+        float size = 10;
 
         float radiusX = size / 3;
         float radiusY = size / 2;
 
         SKRect ovalRect = new SKRect(center.X - radiusX, center.Y - radiusY, center.X + radiusX, center.Y + radiusY);
 
-        //canvas.DrawOval(ovalRect, paint);
+        canvas.DrawOval(ovalRect, paint);
         float dotRadius = size * 0.1f;
-        //canvas.DrawCircle(center, dotRadius, paint);
+        canvas.DrawCircle(center, dotRadius, paint);
     }
 
     public static void Vci(SKCanvas canvas, SKPoint center, SKPaint paint)

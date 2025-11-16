@@ -7,11 +7,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Resources\Images\vFalcon.ico</ApplicationIcon>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Resources\Fonts\ERAM.ttf" />
     <None Remove="Resources\Images\ATC.jpg" />
+    <None Remove="Resources\Images\FastFoward.png" />
+    <None Remove="Resources\Images\Pause.png" />
+    <None Remove="Resources\Images\Play.png" />
+    <None Remove="Resources\Images\Rewind.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,6 +44,10 @@
     <Resource Include="Resources\Fonts\ERAM.ttf" />
     <Resource Include="Resources\Fonts\ERAM_old.ttf" />
     <Resource Include="Resources\Images\ATC.jpg" />
+    <Resource Include="Resources\Images\FastFoward.png" />
+    <Resource Include="Resources\Images\Pause.png" />
+    <Resource Include="Resources\Images\Play.png" />
+    <Resource Include="Resources\Images\Rewind.png" />
   </ItemGroup>
 
 </Project>

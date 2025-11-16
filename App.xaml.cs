@@ -10,7 +10,7 @@ using vFalcon.Utils;
 namespace vFalcon;
 public partial class App : Application
 {
-    public static string Version { get; } = "0.0.1";
+    public static string Version { get; } = "1.0.0";
     public static Profile Profile { get; set; }
     public static Artcc Artcc { get; set; }
     public static ViewManager ViewManager { get; set; } = new();

@@ -13,34 +13,27 @@ namespace vFalcon.UI.Views.Common
         {
             InitializeComponent();
             DataContext = loadProfileViewModel;
-            loadProfileViewModel.OpenManageArtccsView += OpenManagedArtccsView;
-            loadProfileViewModel.OpenNewProfileView += OpenNewProfileView;
+            loadProfileViewModel.OpenManageArtccsView += App.ViewManager.OpenManagedArtccsView;
+            loadProfileViewModel.OpenNewProfileView += App.ViewManager.OpenNewProfileView;
             loadProfileViewModel.OpenMainWindowView += OpenMainWindowView;
-        }
-
-        private void OpenManagedArtccsView()
-        {
-            ManageArtccsView manageArtccsView = new ManageArtccsView();
-            manageArtccsView.Owner = this;
-            manageArtccsView.ShowDialog();
-        }
-
-        private void OpenNewProfileView()
-        {
-            NewProfileView newProfileView = new NewProfileView();
-            newProfileView.Owner = this;
-            newProfileView.ShowDialog();
         }
 
         private void OpenMainWindowView()
         {
-            App.Profile = loadProfileViewModel.SelectedProfile;
-            App.Artcc = loadProfileViewModel.SelectedProfileArtcc;
-            MainWindowView mainWindowView = new MainWindowView();
-            Application.Current.MainWindow = mainWindowView;
-            this.Close();
-            Logger.LogLevelThreshold = (LogLevel)App.Profile.LogLevel;
-            mainWindowView.ShowDialog();
+            try
+            {
+                App.Profile = loadProfileViewModel.SelectedProfile;
+                App.Artcc = loadProfileViewModel.SelectedProfileArtcc;
+                MainWindowView mainWindowView = new MainWindowView();
+                Application.Current.MainWindow = mainWindowView;
+                this.Close();
+                Logger.LogLevelThreshold = (LogLevel)App.Profile.GeneralSettings.LogLevel;
+                mainWindowView.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Logger.Error("LoadProfileView.OpenMainWindowView", ex.ToString());
+            }
         }
     }
 }

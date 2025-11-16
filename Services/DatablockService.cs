@@ -51,7 +51,7 @@ public class DatablockService
             if (departureCoordinate != null) distanceFromDeparture = ScreenMap.DistanceInNM(pilotCoordinate, departureCoordinate);
             if (distanceToArrival <= 35)
             {
-                if (pilot.DatablockType != DatablockType.Stars && !pilot.ForcedDatablockType && App.Profile.AutoDatablock) pilot.DatablockType = DatablockType.Stars;
+                if (pilot.DatablockType != DatablockType.Stars && !pilot.ForcedDatablockType && App.Profile.GeneralSettings.AutoDatablock) pilot.DatablockType = DatablockType.Stars;
                 switch (currentCycle)
                 {
                     case 0:
@@ -74,7 +74,7 @@ public class DatablockService
             }
             else if (distanceFromDeparture <= 35)
             {
-                if (pilot.DatablockType != DatablockType.Stars && !pilot.ForcedDatablockType && App.Profile.AutoDatablock) pilot.DatablockType = DatablockType.Stars;
+                if (pilot.DatablockType != DatablockType.Stars && !pilot.ForcedDatablockType && App.Profile.GeneralSettings.AutoDatablock) pilot.DatablockType = DatablockType.Stars;
                 JArray childFacilities = (JArray)App.Artcc.facility["childFacilities"];
                 JObject matchedChild = new JObject();
                 foreach (JObject child in childFacilities)
@@ -130,7 +130,7 @@ public class DatablockService
             }
             else
             {
-                if (pilot.ForcedDatablockType == false && App.Profile.AutoDatablock) pilot.DatablockType = DatablockType.Eram;
+                if (pilot.ForcedDatablockType == false && App.Profile.GeneralSettings.AutoDatablock) pilot.DatablockType = DatablockType.Eram;
                 else if (pilot.DatablockType == DatablockType.Stars)
                 {
                     string acShort = pilot.FlightPlan?["aircraft_short"]?.ToString();

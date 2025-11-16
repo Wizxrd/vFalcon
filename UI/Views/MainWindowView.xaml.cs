@@ -1,17 +1,13 @@
 ﻿using AdonisUI.Controls;
 using System.Globalization;
 using System.Windows;
-using vFalcon.Models;
-using vFalcon.Utils;
+using System.Windows.Input;
 using vFalcon.UI.ViewModels;
-using vFalcon.UI.ViewModels.Controls;
+using vFalcon.Utils;
 namespace vFalcon.UI.Views;
 
 public partial class MainWindowView : AdonisWindow
 {
-    private Profile profile { get; set; } = App.Profile;
-    private Artcc artcc { get; set; } = App.Artcc;
-
     public MainWindowView()
     {
         InitializeComponent();
@@ -37,17 +33,17 @@ public partial class MainWindowView : AdonisWindow
 
     private void LoadWindowSettings()
     {
-        double[] parts = profile.WindowSettings.Bounds.Split(',').Select(s => double.Parse(s, CultureInfo.InvariantCulture)).ToArray();
+        double[] parts = App.Profile.WindowSettings.Bounds.Split(',').Select(s => double.Parse(s, CultureInfo.InvariantCulture)).ToArray();
         Rect bounds = new Rect(parts[0], parts[1], parts[2], parts[3]);
         Left = bounds.Left;
         Top = bounds.Top;
         Width = bounds.Width;
         Height = bounds.Height;
-        if (profile.WindowSettings.IsMaximized)
+        if (App.Profile.WindowSettings.IsMaximized)
         {
             WindowState = WindowState.Maximized;
         }
-        if (profile.WindowSettings.IsFullscreen)
+        if (App.Profile.WindowSettings.IsFullscreen)
         {
             WindowStyle = WindowStyle.None;
             ResizeMode = ResizeMode.NoResize;
@@ -59,7 +55,7 @@ public partial class MainWindowView : AdonisWindow
             ResizeMode = ResizeMode.CanResize;
             WindowState = WindowState.Normal;
         }
-        if (profile.WindowSettings.ShowTitleBar)
+        if (App.Profile.WindowSettings.ShowTitleBar)
         {
             WindowStyle = WindowStyle.SingleBorderWindow;
         }
@@ -71,18 +67,18 @@ public partial class MainWindowView : AdonisWindow
 
     private void OnSizeChanged(object sender, EventArgs e)
     {
-        profile.WindowSettings.Bounds = $"{this.Left},{this.Top},{this.Width},{this.Height}";
+        App.Profile.WindowSettings.Bounds = $"{this.Left},{this.Top},{this.Width},{this.Height}";
     }
 
     private void OnLocationChanged(object? sender, EventArgs e)
     {
-        profile.WindowSettings.Bounds = $"{this.Left},{this.Top},{this.Width},{this.Height}";
+        App.Profile.WindowSettings.Bounds = $"{this.Left},{this.Top},{this.Width},{this.Height}";
     }
 
     private void OnStateChanged(object? sender, EventArgs e)
     {
         PilotContextPopup.IsOpen = false;
-        profile.WindowSettings.IsMaximized = (WindowState == WindowState.Maximized);
+        App.Profile.WindowSettings.IsMaximized = (WindowState == WindowState.Maximized);
     }
     
     private void OnDeactivated(object? sender, EventArgs e)
@@ -93,14 +89,8 @@ public partial class MainWindowView : AdonisWindow
     private void OnClosing(object? sender, EventArgs e)
     {
         Logger.Debug("OnClosing", "Closing");
-        App.MainWindowViewModel.PilotService.Dispose();
-        App.MainWindowViewModel.DatablockService.Dispose();
-        App.MainWindowViewModel.EramFeatures = null;
-        App.MainWindowViewModel.EramFeaturesCombined = null;
-        App.MainWindowViewModel.ActiveEramMaps = null;
-        App.MainWindowViewModel.StarsFeatures = null;
-        App.MainWindowViewModel.RenderableFeatures = null;
-        App.MainWindowViewModel.ActiveMaps = null;
+        App.MainWindowViewModel.Dispose();
+        App.MainWindowViewModel = null;
         App.ViewManager.Dispose();
     }
 }

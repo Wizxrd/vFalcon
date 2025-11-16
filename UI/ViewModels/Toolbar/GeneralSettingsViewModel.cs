@@ -8,10 +8,10 @@ public class GeneralSettingsViewModel : ViewModelBase
 {
     public bool TopDownMode
     {
-        get => App.Profile.TopDown;
+        get => App.Profile.GeneralSettings.TopDown;
         set
         {
-            App.Profile.TopDown = value;
+            App.Profile.GeneralSettings.TopDown = value;
             App.MainWindowViewModel.ReloadEramFeatures();
             App.MainWindowViewModel.GraphicsEngine.RequestRender();
             OnPropertyChanged();
@@ -20,11 +20,11 @@ public class GeneralSettingsViewModel : ViewModelBase
 
     public bool VideoMapPreProcess
     {
-        get => App.Profile.VideoMapPreProcess;
+        get => App.Profile.GeneralSettings.VideoMapPreProcess;
         set
         {
-            App.Profile.VideoMapPreProcess = value;
-            if (value) App.MainWindowViewModel.InitFeatures();
+            App.Profile.GeneralSettings.VideoMapPreProcess = value;
+            if (value) App.MainWindowViewModel.ReloadFeatures();
             else App.MainWindowViewModel.ReloadEramFeatures(true);
         }
     }
@@ -34,11 +34,11 @@ public class GeneralSettingsViewModel : ViewModelBase
         get
         {
             OnPropertyChanged(nameof(AutoDatablockEnabled));
-            return App.Profile.AutoDatablock;
+            return App.Profile.GeneralSettings.AutoDatablock;
         }
         set
         {
-            App.Profile.AutoDatablock = value;
+            App.Profile.GeneralSettings.AutoDatablock = value;
             OnPropertyChanged();
             OnPropertyChanged(nameof(AutoDatablockEnabled));
             App.MainWindowViewModel.PilotService.ResetDatablocksToDefault();
@@ -46,14 +46,14 @@ public class GeneralSettingsViewModel : ViewModelBase
         }
     }
 
-    public Visibility AutoDatablockEnabled => App.Profile.AutoDatablock ? Visibility.Collapsed : Visibility.Visible;
+    public Visibility AutoDatablockEnabled => App.Profile.GeneralSettings.AutoDatablock ? Visibility.Collapsed : Visibility.Visible;
 
     public int SelectedDefaultDatablockType
     {
-        get => (int)App.Profile.DefaultDatablockType;
+        get => (int)App.Profile.GeneralSettings.DefaultDatablockType;
         set
         {
-            App.Profile.DefaultDatablockType = (DatablockType)value;
+            App.Profile.GeneralSettings.DefaultDatablockType = (DatablockType)value;
             App.MainWindowViewModel.PilotService.ResetDatablocksToDefault();
             App.MainWindowViewModel.GraphicsEngine.RequestRender();
             OnPropertyChanged();
@@ -62,11 +62,11 @@ public class GeneralSettingsViewModel : ViewModelBase
 
     public int SelectedLogLevel
     {
-        get => App.Profile.LogLevel;
+        get => App.Profile.GeneralSettings.LogLevel;
         set
         {
             Logger.LogLevelThreshold = (LogLevel)value;
-            App.Profile.LogLevel = value;
+            App.Profile.GeneralSettings.LogLevel = value;
             OnPropertyChanged();
         }
     }

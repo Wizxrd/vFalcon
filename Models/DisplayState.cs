@@ -10,7 +10,8 @@ public class DisplayState
     public int Height { get; set; }
     public Size Size { get; set; }
     public Coordinate Center { get; set; } = new();
-    public bool ZoomOnMouse { get; set; }
+    public bool ZoomOnMouse { get; set; } = false;
+    public bool DoubleZoom { get; set; } = false;
     public bool IsPanning { get; set; }
     public string Status { get; set; } = string.Empty;
     public bool IsReady { get; set; } = false;

@@ -355,6 +355,15 @@ public class RouteService
         return coords;
     }
 
+    public Coordinate GetFixCoordinate(string fix)
+    {
+        List<double> coords = new List<double>();
+        if (fixLookup[fix] == null) return null;
+        coords.Add((double)fixLookup[fix]["Lat"]);
+        coords.Add((double)fixLookup[fix]["Lon"]);
+        return new Coordinate { Lat = (double)fixLookup[fix]["Lat"], Lon = (double)fixLookup[fix]["Lon"] };
+    }
+
     private static JObject CreateAirportLookup()
     {
         var airports = new JObject();

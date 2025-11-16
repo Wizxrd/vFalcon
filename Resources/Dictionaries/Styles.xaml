@@ -4,7 +4,7 @@
                     xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
                     xmlns:fontAwesome="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp">
     <Style x:Key="OptionsIcon" TargetType="fontAwesome:IconImage">
-        <Setter Property="Foreground" Value="#959595"/>
+        <Setter Property="Foreground" Value="White"/>
         <Setter Property="Height" Value="14"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>

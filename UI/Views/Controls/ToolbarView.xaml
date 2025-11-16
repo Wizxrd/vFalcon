@@ -34,27 +34,23 @@
         </MenuItem>
         <MenuItem
             Height="32"
+            Width="90"
             Background="Transparent"
+            Command="{Binding ToggleRecordingCommand}"
+            HorizontalContentAlignment="Center"
             adonisExtensions:CursorSpotlightExtension.BackgroundBrush="#353535"
             adonisExtensions:RippleExtension.BackgroundBrush="#353535">
             <MenuItem.Header>
                 <StackPanel Orientation="Horizontal">
-                    <fontAwesome:IconImage Icon="VideoCamera" Style="{StaticResource OptionsIcon}"/>
-                    <TextBlock Text="Recording" Margin="5,0,0,0"/>
+                    <fontAwesome:IconImage Icon="Video" Style="{StaticResource OptionsIcon}" Margin="-30,0,0,0"/>
+                    <TextBlock Text="Record"/>
                 </StackPanel>
             </MenuItem.Header>
-            <MenuItem
-                Width="275"
-                Header="{Binding RecordingText}"
-                InputGestureText="{Binding RecordingInput}"
-                Command="{Binding StartRecordingCommand}"
-                Background="#353535"
-                adonisExtensions:CursorSpotlightExtension.BackgroundBrush="#555555"
-                adonisExtensions:RippleExtension.BackgroundBrush="#858585"/>
         </MenuItem>
         <MenuItem
             Height="32"
             Background="Transparent"
+            BorderThickness="0"
             adonisExtensions:CursorSpotlightExtension.BackgroundBrush="#353535"
             adonisExtensions:RippleExtension.BackgroundBrush="#353535">
             <MenuItem.Header>
@@ -97,36 +93,18 @@
         </MenuItem>
         <MenuItem
             Height="32"
+            Width="100"
             Background="Transparent"
+            Command="{Binding OpenFiltersCommand}"
+            BorderThickness="0"
             adonisExtensions:CursorSpotlightExtension.BackgroundBrush="#353535"
             adonisExtensions:RippleExtension.BackgroundBrush="#353535">
             <MenuItem.Header>
                 <StackPanel Orientation="Horizontal">
-                    <fontAwesome:IconImage Icon="Search" Style="{StaticResource OptionsIcon}" Margin="0,0,0,0"/>
-                    <TextBlock Text="Search" Margin="5,0,0,0"/>
+                    <fontAwesome:IconImage Icon="Filter" Style="{StaticResource OptionsIcon}" Margin="-25,0,0,0"/>
+                    <TextBlock Text="Filters" Margin="0,0,0,0"/>
                 </StackPanel>
             </MenuItem.Header>
-            <MenuItem
-                Width="275"
-                Header="Arrival"
-                Background="#353535"
-                adonisExtensions:CursorSpotlightExtension.BackgroundBrush="#555555"
-                adonisExtensions:RippleExtension.BackgroundBrush="#858585"
-                Command="{Binding SearchByArrivalCommand}"/>
-            <MenuItem
-                Width="275"
-                Header="Callsign"
-                Background="#353535"
-                adonisExtensions:CursorSpotlightExtension.BackgroundBrush="#555555"
-                adonisExtensions:RippleExtension.BackgroundBrush="#858585"
-                Command="{Binding SearchByCallsignCommand}"/>
-            <MenuItem
-                Width="275"
-                Header="Departure"
-                Background="#353535"
-                adonisExtensions:CursorSpotlightExtension.BackgroundBrush="#555555"
-                adonisExtensions:RippleExtension.BackgroundBrush="#858585"
-                Command="{Binding SearchByDepartureCommand}"/>
         </MenuItem>
         <MenuItem
             Height="32"
@@ -145,7 +123,7 @@
         </MenuItem>
         <MenuItem
             Background="Transparent"
-            Command="{Binding OpenSettingsCommand}"
+            BorderThickness="0"
             adonisExtensions:CursorSpotlightExtension.BackgroundBrush="#353535"
             adonisExtensions:RippleExtension.BackgroundBrush="#353535">
             <MenuItem.Header>
@@ -156,12 +134,14 @@
             </MenuItem.Header>
             <MenuItem
                 Header="General Setttings"
+                InputGestureText="Ctrl+G"
                 Background="#353535"
                 adonisExtensions:CursorSpotlightExtension.BackgroundBrush="#555555"
                 adonisExtensions:RippleExtension.BackgroundBrush="#858585"
                 Command="{Binding OpenGeneralSettingsCommand}"/>
             <MenuItem
                 Header="Appearance Setttings"
+                InputGestureText="Ctrl+A"
                 Background="#353535"
                 adonisExtensions:CursorSpotlightExtension.BackgroundBrush="#555555"
                 adonisExtensions:RippleExtension.BackgroundBrush="#858585"
@@ -170,6 +150,7 @@
         <MenuItem
             Height="32"
             Background="Transparent"
+            BorderThickness="0"
             adonisExtensions:CursorSpotlightExtension.BackgroundBrush="#353535"
             adonisExtensions:RippleExtension.BackgroundBrush="#353535">
             <MenuItem.Header>
@@ -186,7 +167,8 @@
                 adonisExtensions:CursorSpotlightExtension.BackgroundBrush="#555555"
                 adonisExtensions:RippleExtension.BackgroundBrush="#353535"/>
             <MenuItem
-                Header="Capture Screen to Clipboard"
+                Header="Capture Screen"
+                InputGestureText="Ctrl+Shift+A"
                 Background="#353535"
                 Command="{Binding CaptureScreenCommand}"
                 adonisExtensions:CursorSpotlightExtension.BackgroundBrush="#555555"
@@ -201,6 +183,7 @@
         <MenuItem
             Height="32"
             Background="Transparent"
+            BorderThickness="0"
             adonisExtensions:CursorSpotlightExtension.BackgroundBrush="#353535"
             adonisExtensions:RippleExtension.BackgroundBrush="#353535">
             <MenuItem.Header>

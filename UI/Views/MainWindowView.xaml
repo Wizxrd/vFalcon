@@ -11,25 +11,71 @@
     xmlns:controls="clr-namespace:vFalcon.UI.Views.Controls"
     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     IconVisibility="Collapsed"
-    Title="{Binding Title}"
     FontFamily="Consolas" FontSize="12"
     TitleBarBackground="#101010"
     WindowButtonHighlightBrush="#353535"
     Width="1280" Height="900">
     <adonisControls:AdonisWindow.InputBindings>
         <KeyBinding Key="Esc" Command="{Binding ClearCommand}"/>
+        <KeyBinding Key="F" Modifiers="Alt" Command="{Binding ToggleFullscreenCommand}"/>
+        <KeyBinding Key="T" Modifiers="Alt" Command="{Binding ToggleTitleBarCommand}"/>
+        <KeyBinding Key="B" Modifiers="Alt" Command="{Binding ToggleResizeBorderCommand}"/>
+        <KeyBinding Key="R" Modifiers="Alt" Command="{Binding ToggleRecordingCommand}"/>
+        <KeyBinding Key="S" Modifiers="Alt+Shift" Command="{Binding CaptureScreenCommand}"/>
+        <KeyBinding Key="L" Modifiers="Ctrl" Command="{Binding LoadRecordingCommand}"/>
+        <KeyBinding Key="E" Modifiers="Ctrl" Command="{Binding ExitRecordingCommand}"/>
         <KeyBinding Key="T" Modifiers="Ctrl" Command="{Binding ToggleTopDownCommand}"/>
         <KeyBinding Key="S" Modifiers="Ctrl" Command="{Binding SaveProfileCommand}"/>
         <KeyBinding Key="S" Modifiers="Ctrl+Shift" Command="{Binding SaveProfileAsCommand}"/>
         <KeyBinding Key="P" Modifiers="Ctrl+Shift" Command="{Binding SwitchProfileCommand}"/>
+        <KeyBinding Key="G" Modifiers="Ctrl" Command="{Binding OpenGeneralSettingsCommand}"/>
+        <KeyBinding Key="A" Modifiers="Ctrl" Command="{Binding OpenAppearanceSettingsCommand}"/>
+        <KeyBinding Key="M" Modifiers="Ctrl" Command="{Binding OpenMapsCommand}"/>
+        <KeyBinding Key="P" Modifiers="Ctrl" Command="{Binding OpenPositionsCommand}"/>
+        <KeyBinding Key="Left" Command="{Binding RewindCommand}"/>
+        <KeyBinding Key="Right" Command="{Binding FastForwardCommand}"/>
+        <KeyBinding Key="Space" Command="{Binding PlayPauseCommand}"/>
         <KeyBinding Key="PageUp" Command="{Binding IncreaseVelocityVectorCommand}"/>
         <KeyBinding Key="PageDown" Command="{Binding DecreaseVelocityVectorCommand}"/>
     </adonisControls:AdonisWindow.InputBindings>
+    <adonisControls:AdonisWindow.TitleBarContent>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="-8,0,0,0">
+            <TextBlock
+                Margin="10,0,5,0"
+                VerticalAlignment="Center"
+                Text="{Binding Title}">
+            </TextBlock>
+            <TextBlock
+                Margin="5,0,0,0"
+                VerticalAlignment="Center"
+                Text="Last Updated:">
+            </TextBlock>
+            <TextBlock
+                Margin="0,0,5,0"
+                VerticalAlignment="Center"
+                Foreground="{StaticResource Yellow}"
+                Text="{Binding LastDataFeedUpdate}">
+            </TextBlock>
+            <TextBlock
+                Margin="5,0,5,0"
+                VerticalAlignment="Center"
+                Foreground="#ff5664"
+                Text="{Binding RecordingDuration}">
+            </TextBlock>
+        </StackPanel>
+    </adonisControls:AdonisWindow.TitleBarContent>
     <Border>
         <Grid>
             <controls:DisplayControlView x:Name="DisplayControlView"/>
             <Border Visibility="{Binding DisplayVisibility}">
-                <controls:ToolbarView x:Name="ToolbarView" VerticalAlignment="Top"/>
+                <Grid>
+                    <controls:ToolbarView x:Name="ToolbarView" VerticalAlignment="Top"/>
+                </Grid>
+            </Border>
+            <Border Visibility="{Binding ReplayControlVisibility}">
+                <Grid>
+                    <controls:ReplayControlsView x:Name="ReplayControlsView" VerticalAlignment="Bottom" HorizontalAlignment="Stretch"/>
+                </Grid>
             </Border>
             <Label
                 Content="{Binding DisplayStatus}"

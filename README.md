@@ -119,8 +119,3 @@ vFalcon allows users to record the live network data while vFalcon is open via t
 Copyright (c) 2025+ vFalcon.
 
 Licensed under the [MIT License](https://mit-license.org/).
-
-FIXED:
-- not showing stars sector id in playback mode
-- now uses SurveillanceAois for better filtering
-- properly update video map geojsons on startup

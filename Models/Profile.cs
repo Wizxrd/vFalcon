@@ -8,14 +8,10 @@ public class Profile
     public string Name { get; set; } = string.Empty;
     public DateTime LastUsedAt { get; set; }
     public string ArtccId { get; set; } = string.Empty;
+    public GeneralSettings GeneralSettings { get; set; } = new();
     public MapSettings MapSettings { get; set; } = new();
-    public bool TopDown { get; set; } = false;
-    public bool VideoMapPreProcess { get; set; } = false;
-    public int LogLevel { get; set; } = 3;
-    public bool AutoDatablock { get; set; } = true;
-    public DatablockType DefaultDatablockType = DatablockType.Eram;
-    public int ZoomIndex { get; set; } = 50;
-    public Coordinate? Center { get; set; }
+    public FilterSettings FilterSettings { get; set; } = new();
+    public DisplaySettings DisplaySettings { get; set; } = new();
     public WindowSettings WindowSettings { get; set; } = new();
     public AppearanceSettings AppearanceSettings { get; set; } = new();
     public JArray ActivePositions { get; set; } = new();

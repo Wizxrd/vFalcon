@@ -1,9 +1,7 @@
-﻿using Newtonsoft.Json;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using vFalcon.Models;
 using vFalcon.Mvvm;
-using vFalcon.Utils;
 namespace vFalcon.UI.ViewModels.Toolbar;
 
 public class PositionsViewModel : ViewModelBase
@@ -69,10 +67,19 @@ public class PositionsViewModel : ViewModelBase
             int lastIndex = position.LastIndexOf('-');
             if (lastIndex <= 0) return;
             string freq = position.Substring(lastIndex + 1).Trim();
+            bool isChecked = false;
+            foreach (string active in App.Profile.ActivePositions)
+            {
+                if (freq == active)
+                {
+                    isChecked = true;
+                    break;
+                }
+            }
             PositionViewModel positionViewModel = new PositionViewModel
             {
                 Name = position,
-                IsChecked = App.Profile.ActivePositions.Contains(freq)
+                IsChecked = isChecked
             };
             positionViewModel.PropertyChanged += PositionPropertyChanged;
             Positions.Add(positionViewModel);
@@ -103,7 +110,5 @@ public class PositionsViewModel : ViewModelBase
         }
         App.MainWindowViewModel.PilotService.ForceRefresh = true;
         await App.MainWindowViewModel.PilotService.Refresh();
-        App.MainWindowViewModel.GraphicsEngine.RequestRender();
-        Logger.Debug("TTTT", JsonConvert.SerializeObject(App.Profile.ActivePositions));
     }
 }

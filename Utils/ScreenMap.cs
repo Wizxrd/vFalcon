@@ -1,7 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
-using SkiaSharp;
+﻿using SkiaSharp;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using vFalcon.Models;
 
 namespace vFalcon.Utils;

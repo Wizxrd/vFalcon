@@ -36,13 +36,14 @@ public class Paint
         };
     }
 
-    public static SKPaint VideoMapSymbol(byte rgb)
+    public static SKPaint VideoMapSymbol(byte rgb, float stroke = 1f)
     {
         return new SKPaint
         {
             Color = new SKColor(rgb, rgb, rgb),
             IsAntialias = true,
-            Style = SKPaintStyle.Fill
+            Style = SKPaintStyle.Stroke,
+            StrokeWidth = stroke,
         };
     }
 

@@ -105,13 +105,13 @@ public class AircraftListViewModel : ViewModelBase
         {
             if (pilotItem.IsChecked)
             {
+                pilot.ForcedFullDatablock = true;
                 pilot.FullDatablockEnabled = true;
-                pilot.DisplayFiledRoute = true;
             }
             else
             {
+                pilot.ForcedFullDatablock = false;
                 pilot.FullDatablockEnabled = false;
-                pilot.DisplayFiledRoute = false;
             }
             App.MainWindowViewModel.GraphicsEngine.RequestRender();
         });

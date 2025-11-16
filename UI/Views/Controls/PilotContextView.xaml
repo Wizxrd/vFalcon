@@ -49,6 +49,7 @@
                 <MenuItem Header="{Binding Heading}"/>
                 <MenuItem Header="{Binding Speed}"/>
                 <MenuItem Header="{Binding AssignedBeacon}"/>
+                <MenuItem Header="{Binding Frequency}"/>
                 <MenuItem Header="{Binding FlightRules}"/>
                 <MenuItem Header="{Binding LatLon}">
                     <MenuItem Header="Copy to Clipboard" Command="{Binding CopyLatLonCommand}"/>
@@ -73,7 +74,7 @@
             </MenuItem>
         </MenuItem>
         <MenuItem Header="Plotting">
-            <MenuItem Header="Full Route" Visibility="{Binding FullRouteVisibility}" Command="{Binding DisplayFullRouteCommand}"/>
+            <MenuItem Header="Full Route" Command="{Binding DisplayFullRouteCommand}"/>
             <MenuItem Header="Filed Route" Command="{Binding DisplayFiledRouteCommand}"/>
             <MenuItem Header="Copy Lat/Lon to Clipboard" Command="{Binding CopyLatLonCommand}"/>
             <MenuItem Header="Plot on SkyVector" Command="{Binding PlotOnSkyVectorCommand}"/>

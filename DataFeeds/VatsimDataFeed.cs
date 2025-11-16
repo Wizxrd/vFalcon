@@ -34,6 +34,10 @@ public class VatsimDataFeed
             {
                 await Task.Delay(TimeSpan.FromMilliseconds(200 * attempt), ct).ConfigureAwait(false);
             }
+            catch (ExecutionEngineException ex)
+            {
+                Logger.Error("VatsimDataFeed.GetDataFeed", ex.ToString());
+            }
         }
         return null;
     }

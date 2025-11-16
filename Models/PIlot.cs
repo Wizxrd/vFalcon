@@ -28,6 +28,7 @@ namespace vFalcon.Models
         public bool ForcedDatablockType { get; set; } = false;
         public bool FullDatablockEnabled { get; set; } = false;
         public bool ForcedFullDatablock { get; set; } = false;
+        public bool Filtered { get; set; } = false;
         public DatablockPosition DatablockPosition { get; set; } = DatablockPosition.Default;
         public int LeaderLineLength { get; set; } = 1;
         public bool DwellEmphasisEnabled { get; set; } = false;
@@ -35,6 +36,7 @@ namespace vFalcon.Models
         public int DriSize { get; set; } = 5;
         public List<Coordinate> History { get; set; } = new();
         public bool DisplayFiledRoute { get; set; } = false;
+        public bool DisplayFullRoute { get; set; } = false;
 
         public string StarsDatablockRow2Col1 = string.Empty;
         public string StarsDatablockRow2Col2 = string.Empty;

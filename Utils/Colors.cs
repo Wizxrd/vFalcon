@@ -14,4 +14,5 @@ public class Colors
     public static SKColor EramLimitedDatablockHistory = Yellow;
     public static SKColor StarsFullDatablock = White;
     public static SKColor StarsLimitedDatablock = LimeGreen;
+    public static SKColor FindBySquare = LimeGreen;
 }

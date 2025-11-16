@@ -5,12 +5,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using vFalcon.Models;
-using vFalcon.Renderables;
 using vFalcon.Renderables.Interfaces;
 using vFalcon.UI.Views.Controls;
 using vFalcon.Utils;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 namespace vFalcon.Engines;
 
 public class SkiaEngine
@@ -44,8 +41,6 @@ public class SkiaEngine
         SkiaElement.MouseMove += OnMouseMove;
         SkiaElement.MouseWheel += OnMouseWheel;
         SkiaElement.PaintSurface += OnPaintSurface;
-        SkiaElement.KeyDown += OnKeyDown;
-        SkiaElement.KeyUp += OnKeyUp;
         SkiaElement.Unloaded += (_, __) => OnUnloaded();
 
         RenderEngine = new();
@@ -195,16 +190,6 @@ public class SkiaEngine
         {
             System.Diagnostics.Debug.WriteLine($"PaintSurface error: {ex.Message}");
         }
-    }
-
-    private void OnKeyDown(object sender, KeyEventArgs e)
-    {
-        KeyDown?.Invoke(e.Key);
-    }
-
-    private void OnKeyUp(object sender, KeyEventArgs e)
-    {
-        KeyUp?.Invoke(e.Key);
     }
 
     public void OnUnloaded()
