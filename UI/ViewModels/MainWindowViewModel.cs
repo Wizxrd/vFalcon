@@ -158,8 +158,8 @@ public class MainWindowViewModel : ViewModelBase
         PilotContextViewModel = PilotContextView.DataContext as PilotContextViewModel;
         GraphicsEngine = DisplayControlView.GraphicsEngine;
         GraphicsEngine.SizeChanged += OnSizeChanged;
-        App.MainWindowView.KeyDown += OnKeyDown;
-        App.MainWindowView.KeyUp += OnKeyUp;
+        App.MainWindowView.PreviewKeyDown += OnKeyDown;
+        App.MainWindowView.PreviewKeyUp += OnKeyUp;
         GraphicsEngine.MouseDown += OnMouseDown;
         GraphicsEngine.MouseUp += OnMouseUp;
         GraphicsEngine.MouseMove += OnMouseMove;
