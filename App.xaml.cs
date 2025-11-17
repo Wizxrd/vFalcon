@@ -23,7 +23,7 @@ public partial class App : Application
 
     public App()
     {
-        Logger.DebugMode = false;
+        Logger.DebugMode = true;
         Logger.LogLevelThreshold = LogLevel.Trace;
         Logger.Info("App", $"Launching vFalcon v{Version}");
         Mutex = new Mutex(true, appName, out createdNew);
