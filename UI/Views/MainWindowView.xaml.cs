@@ -41,20 +41,15 @@ public partial class MainWindowView : AdonisWindow
         if (parts[3] == -1) Height = double.NaN;
         else Height = parts[3];
         if (App.Profile.MainWindowSettings.WindowSettings.IsMaximized) WindowState = WindowState.Maximized;
-        if (App.Profile.MainWindowSettings.WindowSettings.IsFullscreen)
-        {
-            WindowStyle = WindowStyle.None;
-            ResizeMode = ResizeMode.NoResize;
-            WindowState = WindowState.Maximized;
-        }
         else
         {
             WindowStyle = WindowStyle.SingleBorderWindow;
-            ResizeMode = ResizeMode.CanResize;
-            WindowState = WindowState.Normal;
         }
         if (App.Profile.MainWindowSettings.WindowSettings.ShowTitleBar) WindowStyle = WindowStyle.SingleBorderWindow;
         else WindowStyle = WindowStyle.None;
+
+        if (App.Profile.MainWindowSettings.DisplaySettings.ResizeBorder) BorderThickness = new Thickness(3);
+        else BorderThickness = new Thickness(1);
     }
 
     private void OnSizeChanged(object sender, EventArgs e)
