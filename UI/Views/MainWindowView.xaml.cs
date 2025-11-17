@@ -33,17 +33,15 @@ public partial class MainWindowView : AdonisWindow
 
     private void LoadWindowSettings()
     {
-        double[] parts = App.Profile.WindowSettings.Bounds.Split(',').Select(s => double.Parse(s, CultureInfo.InvariantCulture)).ToArray();
-        Rect bounds = new Rect(parts[0], parts[1], parts[2], parts[3]);
-        Left = bounds.Left;
-        Top = bounds.Top;
-        Width = bounds.Width;
-        Height = bounds.Height;
-        if (App.Profile.WindowSettings.IsMaximized)
-        {
-            WindowState = WindowState.Maximized;
-        }
-        if (App.Profile.WindowSettings.IsFullscreen)
+        double[] parts = App.Profile.MainWindowSettings.WindowSettings.Bounds.Split(',').Select(s => double.Parse(s, CultureInfo.InvariantCulture)).ToArray();
+        Left = parts[0];
+        Top = parts[1];
+        if (parts[2] == -1) Width = double.NaN;
+        else Width = parts[2];
+        if (parts[3] == -1) Height = double.NaN;
+        else Height = parts[3];
+        if (App.Profile.MainWindowSettings.WindowSettings.IsMaximized) WindowState = WindowState.Maximized;
+        if (App.Profile.MainWindowSettings.WindowSettings.IsFullscreen)
         {
             WindowStyle = WindowStyle.None;
             ResizeMode = ResizeMode.NoResize;
@@ -55,30 +53,24 @@ public partial class MainWindowView : AdonisWindow
             ResizeMode = ResizeMode.CanResize;
             WindowState = WindowState.Normal;
         }
-        if (App.Profile.WindowSettings.ShowTitleBar)
-        {
-            WindowStyle = WindowStyle.SingleBorderWindow;
-        }
-        else
-        {
-            WindowStyle = WindowStyle.None;
-        }
+        if (App.Profile.MainWindowSettings.WindowSettings.ShowTitleBar) WindowStyle = WindowStyle.SingleBorderWindow;
+        else WindowStyle = WindowStyle.None;
     }
 
     private void OnSizeChanged(object sender, EventArgs e)
     {
-        App.Profile.WindowSettings.Bounds = $"{this.Left},{this.Top},{this.Width},{this.Height}";
+        App.Profile.MainWindowSettings.WindowSettings.Bounds = $"{this.Left},{this.Top},{this.Width},{this.Height}";
     }
 
     private void OnLocationChanged(object? sender, EventArgs e)
     {
-        App.Profile.WindowSettings.Bounds = $"{this.Left},{this.Top},{this.Width},{this.Height}";
+        App.Profile.MainWindowSettings.WindowSettings.Bounds = $"{this.Left},{this.Top},{this.Width},{this.Height}";
     }
 
     private void OnStateChanged(object? sender, EventArgs e)
     {
         PilotContextPopup.IsOpen = false;
-        App.Profile.WindowSettings.IsMaximized = (WindowState == WindowState.Maximized);
+        App.Profile.MainWindowSettings.WindowSettings.IsMaximized = (WindowState == WindowState.Maximized);
     }
     
     private void OnDeactivated(object? sender, EventArgs e)

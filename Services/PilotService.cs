@@ -278,6 +278,7 @@ public class PilotService
     {
         try
         {
+            if (App.MainWindowViewModel == null) return;
             if (stopped || disposed || App.MainWindowViewModel.IsPlayback || App.MainWindowViewModel == null) return;
             JObject? dataFeed = await VatsimDataFeed.GetDataFeedAsync();
             if (dataFeed == null) return;
@@ -294,7 +295,7 @@ public class PilotService
                     JObject flightPlan = pilot["flight_plan"] as JObject;
 
 
-                    bool isOnActivePositionFrequency = App.Profile.ActivePositions
+                    bool isOnActivePositionFrequency = App.Profile.PositionsSettings.ActivePositions
                         .Values<string>()
                         .Any(f => f == tunedFrequency);
 

@@ -8,5 +8,6 @@ namespace vFalcon.Models
         public bool AutoDatablock { get; set; } = true;
         public DatablockType DefaultDatablockType { get; set; } = DatablockType.Eram;
         public int LogLevel { get; set; } = 3;
+        public WindowSettings WindowSettings { get; set; } = new(650,500,250,200);
     }
 }

@@ -13,4 +13,5 @@ public class AppearanceSettings
     public int HistoryBrightness { get; set; } = 25;
     public int HistoryLength { get; set; } = 5;
     public int VelocityVector { get; set; } = 1;
+    public WindowSettings WindowSettings { get; set; } = new(650, 700, 250, -1);
 }

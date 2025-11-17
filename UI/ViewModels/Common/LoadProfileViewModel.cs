@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows.Controls;
@@ -141,6 +142,12 @@ public class LoadProfileViewModel : ViewModelBase
 
     private void OnNewProfileCommand()
     {
+        var files = Directory.GetFiles(PathFinder.GetFolderPath("ARTCCs"), "*.json");
+        if (files.Length == 0)
+        {
+            Message.Error("No ARTCCs are installed");
+            return;
+        }
         OpenNewProfileView?.Invoke();
         LoadProfiles();
     }

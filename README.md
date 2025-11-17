@@ -86,10 +86,11 @@ vFalcon allows users to record the live network data while vFalcon is open via t
 ---|---
 **Esc** | Clear find-by square
 **Alt+F** | Toggle fullscreen
-**Alt+T** | Toggle titlebar
+**Alt+T** | Toggle title bar
 **Alt+B** | Toggle resize border
 **Alt+R** | Start/stop recording
 **Alt+Shift+S** | Capture application window
+**Ctrl+B** | Toggle tool bar
 **Ctrl+L** | Load recording
 **Ctrl+E** | Exit replay mode
 **Ctrl+T** | Toggle Top-Down mode
