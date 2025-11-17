@@ -55,8 +55,6 @@ namespace vFalcon.UI.ViewModels.Toolbar
                 if (App.Artcc.id != value.Substring(0, 3) & App.Profile.MapSettings.Facility != value)
                 {
                     App.Profile.MapSettings.Facility = value;
-                    App.MainWindowViewModel.ActiveMaps.Clear();
-                    App.Profile.ActiveStarsVideoMaps.Clear();
                     App.MainWindowViewModel.ReloadStarsFeatures(value.Substring(0, 3));
                 }
 

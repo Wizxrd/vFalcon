@@ -340,6 +340,8 @@ public class MainWindowViewModel : ViewModelBase
             Logger.Debug("InitFeatures", "Video Map Pre-Processing Enabled");
             StarsFeatures = await GeoJson.GetAllStarsFeatures();
             EramFeaturesCombined = await GeoJson.GetAllEramFeatures();
+            ReloadEramFeatures();
+            return;
         }
         else
         {
@@ -358,7 +360,7 @@ public class MainWindowViewModel : ViewModelBase
     }
 
     public async void ReloadEramFeatures(bool reloadEramFeatures = false)
-    {;
+    {
         if (!App.Profile.GeneralSettings.VideoMapPreProcess && reloadEramFeatures)
         {
             EramFeatures.Clear();
@@ -383,6 +385,8 @@ public class MainWindowViewModel : ViewModelBase
         if (!App.Profile.GeneralSettings.VideoMapPreProcess)
         {
             StarsFeatures.Clear();
+            ActiveMaps.Clear();
+            App.Profile.ActiveStarsVideoMaps.Clear();
             DisplayState.IsReady = false;
             DisplayVisibility = Visibility.Collapsed;
             DisplayStatus = "Display not ready";
@@ -390,8 +394,8 @@ public class MainWindowViewModel : ViewModelBase
             DisplayStatus = string.Empty;
             DisplayState.IsReady = true;
             DisplayVisibility = Visibility.Visible;
+            SetRenderableFeatures();
         }
-        SetRenderableFeatures();
     }
 
     public void SetRenderableFeatures()
@@ -603,12 +607,17 @@ public class MainWindowViewModel : ViewModelBase
                 clickedOnPilot.ForcedFullDatablock = !clickedOnPilot.ForcedFullDatablock;
                 clickedOnPilot.FullDatablockEnabled = !clickedOnPilot.FullDatablockEnabled;
                 GraphicsEngine.RequestRender();
+                return;
             }
+            PilotContextPopup.IsOpen = false;
         }
         if (button == MouseButton.Left)
         {
             Pilot? clickedOnPilot = PilotService.IsPilotClickedOn(point);
-            if (clickedOnPilot == null) return;
+            if (clickedOnPilot == null)
+            {
+                PilotContextPopup.IsOpen = false;
+            }
             if (KeybindHeld.Ctrl)
             {
                 PilotService.CycleDatablockPosition(clickedOnPilot);

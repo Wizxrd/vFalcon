@@ -87,7 +87,7 @@ public class AircraftListViewModel : ViewModelBase
     {
         if (searchFiltering == true) return;
         Pilots.Clear();
-        if (App.MainWindowView == null) return;
+        if (App.MainWindowViewModel == null) return;
         if (App.MainWindowViewModel.PilotService == null) return;
         foreach (Pilot pilot in App.MainWindowViewModel.PilotService.Pilots.Values.ToList())
         {

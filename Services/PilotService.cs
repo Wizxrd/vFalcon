@@ -117,6 +117,7 @@ public class PilotService
 
     public void CycleDatablockPosition(Pilot pilot)
     {
+        if (pilot == null) return;
         switch (pilot.DatablockPosition)
         {
             case DatablockPosition.SouthWest:
@@ -169,6 +170,7 @@ public class PilotService
 
     public void CycleLeaderLineLength(Pilot pilot)
     {
+        if (pilot == null) return;
         switch (pilot.LeaderLineLength)
         {
             case 0:
@@ -201,6 +203,7 @@ public class PilotService
 
     public void CycleDriSize(Pilot pilot)
     {
+        if (pilot == null) return;
         switch (pilot.DriSize)
         {
             case 1:
