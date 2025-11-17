@@ -15,9 +15,6 @@
     WindowStartupLocation="CenterScreen"
     FontFamily="Consolas" FontSize="14"
     BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
-    <WindowChrome.WindowChrome>
-        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
-    </WindowChrome.WindowChrome>
     <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0">
         <ScrollViewer Margin="10">
             <ItemsControl ItemsSource="{Binding InstalledArtccs}">

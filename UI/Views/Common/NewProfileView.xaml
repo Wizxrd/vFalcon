@@ -23,9 +23,6 @@
             Key="Esc"
             Command="{Binding CancelCommand}"/>
     </adonisControls:AdonisWindow.InputBindings>
-    <WindowChrome.WindowChrome>
-        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
-    </WindowChrome.WindowChrome>
     <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0">
         <Grid>
             <Grid.RowDefinitions>
