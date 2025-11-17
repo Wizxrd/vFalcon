@@ -230,8 +230,8 @@ public class MainWindowViewModel : ViewModelBase
         {
             DisplayState.Center = App.Profile.MainWindowSettings.DisplaySettings.Center;
         }
-        if (App.Profile.MainWindowSettings.DisplaySettings.ShowToolbar) DisplayVisibility = Visibility.Collapsed;
-        else DisplayVisibility = Visibility.Visible;
+        if (App.Profile.MainWindowSettings.DisplaySettings.ShowToolbar) DisplayVisibility = Visibility.Visible;
+        else DisplayVisibility = Visibility.Collapsed;
         ZoomLevels = Zoom.BuildLevels();
         ScaleMap = Zoom.BuildScale(DisplayState, ZoomLevels);
         DisplayState.Scale = ScaleMap[App.Profile.MainWindowSettings.DisplaySettings.ZoomIndex];
@@ -316,7 +316,7 @@ public class MainWindowViewModel : ViewModelBase
         {
             DisplayStatus = string.Empty;
             DisplayState.IsReady = true;
-            DisplayVisibility = Visibility.Visible;
+            if (App.Profile.MainWindowSettings.DisplaySettings.ShowToolbar) DisplayVisibility = Visibility.Visible;
         }
         else
         {
@@ -765,17 +765,13 @@ public class MainWindowViewModel : ViewModelBase
     {
         if (App.MainWindowView.WindowState == WindowState.Maximized)
         {
-            App.MainWindowView.WindowStyle = WindowStyle.SingleBorderWindow;
-            App.MainWindowView.ResizeMode = ResizeMode.CanResize;
             App.MainWindowView.WindowState = WindowState.Normal;
-            App.Profile.MainWindowSettings.WindowSettings.IsFullscreen = false;
+            App.Profile.MainWindowSettings.WindowSettings.IsMaximized = false;
         }
         else
         {
-            App.MainWindowView.WindowStyle = WindowStyle.None;
-            App.MainWindowView.ResizeMode = ResizeMode.NoResize;
             App.MainWindowView.WindowState = WindowState.Maximized;
-            App.Profile.MainWindowSettings.WindowSettings.IsFullscreen = true;
+            App.Profile.MainWindowSettings.WindowSettings.IsMaximized = true;
         }
     }
 
@@ -784,10 +780,12 @@ public class MainWindowViewModel : ViewModelBase
         if (App.MainWindowView.WindowStyle == WindowStyle.SingleBorderWindow)
         {
             App.MainWindowView.WindowStyle = WindowStyle.None;
+            App.Profile.MainWindowSettings.WindowSettings.ShowTitleBar = false;
         }
         else
         {
             App.MainWindowView.WindowStyle = WindowStyle.SingleBorderWindow;
+            App.Profile.MainWindowSettings.WindowSettings.ShowTitleBar = true;
         }
     }
 
@@ -796,10 +794,12 @@ public class MainWindowViewModel : ViewModelBase
         if (App.MainWindowView.BorderThickness == new Thickness(3))
         {
             App.MainWindowView.BorderThickness = new Thickness(1);
+            App.Profile.MainWindowSettings.DisplaySettings.ResizeBorder = false;
         }
         else
         {
             App.MainWindowView.BorderThickness = new Thickness(3);
+            App.Profile.MainWindowSettings.DisplaySettings.ResizeBorder = true;
         }
     }
 
