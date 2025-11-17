@@ -12,8 +12,7 @@
     Title="General Settings"
     FontFamily="Consolas" FontSize="12"
     ResizeMode="NoResize"
-    SizeToContent="Height"
-    Width="250" Height="Auto"
+    Width="250" Height="200"
     BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
     <Border BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0">
         <StackPanel>
@@ -42,7 +41,8 @@
                 <ComboBoxItem Content="STARS"/>
             </ComboBox>
             <TextBlock 
-                Text="Log Level:"
+                Text="Log Level"
+                FontWeight="Bold"
                 Margin="10,10,0,0">
             </TextBlock>
             <ComboBox

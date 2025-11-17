@@ -10,4 +10,5 @@ public class FilterSettings
     public string Airline { get; set; } = string.Empty;
     public int AltLow { get; set; } = 0;
     public int AltHigh { get; set; } = 0;
+    public WindowSettings WindowSettings { get; set; } = new(100,500, 250, -1);
 }

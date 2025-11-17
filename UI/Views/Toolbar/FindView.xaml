@@ -10,9 +10,9 @@
     xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
     mc:Ignorable="d"
     Title="Find" 
-    WindowStartupLocation="CenterOwner"
     ResizeMode="NoResize"
-    Width="300" SizeToContent="Height"
+    FontFamily="Consolas" FontSize="12"
+    Width="300" Height="125"
     FocusManager.FocusedElement="{Binding ElementName=FindBox}"
     BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
     <adonisControls:AdonisWindow.InputBindings>
@@ -32,9 +32,8 @@
             </Grid.RowDefinitions>
             <TextBlock
                 Grid.Row="0"
-                FontFamily="Consolas" FontWeight="Bold" FontSize="12"
                 Margin="10,5,0,0"
-                Text="Find By:">
+                Text="Find By">
             </TextBlock>
             <TextBox
                 Name="FindBox"

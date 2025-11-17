@@ -23,35 +23,35 @@
                 <CheckBox Content="Require All" IsChecked="{Binding RequireAll}"/>
             </StackPanel>
             <TextBlock
-                Text="Departure:"
+                Text="Departure"
                 Margin="10,5,10,0"/>
             <TextBox
                 TextChanged="OnTextChanged"
                 Text="{Binding Departure}"
                 Margin="10,5,10,10"/>
             <TextBlock 
-                Text="Arrival:"
+                Text="Arrival"
                 Margin="10,5,10,0"/>
             <TextBox
                 TextChanged="OnTextChanged"
                 Text="{Binding Arrival}"
                 Margin="10,5,10,10"/>
             <TextBlock 
-                Text="SID:"
+                Text="SID"
                 Margin="10,5,10,0"/>
             <TextBox
                 TextChanged="OnTextChanged"
                 Text="{Binding Sid}"
                 Margin="10,5,10,10"/>
             <TextBlock 
-                Text="STAR:"
+                Text="STAR"
                 Margin="10,5,10,0"/>
             <TextBox
                 TextChanged="OnTextChanged"
                 Text="{Binding Star}"
                 Margin="10,5,10,10"/>
             <TextBlock 
-                Text="Airline:"
+                Text="Airline"
                 Margin="10,5,10,0"/>
             <TextBox
                 TextChanged="OnTextChanged"
@@ -60,7 +60,7 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock 
                     VerticalAlignment="Center"
-                    Text="Alt Low:"
+                    Text="Alt Low"
                     Margin="10,5,0,0"/>
                 <TextBox
                     TextChanged="OnTextChanged"
@@ -69,13 +69,13 @@
                     Margin="0,5,10,10"/>
                 <TextBlock 
                     VerticalAlignment="Center"
-                    Text="Alt High:"
+                    Text="Alt High"
                     Margin="10,5,0,0"/>
                 <TextBox
                     TextChanged="OnTextChanged"
                     Text="{Binding AltHigh}"
                     Width="40"
-                    Margin="0,5,10,10"/>
+                    Margin="5,5,10,10"/>
             </StackPanel>
             <Button
                 Content="Save"

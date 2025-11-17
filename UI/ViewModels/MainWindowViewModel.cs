@@ -131,6 +131,7 @@ public class MainWindowViewModel : ViewModelBase
     public ICommand ToggleResizeBorderCommand { get; set; }
     public ICommand ToggleRecordingCommand { get; set; }
     public ICommand CaptureScreenCommand { get; set; }
+    public ICommand ToggleToolBarCommand { get; set; }
     public ICommand LoadRecordingCommand { get; set; }
     public ICommand ExitRecordingCommand { get; set; }
     public ICommand ToggleTopDownCommand { get; set; }
@@ -177,6 +178,7 @@ public class MainWindowViewModel : ViewModelBase
         ToggleResizeBorderCommand = new RelayCommand(OnToggleResizeBorderCommand);
         ToggleRecordingCommand = new RelayCommand(OnToggleRecordingCommand);
         CaptureScreenCommand = new RelayCommand(OnCaptureScreenCommand);
+        ToggleToolBarCommand = new RelayCommand(OnToggleToolBarCommand);
         LoadRecordingCommand = new RelayCommand(OnLoadRecordingCommand);
         ExitRecordingCommand = new RelayCommand(OnExitRecordingCommand);
         ToggleTopDownCommand = new RelayCommand(OnToggleTopDownCommand);
@@ -212,11 +214,12 @@ public class MainWindowViewModel : ViewModelBase
         SetActiveMaps();
         StartServices();
         SetDisplayReady(true);
+        App.ViewManager.InitializeSettings();
     }
 
     public void SetDisplayState()
     {
-        if (App.Profile.DisplaySettings.Center == null)
+        if (App.Profile.MainWindowSettings.DisplaySettings.Center == null)
         {
             double lat = (double)App.Artcc.visibilityCenters[0]["lat"];
             double lon = (double)App.Artcc.visibilityCenters[0]["lon"];
@@ -225,11 +228,13 @@ public class MainWindowViewModel : ViewModelBase
         }
         else
         {
-            DisplayState.Center = App.Profile.DisplaySettings.Center;
+            DisplayState.Center = App.Profile.MainWindowSettings.DisplaySettings.Center;
         }
+        if (App.Profile.MainWindowSettings.DisplaySettings.ShowToolbar) DisplayVisibility = Visibility.Collapsed;
+        else DisplayVisibility = Visibility.Visible;
         ZoomLevels = Zoom.BuildLevels();
         ScaleMap = Zoom.BuildScale(DisplayState, ZoomLevels);
-        DisplayState.Scale = ScaleMap[App.Profile.DisplaySettings.ZoomIndex];
+        DisplayState.Scale = ScaleMap[App.Profile.MainWindowSettings.DisplaySettings.ZoomIndex];
         DisplayState.PanOffset = CenterAtCoordinates(DisplayState.Width, DisplayState.Height, DisplayState.Scale, DisplayState.PanOffset, DisplayState.Center);
     }
 
@@ -652,7 +657,7 @@ public class MainWindowViewModel : ViewModelBase
             Coordinate newCenter = ScreenMap.ScreenToCoordinate(new System.Drawing.Size(DisplayState.Width, DisplayState.Height), DisplayState.Scale, DisplayState.PanOffset, new SKPoint(DisplayState.Width / 2f, DisplayState.Height / 2f));
             DisplayState.Center.Lat = newCenter.Lat;
             DisplayState.Center.Lon = newCenter.Lon;
-            App.Profile.DisplaySettings.Center = newCenter;
+            App.Profile.MainWindowSettings.DisplaySettings.Center = newCenter;
 			MousePosition = new SKPoint();
             DisplayState.IsPanning = false;
             GraphicsEngine.StopPan();
@@ -665,8 +670,8 @@ public class MainWindowViewModel : ViewModelBase
         PilotContextPopup.IsOpen = false;
         int direction = delta > 0 ? 1 : -1;
         int step = DisplayState.DoubleZoom ? 4 : 1;
-        int newIndex = Math.Clamp(App.Profile.DisplaySettings.ZoomIndex + direction * step, 0, ZoomLevels.Count - 1);
-        if (newIndex == App.Profile.DisplaySettings.ZoomIndex) return;
+        int newIndex = Math.Clamp(App.Profile.MainWindowSettings.DisplaySettings.ZoomIndex + direction * step, 0, ZoomLevels.Count - 1);
+        if (newIndex == App.Profile.MainWindowSettings.DisplaySettings.ZoomIndex) return;
 
         SKPoint referencePoint = DisplayState.ZoomOnMouse ? point : new SKPoint(DisplayState.Width / 2f, DisplayState.Height / 2f);
 
@@ -675,9 +680,9 @@ public class MainWindowViewModel : ViewModelBase
             (referencePoint.Y - DisplayState.PanOffset.Y - DisplayState.Height / 2f) / (float)DisplayState.Scale
         );
 
-        App.Profile.DisplaySettings.ZoomIndex = newIndex;
+        App.Profile.MainWindowSettings.DisplaySettings.ZoomIndex = newIndex;
 
-        DisplayState.Scale = ScaleMap[App.Profile.DisplaySettings.ZoomIndex];
+        DisplayState.Scale = ScaleMap[App.Profile.MainWindowSettings.DisplaySettings.ZoomIndex];
 
         var after = new SKPoint(
             (referencePoint.X - DisplayState.PanOffset.X - DisplayState.Width / 2f) / (float)DisplayState.Scale,
@@ -763,14 +768,14 @@ public class MainWindowViewModel : ViewModelBase
             App.MainWindowView.WindowStyle = WindowStyle.SingleBorderWindow;
             App.MainWindowView.ResizeMode = ResizeMode.CanResize;
             App.MainWindowView.WindowState = WindowState.Normal;
-            App.Profile.WindowSettings.IsFullscreen = false;
+            App.Profile.MainWindowSettings.WindowSettings.IsFullscreen = false;
         }
         else
         {
             App.MainWindowView.WindowStyle = WindowStyle.None;
             App.MainWindowView.ResizeMode = ResizeMode.NoResize;
             App.MainWindowView.WindowState = WindowState.Maximized;
-            App.Profile.WindowSettings.IsFullscreen = true;
+            App.Profile.MainWindowSettings.WindowSettings.IsFullscreen = true;
         }
     }
 
@@ -813,6 +818,20 @@ public class MainWindowViewModel : ViewModelBase
     public void OnCaptureScreenCommand()
     {
         Screenshot.Capture();
+    }
+
+    public void OnToggleToolBarCommand()
+    {
+        if (App.Profile.MainWindowSettings.DisplaySettings.ShowToolbar)
+        {
+            App.Profile.MainWindowSettings.DisplaySettings.ShowToolbar = false;
+            DisplayVisibility = Visibility.Collapsed;
+        }
+        else
+        {
+            App.Profile.MainWindowSettings.DisplaySettings.ShowToolbar = true;
+            DisplayVisibility = Visibility.Visible;
+        }
     }
 
     public async void OnLoadRecordingCommand()

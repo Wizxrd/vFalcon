@@ -22,6 +22,7 @@
         <KeyBinding Key="B" Modifiers="Alt" Command="{Binding ToggleResizeBorderCommand}"/>
         <KeyBinding Key="R" Modifiers="Alt" Command="{Binding ToggleRecordingCommand}"/>
         <KeyBinding Key="S" Modifiers="Alt+Shift" Command="{Binding CaptureScreenCommand}"/>
+        <KeyBinding Key="B" Modifiers="Ctrl" Command="{Binding ToggleToolBarCommand}"/>
         <KeyBinding Key="L" Modifiers="Ctrl" Command="{Binding LoadRecordingCommand}"/>
         <KeyBinding Key="E" Modifiers="Ctrl" Command="{Binding ExitRecordingCommand}"/>
         <KeyBinding Key="T" Modifiers="Ctrl" Command="{Binding ToggleTopDownCommand}"/>

@@ -150,7 +150,7 @@ public class PlaybackService
                     ? freqArr[frame]!.Value<string>() ?? string.Empty
                     : string.Empty;
 
-                bool isOnActivePositionFrequency = App.Profile.ActivePositions
+                bool isOnActivePositionFrequency = App.Profile.PositionsSettings.ActivePositions
                     .Values<string>()
                     .Any(f => f == tunedFrequency);
                 pilot.History.Add(new Coordinate { Lat = lat, Lon = lon });

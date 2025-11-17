@@ -68,7 +68,7 @@ public class PositionsViewModel : ViewModelBase
             if (lastIndex <= 0) return;
             string freq = position.Substring(lastIndex + 1).Trim();
             bool isChecked = false;
-            foreach (string active in App.Profile.ActivePositions)
+            foreach (string active in App.Profile.PositionsSettings.ActivePositions)
             {
                 if (freq == active)
                 {
@@ -97,7 +97,7 @@ public class PositionsViewModel : ViewModelBase
 
         string freq = id.Substring(lastDash + 1).Trim();
 
-        var positions = App.Profile.ActivePositions;
+        var positions = App.Profile.PositionsSettings.ActivePositions;
         var existing = positions.FirstOrDefault(t => string.Equals((string)t, freq, StringComparison.OrdinalIgnoreCase));
 
         if (existing == null)

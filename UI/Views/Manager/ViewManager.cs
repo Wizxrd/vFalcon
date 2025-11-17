@@ -2,10 +2,12 @@
 using vFalcon.UI.Views.Common;
 using vFalcon.UI.Views.Toolbar;
 using vFalcon.UI.Views.Tooolbar;
+using vFalcon.Utils;
 namespace vFalcon.UI.Views.Manager;
 
 public class ViewManager
 {
+    public NewProfileView NewProfileView { get; set; }
     public PositionsView? PositionsView { get; set; }
     public MapsView? MapsView { get; set; }
     public FiltersView? FiltersView { get; set; }
@@ -15,13 +17,29 @@ public class ViewManager
     public AircraftListView? AircraftListView { get; set; }
     public SaveProfileAsView? SaveProfileAsView { get; set; }
 
+    public void InitializeSettings()
+    {
+        if (App.Profile.PositionsSettings.WindowSettings.IsOpen) OpenPositionsView();
+        if (App.Profile.MapSettings.WindowSettings.IsOpen) OpenMapsView();
+        if (App.Profile.FilterSettings.WindowSettings.IsOpen) OpenFiltersView();
+        if (App.Profile.FindSettings.WindowSettings.IsOpen) OpenFindView();
+        if (App.Profile.GeneralSettings.WindowSettings.IsOpen) OpenGeneralSettingsView();
+        if (App.Profile.AppearanceSettings.WindowSettings.IsOpen) OpenAppearanceSettingsView();
+        if (App.Profile.AircraftListSettings.WindowSettings.IsOpen) OpenAircraftListView();
+    }
+
+
     public void OpenPositionsView()
     {
         if (PositionsView != null) return;
         PositionsView = new();
         PositionsView.Owner = Application.Current.MainWindow;
-        PositionsView.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-        PositionsView.Closing += (_, __) => PositionsView = null;
+        PositionsView.Closing += (_, __) =>
+        {
+            App.Profile.PositionsSettings.WindowSettings.IsOpen = false;
+            PositionsView = null;
+        };
+        App.Profile.PositionsSettings.WindowSettings.IsOpen = true;
         PositionsView.Show();
     }
 
@@ -30,8 +48,12 @@ public class ViewManager
         if (MapsView != null) return;
         MapsView = new();
         MapsView.Owner = Application.Current.MainWindow;
-        MapsView.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-        MapsView.Closing += (_, __) => MapsView = null;
+        MapsView.Closing += (_, __) =>
+        {
+            App.Profile.MapSettings.WindowSettings.IsOpen = false;
+            MapsView = null; 
+        };
+        App.Profile.MapSettings.WindowSettings.IsOpen = true;
         MapsView.Show();
     }
 
@@ -40,8 +62,12 @@ public class ViewManager
         if (FiltersView != null) return;
         FiltersView = new();
         FiltersView.Owner = Application.Current.MainWindow;
-        FiltersView.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-        FiltersView.Closing += (_, __) => FiltersView = null;
+        FiltersView.Closing += (_, __) =>
+        {
+            App.Profile.FilterSettings.WindowSettings.IsOpen = false;
+            FiltersView = null;
+        };
+        App.Profile.FilterSettings.WindowSettings.IsOpen = true;
         FiltersView.Show();
     }
 
@@ -50,8 +76,12 @@ public class ViewManager
         if (FindView != null) return;
         FindView = new();
         FindView.Owner = Application.Current.MainWindow;
-        FindView.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-        FindView.Closing += (_, __) => FindView = null;
+        FindView.Closing += (_, __) =>
+        {
+            App.Profile.FindSettings.WindowSettings.IsOpen = false;
+            FindView = null;
+        };
+        App.Profile.FindSettings.WindowSettings.IsOpen = true;
         FindView.Show();
     }
 
@@ -60,8 +90,12 @@ public class ViewManager
         if (GeneralSettingsView != null) return;
         GeneralSettingsView = new();
         GeneralSettingsView.Owner = Application.Current.MainWindow;
-        GeneralSettingsView.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-        GeneralSettingsView.Closing += (_, __) => GeneralSettingsView = null;
+        GeneralSettingsView.Closing += (_, __) =>
+        {
+            App.Profile.GeneralSettings.WindowSettings.IsOpen = false;
+            GeneralSettingsView = null;
+        };
+        App.Profile.GeneralSettings.WindowSettings.IsOpen = true;
         GeneralSettingsView.Show();
     }
 
@@ -70,8 +104,12 @@ public class ViewManager
         if (AppearanceSettingsView != null) return;
         AppearanceSettingsView = new();
         AppearanceSettingsView.Owner = Application.Current.MainWindow;
-        AppearanceSettingsView.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-        AppearanceSettingsView.Closing += (_, __) => AppearanceSettingsView = null;
+        AppearanceSettingsView.Closing += (_, __) =>
+        {
+            App.Profile.AppearanceSettings.WindowSettings.IsOpen = false;
+            AppearanceSettingsView = null;
+        };
+        App.Profile.AppearanceSettings.WindowSettings.IsOpen = true;
         AppearanceSettingsView.Show();
     }
 
@@ -80,8 +118,13 @@ public class ViewManager
         if (AircraftListView != null) return;
         AircraftListView = new();
         AircraftListView.Owner = Application.Current.MainWindow;
-        AircraftListView.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-        AircraftListView.Closing += (_, __) => AircraftListView = null;
+        AircraftListView.Closing += (_, __) =>
+        {
+            App.Profile.AircraftListSettings.WindowSettings.IsOpen = false;
+            AircraftListView = null;
+        };
+        App.Profile.AircraftListSettings.WindowSettings.IsOpen = true;
+        Logger.Debug("HE", "WAS HERE");
         AircraftListView.Show();
     }
 
@@ -106,16 +149,17 @@ public class ViewManager
     public void OpenManagedArtccsView()
     {
         ManageArtccsView manageArtccsView = new ManageArtccsView();
+        manageArtccsView.Owner = Application.Current.MainWindow;
         manageArtccsView.WindowStartupLocation = WindowStartupLocation.CenterOwner;
         manageArtccsView.ShowDialog();
     }
 
     public void OpenNewProfileView()
     {
-        NewProfileView newProfileView = new NewProfileView();
-        newProfileView.Owner = Application.Current.MainWindow;
-        newProfileView.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-        newProfileView.ShowDialog();
+        NewProfileView = new NewProfileView();
+        NewProfileView.Owner = Application.Current.MainWindow;
+        NewProfileView.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+        NewProfileView.ShowDialog();
     }
 
     public void Dispose()
@@ -123,6 +167,7 @@ public class ViewManager
         if (PositionsView != null) PositionsView.Close();
         if (MapsView != null) MapsView.Close();
         if (FiltersView != null) FiltersView.Close();
+        if (FindView != null) FindView.Close();
         if (GeneralSettingsView != null) GeneralSettingsView.Close();
         if (AppearanceSettingsView != null) AppearanceSettingsView.Close();
         if (AircraftListView != null) AircraftListView.Close();
