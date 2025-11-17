@@ -66,7 +66,7 @@
                     TextChanged="OnTextChanged"
                     Text="{Binding AltLow}"
                     Width="40"
-                    Margin="0,5,10,10"/>
+                    Margin="5,5,10,10"/>
                 <TextBlock 
                     VerticalAlignment="Center"
                     Text="Alt High"
