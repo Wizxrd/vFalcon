@@ -185,15 +185,10 @@ public class PilotService
                 }
             case 2:
                 {
-                    pilot.LeaderLineLength = 4;
+                    pilot.LeaderLineLength = 3;
                     break;
                 }
-            case 4:
-                {
-                    pilot.LeaderLineLength = 8;
-                    break;
-                }
-            case 8:
+            case 3:
                 {
                     pilot.LeaderLineLength = 0;
                     break;

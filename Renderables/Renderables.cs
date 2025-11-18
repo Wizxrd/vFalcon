@@ -373,7 +373,7 @@ namespace vFalcon.Renderables
                 float radius = GetDistanceReferenceIndicatorRadius(displayState.Scale, pilot.Latitude, pilot.DriSize);
                 var (text, point) = GetDistanceReferenceIndicator(textPaint, pilot.DatablockPosition, pilotScreenPoint, radius, pilot.DriSize);
                 renderables.Add(new Circle(pilotScreenPoint, radius, circlePaint, 1));
-                renderables.Add(new Text(text, point, circlePaint, 1));
+                renderables.Add(new Text(text, point, textPaint, 1));
             }
             return renderables;
         }
@@ -475,7 +475,7 @@ namespace vFalcon.Renderables
                 float radius = GetDistanceReferenceIndicatorRadius(displayState.Scale, pilot.Latitude, pilot.DriSize);
                 var (text, point) = GetDistanceReferenceIndicator(textPaint, pilot.DatablockPosition, pilotPos, radius, pilot.DriSize);
                 renderables.Add(new Circle(pilotPos, radius, circlePaint, 1));
-                renderables.Add(new Text(text, point, circlePaint, 1));
+                renderables.Add(new Text(text, point, textPaint, 1));
             }
             return renderables;
         }

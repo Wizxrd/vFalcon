@@ -215,6 +215,7 @@ public class MainWindowViewModel : ViewModelBase
         StartServices();
         SetDisplayReady(true);
         App.ViewManager.InitializeSettings();
+        Logger.Info("App", "vFalcon Ready");
     }
 
     public void SetDisplayState()
