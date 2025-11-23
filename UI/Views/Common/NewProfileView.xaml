@@ -9,9 +9,10 @@
     xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
     xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
     IconVisibility="Collapsed"
-    Title="NewProfileView"
+    Title="New Profile"
     Height="Auto" Width="300"
     SizeToContent="Height"
+    ResizeMode="NoResize"
     WindowStartupLocation="CenterOwner"
     FontFamily="Consolas" FontSize="12"
     BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">

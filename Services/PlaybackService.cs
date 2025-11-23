@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
+using SkiaSharp;
 using System.IO;
 using vFalcon.Models;
 using vFalcon.UI.ViewModels.Controls;
@@ -90,7 +91,12 @@ public class PlaybackService
         try
         {
             var total = ReplayJson["TickCount"]?.Value<int?>() ?? 0;
-            if (Tick >= total) return;
+            if (Tick >= total)
+            {
+                App.MainWindowViewModel.PilotService.Pilots.Clear();
+                App.MainWindowViewModel.GraphicsEngine.RequestRender();
+                return;
+            }
 
             JObject pilotsObj = (JObject)ReplayJson["Pilots"];
             if (pilotsObj is null) return;
@@ -112,10 +118,15 @@ public class PlaybackService
                 }
 
                 var coords = history[frame] as JArray;
-                if (coords is null || coords.Count < 2) continue;
+                if (coords is null || coords.Count < 2) 
+                {
+                    App.MainWindowViewModel.PilotService.Pilots.Remove(callsign);
+                    continue; 
+                }
 
                 double lat = (double)coords[0];
                 double lon = (double)coords[1];
+
                 if (!App.MainWindowViewModel.PilotService.Pilots.TryGetValue(callsign, out var pilot))
                 {
                     pilot = new Pilot

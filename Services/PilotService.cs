@@ -286,9 +286,9 @@ public class PilotService
             foreach (JObject pilot in dataFeedPilots)
             {
                 SKPoint pilotPosition = ScreenMap.CoordinateToScreen(DisplayState.Width, DisplayState.Height, DisplayState.Scale, DisplayState.PanOffset, (double)pilot["latitude"], (double)pilot["longitude"]);
+                string callsign = (string)pilot["callsign"];
                 if (ScreenMap.PointInCoordinatePolygon(pilotPosition, App.MainWindowViewModel.SurveillanceAoi, DisplayState.Width, DisplayState.Height, DisplayState.Scale, DisplayState.PanOffset))
                 {
-                    string callsign = (string)pilot["callsign"];
                     string tunedFrequency = transceiverFrequencies.ContainsKey(callsign) ? transceiverFrequencies[callsign] : string.Empty;//transceiverFrequencies.TryGetValue(callsign, out var mappedFrequency) ? mappedFrequency : string.Empty;
                     JObject flightPlan = pilot["flight_plan"] as JObject;
 
@@ -327,6 +327,10 @@ public class PilotService
                     if (isOnActivePositionFrequency) existingPilot.FullDatablockEnabled = true;
                     else if (existingPilot.FullDatablockEnabled) existingPilot.FullDatablockEnabled = false;
                     if (existingPilot.ForcedFullDatablock == true) existingPilot.FullDatablockEnabled = true;
+                }
+                else if (Pilots.ContainsKey(callsign))
+                {
+                    Pilots.Remove(callsign);
                 }
             }
             if (App.MainWindowViewModel.IsRecording)
